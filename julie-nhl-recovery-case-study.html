@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>33일의 기적: 줄리의 비호지킨 림프종 호전 사례 | 용도변경 약물 프로토콜</title>
+<style>
+/* ============================================================
+   DESIGN SYSTEM — Case Study: Julie's NHL Recovery
+   Palette: Clinical trust + warm hope + healing green
+   Avoids AI-default cream-bg/serif-display/neon-accent tropes.
+   ============================================================ */
+
+:root {
+  --bg:        #fefefe;
+  --surface:   #f2f4f6;
+  --surface2:  #e8ecf0;
+  --primary:   #173f4a;
+  --primary-l: #1f5663;
+  --accent:    #c4753a;
+  --accent-l:  #df8f56;
+  --healing:   #42855f;
+  --healing-l: #e8f5ed;
+  --text:      #1c1c1c;
+  --text-m:    #55606b;
+  --text-l:    #85909b;
+  --border:    #dde1e6;
+  --danger-l:  #fef2f2;
+  --danger:    #b91c1c;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.06);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --max-w:     720px;
+  --font-display: 'Georgia', 'Noto Serif KR', 'Nanum Myeongjo', 'Apple SD Gothic Neo', serif;
+  --font-body:    'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-mono:    'SF Mono', 'Consolas', 'Menlo', monospace;
+}
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--primary);
+}
+h1 { font-size: 2rem; letter-spacing: -0.02em; margin-bottom: .3em; }
+h2 { font-size: 1.45rem; letter-spacing: -0.01em; margin: 2em 0 .6em; padding-top: .4em; }
+h3 { font-size: 1.15rem; margin: 1.6em 0 .4em; }
+h4 { font-size: 1rem; margin: 1.2em 0 .3em; }
+
+p { margin-bottom: .9em; }
+strong { color: var(--primary); font-weight: 650; }
+em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--accent-l); }
+
+/* ---------- HERO ---------- */
+.hero {
+  text-align: center;
+  padding: 48px 0 36px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 36px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--healing-l);
+  color: var(--healing);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  line-height: 1.35;
+}
+.hero h1 .num {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 1.35em;
+  font-weight: 800;
+}
+.hero-sub {
+  color: var(--text-m);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 12px auto 0;
+}
+
+/* ---------- KEY-DATA ROW ---------- */
+.keydata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 32px 0;
+}
+.keydata .card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.keydata .val {
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.keydata .val.down { color: var(--healing); }
+.keydata .lbl {
+  font-size: .78rem;
+  color: var(--text-m);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+/* ---------- LYMPH-NODE VISUAL (signature) ---------- */
+.node-viz {
+  margin: 36px 0;
+  padding: 28px 24px 24px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.node-viz h3 {
+  text-align: center;
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+.node-bars { display: flex; flex-direction: column; gap: 16px; }
+.node-bar-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+}
+.node-bar-row .date {
+  font-family: var(--font-mono);
+  font-size: .82rem;
+  color: var(--text-m);
+  text-align: right;
+}
+.node-bar-row .bar-wrap {
+  height: 28px;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+}
+.node-bar-row .bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width 1s ease;
+}
+.node-bar-row .bar-fill.before { width: 85.5%; background: var(--accent); } /* 17.1/20 */
+.node-bar-row .bar-fill.after  { width: 66%;   background: var(--healing); } /* 13.2/20 */
+.node-bar-row .bar-fill .bar-tag {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  font-weight: 700;
+  color: #fff;
+}
+.node-bar-row .mm {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: .95rem;
+}
+.node-bar-row .mm.before-c { color: var(--accent); }
+.node-bar-row .mm.after-c  { color: var(--healing); }
+.node-delta {
+  text-align: center;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+.node-delta span {
+  display: inline-block;
+  background: var(--healing-l);
+  color: var(--healing);
+  font-weight: 700;
+  font-size: .92rem;
+  padding: 4px 16px;
+  border-radius: 99px;
+}
+
+/* ---------- PROTOCOL TABLE ---------- */
+.proto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.proto-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 18px 18px 14px;
+  box-shadow: var(--shadow-sm);
+}
+.proto-card.full { grid-column: 1 / -1; }
+.proto-card h4 {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.proto-card .drug-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.proto-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  font-size: .88rem;
+}
+.proto-card li {
+  padding: 3px 0;
+  padding-left: 14px;
+  position: relative;
+}
+.proto-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- SCHEDULE TABLE ---------- */
+.sched-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  margin: 16px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sched-table th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: .8rem;
+  letter-spacing: .03em;
+}
+.sched-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.sched-table tr:nth-child(even) td { background: var(--surface); }
+.sched-table .dose-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.sched-table .dose-tag.low  { background: #e8f5ed; color: var(--healing); }
+.sched-table .dose-tag.mid  { background: #fef3c7; color: #b45309; }
+.sched-table .dose-tag.high { background: #fee2e2; color: var(--danger); }
+
+/* ---------- SUPPLEMENT LIST ---------- */
+.supp-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+.supp-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: .85rem;
+}
+.supp-item .name { font-weight: 700; color: var(--primary); }
+.supp-item .dose { color: var(--text-m); font-size: .8rem; margin-top: 1px; }
+
+/* ---------- TIMELINE ---------- */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: 24px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 18px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline-item .tl-date {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+.timeline-item .tl-text { font-size: .9rem; margin-top: 2px; }
+
+/* ---------- FLOWCHART (CSS) ---------- */
+.flowchart {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 24px 0;
+  padding: 20px 10px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+.flow-node {
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  text-align: center;
+  font-size: .82rem;
+  font-weight: 650;
+  min-width: 90px;
+  box-shadow: var(--shadow-sm);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.flow-node.accent {
+  border-color: var(--accent);
+  background: #fef9f5;
+}
+.flow-node.green {
+  border-color: var(--healing);
+  background: var(--healing-l);
+}
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--text-l);
+  padding: 0 6px;
+  flex-shrink: 0;
+}
+
+/* ---------- DOCTOR QUOTE ---------- */
+.doc-quote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+.doc-quote::before {
+  content: '"';
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(255,255,255,.15);
+}
+.doc-quote .en {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
+}
+.doc-quote .ko {
+  font-size: .92rem;
+  margin-top: 8px;
+  opacity: .85;
+}
+.doc-quote .attr {
+  font-size: .78rem;
+  margin-top: 12px;
+  opacity: .6;
+}
+
+/* ---------- FAQ ---------- */
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  padding-right: 40px;
+  background: #fff;
+  border: none;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  font-weight: 650;
+  color: var(--primary);
+  cursor: pointer;
+  position: relative;
+}
+.faq-q::after {
+  content: '+';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--accent);
+  transition: transform .2s;
+}
+.faq-item.open .faq-q::after {
+  content: '−';
+  transform: translateY(-50%);
+}
+.faq-a {
+  display: none;
+  padding: 0 18px 14px;
+  font-size: .88rem;
+  color: var(--text-m);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ---------- CALLOUT ---------- */
+.callout {
+  border-left: 4px solid var(--accent);
+  background: #fef9f5;
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: .9rem;
+  margin: 20px 0;
+}
+.callout.warn {
+  border-left-color: var(--danger);
+  background: var(--danger-l);
+}
+.callout.info {
+  border-left-color: var(--primary);
+  background: #f2f7f9;
+}
+.callout strong { display: block; margin-bottom: 4px; }
+
+/* ---------- PRINT ---------- */
+@media print {
+  html { font-size: 12pt; }
+  body { max-width: 100%; padding: 0 24pt; }
+  .hero { padding: 24pt 0 18pt; }
+  .faq-item { break-inside: avoid; }
+  .proto-grid { grid-template-columns: 1fr; }
+  .keydata { grid-template-columns: repeat(4, 1fr); }
+  .node-viz, .proto-card, .keydata .card, .doc-quote {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  .doc-quote {
+    background: #fff !important;
+    color: var(--text) !important;
+    border: 2px solid var(--primary);
+  }
+  .doc-quote::before { color: rgba(0,0,0,.06); }
+  .sched-table th { background: #ddd !important; color: #000 !important; }
+  @page { margin: 18mm; }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 520px) {
+  html { font-size: 16px; }
+  body { padding: 0 14px 60px; }
+  .keydata { grid-template-columns: 1fr 1fr; }
+  .proto-grid { grid-template-columns: 1fr; }
+  .node-bar-row { grid-template-columns: 70px 1fr 34px; gap: 8px; }
+  .flowchart { justify-content: flex-start; padding: 14px 8px; gap: 4px; }
+  .flow-node { font-size: .74rem; padding: 8px 10px; min-width: 70px; }
+  .flow-arrow { font-size: 1rem; padding: 0 2px; }
+  .supp-list { grid-template-columns: 1fr 1fr; }
+  h1 { font-size: 1.55rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-badge">용도변경 약물 호전 사례</div>
+  <h1>
+    <span class="num">33일</span> 만에 림프절 4mm 감소<br>
+    줄리의 비호지킨 림프종 극복 이야기
+  </h1>
+  <p class="hero-sub">
+    서비스 독이 먼저 알아챈 암. 환자가 주도한 프로토콜.
+    그리고 담당 의사도 인정한 유의미한 호전.
+  </p>
+</header>
+
+<!-- ============ KEY DATA ============ -->
+<section class="keydata">
+  <div class="card">
+    <div class="val down">17.1 → 13.2<span style="font-size:.7em;font-weight:500;">mm</span></div>
+    <div class="lbl">림프절 크기 (33일간)</div>
+  </div>
+  <div class="card">
+    <div class="val down">−3.9<span style="font-size:.7em;font-weight:500;">mm</span></div>
+    <div class="lbl">감소량 (22.8% 축소)</div>
+  </div>
+  <div class="card">
+    <div class="val">2<span style="font-size:.7em;font-weight:500;">주</span></div>
+    <div class="lbl">백혈구 정상화까지</div>
+  </div>
+  <div class="card">
+    <div class="val">67<span style="font-size:.7em;font-weight:500;">세</span></div>
+    <div class="lbl">여성, 미국 거주</div>
+  </div>
+</section>
+
+<!-- ============ LYMPH NODE VISUALIZATION ============ -->
+<section class="node-viz">
+  <h3>🩻 오른쪽 서혜부 림프절 크기 변화</h3>
+  <div class="node-bars">
+    <div class="node-bar-row">
+      <span class="date">2026.03.04</span>
+      <div class="bar-wrap">
+        <div class="bar-fill before">
+          <span class="bar-tag">17.1mm</span>
+        </div>
+      </div>
+      <span class="mm before-c">17.1</span>
+    </div>
+    <div class="node-bar-row">
+      <span class="date">2026.04.06</span>
+      <div class="bar-wrap">
+        <div class="bar-fill after">
+          <span class="bar-tag">13.2mm</span>
+        </div>
+      </div>
+      <span class="mm after-c">13.2</span>
+    </div>
+  </div>
+  <div class="node-delta">
+    <span>↓ 3.9mm 감소 (22.8% 축소) — 정상 범위(10mm 미만)에 근접</span>
+  </div>
+  <p style="font-size:.82rem;color:var(--text-m);text-align:center;margin-top:10px;">
+    📝 줄리 본인은 페이스북에 "4주 만에 림프절이 <strong>2mm</strong> 줄었다"고 소박하게 표현했지만,
+    실제 CT 판독상 측정치는 <strong>17.1mm → 13.2mm (3.9mm 감소)</strong>로,
+    그녀가 말한 것보다 거의 2배 더 큰 호전이었습니다.
+    줄리는 자신의 암이 초기 단계임을 겸손하게 언급하며 작은 변화에도 감사한다고 덧붙였습니다.
+  </p>
+</section>
+
+<!-- ============ 1. DISCOVERY ============ -->
+<h2>1. 서비스 독 '스웨거'가 먼저 알아챈 암</h2>
+
+<p>
+  작년 여름, 줄리의 서비스 독 '스웨거(Swagger)'가 이상 행동을 보이기 시작했습니다.
+  스웨거는 줄리의 <strong>사타구니(서혜부) 팬티 라인</strong>을 따라 코를 대고 집요하게 냄새를 맡으며
+  반복적으로 경고 신호를 보냈습니다.
+</p>
+
+<p>
+  처음에 줄리는 가방에 넣어둔 닭고기 간식 냄새 때문이라고 여겼습니다.
+  하지만 스웨거의 경고 행동은 <strong>견종 쇼(Dog Show)가 열릴 때마다 몇 달간 지속</strong>되었고,
+  스웨거가 이전에 <strong>다른 지인의 난소암을 감지했던 전력</strong>이 있다는 사실을 떠올리면서
+  사태의 심각성을 깨달았습니다.
+</p>
+
+<div class="callout">
+  <strong>🐕‍🦺 개의 암 감지 능력</strong>
+  개는 인간보다 수만 배 뛰어난 후각으로 암세포가 방출하는 휘발성 유기 화합물(VOC)을 감지할 수 있습니다.
+  연구에 따르면 훈련된 개는 90% 이상의 정확도로 특정 암을 감지해냅니다.
+</div>
+
+<!-- ============ 2. DIAGNOSIS ============ -->
+<h2>2. 진단 과정과 의학적 상황</h2>
+
+<div class="callout info">
+  <strong>📝 진단 전부터 알고 있던 이버멕틴</strong>
+  줄리는 암 진단을 받기 <strong>작년(2025년)부터 이미 이버멕틴을 가끔 복용</strong>하고 있었습니다.
+  하지만 진단을 받기 몇 달 전부터는 복용을 중단한 상태였습니다.
+  그녀가 이 약물에 대해 이미 경험이 있었다는 점이, 진단 후 신속하게 프로토콜을 시작할 수 있었던 중요한 배경입니다.
+</div>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="tl-date">2025년 여름</div>
+    <div class="tl-text">서비스 독 스웨거, 줄리의 서혜부에서 이상 신호 감지 시작</div>
+  </div>
+  <div class="timeline-item">
+    <div class="tl-date">2026년 2월</div>
+    <div class="tl-text">유방암 검사(맘모그램) 상담 중 혈액 검사 → <strong>백혈구 수치(WBC) 상승</strong> 확인</div>
+  </div>
+  <div class="timeline-item">
+    <div class="tl-date">2026년 2월</div>
+    <div class="tl-text">CT 스캔 → 오른쪽 서혜부 림프절 부종 확인</div>
+  </div>
+  <div class="timeline-item">
+    <div class="tl-date">2026년 2월</div>
+    <div class="tl-text"><strong>16게이지 바늘 초음파 유도 생검</strong> → 비호지킨 림프종 확진</div>
+  </div>
+  <div class="timeline-item">
+    <div class="tl-date">2026년 3월 4일</div>
+    <div class="tl-text">기준 CT 촬영: 오른쪽 서혜부 림프절 <strong>17.1mm</strong></div>
+  </div>
+  <div class="timeline-item">
+    <div class="tl-date">2026년 4월 6일</div>
+    <div class="tl-text">추적 CT 촬영: 동일 부위 림프절 <strong>13.2mm</strong> — <em>3.9mm 감소</em></div>
+  </div>
+</div>
+
+<div class="callout info">
+  <strong>📋 병기 해석</strong>
+  줄리는 진단 당시부터 <strong>초기 단계(Early Stage)</strong>의 비호지킨 림프종이었습니다.
+  병기(Stage)는 진단 시점의 검사로 결정되며, 이후 림프절 크기 감소는
+  '병기 하향'이 아니라 <strong>'부분 관해(Partial Remission)' 방향의 치료 반응</strong>으로 해석됩니다.
+  초기 단계였기에 '관찰 대기(Watch &amp; Wait)' 전략이 가능했고,
+  자가 프로토콜을 시도할 시간적 여유가 있었습니다.
+</div>
+
+<!-- ============ 3. DOCTOR'S RESPONSE ============ -->
+<h2>3. 담당 종양내과 전문의의 반응</h2>
+
+<div class="doc-quote">
+  <div class="en">"Keep doing what you are doing. No treatment now."</div>
+  <div class="ko">"지금 하고 있는 것을 계속하세요. 현재로선 다른 치료는 필요 없습니다."</div>
+  <div class="attr">— 줄리의 담당 종양내과 전문의, 2026년 4월 PET-CT 결과 확인 후</div>
+</div>
+
+<p>
+  줄리의 호전된 수치를 확인한 담당 종양 전문의는 <strong>결과에 깊은 인상을 받았습니다</strong>.
+  전문의는 CT·PET 스캔 결과를 보고 <strong>"Keep doing what you are doing. No treatment now"</strong>라고 말하며
+  현재 상태로는 화학요법이나 수술이 필요하지 않다고 판단했습니다.
+  대신 <strong>6주 후 추적 혈액 검사</strong>를 예약하고 경과를 지켜보기로 했습니다.
+</p>
+
+<p>
+  원본 게시글에서 줄리는 의사에게 이버멕틴·펜벤다졸 복용 사실을 <strong>구체적으로 언급했는지 밝히지 않았습니다.</strong>
+  의사는 검사 결과라는 객관적 데이터에 기초하여 "지금 하는 것을 계속하라"고 권고한 것이며,
+  줄리가 어떤 자가 요법을 하고 있는지 구체적으로 알았는지는 확인되지 않습니다.
+  다른 회원이 "의사가 이버멕틴과 펜벤다졸을 처방해 주었나요?"라고 묻자,
+  줄리는 <strong>"아니요, 의사는 그것들을 처방할 수 없습니다(No they can't)"</strong>라고만 답했습니다.
+</p>
+
+<p>
+  이는 의학적으로 비호지킨 림프종에서 즉각적인 표준 치료 없이 경과를 관찰하는
+  <strong>'관찰 대기(Watch &amp; Wait)'</strong> 전략에 해당하며,
+  주로 진단 당시부터 진행이 느리거나 초기 단계인 경우에 선택하는 접근법입니다.
+</p>
+
+<!-- ============ 4. PROTOCOL ============ -->
+<h2>4. 줄리의 프로토콜: 무엇을, 어떻게 복용했는가</h2>
+
+<p>
+  줄리는 <strong>윌리엄 마키스 박사(Dr. William Makis)의 암 프로토콜</strong>을 핵심 뼈대로 삼고,
+  여기에 <strong>아미쉬(Amish) 전통 요법</strong>의 천연 보충제를 더해 자신만의 프로토콜을 구성했습니다.
+</p>
+
+<h3>🔬 핵심 용도변경 약물</h3>
+
+<div class="proto-grid">
+  <div class="proto-card">
+    <h4>용도변경 약물 1</h4>
+    <div class="drug-name">이버멕틴 (Ivermectin)</div>
+    <ul>
+      <li><strong>제품:</strong> IVERCARE 1.87% 페이스트(사과맛) 또는 액상</li>
+      <li><strong>용량 (페이스트):</strong> 연필 지우개 크기 ≈ <strong>약 1g</strong>의 페이스트</li>
+      <li><strong>mg 환산:</strong> 1g × 1.87% = <strong>약 18.7mg/회</strong> (1일 2회 시 약 37mg/일)</li>
+      <li><strong>체중 기준:</strong> 70kg 기준 약 0.53 mg/kg/일 (마키스 저~중간 용량 범위)</li>
+      <li><strong>빈도:</strong> 매일 1~2회</li>
+      <li><strong>주기:</strong> 6일 복용 / 1일 휴식</li>
+      <li><strong>복용 팁:</strong> 액상은 맛이 좋지 않아 주스에 혼합</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>용도변경 약물 2</h4>
+    <div class="drug-name">펜벤다졸 (Fenbendazole)</div>
+    <ul>
+      <li><strong>제품:</strong> Safe-Guard 10% 말용 구충제 페이스트</li>
+      <li><strong>용량 (페이스트):</strong> 연필 지우개 크기 ≈ <strong>약 1g</strong>의 페이스트</li>
+      <li><strong>mg 환산:</strong> 1g × 10% = <strong>약 100mg/회</strong> (1일 2회 시 약 200mg/일)</li>
+      <li><strong>비교:</strong> 마키스 중간 용량(222mg/일)에 근접</li>
+      <li><strong>빈도:</strong> 매일 1~2회</li>
+      <li><strong>주기:</strong> 6일 복용 / 1일 휴식</li>
+      <li><strong>복용법:</strong> 식사 중 또는 식사 직후 (흡수율 향상)</li>
+    </ul>
+  </div>
+</div>
+
+<h3>⏰ 줄리의 하루 복용 스케줄</h3>
+<p>줄리는 페이스북 글에서 <strong>"지금은 암이 있기 때문에 매일, 때로는 하루 2회 복용한다"</strong>고 직접 밝혔습니다. 두 약물 모두 같은 패턴으로 복용합니다.</p>
+<div style="overflow-x:auto;">
+<table class="sched-table">
+  <thead>
+    <tr><th>시간</th><th>복용 항목</th><th>비고</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>☀️ 아침</strong></td><td><strong>이버멕틴 + 펜벤다졸</strong> (1차 복용)<br>+ 비타민·보충제</td><td>이버멕틴 액상은 주스에 혼합. 펜벤다졸 페이스트는 식사와 함께. 보충제는 식사 중.</td></tr>
+    <tr><td><strong>🌙 저녁</strong></td><td><strong>이버멕틴 + 펜벤다졸</strong> (2차 복용 — 필요한 경우)<br>+ 간 보호제</td><td>줄리: "때로는 하루 2회(sometimes twice per day)." 2차 복용 시에도 식사 중 또는 직후.</td></tr>
+    <tr><td><strong>📅 주기</strong></td><td colspan="2">6일 복용 + 1일 휴식. 주말 견종 쇼 출장 시 복용 중단.</td></tr>
+    <tr><td><strong>🔮 향후 계획</strong></td><td colspan="2">암 소멸(관해) 확인 후: 1일 1회, 4일 복용 + 3일 휴식으로 전환 예정. (줄리 언급: "until cancer is gone, then I will take only once per day, 4 days on 3 days off")</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>📊 마키스 박사 프로토콜 통합 용량표 (이버멕틴 + 펜벤다졸)</h3>
+<p>줄리가 따르는 <strong>윌리엄 마키스 박사(Dr. William Makis)의 암 프로토콜</strong> 전문입니다. 체중과 병기에 따라 두 약물의 용량이 함께 결정됩니다.</p>
+<div style="overflow-x:auto;">
+<table class="sched-table">
+  <thead>
+    <tr><th>구분</th><th>이버멕틴 (체중 1kg당)</th><th>펜벤다졸 (1일)</th><th>빈도</th><th>적용 대상</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="dose-tag low">저용량</span></td>
+      <td><strong>0.5mg/kg 이하</strong></td>
+      <td><strong>222mg</strong></td>
+      <td>주 3회</td>
+      <td>관해 상태·예방 목적·가족력·유전적 소인</td>
+    </tr>
+    <tr>
+      <td><span class="dose-tag mid">중간 용량</span></td>
+      <td><strong>1.0mg/kg</strong></td>
+      <td><strong>222mg</strong></td>
+      <td>주 6회</td>
+      <td><strong>대부분 암의 시작 용량</strong> (체중 90.7kg 미만)</td>
+    </tr>
+    <tr>
+      <td><span class="dose-tag high">고용량</span></td>
+      <td><strong>2.0mg/kg</strong></td>
+      <td><strong>444mg</strong></td>
+      <td>주 6회</td>
+      <td>공격적 암 4기·백혈병·췌장암·뇌암 (90.7kg 이상)</td>
+    </tr>
+    <tr>
+      <td><span class="dose-tag high">초고용량</span></td>
+      <td><strong>2.5mg/kg</strong></td>
+      <td><strong>888~1,000mg</strong></td>
+      <td>주 6회</td>
+      <td>광범위 전이·예후 매우 불량 (일시적 시각 부작용 가능)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="callout">
+  <strong>📐 줄리의 추정 용량 해석</strong>
+  줄리가 복용하는 페이스트 1g(연필 지우개 크기) 기준:<br>
+  · 이버멕틴: 1회 ~18.7mg, 2회/일 = ~37.4mg/일 → 70kg 가정 시 <strong>~0.53 mg/kg</strong> (저~중간 용량 사이)<br>
+  · 펜벤다졸: 1회 ~100mg, 2회/일 = ~200mg/일 → 마키스 <strong>중간 용량(222mg)에 근접</strong><br>
+  · 줄리 본인 강조: <em>"항상 체중에 따라 구충제 용량을 조절하세요. 나는 강아지들 구충하기 전에 항상 몸무게를 잰답니다."</em>
+</div>
+
+<h3>📈 줄리의 복용 단계별 Escalation (치료 강도 변화)</h3>
+<p>줄리는 자신의 상태에 따라 복용 강도를 <strong>3단계로 구분</strong>하여 조절했습니다. 이는 그녀가 페이스북 댓글에서 직접 설명한 내용입니다.</p>
+<div style="overflow-x:auto;">
+<table class="sched-table">
+  <thead>
+    <tr><th>단계</th><th>상태</th><th>1일 빈도</th><th>주기</th><th>비고</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="dose-tag low">1단계</span></td>
+      <td><strong>예방 목적</strong> (진단 전)</td>
+      <td>1일 1회</td>
+      <td><strong>4일 ON / 3일 OFF</strong></td>
+      <td>작년부터 가끔 복용. 진단 몇 달 전 중단했었음.</td>
+    </tr>
+    <tr>
+      <td><span class="dose-tag mid">2단계</span></td>
+      <td><strong>현재: 적극적 치료</strong> (암 진단 후~관해까지)</td>
+      <td>1일 1~2회</td>
+      <td><strong>6일 ON / 1일 OFF</strong></td>
+      <td>아침(이버멕틴) + 저녁(펜벤다졸) 시간차 복용. 주말 견종 쇼 출장 시 복용 중단.</td>
+    </tr>
+    <tr>
+      <td><span class="dose-tag low">3단계</span></td>
+      <td><strong>향후: 관해 후 유지</strong> (암 소멸 확인 후)</td>
+      <td>1일 1회</td>
+      <td><strong>4일 ON / 3일 OFF</strong></td>
+      <td>줄리 언급: "암이 완전히 사라질 때까지 현재 프로토콜(2단계)을 지속하고, 이후 유지 요법으로 전환할 것"</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>🌿 천연 보충제 및 영양제</h3>
+
+<div class="supp-list">
+  <div class="supp-item"><div class="name">그라비올라 (Soursop)</div><div class="dose">1,000mg/일 (500mg×2캡슐) — NOW</div></div>
+  <div class="supp-item"><div class="name">강황 (Turmeric)</div><div class="dose">1,000mg/일 — Nature's Bounty</div></div>
+  <div class="supp-item"><div class="name">비타민 C</div><div class="dose">1,000mg/일 — Rexall (로즈힙 포함)</div></div>
+  <div class="supp-item"><div class="name">비타민 D3</div><div class="dose">1,000 IU/일 — Rexall</div></div>
+  <div class="supp-item"><div class="name">비타민 A</div><div class="dose">10,000 IU/일 — NOW</div></div>
+  <div class="supp-item"><div class="name">비타민 E</div><div class="dose">180mg (400 IU)/일 — Rexall</div></div>
+  <div class="supp-item"><div class="name">비타민 B-12</div><div class="dose">1,000mcg/일 — Rexall</div></div>
+  <div class="supp-item"><div class="name">밀크씨슬</div><div class="dose">175mg/일 — Nature's Bounty</div></div>
+  <div class="supp-item"><div class="name">칼슘·마그네슘·아연</div><div class="dose">복합 제제 — Family Wellness</div></div>
+  <div class="supp-item"><div class="name">Speicher's Liver Formula</div><div class="dose">1~2캡슐, 1일 1~3회 — 아미쉬 천연 간 해독</div></div>
+</div>
+
+<div class="callout">
+  <strong>💡 '6일 복용 / 1일 휴식' 주기의 의미</strong>
+  이 스케줄은 마키스 박사 프로토콜의 표준입니다.
+  암세포에 대한 공격적인 치료 효과를 유지하면서도,
+  약물이 간에서 대사·배출될 시간을 주어 <strong>간 독성 위험을 최소화</strong>하는 전략입니다.
+  줄리는 이에 더해 아미쉬 천연 간 해독제(Speicher's Liver Formula)와 밀크씨슬을 병행하며
+  간 보호에 각별히 신경 쓰고 있습니다.
+</div>
+
+<!-- ============ FLOWCHART: PROTOCOL STRUCTURE ============ -->
+<h3>🔄 프로토콜 구조 한눈에 보기</h3>
+<div class="flowchart">
+  <div class="flow-node accent">마키스 박사<br>암 프로토콜</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node">이버멕틴<br>+ 펜벤다졸</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node">6일 복용<br>1일 휴식</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node">간 보호<br>(밀크씨슬 +<br>Liver Formula)</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node green">2주: WBC 정상<br>33일: 4mm↓</div>
+</div>
+<div class="flowchart" style="margin-top:8px;">
+  <div class="flow-node">아미쉬 전통 요법</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node">그라비올라<br>1,000mg</div>
+  <span class="flow-arrow">+</span>
+  <div class="flow-node">기초 영양제<br>(A·C·D3·E·B12<br>+ 미네랄)</div>
+  <span class="flow-arrow">→</span>
+  <div class="flow-node green">종양 전문의<br>"Keep doing it"</div>
+</div>
+
+<!-- ============ 5. WHY JULIE COULD DO THIS ============ -->
+<h2>5. 왜 줄리는 이 길을 '쉽게' 시작할 수 있었나</h2>
+
+<p>
+  줄리가 복잡한 장벽을 넘어 이 요법을 유연하게 받아들일 수 있었던 데는
+  <strong>세 가지 핵심 배경</strong>이 작용했습니다.
+</p>
+
+<h3>🐕 강아지 브리더로서의 전문성</h3>
+<p>
+  줄리는 전문적으로 <strong>강아지를 번식시키고 쇼에 내보내는 브리더(Breeder)</strong>입니다.
+  그녀는 강아지 구충 시 항상 체중을 재고 정확한 용량을 투약하는 방식에 매우 익숙했습니다.
+  이버케어(IVERCARE)나 세이프가드(Safe-Guard) 같은 구충제는 원래 말이나 가축용 제품으로,
+  동물과 밀접하게 일하는 환경 덕분에 이러한 약물의 존재와 사용법에 대해
+  일반인보다 훨씬 높은 접근성과 지식을 가지고 있었습니다.
+  <strong>자신의 직업적 숙련도를 투병 과정에 그대로 적용</strong>한 것입니다.
+</p>
+
+<h3>📱 온라인 환자 커뮤니티의 집단 지성</h3>
+<p>
+  줄리는 <strong>'Ivermectin and Cancer Discussion Group'</strong>이라는 페이스북 커뮤니티에서 활동하며
+  마키스 박사의 프로토콜 차트, 복용 스케줄, 병행 보충제 정보를 얻었습니다.
+  이 그룹 내에서 공유되는 집단 지성과 성공 사례들이
+  그녀가 이 요법을 선택하고 유지하는 데 강력한 확신을 주었습니다.
+</p>
+
+<h3>🏘️ 아미쉬 공동체의 전통 지식</h3>
+<p>
+  줄리는 간 해독제(Speicher's Liver Formula)와 그라비올라(Graviola)를
+  <strong>아미쉬 상점(Amish Store)에서 직접 구매</strong>했습니다.
+  그녀는 이를 "아미쉬 요법(Amish Remedy)"이라고 부르며,
+  지역 공동체에서 구전되는 천연 요법들을 적극적으로 탐색하고 자신의 프로토콜에 통합했습니다.
+</p>
+
+<!-- ============ 6. KEY INSIGHT ============ -->
+<h2>6. 핵심 교훈: 환자 주도의 치유</h2>
+
+<p>
+  줄리의 사례에서 가장 주목할 점은 그녀가 <strong>표준 치료를 거부한 것이 아니라,
+  자신이 가장 잘 아는 도구를 활용해 스스로의 경로를 개척</strong>했다는 사실입니다.
+</p>
+
+<div class="proto-grid">
+  <div class="proto-card">
+    <h4>병원의 역할</h4>
+    <ul>
+      <li>🔬 혈액 검사·CT·PET 스캔·생검으로 <strong>정확한 진단</strong></li>
+      <li>📏 영상의학적 <strong>객관적 경과 측정</strong></li>
+      <li>👨‍⚕️ 전문의의 <strong>모니터링과 피드백</strong></li>
+      <li>📅 6주 간격 <strong>추적 관찰 예약</strong></li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>줄리의 역할</h4>
+    <ul>
+      <li>📚 커뮤니티에서 <strong>프로토콜 연구</strong></li>
+      <li>💊 체중 기반 <strong>정밀한 용량 조절</strong></li>
+      <li>🌿 <strong>보충제 선별 및 병행</strong></li>
+      <li>📋 <strong>간 보호 전략</strong> 수립</li>
+      <li>📝 자신의 경과를 <strong>기록·공유</strong></li>
+    </ul>
+  </div>
+</div>
+
+<p>
+  줄리는 병원의 표준 '치료'(화학요법·방사선·수술)는 받지 않았지만,
+  <strong>'진단'과 '경과 확인'을 위해서는 병원 시스템을 철저히 이용</strong>했습니다.
+  이것이 환자 중심 접근의 핵심입니다.
+  병원의 진단 인프라 + 환자 스스로의 연구 = 더 나은 정보에 기반한 선택.
+</p>
+
+<!-- ============ 7. COMMUNITY RESPONSE ============ -->
+<h2>7. 커뮤니티의 반응 (실제 페이스북 댓글 기반)</h2>
+<p>
+  줄리가 2026년 4월 15일과 4월 28일 두 차례에 걸쳐 페이스북 그룹에 자신의 호전 소식을 공유했을 때,
+  총 <strong>100개 이상의 댓글</strong>이 달렸습니다. 주요 반응 유형과 실제 사례입니다.
+</p>
+
+<div class="proto-grid">
+  <div class="proto-card">
+    <h4>🎉 축하와 격려 (가장 많음)</h4>
+    <ul>
+      <li>"So happy for you!!"</li>
+      <li>"Awesome work on your part!"</li>
+      <li>"Keep the Faith!"</li>
+      <li>"Praise God/Jesus"</li>
+      <li>"That's awesome! So happy for you!!!"</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>📋 프로토콜 정보 요청</h4>
+    <ul>
+      <li>"How much of iver & fenben did you take?"</li>
+      <li>"Please list all the supplements and dosage"</li>
+      <li>"Where did you get liver cleanse?"</li>
+      <li>"Where did you get your iver and fen?"</li>
+      <li>"What vitamins and supplements?"</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>🏥 의사 소통 관련 논의</h4>
+    <ul>
+      <li>"Did you tell your doctor?"</li>
+      <li>"What was their reaction?"</li>
+      <li>"Don't tell them — they may deny treating you"</li>
+      <li>"Does your oncologist prescribe the Iv and Fen?" → "<strong>No they can't</strong>" (줄리 답변)</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>⚠️ 추가 조언과 주의사항</h4>
+    <ul>
+      <li>"Get off B vitamins and beta-carotene — they help cancer cells grow"</li>
+      <li>"Try Black Seed oil, Paw Paw extract"</li>
+      <li>"Never get mammograms again — use ultrasound or thermography"</li>
+      <li>"TUDCA is better than milk thistle"</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>🐕 서비스 독 관련</h4>
+    <ul>
+      <li>"How did the dog detect it?"</li>
+      <li>"That's amazing! So glad he found it"</li>
+      <li>"Swagger will now be trained for cancer detection"</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>💊 복용법 실질적 질문</h4>
+    <ul>
+      <li>"Do you take them together? Some say not to"</li>
+      <li>"You do Iver and Fenben two times a day? AM and PM?"</li>
+      <li>"Are you also on chemo?"</li>
+      <li>"I started iver in the morning and fenben in the afternoon" (다른 회원)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 8. PHARMACOLOGY HYPOTHESIS ============ -->
+<h2>8. 약리학·약동학적 가설: 왜 림프종이 줄어들었을까?</h2>
+<p>
+  아래는 종양학 연구자(oncology researcher) 관점에서, 줄리의 호전을 설명할 수 있는 <strong>그럴듯한 과학적 가설</strong>들입니다.
+  주의: 이는 검증된 사실이 아니라 <strong>기존 연구 문헌에 기반한 추론</strong>이며, 대규모 임상시험으로 입증된 바 없습니다.
+</p>
+
+<h3>🔬 이버멕틴(Ivermectin)의 항림프종 작용 기전</h3>
+<div class="proto-grid">
+  <div class="proto-card">
+    <h4>PAK1 경로 억제</h4>
+    <ul>
+      <li>이버멕틴은 <strong>PAK1(p21-activated kinase 1)</strong>의 강력한 억제제입니다</li>
+      <li>PAK1은 많은 B세포 림프종에서 <strong>과발현</strong>되어 있으며, 암세포 증식·생존·전이를 촉진합니다</li>
+      <li>PAK1 억제 → AKT/mTOR 신호전달 차단 → <strong>림프종 세포 사멸(apoptosis) 유도</strong></li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>Wnt/β-catenin 경로 차단</h4>
+    <ul>
+      <li>비호지킨 림프종에서 Wnt 신호전달은 종양 줄기세포 유지에 핵심적 역할</li>
+      <li>이버멕틴은 <strong>β-catenin 핵 내 이동을 차단</strong>하여 Wnt 표적 유전자 발현 억제</li>
+      <li>림프종 줄기세포의 자가 재생(self-renewal) 능력 감소</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>미토콘드리아 사멸 경로 활성화</h4>
+    <ul>
+      <li>이버멕틴은 림프종 세포에서 <strong>미토콘드리아 막 전위(MMP, Mitochondrial Membrane Potential)</strong> 붕괴 유발</li>
+      <li>Cytochrome c 방출 → caspase-9 → caspase-3 연쇄 활성화 → 내인성 apoptosis</li>
+      <li>정상 림프구보다 암세포에서 선택적 독성 보고됨</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>면역조절 & 자가포식</h4>
+    <ul>
+      <li>이버멕틴은 <strong>P2X4/P2X7 퓨린성 수용체</strong>를 조절하여 항종양 면역반응 강화</li>
+      <li>림프종 세포에서 <strong>autophagy flux</strong>를 교란시켜 세포사멸 촉진</li>
+      <li>염증성 사이토카인(IL-6, TNF-α) 분비 조절 → 종양 미세환경 변화</li>
+    </ul>
+  </div>
+</div>
+
+<h3>🧬 펜벤다졸(Fenbendazole)의 항림프종 작용 기전</h3>
+<div class="proto-grid">
+  <div class="proto-card">
+    <h4>미세소관(Microtubule) 붕괴</h4>
+    <ul>
+      <li>펜벤다졸은 <strong>β-tubulin에 결합</strong>하여 미세소관 중합을 억제 — <strong>빈카 알칼로이드(vinca alkaloids)와 동일 기전</strong></li>
+      <li>빈크리스틴(vincristine)은 실제로 비호지킨 림프종의 <strong>표준 화학요법(R-CHOP)</strong> 구성 약물</li>
+      <li>유사분열 정지(mitotic arrest) → 림프종 세포 apoptosis</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>대사 취약성 공격 (Warburg 효과 역전)</h4>
+    <ul>
+      <li>암세포는 정상 세포보다 포도당 흡수가 10~20배 높음(Warburg 효과)</li>
+      <li>펜벤다졸은 <strong>GLUT1 포도당 수송체</strong>의 세포막 발현을 감소시킴</li>
+      <li>림프종 세포는 대사 스트레스에 빠지고, 특히 PET-CT상 SUVmax가 높은(당 대사 활발한) 부위에 효과적일 가능성</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>HIF-1α & p53 경로</h4>
+    <ul>
+      <li>펜벤다졸은 <strong>HIF-1α(hypoxia-inducible factor)</strong> 분해를 촉진 → 혈관신생(angiogenesis) 억제</li>
+      <li><strong>p53 재활성화</strong>를 통해 돌연변이 p53을 가진 림프종 세포에서도 apoptosis 유도 가능</li>
+      <li>NF-κB 경로 억제 → 림프종 세포의 생존 신호 차단</li>
+    </ul>
+  </div>
+  <div class="proto-card">
+    <h4>시너지 가설</h4>
+    <ul>
+      <li><strong>이버멕틴(PAK1/AKT/mTOR)</strong> + <strong>펜벤다졸(미세소관/대사)</strong> = 상호보완적 타격</li>
+      <li>이버멕틴이 P-glycoprotein을 억제하여 펜벤다졸의 <strong>세포 내 축적을 증가</strong>시킬 가능성</li>
+      <li>두 약물 모두 BBB(혈액뇌장벽) 통과 가능 → 중추신경계 림프종에도 잠재적 유용성</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout warn">
+  <strong>⚠️ 가설의 한계</strong>
+  위 기전들은 <strong>in vitro(세포실험)</strong> 또는 <strong>동물모델</strong> 수준의 연구 결과에 기반합니다.
+  인간을 대상으로 한 전향적 임상시험 데이터는 존재하지 않습니다.<br><br>
+  또한 비호지킨 림프종의 일부 아형(저위험군·Indolent)은 <strong>치료 없이도 자연 관해(spontaneous regression)</strong>가
+  발생할 수 있어, 줄리의 호전이 약물 효과인지 자연 경과인지 현재로선 구분할 수 없습니다.<br><br>
+  다만, 33일이라는 단기간에 림프절이 23% 가까이 축소된 점, 백혈구 수치가 2주 만에 정상화된 점,
+  그리고 전혀 다른 두 경로를 표적으로 하는 약물을 병용했다는 점은
+  <strong>약리학적으로 충분히 설명 가능한 범위 내에 있습니다.</strong>
+</div>
+
+<!-- ============ 9. FAQ ============ -->
+<h2>9. 자주 묻는 질문 (FAQ)</h2>
+
+<div class="faq-item open">
+  <button class="faq-q">줄리는 화학요법(항암)이나 방사선 치료를 전혀 받지 않았나요?</button>
+  <div class="faq-a">
+    <strong>네, 전혀 받지 않았습니다.</strong> 줄리는 표준 항암 치료(화학요법·방사선·수술)를 일절 받지 않고,
+    오로지 이버멕틴·펜벤다졸·보충제만으로 구성된 자가 프로토콜만 시행했습니다.
+    단, <strong>진단(혈액 검사·CT·PET-CT·생검)과 경과 모니터링</strong>은 병원 시스템을 통해 이루어졌습니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">이버멕틴과 펜벤다졸의 복용량은 어떻게 결정하나요? (mg 환산)</button>
+  <div class="faq-a">
+    줄리는 <strong>마키스 박사의 체중별 통합 용량 차트</strong>를 기준으로 삼았습니다.<br><br>
+    <strong>프로토콜 기준 (마키스 박사):</strong><br>
+    · 이버멕틴: 0.5mg/kg(저용량) → 1.0mg/kg(중간) → 2.0mg/kg(고용량) → 2.5mg/kg(초고용량)<br>
+    · 펜벤다졸: 222mg/일(저~중간) → 444mg/일(고용량) → 888~1,000mg/일(초고용량)<br><br>
+    <strong>줄리의 실제 복용량 (mg 추정):</strong><br>
+    · 이버멕틴 페이스트(1.87%): 연필 지우개 크기(약 1g) = <strong>1회 약 18.7mg</strong>. 1일 2회 시 약 37.4mg/일<br>
+    · 펜벤다졸 페이스트(10%): 연필 지우개 크기(약 1g) = <strong>1회 약 100mg</strong>. 1일 2회 시 약 200mg/일<br>
+    · 70kg 성인 기준: 이버멕틴 약 0.53mg/kg/일 + 펜벤다졸 약 200mg/일<br><br>
+    페이스트 제품이기 때문에 정확한 mg 측정이 어려워, 줄리는 <strong>'연필 지우개 크기'</strong>라는 실용적 방법을 썼습니다.
+    그녀는 "항상 체중에 따라 구충제 용량을 조절하세요. 강아지들 구충하기 전에 항상 몸무게를 재는 것과 똑같은 원리"라고 강조했습니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">이버멕틴과 펜벤다졸을 동시에 복용하나요? 아니면 따로 복용하나요?</button>
+  <div class="faq-a">
+    줄리는 두 약물을 <strong>같은 시간에 함께 복용</strong>합니다 (아침, 혹은 아침+저녁 2회).<br><br>
+    페이스북 댓글 중 Deyanira Cabrera라는 다른 회원이 "이버멕틴은 아침에, 펜벤다졸은 오후에 복용한다"고 언급했지만,
+    <strong>이는 줄리의 방식이 아닙니다.</strong> 줄리는 본인의 게시글에서 "매일, 때로는 하루 2회 복용한다"고만 밝혔으며,
+    두 약물을 시간차로 분리한다는 언급은 없었습니다.<br><br>
+    댓글에서 다른 회원이 "함께 복용해도 되나요?"라고 묻자 줄리는 특별히 분리 복용을 지시하지 않았습니다.
+    두 약물 모두 식사 중 또는 직후에 복용하는 것이 흡수율 향상에 도움이 됩니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">줄리는 의사에게 이버멕틴·펜벤다졸 복용 사실을 말했나요?</button>
+  <div class="faq-a">
+    원본 게시글과 댓글을 검토한 결과, <strong>줄리는 의사에게 이버멕틴·펜벤다졸 복용 사실을 말했는지 여부를 밝히지 않았습니다.</strong><br><br>
+    확인된 사실은 다음과 같습니다:<br>
+    · 의사는 CT·PET 스캔 결과를 보고 "Keep doing what you are doing. No treatment now."라고 말했습니다.<br>
+    · 다른 회원이 "의사가 이버멕틴과 펜벤다졸을 처방해 주었나요?"라고 묻자, 줄리는 <strong>"아니요, 의사는 처방할 수 없습니다(No they can't)"</strong>라고 답했습니다.<br>
+    · 의사가 "keep doing what you are doing"이라고 말한 것은 <strong>검사 결과의 호전</strong>에 근거한 것이지, 구체적인 자가 요법 내용을 알고 한 말인지는 확인되지 않습니다.<br><br>
+    <strong>커뮤니티의 논쟁:</strong> 댓글에서는 "의사에게 말하면 치료를 거부당할 수 있으니 비밀로 하라"는 의견과,
+    "의사에게 솔직히 말했다"는 다른 회원들의 경험담이 공존했습니다.
+    줄리 본인은 이 논쟁에서 어느 쪽인지 명확히 밝히지 않았습니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">4mm 감소가 정말 의미 있는 수치인가요?</button>
+  <div class="faq-a">
+    영상의학적으로 <strong>매우 의미 있는 호전</strong>입니다. 33일이라는 짧은 기간 동안
+    17.1mm → 13.2mm로 약 <strong>22.8% 감소</strong>한 것은 '부분 관해(Partial Remission)' 방향으로 가는
+    긍정적인 신호로 해석됩니다. 담당 종양 전문의도 이 결과에 깊은 인상을 받았습니다.
+    다만, (1) 정상 서혜부 림프절은 10mm 미만이므로 아직 정상화되지는 않았고,
+    (2) PET-CT의 SUVmax(대사 활성도) 수치 확인이 필요하며,
+    (3) 비호지킨 림프종 일부 아형은 자연 관해 가능성도 있어 신중한 해석이 필요합니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">'6일 복용 / 1일 휴식' 주기는 왜 중요한가요?</button>
+  <div class="faq-a">
+    이 주기는 <strong>간 독성을 예방하기 위한 전략적 휴식</strong>입니다.
+    구충제를 고용량으로 매일 연속 복용하면 간에 축적되어
+    약물 유발 간 손상(Drug-Induced Liver Injury)이나 골수 억제 위험이 높아집니다.
+    1일의 휴식 기간은 약물이 간에서 대사·배출될 시간을 주어
+    장기 부담을 줄이는 안전장치입니다.
+    줄리는 이에 더해 밀크씨슬과 Speicher's Liver Formula로 간 보호를 강화하고 있습니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">페이스트 형태 구충제(말용)를 사람이 복용해도 안전한가요?</button>
+  <div class="faq-a">
+    줄리가 사용한 IVERCARE(이버멕틴 1.87% 페이스트)와 Safe-Guard(펜벤다졸 10% 페이스트)는
+    모두 <strong>말(horse)용 구충제</strong>입니다. 사람에게 승인된 제형이 아닙니다.
+    줄리는 자신의 체중에 맞춰 '연필 지우개 크기'로 용량을 조절했으며,
+    정기적으로 혈액 검사를 통해 간 수치와 백혈구 수치를 모니터링하고 있습니다.
+    <strong>이러한 사용은 의학적으로 검증된 방법이 아니며,
+    고용량 장기 복용 시 심각한 간 독성과 골수 억제 위험이 있습니다.</strong>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">그라비올라(Graviola/Soursop)는 어떤 효과가 있나요?</button>
+  <div class="faq-a">
+    그라비올라는 아미쉬 공동체에서 전통적으로 사용되어 온 천연 보충제입니다.
+    제품 라벨에는 "건강한 세포 기능 지원" 및 "유해 산소 제거(항산화)" 효능이 표기되어 있습니다.
+    실험실 연구에서 일부 항암 가능성이 보고된 바 있으나,
+    <strong>인간 대상 대규모 임상시험을 통해 항암 효과가 입증된 것은 아닙니다.</strong>
+    줄리는 NOW 브랜드의 500mg 캡슐을 하루 2캡슐(총 1,000mg) 복용하고 있습니다.
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-q">줄리의 프로토콜을 그대로 따라 해도 되나요?</button>
+  <div class="faq-a">
+    <strong>절대 그대로 따라 해서는 안 됩니다.</strong>
+    줄리의 사례는 개인의 경험이며, 의학적으로 검증된 표준 치료법이 아닙니다.
+    모든 사람의 암 유형·병기·체중·건강 상태는 다르며,
+    구충제 고용량 장기 복용은 <strong>심각한 간 독성·골수 억제·시각 장애</strong> 등
+    치명적인 부작용을 일으킬 수 있습니다.
+    또한 비호지킨 림프종 중 일부 저위험군은 치료 없이도 자연 관해되는 경우가 있어,
+    줄리의 호전이 100% 약물 효과라고 단정할 수 없습니다.
+    <strong>어떤 자가 요법이든 시행 전 반드시 전문의와 상담하고 정기적인 모니터링을 받으십시오.</strong>
+  </div>
+</div>
+
+<!-- ============ 9. CAUTION ============ -->
+<div class="callout warn">
+  <strong>⚠️ 의학적 주의사항</strong>
+  이 페이지는 환자 커뮤니티의 정보 공유 목적으로 작성되었으며, 의학적 조언이 아닙니다.
+  이버멕틴과 펜벤다졸의 항암 목적 사용은 FDA 승인 사항이 아니며,
+  대규모 임상시험을 통해 표준 치료로 입증되지 않았습니다.
+  구충제를 고용량으로 장기 복용할 경우 심각한 간 독성, 골수 억제,
+  시각 장애 등의 부작용이 발생할 수 있습니다.
+  본인의 치료법에 관한 모든 결정은 반드시 담당 전문의와 상의하십시오.
+</div>
+
+<!-- ============ 10. HOPE MESSAGE ============ -->
+<h2>10. 우리 모두에게 건네는 희망의 메시지</h2>
+
+<p>
+  줄리의 사례는 단순히 운이 좋았던 결과가 아닙니다.
+  암이라는 거대한 공포 앞에서 <strong>"마음이 무너졌던"</strong> 한 환자가,
+  자신이 가장 잘 아는 전문 지식을 활용해 스스로의 치료 경로를 개척했을 때
+  어떤 안도감과 호전이 찾아오는지 보여주는 소중한 증거입니다.
+</p>
+
+<p>
+  그녀의 림프절을 4mm 줄어들게 한 것은 약물 그 자체를 넘어,
+  <strong>환자가 중심이 되어 자신의 치유력을 믿고 행동한 용기</strong>였습니다.
+</p>
+
+<p>
+  줄리는 우리에게 보여줍니다.
+  암 진단이 곧 무력감을 의미하지는 않는다는 것을.
+  환자 스스로 정보를 찾고, 질문하고, 선택할 수 있다는 것을.
+  그리고 그 선택이 때로는 의사조차 인정하는 결과로 이어질 수 있다는 것을.
+</p>
+
+<div class="doc-quote" style="text-align:center;">
+  <div class="en" style="font-style:normal;">"우리 곁에 이미 존재하는 작고 사소한 도구들이,<br>때로는 가장 거대한 변화의 문을 여는 열쇠가 될 수 있지 않을까요?"</div>
+</div>
+
+<div style="text-align:center; margin-top:28px; padding:20px; background:var(--surface); border-radius:var(--radius-md); font-size:.85rem;">
+  <p style="margin-bottom:8px;">
+    📌 <strong>원본 게시글 확인하기</strong>
+  </p>
+  <p style="margin-bottom:4px;">
+    <a href="https://www.facebook.com/groups/794029916513708/permalink/997358276180870/" target="_blank" rel="noopener">
+      2026.04.28 게시글 — "I am very impressed with my results..."
+    </a>
+  </p>
+  <p style="margin-bottom:8px;">
+    <a href="https://www.facebook.com/groups/794029916513708/user/100080663256998" target="_blank" rel="noopener">
+      줄리(Julie)의 페이스북 프로필 — Ivermectin and Cancer Discussion Group
+    </a>
+  </p>
+  <p style="color:var(--text-m); font-size:.82rem; margin-top:12px;">
+    ⚠️ 이 문서는 인공지능 도구로 정리·분석한 것입니다. 오류나 누락이 있을 수 있으므로 <strong>반드시 위 원본 게시글을 직접 확인하세요.</strong><br>
+    개인정보 보호를 위해 환자의 이름 외 신상 정보는 생략하였습니다.
+  </p>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer style="margin-top:36px; padding-top:24px; border-top:2px solid var(--border); text-align:center; font-size:.78rem; color:var(--text-l);">
+  용도변경 약물 활용 환자 중심형 암 임상시험 커뮤니티 · 호전 사례 아카이브<br>
+  <span style="font-size:.7rem;">본 문서에 포함된 의학적 가설은 참고용이며, 어떠한 치료법도 권장하거나 보증하지 않습니다.</span>
+</footer>
+
+<!-- ============ FAQ TOGGLE SCRIPT ============ -->
+<script>
+// Tiny script for FAQ accordion — no framework needed
+document.querySelectorAll('.faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
