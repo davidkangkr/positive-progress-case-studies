@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>브리타니 님 남편 사례 정리 — 생식세포종양의 체세포 전환(육종)</title>
+<style>
+  :root{
+    --navy:#0f2942;
+    --navy-2:#1e3a5f;
+    --teal:#0f766e;
+    --teal-2:#14b8a6;
+    --amber:#b45309;
+    --amber-2:#f59e0b;
+    --red:#b91c1c;
+    --red-2:#dc2626;
+    --ink:#1f2937;
+    --muted:#5b6b7c;
+    --line:#dbe3ea;
+    --bg:#f5f7f9;
+    --card:#ffffff;
+    --soft:#eef3f6;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:16px;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:940px; margin:0 auto; padding:0 22px 80px;}
+
+  /* ---------- header ---------- */
+  header.top{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#eef4f9;
+    padding:44px 0 40px;
+    border-bottom:5px solid var(--teal);
+  }
+  header.top .wrap{padding-bottom:0;}
+  .eyebrow{
+    font-size:13px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--teal-2); font-weight:700; margin:0 0 12px;
+  }
+  header.top h1{
+    font-size:30px; line-height:1.35; margin:0 0 14px; font-weight:800; color:#fff;
+  }
+  header.top p.sub{margin:0; color:#c4d3df; font-size:15.5px; max-width:640px;}
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;
+  }
+  .chip{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22);
+    padding:6px 13px; border-radius:999px; font-size:13px; color:#dcedf4;
+  }
+
+  /* ---------- top disclaimer ---------- */
+  .notice{
+    background:#fff7ed; border:1px solid #fcd9a8; border-left:5px solid var(--amber-2);
+    border-radius:12px; padding:16px 20px; margin:26px 0; font-size:14.5px; color:#7c4a12;
+  }
+  .notice strong{color:var(--amber);}
+
+  /* ---------- sections ---------- */
+  section{margin:44px 0 0;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin:0 0 18px;}
+  .sec-num{
+    font-size:14px; font-weight:800; color:var(--teal);
+    border:2px solid var(--teal); border-radius:8px; padding:3px 9px; flex:none;
+    letter-spacing:.02em;
+  }
+  h2{font-size:22px; margin:0; font-weight:800; color:var(--navy); line-height:1.4;}
+  .lead{color:var(--muted); font-size:15px; margin:2px 0 0;}
+
+  h3{font-size:17px; color:var(--navy-2); margin:26px 0 10px; font-weight:700;}
+  p{margin:0 0 12px;}
+  .en{color:var(--muted); font-style:normal; font-size:.94em;}
+
+  /* ---------- generic card ---------- */
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; margin:14px 0; box-shadow:0 1px 2px rgba(15,41,66,.04);
+    page-break-inside:avoid;
+  }
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  .dx-card{border-top:4px solid var(--navy); page-break-inside:avoid;}
+  .dx-card.d1{border-top-color:var(--navy-2);}
+  .dx-card.d2{border-top-color:var(--teal);}
+  .dx-card.d3{border-top-color:var(--red-2);}
+  .dx-card h4{margin:0 0 4px; font-size:16.5px; color:var(--navy);}
+  .dx-card .ko{font-size:13px; color:var(--muted); margin:0 0 10px;}
+  .dx-card p{font-size:14.5px; margin:0;}
+  .tag{
+    display:inline-block; font-size:12px; font-weight:700; padding:2px 9px;
+    border-radius:6px; margin-top:12px;
+  }
+  .tag.fast{background:#fee2e2; color:var(--red);}
+  .tag.mixed{background:#e0f2f1; color:var(--teal);}
+
+  ul.clean{margin:6px 0 12px; padding-left:20px;}
+  ul.clean li{margin:6px 0;}
+
+  .callout{
+    background:var(--soft); border-radius:12px; padding:16px 20px; margin:14px 0;
+    border-left:4px solid var(--teal); page-break-inside:avoid;
+  }
+  .callout.warn{background:#fef2f2; border-left-color:var(--red-2);}
+  .callout.amber{background:#fff7ed; border-left-color:var(--amber-2);}
+  .callout h4{margin:0 0 6px; font-size:15px;}
+
+  /* ---------- SVG blocks ---------- */
+  .figure{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; margin:16px 0; page-break-inside:avoid;}
+  .figure svg{width:100%; height:auto; display:block;}
+  .figcap{font-size:13px; color:var(--muted); margin-top:10px; text-align:center;}
+
+  /* ---------- table ---------- */
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; page-break-inside:avoid; background:var(--card); border-radius:12px; overflow:hidden;}
+  th,td{padding:12px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{background:var(--navy); color:#fff; font-weight:700; font-size:13.5px;}
+  tbody tr:nth-child(even){background:#f8fafb;}
+  td.lvl{font-weight:700; white-space:nowrap;}
+  .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle;}
+
+  /* ---------- references ---------- */
+  .refblock{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:16px 0;}
+  .refblock h3{margin-top:0;}
+  ol.refs{margin:0; padding-left:22px; font-size:13.5px; color:var(--ink);}
+  ol.refs li{margin:9px 0; line-height:1.6;}
+  ol.refs .jrnl{color:var(--teal); font-weight:600;}
+  ol.refs .yr{color:var(--muted);}
+  .reftag{font-size:11px; font-weight:700; padding:1px 7px; border-radius:5px; margin-left:6px; background:#e0f2f1; color:var(--teal);}
+  .reftag.g{background:#e0e7ff; color:#3730a3;}
+  .reftag.r{background:#fee2e2; color:var(--red);}
+
+  .closing{
+    background:linear-gradient(135deg,#0f2942 0%,#134e4a 100%); color:#eaf4f2;
+    border-radius:16px; padding:30px 30px; margin:34px 0 0;
+  }
+  .closing h2{color:#fff;}
+  .closing p{color:#d3e6e2; font-size:15.5px;}
+
+  footer{margin-top:40px; padding-top:22px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted);}
+
+  /* ---------- print ---------- */
+  @page{margin:16mm 14mm;}
+  @media print{
+    body{background:#fff; font-size:12pt;}
+    .wrap{max-width:none; padding:0;}
+    header.top{border-radius:0;}
+    .card,.figure,.callout,.refblock,table,.dx-card,.closing{box-shadow:none;}
+    section{page-break-before:always;}
+    section.no-break-before{page-break-before:auto;}
+    a{color:inherit; text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">환자 중심 · 용도변경 약물 커뮤니티 자료</p>
+    <h1>브리타니 님 남편의 상황 — 쉽게 정리한 안내서<br>생식세포종양의 체세포 전환(육종)과 앞으로의 선택</h1>
+    <p class="sub">담당 의료진의 설명과 OpenEvidence 2차 소견(3건), 관련 문헌을 근거로, 보호자·가족이 현재 상황을 차근차근 이해할 수 있도록 정리했습니다.</p>
+    <div class="meta-row">
+      <span class="chip">33세 · 남성</span>
+      <span class="chip">최초 진단 2023.11</span>
+      <span class="chip">현재 광범위 전이 · 완화의료 단계</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="notice">
+    <strong>먼저 꼭 확인해 주세요.</strong> 이 자료는 이해를 돕기 위한 <strong>교육용 정리</strong>이며, 의학적 진단·처방을 대체하지 않습니다.
+    어떤 치료(표준 치료, 완화 치료, 용도변경 약물 등)든 <strong>반드시 담당 의료진과 상의</strong>한 뒤 결정해야 합니다.
+    이 문서는 특정 치료를 권유하지 않으며, 검증되지 않은 요법은 "권장"이 아니라 <strong>현재까지의 근거 수준</strong>으로만 객관적으로 설명합니다.
+    구체적인 용량·복용법은 안전을 위해 담지 않았습니다.
+  </div>
+
+  <!-- 1. 타임라인 -->
+  <section class="no-break-before">
+    <div class="sec-head"><span class="sec-num">01</span><div><h2>지금까지의 경과</h2><p class="lead">진단부터 현재까지의 흐름을 시간순으로 보여줍니다.</p></div></div>
+
+    <div class="figure">
+      <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="진단부터 현재까지의 타임라인">
+        <line x1="70" y1="40" x2="70" y2="490" stroke="#cdd8e1" stroke-width="3"/>
+        <!-- item template -->
+        <!-- 2023.11 -->
+        <circle cx="70" cy="55" r="9" fill="#1e3a5f"/>
+        <text x="95" y="49" font-size="15" font-weight="700" fill="#0f2942">2023. 11. 11</text>
+        <text x="95" y="70" font-size="13" fill="#5b6b7c">오른쪽 고환이 크게 부어 내원 → <tspan font-weight="700" fill="#1e3a5f">2기 혼합 배아암</tspan> 진단, 48시간 내 수술</text>
+        <!-- 2023.12-2024.02 -->
+        <circle cx="70" cy="115" r="9" fill="#1e3a5f"/>
+        <text x="95" y="109" font-size="15" font-weight="700" fill="#0f2942">2023. 12 – 2024. 02</text>
+        <text x="95" y="130" font-size="13" fill="#5b6b7c">여러 검사와 조직검사가 이어진 추적 관찰 기간</text>
+        <!-- 2024.08-11 -->
+        <circle cx="70" cy="175" r="9" fill="#b45309"/>
+        <text x="95" y="169" font-size="15" font-weight="700" fill="#0f2942">2024. 08 – 11. 04</text>
+        <text x="95" y="190" font-size="13" fill="#5b6b7c">항암 치료 진행 — 피를 토하는 등 심한 부작용으로 여러 차례 입원</text>
+        <!-- 2025 early -->
+        <circle cx="70" cy="235" r="9" fill="#0f766e"/>
+        <text x="95" y="229" font-size="15" font-weight="700" fill="#0f2942">2025년 초</text>
+        <text x="95" y="250" font-size="13" fill="#5b6b7c">로마린다 대학병원으로 전원 · CT/PET에서 남은 종양 확인</text>
+        <!-- 2025.07 -->
+        <circle cx="70" cy="295" r="9" fill="#0f766e"/>
+        <text x="95" y="289" font-size="15" font-weight="700" fill="#0f2942">2025. 07. 23</text>
+        <text x="95" y="310" font-size="13" fill="#5b6b7c">종양 절제 수술(13.5cm·5.7cm). 11일 뒤 <tspan font-weight="700" fill="#b91c1c">유미성 복수</tspan> 발생(2만 명 중 1명꼴)</text>
+        <!-- 2025.08 -->
+        <circle cx="70" cy="355" r="9" fill="#b91c1c"/>
+        <text x="95" y="349" font-size="15" font-weight="700" fill="#0f2942">2025. 08</text>
+        <text x="95" y="370" font-size="13" fill="#5b6b7c">조직검사에서 <tspan font-weight="700" fill="#b91c1c">테라토마 + 3기 원형세포 육종(체세포 전환)</tspan> 확인</text>
+        <!-- 2025.09-2026.01 -->
+        <circle cx="70" cy="415" r="9" fill="#b45309"/>
+        <text x="95" y="409" font-size="15" font-weight="700" fill="#0f2942">2025. 09 – 2026. 01</text>
+        <text x="95" y="430" font-size="13" fill="#5b6b7c">이 기간 동안 적극적 치료 없이 혈액검사 위주로 경과 관찰</text>
+        <!-- 2026.01-03 -->
+        <circle cx="70" cy="475" r="9" fill="#b91c1c"/>
+        <text x="95" y="469" font-size="15" font-weight="700" fill="#0f2942">2026. 01 – 03</text>
+        <text x="95" y="490" font-size="13" fill="#5b6b7c">대장·소장·좌측신장·비장·췌장, 이어 간·폐로 전이 · 종양 22.4cm까지 성장 → 완화의료 안내</text>
+      </svg>
+      <p class="figcap">그림 1. 최초 진단(2023.11)부터 현재(2026 초)까지의 임상 경과</p>
+    </div>
+  </section>
+
+  <!-- 2. 진단명 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><div><h2>진단명 설명 — 한 몸에 세 종류의 암</h2><p class="lead">남편분은 한 가지가 아닌 세 종류의 암이 복합적으로 나타난 매우 드문 사례입니다.</p></div></div>
+
+    <div class="grid3">
+      <div class="card dx-card d1">
+        <h4>혼합 배아암</h4>
+        <p class="ko">Mixed Embryonal Cancer</p>
+        <p>2023년 11월 고환에서 처음 발견된 암입니다. 빠르게 자라고 다른 부위로 퍼지는 성질이 있는 생식세포종양(GCT)의 한 종류입니다.</p>
+        <span class="tag fast">공격성 · 빠른 전이</span>
+      </div>
+      <div class="card dx-card d2">
+        <h4>테라토마(기형종)</h4>
+        <p class="ko">Teratoma</p>
+        <p>뼈·머리카락 등 여러 조직이 섞여 자라는 종양입니다. 의료진이 "모낭에서 발이 나오는 것 같다"고 표현한 이유이며, 이 안에서 육종이 발견되었습니다.</p>
+        <span class="tag mixed">여러 조직 혼재</span>
+      </div>
+      <div class="card dx-card d3">
+        <h4>원형세포 육종</h4>
+        <p class="ko">Round Cell Sarcoma</p>
+        <p>테라토마 안에서 새롭게 생긴 매우 공격적인 암입니다. 이렇게 생식세포종양이 다른 종류의 암으로 바뀌는 것을 <strong>체세포 전환</strong>이라 합니다.</p>
+        <span class="tag fast">체세포 전환 · 고악성</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>"체세포 전환(somatic transformation)"이 왜 중요할까요?</h4>
+      <p style="margin:0">생식세포종양은 원래 항암치료가 잘 듣는 편이지만, 육종 같은 다른 암으로 <em>전환</em>되면 기존 항암제에 잘 반응하지 않고 <strong>수술로 완전히 제거하는 것이 치료의 핵심</strong>이 됩니다. 뒤(6번)에서 보듯, <strong>전환된 암이 원발 부위에만 있는지, 전이 부위에도 있는지</strong>가 예후를 가르는 가장 중요한 요소입니다.</p>
+    </div>
+  </section>
+
+  <!-- 3. 전이 범위 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><div><h2>병이 퍼진 범위</h2><p class="lead">현재 암세포가 복부의 여러 장기와 간·폐까지 광범위하게 퍼져 있습니다. (개념도 — 실제 해부학과 정확히 일치하지는 않습니다.)</p></div></div>
+
+    <div class="figure">
+      <svg viewBox="0 0 820 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="전이 부위 개념도">
+        <!-- torso -->
+        <rect x="300" y="30" width="220" height="360" rx="90" fill="#eef3f6" stroke="#cdd8e1" stroke-width="2"/>
+        <!-- lungs -->
+        <ellipse cx="365" cy="110" rx="34" ry="46" fill="#fde2e2" stroke="#dc2626" stroke-width="2"/>
+        <ellipse cx="455" cy="110" rx="34" ry="46" fill="#fde2e2" stroke="#dc2626" stroke-width="2"/>
+        <text x="410" y="112" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="700">폐</text>
+        <!-- liver -->
+        <path d="M330 175 q60 -18 130 0 q6 34 -20 46 q-60 12 -104 -6 q-16 -18 -6 -40 z" fill="#fbe4cf" stroke="#b45309" stroke-width="2"/>
+        <text x="392" y="205" font-size="12" fill="#8a4a12" text-anchor="middle" font-weight="700">간</text>
+        <!-- spleen/pancreas -->
+        <ellipse cx="470" cy="230" rx="24" ry="16" fill="#fbe4cf" stroke="#b45309" stroke-width="2"/>
+        <text x="470" y="234" font-size="10.5" fill="#8a4a12" text-anchor="middle" font-weight="700">비장</text>
+        <ellipse cx="360" cy="250" rx="40" ry="14" fill="#fbe4cf" stroke="#b45309" stroke-width="2"/>
+        <text x="360" y="254" font-size="10.5" fill="#8a4a12" text-anchor="middle" font-weight="700">췌장</text>
+        <!-- kidney -->
+        <ellipse cx="330" cy="280" rx="16" ry="26" fill="#fde2e2" stroke="#dc2626" stroke-width="2"/>
+        <text x="330" y="320" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">좌측 신장</text>
+        <!-- bowel / large mass -->
+        <ellipse cx="410" cy="320" rx="70" ry="48" fill="#f7c9c9" stroke="#b91c1c" stroke-width="2.5"/>
+        <text x="410" y="316" font-size="12" fill="#7f1d1d" text-anchor="middle" font-weight="700">대장 · 소장</text>
+        <text x="410" y="336" font-size="11" fill="#7f1d1d" text-anchor="middle">거대 종양 22.4cm</text>
+
+        <!-- legend -->
+        <rect x="590" y="60" width="200" height="150" rx="10" fill="#fff" stroke="#dbe3ea"/>
+        <text x="610" y="86" font-size="13" font-weight="800" fill="#0f2942">전이 부위</text>
+        <circle cx="618" cy="108" r="6" fill="#f7c9c9" stroke="#b91c1c"/><text x="632" y="112" font-size="12.5" fill="#1f2937">대장 · 소장 (거대 종양)</text>
+        <circle cx="618" cy="132" r="6" fill="#fde2e2" stroke="#dc2626"/><text x="632" y="136" font-size="12.5" fill="#1f2937">좌측 신장 · 폐</text>
+        <circle cx="618" cy="156" r="6" fill="#fbe4cf" stroke="#b45309"/><text x="632" y="160" font-size="12.5" fill="#1f2937">간 · 비장 · 췌장</text>
+        <text x="610" y="190" font-size="11.5" fill="#5b6b7c">가장 큰 복부 종양:</text>
+        <text x="610" y="205" font-size="11.5" fill="#5b6b7c">약 22.4 × 17.9 × 24.2 cm</text>
+      </svg>
+      <p class="figcap">그림 2. 전이 부위 개념도 — 대장·소장·좌측 신장·비장·췌장·간·폐</p>
+    </div>
+  </section>
+
+  <!-- 4. 증상과 원인 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><div><h2>현재 증상과 그 원인</h2><p class="lead">몸에 나타나는 변화들은 암의 직접적인 영향과 그로 인한 합병증이 겹친 결과입니다.</p></div></div>
+
+    <div class="figure">
+      <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="원인에서 증상으로 이어지는 흐름도">
+        <!-- causes column -->
+        <text x="130" y="30" font-size="14" font-weight="800" fill="#0f2942" text-anchor="middle">원인</text>
+        <g font-size="12.5" fill="#1f2937">
+          <rect x="20" y="48" width="220" height="52" rx="9" fill="#eef3f6" stroke="#94a8b8"/>
+          <text x="130" y="70" text-anchor="middle" font-weight="700">거대 종양 · 광범위 전이</text>
+          <text x="130" y="88" text-anchor="middle" fill="#5b6b7c">장기·혈관·림프관 압박</text>
+
+          <rect x="20" y="118" width="220" height="52" rx="9" fill="#eef3f6" stroke="#94a8b8"/>
+          <text x="130" y="140" text-anchor="middle" font-weight="700">수술 후 림프액 누출</text>
+          <text x="130" y="158" text-anchor="middle" fill="#5b6b7c">유미성 복수(Chylous ascites)</text>
+
+          <rect x="20" y="188" width="220" height="52" rx="9" fill="#eef3f6" stroke="#94a8b8"/>
+          <text x="130" y="210" text-anchor="middle" font-weight="700">영양 손실 · 저알부민혈증</text>
+          <text x="130" y="228" text-anchor="middle" fill="#5b6b7c">단백질·지방 손실, 악액질</text>
+
+          <rect x="20" y="258" width="220" height="52" rx="9" fill="#eef3f6" stroke="#94a8b8"/>
+          <text x="130" y="280" text-anchor="middle" font-weight="700">거동 저하 · 정맥/림프 순환 저하</text>
+          <text x="130" y="298" text-anchor="middle" fill="#5b6b7c">IVC(대정맥) 압박 가능성</text>
+        </g>
+
+        <!-- arrows -->
+        <g stroke="#0f766e" stroke-width="2" fill="none">
+          <path d="M240 74 C320 74 320 150 400 150" marker-end="url(#ah)"/>
+          <path d="M240 144 C320 144 320 210 400 210" marker-end="url(#ah)"/>
+          <path d="M240 214 C320 214 320 270 400 270" marker-end="url(#ah)"/>
+          <path d="M240 284 C320 284 320 330 400 330" marker-end="url(#ah)"/>
+          <path d="M240 74 C310 74 310 90 400 90" marker-end="url(#ah)"/>
+        </g>
+        <defs>
+          <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+            <path d="M0 0 L9 4.5 L0 9 z" fill="#0f766e"/>
+          </marker>
+        </defs>
+
+        <!-- symptoms column -->
+        <text x="600" y="30" font-size="14" font-weight="800" fill="#0f2942" text-anchor="middle">나타나는 증상</text>
+        <g font-size="12.5">
+          <rect x="400" y="66" width="260" height="48" rx="9" fill="#fef2f2" stroke="#dc2626"/>
+          <text x="530" y="86" text-anchor="middle" font-weight="700" fill="#b91c1c">복부 팽만 · 딱딱함</text>
+          <text x="530" y="103" text-anchor="middle" fill="#7f1d1d">거대 종양 + 복수</text>
+
+          <rect x="400" y="126" width="260" height="48" rx="9" fill="#fef2f2" stroke="#dc2626"/>
+          <text x="530" y="146" text-anchor="middle" font-weight="700" fill="#b91c1c">전신 부종(Edema)</text>
+          <text x="530" y="163" text-anchor="middle" fill="#7f1d1d">체중 급증(대부분 체액·종양 무게)</text>
+
+          <rect x="400" y="186" width="260" height="48" rx="9" fill="#fef2f2" stroke="#dc2626"/>
+          <text x="530" y="206" text-anchor="middle" font-weight="700" fill="#b91c1c">음낭 · 성기 부위 심한 부종</text>
+          <text x="530" y="223" text-anchor="middle" fill="#7f1d1d">체액 순환 정체</text>
+
+          <rect x="400" y="246" width="260" height="48" rx="9" fill="#fef2f2" stroke="#dc2626"/>
+          <text x="530" y="266" text-anchor="middle" font-weight="700" fill="#b91c1c">배뇨 곤란 → 도뇨관 의존</text>
+          <text x="530" y="283" text-anchor="middle" fill="#7f1d1d">요도 압박</text>
+
+          <rect x="400" y="306" width="260" height="48" rx="9" fill="#fef2f2" stroke="#dc2626"/>
+          <text x="530" y="326" text-anchor="middle" font-weight="700" fill="#b91c1c">극심한 통증 · 쇠약</text>
+          <text x="530" y="343" text-anchor="middle" fill="#7f1d1d">압박 · 전신 상태 악화</text>
+        </g>
+
+        <!-- note box -->
+        <rect x="690" y="120" width="190" height="150" rx="10" fill="#fff7ed" stroke="#f59e0b"/>
+        <text x="705" y="146" font-size="12.5" font-weight="800" fill="#b45309">참고</text>
+        <text x="705" y="170" font-size="11.5" fill="#7c4a12">체중이 평소 약 120~125</text>
+        <text x="705" y="186" font-size="11.5" fill="#7c4a12">파운드에서 150.7파운드로</text>
+        <text x="705" y="202" font-size="11.5" fill="#7c4a12">늘어난 것은 살이 아니라</text>
+        <text x="705" y="218" font-size="11.5" fill="#7c4a12">약 25파운드 이상의</text>
+        <text x="705" y="234" font-size="11.5" fill="#7c4a12">종양 무게와 체액 때문</text>
+        <text x="705" y="250" font-size="11.5" fill="#7c4a12">입니다.</text>
+      </svg>
+      <p class="figcap">그림 3. 원인 → 증상으로 이어지는 인과관계</p>
+    </div>
+  </section>
+
+  <!-- 5. 의료진 판단 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><div><h2>의료진이 수술·배액을 보류하고 완화의료를 권한 이유</h2><p class="lead">현재 몸 상태가 매우 쇠약해져, 적극적 처치가 오히려 생명을 위협할 수 있다는 판단입니다.</p></div></div>
+
+    <div class="grid3">
+      <div class="card">
+        <h3 style="margin-top:0">수술이 어려운 이유</h3>
+        <p style="font-size:14.5px; margin:0">종양이 이미 주요 장기를 침범했고 전신 부종이 심해, 수술적 절제가 오히려 생명을 직접 위협할 수 있다고 판단했습니다. 문헌상으로도 이 단계에서 <strong>완전 절제는 사실상 불가능</strong>한 규모입니다.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">배액(복수 제거)의 위험</h3>
+        <p style="font-size:14.5px; margin:0">복수를 뽑는 과정에서 종양을 건드릴 위험이 있고, 감염 수치와 체액 저류가 심해 배액 도중 위험이 높다는 소견입니다.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">완화의료(호스피스) 권유</h3>
+        <p style="font-size:14.5px; margin:0">표준 치료(항암·수술)로 암 진행을 막기 어렵다고 보고, <strong>통증 관리와 편안함</strong>에 초점을 둔 완화의료 단계로 안내했습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 예후 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><div><h2>예후에 관한 근거 — 냉정하지만 정확하게</h2><p class="lead">전환된 암이 "어디에 있는지"가 생존율을 가르는 가장 중요한 요인입니다.</p></div></div>
+
+    <div class="figure">
+      <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="전이 위치에 따른 생존율 비교">
+        <text x="30" y="34" font-size="15" font-weight="800" fill="#0f2942">체세포 전환 위치에 따른 생존율 (문헌 요약)</text>
+        <!-- bar 1 -->
+        <text x="30" y="78" font-size="13" fill="#1f2937">원발(고환)에만 전환 존재</text>
+        <rect x="30" y="88" width="700" height="26" rx="6" fill="#eef3f6"/>
+        <rect x="30" y="88" width="700" height="26" rx="6" fill="#0f766e"/>
+        <text x="742" y="106" font-size="13" font-weight="800" fill="#0f766e">약 87~100%</text>
+        <!-- bar 2 -->
+        <text x="30" y="146" font-size="13" fill="#1f2937">전이 부위에도 전환 존재 (이 환자 해당 가능성)</text>
+        <rect x="30" y="156" width="700" height="26" rx="6" fill="#eef3f6"/>
+        <rect x="30" y="156" width="245" height="26" rx="6" fill="#b91c1c"/>
+        <text x="285" y="174" font-size="13" font-weight="800" fill="#b91c1c">약 12~35%</text>
+        <!-- bar 3 -->
+        <text x="30" y="214" font-size="13" fill="#1f2937">체세포 전환 전체(인디애나대 121명) 5년 생존</text>
+        <rect x="30" y="224" width="700" height="26" rx="6" fill="#eef3f6"/>
+        <rect x="30" y="224" width="448" height="26" rx="6" fill="#b45309"/>
+        <text x="488" y="242" font-size="13" font-weight="800" fill="#b45309">64%</text>
+        <text x="30" y="284" font-size="11.5" fill="#5b6b7c">※ 육종형 전환은 5년 생존 77%로 암종형(17%)보다 나은 편이나, 전이 부위 전환이 있으면 예후가 크게 나빠집니다.</text>
+      </svg>
+      <p class="figcap">그림 4. 전이 위치·전환 유형에 따른 생존율 비교 (Histopathology 2022, Urology 2014, Am J Surg Pathol 2022 등)</p>
+    </div>
+
+    <div class="callout warn">
+      <p style="margin:0">문헌 요약: 광범위 전이 + 전이 부위의 체세포 전환 + 난치성 복수 + 심한 합병증이 겹친 이 상황의 예후는 <strong>매우 나쁩니다.</strong> 동시에, "전이성 체세포 전환"이라도 <strong>일률적으로 치명적인 것은 아니며</strong>, 공격적 다학제 치료로 일부에서 5년 35~77%의 생존이 보고된 바 있습니다. 이 두 가지는 서로 모순되지 않으며, 개별 환자의 상태·시기에 따라 결과가 크게 달라집니다.</p>
+    </div>
+    <p style="font-size:13.5px; color:var(--muted)">참고: 생식세포종양 진단부터 육종 전환까지 걸리는 기간은 중앙값 약 68개월로, 암종형 전환(약 213개월)보다 훨씬 빠르며, 전환 후에는 고악성 육종처럼 빠르게 자라는 경향이 있습니다.</p>
+  </section>
+
+  <!-- 7. 2차 소견: 진료 적정성 (중립) -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><div><h2>2차 소견 ① — 진료 과정에 대한 평가</h2><p class="lead">아래는 OpenEvidence 2차 소견 <em>하나</em>가 내린 평가입니다. 후향적(결과를 알고 되돌아보는) 분석의 한계가 있어, 하나의 견해로 참고해 주세요.</p></div></div>
+
+    <div class="callout amber">
+      <h4>이 섹션을 읽는 방법</h4>
+      <p style="margin:0">이 평가는 치료진이 당시 실제로 고려했던 임상적 맥락(환자의 전신 상태, 감염·수술 위험, 환자·가족의 뜻 등)을 모두 반영하지 못할 수 있습니다. 따라서 <strong>"이렇게 봤다"는 하나의 2차 소견</strong>으로 이해하시고, 실제 판단은 담당 의료진·다른 전문가와 상의하시길 권합니다.</p>
+    </div>
+
+    <h3>2차 소견의 핵심 주장</h3>
+    <p>이 소견은 <strong>2025년 8월 3기 원형세포 육종(체세포 전환)이 확인된 뒤 약 5개월간 "혈액검사 위주 경과 관찰"을 한 것</strong>이, 현재 가이드라인과 부합하지 않았다고 평가했습니다. 그 근거로 다음을 들었습니다.</p>
+    <ul class="clean">
+      <li><strong>NCCN 가이드라인(2.2026):</strong> 체세포형 악성(과거 명칭 "전환된 테라토마")을 동반한 1기 생식세포종양에서는 후복막림프절절제술(RPLND)이 일차 치료로 선호된다고 명시. 이 환자는 전이성이라 1기 기준에 그대로 해당하진 않지만, 소견은 "<strong>체세포 전환은 관찰이 아니라 적극적 개입을 요한다</strong>"는 원칙을 강조했습니다.</li>
+      <li><strong>국제 컨소시엄(MaGIC):</strong> 수술적 절제가 치료의 근간이며 완전 절제 없이는 완치가 어렵다고 봄. 전이 부위에 전환이 있으면 예후는 나쁘지만, 치료 선택지로 <strong>생식세포 표적 항암 또는 조직형 특이 항암</strong>이 제시됨.</li>
+    </ul>
+
+    <h3>소견이 "취해졌어야 한다"고 본 조치 (2025년 8월 시점)</h3>
+    <div class="grid2">
+      <div class="card"><p style="margin:0; font-size:14.5px">✔ 가능하다면 <strong>적극적 수술적 감량(debulking)</strong></p></div>
+      <div class="card"><p style="margin:0; font-size:14.5px">✔ <strong>구제 항암요법</strong> 시작(육종 표적 또는 GCT 표적)</p></div>
+      <div class="card"><p style="margin:0; font-size:14.5px">✔ 체세포 전환에 경험 많은 <strong>대형 3차 병원 의뢰</strong></p></div>
+      <div class="card"><p style="margin:0; font-size:14.5px">✔ <strong>분자 프로파일링 · 임상시험</strong> 등록 검토</p></div>
+    </div>
+    <p style="margin-top:14px">소견은 이 기간에 적극적 치료 대신 관찰이 이어지면서 여러 장기로 전이가 진행되었고, 완전 절제 가능성이 사라졌다고 보았습니다. 또한 "더 이상 방법이 없다"는 판단(2026년 4월)이, 전환 확인 이후 구제 항암을 한 번도 시도하지 않은 상태에서 내려진 점을 문제로 지적했습니다.</p>
+
+    <div class="callout">
+      <p style="margin:0"><strong>균형 잡힌 시각.</strong> 유미성 복수 같은 심한 합병증이 있을 때 "환자가 공격적 치료를 견디기 어렵다"고 판단하는 데에는 타당한 임상적 이유가 있을 수 있습니다. 이 소견의 요지는 "복수는 관리하면서 <strong>동시에</strong> 암 치료를 시도했어야 한다"는 것입니다. 옳고 그름을 단정하기보다, <strong>앞으로 어떤 선택이 가능한지</strong>에 집중하는 것이 지금 보호자에게 더 도움이 됩니다.</p>
+    </div>
+  </section>
+
+  <!-- 8. 표준 치료 / 신약 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><div><h2>2차 소견 ② — 표준 구제 치료와 신약·표적치료</h2><p class="lead">지금 또는 다른 병원에서 검토를 문의해 볼 수 있는, 근거가 있는 선택지들입니다.</p></div></div>
+
+    <h3>표준 구제 치료</h3>
+    <ul class="clean">
+      <li><strong>수술적 절제:</strong> 가능하다면 치료의 근간. 다만 22.4cm 종양과 광범위 전이로 완전 절제는 현재 어렵다고 평가됨.</li>
+      <li><strong>구제 항암요법:</strong> <span class="en">TIP(파클리탁셀·이포스파마이드·시스플라틴), VeIP(빈블라스틴·이포스파마이드·시스플라틴)</span> 등 난치성 GCT 표준 구제요법.</li>
+      <li><strong>육종 표적 항암:</strong> 독소루비신 기반, 이포스파마이드, 젬시타빈/도세탁셀 등(근거는 제한적).</li>
+      <li><strong>GCT 표적 구제:</strong> 한 증례보고에서 육종 표적 치료 실패 후 <strong>GCT 표적 항암으로 완전 관해</strong>가 보고됨 — 진행된 병에서도 반응 가능성이 있음을 시사.</li>
+    </ul>
+
+    <h3>분자 프로파일링으로 노려볼 수 있는 표적</h3>
+    <div class="card">
+      <p style="margin:0; font-size:14.5px">체세포 전환 사례에서 <strong>FGF 신호(FGF6/23, FGFR1/4)</strong>, <strong>AKT·MAPK·WNT</strong> 경로, <strong>TP53 변이(약 33%)</strong>, <strong>PTEN-AKT-mTOR 경로 변이(약 33%)</strong>, <strong>KIT 발현</strong> 등이 확인된 바 있습니다. 이런 변이가 있으면 표적치료·임상시험 대상이 될 수 있어, <strong>유전체(분자) 검사</strong>가 권장됩니다.</p>
+    </div>
+
+    <h3>연구 중인 신약(초기 단계)</h3>
+    <ul class="clean">
+      <li><strong>티로신키나아제 억제제(TKI):</strong> KIT·FGFR 경로 표적.</li>
+      <li><strong>면역관문억제제(ICI):</strong> PD-1/PD-L1 단독 또는 항-CTLA-4 병용 — 백금 불응성 GCT에서 연구 중(주로 증례·소규모, 반응 편차 큼).</li>
+      <li><strong>CAR-T 세포치료:</strong> GCT에 발현되는 <strong>Claudin6(CLDN6)</strong> 표적 — 초기 개발 단계.</li>
+      <li><strong>ADC(항체-약물 접합체) · BiTE(이중특이 T세포 유도체):</strong> 개발 중인 유망 접근.</li>
+      <li><strong>CDK · PARP · Aurora kinase 억제제:</strong> 초기 유망성.</li>
+      <li><strong>액체생검:</strong> 순환종양DNA(ctDNA), miR-371-373 마이크로RNA — 모니터링·임상시험 선정에 활용 가능.</li>
+    </ul>
+
+    <div class="callout">
+      <p style="margin:0"><strong>어디에 문의할까?</strong> 소견은 GCT 전문 <strong>3차 병원 의뢰</strong>와 국제 <strong>MaGIC(Malignant Germ Cell International Consortium)</strong> 협력 임상시험 확인을 강하게 권합니다(예로 인디애나대, MSK, MD 앤더슨 등이 언급됨).</p>
+    </div>
+  </section>
+
+  <!-- 9. 완화/증상관리 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">09</span><div><h2>2차 소견 ③ — 완화·증상 관리 (가장 실용적인 부분)</h2><p class="lead">수술이 어렵더라도, 복수·부종·통증을 줄여 편안함을 높이는 근거 있는 방법들이 있습니다.</p></div></div>
+
+    <h3>유미성 복수(Chylous ascites) 관리</h3>
+    <ul class="clean">
+      <li><strong>식이 조절:</strong> 저지방·고단백 식사에 <strong>중쇄중성지방(MCT)</strong>을 보충 — MCT는 림프를 거치지 않고 흡수되어 유미(림프액) 생성을 줄임. 저염식 병행.</li>
+      <li><strong>치료적 천자(paracentesis):</strong> 증상 완화를 위해 필요할 때 시행. 난치성이고 수술 위험이 높은 상황에서는 가장 현실적인 방법이 될 수 있음.</li>
+      <li><strong>약물:</strong> 소마토스타틴/옥트레오타이드(림프 지방 흡수·문맥압 감소 기대), 이뇨제(스피로노락톤·푸로세미드 — 악성 복수에선 효과 제한적).</li>
+      <li><strong>유치 복강 카테터(예: PleurX):</strong> 반복 배액이 필요할 때 <strong>집에서 배액</strong> 가능. 체계적 문헌고찰(18개 연구·176명)에서 시술 성공률 100%, 비감염 합병증 &lt;12% 등으로 보고 — 완화 상황에서 삶의 질을 크게 높일 수 있음.</li>
+    </ul>
+    <div class="callout amber">
+      <p style="margin:0"><strong>완화 단계 원칙:</strong> 대량 천자 후 알부민 보충(제거량이 많을 때)은 표준이지만, 임종기 편안함이 목표라면 생략할 수 있음. TIPS·수술적 결찰·복강정맥션트처럼 <strong>부담이 큰 시술은 이 상황에 적절하지 않다</strong>고 봄. 엄격한 식이 제한이 삶의 질만 떨어뜨린다면 현실적으로 완화하는 것이 낫습니다.</p>
+    </div>
+
+    <h3>전신 · 음낭/성기 부종 관리</h3>
+    <p>부종은 여러 원인이 겹친 결과입니다(거대 종양의 림프 폐색 + 저알부민혈증 + 거동 저하 + 대정맥 압박 가능성). 원인을 고려한 접근이 필요합니다.</p>
+    <ul class="clean">
+      <li>가능할 때 <strong>다리 거상</strong>, 사지 <strong>압박붕대</strong>(연구에서 평균 사지 부피 1.18L·16.6% 감소, 증상 개선), <strong>도수 림프배출</strong>(견딜 수 있으면), 키네시오 테이핑 보조.</li>
+      <li><strong>음낭/성기 부종:</strong> 도뇨관 유지, 음낭 지지·거상, 심한 국소 저류 시 피하 바늘 배액, 압박 의류(견딜 수 있으면). 심한 경우 정맥 울혈이 원인이면 정맥 주사용 푸로세미드가 경구보다 나을 수 있음.</li>
+      <li>영상에서 대정맥(IVC) 압박이 뚜렷하면 IVC 스텐트를 고려할 수 있으나, 전체 예후를 고려한 신중한 득실 판단 필요.</li>
+    </ul>
+    <div class="callout">
+      <p style="margin:0"><strong>통증·전반적 돌봄:</strong> 극심한 통증 조절이 최우선입니다. 완화의료(호스피스)를 유지하면서 통증·증상 관리, 심리·영적 지지를 함께 받는 것이 현실적인 도움이 됩니다.</p>
+    </div>
+  </section>
+
+  <!-- 10. 심화: 용도변경 약물 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">10</span><div><h2>[심화] 용도변경 약물 · 대사요법의 "근거 수준"</h2><p class="lead">커뮤니티의 핵심 관심사인 만큼, 여기서는 <strong>권유가 아니라 현재까지의 근거 수준</strong>을 있는 그대로 정리합니다.</p></div></div>
+
+    <div class="notice">
+      <strong>중요.</strong> 아래 내용은 이버멕틴·펜벤다졸·메벤다졸·케토제닉 등에 대한 <strong>객관적 근거 정리</strong>입니다.
+      이 문서는 이를 <strong>권장하지 않으며</strong>, 구체적 용량·복용법은 담지 않았습니다.
+      실제 사용 여부는 <strong>반드시 담당 의료진과 상의</strong>해야 하며, 특히 남편분은 <strong>간·신장 기능 저하 가능성</strong>이 커 약물 대사·독성에 주의가 필요합니다.
+    </div>
+
+    <h3>근거 강도 게이지</h3>
+    <div class="figure">
+      <svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="치료 접근별 근거 강도 비교">
+        <!-- scale header -->
+        <text x="20" y="26" font-size="12.5" fill="#5b6b7c">근거 약함</text>
+        <text x="700" y="26" font-size="12.5" fill="#5b6b7c" text-anchor="end">근거 강함</text>
+        <line x1="250" y1="20" x2="700" y2="20" stroke="#cdd8e1" stroke-width="1"/>
+        <!-- levels: 5 steps -->
+        <!-- rows -->
+        <g font-size="13">
+          <!-- row helper widths: 90/180/270/360/450 within 250..700 (450 span) -->
+          <!-- 1 standard salvage -->
+          <text x="20" y="66" fill="#1f2937">표준 구제 항암·수술</text>
+          <rect x="250" y="52" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="52" width="405" height="20" rx="5" fill="#0f766e"/>
+          <text x="712" y="67" font-size="12" fill="#0f766e" font-weight="700">가이드라인·대규모 코호트</text>
+
+          <!-- 2 palliative drainage -->
+          <text x="20" y="106" fill="#1f2937">완화 천자·유치 카테터(PleurX)</text>
+          <rect x="250" y="92" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="92" width="360" height="20" rx="5" fill="#0f766e"/>
+          <text x="712" y="107" font-size="12" fill="#0f766e" font-weight="700">체계적 문헌고찰·코크란</text>
+
+          <!-- 3 edema conservative -->
+          <text x="20" y="146" fill="#1f2937">부종 보존적 관리(압박·거상 등)</text>
+          <rect x="250" y="132" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="132" width="270" height="20" rx="5" fill="#b45309"/>
+          <text x="712" y="147" font-size="12" fill="#b45309" font-weight="700">관찰연구</text>
+
+          <!-- 4 targeted/immuno -->
+          <text x="20" y="186" fill="#1f2937">표적·면역·CAR-T (신약)</text>
+          <rect x="250" y="172" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="172" width="200" height="20" rx="5" fill="#b45309"/>
+          <text x="712" y="187" font-size="12" fill="#b45309" font-weight="700">증례·초기연구</text>
+
+          <!-- 5 antiparasitics -->
+          <text x="20" y="226" fill="#1f2937">용도변경 항기생충제(이버멕틴 등)</text>
+          <rect x="250" y="212" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="212" width="120" height="20" rx="5" fill="#b91c1c"/>
+          <text x="712" y="227" font-size="12" fill="#b91c1c" font-weight="700">전임상 + 관찰코호트</text>
+
+          <!-- 6 keto -->
+          <text x="20" y="266" fill="#1f2937">케토제닉·대사요법</text>
+          <rect x="250" y="252" width="450" height="20" rx="5" fill="#eef3f6"/>
+          <rect x="250" y="252" width="105" height="20" rx="5" fill="#b91c1c"/>
+          <text x="712" y="267" font-size="12" fill="#b91c1c" font-weight="700">전임상·소규모 파일럿</text>
+        </g>
+        <line x1="250" y1="288" x2="700" y2="288" stroke="#cdd8e1"/>
+        <text x="20" y="318" font-size="12" fill="#b91c1c" font-weight="700">★ 이 특정 암(GCT의 육종 체세포 전환)에 대한 직접적 근거는</text>
+        <text x="20" y="336" font-size="12" fill="#b91c1c" font-weight="700">   이버멕틴·펜벤다졸·메벤다졸·케토제닉 모두 "없음"입니다(무작위대조시험 없음).</text>
+      </svg>
+      <p class="figcap">그림 5. 치료 접근별 근거 강도 (막대가 길수록 근거가 탄탄함)</p>
+    </div>
+
+    <h3>① 용도변경 항기생충제 (이버멕틴 · 메벤다졸 · 펜벤다졸)</h3>
+    <div class="card">
+      <p><strong>현재 근거:</strong> 전임상(세포·동물) 모델과 초기 관찰 데이터에 한정됩니다. <strong>생식세포종양이나 육종에 대해 이들을 항암제로 지지하는 무작위대조시험(RCT)은 없습니다.</strong></p>
+      <p style="margin-bottom:6px"><strong>제안된 기전(전임상):</strong></p>
+      <ul class="clean" style="margin-top:0">
+        <li>미세소관(세포 골격) 교란 — 탁센·빈카알칼로이드와 유사한 방식, 세포자멸(아포토시스) 유도.</li>
+        <li>발암 신호 억제 — Wnt/β-catenin, PI3K/Akt/mTOR, Hedgehog 등.</li>
+        <li><strong>메벤다졸:</strong> 튜불린 중합 억제, 항혈관신생·면역자극 성질 보고.</li>
+        <li><strong>이버멕틴:</strong> P-당단백 약물 배출 조절, 염소이온 채널 활성화, 발암 신호 억제.</li>
+      </ul>
+      <p style="margin-bottom:6px"><strong>가장 많이 언급되는 관찰 데이터(Anticancer Research 2026):</strong></p>
+      <p style="margin-top:0">암환자 197명(주로 전립선·유방암)에게 off-label로 이버멕틴+메벤다졸 병용을 시행한 <strong>전향적 관찰 코호트</strong>에서, 6개월 시점 임상적 이득 비율 84.4%, 48.4%가 종양 축소 또는 무병 상태를 보고했다고 합니다. <strong>그러나</strong> 이 연구는 ⑴ 환자 <strong>자가보고</strong>에 의존, ⑵ 영상으로 객관적 확인 없음, ⑶ 대부분 <strong>기존 표준치료 병행</strong>(항암 27.9%·방사선 21.3%), ⑷ <strong>대조군 없음</strong>이라는 심각한 한계가 있습니다. 부작용은 대체로 경미한 위장 증상이 25.4%에서 보고되었습니다.</p>
+      <p style="margin:0"><strong>결정적 한계:</strong> 표준 항기생충 용량에서의 낮은 생체이용률, 연구마다 제각각인 투여 방식, 충분한 규모의 RCT 부재. <strong>GCT의 육종 체세포 전환에 대한 자료는 전무</strong>하며, 이 적응증에서 표준·근거 기반 치료로 간주해서는 안 됩니다.</p>
+    </div>
+    <div class="callout amber">
+      <p style="margin:0"><strong>공유 의사결정 관점.</strong> 확립된 효과적 치료가 없는 말기 상황에서, 환자·가족이 원한다면 off-label 사용을 <strong>공유 의사결정</strong>의 일부로 <em>논의</em>할 수는 있습니다. 다만 "입증된 이득이 없는 실험적 시도"임을 분명히 이해하고, <strong>완화의료 계획을 대체하거나 늦추지 않는</strong> 선에서 담당 의료진과 함께 결정해야 합니다.</p>
+    </div>
+
+    <h3>② 케토제닉 식이 · 대사요법</h3>
+    <div class="card">
+      <p><strong>현재 근거:</strong> 전임상과 소규모 파일럿 연구에 한정 — 육종·생식세포종양에서 효과를 입증한 고품질 RCT는 없습니다. <strong>테라토마 유래 체세포 전환·원형세포 육종에 대한 자료도 없습니다.</strong></p>
+      <p style="margin:0"><strong>이론적 근거:</strong> 암세포가 포도당 발효(바르부르크 효과)에 의존한다는 가설에 기반하며, 제안 기전으로 PI3K/Akt/mTOR 억제, IGF-1 신호 감소, 항암제 감수성 증가, 후성유전·염증·산화스트레스·미토콘드리아 관련 변화 등이 거론됩니다.</p>
+    </div>
+    <div class="callout warn">
+      <h4>이 환자에서 특히 주의할 점(문헌이 지적한 금기·우려)</h4>
+      <ul class="clean" style="margin:0">
+        <li><strong>심한 악액질·영양실조:</strong> 유미성 복수로 단백질·지방을 잃고 종양 부담·경구 섭취 저하가 겹쳐, 엄격한 식이 제한이 오히려 해로울 수 있음.</li>
+        <li><strong>유미성 복수:</strong> 고지방 식이는 이론상 유미 생성을 늘릴 수 있음(단, MCT 기반 변형식이는 이를 완화할 여지).</li>
+        <li><strong>신장 기능:</strong> 고단백은 이미 침범된 좌측 신장에 부담이 될 수 있음.</li>
+        <li><strong>실행 가능성:</strong> 말기 상황에서 엄격한 식이 순응은 매우 어려움.</li>
+      </ul>
+      <p style="margin:8px 0 0"><strong>문헌의 결론:</strong> 이 환자에게 근거 기반 치료가 아니며 일차·보조 항암 목적으로 권하지 않음. 가족이 강하게 원한다면 <strong>암 전문 영양사 상담</strong>, MCT 기반 변형식이, 영양·전해질·신기능 밀착 모니터링을 전제로 하되, 목표는 질병 조절이 아니라 <strong>환자의 자율성과 삶의 질</strong>에 두어야 함.</p>
+    </div>
+  </section>
+
+  <!-- 11. 선택지 비교 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">11</span><div><h2>선택지 비교 표</h2><p class="lead">각 접근의 근거 수준과 핵심 메시지를 한눈에 정리했습니다.</p></div></div>
+
+    <table>
+      <thead>
+        <tr><th style="width:22%">접근</th><th style="width:26%">근거 수준</th><th>핵심 메시지</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>표준 구제 항암 (TIP·VeIP)</strong></td>
+          <td class="lvl"><span class="dot" style="background:#0f766e"></span>가이드라인·코호트</td>
+          <td>난치성 GCT의 표준 구제요법. 전이성 체세포 전환에선 반응이 제한적일 수 있으나, GCT 표적 구제로 완전 관해가 보고된 증례도 있음.</td>
+        </tr>
+        <tr>
+          <td><strong>수술적 절제·감량</strong></td>
+          <td class="lvl"><span class="dot" style="background:#0f766e"></span>치료의 근간(단, 현재 제한)</td>
+          <td>완전 절제가 원칙이나 22.4cm 종양+광범위 전이로 현재는 완전 절제 불가로 평가됨.</td>
+        </tr>
+        <tr>
+          <td><strong>분자 프로파일링 → 표적/면역/CAR-T</strong></td>
+          <td class="lvl"><span class="dot" style="background:#b45309"></span>증례·초기연구</td>
+          <td>FGFR·KIT·TP53·PTEN-AKT-mTOR·CLDN6 등 표적 가능성. 임상시험 연계를 위해 유전체 검사 권장.</td>
+        </tr>
+        <tr>
+          <td><strong>완화 천자·유치 카테터·부종 관리</strong></td>
+          <td class="lvl"><span class="dot" style="background:#0f766e"></span>체계적 문헌고찰</td>
+          <td>완치는 아니지만 <strong>편안함과 삶의 질</strong>을 실질적으로 높이는, 지금 가장 실용적인 선택.</td>
+        </tr>
+        <tr>
+          <td><strong>용도변경 항기생충제(이버멕틴 등)</strong></td>
+          <td class="lvl"><span class="dot" style="background:#b91c1c"></span>전임상+관찰코호트 · 이 암종 직접근거 없음</td>
+          <td>표준·근거 기반 치료 아님. 원한다면 공유 의사결정으로 <em>논의</em> 가능하나 완화 계획을 대체·지연시키지 말 것. 간·신장 기능 주의. 용량은 반드시 의료진과.</td>
+        </tr>
+        <tr>
+          <td><strong>케토제닉·대사요법</strong></td>
+          <td class="lvl"><span class="dot" style="background:#b91c1c"></span>전임상·파일럿 · 이 암종 직접근거 없음</td>
+          <td>이 환자에겐 악액질·복수·신기능·실행 가능성 문제로 권장되지 않음. 원한다면 영양사 감독하에 삶의 질 중심으로만.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 12. 보호자 체크리스트 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">12</span><div><h2>보호자가 지금 할 수 있는 일 · 의료진에게 물어볼 것</h2><p class="lead">막막할 때, 아래 질문을 담당 의료진·다른 전문가에게 확인해 보세요.</p></div></div>
+    <div class="grid2">
+      <div class="card">
+        <h3 style="margin-top:0">치료 가능성 확인</h3>
+        <ul class="clean" style="margin:0">
+          <li>지금 상태에서 <strong>구제 항암(GCT 표적/육종 표적)</strong>을 조금이라도 시도해 볼 여지가 있나요?</li>
+          <li><strong>유전체(분자) 검사</strong>를 받아 표적치료·임상시험 대상이 되는지 확인할 수 있나요?</li>
+          <li>GCT 전문 <strong>3차 병원/MaGIC 임상시험</strong>에 의뢰가 가능한가요?</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">편안함·증상 관리</h3>
+        <ul class="clean" style="margin:0">
+          <li>복수를 위한 <strong>유치 카테터(PleurX)</strong>로 집에서 편하게 배액할 수 있나요?</li>
+          <li>부종·통증을 줄이기 위한 <strong>구체적 완화 계획</strong>은 무엇인가요?</li>
+          <li>대체요법을 고려한다면, <strong>간·신장에 안전한지</strong> 그리고 다른 약과의 상호작용을 확인해 주실 수 있나요?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. 마무리 -->
+  <div class="closing">
+    <h2>브리타니 님께</h2>
+    <p>남편분의 젊은 나이와 16세 자녀를 생각하면, 끝까지 포기하고 싶지 않은 마음이 얼마나 크실지 감히 짐작합니다. 지금 상황은 매우 엄중하지만, 그 안에서도 <strong>남편분의 고통을 줄이고 함께하는 시간을 지키는</strong> 선택들은 분명히 있습니다.</p>
+    <p>어떤 길을 택하시든 — 표준 치료의 마지막 가능성을 확인하는 일이든, 편안함에 집중하는 완화의료든, 혹은 그 둘을 함께 가는 것이든 — 그 결정은 담당 의료진과 상의하며 내리시는 것이 가장 안전합니다. 이 자료가 그 대화를 조금이라도 수월하게 만드는 데 도움이 되기를 바랍니다.</p>
+    <p style="margin:0; color:#a7cdc6">보호자로서 하실 수 있는 최선의 결정을 진심으로 응원합니다.</p>
+  </div>
+
+  <!-- 14. 참고문헌 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">14</span><div><h2>참고 문헌 (OpenEvidence 2차 소견 3건에서 인용)</h2><p class="lead">출처별로 구분해 빠짐없이 정리했습니다. (일부 문헌은 여러 소견에 중복 인용됨)</p></div></div>
+
+    <div class="refblock">
+      <h3>2차 소견 A — 구제치료 · 완화관리 · 신약 검토</h3>
+      <ol class="refs">
+        <li>Case Report: The Complete Remission of a Mixed Germ Cell Tumor With Somatic Type Malignancy of Sarcoma Type With a GCT-Oriented Therapy: Clinical Findings and Genomic Profiling. <span class="jrnl">Frontiers in Oncology</span>. <span class="yr">2021</span>. Pantaleo MA, Mandruzzato M, Indio V, et al.<span class="reftag">Case</span></li>
+        <li>Consensus and Controversy in the Management of Paediatric and Adult Patients With Ovarian Immature Teratoma: The Malignant Germ Cell International Consortium Perspective. <span class="jrnl">EClinicalMedicine</span>. <span class="yr">2024</span>. Pashankar F, Murray MJ, Gell J, et al.<span class="reftag">Review</span></li>
+        <li>Outcomes of relapsed/refractory extracranial germ cell tumors treated on conventional salvage chemotherapy without stem cell rescue: Experience from a tertiary cancer center. <span class="jrnl">Pediatric Blood &amp; Cancer</span>. <span class="yr">2023</span>. Ramanathan S, Prasad M, Vora T, et al.</li>
+        <li>Characterizing the Mutational Burden, DNA Methylation Landscape, and Proteome of Germ Cell Tumor-Related Somatic-Type Malignancies to Identify the Tissue-of-Origin, Mechanisms of Therapy Resistance, and Druggable Targets. <span class="jrnl">British Journal of Cancer</span>. <span class="yr">2023</span>. Bremmer F, Pongratanakul P, Skowron M, et al.</li>
+        <li>Review article: the diagnostic approach and current management of chylous ascites. <span class="jrnl">Alimentary Pharmacology &amp; Therapeutics</span>. <span class="yr">2017</span>. Lizaola B, Bonder A, Trivedi HD, Tapper EB, Cardenas A.<span class="reftag">Review</span></li>
+        <li>Management of Drainage for Malignant Ascites in Gynaecological Cancer. <span class="jrnl">The Cochrane Database of Systematic Reviews</span>. <span class="yr">2019</span>. Kietpeerakool C, Rattanakanokchai S, Jampathong N, Srisomboon J, Lumbiganon P.<span class="reftag">SR</span></li>
+        <li>Edema of Advanced Cancer: Prevalence, Etiology, and Conservative Management—a Single Hospice Cross-Sectional Study. <span class="jrnl">Journal of Pain and Symptom Management</span>. <span class="yr">2019</span>. Gradalski T.</li>
+        <li>Peripheral Edema in Advanced Cancer: Mechanisms and Management—a Scoping Review. <span class="jrnl">Journal of Palliative Medicine</span>. <span class="yr">2026</span>. Tennison JM, Gupta Sharma E, Lee R, et al.<span class="reftag">Review</span></li>
+        <li>Intracranial Germ Cell Tumors: Advancement in Genomic Diagnostics and the Need for Novel Therapeutics. <span class="jrnl">Frontiers in Oncology</span>. <span class="yr">2024</span>. Yeo KK, Gell J, Dhall G, Lau C.<span class="reftag">Review</span></li>
+        <li>Novel Therapeutics in Refractory Germ Cell Tumors. <span class="jrnl">Current Opinion in Oncology</span>. <span class="yr">2025</span>. Richardson NH, Adra N.<span class="reftag">Review</span></li>
+        <li>Potential Therapeutic Targets and Biomarkers in Testicular Germ Cell Tumor Oncogenesis. <span class="jrnl">Expert Opinion on Therapeutic Targets</span>. <span class="yr">2025</span>. Esposito F, De Martino M, Franco V, Fusco A, Chieffi P.</li>
+        <li>The Immune Landscape and Immunotherapeutic Strategies in Platinum-Refractory Testicular Germ Cell Tumors. <span class="jrnl">Cancers</span>. <span class="yr">2024</span>. Evmorfopoulos K, Marsitopoulos K, Karachalios R, et al.</li>
+        <li>Immune Checkpoint Inhibitors and Chimeric Antigen Receptor (CAR)-T Cell Therapy: Potential Treatment Options Against Testicular Germ Cell Tumors. <span class="jrnl">Frontiers in Immunology</span>. <span class="yr">2023</span>. Schepisi G, Gianni C, Cursano MC, et al.</li>
+        <li>Children's Oncology Group's 2023 blueprint for research: Germ cell tumors. <span class="jrnl">Pediatric Blood &amp; Cancer</span>. <span class="yr">2023</span>. Bhuta R, Shah R, Gell JJ, et al.<span class="reftag">Review</span></li>
+      </ol>
+    </div>
+
+    <div class="refblock">
+      <h3>2차 소견 B — 용도변경 약물 · 케토제닉/대사요법 · 완화 프로토콜</h3>
+      <ol class="refs">
+        <li>Antiparasitic Agents in Oncology: Innovative Mechanisms, Emerging Evidence and Clinical Potential in Cancer Treatment. <span class="jrnl">European Journal of Medicinal Chemistry</span>. <span class="yr">2026</span>. Al-Zoubi RM, Farhan A, Hanbali B, et al.<span class="reftag">Review</span></li>
+        <li>Real-World Clinical Outcomes of Ivermectin and Mebendazole in Cancer Patients: Results From a Prospective Observational Cohort. <span class="jrnl">Anticancer Research</span>. <span class="yr">2026</span>. Hulscher N, Victory K, Thorp JA, et al.<span class="reftag">Observational</span></li>
+        <li>Review article: the diagnostic approach and current management of chylous ascites. <span class="jrnl">Alimentary Pharmacology &amp; Therapeutics</span>. <span class="yr">2017</span>. Lizaola B, Bonder A, Trivedi HD, Tapper EB, Cardenas A.<span class="reftag">Review</span></li>
+        <li>AASLD Practice Guidance: Palliative Care and Symptom-Based Management in Decompensated Cirrhosis. <span class="jrnl">Hepatology</span>. <span class="yr">2022</span>. Rogal SS, Hansen L, Patel A, et al.<span class="reftag g">Guideline</span></li>
+        <li>Nutritional Approaches in Combating Therapeutic Resistance and Enhancing Treatment Efficacy in Cancer: The Impact of Ketogenic Diets. <span class="jrnl">Nutrition &amp; Metabolism</span>. <span class="yr">2025</span>. Wang L, Shafiei Asheghabadi P, Mashhadikhan S, et al.<span class="reftag">Review</span></li>
+        <li>Could Ketogenic Diet "Starve" Cancer? Emerging Evidence. <span class="jrnl">Critical Reviews in Food Science and Nutrition</span>. <span class="yr">2020</span>. Barrea L, Caprio M, Tuccinardi D, et al.<span class="reftag">Review</span></li>
+        <li>Resection of Residual Masses After Chemotherapy for Metastatic Nonseminomatous Germ Cell Tumors in Adolescents and Adults. <span class="jrnl">Journal of Clinical Oncology (JCO)</span>. <span class="yr">2023</span>. Gilligan TD.<span class="reftag">Review</span></li>
+        <li>Chemotherapy for Teratoma With Malignant Transformation. <span class="jrnl">Journal of Clinical Oncology (JCO)</span>. <span class="yr">2003</span>. Donadio AC, Motzer RJ, Bajorin DF, et al.</li>
+      </ol>
+    </div>
+
+    <div class="refblock">
+      <h3>2차 소견 C — 진료 적정성(표준진료 부합 여부) 분석</h3>
+      <ol class="refs">
+        <li>Testicular Cancer (NCCN Clinical Practice Guidelines, Nonseminoma, v2.2026). <span class="jrnl">National Comprehensive Cancer Network (NCCN)</span>. <span class="yr">Updated 2026-06-16</span>.<span class="reftag g">Guideline</span></li>
+        <li>Consensus and Controversy in the Management of Paediatric and Adult Patients With Ovarian Immature Teratoma: The Malignant Germ Cell International Consortium Perspective. <span class="jrnl">EClinicalMedicine</span>. <span class="yr">2024</span>. Pashankar F, Murray MJ, Gell J, et al.<span class="reftag">Review</span></li>
+        <li>Morphological spectrum and molecular features of somatic malignant transformation in germ cell tumours. <span class="jrnl">Histopathology</span>. <span class="yr">2022</span>. Lobo J, Rodrigues Â, Henrique R, et al.</li>
+        <li>Management of Germ Cell Tumors With Somatic Type Malignancy: Pathological Features, Prognostic Factors and Survival Outcomes. <span class="jrnl">The Journal of Urology</span>. <span class="yr">2014</span>. Rice KR, Magers MJ, Beck SD, et al.</li>
+        <li>Somatic-Type Malignancies in Testicular Germ Cell Tumors: A Clinicopathologic Study of 63 Cases. <span class="jrnl">The American Journal of Surgical Pathology</span>. <span class="yr">2022</span>. Hwang MJ, Hamza A, Zhang M, et al.</li>
+        <li>Case Report: The Complete Remission of a Mixed Germ Cell Tumor With Somatic Type Malignancy of Sarcoma Type With a GCT-Oriented Therapy. <span class="jrnl">Frontiers in Oncology</span>. <span class="yr">2021</span>. Pantaleo MA, Mandruzzato M, Indio V, et al.<span class="reftag">Case</span></li>
+        <li>Divergent Biology and Outcomes of Somatic Transformations in Germ Cell Tumors. <span class="jrnl">The Oncologist</span>. <span class="yr">2026</span>. Thomas Z, Johns AC, Glover M, et al.<span class="reftag r">Recent</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>안내.</strong> 이 문서는 브리타니 님이 제공한 담당 의료진 설명과 OpenEvidence 2차 소견(3건), 관련 문헌을 근거로 이해를 돕기 위해 정리한 <strong>교육용 자료</strong>입니다. 출처에 없는 내용을 추가하거나 과장하지 않았으며, 검증되지 않은 요법은 근거 수준으로만 객관적으로 기술했습니다. 이 자료는 <strong>의학적 진단·처방을 대체하지 않으며</strong>, 모든 치료 결정은 반드시 담당 의료진과 상의해야 합니다. 예후·치료에 관한 문헌 수치는 특정 환자 개인의 결과를 예측하지 않습니다.</p>
+    <p>작성: 환자 중심·용도변경 약물 커뮤니티 공유용 · 근거 출처: OpenEvidence 2차 소견 3건 및 위 참고문헌</p>
+  </footer>
+
+</div>
+</body>
+</html>
