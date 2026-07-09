@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>브리타니(Brittany) 남편 사례 — 6축 통합 케이스 스터디</title>
+<style>
+  :root {
+    --navy: #1b2a4a; --teal: #2a7d8c; --amber: #c9832e; --red: #b33a3a;
+    --green: #3a7d44; --light-bg: #f8f6f2; --card-bg: #ffffff;
+    --text: #2c2c2c; --muted: #6b6b6b; --border: #d9d4cb;
+    --amber-light: #fef3e4; --teal-light: #e8f4f6; --red-light: #fef0f0;
+    --navy-light: #eef1f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', 'Segoe UI', sans-serif;
+    background: var(--light-bg); color: var(--text); line-height: 1.8; font-size: 16px;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 16px; }
+
+  /* ===== DISCLAIMER ===== */
+  .disclaimer-top {
+    background: #fff3cd; border: 1px solid #e6c852; border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 20px; font-size: 14px; color: #664d03;
+  }
+  .disclaimer-top strong { color: var(--red); }
+
+  /* ===== REPORT INTRO (NEW) ===== */
+  .report-intro {
+    background: linear-gradient(135deg, #e8f4f6, #f0f7f8);
+    border: 2px solid var(--teal); border-radius: 12px;
+    padding: 24px 22px; margin-bottom: 20px;
+  }
+  .report-intro h2 { font-size: 18px; color: var(--navy); margin-bottom: 10px; }
+  .report-intro p { font-size: 15px; margin-bottom: 8px; line-height: 1.7; }
+  .report-intro .reading-guide {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px;
+  }
+  .report-intro .reading-step {
+    flex: 1; min-width: 120px; background: #fff; border-radius: 8px;
+    padding: 12px 14px; text-align: center; font-size: 13px; border: 1px solid var(--border);
+  }
+  .report-intro .reading-step .step-num {
+    display: block; font-size: 22px; font-weight: 700; color: var(--teal);
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy), #253d6b);
+    color: #fff; border-radius: 14px; padding: 36px 32px; margin-bottom: 24px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 26px; margin-bottom: 6px; letter-spacing: -0.5px; }
+  .hero .subtitle { font-size: 15px; opacity: .85; line-height: 1.7; max-width: 700px; margin: 0 auto; }
+  .hero .meta-row {
+    margin-top: 14px; font-size: 13px; opacity: .7;
+    border-top: 1px solid rgba(255,255,255,.15); padding-top: 12px;
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  }
+
+  /* ===== BIRD'S EYE SECTION ===== */
+  .birds-eye {
+    background: var(--card-bg); border-radius: 12px; padding: 28px 20px;
+    margin-bottom: 24px; border: 1px solid var(--border);
+  }
+  .birds-eye h2 {
+    font-size: 19px; color: var(--navy); margin-bottom: 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .birds-eye .section-summary {
+    font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6;
+  }
+
+  /* ===== SVG CONTAINERS ===== */
+  .svg-container {
+    background: #fdfdfc; border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px; margin-bottom: 20px; overflow-x: auto;
+  }
+  .svg-container h3 {
+    font-size: 16px; color: var(--teal); margin-bottom: 10px; font-weight: 600;
+  }
+
+  /* ===== SECTION CARDS ===== */
+  .section-card {
+    background: var(--card-bg); border-radius: 12px; padding: 26px 24px;
+    margin-bottom: 20px; border: 1px solid var(--border); page-break-inside: avoid;
+  }
+  .section-card h2 {
+    font-size: 19px; color: var(--navy); margin-bottom: 6px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--teal);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-card h2 .axis-badge {
+    display: inline-block; background: var(--teal); color: #fff;
+    font-size: 13px; font-weight: 700; padding: 3px 12px; border-radius: 20px;
+  }
+  .section-card .section-summary {
+    background: var(--navy-light); border-radius: 8px; padding: 15px 18px;
+    margin: 12px 0 18px; font-size: 14px; line-height: 1.7;
+  }
+  .section-card .section-summary strong { color: var(--navy); }
+  .section-card h3 {
+    font-size: 16px; color: var(--teal); margin: 20px 0 10px; font-weight: 600;
+  }
+  .section-card h4 {
+    font-size: 15px; color: var(--amber); margin: 14px 0 8px; font-weight: 600;
+  }
+  .section-card p { margin-bottom: 10px; font-size: 15px; }
+  .section-card ul, .section-card ol { margin: 6px 0 12px 20px; font-size: 15px; }
+  .section-card li { margin-bottom: 7px; }
+
+  /* ===== TABLES ===== */
+  .compare-table {
+    width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 14px;
+  }
+  .compare-table th {
+    background: var(--navy); color: #fff; padding: 10px 12px; text-align: left;
+    font-weight: 600; font-size: 13px;
+  }
+  .compare-table td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  .compare-table tr:nth-child(even) td { background: #fcfbf8; }
+  .compare-table tr:hover td { background: #f5f2eb; }
+
+  /* ===== EVIDENCE GAUGE ===== */
+  .gauge-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px;
+  }
+  .gauge-label { width: 130px; text-align: right; flex-shrink: 0; font-weight: 500; font-size: 13px; }
+  .gauge-bar-bg {
+    flex: 1; height: 26px; background: #e8e4db; border-radius: 13px; overflow: hidden; min-width: 150px;
+  }
+  .gauge-bar-fill {
+    height: 100%; border-radius: 13px; display: flex; align-items: center;
+    padding-left: 12px; color: #fff; font-size: 13px; font-weight: 600;
+  }
+
+  /* ===== CITATION ===== */
+  .cite {
+    font-size: 12px; color: var(--muted); background: #f8f6f2;
+    padding: 2px 7px; border-radius: 4px; white-space: nowrap;
+  }
+  .src-block {
+    font-size: 13px; color: var(--muted); margin-top: 4px; font-style: italic;
+  }
+
+  /* ===== TAG ===== */
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px;
+    border-radius: 12px; margin-right: 4px;
+  }
+  .tag-green { background: #e6f4e8; color: #2d6a34; }
+  .tag-red { background: #fde8e8; color: #9b1c1c; }
+  .tag-amber { background: #fef3e4; color: #8a5c1a; }
+  .tag-teal { background: #e8f4f6; color: #1d5a66; }
+  .tag-navy { background: #eef1f7; color: #1b2a4a; }
+
+  /* ===== CHECKLIST ===== */
+  .checklist { list-style: none; margin: 12px 0; font-size: 15px; }
+  .checklist li {
+    padding: 7px 0 7px 30px; position: relative; margin-bottom: 5px;
+  }
+  .checklist li::before {
+    content: "☐"; position: absolute; left: 0; color: var(--teal); font-size: 18px;
+  }
+
+  /* ===== DECISION TREE NODES ===== */
+  .dt-node {
+    border: 2px solid var(--teal); border-radius: 10px; padding: 14px 18px;
+    margin: 8px 0; background: var(--teal-light); font-size: 15px;
+  }
+  .dt-node.dt-risk { border-color: var(--red); background: var(--red-light); }
+  .dt-node.dt-amber { border-color: var(--amber); background: var(--amber-light); }
+  .dt-arrow {
+    text-align: center; font-size: 20px; color: var(--muted); margin: 2px 0;
+  }
+
+  /* ===== QUOTE BLOCK ===== */
+  .quote-block {
+    border-left: 4px solid var(--teal); padding: 12px 18px; margin: 14px 0;
+    background: #faf9f6; font-style: italic; color: #555; font-size: 14px;
+  }
+
+  /* ===== FOOTER ===== */
+  .doc-footer {
+    background: var(--navy); color: rgba(255,255,255,.8); border-radius: 12px;
+    padding: 24px 28px; margin-top: 24px; margin-bottom: 80px; font-size: 13px; line-height: 1.8;
+  }
+  .doc-footer strong { color: #fff; }
+  .doc-footer h3 { color: #fff; font-size: 16px; margin-bottom: 10px; }
+
+  /* ===== FLOATING BUTTONS ===== */
+  .float-btns {
+    position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column;
+    gap: 10px; z-index: 999;
+  }
+  .float-btn {
+    width: 48px; height: 48px; border-radius: 50%; border: none;
+    cursor: pointer; font-size: 20px; box-shadow: 0 3px 12px rgba(0,0,0,.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .2s, box-shadow .2s;
+    color: #fff; text-decoration: none;
+  }
+  .float-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+  .float-btn-top { background: var(--navy); }
+  .float-btn-print { background: var(--teal); }
+
+  /* ===== PRINT ===== */
+  @media print {
+    @page { margin: 1.5cm; size: A4; }
+    body { background: #fff; font-size: 13px; color: #000; }
+    .container { max-width: 100%; padding: 0; }
+    .disclaimer-top { background: #fff; border: 1px solid #ccc; }
+    .report-intro { background: #fff; border: 1px solid #ccc; }
+    .hero { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
+    .section-card h2 { color: #000; border-bottom-color: #999; }
+    .section-card h2 .axis-badge { background: #666; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .birds-eye { break-inside: avoid; }
+    .svg-container { break-inside: avoid; }
+    .compare-table th { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .gauge-bar-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .doc-footer { background: #333 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-card .section-summary { background: #f5f5f5; }
+    .float-btns { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== DISCLAIMER TOP ===== -->
+<div class="disclaimer-top">
+  <strong>⚕ 의학적 면책 조항:</strong>
+  본 문서는 정보 제공 목적으로만 작성되었으며, 의학적 진단·처방·치료를 대체하지 않습니다.
+  모든 의학적 결정은 반드시 담당 의료진과 상의하시기 바랍니다.
+  대체 요법에 대한 언급은 "권장"이 아닌 "현재까지의 근거 수준"으로만 서술되었습니다.
+</div>
+
+<!-- ===== REPORT INTRODUCTION ===== -->
+<div class="report-intro">
+  <h2>📖 이 보고서에 대하여</h2>
+  <p>
+    <strong>2026년 4월 20일</strong>, 브리타니(Brittany)는 페이스북 암 환자 커뮤니티에
+    남편을 살려달라는 절박한 글을 올렸습니다.
+    33세, 3종 복합 희귀암(혼합 배아암·테라토마·원형세포육종), 호스피스 판정을 받은 남편을 위해
+    이버멕틴·펜벤다졸의 용량을 묻는 글이었습니다.
+    그 게시글에는 <strong>574개의 댓글</strong>이 달렸습니다.
+  </p>
+  <p>
+    이 보고서는 그 574개 댓글을 <strong>그냥 '이야기'나 '소문'으로 끝내지 않기 위해</strong>
+    만들어졌습니다. 댓글에서 오간 조언·경험담·경고들을
+    PubMed 기반 의학 AI(OpenEvidence)에 동일한 사례로 질문하여 얻은
+    <strong>의학적 근거</strong>와 교차 검증했습니다.
+    <em>커뮤니티의 집단 지혜 + 의학 문헌의 객관적 근거 — 이 둘을 함께 놓고 볼 수 있는 자리</em>를
+    마련한 것입니다.
+  </p>
+  <p>
+    분석은 <strong>6가지 관점(6축)</strong>으로 나누었습니다.
+    하나의 사례를 "병원 치료는 적절했나"부터 "어떻게 하면 성공 가능성을 높이고
+    위험을 낮출 수 있을까"까지 체계적으로 분해해야,
+    다른 환자분들도 <strong>같은 틀로 자신의 상황을 분석</strong>할 수 있기 때문입니다.
+  </p>
+  <p style="font-size:14px;color:var(--muted);">
+    <strong>6축:</strong>
+    <span style="color:var(--teal);">가</span> 병원 치료 평가 ·
+    <span style="color:var(--navy);">나</span> 의학 AI 2차 소견 신뢰성 ·
+    <span style="color:var(--amber);">다</span> 커뮤니티 비교 ·
+    <span style="color:var(--red);">라</span> 정보 소화 가능성 ·
+    <span style="color:#555;">마</span> 댓글 유용성 분류 ·
+    <span style="color:var(--green);">바</span> 가능성↑ 위험↓ 프레임워크
+  </p>
+  <div class="reading-guide">
+    <div class="reading-step">
+      <span class="step-num">🦅 1</span>
+      <strong>매의 눈</strong><br>타임라인·흐름도로<br>전체를 3분 만에 파악
+    </div>
+    <div class="reading-step">
+      <span class="step-num">🔍 2</span>
+      <strong>관심 축 선택</strong><br>6가지 축 중에서<br>궁금한 부분만 골라 읽기
+    </div>
+    <div class="reading-step">
+      <span class="step-num">📋 3</span>
+      <strong>체크리스트 활용</strong><br>내 상황에 적용할<br>점검 항목 확인
+    </div>
+    <div class="reading-step">
+      <span class="step-num">💬 4</span>
+      <strong>의료진과 상의</strong><br>읽은 내용을 바탕으로<br>담당 의사와 대화
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>브리타니(Brittany) 남편 말기암 사례</h1>
+  <div class="subtitle">
+    <strong>통합 케이스 스터디 — 6축 분석 프레임워크</strong><br>
+    혼합 배아암 (Mixed Embryonal Cancer) · 테라토마 (Teratoma) · 원형세포육종 (Round Cell Sarcoma)<br>
+    3종 복합 희귀암 사례 | 대한민국 용도변경 약물 환자 중심 커뮤니티 학습 자료
+  </div>
+  <div class="meta-row">
+    <span>📅 분석일: 2026-07-08</span>
+    <span>📊 데이터: 574개 커뮤니티 댓글 + 의학 AI 2차 소견 3건</span>
+    <span>🔖 버전: v0.5.0</span>
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- BIRD'S EYE VIEW — 매의 눈 (VERTICAL / MOBILE-FIRST) -->
+<!-- ===================================================================== -->
+<div class="birds-eye" id="top">
+  <h2><span>🦅</span> 한눈에 보는 전체 흐름 (매의 눈)</h2>
+  <p class="section-summary">
+    ⏱ 아래 타임라인과 흐름도를 <strong>위에서 아래로</strong> 읽어가면 약 3분 안에 전체 사례를 파악할 수 있습니다.
+    모바일에서도 편하게 보실 수 있도록 세로로 배치했습니다.
+  </p>
+
+  <!-- SVG TIMELINE — VERTICAL -->
+  <div class="svg-container">
+    <h3>📅 진단부터 현재까지 — 임상 경과 타임라인 (위→아래)</h3>
+    <svg viewBox="0 0 420 750" width="100%" height="auto" style="max-width:420px; font-family:'Noto Sans KR','Malgun Gothic',sans-serif;">
+      <defs>
+        <marker id="arrowDown" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+          <path d="M0,0 L4,6 L8,0 Z" fill="#999"/>
+        </marker>
+        <marker id="arrowDownRed" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto">
+          <path d="M0,0 L4,6 L8,0 Z" fill="#b33a3a"/>
+        </marker>
+      </defs>
+      <!-- Vertical line -->
+      <line x1="50" y1="60" x2="50" y2="720" stroke="#d9d4cb" stroke-width="3"/>
+
+      <!-- Node 1: 2023.11 -->
+      <circle cx="50" cy="60" r="14" fill="#1b2a4a" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="58" font-size="14" fill="#1b2a4a" font-weight="700">2023.11 — Stage 2</text>
+      <text x="80" y="78" font-size="13" fill="#2c2c2c">혼합 배아암 (Mixed Embryonal Cancer) 진단</text>
+      <text x="80" y="95" font-size="12" fill="#6b6b6b">48시간 내 신속 수술</text>
+      <line x1="50" y1="74" x2="50" y2="120" stroke="#999" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+      <!-- Node 2: 2024.08-11 -->
+      <circle cx="50" cy="135" r="14" fill="#c9832e" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="133" font-size="14" fill="#c9832e" font-weight="700">2024.08~11</text>
+      <text x="80" y="153" font-size="13" fill="#2c2c2c">항암화학요법 시행</text>
+      <text x="80" y="170" font-size="12" fill="#6b6b6b">구토혈·다수 입원 — 심한 부작용</text>
+      <line x1="50" y1="149" x2="50" y2="195" stroke="#999" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+      <!-- Node 3: 2025.07 -->
+      <circle cx="50" cy="210" r="14" fill="#2a7d8c" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="208" font-size="14" fill="#2a7d8c" font-weight="700">2025.07</text>
+      <text x="80" y="228" font-size="13" fill="#2c2c2c">종양 제거 수술 (Loma Linda 병원)</text>
+      <text x="80" y="245" font-size="12" fill="#6b6b6b">13.5cm + 5.7cm 종양 적출</text>
+      <text x="80" y="262" font-size="12" fill="#b33a3a">→ 수술 후 테라토마+원형세포육종 확인</text>
+      <line x1="50" y1="224" x2="50" y2="295" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#arrowDownRed)"/>
+
+      <!-- Node 4: Post-surgery -->
+      <circle cx="50" cy="310" r="14" fill="#b33a3a" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="308" font-size="14" fill="#b33a3a" font-weight="700">수술 후 합병증</text>
+      <text x="80" y="328" font-size="13" fill="#2c2c2c">유미성 복수 (Chylous Ascites) 발생</text>
+      <text x="80" y="345" font-size="12" fill="#6b6b6b">1/20,000 희귀 합병증 · 550ml+200ml 배액</text>
+      <line x1="50" y1="324" x2="50" y2="385" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#arrowDownRed)"/>
+
+      <!-- Node 5: 2026.01-03 -->
+      <circle cx="50" cy="400" r="14" fill="#b33a3a" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="398" font-size="14" fill="#b33a3a" font-weight="700">2026.01~03</text>
+      <text x="80" y="418" font-size="13" fill="#2c2c2c">광범위 전이 확인 — 6개월간 치료 공백</text>
+      <text x="80" y="435" font-size="12" fill="#6b6b6b">대장·소장·좌신장·비장·췌장·간·폐</text>
+      <text x="80" y="452" font-size="12" fill="#6b6b6b">최대 종양 22.4×17.9×24.2cm</text>
+      <line x1="50" y1="414" x2="50" y2="485" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#arrowDownRed)"/>
+
+      <!-- Node 6: 2026.04 Hospice -->
+      <circle cx="50" cy="500" r="14" fill="#1b2a4a" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="498" font-size="14" fill="#1b2a4a" font-weight="700">2026.04</text>
+      <text x="80" y="518" font-size="13" fill="#2c2c2c">호스피스 전환 — 병원 "더 이상 할 수 있는 게 없다"</text>
+      <text x="80" y="535" font-size="12" fill="#6b6b6b">배액 거부·부종 악화·도뇨관 의존 상태로 퇴원</text>
+      <line x1="50" y1="514" x2="50" y2="565" stroke="#999" stroke-width="1.5" marker-end="url(#arrowDown)"/>
+
+      <!-- Node 7: Current -->
+      <circle cx="50" cy="580" r="14" fill="#3a7d44" stroke="#fff" stroke-width="3"/>
+      <text x="80" y="578" font-size="14" fill="#3a7d44" font-weight="700">현재 (2026.04~)</text>
+      <text x="80" y="598" font-size="13" fill="#2c2c2c">이버멕틴·펜벤다졸 자가 투여 시작</text>
+      <text x="80" y="615" font-size="12" fill="#6b6b6b">체중 120→150.7lbs (25lbs 종양+체액)</text>
+      <text x="80" y="632" font-size="12" fill="#6b6b6b">33세 · 16세 자녀 · 배우자 간병 중</text>
+
+      <!-- Legend -->
+      <rect x="80" y="670" width="12" height="12" rx="2" fill="#1b2a4a"/><text x="98" y="681" font-size="13" fill="#6b6b6b">진단·전환</text>
+      <rect x="170" y="670" width="12" height="12" rx="2" fill="#c9832e"/><text x="188" y="681" font-size="13" fill="#6b6b6b">표준치료</text>
+      <rect x="260" y="670" width="12" height="12" rx="2" fill="#2a7d8c"/><text x="278" y="681" font-size="13" fill="#6b6b6b">수술</text>
+      <rect x="320" y="670" width="12" height="12" rx="2" fill="#b33a3a"/><text x="338" y="681" font-size="13" fill="#6b6b6b">합병증</text>
+      <rect x="80" y="695" width="12" height="12" rx="2" fill="#3a7d44"/><text x="98" y="706" font-size="13" fill="#6b6b6b">현재</text>
+    </svg>
+  </div>
+
+  <!-- SVG FLOW CHART — VERTICAL -->
+  <div class="svg-container">
+    <h3>🔗 인과관계 흐름도 — "무엇이 무엇을 일으켰는가" (위→아래)</h3>
+    <svg viewBox="0 0 440 720" width="100%" height="auto" style="max-width:440px; font-family:'Noto Sans KR','Malgun Gothic',sans-serif;">
+      <defs>
+        <marker id="afDown" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+          <path d="M0,0 L5,7 L10,0 Z" fill="#2a7d8c"/>
+        </marker>
+        <marker id="afDownRed" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+          <path d="M0,0 L5,7 L10,0 Z" fill="#b33a3a"/>
+        </marker>
+        <marker id="afDownAmber" markerWidth="10" markerHeight="7" refX="5" refY="7" orient="auto">
+          <path d="M0,0 L5,7 L10,0 Z" fill="#c9832e"/>
+        </marker>
+      </defs>
+
+      <!-- Box 1: Root cause -->
+      <rect x="30" y="10" width="380" height="55" rx="10" fill="#1b2a4a"/>
+      <text x="220" y="34" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">Stage 2 혼합 배아암 (Mixed Embryonal Cancer)</text>
+      <text x="220" y="53" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.7)">2023.11 진단 · 고환 · 빠른 성장·전이 특성</text>
+      <line x1="220" y1="65" x2="220" y2="90" stroke="#2a7d8c" stroke-width="2" marker-end="url(#afDown)"/>
+
+      <!-- Box 2: Treatment -->
+      <rect x="30" y="90" width="180" height="55" rx="10" fill="#c9832e"/>
+      <text x="120" y="114" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">항암화학요법</text>
+      <text x="120" y="133" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">2024.08~11 · 구토혈·입원 반복</text>
+      <rect x="230" y="90" width="180" height="55" rx="10" fill="#2a7d8c"/>
+      <text x="320" y="114" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">종양제거수술</text>
+      <text x="320" y="133" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.75)">2025.07 · Loma Linda</text>
+      <!-- Arrows to treatment -->
+      <line x1="140" y1="65" x2="120" y2="90" stroke="#c9832e" stroke-width="1.5" marker-end="url(#afDownAmber)"/>
+      <line x1="300" y1="65" x2="320" y2="90" stroke="#2a7d8c" stroke-width="1.5" marker-end="url(#afDown)"/>
+      <line x1="120" y1="145" x2="220" y2="170" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#afDownRed)"/>
+      <line x1="320" y1="145" x2="220" y2="170" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#afDownRed)"/>
+
+      <!-- Box 3: Somatic transformation -->
+      <rect x="30" y="172" width="380" height="50" rx="10" fill="#b33a3a"/>
+      <text x="220" y="194" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">⚠ 체세포 형질전환 (Somatic Transformation) 발견</text>
+      <text x="220" y="213" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.8)">테라토마 + Stage 3 원형세포육종 — "모낭에서 발이 나오는 것 같다"</text>
+      <line x1="150" y1="222" x2="150" y2="250" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#afDownRed)"/>
+      <line x1="290" y1="222" x2="290" y2="250" stroke="#b33a3a" stroke-width="1.5" marker-end="url(#afDownRed)"/>
+
+      <!-- Box 4a: Ascites -->
+      <rect x="15" y="252" width="185" height="65" rx="10" fill="#fde8e8" stroke="#b33a3a" stroke-width="1.5"/>
+      <text x="107" y="275" text-anchor="middle" font-size="13" fill="#9b1c1c" font-weight="700">유미성 복수</text>
+      <text x="107" y="293" text-anchor="middle" font-size="11" fill="#6b6b6b">(Chylous Ascites)</text>
+      <text x="107" y="309" text-anchor="middle" font-size="11" fill="#6b6b6b">1/20,000 희귀 합병증</text>
+      <!-- Box 4b: Mets -->
+      <rect x="240" y="252" width="185" height="65" rx="10" fill="#fde8e8" stroke="#b33a3a" stroke-width="1.5"/>
+      <text x="332" y="275" text-anchor="middle" font-size="13" fill="#9b1c1c" font-weight="700">광범위 전이</text>
+      <text x="332" y="293" text-anchor="middle" font-size="11" fill="#6b6b6b">7개 장기 침범</text>
+      <text x="332" y="309" text-anchor="middle" font-size="11" fill="#6b6b6b">대장·소장·신장·비장·췌장·간·폐</text>
+      <line x1="107" y1="317" x2="107" y2="345" stroke="#c9832e" stroke-width="1.5" marker-end="url(#afDownAmber)"/>
+      <line x1="332" y1="317" x2="332" y2="345" stroke="#c9832e" stroke-width="1.5" marker-end="url(#afDownAmber)"/>
+
+      <!-- Box 5a: Edema -->
+      <rect x="15" y="347" width="185" height="55" rx="10" fill="#fef3e4" stroke="#c9832e" stroke-width="1.5"/>
+      <text x="107" y="370" text-anchor="middle" font-size="13" fill="#8a5c1a" font-weight="700">심한 전신 부종</text>
+      <text x="107" y="388" text-anchor="middle" font-size="11" fill="#6b6b6b">25lbs 종양+체액</text>
+      <text x="107" y="400" text-anchor="middle" font-size="10" fill="#6b6b6b">체중 120→150.7lbs</text>
+      <!-- Box 5b: Urinary -->
+      <rect x="240" y="347" width="185" height="55" rx="10" fill="#fef3e4" stroke="#c9832e" stroke-width="1.5"/>
+      <text x="332" y="370" text-anchor="middle" font-size="13" fill="#8a5c1a" font-weight="700">배뇨 장애</text>
+      <text x="332" y="388" text-anchor="middle" font-size="11" fill="#6b6b6b">요도 압박 → 도뇨관 의존</text>
+      <line x1="107" y1="402" x2="220" y2="435" stroke="#b33a3a" stroke-width="2" marker-end="url(#afDownRed)"/>
+      <line x1="332" y1="402" x2="220" y2="435" stroke="#b33a3a" stroke-width="2" marker-end="url(#afDownRed)"/>
+
+      <!-- Box 6: Terminal -->
+      <rect x="30" y="437" width="380" height="60" rx="10" fill="#1b2a4a"/>
+      <text x="220" y="460" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">호스피스 권고 → 이버멕틴·펜벤다졸 자가 투여</text>
+      <text x="220" y="480" text-anchor="middle" font-size="12" fill="rgba(255,255,255,.7)">표준 치료로 진행 억제 불가 · 완화의료 중심</text>
+      <text x="220" y="496" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.5)">2026.04 — 33세 · 16세 자녀 · 배우자 간병</text>
+
+      <!-- Annotation -->
+      <text x="30" y="550" font-size="13" fill="#b33a3a" font-weight="600">※ 3종 복합암의 경로:</text>
+      <text x="30" y="572" font-size="12" fill="#6b6b6b">혼합 배아암 → 체세포 형질전환(Somatic Transformation)</text>
+      <text x="30" y="592" font-size="12" fill="#6b6b6b">→ 테라토마(Teratoma) + 원형세포육종(Round Cell Sarcoma)</text>
+      <text x="30" y="620" font-size="12" fill="#6b6b6b">원인: 항암·수술 후 6개월간 적극적 치료 없이 관망(watchful waiting)</text>
+    </svg>
+  </div>
+
+  <!-- Navigation pills to axes -->
+  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px;">
+    <a href="#axis-ga" style="text-decoration:none;background:var(--teal);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 가: 병원 치료</a>
+    <a href="#axis-na" style="text-decoration:none;background:var(--navy);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 나: 의학 AI 소견</a>
+    <a href="#axis-da" style="text-decoration:none;background:var(--amber);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 다: 커뮤니티</a>
+    <a href="#axis-ra" style="text-decoration:none;background:var(--red);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 라: 정보 소화</a>
+    <a href="#axis-ma" style="text-decoration:none;background:#555;color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 마: 댓글 분류</a>
+    <a href="#axis-ba" style="text-decoration:none;background:var(--green);color:#fff;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;">축 바: 가능성↑위험↓</a>
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 가: 병원 치료 평가 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-ga">
+  <h2><span class="axis-badge">축 가</span> 병원 치료 평가</h2>
+  <div class="section-summary">
+    <strong>🩺 한눈에 요약:</strong> ① 초기 진단·수술은 신속했으나 ② 수술 후 약 6개월간 "관망(watchful waiting)"으로 전이 악화 ③ 호스피스 전환 시점에서 배액 거부 등 증상 완화 기회 상실 ④ OpenEvidence 기준, 표준 치료 범위 내에 있으나 <strong>완화의료(palliative care) 측면에서 보완 가능성 존재</strong>
+  </div>
+
+  <h3>✅ 잘된 점</h3>
+  <table class="compare-table">
+    <tr><th style="width:30%">영역</th><th>내용</th></tr>
+    <tr>
+      <td>초기 대응</td>
+      <td>2023.11 고환 비대 발견 후 <strong>48시간 이내</strong> 수술 — Stage 2 혼합 배아암에 대한 신속한 표준 대응 <span class="cite">csv:1</span></td>
+    </tr>
+    <tr>
+      <td>항암화학요법</td>
+      <td>표준 요법(BEP 또는 유사 요법) 시행 — 생식세포종양(GCT) 1차 치료로 적절 <span class="cite">csv:1</span></td>
+    </tr>
+    <tr>
+      <td>병원 변경</td>
+      <td>초기 치료 불만 → Loma Linda 병원 전원 — 다른 의사 의견(second opinion) 확보 시도 (환자 권리 행사) <span class="cite">csv:1</span></td>
+    </tr>
+    <tr>
+      <td>조직 검사</td>
+      <td>수술 적출물에서 테라토마+원형세포육종 확인 — 체세포 형질전환(somatic transformation) 진단은 정확 <span class="cite">csv:1</span></td>
+    </tr>
+  </table>
+
+  <h3>⚠️ 아쉬운 점</h3>
+  <table class="compare-table">
+    <tr><th style="width:30%">영역</th><th>내용</th></tr>
+    <tr>
+      <td>수술 후 지연</td>
+      <td>2025.07 수술 후 2026.01까지 약 <strong>6개월간 혈액검사만 시행</strong>하고 적극적 치료 없이 관망 — 그 사이 간·폐 전이 진행 <span class="cite">csv:1</span></td>
+    </tr>
+    <tr>
+      <td>배액 거부</td>
+      <td>유미성 복수에 대한 치료적 복수천자(paracentesis)를 "종양 천공 위험"으로 거부 — OpenEvidence는 증상 완화 목적의 <strong>반복적 천자를 권장</strong>함 <span class="cite">csv:290</span> <span class="cite">OE:This case represents...md</span></td>
+    </tr>
+    <tr>
+      <td>호스피스 전환</td>
+      <td>배뇨장애·거대 부종 상태로 퇴원 → 완화의료 연계 없이 "집으로 돌려보냄" — <strong>거주형(indwelling) 복막 카테터</strong> 등 대안 미제시 <span class="cite">csv:1</span> <span class="cite">OE:Repurposed Drugs.md §2</span></td>
+    </tr>
+    <tr>
+      <td>의사소통</td>
+      <td>"그냥 때가 되었다" — 예후 설명이 환자·보호자에게 <strong>충분히 전달되지 않음</strong> <span class="cite">csv:1</span></td>
+    </tr>
+  </table>
+
+  <h3>📊 치료 적절성 평가 (OpenEvidence 기준)</h3>
+  <p>OpenEvidence PDF의 생식세포종양(GCT)+체세포 형질전환 표준 치료 권고와 실제 치료를 비교합니다.</p>
+  <div class="gauge-row">
+    <span class="gauge-label">초기 진단·수술</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:90%;background:var(--green);">적절 (90%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">1차 항암</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:80%;background:var(--green);">적절 (80%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">수술 후 감시</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:25%;background:var(--red);">미흡 (25%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">완화의료 연계</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:20%;background:var(--red);">미흡 (20%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">증상 관리</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:30%;background:var(--amber);">부족 (30%)</div></div>
+  </div>
+
+  <div class="src-block">📚 출처: csv:1, csv:290 | OE:This case represents an exceptionally challenging clinical scenario.md | OE:Repurposed Drugs.md §2 (완화의료 관리)</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 나: OpenEvidence AI 신뢰성 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-na">
+  <h2><span class="axis-badge">축 나</span> 의학 AI 2차 소견 신뢰성 평가</h2>
+  <div class="section-summary">
+    <strong>🤖 한눈에 요약:</strong> ① OpenEvidence는 PubMed 기반 의학 문헌을 실시간 검색·인용하는 AI 플랫폼으로, <strong>일반 AI 챗봇보다 의학적 신뢰성이 높음</strong> ② 본 사례에서 2종의 질문으로 3건의 소견 도출 — 포괄적 임상 평가 + 용도변경 약물 + 대사 중재법 ③ <strong>한계:</strong> 모든 근거가 PubMed 문헌에 기반하나, 대부분 전임상·증례보고 수준이며 무작위대조시험(RCT)은 없음 ④ 커뮤니티 활용 시 근거 수준을 반드시 함께 표시해야 함
+  </div>
+
+  <h3>📋 의학 AI 2차 소견 3건 개요</h3>
+  <table class="compare-table">
+    <tr><th style="width:5%">#</th><th style="width:30%">질문 영역</th><th>핵심 결론</th><th style="width:18%">근거 수준</th></tr>
+    <tr>
+      <td>1</td>
+      <td><strong>포괄적 임상 평가 및 치료 대안</strong><br><span style="font-size:13px;color:var(--muted);">GCT+체세포 형질전환 구제요법</span></td>
+      <td>
+        • GCT 중심 vs 육종 중심 항암요법 모두 증례보고 수준<br>
+        • 완전 수술 절제가 유일한 근치법이나 본 환자는 불가능<br>
+        • VeIP, TIP 등 구제 항암요법 + 분자 프로파일링 권고<br>
+        • 예후 매우 불량
+      </td>
+      <td><span class="tag tag-amber">증례보고·전문가 의견</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>용도변경 약물</strong><br><span style="font-size:13px;color:var(--muted);">이버멕틴·펜벤다졸의 항암 근거</span></td>
+      <td>
+        • RCT 없음 — 모든 근거는 전임상+관찰연구<br>
+        • 197명 관찰 코호트: 임상적 이득률 84.4% (자기보고 기반·대조군 없음)<br>
+        • GCT/체세포 형질전환 특이적 데이터 <strong>전무</strong><br>
+        • 말기 환자의 공유의사결정(shared decision-making) 맥락에서 논의 가능
+      </td>
+      <td><span class="tag tag-red">RCT 없음·관찰연구</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>대사 중재법</strong><br><span style="font-size:13px;color:var(--muted);">케토식·단식의 항암 효과</span></td>
+      <td>
+        • 바르부르크 효과(암세포 포도당 의존)에 기반한 이론적 근거<br>
+        • GCT/체세포 형질전환 특이적 임상 데이터 없음<br>
+        • 본 환자: 심한 영양실조+유미성 복수로 고지방 케토식은 <strong>위험</strong><br>
+        • 단식 또한 쇠약 상태에서 위험 — "해를 끼치지 말라(do no harm)" 원칙 우선
+      </td>
+      <td><span class="tag tag-red">이론적·전임상</span></td>
+    </tr>
+  </table>
+
+  <h3>📊 근거 강도 — 치료 옵션별 비교</h3>
+  <div class="gauge-row">
+    <span class="gauge-label">GCT 표준 항암</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:85%;background:var(--green);">RCT·치료지침 (85%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">구제 항암요법</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:50%;background:var(--amber);">증례 시리즈 (50%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">완화적 복수 관리</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:70%;background:var(--teal);">체계적 문헌고찰 (70%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">분자 표적 치료</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:30%;background:#888;">초기 연구 (30%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">이버멕틴·펜벤다졸</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:20%;background:var(--red);">관찰연구 (20%)</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">케토식·대사요법</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:10%;background:var(--red);">전임상 (10%)</div></div>
+  </div>
+
+  <h3>🔍 의학 AI 신뢰성 평가</h3>
+  <table class="compare-table">
+    <tr><th style="width:25%">평가 기준</th><th>판단</th></tr>
+    <tr><td>출처 투명성</td><td>✅ 모든 주장에 PubMed PMID/DOI 인용 — 추적 가능</td></tr>
+    <tr><td>근거 수준 구분</td><td>✅ 전임상·증례보고·문헌고찰 명확히 구분</td></tr>
+    <tr><td>불확실성 표시</td><td>✅ "근거 제한적" "RCT 없음" 등 한계 명시</td></tr>
+    <tr><td>맞춤형 답변</td><td>✅ 질문의 구체성에 비례 — 구체적일수록 구체적 답변</td></tr>
+    <tr><td>한국어 접근성</td><td>⚠️ 영문만 지원 — 커뮤니티 활용 시 번역·해석 필요</td></tr>
+  </table>
+
+  <div class="src-block">📚 출처: OE:This case represents an exceptionally challenging clinical scenario.md (14개 PubMed 인용) | OE:Repurposed Drugs.md (8개 PubMed 인용)</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 다: 커뮤니티 비교 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-da">
+  <h2><span class="axis-badge">축 다</span> 커뮤니티 비교</h2>
+  <div class="section-summary">
+    <strong>🌐 한눈에 요약:</strong> ① 페이스북 커뮤니티(영어권)는 <strong>경험 기반·동료 지지</strong> 중심 — 용량 조언·성공 사례·정서적 지지가 주를 이룸 ② 한국 커뮤니티는 <strong>정보 비대칭</strong>이 핵심 과제 — 영문 자료 접근성, 의학 용어 장벽, 검증되지 않은 치료지침(protocol) 유포 위험 ③ 양쪽 모두 "의료진과 상의"보다 <strong>동료 경험에 의존하는 경향</strong>이 강함
+  </div>
+
+  <table class="compare-table">
+    <tr><th style="width:20%">비교 축</th><th style="width:40%">페이스북 커뮤니티 (영어권)</th><th style="width:40%">한국 커뮤니티 적용 시 고려사항</th></tr>
+    <tr>
+      <td><strong>정보 유형</strong></td>
+      <td>• 구체적 용량 조언 (체중 기반)<br>• 개인 성공·실패 사례 공유<br>• 비공식 멘토 시스템<br>• 특정 의사 추천 집중</td>
+      <td>• 영문 자료 번역·해석 필요<br>• 용량 정보의 비정량적 표현("지우개 크기") 위험<br>• 한국 내 유사 멘토 시스템 부재<br>• 의사 추천보다 제품 구매처 정보 수요 높을 것</td>
+    </tr>
+    <tr>
+      <td><strong>위험 요소</strong></td>
+      <td>• 사기·가짜 계정<br>• 과도한 용량 권장<br>• "호스피스 거부" 의견<br>• 백신 관련 주장 <span class="cite">csv:30, csv:321, csv:368</span></td>
+      <td>• 검증되지 않은 해외 치료지침 무비판 수용<br>• 언어 장벽으로 인한 잘못된 정보 확대<br>• 한국 의료 시스템과의 충돌<br>• 법적 규제 차이 (이버멕틴 처방 제한)</td>
+    </tr>
+    <tr>
+      <td><strong>강점</strong></td>
+      <td>• 24시간 정서적 지지 연결망<br>• 다양한 사례의 실시간 공유<br>• 환자 주도 정보 생산<br>• 호스피스 유지하며 병행 가능 인식 <span class="cite">csv:31</span></td>
+      <td>• 한국형 커뮤니티 구축 시: 한글 정보 접근성 ↑<br>• 의료 시스템 내 환자 권리 교육 병행 가능<br>• 근거 수준 시각화로 정보 품질 향상 가능<br>• 가족 중심 문화 → 보호자 지원에 강점</td>
+    </tr>
+    <tr>
+      <td><strong>한국 커뮤니티를 위한 시사점</strong></td>
+      <td colspan="2">
+        ① 비정량적 용량 정보("지우개 크기")의 위험성 교육 필요<br>
+        ② 개인 성공 사례와 임상 근거의 차이에 대한 이해 교육<br>
+        ③ 사기·검증되지 않은 치료지침에 대한 경계 시스템 구축<br>
+        ④ 표준 치료 + 보완 요법의 균형 잡힌 시각 제공
+      </td>
+    </tr>
+  </table>
+
+  <div class="src-block">📚 출처: fb_comments_계층형_483개_Brittany.csv.txt (전체 574개 댓글 분석) | 특히 csv:1, csv:30, csv:31, csv:76, csv:86, csv:121, csv:126, csv:164, csv:324 참조</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 라: 정보 소화 가능성 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-ra">
+  <h2><span class="axis-badge">축 라</span> 정보 소화 가능성</h2>
+  <div class="section-summary">
+    <strong>📖 한눈에 요약:</strong> ① 브리타니(Brittany)는 신경학적 문제가 있어 "5살 아이에게 설명하듯" 정보를 요청함 <span class="cite">csv:1</span> ② 574개 댓글 + 의학 AI 문서 + 치료지침 문서 등 <strong>방대한 정보량</strong>에 압도 ③ 커뮤니티 모범 사례: 체중 기반 차트, 시각적 용량 가이드(주사기 눈금 사진), 단순 반복 메시지
+  </div>
+
+  <h3>📊 정보 소화 장벽 평가</h3>
+  <div class="gauge-row">
+    <span class="gauge-label">정보량</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:90%;background:var(--red);">매우 높음 — 574개 댓글+5건 문서</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">정보 복잡도</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:85%;background:var(--red);">매우 높음 — 전문 의학용어+영어</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">요청자 이해도</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:25%;background:var(--amber);">제한적 — 신경학적 문제 + 비전문가</div></div>
+  </div>
+  <div class="gauge-row">
+    <span class="gauge-label">정보 구조화</span>
+    <div class="gauge-bar-bg"><div class="gauge-bar-fill" style="width:15%;background:var(--red);">매우 낮음 — 원시 댓글 스트림</div></div>
+  </div>
+
+  <h3>💡 커뮤니티가 보여준 모범 사례</h3>
+  <table class="compare-table">
+    <tr><th style="width:25%">전략</th><th>사례</th><th style="width:15%">출처</th></tr>
+    <tr>
+      <td><strong>시각적 용량 가이드</strong></td>
+      <td>말 페이스트 주사기(눈금 단위) 사진 공유 — "체중 기준으로 눈금 계산"<br>용량 차트 이미지 업로드</td>
+      <td><span class="cite">csv:86, csv:223</span></td>
+    </tr>
+    <tr>
+      <td><strong>단순 반복 핵심 메시지</strong></td>
+      <td>"1일 2회, 6일 복용 1일 휴식" "밀크씨슬 꼭 같이" "빈속에 복용"</td>
+      <td><span class="cite">csv:126, csv:234</span></td>
+    </tr>
+    <tr>
+      <td><strong>1:1 지원</strong></td>
+      <td>"개인 메시지 주세요" — 공개 댓글이 복잡해지면 개인 메시지로 전환</td>
+      <td><span class="cite">csv:233, csv:267</span></td>
+    </tr>
+    <tr>
+      <td><strong>자기주도 학습 유도</strong></td>
+      <td>"이 그룹의 글들을 계속 읽어보세요" — 자연요법 의사 상담 권유</td>
+      <td><span class="cite">csv:96, csv:121</span></td>
+    </tr>
+  </table>
+
+  <h3>🔑 한국 커뮤니티를 위한 교훈</h3>
+  <ul>
+    <li><strong>정보 전달 양식:</strong> 복잡한 의학 정보 → "한 장 요약" 카드 + 체크리스트로 변환</li>
+    <li><strong>용량 정보 표준화:</strong> "지우개 크기" 대신 체중(kg) × 용량(mg) 계산기 제공</li>
+    <li><strong>멘토 시스템:</strong> 경험자-신규자 1:1 연결 (한국어 가능 멘토 모임 구축)</li>
+    <li><strong>위험 신호 교육:</strong> "이런 조언은 조심하세요" 체크리스트 (예: 호스피스 중단 권고, 과도한 용량, 의사와 상의 없는 자가 치료)</li>
+  </ul>
+
+  <div class="src-block">📚 출처: csv:1, csv:86, csv:96, csv:121, csv:126, csv:223, csv:233, csv:234, csv:267</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 마: 댓글 유용성 분류 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-ma">
+  <h2><span class="axis-badge">축 마</span> 댓글 유용성 분류 기준</h2>
+  <div class="section-summary">
+    <strong>🏷 한눈에 요약:</strong> 574개 댓글을 8가지 범주로 분류 — ① 용량·투여법 ② 치료지침·의사 추천 ③ 정서적 지지·기도 ④ 식이·생활습관 ⑤ 호스피스·의료시스템 조언 ⑥ 경고·위험 신호 ⑦ 개인 경험담 ⑧ 스팸·관련 없음. <strong>가장 높은 유용성을 보인 범주는 ①+②+⑤</strong>이며, ③(기도·지지)은 정서적 가치는 높으나 의학적 유용성은 낮음.
+  </div>
+
+  <h3>📊 댓글 분류 체계</h3>
+  <table class="compare-table">
+    <tr><th style="width:5%">분류</th><th style="width:18%">범주</th><th style="width:12%">추정 비율</th><th>대표 예시</th><th style="width:10%">유용성</th></tr>
+    <tr>
+      <td><span class="tag tag-teal">A</span></td>
+      <td><strong>용량·투여법</strong></td>
+      <td>~18%</td>
+      <td>"체중 약 23kg(50lbs)당 한 눈금" <span class="cite">csv:86</span><br>"1일 2회 444mg fenben + 지방 음식과 함께" <span class="cite">csv:293</span></td>
+      <td><span class="tag tag-green">높음</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-teal">B</span></td>
+      <td><strong>치료지침·의사 추천</strong></td>
+      <td>~15%</td>
+      <td>"Makis 박사 치료지침" <span class="cite">csv:30, csv:158</span><br>"Joe Tippens 치료지침" <span class="cite">csv:410</span></td>
+      <td><span class="tag tag-green">높음</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-navy">C</span></td>
+      <td><strong>정서적 지지·기도</strong></td>
+      <td>~25%</td>
+      <td>"기도합니다" "신의 축복이 있기를" 반복<br>시편 91편 낭독 권유 <span class="cite">csv:74</span></td>
+      <td><span class="tag tag-amber">정서적 가치</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-navy">D</span></td>
+      <td><strong>식이·생활습관</strong></td>
+      <td>~12%</td>
+      <td>"설탕·탄수화물 완전 차단" <span class="cite">csv:23, csv:27</span><br>"3일 단식으로 암 사멸" <span class="cite">csv:225</span></td>
+      <td><span class="tag tag-amber">보조적</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-teal">E</span></td>
+      <td><strong>호스피스·의료시스템</strong></td>
+      <td>~8%</td>
+      <td>"호스피스 유지하면서 병행 가능" <span class="cite">csv:31</span><br>"저용량 모르핀은 큰 도움" <span class="cite">csv:36</span> vs "호스피스 나가라" <span class="cite">csv:35</span></td>
+      <td><span class="tag tag-green">높음</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-red">F</span></td>
+      <td><strong>경고·위험 신호</strong></td>
+      <td>~7%</td>
+      <td>"사기꾼 조심" <span class="cite">csv:106</span> "가짜 계정 주의" <span class="cite">csv:30</span><br>"간 독성 모니터링 필수" <span class="cite">csv:166</span></td>
+      <td><span class="tag tag-green">높음</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-navy">G</span></td>
+      <td><strong>개인 경험담</strong></td>
+      <td>~10%</td>
+      <td>"7개월 만에 말기암 사라짐" <span class="cite">csv:126</span><br>"케토 식단으로 6년 차 깨끗한 검사 결과" <span class="cite">csv:171</span></td>
+      <td><span class="tag tag-amber">참고용</span></td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-red">H</span></td>
+      <td><strong>스팸·관련 없음</strong></td>
+      <td>~5%</td>
+      <td>"Nurse Cathy 도움됐다" 반복 <span class="cite">csv:15, csv:42, csv:80</span><br>이모티콘·태그만 있는 댓글</td>
+      <td><span class="tag tag-red">낮음</span></td>
+    </tr>
+  </table>
+
+  <h3>📈 분류별 분포</h3>
+  <svg viewBox="0 0 440 130" width="100%" height="auto" style="max-width:440px;">
+    <rect x="0" y="0" width="79" height="28" rx="4" fill="#2a7d8c"/><text x="40" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">A: 18%</text>
+    <rect x="83" y="0" width="66" height="28" rx="4" fill="#2a7d8c"/><text x="116" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">B: 15%</text>
+    <rect x="153" y="0" width="110" height="28" rx="4" fill="#1b2a4a"/><text x="208" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">C: 정서 25%</text>
+    <rect x="267" y="0" width="53" height="28" rx="4" fill="#1b2a4a"/><text x="293" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">D: 12%</text>
+    <rect x="324" y="0" width="35" height="28" rx="4" fill="#2a7d8c"/><text x="341" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">E</text>
+    <rect x="363" y="0" width="31" height="28" rx="4" fill="#b33a3a"/><text x="378" y="19" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">F</text>
+    <rect x="398" y="0" width="22" height="28" rx="4" fill="#b33a3a"/><text x="409" y="19" text-anchor="middle" font-size="10" fill="#fff" font-weight="600">H</text>
+    <rect x="0" y="36" width="44" height="28" rx="4" fill="#1b2a4a"/><text x="22" y="55" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">G:10%</text>
+    <text x="55" y="55" font-size="12" fill="#6b6b6b">(개인 경험담)</text>
+    <text x="10" y="85" font-size="13" fill="#2a7d8c" font-weight="600">■ 유용성 높음 (A+B+E+F) ≈ 48%</text>
+    <text x="10" y="106" font-size="13" fill="#1b2a4a" font-weight="600">■ 보조적 가치 (C+D+G) ≈ 47%</text>
+    <text x="10" y="125" font-size="13" fill="#b33a3a" font-weight="600">■ 낮음/스팸 (H) ≈ 5%</text>
+  </svg>
+
+  <div class="src-block">📚 출처: fb_comments_계층형_483개_Brittany.csv.txt (전수 분석 기반 범주 추정) | 대표 예시: csv:1, csv:23, csv:30, csv:31, csv:35, csv:36, csv:74, csv:86, csv:106, csv:126, csv:158, csv:166, csv:171, csv:225, csv:293, csv:410</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- AXIS 바: 가능성↑ 위험↓ 프레임워크 -->
+<!-- ===================================================================== -->
+<div class="section-card" id="axis-ba">
+  <h2><span class="axis-badge">축 바</span> 가능성↑ 위험↓ 프레임워크</h2>
+  <div class="section-summary">
+    <strong>🎯 한눈에 요약:</strong> 본 사례에서 배울 수 있는 <strong>성공 가능성을 높이고 위험을 낮추는</strong> 2트랙 전략 — <span style="color:var(--green);">🟢 성공 요인 증대</span>: 조기 정보 수집·2차 소견·데이터 기반 의사결정·커뮤니티 이해력·호스피스 병행 <span style="color:var(--red);">🔴 위험 요인 감소</span>: 사기 탐지·용량 안전성·간 독성 모니터링·의료진 단절 방지·근거 수준 인지
+  </div>
+
+  <h3>🔀 의사결정 흐름 — "이버멕틴·펜벤다졸, 언제·어떻게 고려할 것인가"</h3>
+  <p style="font-size:14px;color:var(--muted);">※ 아래는 커뮤니티 논의 구조를 재구성한 의사결정 흐름도이며, <strong>의학적 권고가 아님</strong>에 유의하세요.</p>
+
+  <div class="dt-node">
+    <strong>🔵 시작:</strong> 표준 치료(항암·수술·방사선)가 더 이상 효과가 없거나, 의료진이 "더 이상 할 수 있는 게 없다"고 판단했는가?
+  </div>
+  <div class="dt-arrow">↓ YES (표준 치료 exhausted) &nbsp;&nbsp;|&nbsp;&nbsp; → NO → 표준 치료 지속 + 임상시험 탐색</div>
+  <div class="dt-node">
+    <strong>🔵 환자 상태 평가:</strong> 경구 복용 가능한가? 간·신장 기능이 약물 대사를 감당할 수 있는가?
+  </div>
+  <div class="dt-arrow">↓ YES &nbsp;&nbsp;|&nbsp;&nbsp; → NO → 경구 불가능 시 다른 경로 탐색 또는 보류</div>
+  <div class="dt-node dt-amber">
+    <strong>🟡 정보 수집:</strong> 신뢰할 수 있는 치료지침(예: Joe Tippens, Makis 박사)을 참고하되, <strong>모든 정보의 근거 수준을 확인</strong>했는가?
+  </div>
+  <div class="dt-arrow">↓ YES &nbsp;&nbsp;|&nbsp;&nbsp; → NO → 충분한 정보 수집 전까지 투여 시작하지 않음</div>
+  <div class="dt-node dt-amber">
+    <strong>🟡 의료진과 공유의사결정:</strong> 담당 의사에게 용도변경 약물 사용 의사를 알리고, <strong>간 기능 모니터링 계획</strong>을 세웠는가?<br>
+    <span style="font-size:13px;color:var(--muted);">※ 의사가 반대하더라도, 최소한 정기적 혈액검사를 통한 안전성 모니터링은 협의 가능</span>
+  </div>
+  <div class="dt-arrow">↓ YES &nbsp;&nbsp;|&nbsp;&nbsp; → NO → 의사와 대화 시도. 거부 시 다른 의사에게 2차 의견 요청</div>
+  <div class="dt-node">
+    <strong>🔵 투여 시작:</strong> 체중 기반 용량 계산 → 저용량 시작 → 부작용 모니터링 → 1~2주 후 증량
+  </div>
+  <div class="dt-arrow">↓</div>
+  <div class="dt-node">
+    <strong>🔵 정기적 재평가 (2~4주 간격):</strong> 증상 변화·혈액검사·영상검사로 객관적 효과 판단 → <strong>효과 없으면 중단 또는 전략 수정</strong>
+  </div>
+
+  <h3>🟢 성공 가능성 증대 전략</h3>
+  <table class="compare-table">
+    <tr><th style="width:5%">#</th><th>전략</th><th>본 사례 적용</th><th style="width:15%">근거 수준</th></tr>
+    <tr>
+      <td>S1</td><td><strong>조기 정보 수집</strong> — 진단 초기부터 표준 치료와 병행 가능한 임상시험·대체 요법 정보 수집</td>
+      <td>❌ 브리타니(Brittany)는 호스피스 전환 시점에야 정보 탐색 시작 — <strong>약 2.5년 지연</strong> <span class="cite">csv:1</span></td>
+      <td><span class="tag tag-teal">커뮤니티 경험</span></td>
+    </tr>
+    <tr>
+      <td>S2</td><td><strong>의학 AI 2차 소견 활용</strong> — OpenEvidence 등 PubMed 기반 AI로 최신 문헌 검토</td>
+      <td>✅ 본 케이스 스터디에서 OpenEvidence 3건의 소견 도출 — <strong>재현 가능한 방법론</strong></td>
+      <td><span class="tag tag-teal">문헌 기반</span></td>
+    </tr>
+    <tr>
+      <td>S3</td><td><strong>데이터 기반 의사결정</strong> — 종양 표지자·혈액검사·영상으로 객관적 효과 측정</td>
+      <td>⚠️ 커뮤니티에서는 증상·체중·육안 변화에 의존 — 정량적 데이터 부족 <span class="cite">csv:1, csv:126</span></td>
+      <td><span class="tag tag-amber">관찰연구</span></td>
+    </tr>
+    <tr>
+      <td>S4</td><td><strong>커뮤니티 이해력 교육</strong> — 근거 수준 구분·사기 탐지·용량 계산법 교육</td>
+      <td>⚠️ 현재 커뮤니티는 말로 전해지는 정보(구전)에 의존 — <strong>교육 자료 체계화 필요</strong></td>
+      <td><span class="tag tag-teal">커뮤니티 경험</span></td>
+    </tr>
+    <tr>
+      <td>S5</td><td><strong>호스피스·완화의료 병행</strong> — 대체 요법과 증상 관리를 동시에</td>
+      <td>✅ 커뮤니티에서 "호스피스 유지하면서 병행 가능" 조언 다수 <span class="cite">csv:31, csv:37</span></td>
+      <td><span class="tag tag-teal">전문가 권고</span></td>
+    </tr>
+  </table>
+
+  <h3>🔴 위험 요인 감소 전략</h3>
+  <table class="compare-table">
+    <tr><th style="width:5%">#</th><th>전략</th><th>본 사례 교훈</th><th style="width:15%">근거 수준</th></tr>
+    <tr>
+      <td>R1</td><td><strong>사기·가짜 정보 탐지</strong> — "Nurse Cathy" 같은 반복 스팸, 가짜 계정, 유료 치료지침 판매자 식별</td>
+      <td>⚠️ 574개 댓글 중 "Nurse Cathy 도움됐다" 변형이 수십 건 — <strong>자동화된 스팸 가능성</strong> <span class="cite">csv:15, csv:42, csv:80, csv:104</span></td>
+      <td><span class="tag tag-teal">커뮤니티 경험</span></td>
+    </tr>
+    <tr>
+      <td>R2</td><td><strong>용량 안전성</strong> — 체중(kg) × 권장용량(mg/kg) 계산, "지우개 크기" 등 비정량적 표현 지양</td>
+      <td>⚠️ 브리타니(Brittany)에게 "지우개 크기" 권고 → 실제로는 과소용량 가능성 <span class="cite">csv:1, csv:234</span></td>
+      <td><span class="tag tag-amber">약동학 근거</span></td>
+    </tr>
+    <tr>
+      <td>R3</td><td><strong>간 독성 모니터링</strong> — 밀크씨슬(Milk Thistle)·TUDCA 보충 + 정기적 AST/ALT 검사</td>
+      <td>⚠️ 간 전이 상태에서 고용량 fenben은 간 효소 상승 위험 — 커뮤니티에서도 인지 <span class="cite">csv:87, csv:166, csv:294</span></td>
+      <td><span class="tag tag-teal">관찰연구</span></td>
+    </tr>
+    <tr>
+      <td>R4</td><td><strong>의료진 단절 방지</strong> — "의사 말 듣지 마라"는 식의 주장 경계, 최소한 안전성 모니터링은 의료진과 협력</td>
+      <td>⚠️ "병원 가지 마라" "호스피스 나가라" vs "호스피스 유지" — <strong>양극화된 조언</strong> <span class="cite">csv:35, csv:366</span></td>
+      <td><span class="tag tag-teal">전문가 권고</span></td>
+    </tr>
+    <tr>
+      <td>R5</td><td><strong>근거 수준 인지</strong> — "RCT 없음" "전임상" "관찰연구" "증례보고" "커뮤니티 경험" 구분</td>
+      <td>✅ 본 케이스 스터디의 핵심 방법론 — 모든 주장에 근거 수준 표시</td>
+      <td><span class="tag tag-navy">방법론</span></td>
+    </tr>
+  </table>
+
+  <h3>📋 실행 체크리스트 — 커뮤니티 회원용</h3>
+  <ul class="checklist">
+    <li>표준 치료 옵션을 모두 소진했는지 의료진과 확인했는가?</li>
+    <li>OpenEvidence 등 PubMed 기반 AI로 최신 문헌을 검색했는가?</li>
+    <li>참고하는 치료지침(protocol)의 출처와 근거 수준을 확인했는가?</li>
+    <li>체중(kg) × mg/kg으로 정확한 용량을 계산했는가? (비정량적 표현 주의)</li>
+    <li>담당 의사에게 용도변경 약물 사용 의사를 알리고 간 기능 검사 계획을 세웠는가?</li>
+    <li>투여 시작 전 기준선(baseline) 증상·혈액검사·체중을 기록했는가?</li>
+    <li>저용량 시작 → 1~2주 경과 관찰 → 증량 원칙을 따르고 있는가?</li>
+    <li>사기·가짜 계정·유료 치료지침 판매자를 식별할 수 있는가?</li>
+    <li>호스피스·완화의료 서비스를 유지하면서 병행하고 있는가?</li>
+    <li>2~4주 간격으로 객관적 효과를 평가하고, 효과 없으면 중단 또는 변경할 준비가 되었는가?</li>
+  </ul>
+
+  <div class="src-block">📚 출처: csv:1, csv:15, csv:30, csv:31, csv:35, csv:37, csv:42, csv:80, csv:87, csv:104, csv:166, csv:234, csv:294, csv:366 | OE:Repurposed Drugs.md (전체) | Collective_Survival_Protocols.pdf</div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- REUSE GUIDE -->
+<!-- ===================================================================== -->
+<div class="section-card">
+  <h2><span class="axis-badge" style="background:var(--navy);">🔁</span> 분석 프레임워크 재사용 가이드 — 7단계</h2>
+  <div class="section-summary">
+    <strong>📋 한눈에 요약:</strong> 이 케이스 스터디의 6축 분석 방법론은 향후 다른 암 사례(1,000개 목표)에 동일하게 적용할 수 있도록 설계되었습니다. 아래 7단계를 순서대로 따라가면 재현 가능한 분석이 가능합니다.
+  </div>
+
+  <table class="compare-table">
+    <tr><th style="width:8%">단계</th><th style="width:25%">작업</th><th>필요 데이터·도구</th><th style="width:18%">예상 소요 시간</th></tr>
+    <tr>
+      <td><strong>1</strong></td>
+      <td><strong>사례 기본 정보 정리</strong> — 환자 인구통계·진단명·병기·주요 사건 타임라인</td>
+      <td>환자/보호자 면담, 의무기록, 커뮤니티 게시글</td>
+      <td>1~2시간</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td><strong>데이터 수집</strong> — 커뮤니티 댓글(CSV 구조화), 의학 AI 2차 소견, 관련 논문</td>
+      <td>페이스북 그룹 내보내기, OpenEvidence 질문 양식, PubMed 검색</td>
+      <td>2~4시간</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td><strong>축 가 — 병원 치료 적절성 평가</strong> — 표준 진료 지침과 실제 치료 비교, 잘된 점·아쉬운 점 도출</td>
+      <td>의무기록, 의학 AI 임상 평가, NCCN/ESMO 지침</td>
+      <td>1~2시간</td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td>
+      <td><strong>축 나 — 의학 AI 2차 소견 분석</strong> — OpenEvidence 소견의 근거 수준 평가, 신뢰성·한계 분석</td>
+      <td>의학 AI 답변 원문, 인용 문헌 DOI/PMID</td>
+      <td>1~2시간</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td><strong>축 다 — 커뮤니티 맥락 분석</strong> — 해외 커뮤니티 특성과 한국 커뮤니티 적용 시 고려사항 도출</td>
+      <td>커뮤니티 댓글 데이터, 문화적 맥락 분석</td>
+      <td>2~3시간</td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td><strong>축 라+마 — 정보 품질 평가</strong> — 정보 소화 가능성 평가 + 댓글 유용성 분류</td>
+      <td>댓글 분류 체계, 정보 복잡도 평가 도구</td>
+      <td>2~3시간</td>
+    </tr>
+    <tr>
+      <td><strong>7</strong></td>
+      <td><strong>축 바 — 위험-편익 최종 프레임워크</strong> — 성공 증대·위험 감소 전략 + 의사결정 흐름 + 체크리스트</td>
+      <td>1~6단계 종합 분석 결과, HTML 양식</td>
+      <td>2~3시간</td>
+    </tr>
+  </table>
+
+  <h3>📁 관련 파일</h3>
+  <ul>
+    <li><strong>의료사례_요약_HTML_생성_프롬프트_템플릿.md</strong> — AI에 전달할 질문 양식</li>
+    <li><strong>seed.yaml</strong> — Ouroboros 실행용 사양서 (6축 구조 정의)</li>
+    <li><strong>케이스스터디.html</strong> — 최종 산출물 (본 파일)</li>
+    <li><strong>HTML_작성_가이드라인.md</strong> — 향후 사례 HTML 작성자를 위한 체크리스트</li>
+  </ul>
+
+  <p style="font-size:14px;color:var(--muted);margin-top:12px;">
+    💡 <strong>참고:</strong> 2번째 사례부터는 패턴이 반복되므로 소요 시간이 점차 단축됩니다.
+    축적된 사례가 증가할수록 커뮤니티 비교(축 다)와 위험-편익 프레임워크(축 바)의 신뢰도가 향상됩니다.
+  </p>
+</div>
+
+<!-- ===================================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================================== -->
+<div class="doc-footer">
+  <h3>📚 참고 문헌 및 데이터 출처</h3>
+  <p>
+    <strong>1차 데이터:</strong> fb_comments_계층형_483개_Brittany.csv.txt (574개 댓글, csv:1~csv:483)<br>
+    <strong>의학 AI 2차 소견:</strong> "This case represents an exceptionally challenging clinical scenario.md" (14개 PubMed 인용) · "Repurposed Drugs.md" (8개 PubMed 인용) · "### 1. _ OpenEvidence.pdf"<br>
+    <strong>참고 문헌:</strong> Collective_Survival_Protocols.pdf · 브리타니 님, 남편분의 상황.md<br>
+    <strong>분석 방법론:</strong> 의료사례_요약_HTML_생성_프롬프트_템플릿.md · seed.yaml (Ouroboros v0.2.0)
+  </p>
+
+  <h3 style="margin-top:16px;">🔬 근거 수준 범례</h3>
+  <p>
+    <span class="tag tag-green">RCT·메타분석</span> — 무작위대조시험 또는 체계적 문헌고찰
+    <span class="tag tag-teal">관찰연구·증례시리즈</span> — 코호트·환자-대조군 연구
+    <span class="tag tag-amber">증례보고·전문가 의견</span> — 1건 이상의 증례보고 또는 전문가 합의
+    <span class="tag tag-red">전임상·이론적</span> — 실험실·동물실험·이론적 근거만 존재
+    <span class="tag tag-navy">커뮤니티 경험</span> — 체계적 연구 없이 환자 커뮤니티 내 경험 공유
+  </p>
+
+  <h3 style="margin-top:16px;">⚕ 의학적 면책 조항</h3>
+  <p>
+    본 문서에 포함된 모든 정보는 <strong>교육 및 정보 제공 목적</strong>으로만 작성되었으며, 전문적인 의학적 진단, 치료, 처방을 대체하지 않습니다.
+    대체 요법(이버멙틴, 펜벤다졸 등)에 대한 모든 언급은 "권장"이 아닌 <strong>"현재까지의 근거 수준"</strong>으로 객관적으로 서술되었습니다.
+    본 문서에서 언급된 어떤 치료법도 담당 의료진과의 상의 없이 시작하거나 변경해서는 안 됩니다.
+    모든 의학적 결정은 환자의 개별 상태를 잘 알고 있는 <strong>담당 의료진과의 충분한 상담</strong>을 통해 이루어져야 합니다.
+  </p>
+
+  <p style="margin-top:16px;opacity:.6;font-size:12px;">
+    분석 완료일: 2026-07-08 &nbsp;|&nbsp; 버전: v0.5.0 &nbsp;|&nbsp;
+    방법론: Ouroboros Specification-First AI Development &nbsp;|&nbsp;
+    대한민국 용도변경 약물 환자 중심 암 임상시험 커뮤니티
+  </p>
+</div>
+
+</div><!-- .container -->
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<div class="float-btns">
+  <button class="float-btn float-btn-print" onclick="window.print()" title="인쇄하기" aria-label="인쇄">🖨</button>
+  <a class="float-btn float-btn-top" href="#top" title="맨 위로" aria-label="맨 위로">⬆</a>
+</div>
+
+</body>
+</html>
