@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>펜벤다졸·이버멕틴과 암 — 한 환자의 이야기 (Mike 사례)</title>
+<style>
+  :root{
+    --bg:#faf8f4; --card:#ffffff; --ink:#2b2b2b; --sub:#6b6b6b;
+    --teal:#0f5e5e; --teal-soft:#e3efee; --gold:#b45309; --gold-soft:#fdf0dc;
+    --sage:#5b7f5b; --sage-soft:#e9f0e6; --red:#b91c1c; --red-soft:#fdecec;
+    --purple:#6d28a8; --purple-soft:#f2e9fb; --blue:#2b6cb0; --blue-soft:#eef4fb;
+    --line:#e5dfd3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    font-size:17px; line-height:1.72; padding:0 0 60px 0; -webkit-text-size-adjust:100%;}
+  .wrap{max-width:780px; margin:0 auto; padding:0 16px;}
+  header{background:linear-gradient(135deg,#0f5e5e 0%,#146b6b 52%,#5b7f5b 100%);
+    color:#fff; padding:38px 16px 30px; text-align:center;}
+  header .tag{display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+    border-radius:999px; padding:4px 14px; font-size:13px; margin-bottom:12px; letter-spacing:.3px;}
+  header h1{font-size:23px; line-height:1.4; font-weight:800; margin-bottom:10px;}
+  header p{font-size:15px; opacity:.94; line-height:1.55;}
+  .meta{background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 16px;
+    font-size:14px; color:var(--sub); margin-top:14px; text-align:left; box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .meta b{color:var(--ink);}
+  .meta a{color:var(--teal); text-decoration:none; word-break:break-all;}
+  section{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 20px; margin-top:22px; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  h2{font-size:19px; color:var(--teal); font-weight:800; margin-bottom:14px;
+    padding-bottom:10px; border-bottom:2px solid var(--teal-soft); line-height:1.4;}
+  h2 .num{display:inline-block; background:var(--teal); color:#fff; border-radius:6px;
+    font-size:13px; padding:1px 8px; margin-right:8px; vertical-align:middle;}
+  h3{font-size:16px; color:var(--gold); font-weight:700; margin:18px 0 8px;}
+  h4{font-size:15px; color:var(--ink); font-weight:700; margin:14px 0 6px;}
+  p{margin-bottom:10px;}
+  ul,ol{margin:8px 0 12px 22px;}
+  li{margin-bottom:6px;}
+  b,strong{color:#111; font-weight:700;}
+  .lead{font-size:16.5px;}
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:8px 9px; text-align:left; vertical-align:top;}
+  th{background:var(--teal-soft); color:var(--teal); font-weight:700;}
+  tr:nth-child(even) td{background:#fcfbf8;}
+  .badge{display:inline-block; font-size:12px; font-weight:700; border-radius:5px;
+    padding:1px 7px; white-space:nowrap;}
+  .b-ok{background:var(--sage-soft); color:var(--sage); border:1px solid #c4d8c0;}
+  .b-strong{background:var(--gold-soft); color:var(--gold); border:1px solid #f0d5a8;}
+  .b-open{background:#eef2f7; color:#475569; border:1px solid #cdd7e3;}
+  .b-no{background:var(--red-soft); color:var(--red); border:1px solid #f2c4c4;}
+  .card{background:var(--teal-soft); border-radius:10px; padding:13px 15px; margin:10px 0;
+    border-left:4px solid var(--teal);}
+  .card.gold{background:var(--gold-soft); border-left-color:var(--gold);}
+  .card.sage{background:var(--sage-soft); border-left-color:var(--sage);}
+  .card.red{background:var(--red-soft); border-left-color:var(--red);}
+  .card.purple{background:var(--purple-soft); border-left-color:var(--purple);}
+  .card.blue{background:var(--blue-soft); border-left-color:var(--blue);}
+  .card h4{margin-top:0;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0;}
+  .qa{margin:12px 0;}
+  .q{font-weight:700; color:var(--teal); margin-top:14px; padding-left:22px; position:relative;}
+  .q::before{content:"Q"; position:absolute; left:0; top:0; background:var(--teal); color:#fff;
+    font-size:11px; width:16px; height:16px; border-radius:4px; text-align:center; line-height:16px;}
+  .a{margin:4px 0 0 22px; color:#333;}
+  .svgbox{overflow-x:auto; margin:14px 0; padding:4px 0; max-width:100%;}
+  .svgbox svg{display:block; width:100%; max-width:100%; height:auto; margin:0 auto;}
+  .foot{font-size:13px; color:var(--sub); margin-top:26px; padding:16px; background:#f5f2ec;
+    border-radius:10px; line-height:1.6;}
+  .foot b{color:var(--ink);}
+  .tagline{font-size:13px; color:var(--sub); margin-top:6px;}
+  .quote{border-left:4px solid var(--gold); padding:8px 14px; margin:12px 0;
+    background:#fdfaf4; font-style:italic; color:#444;}
+  @media(max-width:520px){
+    body{font-size:16px;}
+    .grid2{grid-template-columns:1fr;}
+    section{padding:18px 15px;}
+    header h1{font-size:20px;}
+    table{font-size:13px;}
+    th,td{padding:6px 7px;}
+    /* SVG text: enlarge so it stays legible after viewBox scaling */
+    .tt{font-size:17px;} .sm{font-size:15px;} .yr{font-size:18px;}
+    .lbw{font-size:15px;} .bt{font-size:16px;} .bs{font-size:14px;}
+    .lt{font-size:16px;} .ls{font-size:15px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="tag">커뮤니티 소개용 · 영상 해설 · 2026</div>
+  <h1>펜벤다졸·이버멕틴과 암 —<br>한 환자의 이야기 (Mike 사례)</h1>
+  <p>“약이 나를 돕고 있다고 믿습니다” — 처음으로 공개 증언에 나선 환자</p>
+</header>
+
+<div class="wrap">
+
+  <div class="meta">
+    <b>원본 영상</b> “Fenbendazole, Ivermectin &amp; Cancer: One Patient’s Story”<br>
+    채널 <b>Talking Cancer with Dr. Roman</b> · 업로드 2026-10-12 · 길이 23분 19초<br>
+    <a href="https://youtu.be/aDssXmLpw-Y">https://youtu.be/aDssXmLpw-Y</a><br><br>
+    <b>진행</b> Roman 박사(혈액종양내과 전문의) × 환자 Mike<br>
+    <div class="tagline">※ 이 문서는 영상 내용을 <b>커뮤니티 소개용으로 정리</b>한 것입니다. 원본 영상을 대체하지 않으며 <b>의료 조언이 아닙니다.</b></div>
+  </div>
+
+  <!-- ============ 1. 30초 요약 ============ -->
+  <section>
+    <h2><span class="num">1</span>30초 요약</h2>
+    <p class="lead">한 문장: <b>“4기 대장암 환자 Mike가 펜벤다졸+이버멕틴을 복용하고 증상이 극적으로 좋아졌다고 증언했지만, 그가 <u>동시에 표준 항암치료도 받고 있었다</u>는 사실을 <u>본인이 먼저 밝혔다</u>.”</b></p>
+
+    <div class="grid2">
+      <div class="card">
+        <h4>① 무슨 영상인가</h4>
+        종양내과 전문의가 <b>환자 한 명을 직접 인터뷰</b>한 영상. 그동안 “구충제로 암을 cured”라고 주장해온 수많은 익명 댓글과 달리, <b>실명으로 나서서 대화에 응한 첫 환자</b>.
+      </div>
+      <div class="card gold">
+        <h4>② 왜 중요한가</h4>
+        Mike는 <b>“치료했다(cured)”고 주장하지 않았습니다.</b> 오히려 “약이 나를 돕고 있다고 믿지만, 항암치료도 함께 받았다”고 <b>스스로 인정</b>했습니다 — 이것이 이 영상의 핵심 교훈.
+      </div>
+      <div class="card sage">
+        <h4>③ 확실한 것</h4>
+        펜벤다졸+이버멕틴 <b>시작 9~10일 만에</b> Mike의 심한 배변·배뇨 증상이 거의 사라졌습니다. 본인과 의사 모두 “설명이 안 된다”고 표현한 <b>극적인 증상 호전</b>.
+      </div>
+      <div class="card red">
+        <h4>④ 불확실한 것</h4>
+        증상 호전이 <b>구충제 때문인지, 항암치료 때문인지, 위약효과인지</b> — 아무도 모릅니다. 두 치료가 <b>겹쳐서(교란)</b> 원인을 분리할 수 없기 때문.
+      </div>
+    </div>
+
+    <div class="card purple">
+      <h4>⭐ 이 영상의 “교훈 한 줄” (의사가 강조한 것)</h4>
+      “많은 사람이 이 약들이 <b>내 암을 치료했다</b>고 주장한다. 그러나 Mike는 그렇게 말하지 않았다. 그는 <b>‘내 경우엔 항암치료도 함께 받았다’</b>고 정직하게 밝혔다. <b>이것이 배워야 할 점이다.</b>”
+    </div>
+  </section>
+
+  <!-- ============ 2. 비유로 이해 ============ -->
+  <section>
+    <h2><span class="num">2</span>비유로 이해하기 — “두 명이 함께 밀었다”</h2>
+    <p>이 사례의 핵심 어려움은 <b>원인을 하나로 특정할 수 없다</b>는 것입니다. 비유로 보면 쉽습니다.</p>
+
+    <div class="card gold">
+      <h4>🚗 비유: 멈춘 자동차</h4>
+      차가 멈춰서 <b>두 사람이 동시에 뒤에서 밀었습니다.</b> 차가 다시 움직였습니다.<br>
+      “누가 밀어서 차가 움직였나?” — <b>알 수 없습니다.</b> 둘 다 밀었으니까요.<br>
+      한 명만 밀게 하고 시험해봐야 알 수 있습니다.
+    </div>
+
+    <p>Mike의 경우 “두 명”은 이렇습니다:</p>
+    <div class="grid2">
+      <div class="card">
+        <h4>🔵 미는 사람 A — 표준 항암치료</h4>
+        5-FU 계열 화학요법 + Vectibix(표적항체). <b>암을 줄이는 것이 목적</b>인 검증된 치료.
+      </div>
+      <div class="card purple">
+        <h4>🟣 미는 사람 B — 펜벤다졸 + 이버멕틴</h4>
+        구충제 두 종. Mike가 <b>스스로 찾아 시작</b>. 의사는 이것이 암에 듣는지 <b>모른다</b>고 명시.
+      </div>
+    </div>
+
+    <div class="card red">
+      <b>⚠ 그래서 “구충제가 암을 낫게 했다”고 말할 수 없습니다.</b> 두 가지가 <b>동시에</b> 작동했기 때문입니다. 이것을 의학에서는 <b>“교란변수(confounding)”</b>라고 부릅니다 — 진짜 원인을 가릴 수 없게 만드는 요소.
+    </div>
+  </section>
+
+  <!-- ============ 3. 사례 타임라인 ============ -->
+  <section>
+    <h2><span class="num">3</span>Mike의 사례 — 전체 타임라인</h2>
+    <p>2022년 진단부터 2026년 현재까지, Mike가 겪은 일을 시간 순서로 정리했습니다.</p>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 720 780" role="img" aria-label="Mike의 대장암 치료 타임라인">
+      <defs>
+        <marker id="arw2" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#0f5e5e"/>
+        </marker>
+        <style>
+          .yr{font:700 20px sans-serif; fill:#0f5e5e;}
+          .tt{font:700 19px sans-serif; fill:#222;}
+          .sm{font:400 16px sans-serif; fill:#555;}
+          .lbw{font:700 16px sans-serif; fill:#fff;}
+        </style>
+      </defs>
+
+      <line x1="134" y1="70" x2="134" y2="748" stroke="#c9dcd9" stroke-width="3"/>
+      <line x1="134" y1="748" x2="134" y2="768" stroke="#0f5e5e" stroke-width="3" marker-end="url(#arw2)"/>
+
+      <!-- 2022 diagnosis -->
+      <circle cx="134" cy="82" r="9" fill="#b91c1c"/>
+      <text x="118" y="89" text-anchor="end" class="yr" fill="#b91c1c">2022</text>
+      <rect x="150" y="54" width="560" height="58" rx="8" fill="#fdecec" stroke="#b91c1c" stroke-width="1"/>
+      <text x="162" y="73" class="tt">진단 — 4기 대장암 (좌측·비장굴곡 기원)</text>
+      <text x="162" y="90" class="sm">복통으로 응급실 → CT → 즉시 수술 (약 30cm 결장 절제)</text>
+      <text x="162" y="105" class="sm">약 7개월간 장루(콜로스토미) 보유 · RAS·BRAF 야생형</text>
+
+      <!-- 2022.10 chemo -->
+      <circle cx="134" cy="160" r="8" fill="#0f5e5e"/>
+      <text x="118" y="167" text-anchor="end" class="yr">2022.10</text>
+      <rect x="150" y="134" width="560" height="52" rx="8" fill="#e3efee" stroke="#0f5e5e" stroke-width="1"/>
+      <text x="162" y="153" class="tt">표준 항암치료 시작 (10월 11일)</text>
+      <text x="162" y="170" class="sm">FOLFOX 6회 → 옥살리플라틴 중단 → Vectibix(표적항체) 추가</text>
+
+      <!-- 2023.1 negative -->
+      <circle cx="134" cy="230" r="8" fill="#5b7f5b"/>
+      <text x="118" y="237" text-anchor="end" class="yr" fill="#5b7f5b">2023.1.17</text>
+      <rect x="150" y="204" width="560" height="52" rx="8" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1"/>
+      <text x="162" y="223" class="tt">ctDNA(시그나테라) 음성 — “혈액에 암 흔적 없음”</text>
+      <text x="162" y="240" class="sm">→ 항암치료 중단. 약 2년 반 무치료 관해 상태 유지</text>
+
+      <!-- 2025.6 positive -->
+      <circle cx="134" cy="308" r="9" fill="#b45309"/>
+      <text x="118" y="315" text-anchor="end" class="yr" fill="#b45309">2025.6</text>
+      <rect x="150" y="280" width="560" height="58" rx="8" fill="#fdf0dc" stroke="#b45309" stroke-width="1"/>
+      <text x="162" y="299" class="tt">ctDNA 첫 양성 — 재발 신호</text>
+      <text x="162" y="316" class="sm">수치가 계속 상승 · Vectibix 재개했으나 계속 상승</text>
+      <text x="162" y="331" class="sm">2025.12 MRI — 상부 직장 주위 지방에 종괴 확인</text>
+
+      <!-- 2025.12 symptoms -->
+      <circle cx="134" cy="392" r="9" fill="#b91c1c"/>
+      <text x="118" y="399" text-anchor="end" class="yr" fill="#b91c1c">2025.12~</text>
+      <rect x="150" y="364" width="560" height="58" rx="8" fill="#fdecec" stroke="#b91c1c" stroke-width="1"/>
+      <text x="162" y="383" class="tt">증상 악화 — 최악의 시기</text>
+      <text x="162" y="400" class="sm">한 시간 이상 못 자고 · 화장실에 20~30분씩 앉아 있어도 배변·배뇨 불가</text>
+      <text x="162" y="415" class="sm">“방사선·항암·수술은 원치 않는다”고 결심</text>
+
+      <!-- 2026.1.12 START fenben -->
+      <circle cx="134" cy="480" r="12" fill="#6d28a8"/>
+      <circle cx="134" cy="480" r="18" fill="none" stroke="#6d28a8" stroke-width="2"/>
+      <text x="118" y="487" text-anchor="end" class="yr" fill="#6d28a8">2026.1.12</text>
+      <rect x="150" y="446" width="560" height="68" rx="8" fill="#6d28a8"/>
+      <text x="162" y="466" class="lbw">★ 펜벤다졸 + 이버멕틴 시작</text>
+      <text x="162" y="484" fill="#eaddf7" font-family="sans-serif" font-size="15">펜벤다졸 500mg(5일 복용·2일 휴약) + 이버멕틴 48mg 매일</text>
+      <text x="162" y="502" fill="#eaddf7" font-family="sans-serif" font-size="15">증상이 너무 심해 시작 · 항암은 아직 시작 전 상태였음</text>
+
+      <!-- 9-10 days -->
+      <circle cx="134" cy="556" r="9" fill="#5b7f5b"/>
+      <text x="118" y="563" text-anchor="end" class="yr" fill="#5b7f5b">9~10일 후</text>
+      <rect x="150" y="528" width="560" height="56" rx="8" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1.5"/>
+      <text x="162" y="547" class="tt">⭐ 증상이 거의 사라짐 (의사도 “설명 안 됨”)</text>
+      <text x="162" y="564" class="sm">다시 잠들고 · 배변·배뇨 정상화 → “이게 이렇게 빨리?”</text>
+      <text x="162" y="579" class="sm">※ 이 시점 환자는 아직 항암 재개 전 → 가장 “깨끗한” 관찰 구간</text>
+
+      <!-- chemo restart -->
+      <circle cx="134" cy="632" r="8" fill="#0f5e5e"/>
+      <text x="118" y="639" text-anchor="end" class="yr">2026.1.21~</text>
+      <rect x="150" y="606" width="560" height="52" rx="8" fill="#e3efee" stroke="#0f5e5e" stroke-width="1"/>
+      <text x="162" y="625" class="tt">항암 재개 — 이때부터 “물이 흐려짐”</text>
+      <text x="162" y="642" class="sm">구충제 + 항암(5-FU) 동시 진행 → 원인 분리 불가</text>
+
+      <!-- 2026.5 stop chemo -->
+      <circle cx="134" cy="700" r="9" fill="#5b7f5b"/>
+      <text x="118" y="707" text-anchor="end" class="yr" fill="#5b7f5b">2026.5~현재</text>
+      <rect x="150" y="672" width="560" height="62" rx="8" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1.5"/>
+      <text x="162" y="691" class="tt">항암 완전 중단 — 구충제만 복용</text>
+      <text x="162" y="709" class="sm">PET: 림프절 소실 · SUV 3.4→2.1 · 종괴 3.6→3.5 (약간 축소)</text>
+      <text x="162" y="726" class="sm">2026.10 현재 “여전히 잘 지내고 있다” (운동·조정 지속)</text>
+    </svg>
+    </div>
+
+    <div class="card blue">
+      <h4>⏱ 타임라인을 읽는 핵심 포인트</h4>
+      가장 중요한 지점은 <b>2026년 1월 12일 ~ 1월 21일의 9일</b>입니다. 이 짧은 구간에서만 <b>Mike는 구충제만 복용했고 항암은 받지 않았습니다.</b> 이때 증상이 극적으로 좋아졌기 때문에, 의사가 “설명이 안 되지만 <b>가장 compelling(설득력 있는)</b> 관찰”이라고 표현한 것입니다.
+    </div>
+  </section>
+
+  <!-- ============ 4. 의사의 양쪽 분석 ============ -->
+  <section>
+    <h2><span class="num">4</span>의사의 양쪽 분석 — 왜 “모른다”고 말하는가</h2>
+    <p>Roman 박사는 이례적으로 <b>양쪽을 모두 공정하게</b> 제시합니다. 이것이 이 영상이 신뢰받는 이유입니다.</p>
+
+    <div class="grid2">
+      <div class="card sage">
+        <h4>🟢 구충제가 도왔을 가능성</h4>
+        <ul>
+          <li>항암 재개 <b>9~10일 전</b>에 증상이 극적으로 호전</li>
+          <li>그 시점엔 <b>항암 재개 전</b>이었음 → 이론상 구충제 효과가 섞이지 않은 관찰</li>
+          <li>항암을 완전히 끊은 뒤에도 <b>스캔이 안정적</b></li>
+        </ul>
+      </div>
+      <div class="card red">
+        <h4>🔴 구충제가 아니었을 가능성</h4>
+        <ul>
+          <li><b>표준 항암치료</b>를 동시에 받았음 (가장 큰 교란)</li>
+          <li>종양 유전학이 <b>유리</b>했음: 좌측 대장암 + RAS/BRAF 야생형 → 예후 좋음</li>
+          <li>Vectibix <b>피부 발진</b> = 반응 좋을 것이라는 표지 → 실제로 반응 잘함</li>
+          <li><b>위약효과(placebo)</b> 가능성도 배제 못 함</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>“유리한 조건”이란? — 의사가 짚은 3가지</h3>
+    <table>
+      <thead><tr><th>요소</th><th>내용</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td><b>좌측 대장암</b></td><td>비장굴곡 기원</td><td>우측보다 <b>덜 공격적</b>인 경향</td></tr>
+        <tr><td><b>RAS·BRAF 야생형</b></td><td>변이 없음</td><td><b>예후가 더 좋고</b>, 전이가 늦음</td></tr>
+        <tr><td><b>Vectibix 피부반응</b></td><td>EGFR 억제제 발진</td><td>발진 = <b>치료 반응의 대리 표지</b></td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote">
+      “환자들이 항상 이해하지 못하는 부분이 있다. … 이런 요소들이 <b>Mike에게 유리하게 작용했다.</b> 그래서 우리는 <b>‘구충제 때문이었다’고 단정할 수 없다.</b>” — Roman 박사
+    </div>
+
+    <div class="card gold">
+      <h4>⭐ “물이 흐려졌다(muddy the waters)”</h4>
+      의사가 반복해서 쓴 표현입니다. <b>두 치료를 동시에 받으면, 어느 쪽이 효과를 냈는지 알 수 없다</b>는 뜻. 이것이 이 사례의 근본적 한계이자, 동시에 <b>가장 정직한 부분</b>입니다.
+    </div>
+  </section>
+
+  <!-- ============ 5. 왜 증명이 어려운가 (flow) ============ -->
+  <section>
+    <h2><span class="num">5</span>왜 이 사례로는 “증명”이 안 되는가</h2>
+    <p>사례 하나로 약의 효과를 증명할 수 없는 이유를 <b>흐름도</b>로 보여줍니다.</p>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 700 420" role="img" aria-label="인과 증명이 어려운 이유 흐름도">
+      <defs>
+        <marker id="arw3" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#5b7f5b"/>
+        </marker>
+        <style>
+          .bt{font:700 18px sans-serif; fill:#fff;}
+          .bs{font:400 15px sans-serif; fill:#f0f0f0;}
+          .lt{font:700 17px sans-serif; fill:#0f5e5e;}
+          .ls{font:400 15px sans-serif; fill:#555;}
+        </style>
+      </defs>
+
+      <!-- row 1 -->
+      <rect x="40" y="30" width="180" height="62" rx="9" fill="#0f5e5e"/>
+      <text x="130" y="55" text-anchor="middle" class="bt">환자가 회복됨</text>
+      <text x="130" y="74" text-anchor="middle" class="bs">증상↓ · 스캔 안정</text>
+
+      <line x1="220" y1="61" x2="258" y2="61" stroke="#5b7f5b" stroke-width="2.5" marker-end="url(#arw3)"/>
+
+      <rect x="262" y="30" width="180" height="62" rx="9" fill="#b45309"/>
+      <text x="352" y="55" text-anchor="middle" class="bt">그런데…</text>
+      <text x="352" y="74" text-anchor="middle" class="bs">원인 후보가 여럿</text>
+
+      <line x1="442" y1="61" x2="480" y2="61" stroke="#5b7f5b" stroke-width="2.5" marker-end="url(#arw3)"/>
+
+      <rect x="484" y="30" width="176" height="62" rx="9" fill="#b91c1c"/>
+      <text x="572" y="52" text-anchor="middle" class="bt">❓ 분리 불가</text>
+      <text x="572" y="70" text-anchor="middle" class="bs">어느 것이 원인?</text>
+
+      <!-- candidates -->
+      <rect x="60" y="140" width="150" height="58" rx="8" fill="#e3efee" stroke="#0f5e5e" stroke-width="1"/>
+      <text x="135" y="164" text-anchor="middle" class="lt">항암치료</text>
+      <text x="135" y="182" text-anchor="middle" class="ls">5-FU + Vectibix</text>
+
+      <rect x="225" y="140" width="150" height="58" rx="8" fill="#f2e9fb" stroke="#6d28a8" stroke-width="1"/>
+      <text x="300" y="164" text-anchor="middle" class="lt" fill="#6d28a8">펜벤다졸+이버멕틴</text>
+      <text x="300" y="182" text-anchor="middle" class="ls">환자가 스스로 시작</text>
+
+      <rect x="390" y="140" width="150" height="58" rx="8" fill="#fdf0dc" stroke="#b45309" stroke-width="1"/>
+      <text x="465" y="164" text-anchor="middle" class="lt" fill="#b45309">유리한 종양 조건</text>
+      <text x="465" y="182" text-anchor="middle" class="ls">야생형·좌측</text>
+
+      <rect x="555" y="140" width="105" height="58" rx="8" fill="#fdecec" stroke="#b91c1c" stroke-width="1"/>
+      <text x="607" y="164" text-anchor="middle" class="lt" fill="#b91c1c">위약효과</text>
+      <text x="607" y="182" text-anchor="middle" class="ls">가능성</text>
+
+      <!-- connector -->
+      <line x1="572" y1="92" x2="572" y2="115" stroke="#cbd5c9" stroke-width="1.5"/>
+      <line x1="135" y1="115" x2="607" y2="115" stroke="#cbd5c9" stroke-width="1.5"/>
+      <line x1="135" y1="115" x2="135" y2="140" stroke="#cbd5c9" stroke-width="1.5"/>
+      <line x1="300" y1="115" x2="300" y2="140" stroke="#cbd5c9" stroke-width="1.5"/>
+      <line x1="465" y1="115" x2="465" y2="140" stroke="#cbd5c9" stroke-width="1.5"/>
+      <line x1="607" y1="115" x2="607" y2="140" stroke="#cbd5c9" stroke-width="1.5"/>
+
+      <!-- conclusion -->
+      <rect x="60" y="240" width="600" height="74" rx="10" fill="#eef4fb" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="75" y="264" class="lt" fill="#2b6cb0">결론 — 사례 하나로는 “이 약이 효과 있다”를 증명할 수 없다</text>
+      <text x="75" y="284" class="ls">그래서 남는 것은 “아직 답이 없다”는 정직한 인정입니다.</text>
+      <text x="75" y="302" class="ls">증명에는 → 무작위 대조시험(RCT) 같은 별도 방법이 필요합니다.</text>
+
+      <!-- how to prove -->
+      <rect x="60" y="336" width="288" height="62" rx="9" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1"/>
+      <text x="74" y="358" class="lt" fill="#3f5f3f">✅ 증명에 도움이 되는 것</text>
+      <text x="74" y="376" class="ls">항암 없이 구충제만 쓴 환자 자료</text>
+      <text x="74" y="391" class="ls">무작위 대조시험(RCT)</text>
+
+      <rect x="372" y="336" width="288" height="62" rx="9" fill="#fdf0dc" stroke="#b45309" stroke-width="1"/>
+      <text x="386" y="358" class="lt" fill="#b45309">⏳ 다음 관찰 시점</text>
+      <text x="386" y="376" class="ls">2026.12 예정 — PET + ctDNA 재검</text>
+      <text x="386" y="391" class="ls">(의사가 후속 영상 제안)</text>
+    </svg>
+    </div>
+
+    <div class="card blue">
+      <h4>핵심</h4>
+      증명의 어려움은 <b>“사례가 가짜여서”가 아니라 “변수가 여러 개라서”</b>입니다. 환자가 정직하게 “항암도 받았다”고 밝혔기 때문에, 오히려 <b>과학적으로 더 믿을 만한 자료</b>가 된 것입니다.
+    </div>
+  </section>
+
+  <!-- ============ 6. 커뮤니티 연결 ============ -->
+  <section>
+    <h2><span class="num">6</span>우리 커뮤니티에 주는 의미</h2>
+    <p>용도변경 약물(구충제·항암 보조)을 논의하는 우리 커뮤니티 입장에서, 이 영상은 <b>세 가지 실질적 교훈</b>을 줍니다.</p>
+
+    <table>
+      <thead><tr><th>#</th><th>교훈</th><th>왜 중요한가</th></tr></thead>
+      <tbody>
+        <tr><td><b>①</b></td><td><b>“cured”라고 말하지 않기</b></td><td>Mike는 “치료했다”고 하지 않고 “<b>돕고 있다고 믿는다</b>”고만 말했습니다. 이것이 신뢰를 얻은 이유입니다.</td></tr>
+        <tr><td><b>②</b></td><td><b>표준치료를 숨기지 않기</b></td><td>“항암도 함께 받았다”를 밝히는 것이 <b>역설적으로 설득력을 높입니다.</b> 숨기면 신뢰를 잃습니다.</td></tr>
+        <tr><td><b>③</b></td><td><b>“왜?”라는 질문을 두려워하지 않기</b></td><td>Mike 본인: “아무도 답을 안 하는 이유는 <b>그 질문(devil’s advocate)을 받기 싫어서</b>다. 그러나 <b>그 질문은 반드시 필요하다.</b>”</td></tr>
+      </tbody>
+    </table>
+
+    <div class="quote">
+      “답을 하려 하지 않는 이유는 정확히 이것 때문입니다. 사람들은 그런 <b>반대 질문(devil’s advocate)</b>을 원하지 않아요. 다른 희망이 없다고 느낄 때 이 약에 모든 희망을 걸게 되죠. <b>하지만 그 질문은 반드시 물어야 합니다.</b>” — Mike
+    </div>
+
+    <div class="card gold">
+      <h4>⭐ 커뮤니티가 얻어야 할 태도</h4>
+      이것은 “구충제가 듣는다/안 듣는다”의 문제가 아니라, <b>“어떻게 정직하게 이야기할 것인가”</b>의 문제입니다. Mike의 태도 — <b>희망을 가지되, 근거를 정직하게 밝히기</b> — 가 우리가 배울 점입니다.
+    </div>
+
+    <div class="card red">
+      <h4>⚠ 반드시 붙여야 할 경고</h4>
+      이 영상은 <b>“구충제가 암을 치료한다”는 근거가 아닙니다.</b> 펜벤다졸·이버멕틴은 <b>암 치료제로 승인되지 않았고</b>, 처방약(이버멕틴)이며 상호작용·간독성 위험이 있습니다. <b>자기 판단으로 복용하지 말고 반드시 담당 의사와 상의</b>해야 합니다. (특히 항암제와 병용 시 상호작용 위험)
+    </div>
+  </section>
+
+  <!-- ============ 7. 정직한 한계 ============ -->
+  <section>
+    <h2><span class="num">7</span>정직한 한계 — 무엇이 확실하고 무엇이 아닌가</h2>
+    <p>이 영상과 사례에서 <b>✅ 확인된 것 / ❓ 알 수 없는 것 / 🔴 오해하면 안 되는 것</b>을 구분합니다.</p>
+
+    <table>
+      <thead><tr><th>내용</th><th>상태</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>Mike가 4기 대장암 진단을 받았다</td><td><span class="badge b-ok">✅ 본인 증언</span></td><td>2022년</td></tr>
+        <tr><td>구충제 시작 9~10일 후 증상 극적 호전</td><td><span class="badge b-ok">✅ 본인 증언</span></td><td>항암 재개 전 구간</td></tr>
+        <tr><td>항암 완전 중단 후 스캔이 안정적</td><td><span class="badge b-ok">✅ 언급됨</span></td><td>PET·림프절 소실</td></tr>
+        <tr><td>“구충제가 증상 호전을 일으켰다”</td><td><span class="badge b-open">❓ 알 수 없음</span></td><td>항암·유리한 조건·위약효과 교란</td></tr>
+        <tr><td>“구충제가 암을 치료했다”</td><td><span class="badge b-no">🔴 근거 없음</span></td><td>Mike도 이렇게 주장하지 않음</td></tr>
+        <tr><td>펜벤다졸·이버멕틴이 암 치료제다</td><td><span class="badge b-no">🔴 미승인</span></td><td>어떤 규제기관도 승인 안 함</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card red">
+      <h4>🔴 이 문서·영상 자체의 한계</h4>
+      <ul>
+        <li>이것은 <b>환자 한 명의 개인 사례(n=1)</b>입니다. 사례 하나로 약의 효과를 증명할 수 없습니다.</li>
+        <li>진행자(Roman 박사)가 <b>명시적으로 “나는 이 약을 지지하지 않으며 의학적 조언을 하지 않는다”</b>고 밝혔습니다.</li>
+        <li>Mike의 검사 수치는 <b>본인이 영상에서 말한 내용</b>이며, 원본 의무기록으로 확인된 것은 아닙니다.</li>
+        <li>모든 내용은 <b>영상 트랜스크립트 기반</b>이며, 원본 영상을 직접 보시길 권합니다.</li>
+      </ul>
+    </div>
+
+    <div class="card gold">
+      <h4>⭐ 이 영상의 가장 큰 가치</h4>
+      이 영상은 “약의 효과를 입증”한 것이 아닙니다. 대신 <b>“무엇이 문제인지”를 명확히 보여줬습니다.</b> — <b>두 치료를 섞으면 아무것도 알 수 없다</b>는 것. 그리고 Mike처럼 <b>정직하게 “나도 항암을 받았다”고 말하는 태도</b>가 진짜 데이터가 된다는 것입니다.
+    </div>
+  </section>
+
+  <!-- ============ 8. Q&A ============ -->
+  <section>
+    <h2><span class="num">8</span>질문과 답변</h2>
+
+    <h3>초보자용</h3>
+    <div class="qa">
+      <div class="q">그래서 구충제가 암에 효과 있나요?</div>
+      <div class="a"><b>아직 모릅니다.</b> 이 사례에서는 확인할 수 없습니다(항암치료와 겹쳤기 때문). 확실히 말할 수 있는 건 “Mike의 증상이 좋아졌다”는 사실뿐입니다.</div>
+
+      <div class="q">Mike는 왜 “cured(치료됐다)”고 하지 않았나요?</div>
+      <div class="a">정직했기 때문입니다. 그는 “약이 <b>돕고 있다고 믿지만</b>, 내 경우엔 <b>항암치료도 함께 받았다</b>”고 밝혔습니다. 이 태도가 오히려 신뢰를 얻었습니다.</div>
+
+      <div class="q">그럼 지금 Mike는 어떻게 지내나요?</div>
+      <div class="a">2026년 10월 현재 <b>항암 없이 구충제만 복용</b>하며 “여전히 잘 지내고 있다”고 밝혔습니다. 다음 검사(2026.12 PET + ctDNA)가 중요합니다.</div>
+    </div>
+
+    <h3>심화</h3>
+    <div class="qa">
+      <div class="q">“물이 흐려졌다”가 무슨 뜻인가요?</div>
+      <div class="a">두 치료(항암 + 구충제)를 <b>동시에</b> 받으면, 결과가 좋을 때 <b>어느 쪽 덕분인지 구분할 수 없다</b>는 뜻입니다. 의학 용어로는 <b>교란(confounding)</b>이라고 합니다.</div>
+
+      <div class="q">왜 의사가 “유리한 조건”을 강조했나요?</div>
+      <div class="a">Mike는 <b>좌측 대장암 + RAS/BRAF 야생형 + Vectibix 피부반응</b>이라는 세 가지 좋은 조건을 가졌습니다. 즉 <b>치료가 잘 반응할 가능성이 원래 높았던</b> 환자입니다. 그래서 결과가 구충제 때문이라고 보기 어렵습니다.</div>
+
+      <div class="q">이런 사례가 데이터로서 가치가 있나요?</div>
+      <div class="a">제한적이지만 있습니다. <b>n=1은 증명은 못 하지만 가설을 만듭니다.</b> 그래서 의사가 “항암 없이 구충제만 쓴 환자” 증언을 더 찾는 것입니다 — 그게 더 깨끗한 관찰이기 때문입니다.</div>
+    </div>
+
+    <h3>비판적</h3>
+    <div class="qa">
+      <div class="q">이거 그냥 희망회로(anecdote) 아닌가요?</div>
+      <div class="a">맞는 지적입니다 — <b>개인 사례는 증명이 아닙니다.</b> 하지만 이 영상의 가치는 반대편에 있습니다. 무분별한 “치료됐다” 주장에 <b>정직한 반례</b>를 제시한 것입니다.</div>
+
+      <div class="q">왜 익명 댓글은 많고 실제 증언은 없나요?</div>
+      <div class="a">영상에서 Mike가 직접 답했습니다 — <b>“그 질문(반대 심문)을 받기 싫어서”</b>. 다른 희망이 없을 때 약에 모든 희망을 걸게 되고, 근거를 캐묻는 질문을 피하게 된다는 것입니다.</div>
+
+      <div class="q">의사가 오히려 약을 홍보하는 건가요?</div>
+      <div class="a">아닙니다. Roman 박사는 반복해서 <b>“나는 지지하지 않는다, 의학적 조언이 아니다”</b>라고 밝혔고, 오히려 <b>구충제가 아닐 수 있는 이유를 더 많이</b> 설명했습니다.</div>
+    </div>
+  </section>
+
+  <!-- ============ 9. 용어·출처 ============ -->
+  <section>
+    <h2><span class="num">9</span>용어 사전 &amp; 출처</h2>
+
+    <h3>용어</h3>
+    <table>
+      <thead><tr><th>용어</th><th>뜻</th></tr></thead>
+      <tbody>
+        <tr><td><b>ctDNA / 시그나테라</b></td><td>혈액 속 순환 종양 DNA 검사 — 암의 흔적을 혈액으로 찾음</td></tr>
+        <tr><td><b>FOLFOX</b></td><td>대장암 표준 화학요법(5-FU+옥살리플라틴 등)</td></tr>
+        <tr><td><b>Vectibix</b></td><td>EGFR 표적 단클론항체(파니투무맙)</td></tr>
+        <tr><td><b>RAS/BRAF 야생형</b></td><td>해당 유전자에 변이가 없다 = 예후가 상대적으로 좋음</td></tr>
+        <tr><td><b>SUV</b></td><td>PET 스캔에서 종양 대사 활성도 수치 (낮을수록 좋음)</td></tr>
+        <tr><td><b>교란변수</b></td><td>진짜 원인을 가리는 제3의 요인 (여기선 동시 항암치료)</td></tr>
+        <tr><td><b>scanxiety</b></td><td>검사 결과를 기다리며 겪는 극심한 불안</td></tr>
+      </tbody>
+    </table>
+
+    <h3>출처</h3>
+    <ul>
+      <li><b>원본 영상</b>: “Fenbendazole, Ivermectin &amp; Cancer: One Patient’s Story” — Talking Cancer with Dr. Roman (2026-10-12, 23:19) · <a href="https://youtu.be/aDssXmLpw-Y">youtu.be/aDssXmLpw-Y</a></li>
+      <li>모든 내용은 위 영상의 <b>트랜스크립트</b> 기반으로 정리했습니다.</li>
+      <li>펜벤다졸 기전 배경: Dogra N, et al. <i>Scientific Reports</i> 8:11926 (2018) · Mrkvová Z, et al. <i>Molecules</i> 24:2152 (2019)</li>
+    </ul>
+
+    <div class="foot">
+      <b>⚠️ 정직하게 밝힙니다</b>
+      <ul>
+        <li>이 문서는 <b>커뮤니티 소개용 해설</b>이며, 원본 영상을 대체하지 않습니다.</li>
+        <li><b>의료 조언이 아닙니다.</b> 이 사례는 n=1이며 약의 효과를 증명하지 않습니다.</li>
+        <li>펜벤다졸·이버멕틴은 <b>암 치료제로 승인되지 않았습니다.</b> 복용은 반드시 담당 의사와 상의하십시오.</li>
+        <li>진행자도 “나는 지지하지 않는다”고 명시했습니다.</li>
+      </ul>
+      <b>작성일</b> 2026-10-12 · <b>형식</b> 단일 HTML (외부 의존 0) · <b>제작</b> Hermes Agent
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
