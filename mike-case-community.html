@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mike의 이야기 — 구충제와 대장암, 한 환자의 정직한 고백</title>
+<meta name="description" content="Dr. Roman의 영상 'Fenbendazole, Ivermectin & Cancer: One Patient's Story'를 커뮤니티를 위해 정리한 해외 사례 분석. Mike의 4년 치료 여정을 타임라인·그래프·흐름도로 풀었습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf7ef; --paper2:#f4ede0; --card:#ffffff;
+  --ink:#2b2622; --muted:#6b625a; --line:#e3d9c8;
+  --std:#2f6fb0; --std-soft:#e3eef9;
+  --vect:#2a9d8f; --vect-soft:#e0f3f0;
+  --fbz:#d0762f; --fbz-soft:#fbeadb;
+  --test:#3f8f4f; --test-soft:#e4f2e6;
+  --pos:#c0392b; --pos-soft:#fbe5e2;
+  --warn:#b7791f; --warn-soft:#fdf3d8;
+  --mind:#7a5aa6; --mind-soft:#efe8f7;
+  --ai:#4552a8; --ai-soft:#eef0fb;
+  --serif:'Noto Serif KR',Georgia,serif;
+  --sans:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:19px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--std)}
+:focus-visible{outline:3px solid var(--fbz);outline-offset:3px;border-radius:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.wide{max-width:1080px}
+h1,h2,h3{font-family:var(--serif);line-height:1.4;letter-spacing:-.01em}
+h2{font-size:1.6rem;margin:0 0 .6em}
+h3{font-size:1.2rem;margin:1.4em 0 .4em}
+p{margin:0 0 1em}
+strong{font-weight:700}
+.muted{color:var(--muted)}
+.small{font-size:.86rem;line-height:1.7}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--paper2),var(--paper));padding:56px 0 40px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-block;font-size:.82rem;font-weight:700;color:var(--fbz);background:var(--fbz-soft);padding:4px 12px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-size:clamp(1.9rem,6vw,2.7rem);margin:0 0 .5em;font-weight:900}
+.hero .lead{font-size:1.12rem;color:#463e37}
+.notice{margin-top:24px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--warn);border-radius:12px;padding:16px 20px;font-size:.95rem}
+.notice b{color:var(--warn)}
+
+/* toc */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;padding:0;list-style:none}
+.toc a{display:inline-block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:.88rem}
+.toc a:hover{border-color:var(--fbz)}
+
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+.secnum{font-family:var(--serif);color:var(--fbz);font-weight:900;font-size:1rem;display:block;margin-bottom:4px}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:18px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}}
+.pill{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;margin:0 4px 4px 0}
+.p-std{background:var(--std-soft);color:var(--std)}
+.p-vect{background:var(--vect-soft);color:var(--vect)}
+.p-fbz{background:var(--fbz-soft);color:var(--fbz)}
+.p-test{background:var(--test-soft);color:var(--test)}
+.p-pos{background:var(--pos-soft);color:var(--pos)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-mind{background:var(--mind-soft);color:var(--mind)}
+
+.profile{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--fbz-soft);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--fbz)}
+.facts{list-style:none;padding:0;margin:0}
+.facts li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.facts li:last-child{border:0}
+.facts b{display:inline-block;min-width:6.5em;color:var(--muted);font-weight:500}
+@media(max-width:600px){.profile{grid-template-columns:1fr;justify-items:start}.avatar{width:60px;height:60px;font-size:1.5rem}.facts b{display:block;min-width:0;font-size:.82rem}}
+
+/* figures */
+figure{margin:22px 0}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll svg{min-width:900px}
+.swipe{display:none;font-size:.82rem;color:var(--muted);text-align:center;margin-top:6px}
+@media(max-width:900px){.swipe{display:block}}
+figcaption{font-size:.86rem;color:var(--muted);margin-top:10px;line-height:1.7}
+svg text{font-family:var(--sans)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:16px;height:12px;border-radius:3px}
+
+/* phase list */
+.phases{counter-reset:ph;list-style:none;padding:0;margin:20px 0}
+.phases li{position:relative;padding:0 0 22px 56px}
+.phases li::before{counter-increment:ph;content:counter(ph);position:absolute;left:0;top:2px;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;font-family:var(--serif);font-weight:900;display:flex;align-items:center;justify-content:center}
+.phases li::after{content:"";position:absolute;left:18px;top:44px;bottom:2px;width:2px;background:var(--line)}
+.phases li:last-child::after{display:none}
+.phases h3{margin:0 0 .2em;font-size:1.1rem}
+.phases .when{font-size:.85rem;color:var(--muted)}
+
+/* metaphor */
+.oars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+@media(max-width:700px){.oars{grid-template-columns:1fr 1fr}}
+.oar{border-radius:12px;padding:12px;font-size:.92rem;line-height:1.6;border:1px solid var(--line);background:var(--card)}
+.oar b{display:block;font-size:.98rem;margin-bottom:2px}
+
+/* contrast */
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch}
+.vs .mid{display:flex;align-items:center;font-family:var(--serif);font-weight:900;color:var(--muted)}
+@media(max-width:700px){.vs{grid-template-columns:1fr}.vs .mid{justify-content:center}}
+.claim{border-radius:16px;padding:20px;border:2px solid}
+.claim.bad{border-color:#e6c3bd;background:#fff8f6}
+.claim.good{border-color:#bfe0c6;background:#f6fcf7}
+.claim .big{font-family:var(--serif);font-size:1.15rem;font-weight:700;margin:6px 0 10px}
+
+blockquote{margin:24px 0;padding:22px 26px;background:var(--card);border-radius:16px;border-left:6px solid var(--fbz);font-family:var(--serif);font-size:1.15rem;line-height:1.8}
+blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--muted);margin-top:10px}
+
+/* questions */
+.q{position:relative;background:var(--card);border:2px dashed #d9c9ae;border-radius:14px;padding:18px 20px 18px 50px;margin:12px 0;font-size:1.02rem}
+.q::before{content:"“";position:absolute;left:16px;top:4px;font-family:var(--serif);font-size:2.6rem;color:var(--fbz);line-height:1}
+.copy{display:inline-block;margin-top:8px;font:inherit;font-size:.82rem;background:var(--paper2);border:1px solid var(--line);border-radius:999px;padding:4px 14px;cursor:pointer;color:var(--ink)}
+.copy:hover{border-color:var(--fbz)}
+.try{background:var(--test-soft);border:1px solid #bfe0c6;border-radius:16px;padding:22px 24px;margin:24px 0}
+.try h3{margin-top:0;color:var(--test)}
+.logtable{width:100%;border-collapse:collapse;font-size:.9rem;background:#fff;border-radius:10px;overflow:hidden}
+.logtable th,.logtable td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.logtable th{background:var(--paper2)}
+
+/* safety */
+.safety{background:#fff;border:3px solid var(--pos);border-radius:18px;padding:24px 26px}
+.safety h2{color:var(--pos)}
+.safety ul{padding-left:1.2em;margin:0}
+.safety li{margin-bottom:.7em}
+.grade{display:flex;align-items:center;gap:14px;background:var(--warn-soft);border-radius:12px;padding:14px 16px;margin-top:18px}
+.grade .letter{font-family:var(--serif);font-weight:900;font-size:2.2rem;color:var(--warn);line-height:1}
+
+/* details */
+details.deep{margin:22px 0;background:var(--paper2);border:1px solid var(--line);border-radius:14px}
+details.deep summary{cursor:pointer;list-style:none;padding:14px 20px;font-weight:700;font-size:.98rem;display:flex;align-items:center;gap:10px}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep summary::before{content:"＋";display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:.9rem;flex:none}
+details.deep[open] summary::before{content:"－"}
+details.deep .inner{padding:0 20px 20px;font-size:.95rem;line-height:1.8}
+details.deep .inner h4{font-family:var(--serif);font-size:1.02rem;margin:1.2em 0 .3em}
+
+.flow{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:center}
+.flow .causes{display:flex;flex-direction:column;gap:8px}
+.flow .cause{border-radius:10px;padding:10px 12px;font-size:.88rem;line-height:1.55;border:1px solid var(--line);background:#fff}
+.flow .arrowcol svg{width:60px;height:100%}
+.flow .result{border-radius:14px;padding:16px;background:var(--ink);color:#fff;font-size:.92rem;line-height:1.7}
+.flow .result b{font-family:var(--serif);font-size:1.05rem}
+@media(max-width:700px){.flow{grid-template-columns:1fr}.flow .arrowcol{text-align:center;font-size:1.6rem;color:var(--muted)}.flow .arrowcol svg{display:none}.flow .arrowcol::after{content:"▼"}}
+
+table.ev{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff}
+table.ev th,table.ev td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+table.ev th{background:var(--paper)}
+table.ev tr.here td{background:var(--warn-soft);font-weight:700}
+
+.open{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.status{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.status div{flex:1 1 180px;border-radius:12px;padding:12px 14px;font-size:.92rem;line-height:1.6;background:var(--paper2)}
+.status b{display:block;font-size:.8rem;color:var(--muted);font-weight:500}
+
+footer{padding:40px 0 60px;font-size:.88rem;color:var(--muted);line-height:1.8}
+footer h3{color:var(--ink);font-size:1rem}
+
+
+/* vertical timeline */
+.vtl{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:18px 0}
+.vtl-head,.vtl-row{display:grid;grid-template-columns:64px 32px 32px 1fr}
+.vtl-head{font-size:.74rem;font-weight:700;color:var(--muted);background:var(--paper2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
+.vtl-head div{padding:9px 2px;text-align:center;line-height:1.3}
+.vtl-head div:last-child{text-align:left;padding-left:10px}
+.vtl-head .h-std{color:var(--std)} .vtl-head .h-fbz{color:var(--fbz)}
+.vtl-row .d{font-size:.8rem;line-height:1.35;color:var(--ink);padding:13px 2px 12px 10px;font-weight:700}
+.vtl-row .d small{display:block;font-weight:400;color:var(--muted);font-size:.72rem}
+.vtl-row .ln{position:relative}
+.vtl-row .ln i{position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:12px}
+.vtl-row .ln i.s{top:16px;border-radius:6px 6px 0 0}
+.vtl-row .ln i.e{bottom:calc(100% - 30px);border-radius:0 0 6px 6px}
+.vtl-row .ln i.se{top:16px;bottom:calc(100% - 30px);border-radius:6px}
+.vtl-row .ln b{position:absolute;left:50%;top:15px;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;z-index:1;border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.vtl-row .ln b.dia{border-radius:2px;transform:translateX(-50%) rotate(45deg);background:var(--ink)}
+.i-std{background:var(--std)} .i-vect{background:var(--vect)}
+.i-mix{background:linear-gradient(90deg,var(--vect) 0 42%,var(--std) 42%)}
+.i-hatch{background:repeating-linear-gradient(45deg,var(--vect) 0 3px,var(--vect-soft) 3px 7px)}
+.i-fbz{background:var(--fbz)} .i-fbz2{background:#eaa56f}
+.i-plan{background:none!important;border-left:3px dashed #9a8f84;width:0!important}
+.i-gap{background:none!important;border-left:3px dotted #b7ab9c;width:0!important}
+.vtl-row .ev{padding:11px 12px 13px 10px;font-size:.93rem;line-height:1.62;border-bottom:1px dashed var(--line)}
+.vtl-row:last-child .ev{border-bottom:0}
+.vtl-row.gap .ev{padding-top:22px;padding-bottom:26px;color:var(--muted);font-style:italic}
+.vtl-row.hl{background:var(--warn-soft)}
+.vtl-row.phase .ev{border-bottom:0}
+.vtl-phase{grid-column:1/-1;background:var(--paper2);font-family:var(--serif);font-weight:700;font-size:.9rem;padding:8px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.t{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:999px;margin:0 4px 3px 0;font-style:normal;vertical-align:1px}
+.t-test{background:var(--test-soft);color:var(--test)} .t-pos{background:var(--pos-soft);color:var(--pos)}
+.t-warn{background:#fbe3a6;color:#7a4f0c} .t-fbz{background:var(--fbz-soft);color:var(--fbz)} .t-plan{background:#eee;color:#6b625a}
+.vlegend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.84rem;margin:8px 0 0}
+.vlegend span{display:inline-flex;align-items:center;gap:6px}
+.vlegend i{display:inline-block;width:12px;height:18px;border-radius:3px}
+
+/* horizontal bars (SUV) */
+.hbars{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+.hb-l{font-size:.9rem;line-height:1.4;margin-bottom:5px}
+.hb-l b{font-family:var(--serif);font-size:1.35rem;margin-right:8px}
+.hb-l small{color:var(--muted)}
+.hb-t{height:22px;background:var(--paper2);border-radius:6px;overflow:hidden}
+.hb-f{height:100%;border-radius:6px}
+.hb-f.unk{background:repeating-linear-gradient(45deg,#d8cdbd 0 4px,#f4ede0 4px 9px);border:1px dashed #9a8f84}
+
+/* ctDNA meter list */
+.ct{display:flex;flex-direction:column}
+.ct-row{display:grid;grid-template-columns:76px 86px 1fr;align-items:center;gap:6px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.9rem;line-height:1.5}
+.ct-row:last-child{border:0}
+.ct-row .dt{font-weight:700;font-size:.82rem}
+.ct-head{font-size:.72rem;color:var(--muted);font-weight:700;padding-top:0}
+.meter{display:flex;gap:7px;justify-content:center}
+.meter span{width:18px;height:18px;border-radius:50%;border:2px solid #ddd2c1;background:#fff}
+.meter .g{background:var(--test);border-color:var(--test)}
+.meter .r{background:var(--pos);border-color:var(--pos)}
+.meter .gh{border:2.5px dashed var(--test)}
+.ct-head .meter span{border:0;width:18px;height:auto;background:none;font-size:.62rem;text-align:center;line-height:1.2;white-space:nowrap;display:flex;justify-content:center;overflow:visible}
+.ct-div{background:var(--fbz-soft);color:var(--fbz);font-weight:700;font-size:.82rem;padding:7px 10px;border-radius:8px;margin:6px 0}
+
+/* AI annotation */
+.ai{background:var(--ai-soft);border:1.5px dashed #a7aee0;border-left:6px solid var(--ai);border-radius:14px;padding:16px 20px;margin:18px 0}
+.ai > .ai-tag{display:table;margin-bottom:8px}
+.ai-tag{display:inline-block;font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:700;color:#fff;background:var(--ai);padding:2px 9px;border-radius:6px;margin:0 8px 4px 0;vertical-align:2px;letter-spacing:.02em;line-height:1.5;white-space:nowrap}
+.ai-tag::before{content:"✦ "}
+.ai-inline{background:var(--ai-soft);border-left:4px solid var(--ai);border-radius:0 10px 10px 0;padding:10px 14px}
+details.deep.aid{border:1.5px dashed #a7aee0;border-left:6px solid var(--ai);background:var(--ai-soft)}
+details.deep.aid summary{flex-wrap:wrap}
+.en{font-size:.8em;color:var(--muted);font-weight:400;font-style:normal;letter-spacing:0}
+.srcnote{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:12px;font-size:.9rem}
+.srcnote .orig{display:inline-block;font-size:.72rem;font-weight:700;color:var(--ink);background:var(--paper2);border:1px solid var(--line);padding:2px 9px;border-radius:6px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+@media print{.reveal{opacity:1;transform:none}details.deep{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">해외 사례 분석집 · 영상 소개</span>
+    <h1>“나선 사람은 단 한 명이었습니다”<br>— Mike의 이야기</h1>
+    <p class="lead">구충제로 암이 나았다는 댓글은 많았습니다. 그런데 “직접 나와서 이야기해 달라”는 의사의 요청에 응한 사람은 Mike 한 사람뿐이었습니다. 그리고 Mike는 <strong>“나았다”고 말하지 않았습니다.</strong></p>
+    <div class="notice">
+      <b>먼저 읽어 주세요.</b> 이 글은 특정 약을 권하지 않습니다. 펜벤다졸<span class="en">(fenbendazole)</span>·이버멕틴<span class="en">(ivermectin)</span>은 <strong>Mike의 사례에 등장한 약으로서 “예시”</strong>일 뿐입니다. 영상 속 의사(Dr. Roman)도 “지지하는 것도, 의학적 조언을 하는 것도 아니다”라고 처음부터 밝힙니다. 복용·병용·중단의 <strong>최종 결정은 언제나 주치의와 함께</strong> 하셔야 합니다.
+      <div class="srcnote"><span><span class="orig">라벨 없음</span> 영상 원본 내용(Mike·Dr. Roman의 말)</span><span><span class="ai-tag">AI 클로드 주석</span> 영상에 없는, AI(Claude)가 덧붙인 해설·평가</span></div>
+    </div>
+    <ul class="toc" aria-label="목차">
+      <li><a href="#s1">1. Mike는 누구</a></li>
+      <li><a href="#s2">2. 4년의 여정</a></li>
+      <li><a href="#s3">3. 숫자로 보기</a></li>
+      <li><a href="#s4">4. 결정적 10일</a></li>
+      <li><a href="#s5">5. 노가 여러 개인 배</a></li>
+      <li><a href="#s6">6. 무시하지도 않는다</a></li>
+      <li><a href="#s7">7. 하지 않은 주장</a></li>
+      <li><a href="#s9">8. 이렇게 물어보세요</a></li>
+      <li><a href="#s10">9. 안전 경계</a></li>
+      <li><a href="#s11">10. 열린 결말</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- 0. 왜 이 영상인가 -->
+<section>
+  <div class="wrap reveal">
+    <span class="secnum">들어가며</span>
+    <h2>왜 이 영상을 소개하는가</h2>
+    <p>영상의 진행자 <strong>Dr. Roman</strong>은 미국의 혈액종양내과<span class="en">(hematology-oncology)</span> 전문의입니다. 그는 몇 달 동안 이버멕틴<span class="en">(ivermectin)</span>·펜벤다졸<span class="en">(fenbendazole)</span>·메벤다졸<span class="en">(mebendazole)</span>에 관한 영상을 올렸고, 댓글에는 “이 약으로 암이 나았다”는 글이 끝없이 달렸습니다.</p>
+    <p>그는 그때마다 이렇게 답했다고 합니다. <em>“제 채널에 모시겠습니다. 나와서 세상에 증명해 주세요.”</em> 하지만 아무도 답하지 않았습니다.</p>
+    <p>그러다 <strong>Mike</strong>가 스스로 연락해 왔습니다. “이 약들이 저를 돕고 있다고 믿습니다.” 이 영상은 그 대화의 기록입니다.</p>
+    <div class="ai">
+      <span class="ai-tag">AI 클로드 주석</span>
+      <p style="margin:0">이 영상이 훌륭한 이유는 “약이 듣는다/안 듣는다”의 답을 주어서가 아닙니다. <strong>환자는 정직하게 말하고, 의사는 무시하지도 맹신하지도 않고 질문을 던지는</strong> 모습을 보여 주기 때문입니다. 우리 커뮤니티가 늘 말하는 <strong>“원리를 알고 → 가능성을 이해하고 → 근거 위에서 시도하자”</strong>를 그대로 보여 주는 대화입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1. Mike는 누구인가 -->
+<section id="s1">
+  <div class="wrap reveal">
+    <span class="secnum">1</span>
+    <h2>Mike는 누구인가</h2>
+    <div class="card profile">
+      <div class="avatar" aria-hidden="true">M</div>
+      <ul class="facts">
+        <li><b>진단</b> 대장암<span class="en">(colon cancer)</span> 4기 (2022년)</li>
+        <li><b>암의 위치</b> 왼쪽 대장, 비장 근처에서 꺾이는 부분(비장만곡부)</li>
+        <li><b>유전자 검사</b> RAS·BRAF 변이 없음(“야생형<span class="en">(wild-type)</span>”)</li>
+        <li><b>지금</b> 2026년 10월, “기분이 아주 좋습니다. 근력운동과 로잉(노 젓기 운동)을 계속하고 있어요.”</li>
+      </ul>
+    </div>
+    <p class="small muted">※ 영상 초반 Dr. Roman이 “오른쪽 대장암”이라고 했다가 곧바로 “왼쪽”으로 정정합니다. 이 차이는 뒤에서 중요하게 다룹니다(5장).</p>
+
+    <details class="deep aid">
+      <summary><span>더 깊이 보기 — “왼쪽”과 “야생형”이 왜 중요할까?</span><span class="ai-tag">AI 클로드 주석</span></summary>
+      <div class="inner">
+        <h4>왼쪽 대장암 vs 오른쪽 대장암</h4>
+        <p>대장은 위치에 따라 발생학적 기원과 분자적 특성이 다릅니다. 통계적으로 <strong>왼쪽(하행결장·S결장·비장만곡부<span class="en">(splenic flexure)</span> 쪽) 대장암은 오른쪽보다 예후가 좋은 편</strong>이고, 항EGFR 항체(세툭시맙·파니투무맙<span class="en">(panitumumab)</span>) 반응도 더 좋은 것으로 알려져 있습니다.</p>
+        <h4>RAS·BRAF 야생형</h4>
+        <p>KRAS·NRAS·BRAF 유전자에 변이가 없다는 뜻입니다. 이 경우 <strong>항EGFR 항체<span class="en">(anti-EGFR antibody)</span> 치료(Mike가 받은 벡티빅스<span class="en">(Vectibix · 성분명 panitumumab)</span>)가 효과를 낼 수 있는 조건</strong>이 됩니다. RAS 변이가 있으면 이 약은 쓰지 않습니다. Dr. Roman은 “이런 암은 예후가 더 좋고 늦게 퍼지는 경향이 있다”고 설명합니다.</p>
+        <p class="muted">즉 Mike는 4기 대장암 중에서도 <strong>비교적 유리한 조건 두 가지</strong>를 가지고 있었습니다. 이것은 Mike의 결과를 해석할 때 꼭 함께 놓아야 할 배경입니다.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 2. 4년의 여정 -->
+<section id="s2">
+  <div class="wrap reveal">
+    <span class="secnum">2</span>
+    <h2>4년의 여정, 한 장의 그림으로</h2>
+    <p>Mike의 이야기를 위에서 아래로, 시간 순서대로 그렸습니다. 왼쪽 두 줄은 막대입니다. <span class="pill p-std">항암 줄</span>은 병원 표준치료, <span class="pill p-fbz">펜벤 줄</span>은 펜벤다졸·이버멕틴을 먹은 기간입니다. <strong>주황 막대가 어디서 시작되는지, 그때 파란 막대는 어땠는지</strong>를 눈여겨보세요.</p>
+  </div>
+
+  <div class="wrap reveal">
+    <div class="vtl" role="table" aria-label="Mike의 치료 타임라인 2022–2026">
+      <div class="vtl-head"><div>날짜</div><div class="h-std">항암</div><div class="h-fbz">펜벤</div><div>무슨 일이 있었나</div></div>
+<div class="vtl-row phase"><div class="vtl-phase">① 진단과 첫 치료 · 2022</div></div>
+<div class="vtl-row "><div class="d">2022<small>가을</small></div><div class="ln"><b class="dia"></b></div><div class="ln"></div><div class="ev">극심한 복통으로 응급실 → CT에서 <strong>대장암<span class="en">(colon cancer)</span> 4기</strong>. 다음 날 아침 수술(대장 약 30cm 절제), 며칠 뒤 재수술. 장루<span class="en">(colostomy)</span> 약 7개월.</div></div>
+<div class="vtl-row "><div class="d"></div><div class="ln"></div><div class="ln"></div><div class="ev"><span class="t t-pos">PET</span>장간막 림프절 SUV <strong>4.8</strong> — 암을 강하게 의심</div></div>
+<div class="vtl-row "><div class="d">2022<small>10월 11일</small></div><div class="ln"><i class="i-std s"></i></div><div class="ln"></div><div class="ev"><strong>FOLFOX 항암</strong> 시작 (6회)</div></div>
+<div class="vtl-row "><div class="d"></div><div class="ln"><i class="i-vect"></i></div><div class="ln"></div><div class="ev">옥살리플라틴<span class="en">(oxaliplatin)</span>을 빼고 <strong>벡티빅스<span class="en">(Vectibix · 성분명 panitumumab)</span></strong>로 변경 → 심한 피부 부작용</div></div>
+<div class="vtl-row "><div class="d">2023<small>1월 17일</small></div><div class="ln"><i class="i-vect e"></i></div><div class="ln"></div><div class="ev"><span class="t t-test">ctDNA 음성</span>“피에 암 DNA가 없다” → 주치의가 항암 중단</div></div>
+<div class="vtl-row phase"><div class="vtl-phase">② 조용한 시간 · 약 2년 반</div></div>
+<div class="vtl-row gap"><div class="d">2023<br>~2025<small>5월까지</small></div><div class="ln"><i class="i-gap"></i></div><div class="ln"></div><div class="ev">아무 치료 없음.<br><span class="t t-test">ctDNA 음성</span><span class="t t-test">음성</span><span class="t t-test">음성</span>…</div></div>
+<div class="vtl-row phase"><div class="vtl-phase">③ 되돌아온 신호 · 2025</div></div>
+<div class="vtl-row "><div class="d">2025<small>6월</small></div><div class="ln"></div><div class="ln"></div><div class="ev"><span class="t t-pos">ctDNA 양성</span>처음엔 아주 낮게 → 재검에서 조금 더 높게</div></div>
+<div class="vtl-row "><div class="d">2025<small>7월~</small></div><div class="ln"><i class="i-hatch s"></i></div><div class="ln"></div><div class="ev"><strong>벡티빅스 재개</strong>. 그래도 ctDNA<span class="en">(circulating tumor DNA)</span>는 <strong>계속 상승</strong>. 먹는 항암제<span class="en">(Xeloda · capecitabine)</span>는 Mike가 원하지 않음.</div></div>
+<div class="vtl-row "><div class="d">2025<small>12월</small></div><div class="ln"><i class="i-hatch"></i></div><div class="ln"></div><div class="ev"><span class="t t-pos">MRI</span>직장 위쪽 주변에 종괴. 1시간도 못 자고 화장실을 오가는 <strong>고통스러운 증상</strong>. 직장암<span class="en">(rectal cancer)</span> 표준치료(방사선·항암·수술)는 원하지 않음.</div></div>
+<div class="vtl-row phase"><div class="vtl-phase">④ 결정적 10일 · 2026년 1월</div></div>
+<div class="vtl-row hl"><div class="d">1/12</div><div class="ln"></div><div class="ln"><i class="i-fbz s"></i></div><div class="ev"><span class="t t-fbz">시작</span><strong>펜벤다졸<span class="en">(fenbendazole)</span> + 이버멕틴<span class="en">(ivermectin)</span></strong> (의사가 아닌 제공자에게서 구함)</div></div>
+<div class="vtl-row hl"><div class="d"></div><div class="ln"></div><div class="ln"><i class="i-fbz"></i></div><div class="ev">항암용 포트<span class="en">(port)</span> 삽입. 항암은 아직 <strong>안 받는 중</strong>.</div></div>
+<div class="vtl-row hl"><div class="d">~1/20</div><div class="ln"></div><div class="ln"><i class="i-fbz"></i></div><div class="ev"><span class="t t-warn">9일 만에</span>증상이 <strong>거의 사라짐</strong>. 다시 잠을 잠.</div></div>
+<div class="vtl-row phase"><div class="vtl-phase">⑤ 항암과 함께, 그리고 두 약만 · 2026</div></div>
+<div class="vtl-row "><div class="d">1/21</div><div class="ln"><i class="i-mix s"></i></div><div class="ln"><i class="i-fbz"></i></div><div class="ev"><strong>항암 재개</strong> (5-FU + 벡티빅스) — 두 약도 계속</div></div>
+<div class="vtl-row "><div class="d">4월</div><div class="ln"><i class="i-std"></i></div><div class="ln"><i class="i-fbz"></i></div><div class="ev">피부 부작용으로 벡티빅스 중단 → 5-FU<span class="en">(fluorouracil)</span>만</div></div>
+<div class="vtl-row "><div class="d">5/22</div><div class="ln"><i class="i-std e"></i></div><div class="ln"><i class="i-fbz"></i></div><div class="ev"><strong>항암 종료</strong> (마지막 펌프)</div></div>
+<div class="vtl-row "><div class="d">5/26</div><div class="ln"></div><div class="ln"><i class="i-fbz2"></i></div><div class="ev"><span class="t t-test">PET</span>따라다니던 <strong>림프절 사라짐</strong>, SUV<span class="en">(standardized uptake value)</span> 3.4 → 2.1<br><span class="small muted">이후 두 약만 유지, 펜벤다졸은 감량</span></div></div>
+<div class="vtl-row "><div class="d">8월</div><div class="ln"></div><div class="ln"><i class="i-fbz2"></i></div><div class="ev"><span class="t t-test">스캔 안정</span>병변 3.6 → 3.5<br><span class="small muted">ctDNA 검사는 본인이 보류</span></div></div>
+<div class="vtl-row "><div class="d">10월</div><div class="ln"></div><div class="ln"><i class="i-fbz2"></i></div><div class="ev">인터뷰. “기분이 아주 좋다. 운동도 계속한다.”</div></div>
+<div class="vtl-row "><div class="d">12월</div><div class="ln"></div><div class="ln"><i class="i-plan"></i></div><div class="ev"><span class="t t-plan">예정</span>조영 CT, ctDNA 재논의, 후속 영상</div></div>
+    </div>
+    <div class="vlegend">
+      <span><i style="background:var(--std)"></i>항암(FOLFOX·5-FU)</span>
+      <span><i style="background:var(--vect)"></i>벡티빅스</span>
+      <span><i style="background:repeating-linear-gradient(45deg,var(--vect) 0 3px,var(--vect-soft) 3px 7px)"></i>벡티빅스(재발 후)</span>
+      <span><i style="background:var(--fbz)"></i>펜벤다졸+이버멕틴</span>
+      <span><i style="background:#eaa56f"></i>두 약만(감량)</span>
+    </div>
+    <p class="small muted ai-inline" style="margin-top:10px"><span class="ai-tag">AI 클로드 주석</span>날짜는 Mike가 영상에서 말한 대로입니다. 2025년 하반기 벡티빅스가 언제까지 이어졌는지, 펜벤다졸을 언제 줄였는지는 영상에서 분명하지 않습니다.</p>
+  </div>
+
+  <div class="wrap reveal">
+    <h3>다섯 마디로 읽는 여정</h3>
+    <ol class="phases">
+      <li><h3>갑작스러운 진단과 수술</h3><div class="when">2022년</div>
+        <p>어느 날 저녁 극심한 통증으로 응급실에 갔고, 조영 CT<span class="en">(contrast-enhanced CT)</span>에서 대장암 4기 진단을 받았습니다. 다음 날 아침 바로 수술해 대장을 약 30cm 잘라냈고, 며칠 뒤 재수술까지 받았습니다. 장루(인공항문, <span class="en">colostomy</span>)를 약 7개월 찼습니다. PET에서는 장간막 림프절 하나가 암을 의심할 만큼 빛났습니다(SUV 4.8).</p></li>
+      <li><h3>항암, 그리고 “피 속에 암 DNA가 없다”</h3><div class="when">2022년 10월 ~ 2023년 1월</div>
+        <p>FOLFOX 항암 6회 후, 옥살리플라틴을 빼고 벡티빅스로 바꿨습니다. 피부를 심하게 공격할 거라는 경고대로 피부 부작용이 왔습니다. 2023년 1월, 혈액으로 암 DNA를 찾는 <strong>시그나테라<span class="en">(Signatera)</span> ctDNA 검사가 음성</strong>이 나와 주치의가 항암을 멈췄습니다.</p></li>
+      <li><h3>2년 반의 조용한 시간</h3><div class="when">2023년 1월 ~ 2025년 6월</div>
+        <p>아무 치료 없이 지냈고, ctDNA는 검사할 때마다 음성이었습니다. <strong>이 긴 무치료 기간 자체가 Mike의 암이 비교적 순한 편임을 보여 준다</strong>고 Dr. Roman은 설명합니다.</p></li>
+      <li><h3>되돌아온 신호</h3><div class="when">2025년 6월 ~ 12월</div>
+        <p>ctDNA가 처음 아주 낮게 양성으로 나왔고, 재검에서 조금 더 높았으며, 이후 계속 올라갔습니다. 벡티빅스를 다시 맞았지만 수치는 멈추지 않았습니다(먹는 항암제는 Mike가 원하지 않았습니다). 12월 MRI에서 직장 위쪽 주변에 덩어리가 보였고, 한 시간도 못 자고 화장실을 오가는 고통스러운 증상이 시작됐습니다. 주치의는 같은 암이 아래로 내려와 재발한 것이라고 했습니다. 직장암의 표준치료<span class="en">(standard of care)</span>는 방사선·항암·수술이지만, <strong>Mike는 그 길을 원하지 않았습니다.</strong></p></li>
+      <li><h3>펜벤다졸·이버멕틴 + 항암, 그리고 두 약만</h3><div class="when">2026년 1월 ~ 현재</div>
+        <p>1월 12일, 책에서 읽고 한 의료인에게서도 들었던 펜벤다졸과 이버멕틴을 시작했습니다. 9일 만에 증상이 거의 사라졌고, 1월 21일부터 항암을 다시 받았습니다. 4월 피부 부작용으로 벡티빅스를 끊고 5-FU만 계속하다가 5월 22일 항암을 마쳤습니다. 5월 26일 PET에서 따라다니던 림프절이 사라졌습니다. 그 뒤로는 두 약만(펜벤다졸은 줄여서) 먹고 있고, 8월 스캔은 안정적이었습니다.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 3. 숫자로 보기 -->
+<section id="s3">
+  <div class="wrap reveal">
+    <span class="secnum">3</span>
+    <h2>숫자로 보기 — 그리고 숫자의 빈칸</h2>
+    <p>Mike가 말한 검사 수치를 그래프로 옮겼습니다. 다만 영상에서 <strong>분명하지 않은 부분은 그대로 빈칸으로</strong> 남겼습니다.</p>
+    <p class="ai-inline"><span class="ai-tag">AI 클로드 주석</span>빈칸을 상상으로 채우지 않는 것이 이 사례를 정직하게 읽는 첫걸음입니다.</p>
+
+    <div class="card">
+      <h3 style="margin-top:0">PET “빛나는 정도” (SUV)<br><span class="en">standardized uptake value</span></h3>
+      <div class="hbars">
+        <div><div class="hb-l"><b style="color:#5b6f86">4.8</b>2022년 가을 <small>· 장간막 림프절<span class="en">(mesenteric lymph node)</span></small></div><div class="hb-t"><div class="hb-f" style="width:100%;background:#5b6f86"></div></div></div>
+        <div><div class="hb-l"><b style="color:#6b625a">3.4</b>이전 스캔 <small>· 언제인지 영상에 없음</small></div><div class="hb-t"><div class="hb-f unk" style="width:70.8%"></div></div></div>
+        <div><div class="hb-l"><b style="color:var(--test)">2.1</b>2026년 5월 26일 <small>· 항암 종료 직후</small></div><div class="hb-t"><div class="hb-f" style="width:43.8%;background:var(--test)"></div></div></div>
+      </div>
+      <p class="small muted" style="margin:14px 0 0"><span class="ai-tag">AI 클로드 주석</span>SUV는 PET 영상에서 그 부위가 포도당을 얼마나 끌어당기는지(=얼마나 “빛나는지”)를 나타내는 숫자로, 대체로 높을수록 활동적인 암을 의심합니다. ※ 세 값이 같은 병변을 잰 것인지는 영상에서 분명하지 않습니다.</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">혈액 속 암 DNA (ctDNA)<br><span class="en">circulating tumor DNA</span></h3>
+      <div class="ct">
+        <div class="ct-row ct-head"><div>시점</div><div class="meter"><span>없음</span><span>낮음</span><span>높음</span></div><div>무엇이 나왔나</div></div>
+        <div class="ct-row"><div class="dt">2023.1</div><div class="meter"><span class="g"></span><span></span><span></span></div><div>음성 → 항암 중단</div></div>
+        <div class="ct-row"><div class="dt">~2025.5</div><div class="meter"><span class="g"></span><span></span><span></span></div><div>반복 검사 모두 음성</div></div>
+        <div class="ct-row"><div class="dt">2025.6</div><div class="meter"><span></span><span class="r"></span><span></span></div><div>처음 양성, 아주 낮음</div></div>
+        <div class="ct-row"><div class="dt">재검</div><div class="meter"><span></span><span class="r"></span><span></span></div><div>조금 더 높게</div></div>
+        <div class="ct-row"><div class="dt">~2025.12</div><div class="meter"><span></span><span></span><span class="r"></span></div><div>계속 상승</div></div>
+        <div class="ct-div">▼ 1/12 두 약 시작 · 1/21 항암 재개</div>
+        <div class="ct-row"><div class="dt">2026 상반기</div><div class="meter"><span class="gh"></span><span></span><span></span></div><div>음성 <span class="small muted">(Dr. Roman의 요약)</span></div></div>
+        <div class="ct-row"><div class="dt">2026.8</div><div class="meter"><span></span><span></span><span></span></div><div>검사 안 함 <span class="small muted">(본인이 보류)</span></div></div>
+      </div>
+      <p class="small muted" style="margin:12px 0 0"><span class="ai-tag">AI 클로드 주석</span>실제 수치는 공개되지 않아 흐름만 표시했습니다. “음성”은 Mike 본인이 아니라 Dr. Roman이 정리하며 한 말에만 나옵니다(Mike는 부정하지 않았습니다). 그래서 점선 동그라미로 그렸습니다.</p>
+    </div>
+
+    <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <div style="font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--test)">3.6 → 3.5</div>
+      <div style="flex:1;min-width:220px">8월 스캔에서 재발 부위의 길이가 아주 조금 줄었습니다. Mike는 “덩어리(mass)라고 부르지도 않더라”고 했습니다. <span class="muted small"><span class="ai-tag">AI 클로드 주석</span>단위(cm 추정)는 영상에서 말하지 않았고, 자막에는 “36”으로 적혀 있어 3.6으로 바로잡았습니다.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 결정적 10일 -->
+<section id="s4">
+  <div class="wrap reveal">
+    <span class="secnum">4</span>
+    <h2>결정적 10일</h2>
+    <p>이 사례에서 가장 눈길을 끄는 대목입니다. Dr. Roman도 이 부분은 <strong>“설득력이 있다(compelling)”</strong>고 인정합니다. 이 10일 동안 Mike는 항암을 받지 않고 두 약만 먹고 있었기 때문입니다.</p>
+
+    <figure class="figbox">
+      <svg viewBox="0 0 360 500" role="img" aria-labelledby="dT dD" style="width:100%;max-width:420px;display:block;margin:0 auto">
+        <title id="dT">2026년 1월 12일부터 21일까지</title>
+        <desc id="dD">위에서 아래로 시간이 흐른다. 1월 12일 두 약 시작 때 증상이 가장 크고, 9일째 거의 사라지며, 10일째 항암을 다시 시작한다.</desc>
+        <defs><linearGradient id="symV" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c0392b"/><stop offset=".55" stop-color="#e0a526"/><stop offset="1" stop-color="#3f8f4f"/></linearGradient></defs>
+        <text x="96" y="22" font-size="13" fill="#6b625a">증상의 크기 (본인 체감) →</text>
+        <line x1="70" y1="40" x2="70" y2="460" stroke="#2b2622" stroke-width="2"/>
+        <g stroke="#2b2622">
+          <line x1="64" y1="40" x2="76" y2="40"/><line x1="64" y1="80" x2="76" y2="80"/><line x1="64" y1="120" x2="76" y2="120"/><line x1="64" y1="160" x2="76" y2="160"/><line x1="64" y1="200" x2="76" y2="200"/><line x1="64" y1="240" x2="76" y2="240"/><line x1="64" y1="280" x2="76" y2="280"/><line x1="64" y1="320" x2="76" y2="320"/><line x1="64" y1="360" x2="76" y2="360"/><line x1="64" y1="400" x2="76" y2="400"/><line x1="64" y1="440" x2="76" y2="440"/>
+        </g>
+        <path d="M80 40 H 250 C 250 200, 140 330, 108 400 H 80 Z" fill="url(#symV)" opacity=".88"/>
+        <g font-size="13" text-anchor="end" fill="#6b625a"><text x="58" y="45" fill="#d0762f" font-weight="700">1/12</text><text x="58" y="245">5일째</text><text x="58" y="405" fill="#3f8f4f" font-weight="700">9일째</text><text x="58" y="465" fill="#2f6fb0" font-weight="700">1/21</text></g>
+        <circle cx="70" cy="40" r="8" fill="#d0762f"/>
+        <circle cx="70" cy="460" r="8" fill="#2f6fb0"/>
+        <text x="92" y="64" font-size="14" font-weight="700" fill="#fff">두 약 시작</text>
+        <text x="92" y="86" font-size="13" fill="#fff">1시간도 못 잠</text>
+        <text x="92" y="106" font-size="13" fill="#fff">20~30분씩 화장실</text>
+        <text x="210" y="250" font-size="13" fill="#6b625a">이 사이:</text>
+        <text x="210" y="270" font-size="13" fill="#6b625a">항암용 포트 삽입</text>
+        <text x="210" y="290" font-size="13" fill="#6b625a">(항암은 아직 X)</text>
+        <text x="122" y="405" font-size="14" font-weight="700" fill="#3f8f4f">증상 거의 사라짐 · 다시 잠</text>
+        <text x="90" y="465" font-size="14" font-weight="700" fill="#2f6fb0">항암 재개</text>
+        <text x="20" y="492" font-size="12" fill="#9a8f84">↓ 시간</text>
+      </svg>
+      <figcaption><span class="ai-tag">AI 클로드 주석</span>곡선의 모양은 이해를 돕기 위한 그림입니다. 영상에서 확인되는 사실은 “시작 전에는 증상이 끔찍했고, 항암을 시작하기 전 9일 안에 거의 모든 증상이 가라앉았다”는 것까지입니다.</figcaption>
+    </figure>
+
+    <p>Mike는 너무 놀라 약을 구해 준 사람에게 전화해 “이렇게 빨리 들을 수 있느냐”고 물었고, 그 사람은 “그렇다, 전에도 봤다”고 답했다고 합니다. 그런데 Mike 스스로 덧붙입니다. <strong>“그 사람은 의사가 아닙니다.”</strong></p>
+    <p>그리고 바로 다음 말이 이 이야기의 핵심입니다. 항암을 다시 시작한 뒤로도 계속 좋아졌는데, Mike는 이렇게 말합니다. <em>“여기서부터 물이 흐려집니다.”</em> 항암 덕분일까, 펜벤다졸<span class="en">(fenbendazole)</span> 덕분일까. <strong>누가 알겠습니까.</strong></p>
+  </div>
+</section>
+
+<!-- 5. 노가 여러 개인 배 -->
+<section id="s5">
+  <div class="wrap reveal">
+    <span class="secnum">5</span>
+    <h2>노가 여러 개인 배 — 누가 저었을까?</h2>
+    <p class="ai-inline"><span class="ai-tag">AI 클로드 주석 · 비유</span>Mike는 지금도 노 젓기 운동을 한다고 했지요. 그 그림을 빌려 보겠습니다. <strong>Mike의 배는 분명 앞으로 나아갔습니다.</strong> 증상이 사라졌고, 림프절이 없어졌고, 스캔은 안정적입니다. 문제는 이 배에 <strong>노가 다섯 개</strong> 꽂혀 있었다는 것입니다.</p>
+
+    <figure class="figbox">
+      <svg viewBox="0 0 360 480" role="img" aria-labelledby="bT bD" style="width:100%;max-width:420px;display:block;margin:0 auto">
+        <title id="bT">위에서 내려다본, 노가 다섯 개인 배</title>
+        <desc id="bD">배가 위쪽으로 나아간다. 왼쪽 노 세 개는 항암, 벡티빅스, 암의 성질, 오른쪽 노 두 개는 펜벤·이버멕틴과 마음의 힘이다.</desc>
+        <rect x="0" y="0" width="360" height="480" rx="14" fill="#e3eef9"/>
+        <g stroke="#b9d3ec" stroke-width="2" fill="none"><path d="M150 420 Q 120 450 90 470"/><path d="M210 420 Q 240 450 270 470"/><path d="M180 425 V 470" stroke-dasharray="4 6"/></g>
+        <line x1="180" y1="98" x2="180" y2="44" stroke="#3f8f4f" stroke-width="5" stroke-linecap="round"/>
+        <path d="M166 50 L180 24 L194 50 Z" fill="#3f8f4f"/>
+        <text x="200" y="56" font-size="16" font-weight="700" fill="#3f8f4f">앞으로!</text>
+        <text x="200" y="76" font-size="12" fill="#3f8f4f">증상↓ 림프절 소실 · 스캔 안정</text>
+        <path d="M180 108 C 232 150, 236 330, 216 410 L144 410 C 124 330, 128 150, 180 108 Z" fill="#8a6a4f"/>
+        <path d="M180 128 C 220 165, 222 320, 206 395 L154 395 C 138 320, 140 165, 180 128 Z" fill="#a7835f"/>
+        <g stroke-width="6" stroke-linecap="round">
+          <line x1="140" y1="175" x2="58" y2="150" stroke="#2f6fb0"/>
+          <line x1="134" y1="260" x2="52" y2="260" stroke="#2a9d8f"/>
+          <line x1="140" y1="345" x2="58" y2="372" stroke="#7d8a96"/>
+          <line x1="220" y1="205" x2="302" y2="185" stroke="#d0762f"/>
+          <line x1="223" y1="310" x2="302" y2="330" stroke="#7a5aa6"/>
+        </g>
+        <g font-size="16" font-weight="700" fill="#fff" text-anchor="middle">
+          <circle cx="44" cy="146" r="17" fill="#2f6fb0"/><text x="44" y="152">1</text>
+          <circle cx="38" cy="260" r="17" fill="#2a9d8f"/><text x="38" y="266">2</text>
+          <circle cx="44" cy="376" r="17" fill="#7d8a96"/><text x="44" y="382">3</text>
+          <circle cx="316" cy="182" r="17" fill="#d0762f"/><text x="316" y="188">4</text>
+          <circle cx="316" cy="334" r="17" fill="#7a5aa6"/><text x="316" y="340">5</text>
+        </g>
+        <g font-size="13" font-weight="700" text-anchor="middle">
+          <text x="44" y="180" fill="#2f6fb0">항암</text>
+          <text x="40" y="294" fill="#2a9d8f">벡티빅스</text>
+          <text x="46" y="410" fill="#5b6670">암의 성질</text>
+          <text x="314" y="216" fill="#d0762f">펜벤·이버</text>
+          <text x="316" y="368" fill="#7a5aa6">마음의 힘</text>
+        </g>
+        <circle cx="180" cy="262" r="18" fill="#d0762f" stroke="#fff" stroke-width="3"/>
+        <text x="180" y="268" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">M</text>
+      </svg>
+      <figcaption><span class="ai-tag">AI 클로드 주석</span>위에서 내려다본 Mike의 배. 배는 분명 앞으로 나아갔습니다. 그런데 어느 노가 얼마나 저었을까요?</figcaption>
+    </figure>
+
+    <div class="oars">
+      <div class="oar" style="border-top:5px solid var(--std)"><b style="color:var(--std)">① 항암 (5-FU)</b>1월 21일부터 5월 22일까지 넉 달 동안 함께 저었습니다.</div>
+      <div class="oar" style="border-top:5px solid var(--vect)"><b style="color:var(--vect)">② 벡티빅스<span class="en">(Vectibix · 성분명 panitumumab)</span></b>심한 피부 발진은 오히려 “잘 듣고 있다”는 신호일 때가 많다고 합니다.</div>
+      <div class="oar" style="border-top:5px solid #7d8a96"><b style="color:#5b6670">③ 암의 성질</b>왼쪽·야생형<span class="en">(wild-type)</span>은 비교적 순한 편이고, 2년 반 무치료가 그 증거입니다.</div>
+      <div class="oar" style="border-top:5px solid var(--fbz)"><b style="color:var(--fbz)">④ 펜벤·이버</b>10일 동안 이 노만 저었는데 증상이 거의 사라졌습니다.</div>
+      <div class="oar" style="border-top:5px solid var(--mind)"><b style="color:var(--mind)">⑤ 마음의 힘</b>“이 약이 들었으면” 하는 간절함이 몸을 바꾸는 위약 효과<span class="en">(placebo effect)</span>도 실제로 있습니다.</div>
+    </div>
+
+    <p style="margin-top:22px">Dr. Roman은 “악마의 변호인<span class="en">(devil's advocate)</span>” 역할을 자처하며 ①②③⑤를 하나씩 짚습니다. 그는 ④를 부정하지 않습니다. 다만 <strong>노가 여러 개 꽂혀 있으면, 배가 나아간 공을 한 개의 노에게만 돌릴 수 없다</strong>는 것입니다.</p>
+
+    <details class="deep aid">
+      <summary><span>더 깊이 보기 — 결과 하나에 원인 후보 다섯 (원인 귀속 흐름도)</span><span class="ai-tag">AI 클로드 주석</span></summary>
+      <div class="inner">
+        <div class="flow">
+          <div class="causes">
+            <div class="cause" style="border-left:5px solid var(--std)"><b>① 세포독성 항암(5-FU)</b><br>표준치료<span class="en">(standard of care)</span>. 재발 대장암<span class="en">(colon cancer)</span>에서 효과가 확립된 약. 1/21~5/22 병용.</div>
+            <div class="cause" style="border-left:5px solid var(--vect)"><b>② 파니투무맙(벡티빅스)</b><br>RAS/BRAF 야생형 + 좌측 = 반응 가능성이 높은 조건. 여드름양 발진은 반응의 대리지표(surrogate)로 알려짐.</div>
+            <div class="cause" style="border-left:5px solid #7d8a96"><b>③ 종양 생물학</b><br>좌측·야생형의 비교적 양호한 예후. 1차 치료 후 약 29개월 무치료 생존이 이를 뒷받침.</div>
+            <div class="cause" style="border-left:5px solid var(--fbz)"><b>④ 펜벤다졸<span class="en">(fenbendazole)</span> + 이버멕틴<span class="en">(ivermectin)</span></b><br>전임상(세포·동물) 연구에서 항암 활성 보고. 사람 대상 무작위 임상 근거 없음. 1/12~1/21 단독 구간에서 증상 호전.</div>
+            <div class="cause" style="border-left:5px solid var(--mind)"><b>⑤ 위약 효과 / 기대 효과</b><br>증상(주관적 지표)은 기대의 영향을 특히 크게 받음. 다만 영상 소견(림프절 소실)은 위약으로 설명하기 어려움.</div>
+          </div>
+          <div class="arrowcol" aria-hidden="true">
+            <svg viewBox="0 0 60 400" preserveAspectRatio="none"><g stroke="#9a8f84" stroke-width="2" fill="none"><path d="M0 40 C 30 40, 30 200, 58 200"/><path d="M0 120 C 30 120, 30 200, 58 200"/><path d="M0 200 H 58"/><path d="M0 280 C 30 280, 30 200, 58 200"/><path d="M0 360 C 30 360, 30 200, 58 200"/></g></svg>
+          </div>
+          <div class="result">
+            <b>관찰된 결과</b><br>
+            · 9일 내 증상 대부분 소실 <span style="opacity:.7">(주관적, ④⑤ 구간)</span><br>
+            · 장간막 림프절<span class="en">(mesenteric lymph node)</span> 소실, SUV<span class="en">(standardized uptake value)</span> 3.4→2.1 <span style="opacity:.7">(①②③④ 동시)</span><br>
+            · ctDNA<span class="en">(circulating tumor DNA)</span> 음성 <span style="opacity:.7">(Dr. Roman 요약, ①②③④ 동시)</span><br>
+            · 항암 중단 후 약 3개월 스캔 안정 <span style="opacity:.7">(③④, 직전 항암의 잔여 효과 가능)</span>
+          </div>
+        </div>
+        <h4>읽는 법</h4>
+        <p>각 결과 옆 괄호는 그 시점에 함께 작용하던 요인입니다. 객관적 지표(PET·ctDNA)가 좋아진 시기는 모두 <strong>항암·항체 치료와 겹칩니다.</strong> 펜벤·이버멕틴만 단독으로 작용한 구간은 ① 처음 10일(증상, 주관적 지표)과 ② 항암 종료 후 유지기(안정, 하지만 직전 항암의 효과가 남아 있을 수 있는 기간)뿐입니다. 이것이 Dr. Roman이 말한 “물이 흐려진다”의 구조입니다.</p>
+        <h4>그래서 무엇이 더 필요했을까?</h4>
+        <p>원인을 가르려면 이상적으로는 ① 두 약만 먹은 기간에 객관적 검사(ctDNA·영상)를 해 보거나, ② 같은 조건의 환자들을 무작위로 나눈 비교가 필요합니다. 한 사람의 이야기로는 구조적으로 할 수 없는 일입니다. 이 사례의 가치는 “증명”이 아니라 <strong>“질문을 정확하게 만들어 준다”</strong>는 데 있습니다.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 6. 무시하지도 않는다 -->
+<section id="s6">
+  <div class="wrap reveal">
+    <span class="secnum">6</span>
+    <h2>그래도, 무시하지 않는다</h2>
+    <p>많은 의사들은 이런 이야기를 들으면 “위약 효과<span class="en">(placebo effect)</span>겠죠” 하고 넘깁니다. Dr. Roman은 여기서 멈춥니다.</p>
+
+    <figure class="figbox">
+      <svg viewBox="0 0 360 260" role="img" aria-labelledby="scT scD" style="width:100%;max-width:420px;display:block;margin:0 auto">
+        <title id="scT">저울: 위약일 수도, 진짜일 수도</title>
+        <desc id="scD">저울 양쪽에 위약일 수도와 진짜일 수도가 놓여 균형을 이룬다. 어느 쪽으로도 기울일 증거가 아직 없다.</desc>
+        <text x="180" y="28" font-size="15" font-weight="700" text-anchor="middle" fill="#2b2622">어느 쪽으로도 기울일</text>
+        <text x="180" y="50" font-size="15" font-weight="700" text-anchor="middle" fill="#2b2622">증거가 아직 없다</text>
+        <line x1="180" y1="80" x2="180" y2="225" stroke="#2b2622" stroke-width="5"/>
+        <polygon points="180,222 150,248 210,248" fill="#2b2622"/>
+        <line x1="40" y1="88" x2="320" y2="88" stroke="#2b2622" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="180" cy="82" r="9" fill="#2b2622"/>
+        <g stroke="#6b625a" stroke-width="2"><line x1="78" y1="88" x2="28" y2="158"/><line x1="78" y1="88" x2="128" y2="158"/><line x1="282" y1="88" x2="232" y2="158"/><line x1="282" y1="88" x2="332" y2="158"/></g>
+        <path d="M18 158 H 138 Q 78 196 18 158 Z" fill="#efe8f7" stroke="#7a5aa6" stroke-width="2.5"/>
+        <path d="M222 158 H 342 Q 282 196 222 158 Z" fill="#fbeadb" stroke="#d0762f" stroke-width="2.5"/>
+        <text x="78" y="148" font-size="16" font-weight="700" text-anchor="middle" fill="#7a5aa6">위약일 수도</text>
+        <text x="282" y="148" font-size="16" font-weight="700" text-anchor="middle" fill="#d0762f">진짜일 수도</text>
+      </svg>
+    </figure>
+
+    <p>그는 이렇게 말합니다(요지). <strong>“위약일 수도 있고, 진짜일 수도 있습니다. 위약이라는 증거가 없는데 일축하는 것, 그것이 의사들이 저지르는 큰 실수라고 생각합니다.”</strong></p>
+    <p>그리고 Mike에게 12월 검사 뒤 후속 영상을 제안합니다.</p>
+    <p class="ai-inline"><span class="ai-tag">AI 클로드 주석</span>결론을 서둘러 열지도, 서둘러 닫지도 않는 태도입니다. 우리 커뮤니티가 지향하는 바로 그 자세입니다.</p>
+  </div>
+</section>
+
+<!-- 7. 하지 않은 주장 -->
+<section id="s7">
+  <div class="wrap reveal">
+    <span class="secnum">7</span>
+    <h2>Mike가 하지 않은 주장</h2>
+    <p>Dr. Roman이 꼽은 이 영상의 가장 큰 교훈입니다.</p>
+    <div class="vs">
+      <div class="claim bad">
+        <span class="pill p-pos">흔히 듣는 주장</span>
+        <div class="big">“구충제가 내 암을 고쳤다.”</div>
+        <p class="small" style="margin:0">함께 받은 항암·호르몬·방사선 치료는 이야기에서 빠지는 경우가 많습니다. 그리고 나와서 질문받기를 꺼립니다.</p>
+      </div>
+      <div class="mid">vs</div>
+      <div class="claim good">
+        <span class="pill p-test">Mike의 말</span>
+        <div class="big">“도움이 된 것 같습니다. 단, 저는 항암도 받았습니다.”</div>
+        <p class="small" style="margin:0">처음 연락할 때부터 “항암이 함께 있었으니 적어도 부분적으로는”이라고 스스로 조건을 붙였습니다.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">진료실의 한 장면</h3>
+      <p style="margin:0">Dr. Roman이 자주 드는 예가 있습니다. 한 전립선암 환자가 “이버멕틴<span class="en">(ivermectin)</span> 덕분에 좋아지고 있다”고 하자, 그는 되물었습니다. <em>“제가 드리고 있는 남성호르몬 차단 치료는요?”</em> 환자는 잠시 생각하더니 “그것도 도움이 되겠네요”라고 답했다고 합니다.</p>
+      <p class="ai-inline" style="margin:14px 0 0"><span class="ai-tag">AI 클로드 주석</span>함께 받은 치료를 지우면, 이야기는 쉽게 기적이 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Mike의 마지막 말 -->
+<section>
+  <div class="wrap reveal">
+    <span class="secnum">Mike의 마지막 말</span>
+    <h2>“그 질문들은 꼭 해야 합니다”</h2>
+    <p>Dr. Roman이 마지막으로 하고 싶은 말이 있냐고 묻자, Mike는 왜 아무도 나서지 않았는지 이렇게 설명합니다(요지).</p>
+    <blockquote>
+      사람들이 나서지 않는 건, 반론 질문을 듣고 싶지 않아서입니다. 다른 희망이 없다고 느낄 때 사람은 여기에 모든 희망을 걸게 되니까요. <strong>하지만 그 질문들은 꼭 해야 합니다.</strong>
+      <cite>— Mike, 영상 마지막 부분 (한국어 요약 번역)</cite>
+    </blockquote>
+    <p class="ai-inline"><span class="ai-tag">AI 클로드 주석</span>희망을 거는 마음과 질문을 던지는 마음은 서로 반대가 아닙니다. Mike는 둘을 동시에 붙들었습니다. 우리도 그렇게 할 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 9. 질문 -->
+<section id="s9">
+  <div class="wrap reveal">
+    <span class="secnum">8</span>
+    <h2>내 주치의에게, 이렇게 물어보세요</h2>
+    <p class="ai-inline"><span class="ai-tag">AI 클로드 주석</span>이 장의 질문과 실습은 영상에 나온 내용이 아니라, 이 사례를 바탕으로 AI가 만든 것입니다.</p>
+    <p>Mike의 사례를 읽고 “나도 해 볼까?”가 먼저 떠오를 수 있습니다. 그 전에, <strong>더 좋은 질문</strong>을 준비해 보세요. 아래 문장은 그대로 복사해서 쓰셔도 됩니다.</p>
+
+    <div class="q"><span>제 암의 위치와 유전자 검사(RAS, BRAF 같은) 결과가 제 예후와 치료 선택에 어떤 의미가 있나요?</span><br><button class="copy" type="button">복사하기</button></div>
+    <div class="q"><span>제 경우에 혈액으로 암 DNA를 보는 검사(ctDNA)가 도움이 될까요? 결과가 나오면 어떻게 해석해야 하나요?</span><br><button class="copy" type="button">복사하기</button></div>
+    <div class="q"><span>지금 받는 치료의 부작용(예: 피부 발진)이 치료가 잘 듣는 신호와 관련이 있나요?</span><br><button class="copy" type="button">복사하기</button></div>
+    <div class="q"><span>표준치료<span class="en">(standard of care)</span>를 받지 않거나 미루면 제 경우에는 어떤 위험이 있나요? 다른 선택지는 무엇인가요?</span><br><button class="copy" type="button">복사하기</button></div>
+    <div class="q"><span>제가 보완적으로 다른 약을 함께 먹고 싶다면, 지금 치료와 부딪히지 않는지, 간 수치 같은 검사는 무엇을 언제 해야 하는지 함께 봐 주실 수 있나요?</span><br><button class="copy" type="button">복사하기</button></div>
+    <div class="q"><span>나중에 무엇이 효과가 있었는지 구분할 수 있으려면, 제가 무엇을 어떻게 기록해 두면 좋을까요?</span><br><button class="copy" type="button">복사하기</button></div>
+
+    <div class="try">
+      <h3>✍️ 이것부터 시도해 보세요 — “Mike식 치료 일지”</h3>
+      <p>Mike가 이 인터뷰를 할 수 있었던 건, <strong>날짜를 정확히 기억하고 있었기 때문</strong>입니다. 1월 12일 시작, 1월 21일 항암, 5월 22일 마지막 펌프, 5월 26일 PET. 이 날짜들 덕분에 “10일”이라는 질문이 생길 수 있었습니다.</p>
+      <p>오늘부터 하루 세 줄이면 충분합니다.</p>
+      <table class="logtable">
+        <thead><tr><th>날짜</th><th>먹은 약·받은 치료</th><th>몸 상태 (잠·통증·화장실 등)</th></tr></thead>
+        <tbody>
+          <tr><td>예) 1/12</td><td>항암 없음 / 새로 시작한 것 기록</td><td>밤에 3번 깸, 통증 7/10</td></tr>
+          <tr><td>예) 1/20</td><td>(같음)</td><td>밤에 거의 안 깸, 통증 2/10</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted" style="margin:10px 0 0">검사 결과지는 날짜별로 모아 두세요. 이 기록은 주치의와 대화할 때 가장 강력한 자료가 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. 안전 경계 -->
+<section id="s10">
+  <div class="wrap reveal">
+    <div class="safety">
+      <span class="secnum" style="color:var(--pos)">9</span>
+      <h2>꼭 지켜야 할 안전 경계선</h2>
+      <p class="ai-inline"><span class="ai-tag">AI 클로드 주석</span>이 장은 AI의 정리입니다. 영상에서 확인되는 사실 위에, 영상에 없는 일반 안전 정보(용량 수준, 간 손상 보고, 근거 등급 판정)를 덧붙였습니다.</p>
+      <ul>
+        <li><strong>최종 결정은 주치의와 함께.</strong> 복용·병용·중단 어느 것도 혼자 정하지 마세요. AI와 이런 자료는 “결정”이 아니라 “더 좋은 질문”을 준비하는 도구입니다.</li>
+        <li><strong>Mike는 표준치료<span class="en">(standard of care)</span>를 버리지 않았습니다.</strong> 재발 후에도 항암과 항체 치료를 넉 달 동안 함께 받았습니다. 이 사례는 “표준치료 + 보완적 시도”의 이야기입니다.</li>
+        <li><strong>다만 Mike는 직장암<span class="en">(rectal cancer)</span> 재발에 대한 표준 경로(방사선·항암·수술) 일부를 원하지 않았습니다.</strong> 이것은 Mike 개인의 선택이며, 그 결과는 아직 진행 중입니다. 그대로 따라 할 일이 아닙니다.</li>
+        <li><strong>약을 의사가 아닌 사람에게서 구했고, 용량도 그 사람이 정했습니다.</strong> 이 글에서 용량을 적지 않은 이유입니다. 영상에서 언급된 이버멕틴<span class="en">(ivermectin)</span> 용량은 일반적인 구충 용량보다 훨씬 높은 수준이며, 장기 고용량의 안전성은 확립되어 있지 않습니다.</li>
+        <li><strong>펜벤다졸<span class="en">(fenbendazole)</span>은 사람용으로 허가된 약이 아닙니다(동물용 구충제).</strong> 스스로 복용한 사람에게서 간 손상이 보고된 바 있습니다. 어떤 형태로든 시도를 고민한다면 반드시 주치의와 간 기능 등 검사 계획을 세우세요.</li>
+        <li><strong>“빠른 증상 호전”은 희망의 근거일 수 있지만, 효과의 증명은 아닙니다.</strong> Mike 자신도 “증명할 방법은 모르겠다”고 말했습니다.</li>
+      </ul>
+      <div class="grade">
+        <div class="letter">D</div>
+        <div><strong>이 사례의 근거 수준: 단일 환자의 경험담</strong><br><span class="small">표준치료와 동시에 진행되어 원인을 가를 수 없음 · 본인 진술 기반 · 검사 원자료 미공개</span></div>
+      </div>
+      <details class="deep aid" style="background:#fff">
+        <summary><span>더 깊이 보기 — 근거 등급이란?</span><span class="ai-tag">AI 클로드 주석</span></summary>
+        <div class="inner">
+          <table class="ev">
+            <thead><tr><th>등급</th><th>근거의 종류</th><th>의미</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>무작위 대조 임상시험(RCT), 메타분석<span class="en">(meta-analysis)</span></td><td>원인과 효과를 가장 믿을 만하게 보여 줌</td></tr>
+              <tr><td>B</td><td>잘 설계된 관찰 연구(코호트 등)</td><td>연관성은 보이나 숨은 요인 가능 (예: 불멸시간 편향<span class="en">(immortal time bias)</span> 같은 함정)</td></tr>
+              <tr><td>C</td><td>소규모·비대조 연구, 증례 모음</td><td>가설을 세우는 단계</td></tr>
+              <tr class="here"><td>D</td><td>단일 증례, 전임상(세포·동물)</td><td>가능성의 신호. <strong>← Mike의 사례</strong></td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:12px">펜벤다졸·메벤다졸<span class="en">(mebendazole)</span>·이버멕틴의 항암 효과에 대한 근거는 현재 주로 D 수준(세포·동물 연구와 증례)입니다. 사람을 대상으로 한 임상시험은 일부 진행 중이거나 계획 단계입니다. “근거가 없다”가 아니라 <strong>“연구할 가치는 있지만 아직 증명되지 않았다”</strong>가 정확한 표현입니다.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 열린 결말 -->
+<section id="s11">
+  <div class="wrap reveal">
+    <span class="secnum">10</span>
+    <h2>이야기는 아직 끝나지 않았습니다</h2>
+    <div class="open">
+      <div class="status">
+        <div><b>2026년 10월 현재</b>항암 없이 두 약만 유지 중. “기분이 아주 좋다.”</div>
+        <div><b>8월 스캔</b>안정. 병변 3.6→3.5.</div>
+        <div><b>ctDNA<span class="en">(circulating tumor DNA)</span></b>8월엔 Mike가 보류. 결과를 기다리는 불안(“스캔자이어티”) 때문.</div>
+        <div><b>12월</b>조영 CT<span class="en">(contrast-enhanced CT)</span> 예정, ctDNA 다시 논의. 후속 영상 제안됨.</div>
+      </div>
+      <p style="margin:0">“스캔자이어티(scanxiety)”는 검사 결과를 기다리는 불안을 뜻하는 말입니다. Dr. Roman도 진료실에서 늘 본다며 공감합니다. 암은 몸의 병이면서 마음의 병이라는 Mike의 말이 오래 남습니다.</p>
+    </div>
+    <p style="margin-top:22px">12월 결과가 나오고 후속 영상이 올라오면, 우리도 이 문서를 이어서 업데이트하겠습니다. <strong>그때까지 이 사례는 “답”이 아니라 “좋은 질문”으로 남겨 두겠습니다.</strong></p>
+    <p class="ai-inline" style="font-family:var(--serif);font-size:1.15rem;margin-top:28px"><span class="ai-tag">AI 클로드 주석</span><br>희망을 품되, 질문을 멈추지 않는 것.<br>Mike가 보여 준 용기는 바로 그것이었습니다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>출처와 정리 방법</h3>
+    <p>원본 영상: <a href="https://www.youtube.com/watch?v=aDssXmLpw-Y" target="_blank" rel="noopener">Talking Cancer with Dr. Roman — “Fenbendazole, Ivermectin &amp; Cancer: One Patient’s Story”</a> (2026년 10월 12일 공개)</p>
+    <p>영상의 자동 생성 자막을 바탕으로 정리했습니다. 약 이름 등 자막의 오기(예: 벡티빅스 표기)는 바로잡았고, 영상에서 분명하지 않은 내용(일부 검사 시점, 병변 크기의 단위, 펜벤다졸 감량 시점)은 추측하지 않고 “분명치 않음”으로 표시했습니다. 대사 인용은 짧은 요지 번역입니다. 정확한 표현은 원본 영상을 확인해 주세요.</p>
+    <p>이 문서는 의학적 조언이 아니며, 특정 약물의 복용을 권하지 않습니다. 치료에 관한 모든 결정은 주치의와 상의하십시오.</p>
+    <p style="margin-top:18px">해외 사례 분석집 · 히포크라테스의 친구들 · 2026년 10월</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('on')});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});
+    },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var t=btn.parentNode.querySelector('span').textContent;
+      var done=function(){var o=btn.textContent;btn.textContent='복사됨 ✓';setTimeout(function(){btn.textContent=o},1600)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t);done()});}
+      else{fallback(t);done();}
+    });
+  });
+  function fallback(t){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);}
+})();
+</script>
+</body>
+</html>
