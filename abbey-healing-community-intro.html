@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abbey의 도서관 — My Healing Community 소개</title>
+<meta name="description" content="호주의 환우 Abbey Mitchell이 만든 통합 종양학 자료 도서관 My Healing Community를 한국 환우들께 소개합니다. 용도변경 약물 서가를 중심으로.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF6EC;
+  --paper-2:#F4ECDC;
+  --card:#FFFDF8;
+  --ink:#2B2620;
+  --ink-soft:#5C5348;
+  --line:#E3D8C4;
+  --accent:#B5562B;      /* 따뜻한 테라코타: 강조 */
+  --accent-soft:#F6E2D6;
+  --green:#3E7D52;       /* 안전 */
+  --green-soft:#E3F0E6;
+  --amber:#B07D12;       /* 주의 */
+  --amber-soft:#FBF0D3;
+  --rose:#A63A3A;        /* 경계 */
+  --rose-soft:#F8E1E1;
+  --blue:#2F5D8A;        /* 링크/도서관 */
+  --blue-soft:#E2ECF5;
+  --ai:#5B4B8A;          /* AI 클로드 주석 */
+  --ai-soft:#EEEAF7;
+  --radius:16px;
+  --serif:"Gowun Batang", "Noto Serif KR", serif;
+  --sans:"Noto Sans KR", system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:19px;line-height:1.85;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-text-size-adjust:100%;
+}
+a{color:var(--blue);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:3px solid var(--accent);outline-offset:3px;border-radius:6px
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--serif);line-height:1.4;font-weight:700;margin:0}
+h2{font-size:1.55rem;margin:0 0 .6em}
+h3{font-size:1.2rem;margin:0 0 .4em}
+p{margin:0 0 1em}
+.muted{color:var(--ink-soft)}
+.small{font-size:.88rem;line-height:1.7}
+
+/* ── 상단 ── */
+header.hero{
+  background:linear-gradient(180deg,#F3E4CC 0%,var(--paper) 100%);
+  padding:56px 0 36px;text-align:center;border-bottom:1px solid var(--line)
+}
+.hero .eyebrow{font-size:.85rem;letter-spacing:.08em;color:var(--accent);font-weight:700}
+.hero h1{font-size:2rem;margin:.4em 0 .3em}
+.hero .sub{font-family:var(--serif);font-size:1.15rem;color:var(--ink-soft)}
+.hero .book{font-size:3.2rem;line-height:1;margin-bottom:.2em}
+
+/* ── 목차 칩 ── */
+nav.toc{
+  position:sticky;top:0;z-index:10;background:rgba(251,246,236,.96);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line)
+}
+nav.toc .row{display:flex;gap:8px;overflow-x:auto;padding:10px 18px;max-width:760px;margin:0 auto;scrollbar-width:none}
+nav.toc .row::-webkit-scrollbar{display:none}
+nav.toc a{
+  flex:0 0 auto;text-decoration:none;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;white-space:nowrap
+}
+nav.toc a.core{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:700}
+
+section{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:56px}
+section:last-of-type{border-bottom:0}
+.sec-num{font-family:var(--serif);color:var(--accent);font-size:.95rem;font-weight:700;margin-bottom:.2em}
+
+/* ── 공통 박스 ── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;margin:0 0 18px}
+.quote{
+  font-family:var(--serif);font-size:1.12rem;background:var(--paper-2);
+  border-left:5px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;
+  padding:18px 20px;margin:0 0 18px
+}
+.callout{border-radius:var(--radius);padding:18px 20px;margin:0 0 18px}
+.callout.green{background:var(--green-soft);border:1px solid #BCD9C4}
+.callout.amber{background:var(--amber-soft);border:1px solid #EBD69B}
+.callout.rose{background:var(--rose-soft);border:1px solid #E7B9B9}
+.callout.blue{background:var(--blue-soft);border:1px solid #BCD0E4}
+.callout .ttl{font-weight:700;margin-bottom:.35em;display:block}
+
+/* AI 클로드 주석 */
+.ai-note{
+  background:var(--ai-soft);border:2px dashed #B6A8DA;border-radius:var(--radius);
+  padding:16px 18px;margin:12px 0 18px;font-size:.95rem;line-height:1.75
+}
+.ai-note .tag{
+  display:inline-block;background:var(--ai);color:#fff;font-size:.78rem;font-weight:700;
+  border-radius:999px;padding:2px 10px;margin-bottom:6px
+}
+
+/* ── 타임라인 ── */
+.timeline{list-style:none;margin:0 0 18px;padding:0;border-left:3px solid var(--line);margin-left:10px}
+.timeline li{position:relative;padding:0 0 18px 22px}
+.timeline li::before{
+  content:"";position:absolute;left:-10px;top:8px;width:15px;height:15px;border-radius:50%;
+  background:var(--card);border:3px solid var(--accent)
+}
+.timeline .yr{font-weight:700;color:var(--accent);display:block;font-size:.95rem}
+
+/* ── 4개의 서가 ── */
+.shelves{display:grid;gap:14px;margin-bottom:18px}
+.shelf{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.shelf .ico{font-size:1.8rem;line-height:1.2;flex:0 0 auto}
+.shelf div>b:first-child{display:block;font-family:var(--serif);font-size:1.08rem}
+
+/* ── 공통 6가지 ── */
+.six{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.six div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:.95rem;line-height:1.6}
+.six .i{font-size:1.5rem;display:block;margin-bottom:4px}
+.six b{display:block}
+
+/* ── 세 가지 교훈 ── */
+.lesson{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.lesson .n{
+  flex:0 0 40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;
+  font-family:var(--serif);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:1.1rem
+}
+
+/* ── 약물 카드 ── */
+details.drug{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin:0 0 14px;overflow:hidden}
+details.drug[open]{border-color:#D8C3A3;box-shadow:0 4px 18px rgba(80,55,20,.07)}
+details.drug summary{list-style:none;cursor:pointer;padding:18px 20px;display:block;position:relative}
+details.drug summary::-webkit-details-marker{display:none}
+details.drug summary::after{
+  content:"＋";position:absolute;right:18px;top:18px;font-size:1.3rem;color:var(--accent);font-weight:700
+}
+details.drug[open] summary::after{content:"－"}
+.drug .name{font-family:var(--serif);font-size:1.25rem;font-weight:700;padding-right:30px}
+.drug .en{font-family:var(--sans);font-size:.9rem;color:var(--ink-soft);font-weight:500;margin-left:4px}
+.drug .orig{font-size:.88rem;color:var(--ink-soft);margin:2px 0 8px}
+.drug .oneliner{font-size:1rem;line-height:1.65;margin:0}
+.drug .body{padding:0 20px 20px}
+.drug h4{font-family:var(--sans);font-size:1rem;margin:18px 0 6px;color:var(--accent)}
+.drug ul{margin:0 0 6px;padding-left:1.2em}
+.drug li{margin-bottom:6px}
+.pill{display:inline-block;font-size:.8rem;font-weight:700;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0}
+.pill.r{background:var(--accent-soft);color:var(--accent)}
+.pill.g{background:var(--green-soft);color:var(--green)}
+.pill.a{background:var(--amber-soft);color:var(--amber)}
+.go{
+  display:block;text-align:center;text-decoration:none;font-weight:700;margin-top:16px;
+  background:var(--blue);color:#fff;border-radius:12px;padding:12px 14px
+}
+.go:hover{filter:brightness(1.08)}
+
+/* 근거 사다리 */
+.ladder{margin:10px 0 4px}
+.ladder .bar{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.ladder .bar span{height:10px;border-radius:5px;background:#E9E0CF}
+.ladder .bar span.on{background:var(--green)}
+.ladder .bar span.mix{background:repeating-linear-gradient(45deg,var(--amber),var(--amber) 4px,#E7C878 4px,#E7C878 8px)}
+.ladder .lab{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;font-size:.72rem;color:var(--ink-soft);margin-top:3px;line-height:1.3;text-align:center}
+
+/* 질문 박스 */
+.ask{
+  position:relative;background:#FFF8E8;border:2px solid #EBD08F;border-radius:14px;
+  padding:16px 16px 14px;margin:10px 0;font-family:var(--serif);font-size:1.02rem;line-height:1.75
+}
+.ask::before{content:"“";position:absolute;left:10px;top:-6px;font-size:2.6rem;color:#D9A93C;font-family:Georgia,serif}
+.ask .txt{display:block;padding-left:14px}
+.ask button{
+  display:block;margin:10px 0 0 auto;font-family:var(--sans);font-size:.85rem;font-weight:700;
+  background:#fff;border:1px solid #D9B865;color:#8A6410;border-radius:999px;padding:6px 14px;cursor:pointer
+}
+.ask button.done{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* 메뉴 안내도 */
+.menu-group{margin-bottom:22px}
+.menu-group .gh{
+  display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.12rem;
+  margin-bottom:8px
+}
+.menu-group .gh .ico{font-size:1.5rem}
+.menu-item{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:8px}
+.menu-item .mn{font-family:var(--sans);font-weight:700;font-size:.98rem;color:var(--blue)}
+.menu-item .md{display:block;font-size:.93rem;line-height:1.6;color:var(--ink-soft);margin-top:2px}
+.menu-item.core{border:2px solid var(--accent);background:var(--accent-soft)}
+.menu-item.core .mn{color:var(--accent)}
+
+/* 이용 단계 */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 18px}
+.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 62px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+.steps li::before{
+  content:counter(s);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;
+  background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center
+}
+.steps li b{display:block;font-family:var(--serif);font-size:1.05rem}
+.prep li::before{background:var(--accent)}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+.chips span{font-size:.85rem;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+
+footer{padding:40px 0 60px;text-align:center;background:var(--paper-2)}
+footer .closing{font-family:var(--serif);font-size:1.2rem;line-height:1.8;margin-bottom:1em}
+
+/* 등장 애니메이션 */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+@media (min-width:640px){
+  body{font-size:19.5px}
+  .hero h1{font-size:2.4rem}
+}
+@media (max-width:380px){
+  .six{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="book" aria-hidden="true">📚</div>
+    <div class="eyebrow">히포크라테스의 친구들 · 해외 자료 소개</div>
+    <h1>Abbey의 도서관</h1>
+    <p class="sub">호주의 한 환우가 매일 조금씩 쌓아 올린<br>암 환우를 위한 무료 자료 도서관,<br><b>My Healing Community</b>를 소개합니다</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <div class="row">
+    <a href="#s1">여는 말</a>
+    <a href="#s2">Abbey는 누구?</a>
+    <a href="#s3">도서관의 4가지 서가</a>
+    <a href="#s4" class="core">⭐ 용도변경 약물</a>
+    <a href="#s5">이용법</a>
+    <a href="#s6">메뉴 안내도</a>
+    <a href="#s7">한국에서 활용하기</a>
+    <a href="#s8">안전선</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1. 여는 말 -->
+<section id="s1">
+  <div class="wrap reveal">
+    <div class="sec-num">01 · 여는 말</div>
+    <h2>"이런 분이 계셔서 참 다행입니다"</h2>
+    <p>암 진단을 받으면 누구나 같은 막막함을 겪습니다. 어디서부터 읽어야 할지, 무엇을 믿어야 할지, 의사 선생님께 무엇을 물어야 할지.</p>
+    <p>호주의 <b>Abbey Mitchell</b>님은 바로 그 막막함을 직접 겪은 환우입니다. 그리고 그 경험을 혼자 간직하지 않고, 전 세계 환우가 함께 쓸 수 있는 <b>무료 도서관</b>으로 만들었습니다. 지금도 하루하루 조금씩 자료를 더하고 계십니다.</p>
+    <div class="quote">
+      Abbey님의 열정에 깊이 감사드립니다.<br>
+      대한민국에도 이런 분들이 더 많아지기를 바라는 마음으로,<br>
+      우리 커뮤니티에 이 도서관을 소개합니다.
+      <div class="small muted" style="margin-top:8px;font-family:var(--sans)">— 히포크라테스의 친구들 운영자 David</div>
+    </div>
+    <p>사이트는 영어로 되어 있지만 걱정하지 마세요. 이 안내서가 <b>무엇이 어디에 있는지</b> 한국어로 길을 알려드리고, 영어 페이지를 편하게 읽는 방법도 뒤에서 알려드립니다.</p>
+    <div class="callout blue">
+      <span class="ttl">📌 먼저, 즐겨찾기 해두세요</span>
+      <a href="https://www.myhealingcommunity.com" target="_blank" rel="noopener"><b>www.myhealingcommunity.com</b></a><br>
+      <span class="small">Abbey님이 그룹 회원들에게 가장 먼저 당부하는 것이 바로 "즐겨찾기"입니다.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Abbey -->
+<section id="s2">
+  <div class="wrap reveal">
+    <div class="sec-num">02 · 도서관을 만든 사람</div>
+    <h2>Abbey는 누구인가요?</h2>
+    <p>Abbey Mitchell님은 <b>My Healing Community</b>의 설립자이자, 페이스북 <b>Healing Cancer Study Support Group</b>(힐링 캔서 스터디 서포트 그룹)의 설립자·대표 관리자입니다. 유방암 환우를 위한 <b>Breast Cancer Pathways Worksheet</b>(유방암 경로 워크시트)의 공동 제작자이기도 합니다.</p>
+
+    <h3 style="margin-top:1.2em">걸어온 길</h3>
+    <ul class="timeline">
+      <li><span class="yr">2014년 · 43세</span>소엽성 유방암(lobular breast cancer) 진단. 왼쪽 유방 절제술을 받았습니다.</li>
+      <li><span class="yr">2017년</span>암이 뼈 아홉 군데로 전이된 것을 알게 됩니다. 이때부터 생활 습관, 식단, 운동, 고요함, 마음과 감정의 치유, 호르몬과 염증의 원리 공부에 깊이 몰두합니다. 표준 치료와 함께, 근거 있는 방법으로 몸을 돕는 길을 찾았습니다.</li>
+      <li><span class="yr">이후 오랜 기간</span>암의 흔적이 보이지 않는 시기(무병 상태)가 길게 이어졌습니다.</li>
+      <li><span class="yr">2019년부터</span>암을 겪는 사람들의 따뜻한 길잡이로 활동을 시작합니다.</li>
+      <li><span class="yr">2025년 중반</span>척추 한 곳에 새 병변이 발견됩니다. 방사선 치료 후 그 자리는 활동이 멈췄지만, 다른 뼈에서 활동이 늘었습니다.</li>
+      <li><span class="yr">2026년 8월</span>유전자 검사로 PIK3CA 변이와 ESR1 변이를 확인했고, 여러 임상시험을 비교한 끝에 시드니의 신약 임상시험에 참여하게 되었습니다(조베갈리십 Zovegalisib, RLY-2608 + 풀베스트란트 Fulvestrant). 그 과정을 정리한 노트도 다른 환우를 위해 공개했습니다.</li>
+    </ul>
+
+    <div class="card">
+      <h3>Abbey가 하는 일</h3>
+      <p>Abbey님의 역할은 의료를 <b>대신하는 것이 아닙니다</b>. 표준 치료, 통합 치료, 보완 요법을 가로질러 유용한 연구와 실용 정보를 이어주고, 진단이 가져오는 몸과 마음과 영혼의 현실을 더 맑게 생각하도록 돕는 것입니다.</p>
+      <p style="margin:0">전 세계 회원들이 경험을 나누고, <b>더 좋은 질문을 던지고</b>, 서로에게서 배우는 공동체를 매일 이끌고 있습니다. 목표는 환우가 자기 치유 과정에 <b>더 잘 알고, 더 적극적으로 참여하는 사람</b>이 되도록 돕는 것입니다.</p>
+    </div>
+
+    <div class="callout green">
+      <span class="ttl">💚 모든 자료는 무료입니다</span>
+      Abbey님이 전업으로 만드는 이 사이트와 그룹 자료는 모두 무료로 공개되어 있습니다.
+    </div>
+
+    <div class="quote">
+      2026년 9월, 임상시험 3주차 부작용을 겪으며 Abbey님은 이렇게 썼습니다.<br>
+      몸의 부작용만이 아니라, 두려워하고 저항하는 <b>내 안의 마음들</b>에도 귀를 기울여 함께 데려가야 했다고. 그리고 <b>치료에 대한 동의는 때로 내 마음 안에서도 이루어져야 한다</b>고.
+      <div class="small muted" style="margin-top:8px;font-family:var(--sans)">(원문을 우리말로 풀어 옮김)</div>
+    </div>
+    <p class="small"><a href="https://myhealingcommunity.com/docs/cancer-patient-community-supports/about-abbey-the-founder" target="_blank" rel="noopener">→ Abbey 소개 페이지 원문 보기</a> · <a href="https://myhealingcommunity.com/docs/abbey-s-first-three-weeks-on-the-rly-2608-trial-side-effects-and-the-inner-work-of-treatment" target="_blank" rel="noopener">임상시험 첫 3주 이야기</a></p>
+
+    <div class="card" style="margin-top:18px">
+      <h3>페이스북 그룹은 어떤 곳?</h3>
+      <p style="margin:0"><b>Healing Cancer Study Support Group</b>은 암 진단을 받은 분, 보호자, 가까운 지지자를 위한 <b>비공개</b> 공동체입니다. Abbey님은 이곳을 <b>희망을 중심에 두고, 과학을 동력으로 삼는</b> 모임이라고 소개합니다. 웹사이트는 이 그룹에 흩어진 중요한 글, 토론 스레드, 파일을 찾기 쉽게 정리한 <b>그룹의 도서관</b>입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 4가지 서가 -->
+<section id="s3">
+  <div class="wrap reveal">
+    <div class="sec-num">03 · 도서관 둘러보기</div>
+    <h2>이 도서관에는 4가지 서가가 있습니다</h2>
+    <p>Abbey님은 이 사이트를 <b>"계속 자라나는 자료 도서관"</b>이라고 부릅니다. 그래서 이 안내서도 도서관처럼 둘러보겠습니다. Abbey님이 직접 정리한 네 가지 서가입니다.</p>
+    <div class="shelves">
+      <div class="shelf"><span class="ico" aria-hidden="true">🔬</span><div><b>① 근거 요약 서가</b>치료법, 항암 보조제(천연물), 그리고 그룹 회원들이 실제로 쓰고 있는 <b>용도변경(오프라벨) 약물</b>에 대한 근거 기반 연구 요약.</div></div>
+      <div class="shelf"><span class="ico" aria-hidden="true">🩺</span><div><b>② 실전 가이드 서가</b>부작용, 수술과 조직검사 전후 관리, 검사와 모니터링. 회원들의 댓글과 공유가 녹아 있어 다른 곳에서 찾기 어려운 실전 내용이 많습니다.</div></div>
+      <div class="shelf"><span class="ico" aria-hidden="true">🗂️</span><div><b>③ 암종별·주제별 색인 서가</b>유방암, 뼈 전이, 평활근육종 등 암 종류와 주제별로, 페이스북 그룹의 관련 토론 글로 바로 연결되는 목록.</div></div>
+      <div class="shelf"><span class="ico" aria-hidden="true">🌱</span><div><b>④ 마음과 삶을 돌보는 서가 (Thrive)</b>과학 공부와 <b>나란히</b>, 감정과 일상의 힘을 지키도록 돕는 자료.</div></div>
+    </div>
+    <p>이 중 우리 커뮤니티가 가장 관심을 갖는 곳은 <b>① 근거 요약 서가 안의 "용도변경 약물" 코너</b>입니다. 다음 장에서 자세히 안내합니다.</p>
+  </div>
+</section>
+
+<!-- 4. 용도변경 약물 (핵심) -->
+<section id="s4" style="background:linear-gradient(180deg,#F8EBDD 0%,var(--paper) 40%)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-num">04 · ⭐ 핵심 서가</div>
+      <h2>용도변경 약물 서가<br><span class="small muted" style="font-family:var(--sans)">Off-Label Drugs for Cancer</span></h2>
+      <p>원래 다른 병을 위해 만들어진 약이 암에서도 연구되는 경우가 있습니다. 이런 약을 <b>용도변경 약물</b>(repurposed drug) 또는 <b>오프라벨 약물</b>(off-label drug, 허가 범위 밖 사용)이라고 부릅니다. 우리 커뮤니티가 오랫동안 공부해 온 주제이기도 하지요.</p>
+      <p>Abbey님의 이 서가는 <b>약 9가지 주제와 토론 색인 1개</b>로 이루어져 있습니다. 놀라운 점은, 어느 약도 "효과 있다"고 쉽게 말하지 않는다는 것입니다. 대신 <b>근거가 어디까지 와 있는지, 무엇이 아직 모르는 것인지, 무엇을 조심해야 하는지</b>를 꼼꼼히 나눠 적습니다.</p>
+      <p class="small"><a href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/off-label-drugs-for-cancer-overview" target="_blank" rel="noopener">→ 용도변경 약물 서가 첫 페이지(개요) 원문 보기</a></p>
+    </div>
+
+    <div class="reveal">
+      <h3 style="margin-top:1.4em">각 약물 페이지에 공통으로 담긴 6가지</h3>
+      <p>약마다 조금씩 다르지만, 대체로 이 여섯 칸으로 정리되어 있습니다. 책의 목차처럼 기억해 두면 영어 페이지에서도 길을 잃지 않습니다.</p>
+      <div class="six">
+        <div><span class="i" aria-hidden="true">💡</span><b>왜 암에서 주목?</b>원래 용도와 다른 효과를 기대하는 이유 (Repurposing rationale)</div>
+        <div><span class="i" aria-hidden="true">⚙️</span><b>어떻게 작용?</b>암세포의 어떤 길을 건드리는지 (Mechanism)</div>
+        <div><span class="i" aria-hidden="true">📊</span><b>암 종류별 근거</b>어떤 암에서, 어떤 수준의 연구가 있는지 (Evidence by cancer type)</div>
+        <div><span class="i" aria-hidden="true">🗓️</span><b>연구에 쓰인 용량·일정</b>"권장 용량"이 아니라 연구에서 쓰인 기록 (Dosing patterns)</div>
+        <div><span class="i" aria-hidden="true">⚠️</span><b>안전·상호작용</b>부작용, 함께 먹는 약과의 충돌 (Safety & interactions)</div>
+        <div><span class="i" aria-hidden="true">🌏</span><b>구하는 법·나라별 규정</b>품질 확인, 호주·영국·미국 등 접근 경로 (Sourcing & access)</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="margin-top:1.4em">Abbey가 모든 페이지에서 반복해서 가르치는 3가지</h3>
+      <p>이 서가를 읽다 보면 같은 원칙이 계속 나옵니다. 우리 커뮤니티의 "원리를 알고 → 가능성을 이해하고 → 근거 위에서 시도하자"와 꼭 닮았습니다.</p>
+      <div class="lesson"><span class="n">1</span><div><b>실험실 결과 ≠ 사람에게서의 효과</b><br>세포나 쥐에서 잘 들었다고 해서 사람에게도 듣는다는 뜻은 아닙니다. Abbey님은 근거를 항상 "실험실 / 동물 / 사람 관찰 / 사람 무작위 임상"으로 나눠서 적습니다.</div></div>
+      <div class="lesson"><span class="n">2</span><div><b>"시너지"라는 말을 조심하기</b><br>두 약을 같이 썼을 때 하나만 쓸 때보다 낫다고 해서 곧바로 '시너지'(상승효과)는 아닙니다. 그리고 A+B, B+C의 근거를 합쳐서 A+B+C 세 가지 조합의 근거로 볼 수도 없습니다.</div></div>
+      <div class="lesson"><span class="n">3</span><div><b>실험 농도 ≠ 알약 용량</b><br>세포 실험에 쓰인 농도는 사람이 약을 먹었을 때 혈액 속 농도보다 훨씬 높은 경우가 많습니다. Abbey님은 이 차이를 <b>알약을 늘려서 메우려 하지 말라</b>고 분명히 적어 둡니다.</div></div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="margin-top:1.4em">약물별 안내 (눌러서 펼쳐 보세요)</h3>
+      <div class="callout amber small">
+        <span class="ttl">읽기 전에 꼭</span>
+        아래 약물들은 Abbey님 서가에 무엇이 있는지 보여드리기 위한 <b>예시(illustrative)</b>입니다. 치료 권고가 아닙니다. 이 안내서는 <b>용량을 옮겨 적지 않습니다</b>. 복용·병용·중단은 반드시 주치의와 결정하세요.
+      </div>
+
+      <div class="card small" style="padding:14px 16px">
+        <b>근거 사다리 보는 법</b>
+        <div class="ladder" aria-hidden="true">
+          <div class="bar"><span class="on"></span><span class="on"></span><span></span><span></span></div>
+          <div class="lab"><span>실험실<br>(세포)</span><span>동물</span><span>작은<br>사람 연구</span><span>큰 무작위<br>임상</span></div>
+        </div>
+        <p style="margin:8px 0 0">초록 칸은 그 단계까지 연구가 있다는 뜻입니다. <b>높이 올라갔다고 다 "효과 있음"은 아닙니다.</b> 줄무늬 칸은 그 단계 연구가 있지만 결과가 엇갈리거나 효과가 없었던 경우입니다.</p>
+        <p class="muted" style="margin:6px 0 0">※ 사다리 표시는 Abbey님 원문 내용을 바탕으로 <b>AI 클로드가 정리</b>한 것입니다.</p>
+      </div>
+
+      <!-- 1 아스피린 -->
+      <details class="drug">
+        <summary>
+          <div class="name">아스피린<span class="en">Aspirin</span></div>
+          <div class="orig">원래 용도: 진통·해열, 심혈관 예방</div>
+          <p class="oneliner">이 서가에서 <b>사람 근거가 가장 단단한 약</b>. 특정 유전자 변이가 있는 대장암에서 큰 임상 근거.</p>
+          <div class="ladder" aria-label="근거 단계: 큰 무작위 임상까지">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>아스피린은 염증, 혈소판, 면역, 암세포의 신호를 <b>한꺼번에</b> 건드립니다. 쉽게 말해, 암을 키우는 염증 불씨(COX 효소)를 줄이고, 암세포가 피를 타고 퍼질 때 '호위병' 노릇을 하는 혈소판의 도움을 줄이는 쪽으로 연구됩니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>가장 강한 근거: <b>PIK3CA 유전자 변이가 있는 대장암</b>에서 3상 임상(대규모) 근거.</li>
+            <li>118개 관찰연구를 모은 분석에서 여러 암의 사망 위험 감소와 연관된 결과가 보고됨.</li>
+            <li>Abbey님 자체 근거 평점: <b>5점 중 3.5점</b> (전체적으로 중간, 일부 대장암에서는 더 강함).</li>
+            <li>한계: 모든 암, 모든 사람에게 고르게 이득이 있는 것은 아님.</li>
+          </ul>
+          <h4>⚠️ 꼭 알아둘 점</h4>
+          <ul><li><b>출혈 위험</b>이 가장 중요한 주의점입니다. 다른 약과 겹치면 더 커질 수 있습니다.</li></ul>
+          <h4>📖 이 서가에서 볼 수 있는 것</h4>
+          <div class="chips"><span>개요</span><span>아스피린 유사 화합물</span><span>근거 요약</span><span>작용 원리</span><span>트롬복산 A2</span><span>암 종류별 근거</span><span>약동학·용량</span><span>안전·상호작용</span><span>좋은 품질 고르기</span><span>면역 효과</span></div>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">제 암 조직이나 혈액 유전자 검사에서 PIK3CA 변이가 확인되었나요? 그렇다면 아스피린 연구 결과가 제 경우에도 해당될 수 있을까요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ask"><span class="txt">지금 제가 먹는 약 중에 아스피린과 함께 먹으면 출혈 위험이 커지는 것이 있나요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ai-note"><span class="tag">AI 클로드 주석</span><br>아스피린은 "내 유전자 검사 결과가 어떤 연구와 연결되는가"를 배우기 좋은 대표 예입니다. 같은 약이라도 <b>누구에게</b> 근거가 있는지가 핵심이라는 점을 보여줍니다.</div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/aspirin-in-oncology/aspirin-overview" target="_blank" rel="noopener">아스피린 서가 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 2 2-DG -->
+      <details class="drug">
+        <summary>
+          <div class="name">2-DG<span class="en">2-deoxy-D-glucose, 2-디옥시글루코스</span></div>
+          <div class="orig">원래: 연구용 포도당 유사 물질</div>
+          <p class="oneliner">포도당인 척하는 물질. "설탕을 끊는다"가 아니라 <b>세포 안에 여러 스트레스를 만드는</b> 원리로 연구.</p>
+          <div class="ladder" aria-label="근거 단계: 작은 사람 연구까지">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>많은 암세포는 포도당을 아주 많이 씁니다. 2-DG는 포도당과 모양이 비슷해서 세포가 받아들이지만, 안에서 제대로 쓰이지 못하고 갇혀 쌓입니다. 그러면 에너지 만들기가 어려워지고, 단백질을 만드는 과정에도 스트레스가 생깁니다. 방사선이나 항암제에 더 약해지게 만들 수 있는지가 연구 질문입니다.</p>
+          <p>다만 일부 암세포는 다른 연료를 쓰거나 자기 일부를 재활용(자가포식)하며 <b>적응</b>할 수 있다고 Abbey님은 짚어 둡니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>사람 연구는 <b>안전성을 보는 초기(1상) 연구</b>뿐입니다. 생존 이득이나 표준 요법은 확립되지 않았습니다.</li>
+            <li>뇌종양, 전립선암, 유방암, 폐암, 췌장암 등 암 종류별로 근거 표가 정리되어 있습니다. 대부분 실험실 단계입니다.</li>
+            <li><b>2-DG + 메트포르민(Metformin)</b>: 세포의 두 에너지 길을 동시에 압박하자는 아이디어. 세포·동물에서는 흥미로운 결과가 있지만 사람용 검증된 조합은 아닙니다.</li>
+          </ul>
+          <h4>⚠️ 꼭 알아둘 점</h4>
+          <ul>
+            <li>초기 임상에서 <b>심전도 이상(QTc 연장)</b>, 혈당 이상(저혈당 같은 증상, 반대로 고혈당), 위장 출혈이 보고되었습니다.</li>
+            <li>실험에서 <b>항산화제(NAC 등)</b>가 2-DG의 효과를 줄였다는 결과가 있습니다.</li>
+            <li><b>PET-CT 검사</b> 결과에 영향을 줄 수 있어, 영상 검사팀에 꼭 알려야 합니다.</li>
+            <li>사람 혈중 농도는 많은 실험 농도보다 훨씬 낮습니다.</li>
+          </ul>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">제 암 종류와 가장 가까운 2-DG 연구는 어떤 것이고, 그 연구는 세포 실험인가요, 사람 연구인가요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ask"><span class="txt">제가 먹는 약 중 심전도(QT)에 영향을 주는 약이 있나요? 시작 전후로 심전도와 혈당을 어떻게 확인하면 될까요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/untitled-mv77b9sp" target="_blank" rel="noopener">2-DG 페이지 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 3 시메티딘 -->
+      <details class="drug">
+        <summary>
+          <div class="name">시메티딘<span class="en">Cimetidine (타가메트 Tagamet)</span></div>
+          <div class="orig">원래 용도: 위산 억제제 (H2 차단제)</div>
+          <p class="oneliner">암세포가 혈관 벽에 <b>달라붙는 것</b>을 줄이는 원리. <b>대장암 수술 전후</b>에서 가장 강한 사람 신호.</p>
+          <div class="ladder" aria-label="근거 단계: 작은 사람 연구와 메타분석">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>암세포가 다른 곳으로 퍼지려면 혈관 벽에 달라붙어야 합니다. 시메티딘은 혈관 벽의 <b>'접착 손잡이'(E-셀렉틴)</b>를 줄여서 암세포가 붙기 어렵게 만드는 것으로 연구됩니다. 자연살해(NK) 세포 같은 면역세포 활동을 돕는다는 연구도 있습니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>사람 연구 대부분이 <b>대장암 수술 전후</b>에 집중되어 있습니다.</li>
+            <li>5개 시험(421명)을 모은 분석에서 생존 이득이 보고되었습니다. 다만 시험 규모가 작고 서로 차이가 큽니다.</li>
+            <li>종양에 특정 당 표지(시알릴 루이스 X/A)가 많은 경우 더 관련 있을 수 있습니다(연구용 표지).</li>
+            <li>다른 위산약(H2 차단제)에서는 같은 효과가 보이지 않아, 시메티딘만의 특성일 수 있습니다.</li>
+          </ul>
+          <h4>🔍 Abbey님이 바로잡는 오해</h4>
+          <p>시메티딘이 "종양의 젖산(산성)을 낮춘다"는 이야기가 돌지만, 그것은 확립된 내용이 아니라고 분명히 적어 둡니다.</p>
+          <h4>⚠️ 유방암 환우께 특히 중요</h4>
+          <ul>
+            <li><b>타목시펜(Tamoxifen)을 드시는 분</b>: 시메티딘은 타목시펜을 활성 형태로 바꾸는 효소(CYP2D6)를 억제할 수 있어, 타목시펜 효과를 떨어뜨릴 가능성이 있습니다. 반드시 종양내과나 약사와 상의해야 할 주의점입니다.</li>
+            <li>루프론(Lupron)처럼 에스트로겐 생산 자체를 막는 치료 중에는 이 걱정이 훨씬 작다고 설명합니다.</li>
+          </ul>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">저는 타목시펜을 먹고 있습니다. 시메티딘이 타목시펜 효과에 영향을 줄 수 있나요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ask"><span class="txt">대장암 수술을 앞두고 있는데, 수술 전후 시메티딘 연구가 제 경우에도 해당될까요? 제 병리 보고서에 시알릴 루이스 정보가 있나요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/cimetidine-tagamet-in-oncology" target="_blank" rel="noopener">시메티딘 페이지 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 4 디클로페낙 -->
+      <details class="drug">
+        <summary>
+          <div class="name">디클로페낙<span class="en">Diclofenac</span></div>
+          <div class="orig">원래 용도: 소염진통제 (NSAID)</div>
+          <p class="oneliner">염증 신호와 <b>젖산 배출 통로</b>를 건드리는 원리. 근거는 대부분 실험실 단계.</p>
+          <div class="ladder" aria-label="근거 단계: 동물까지, 사람은 관찰 연구 일부">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="mix"></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>디클로페낙은 통증과 염증을 일으키는 신호(프로스타글란딘)를 줄입니다. 일부 종양은 이 신호로 혈관을 키우고 면역 공격을 피합니다. 또 실험에서 암세포가 젖산을 밖으로 내보내는 <b>통로(MCT1·MCT4)</b>를 막아, 면역세포가 일하기 좋은 환경을 만드는지 연구됩니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>대부분 <b>세포·동물</b> 연구입니다.</li>
+            <li>사람 자료는 유방암·폐암 <b>수술 직전</b> 사용과 관련된 과거 기록 분석(관찰 연구)과 일부 증례 보고입니다. 다른 진통제와 묶여 분석되어 디클로페낙만의 효과로 보기 어렵습니다.</li>
+            <li><b>2-DG + 디클로페낙</b> 2025년 유방암 세포 연구: 함께 쓸 때 효과가 더 컸지만, 실험 농도가 사람 혈중 농도보다 <b>훨씬 높았고</b>, 논문 제목은 '시너지'인데 본문은 '더하기 효과'라고 써서 해석에 주의가 필요하다고 Abbey님이 꼼꼼히 짚습니다.</li>
+          </ul>
+          <h4>⚠️ 꼭 알아둘 점</h4>
+          <ul>
+            <li>익숙한 약이라도 장기 복용 시 <b>위장 출혈, 신장, 간, 심혈관</b> 위험이 있습니다.</li>
+            <li>일부 항암제(메토트렉세이트 Methotrexate, 페메트렉시드 Pemetrexed)와 함께 쓸 때 특별한 주의가 필요합니다.</li>
+            <li>다른 소염진통제와 <b>겹쳐 먹지 않기</b>. 감기약 속 성분도 확인하세요.</li>
+            <li>열과 염증을 가려서 <b>감염 신호를 숨길 수</b> 있습니다.</li>
+          </ul>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">디클로페낙을 오래 쓰면 제 신장·간·심장 상태에 어떤 영향이 있을까요? 어떤 검사로 확인하면 될까요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ask"><span class="txt">제가 받는 항암 치료 약 중에 디클로페낙과 함께 쓰면 안 되는 약이 있나요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/untitled-mva9gsau" target="_blank" rel="noopener">디클로페낙 페이지 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 5 이트라코나졸 -->
+      <details class="drug">
+        <summary>
+          <div class="name">이트라코나졸<span class="en">Itraconazole</span></div>
+          <div class="orig">원래 용도: 항진균제 (무좀·곰팡이 감염)</div>
+          <p class="oneliner">암의 <b>여러 생존 신호를 동시에</b> 건드리는 약. 몇몇 암에서 초기 임상 신호.</p>
+          <div class="ladder" aria-label="근거 단계: 작은 사람 연구까지">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>곰팡이를 잡으려고 만든 약인데, 우연히 암세포의 여러 신호 길을 막는다는 것이 알려졌습니다. 헤지호그(Hedgehog) 신호, 새 혈관 만들기, AKT/mTOR 신호, Wnt 신호, 그리고 암세포가 항암제를 밖으로 퍼내는 <b>내성 펌프</b>까지 연구 대상입니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>전립선암, 비소세포폐암, 기저세포암, 난소암 등에서 <b>초기 임상 신호</b>가 있습니다.</li>
+            <li>Abbey님 자체 평점: <b>5점 중 3.5점</b> (의미 있는 초기 신호, 하지만 대부분 작거나 과거 기록 분석).</li>
+            <li>표준 치료를 <b>대신하는</b> 약이 아니라, 함께 쓰는 연구용 보조 약으로 자리매김합니다.</li>
+          </ul>
+          <h4>📖 이 서가에서 볼 수 있는 것</h4>
+          <div class="chips"><span>개요</span><span>근거 요약</span><span>작용 원리</span><span>암 종류별 근거</span><span>약동학·용량</span><span>안전·상호작용</span><span>좋은 품질 고르기</span></div>
+          <div class="ai-note"><span class="tag">AI 클로드 주석</span><br>이트라코나졸은 간에서 약을 분해하는 효소(CYP3A4)를 강하게 억제하는 것으로 잘 알려진 약입니다. 그래서 많은 항암제·표적치료제와 <b>상호작용</b>할 수 있습니다. Abbey님 서가의 '안전·상호작용' 페이지를 꼭 함께 읽고, 약사 검토를 받으시길 권합니다.</div>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">제가 지금 받는 항암제나 표적치료제가 이트라코나졸과 상호작용하나요? 약사 선생님께 확인을 부탁드릴 수 있을까요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/itraconazole-in-oncology/itraconazole-overview" target="_blank" rel="noopener">이트라코나졸 서가 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 6 이버멕틴 -->
+      <details class="drug">
+        <summary>
+          <div class="name">이버멕틴<span class="en">Ivermectin</span></div>
+          <div class="orig">원래 용도: 기생충 치료제</div>
+          <p class="oneliner">찬성도 반대도 아닌 <b>"질문 체크리스트"</b> 페이지. Abbey님 자신의 복용 경험에서 나온 글.</p>
+          <div class="ladder" aria-label="근거 단계: 동물까지">
+            <div class="bar"><span class="on"></span><span class="on"></span><span></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <p>이 페이지는 형식이 특별합니다. Abbey님은 자신도 이 약을 써 보며 공부할수록 <b>미처 생각하지 못한 질문이 많았다</b>고 고백합니다. 그래서 "먹을까 말까"가 아니라 "<b>무엇을 먼저 확인해야 하나</b>"를 묻는 체크리스트로 썼습니다. 우리 커뮤니티에도 관심이 많은 약이라 조금 더 자세히 옮깁니다.</p>
+
+          <h4>✅ 체크 1 · 내 면역 팀은 아직 일할 수 있나?</h4>
+          <p>이버멕틴의 면역 관련 효과는 <b>CD8 T세포, 수지상세포, 대식세포</b> 같은 면역 팀이 있어야 작동합니다. 오랜 치료로 면역이 지쳐 있으면, 용량을 올려도 이 팀이 새로 생기지 않습니다.</p>
+          <p><b>T세포 아형 검사</b>(CD4·CD8 수치)로 대략 가늠해 볼 수 있다고 제안합니다. 거의 정상 / 중간 정도 저하 / 심한 저하의 세 단계로 생각해 보라고요. 다만 혈액 수치는 종양 안의 상황이나 T세포의 '체력'까지 보여주지는 못하는 <b>대략적인 지도</b>라는 한계도 함께 적어 둡니다.</p>
+
+          <h4>✅ 체크 2 · 내 암의 생물학과 맞나?</h4>
+          <p>실험실에서는 이버멕틴이 여러 신호 길(Wnt, Akt/mTOR, STAT3, PAK1, 그리고 유방암에서 ER·HER2·TGF-β 등)을 건드렸습니다. 내 종양 검사나 내 암종 연구에서 이런 길이 실제로 중요한지, 아니면 <b>막연히 넓게 듣기를 바라는 것인지</b> 스스로 물어보라고 합니다.</p>
+
+          <h4>✅ 체크 3 · 실험 농도와 내 몸은 다르다</h4>
+          <p>세포 실험에서 암세포를 죽인 농도는 사람이 보통 먹었을 때 혈중 농도보다 훨씬 높습니다. 그 농도를 쫓아 고용량을 오래 쓰면, 뇌·신경·심장·간·면역세포처럼 <b>건강한 세포도 스트레스</b>를 받을 수 있지만 그 영향은 사람에게서 연구된 적이 없습니다.</p>
+
+          <h4>✅ 체크 4 · 얼마나 기다려야 하나?</h4>
+          <p>오랫동안 고용량을 써도 종양에 아무 변화가 없다면, 그것은 아직 '합리적인 시도'일까요, 아니면 <b>끝이 정해지지 않은 실험</b>이 된 걸까요? Abbey님이 가장 큰 사각지대라고 꼽는 질문입니다.</p>
+
+          <h4>✅ 체크 5 · 대식세포에게 쉴 시간을 주고 있나?</h4>
+          <p>대식세포는 면역의 '감지·지휘 본부'입니다. 연구에서는 높은 농도의 이버멕틴이 대식세포를 오히려 지치게 했습니다. "4일 먹고 3일 쉬기" 같은 일정도 고용량에서는 약이 다 빠지지 않아 사실상 계속 노출에 가까울 수 있다고 짚습니다. 오래 써 왔는데 뚜렷한 이득이 없다면, <b>더 긴 휴약기</b>를 주치의와 의논해 보라고 권합니다. 고용량 일정에서 '머리가 멍한 느낌(브레인 포그)'이 늘었다는 이야기도 다룹니다.</p>
+
+          <div class="ask"><span class="txt">이버멕틴을 고려하고 있습니다. 시작 전에 T세포 아형 검사(CD4, CD8)를 해 볼 수 있을까요? 그리고 제 암에서 이버멕틴이 건드리는 신호 경로가 중요한지 함께 봐 주실 수 있나요?</span><button type="button">📋 복사하기</button></div>
+          <div class="ask"><span class="txt">효과가 있는지 판단하려면 언제, 어떤 검사로 확인해야 할까요? 변화가 없으면 언제 멈추는 것이 좋을까요?</span><button type="button">📋 복사하기</button></div>
+          <div class="callout blue small"><span class="ttl">공유용 짧은 주소</span>Abbey님은 이 체크리스트를 이 주소로 공유해 달라고 합니다: <a href="https://www.myhealingcommunity.com/iver-cancer-checklist" target="_blank" rel="noopener">myhealingcommunity.com/iver-cancer-checklist</a></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/ivermectin-in-cancer-a-checklist-for-patients" target="_blank" rel="noopener">이버멕틴 체크리스트 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 7 메벤다졸 -->
+      <details class="drug">
+        <summary>
+          <div class="name">메벤다졸<span class="en">Mebendazole</span></div>
+          <div class="orig">원래 용도: 구충제</div>
+          <p class="oneliner">세포가 둘로 나뉠 때 필요한 <b>'뼈대'</b>를 방해하는 원리. 넓은 실험실 근거, 초기 사람 자료.</p>
+          <div class="ladder" aria-label="근거 단계: 작은 사람 연구 일부">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="mix"></span><span></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>세포가 분열할 때는 염색체를 양쪽으로 끌어당기는 <b>뼈대(튜불린, 미세소관)</b>가 필요합니다. 메벤다졸은 이 뼈대가 만들어지는 것을 방해합니다. 그 밖에 새 혈관 만들기, 여러 생존 신호, 면역 활동에도 영향을 주는 것으로 연구됩니다.</p>
+          <h4>📊 근거는 어디까지?</h4>
+          <ul>
+            <li>실험실·동물 근거는 넓습니다. 사람에게서는 <b>초기 안전성 자료와 작은 신호</b> 단계입니다.</li>
+            <li>뇌종양과 위장관 암에서 특히 관심이 많습니다.</li>
+            <li>Abbey님 자체 평점: <b>5점 중 3.5점</b> (전임상 근거는 중간~강함, 임상 근거는 막 나오는 중).</li>
+          </ul>
+          <h4>📖 이 서가에서 볼 수 있는 것</h4>
+          <div class="chips"><span>개요</span><span>근거 요약</span><span>작용 원리</span><span>암 종류별 근거</span><span>면역 효과</span><span>약동학·용량</span><span>안전·상호작용</span><span>좋은 품질 고르기</span><span>메벤다졸과 TP53</span></div>
+          <div class="ai-note"><span class="tag">AI 클로드 주석</span><br>장기간 사용 시 간 수치 상승이나 백혈구 감소가 보고된 바 있어, 혈액검사 계획을 주치의와 함께 세우는 것이 좋습니다. 또 우리 커뮤니티에서 자주 이야기되는 <b>펜벤다졸(Fenbendazole)</b>은 이름이 비슷하지만 다른 약입니다. Abbey님 페이스북 토론 색인에 펜벤다졸 스레드가 따로 있습니다.</div>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">메벤다졸을 함께 쓴다면, 간 수치와 혈액 수치는 얼마나 자주 확인하면 좋을까요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/mebendazole-in-oncology/mebendazole-overview" target="_blank" rel="noopener">메벤다졸 서가 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 8 미페프리스톤 -->
+      <details class="drug">
+        <summary>
+          <div class="name">미페프리스톤<span class="en">Mifepristone (RU-486)</span></div>
+          <div class="orig">원래 용도: 임신 중절, 일부 쿠싱증후군</div>
+          <p class="oneliner">근거 단계는 높지만 <b>결과가 엇갈린</b> 약. "근거가 높다 = 효과 있다"가 아님을 보여주는 교과서 같은 페이지.</p>
+          <div class="ladder" aria-label="근거 단계: 큰 무작위 임상까지, 결과 엇갈림">
+            <div class="bar"><span class="on"></span><span class="on"></span><span class="mix"></span><span class="mix"></span></div>
+            <div class="lab"><span>실험실</span><span>동물</span><span>작은 사람</span><span>큰 임상</span></div>
+          </div>
+        </summary>
+        <div class="body">
+          <h4>💡 왜 주목받나요?</h4>
+          <p>호르몬은 세포에게 보내는 '편지'이고, 수용체는 그 편지를 받는 '우편함'입니다. 미페프리스톤은 두 가지 우편함을 막습니다. 하나는 <b>프로게스테론</b>(일부 종양의 성장 신호), 다른 하나는 <b>스트레스 호르몬(코르티솔)</b> 우편함입니다. 후자는 암세포가 항암 치료를 버티게 돕는 신호일 수 있습니다.</p>
+          <h4>📊 근거는 어디까지? (엇갈림)</h4>
+          <ul>
+            <li><span class="pill g">긍정 신호</span> 특정 조건으로 고른 유방암 환자 20명에게 수술 전 2주 사용 → 세포 증식 표지(Ki67)가 줄었습니다. 단, 이것은 <b>종양이 줄어든 비율이 아닙니다.</b></li>
+            <li><span class="pill r">효과 없음</span> 삼중음성 유방암 무작위 임상: 항암제에 더했을 때 진행 억제 이득이 없었고, 백혈구 감소는 더 많았습니다(작은 규모로 일찍 종료).</li>
+            <li><span class="pill r">효과 없음</span> 수막종 3상 위약 대조 임상: 이득 없음.</li>
+            <li><span class="pill a">증례</span> 폐암 6명 증례 보고 등 개별 사례는 흥미롭지만, 앞으로 환자에게 기대할 수 있는 비율은 아닙니다.</li>
+            <li>프로게스테론 수용체 '양성'만으로는 선별이 충분치 않고, 수용체의 두 형태(PRA/PRB) 비율이 중요할 수 있다고 설명합니다.</li>
+          </ul>
+          <h4>⚠️ 꼭 알아둘 점</h4>
+          <ul>
+            <li><b>스테로이드 약(덱사메타손 등)의 효과를 막습니다.</b> 뇌부종 조절, 구토 예방, 면역항암제 부작용 치료에 스테로이드가 꼭 필요할 때 충돌합니다.</li>
+            <li>칼륨 저하, 심전도 이상(QTc), 자궁내막 변화, 임신 관련 위험.</li>
+            <li>진통제 펜타닐(Fentanyl) 등 여러 약과 상호작용. 몸에 <b>오래 남아</b> 끊은 뒤에도 영향이 이어집니다.</li>
+            <li>미소프로스톨(Misoprostol)과는 다른 약입니다. 묶음 포장 제품을 혼동하지 않도록.</li>
+          </ul>
+          <h4>🙋 주치의께 이렇게 물어보세요</h4>
+          <div class="ask"><span class="txt">제 치료 과정에서 스테로이드(덱사메타손 등)가 필요할 수 있나요? 그렇다면 미페프리스톤과 충돌하지 않을까요?</span><button type="button">📋 복사하기</button></div>
+          <a class="go" href="https://myhealingcommunity.com/docs/untitled-mvaag5j9" target="_blank" rel="noopener">미페프리스톤 페이지 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 9 FLCC -->
+      <details class="drug">
+        <summary>
+          <div class="name">FLCC 접근법<span class="en">FLCC / IMA Approach</span></div>
+          <div class="orig">약이 아니라, 용도변경 약물을 조합하는 '안내서'에 대한 해설</div>
+          <p class="oneliner">미국 의사단체의 공개 가이드 두 권을 <b>어떻게 함께 읽는지</b> 알려주는 길잡이 페이지.</p>
+        </summary>
+        <div class="body">
+          <h4>📘 FLCC·IMA는 누구?</h4>
+          <p>FLCCC(Front Line COVID-19 Critical Care Alliance)는 코로나 초기에 폴 매릭(Dr Paul Marik) 등 의사들이 모인 단체로, 지금은 <b>IMA(Independent Medical Alliance)</b>로 이름을 바꾸어 암 등으로 활동을 넓혔습니다.</p>
+          <h4>📚 두 권의 역할</h4>
+          <ul>
+            <li><b>Cancer Care 모노그래프</b>: 자세한 참고서. 용도변경 약물을 근거 등급(1~4등급)으로 나누고 근거와 참고문헌을 정리.</li>
+            <li><b>Approach 가이드</b>: 임상 틀. 같은 약들을 어떤 순서로, 어떻게 조합하고, 암 종류·병기·동반 질환·환자 선호에 따라 어떻게 조정하는지 보여줌.</li>
+            <li>자주 기본 뼈대로 등장하는 것: 이버멕틴, 메벤다졸, 독시사이클린(Doxycycline), 커큐민(Curcumin), 대사 식이 전략.</li>
+            <li>4등급(권장하지 않음)도 명시되어 있습니다: 콜히친, 상어 연골, 레트릴(아미그달린).</li>
+          </ul>
+          <h4>🔑 Abbey님의 핵심 당부</h4>
+          <p>이 가이드들은 <b>계속 바뀌는 살아있는 문서</b>입니다. 용량, 주의사항, 조합 예시가 업데이트됩니다. 그러니 캡처 이미지나 옮겨 적은 표가 아니라 <b>항상 IMA 사이트의 최신 PDF 원문</b>을 보라고 거듭 강조합니다. 그리고 암 치료는 반드시 개인에 맞춰, 경험 있는 의사의 감독 아래 이루어져야 한다고 적습니다.</p>
+          <h4>⚖️ 이름이 비슷한 두 의사 구분</h4>
+          <p>Abbey님은 <b>폴 매릭(Paul Marik, IMA)</b>과 <b>윌리엄 마키스(William Makis)</b>를 혼동하지 말라고 안내합니다. 매릭과 IMA의 가이드는 비교적 절제된 용량에 의사 감독을 전제로 하는 반면, 마키스는 이버멕틴·벤즈이미다졸 계열을 중심으로 더 공격적인 고용량 프로토콜을 자체적으로 내세운다고 구분합니다. IMA와는 관계가 없다고요.</p>
+          <div class="ai-note"><span class="tag">AI 클로드 주석</span><br>원문 페이지에는 빠른 찾기용 용량 색인이 있지만, 이 안내서는 우리 커뮤니티 원칙과 Abbey님의 당부에 따라 <b>용량 숫자를 옮기지 않았습니다</b>. 필요하시면 Abbey님 페이지를 거쳐 IMA 최신 PDF를 직접 확인하시고, 주치의와 함께 보세요.</div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/flcc-approach-to-repurposed-drugs-in-cancer" target="_blank" rel="noopener">FLCC 접근법 페이지 원문 열기 →</a>
+        </div>
+      </details>
+
+      <!-- 10 FB 스레드 -->
+      <details class="drug">
+        <summary>
+          <div class="name">페이스북 토론 색인 A–Z<span class="en">Study Support Threads</span></div>
+          <div class="orig">그룹 회원들이 나눈 토론 글과 파일로 바로 가는 목록</div>
+          <p class="oneliner">위 9가지 외에도 <b>30개 가까운 약물</b>에 대한 회원 토론이 정리되어 있습니다.</p>
+        </summary>
+        <div class="body">
+          <p>이 목록의 링크는 페이스북 <b>Healing Cancer Study Support Group에 가입하고, 그 기기에서 로그인한 상태</b>여야 열립니다.</p>
+          <h4>다루는 약물·주제</h4>
+          <div class="chips">
+            <span>2-DG</span><span>항히스타민제</span><span>아스피린</span><span>시메티딘</span><span>클라리스로마이신</span><span>DHEA</span><span>DCA(디클로로아세테이트)</span><span>DCA + 2-DG</span><span>DIM</span><span>디피리다몰</span><span>디설피람</span><span>독시사이클린</span><span>펜벤다졸</span><span>하이드록시클로로퀸</span><span>이트라코나졸</span><span>이버멕틴(시야 이상, 고용량·장기 복용 포함)</span><span>저용량 날트렉손(LDN)</span><span>메트포르민</span><span>메틸렌블루</span><span>니클로사마이드</span><span>엘라세스트란트(Orserdu)</span><span>팔보시클립</span><span>PARP 억제제</span><span>프로프라놀롤</span><span>프로작</span><span>라놀라진</span><span>스피로노락톤</span><span>스타틴(팔보시클립 복용자 주의 포함)</span><span>설파살라진</span><span>테트라티오몰리브데이트</span>
+          </div>
+          <a class="go" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/off-label-and-re-purposed-drugs-study-support-threads-a-z" target="_blank" rel="noopener">토론 색인 페이지 열기 →</a>
+          <a class="go" style="background:var(--accent)" href="https://www.facebook.com/groups/healingcancerstudysupport" target="_blank" rel="noopener">페이스북 그룹 가입하러 가기 →</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 이용법 -->
+<section id="s5">
+  <div class="wrap reveal">
+    <div class="sec-num">05 · 도서관 이용법</div>
+    <h2>이렇게 이용하세요</h2>
+    <h3>들어가기 전, Abbey님의 세 가지 당부</h3>
+    <ol class="steps prep">
+      <li><b>즐겨찾기 해두기</b>다음에 쉽게 찾을 수 있도록 <a href="https://www.myhealingcommunity.com" target="_blank" rel="noopener">myhealingcommunity.com</a>을 북마크하세요.</li>
+      <li><b>올 때마다 '새로고침' 누르기</b>Abbey님이 날마다 조금씩 내용을 더하고 고칩니다. 브라우저의 동그란 화살표(↻)를 눌러야 최신 내용이 보입니다.</li>
+      <li><b>사이트 안의 AI 검색 써 보기</b>화면 위쪽 <b>Search</b>(검색) 칸에서 AI 검색을 쓸 수 있습니다. 피드와 사진첩을 뒤지지 않아도 원하는 글을 찾아 줍니다.</li>
+    </ol>
+    <h3>읽는 순서 4단계</h3>
+    <p>Abbey님이 안내하는 순서는 도서관을 이용하는 순서와 같습니다.</p>
+    <ol class="steps">
+      <li><b>내 질문에 맞는 서가 고르기</b>지금 궁금한 것과 가장 가까운 섹션에서 시작하세요. (아래 '메뉴 안내도' 참고)</li>
+      <li><b>안내판부터 읽기</b>각 섹션의 <b>Overview</b>(개요)나 목록 페이지를 먼저 보세요. 전체 지도가 보입니다.</li>
+      <li><b>필요할 때만 깊이 들어가기</b>더 알고 싶을 때만 세부 페이지로 들어가세요. 처음부터 다 읽으려 하지 않아도 됩니다.</li>
+      <li><b>근거 공부와 마음 돌봄을 함께</b>Thrive 같은 지원 자료는 근거 자료를 <b>대신하는 것이 아니라 나란히</b> 쓰는 것입니다.</li>
+    </ol>
+    <div class="callout blue">
+      <span class="ttl">🔤 A–Z 전체 색인</span>
+      모든 주제를 알파벳 순으로 정리한 첫 페이지도 있습니다. 찾는 이름을 알 때 편합니다.<br>
+      <a href="https://myhealingcommunity.com/docs" target="_blank" rel="noopener">→ A–Z 색인과 '이 사이트 사용법' 원문</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 메뉴 안내도 -->
+<section id="s6">
+  <div class="wrap reveal">
+    <div class="sec-num">06 · 서가 안내도</div>
+    <h2>왼쪽 메뉴, 이런 내용이 있어요</h2>
+    <p>사이트 왼쪽(핸드폰에서는 메뉴 버튼)에 보이는 17개 항목을 앞에서 본 4가지 서가로 묶어 정리했습니다.</p>
+
+    <div class="menu-group">
+      <div class="gh"><span class="ico" aria-hidden="true">🌱</span>시작하기와 지원</div>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/cancer-patient-community-supports/about-abbey-the-founder" target="_blank" rel="noopener"><span class="mn">About Abbey the Founder</span><span class="md">설립자 Abbey 소개. 투병 이야기와 최근 근황, 피드백 버튼.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/cancer-patient-community-supports/cancer-patient-community-supports-overview" target="_blank" rel="noopener"><span class="mn">Cancer Patient Community Supports</span><span class="md">환우 공동체 지원: 추천 책, 팟캐스트, 온라인 모임, 암종별 토론 스레드 목록.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/cancer-patient-community-supports/trusted-suppliers-and-discounts" target="_blank" rel="noopener"><span class="mn">Trusted Suppliers and Discounts</span><span class="md">Abbey가 고른 보조제 공급처와 할인 코드. 이 제휴가 무료 활동을 지탱합니다(아래 '응원하는 법' 참고).</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/the-felt-science-of-thriving/the-felt-science-of-thriving-overview" target="_blank" rel="noopener"><span class="mn">Thrive</span><span class="md">몸으로 느끼며 회복하는 연습. '12가지 생명 에너지'를 중심으로 한 안내 연습과 스스로 배우는 과정.</span></a>
+    </div>
+
+    <div class="menu-group">
+      <div class="gh"><span class="ico" aria-hidden="true">🔬</span>근거 요약 서가</div>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/natural-medicines/overview" target="_blank" rel="noopener"><span class="mn">Natural medicines</span><span class="md">천연물 심층 정리: 커큐민, 베르베린, 보스웰리아, EGCG(녹차), 아피제닌, 멜라토닌, 퀘르세틴, 밀크시슬 등. 천연물에 왜 큰 임상시험이 부족한지도 설명.</span></a>
+      <a class="menu-item core" href="https://myhealingcommunity.com/docs/off-label-drugs-for-cancer/off-label-drugs-for-cancer-overview" target="_blank" rel="noopener"><span class="mn">⭐ Off-Label Drugs for Cancer</span><span class="md">용도변경 약물 서가. 이 안내서 04장에서 자세히 소개했습니다.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/treatment-resistance/treatment-resistance-overview" target="_blank" rel="noopener"><span class="mn">treatment resistance overview</span><span class="md">치료 저항: 암이 치료를 피해 가는 길들. 자가포식(세포 재활용), 노화세포, 잠든(휴면) 암세포 등.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/cancer-immunology/cancer-immunology-overview" target="_blank" rel="noopener"><span class="mn">Cancer Immunology</span><span class="md">암 면역: 면역항암제, T세포, 감마델타 T세포, 대식세포, 면역 관련 지표, 식단과 장 건강.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/pathogens/pathogens-overview" target="_blank" rel="noopener"><span class="mn">Pathogens</span><span class="md">병원체(곰팡이 등)와 관련된 프로토콜 지원 자료.</span></a>
+    </div>
+
+    <div class="menu-group">
+      <div class="gh"><span class="ico" aria-hidden="true">🩺</span>실전 가이드 서가</div>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/cancer-therapies-clinic-offerings/integrative-practitioner-directories-overview" target="_blank" rel="noopener"><span class="mn">Cancer Therapies + Clinic Offerings</span><span class="md">치료법과 클리닉 안내, 통합 의료인 목록(뉴질랜드·유럽·영국), 표준 항암제 토론 색인.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/testing-monitoring-and-biomarkers/testing-monitoring-and-biomarkers-overview" target="_blank" rel="noopener"><span class="mn">Testing, Monitoring &amp; Biomarkers</span><span class="md">검사와 추적 관찰: 혈액검사, TP53 유전자, 뼈 건강, 중금속, 영상 검사 보고서 읽는 법.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/side-effects/side-effects-overview" target="_blank" rel="noopener"><span class="mn">Side Effects</span><span class="md">부작용 관리: 말초신경병증, 백혈구(호중구) 감소 등. 수술·조직검사 전후 관리 가이드도 함께.</span></a>
+    </div>
+
+    <div class="menu-group">
+      <div class="gh"><span class="ico" aria-hidden="true">🗂️</span>암종별 서가</div>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/bone-metastases" target="_blank" rel="noopener"><span class="mn">Bone Metastases</span><span class="md">뼈 전이: 연구 요약, 표준 뼈 치료, 통합 전략, 회원 경험. Abbey님 자신의 경험과 맞닿은 서가.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/breast-cancer/breast-cancers-overview" target="_blank" rel="noopener"><span class="mn">Breast Cancer shared</span><span class="md">유방암 공통 자료: 치료 저항 연구, 전이성 유방암 지원, 경로 워크시트.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/breast-cancer/er-positive-her2-negative" target="_blank" rel="noopener"><span class="mn">ER+ Breast Cancer</span><span class="md">호르몬 수용체 양성 유방암: CDK4/6 억제제 비교, 내분비 치료 저항과 휴면, 보조제 고려사항.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/breast-cancer/her2-positive" target="_blank" rel="noopener"><span class="mn">HER2+ Breast Cancer</span><span class="md">HER2 양성 유방암만의 치료와 저항 이야기.</span></a>
+      <a class="menu-item" href="https://myhealingcommunity.com/docs/leiomyosarcoma-2026-research-update" target="_blank" rel="noopener"><span class="mn">Leiomyosarcoma</span><span class="md">평활근육종 2026 연구 업데이트: 세포 신호, 대사, 면역, 저항 기전, 임상시험, 표준 치료.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 한국에서 활용하기 -->
+<section id="s7">
+  <div class="wrap reveal">
+    <div class="sec-num">07 · 한국에서 활용하기</div>
+    <h2>영어가 어려워도 괜찮아요</h2>
+    <div class="card">
+      <h3>방법 ① 핸드폰 번역 기능</h3>
+      <p style="margin:0">크롬은 화면 오른쪽 위 점 세 개(⋮) → <b>번역</b>, 삼성 인터넷은 메뉴 → <b>번역</b>을 누르면 페이지 전체가 한국어로 바뀝니다. 약 이름이나 전문 용어는 어색하게 번역될 수 있으니, 이 안내서의 한국어 이름과 함께 보세요.</p>
+    </div>
+    <div class="card">
+      <h3>방법 ② 사이트 AI 검색에 영어 단어로 묻기</h3>
+      <p>사이트 위쪽 검색창에 아래처럼 간단한 영어 단어를 넣어 보세요.</p>
+      <div class="ask"><span class="txt">mebendazole safety interactions</span><button type="button">📋 복사하기</button></div>
+      <div class="ask"><span class="txt">tamoxifen cimetidine</span><button type="button">📋 복사하기</button></div>
+      <div class="ask"><span class="txt">bone metastases</span><button type="button">📋 복사하기</button></div>
+    </div>
+    <div class="card">
+      <h3>방법 ③ AI에게 "읽고 질문으로 정리해줘"</h3>
+      <p>ChatGPT나 클로드 같은 AI에게 Abbey님 페이지 주소를 주고 이렇게 부탁해 보세요. AI는 <b>결정을 대신해 주는 것이 아니라, 주치의께 드릴 더 좋은 질문을 준비</b>하는 도구입니다.</p>
+      <div class="ask"><span class="txt">이 페이지를 읽고 한국어로 쉽게 요약해 줘. 근거가 세포 실험인지, 동물 실험인지, 사람 연구인지 나눠서 알려 줘. 용량은 알려 주지 말고, 대신 주치의에게 물어볼 질문 5가지로 정리해 줘. 출처도 함께 알려 줘. [페이지 주소]</span><button type="button">📋 복사하기</button></div>
+    </div>
+    <div class="callout amber">
+      <span class="ttl">🙏 Abbey님의 부탁: 본문을 복사하지 말고 주소로 공유해 주세요</span>
+      사이트의 모든 페이지 아래에 이 부탁이 적혀 있습니다. 우리 카페에 소개할 때도 <b>본문을 통째로 번역해 올리기보다, 이 안내서처럼 간단히 소개하고 원문 주소를 함께</b> 나눠 주세요. 그래야 Abbey님이 고친 최신 내용을 모두가 볼 수 있습니다.
+    </div>
+
+    <h3 style="margin-top:1.4em">Abbey님을 응원하는 방법</h3>
+    <div class="shelves">
+      <div class="shelf"><span class="ico" aria-hidden="true">✉️</span><div><b>피드백 남기기</b>About Abbey 페이지의 피드백 버튼으로 새 주제를 요청하거나 도움이 된 점을 전할 수 있습니다. Abbey님은 이 사이트와 그룹이 회원을 위해 만들어졌고, <b>회원의 의견이 다음에 무엇을 더할지를 직접 정한다</b>고 말합니다. 한국 환우의 목소리도 영어 한두 줄이면 충분합니다.<br><a href="https://docs.google.com/forms/d/e/1FAIpQLSeyUv3ff9uIwelzyKtOYE2J_HOzhaY5gEV4Xm2Xyr8KX67zxA/viewform?usp=header" target="_blank" rel="noopener">→ 피드백 양식 열기</a></div></div>
+      <div class="shelf"><span class="ico" aria-hidden="true">🔗</span><div><b>주소로 널리 알리기</b>원문 링크를 나누는 것 자체가 큰 응원입니다.</div></div>
+      <div class="shelf"><span class="ico" aria-hidden="true">🛒</span><div><b>제휴 할인 코드</b>Abbey님은 이 사이트와 그룹이 <b>MCS Formulas</b>의 <b>abbey5</b> 할인 코드를 쓰는 회원들의 후원으로 운영되는 열정 프로젝트라고 밝힙니다. 원래 보조제를 구입하실 계획이 있는 분이라면 하나의 응원 방법이 될 수 있습니다.</div></div>
+    </div>
+    <div class="ai-note"><span class="tag">AI 클로드 주석</span><br>할인 코드 안내는 <b>구매 권유가 아니라</b> Abbey님의 무료 활동이 어떻게 유지되는지를 사실대로 전하는 것입니다. 어떤 보조제든 시작 전에는 복용 중인 약과의 상호작용을 주치의·약사와 먼저 확인하세요. 해외 직구 시 국내 통관 규정도 따로 확인이 필요합니다.</div>
+  </div>
+</section>
+
+<!-- 8. 안전선 -->
+<section id="s8">
+  <div class="wrap reveal">
+    <div class="sec-num">08 · 안전선</div>
+    <h2>꼭 기억해 주세요</h2>
+    <div class="callout rose">
+      <span class="ttl">🚦 최종 결정은 언제나 주치의와 함께</span>
+      <ul style="margin:.4em 0 0;padding-left:1.2em">
+        <li>Abbey님의 사이트도, 이 안내서도 <b>교육용 자료</b>입니다. 진단이나 치료 처방이 아닙니다.</li>
+        <li>어떤 약이나 보조제든 <b>먹기 시작하거나, 함께 먹거나, 끊는 결정</b>은 반드시 주치의와 하세요.</li>
+        <li>이 안내서에 나온 약물은 서가 내용을 보여주기 위한 <b>예시</b>이며, 치료 권고가 아닙니다.</li>
+        <li>AI는 결정하는 도구가 아니라, <b>더 좋은 질문을 준비하는 도구</b>입니다.</li>
+      </ul>
+    </div>
+    <p>Abbey님이 모든 페이지 끝에 적어 둔 문장도 같은 뜻입니다. 이 정보는 교육을 위한 것이며, 치료나 약, 보조제를 바꾸기 전에 자격 있는 의료진과 상의하라고요.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="closing">한 사람이 자신의 길을 기록했고,<br>그 기록이 전 세계 환우의 도서관이 되었습니다.<br><br>원리를 알고, 가능성을 이해하고,<br>근거 위에서 함께 걸어가요.</p>
+    <p class="small muted">Abbey Mitchell님과 Healing Cancer Study Support Group 회원들께 감사드립니다.</p>
+    <p class="small muted">원문 사이트: <a href="https://www.myhealingcommunity.com" target="_blank" rel="noopener">myhealingcommunity.com</a> · © 2026 Abbey Mitchell<br>
+    이 안내서는 원문을 요약·소개한 것이며 원문 문장을 옮기지 않았습니다.<br>
+    정리: 히포크라테스의 친구들 (<a href="https://cafe.naver.com/friendsofhippocrates" target="_blank" rel="noopener">cafe.naver.com/friendsofhippocrates</a>) · 2026년 10월</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 등장 애니메이션 (미지원·모션축소 시 즉시 표시)
+  var els = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+    // 안전장치: 3초 뒤에도 안 보이는 요소는 표시
+    setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 3000);
+  }
+
+  // 질문 복사 버튼
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll('.ask button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.parentNode.querySelector('.txt').innerText.trim();
+      var done = function(){
+        btn.textContent = '✓ 복사됨'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = '📋 복사하기'; btn.classList.remove('done'); }, 1800);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text); done(); });
+      } else { fallbackCopy(text); done(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
