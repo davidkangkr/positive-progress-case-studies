@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1%씩, 매일 — Shaira의 이야기 (커뮤니티용)</title>
+<meta name="description" content="4기 HER2 양성 유방암을 지나온 Shaira의 두 게시물(2023·2026)과 댓글을 정리한 해외 사례 분석 · 커뮤니티용">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF6EE; --paper2:#F4ECDF; --card:#FFFDF8; --ink:#2B2620; --ink2:#5C5348; --line:#E3D7C4;
+  --green:#3F7D5A; --green-bg:#E6F1EA; --amber:#B7791F; --amber-bg:#FBF0DA;
+  --red:#B5473A; --red-bg:#F8E4E0; --plum:#7A4C8C; --plum-bg:#F1E7F4; --teal:#2F6F7E;
+  --claude:#4B5F8A; --claude-bg:#E9EEF7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:19px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.4;color:var(--ink)}
+h2{font-size:1.5rem;margin:0 0 .6em}
+h3{font-size:1.18rem;margin:1.4em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.en{font-size:.82em;color:var(--ink2)}
+small,.small{font-size:.88rem;color:var(--ink2)}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#F6EBDB 0%,var(--paper) 100%);padding:44px 0 34px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-block;font-size:.85rem;letter-spacing:.06em;color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:2px 14px;margin-bottom:18px}
+.hero h1{font-size:2.05rem;margin:0 0 .5em;font-weight:900}
+.quote-en{font-family:"Noto Serif KR",serif;font-style:italic;font-size:1.06rem;color:var(--ink2);border-left:4px solid var(--plum);padding:4px 0 4px 16px;margin:20px 0 12px}
+.quote-ko{font-family:"Noto Serif KR",serif;font-size:1.32rem;font-weight:700;line-height:1.7;margin:0 0 10px}
+.quote-ko mark{background:linear-gradient(transparent 58%,#EBD3F2 58%);color:inherit;padding:0 2px}
+.byline{font-size:.95rem;color:var(--ink2)}
+.meta{margin-top:20px;font-size:.92rem;color:var(--ink2);background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:12px 16px}
+
+section{padding:42px 0;border-bottom:1px solid var(--line)}
+.sec-no{font-size:.9rem;color:var(--plum);font-weight:700;letter-spacing:.05em;display:block;margin-bottom:6px}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:18px 0}
+.voice{background:var(--card);border-radius:18px;padding:16px 20px;margin:18px 0;border:1px solid var(--line);position:relative}
+.voice .who{font-weight:700;font-size:.95rem;color:var(--ink2);margin-bottom:4px}
+.voice .say{font-family:"Noto Serif KR",serif;font-size:1.1rem}
+.voice .orig{font-size:.85rem;color:var(--ink2);font-style:italic;margin-top:6px}
+.voice.shaira{border-left:6px solid var(--plum)}
+
+.box-green{background:var(--green-bg);border:1px solid #C3DECD;border-radius:16px;padding:16px 20px;margin:18px 0}
+.box-amber{background:var(--amber-bg);border:1px solid #EFD9AE;border-radius:16px;padding:16px 20px;margin:18px 0}
+.box-claude{background:var(--claude-bg);border:1px solid #C9D3E6;border-radius:16px;padding:16px 20px;margin:22px 0}
+.box-claude .tag{display:inline-block;font-size:.8rem;font-weight:700;color:#fff;background:var(--claude);border-radius:99px;padding:1px 12px;margin-bottom:8px}
+.box-label{font-weight:700;margin-bottom:6px;display:block}
+
+/* timeline */
+.tl{list-style:none;margin:20px 0 0;padding:0;position:relative}
+.tl:before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--red),var(--amber) 45%,var(--green));border-radius:3px}
+.tl li{position:relative;padding:0 0 26px 50px}
+.tl li:last-child{padding-bottom:0}
+.tl .dot{position:absolute;left:4px;top:6px;width:25px;height:25px;border-radius:50%;background:var(--card);border:4px solid var(--amber)}
+.tl li.hard .dot{border-color:var(--red)}
+.tl li.good .dot{border-color:var(--green)}
+.tl .when{font-size:.88rem;font-weight:700;color:var(--ink2);letter-spacing:.02em}
+.tl .what{font-weight:700;font-size:1.08rem}
+.tl .desc{font-size:1rem;color:var(--ink)}
+.est{font-size:.78rem;background:var(--paper2);border-radius:6px;padding:0 6px;color:var(--ink2);font-weight:500}
+
+/* flow */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin:22px 0}
+.fbox{border-radius:18px;padding:16px 18px;border:2px solid}
+.fbox h4{margin:0 0 8px;font-family:"Noto Serif KR",serif;font-size:1.1rem}
+.fbox.std{background:#EAF1F6;border-color:#9DB9CC}
+.fbox.add{background:var(--plum-bg);border-color:#CDB2D8}
+.fbox.now{background:var(--green-bg);border-color:#9FCBB0;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.92rem;line-height:1.7}
+.join{display:flex;justify-content:center}
+.join svg{display:block}
+
+/* charts */
+figure{margin:22px 0;padding:0}
+figcaption{font-size:.9rem;color:var(--ink2);margin-top:8px}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{list-style:none;padding:0;margin:14px 0 0;counter-reset:lg}
+.legend li{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:1rem}
+.legend .n{flex:0 0 28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-top:3px}
+
+.disc{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.disc .col{border-radius:16px;padding:14px 16px}
+.disc .open{background:var(--green-bg);border:1px solid #C3DECD}
+.disc .closed{background:#F2EFEA;border:1px dashed #BDB2A2}
+.disc .big{font-family:"Noto Serif KR",serif;font-size:2.2rem;font-weight:900;line-height:1.1}
+.disc .open .big{color:var(--green)}
+.disc .closed .big{color:#9A8F80}
+
+/* questions */
+.q{position:relative;background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px 18px 14px 46px;margin:12px 0;font-family:"Noto Serif KR",serif;font-size:1.05rem}
+.q:before{content:"“";position:absolute;left:14px;top:2px;font-size:2.6rem;color:var(--plum);font-family:Georgia,serif;line-height:1.2}
+.q .for{display:block;font-family:"Noto Sans KR",sans-serif;font-size:.8rem;color:var(--ink2);font-weight:700;margin-bottom:2px}
+.copy{margin-top:8px;font-family:"Noto Sans KR",sans-serif;font-size:.85rem;border:1px solid var(--line);background:var(--paper);border-radius:99px;padding:4px 14px;cursor:pointer;color:var(--ink2);min-height:36px}
+.copy:hover{background:var(--paper2)}
+
+.try{background:linear-gradient(135deg,#FFF6E3,#F7ECFA);border:2px solid #E7CFA0;border-radius:20px;padding:20px}
+.try h3{margin-top:0}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 12px 44px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--plum);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+
+.offers{list-style:none;padding:0;margin:12px 0}
+.offers li{padding:10px 0;border-bottom:1px dotted var(--line);font-size:1rem}
+.offers li:last-child{border-bottom:0}
+.offers b{color:var(--ink)}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:10px}
+table.cmp th,table.cmp td{padding:10px 8px;border-bottom:1px solid #C9D3E6;vertical-align:top;text-align:left}
+table.cmp th{font-size:.85rem;color:var(--claude)}
+
+.safety{background:#FFF;border:3px solid var(--green);border-radius:20px;padding:20px 22px}
+.safety h2{color:var(--green)}
+.ending{text-align:center;padding:50px 0 30px}
+.ending .line{font-family:"Noto Serif KR",serif;font-size:1.35rem;font-weight:700;line-height:1.7}
+.sources{font-size:.88rem;color:var(--ink2);padding:30px 0 60px}
+.sources a{word-break:break-all}
+
+/* reveal */
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js .rv{opacity:1;transform:none;transition:none}}
+
+@media print{
+  @page{size:A4;margin:14mm 13mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#fff}
+  body{font-size:12.5pt;line-height:1.7;color:#1a1714}
+  .wrap{max-width:none;padding:0}
+  .hero{background:#fff;padding:0 0 14px}
+  section{padding:18px 0;border-bottom:1px solid #d9cdb9}
+  .js .rv,.rv{opacity:1!important;transform:none!important}
+  .copy{display:none}
+  .chart svg{max-height:85mm;width:auto;max-width:100%;margin:0 auto}
+  .card,.voice,.box-green,.box-amber,.box-claude,.chart,.fbox,.q,.try,.safety,.disc .col,.tl li,figure,table.cmp tr{break-inside:avoid;page-break-inside:avoid}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+  .voice,.q,.card,.chart{border-color:#bfb19b}
+  .q:before{color:#5e3a6e}
+  a{color:#1a1714;text-decoration:underline}
+  .sources a:after{content:""}
+  .ending{padding:20px 0}
+}
+@media (min-width:640px){
+  body{font-size:19.5px}
+  .hero h1{font-size:2.4rem}
+  .disc{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">해외 사례 분석집 · 커뮤니티용</span>
+    <h1>1%씩, 매일<br><span style="font-size:.62em;font-weight:700;color:var(--ink2)">임신 34주에 4기 유방암을 만난 Shaira의 5년</span></h1>
+    <p class="quote-en">“This is me now. My hair has grown back, and although I am not yet 100% strong in mind or body, I am striving to become just 1% better every day.”</p>
+    <p class="quote-ko">“이게 지금의 저예요. 머리카락이 다시 자랐어요. 몸도 마음도 아직 100% 단단하진 않지만, <mark>매일 딱 1%씩 나아지려고</mark> 애쓰고 있어요.”</p>
+    <p class="byline">— Shaira, 2026년 10월 21일 게시물에서</p>
+    <div class="meta">
+      이 글은 해외 페이스북 그룹 <b>「Jane McLelland Off Label Drugs for Cancer」</b>에 Shaira라는 여성이 3년 간격으로 올린 두 편의 글(2023년 11월, 2026년 10월)과 그 아래 달린 댓글 289개를 읽고 정리한 것입니다. 이 그룹은 제인 맥클렐런드(Jane McLelland)의 책 『How to Starve Cancer(암을 굶겨라)』를 바탕으로 모인 환우 모임입니다.<br>
+      <small>개인정보 보호를 위해 모든 이름에서 성(姓)은 뺐고, 이름이 같은 사람은 Sarah, Sarah 2nd, Sarah 3rd처럼 번호를 붙였습니다.</small>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="rv" id="s1">
+  <span class="sec-no">하나 · 먼저, 이 질문에서 시작합니다</span>
+  <h2>“책이 너무 어려워요. 어떻게 하셨어요?”</h2>
+  <div class="voice">
+    <div class="who">Maria · 2026년 댓글</div>
+    <div class="say">“그녀의 책은 정말 이해하기 어려워요. 어떻게 해내셨어요?”</div>
+    <div class="orig">Her book is so hard to understand. How did you manage it?</div>
+  </div>
+  <div class="voice">
+    <div class="who">Sarah 4th · 그 아래 답글</div>
+    <div class="say">“제 문제가 바로 그거였어요. 도무지 머리에 안 들어오더라고요.”</div>
+  </div>
+  <p>혹시 여러분도 그런 적 있으신가요? 좋은 책이라는데 몇 장 넘기다 덮어버린 적. 그건 <b>여러분이 부족해서가 아닙니다.</b> Shaira도 똑같았습니다.</p>
+  <div class="voice shaira">
+    <div class="who">Shaira의 대답</div>
+    <div class="say">“솔직히 저도 두 번은 읽어야 겨우 마음에 들어왔어요.” “항암 중에는 도저히 소화가 안 돼서, 항암을 끝내고 머리가 맑아졌을 때 다시 읽었어요. 세 번이요.”</div>
+  </div>
+  <p>Shaira의 이야기가 특별한 이유는 “기적의 약”이 아니라, <b>무섭고 지친 한 사람이 어떻게 한 걸음씩 걸어왔는지</b>가 고스란히 남아 있기 때문입니다. 그 걸음을 따라가 보겠습니다.</p>
+</section>
+
+<section class="rv" id="s2">
+  <span class="sec-no">둘 · 그녀가 걸어온 길</span>
+  <h2>Shaira의 5년</h2>
+  <p class="small">아래는 Shaira가 직접 쓴 글과 댓글에서 확인되는 내용만 순서대로 놓은 것입니다. 정확한 연도를 밝히지 않은 부분은 <span class="est">추정</span>이라고 표시했습니다.</p>
+  <ol class="tl">
+    <li class="hard"><span class="dot"></span>
+      <div class="when">약 2021년 <span class="est">추정</span></div>
+      <div class="what">임신 34주, 4기 HER2 양성 유방암 진단</div>
+      <div class="desc">암은 폐와 림프절까지 퍼져 있었습니다. “5년 생존”에 관한 가슴 아픈 이야기를 들었고, 자신이 없을 때 남편과 두 아이를 누가 도와줄지 계획을 세우기 시작했습니다.</div>
+    </li>
+    <li class="hard"><span class="dot"></span>
+      <div class="when">진단 직후</div>
+      <div class="what">제왕절개, 그리고 곧이어 양쪽 유방 절제</div>
+      <div class="desc">“말로 다 할 수 없을 만큼 힘들었다”고 썼습니다. 갓난아기와 어린 큰아이를 돌보며 치료를 시작해야 했습니다.</div>
+    </li>
+    <li class="hard"><span class="dot"></span>
+      <div class="when">항암치료 1</div>
+      <div class="what">탁소텔 Taxotere <span class="en">(도세탁셀 docetaxel)</span></div>
+      <div class="desc">머리카락과 눈썹이 모두 빠졌습니다.</div>
+    </li>
+    <li class="hard"><span class="dot"></span>
+      <div class="when">항암치료 2</div>
+      <div class="what">엔허투 Enhertu <span class="en">(트라스투주맙 데룩스테칸 trastuzumab deruxtecan)</span> — 2회 후 중단</div>
+      <div class="desc">가슴 통증이 생겼고, 결국 <b>폐색전증</b>(핏덩이가 폐의 혈관을 막는 병)이 왔습니다. 예정된 나머지 8회는 하지 못했습니다. 그녀는 “엔허투는 다시는 하지 않겠다”고 했습니다.</div>
+    </li>
+    <li><span class="dot"></span>
+      <div class="when">항암치료 3 · 약 1년</div>
+      <div class="what">허셉틴 Herceptin + 퍼제타 Perjeta</div>
+      <div class="desc">“탁소텔이나 엔허투보다 훨씬 견딜 만했다”고 했습니다. 이 무렵 제인의 책을 읽고, 케어 온콜로지 클리닉(Care Oncology Clinic, COC)과 상담하고, 동양의학 전문가들과 함께 생활을 바꾸기 시작했습니다.</div>
+    </li>
+    <li class="good"><span class="dot"></span>
+      <div class="when">2022년 11월</div>
+      <div class="what">항암치료를 끝냄</div>
+    </li>
+    <li class="good"><span class="dot"></span>
+      <div class="when">2023년 11월 · 첫 번째 글</div>
+      <div class="what">항암을 끊은 지 1년, 검사마다 NED</div>
+      <div class="desc">“머리카락이 조금 생긴 게 얼마나 큰 의미인지 몰라요. 세 살 아이와 놀아주지도 못하던 때가 기억나요.” 다만 <b>아랫배 장 바깥쪽에 작은 덩어리</b>가 발견됐는데, 위치 때문에 조직검사를 할 수 없었습니다. 위장관 기질종양(GIST)일 수도 있다는 말만 들었고, 수술을 권유받았지만 다음 검사까지 미루기로 했습니다.</div>
+    </li>
+    <li class="good"><span class="dot"></span>
+      <div class="when">2026년 10월 · 두 번째 글</div>
+      <div class="what">여전히 NED, “새로운 진행 없음”이라는 이정표를 앞두고</div>
+      <div class="desc">머리카락이 다시 자랐고, 일기 쓰기(저널링)로 다른 환우를 돕는 작은 모임을 꾸리고 있습니다. 그리고 이렇게 덧붙였습니다. “<b>완치되는 병은 아니지만</b>, 이게 제가 바랄 수 있는 최고의 소식이에요.”</div>
+    </li>
+  </ol>
+  <div class="box-green">
+    <span class="box-label">NED가 뭔가요?</span>
+    NED(No Evidence of Disease)는 <b>“지금 검사로 찾을 수 있는 암이 없다”</b>는 뜻입니다. ‘완치’와 같은 말은 아닙니다. Shaira 스스로도 그렇게 말했습니다. 그래서 정기 검사가 계속 중요합니다.
+  </div>
+</section>
+
+<section class="rv" id="s3">
+  <span class="sec-no">셋 · 한 장의 그림으로</span>
+  <h2>회복은 직선이 아니라 계단입니다</h2>
+  <p>“1%씩 나아진다”는 말을 그림으로 그리면 이렇습니다. 쭉 뻗은 오르막이 아니라, <b>한 칸씩 오르고, 층계참에서 쉬고, 때로는 미끄러지는 계단</b>입니다.</p>
+  <figure class="chart">
+    <svg viewBox="0 0 340 280" role="img" aria-labelledby="stairT stairD">
+      <title id="stairT">Shaira의 회복 계단</title>
+      <desc id="stairD">진단과 수술, 항암, 폐색전증에서 내려갔다가 허셉틴과 퍼제타, 항암 종료, NED를 거쳐 지금까지 한 칸씩 올라온 계단. 맨 위 100%는 점선으로 아직 남아 있음.</desc>
+      <defs>
+        <linearGradient id="stairG" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#F8E4E0"/><stop offset=".5" stop-color="#FBF0DA"/><stop offset="1" stop-color="#E6F1EA"/>
+        </linearGradient>
+      </defs>
+      <line x1="20" y1="40" x2="325" y2="40" stroke="#7A4C8C" stroke-width="1.5" stroke-dasharray="5 5"/>
+      <text x="325" y="32" text-anchor="end" font-size="12" fill="#7A4C8C" font-family="Noto Sans KR">100% — 아직 가는 중</text>
+      <path d="M20,180 H62 V214 H100 V200 H126 V238 H156 V206 H186 V176 H216 V146 H246 V120 H276 V96 H310 V250 H20 Z" fill="url(#stairG)"/>
+      <path d="M20,180 H62 V214 H100 V200 H126 V238 H156 V206 H186 V176 H216 V146 H246 V120 H276 V96 H310" fill="none" stroke="#2B2620" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="310" y1="96" x2="310" y2="44" stroke="#7A4C8C" stroke-width="2.5" stroke-dasharray="4 5"/>
+      <g font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">
+        <circle cx="40" cy="166" r="12" fill="#B5473A"/><text x="40" y="170">1</text>
+        <circle cx="81" cy="200" r="12" fill="#B5473A"/><text x="81" y="204">2</text>
+        <circle cx="141" cy="224" r="12" fill="#B5473A"/><text x="141" y="228">3</text>
+        <circle cx="171" cy="192" r="12" fill="#B7791F"/><text x="171" y="196">4</text>
+        <circle cx="231" cy="132" r="12" fill="#3F7D5A"/><text x="231" y="136">5</text>
+        <circle cx="293" cy="82" r="12" fill="#7A4C8C"/><text x="293" y="86">6</text>
+      </g>
+      <text x="20" y="270" font-size="11" fill="#5C5348" font-family="Noto Sans KR">시간 →</text>
+      <text x="325" y="270" text-anchor="end" font-size="11" fill="#5C5348" font-family="Noto Sans KR">몸과 마음의 힘 ↑</text>
+    </svg>
+    <ol class="legend">
+      <li><span class="n" style="background:#B5473A">1</span><span>임신 34주 진단 — 모든 것을 내려놓고 “살아남기” 하나에 집중</span></li>
+      <li><span class="n" style="background:#B5473A">2</span><span>제왕절개, 양쪽 유방 절제, 탁소텔 — 머리카락이 모두 빠짐</span></li>
+      <li><span class="n" style="background:#B5473A">3</span><span>엔허투 2회 후 폐색전증 — 가장 깊이 미끄러진 칸</span></li>
+      <li><span class="n" style="background:#B7791F">4</span><span>허셉틴+퍼제타, 책 읽기, 생활 바꾸기 — 다시 오르기 시작</span></li>
+      <li><span class="n" style="background:#3F7D5A">5</span><span>2022년 항암 종료 → 2023년 NED — 머리카락이 조금씩</span></li>
+      <li><span class="n" style="background:#7A4C8C">6</span><span>2026년 지금 — “아직 100%는 아니지만, 매일 1%씩”</span></li>
+    </ol>
+    <figcaption>※ 높낮이는 Shaira가 글에서 표현한 힘듦과 회복을 이해하기 쉽게 그린 것이며, 실제 측정값이 아닙니다.</figcaption>
+  </figure>
+  <p>계단에는 층계참도 있습니다. 2023년에 그녀는 “이 피로에서 언제 벗어날 수 있을지 모르겠다”고 했고, 2026년에도 “5년이 지난 지금까지 남아 있는 후유증이 있다”고 했습니다. 그래도 그녀는 <b>100%가 아닌 자신을 부끄러워하지 않았습니다.</b> 오늘 한 칸이면 충분하다고 말합니다.</p>
+</section>
+
+<section class="rv" id="s4">
+  <span class="sec-no">넷 · 무엇을 했나</span>
+  <h2>두 갈래 길이 만나서</h2>
+  <p>많은 분들이 궁금해하는 부분입니다. Shaira는 <b>표준치료를 하면서, 그 곁에 자기만의 방법을 더했습니다.</b> 어느 한쪽만이 아니었습니다.</p>
+  <div class="flow" role="img" aria-label="표준치료와 그녀가 더한 것이 만나 지금에 이르는 흐름도">
+    <div class="fbox std">
+      <h4>① 병원 표준치료</h4>
+      <div class="chips">
+        <span class="chip">제왕절개·양쪽 유방 절제</span>
+        <span class="chip">탁소텔 Taxotere</span>
+        <span class="chip">엔허투 Enhertu (2회)</span>
+        <span class="chip">허셉틴 Herceptin + 퍼제타 Perjeta</span>
+        <span class="chip">정기 검사</span>
+      </div>
+    </div>
+    <div class="join"><svg width="60" height="38" viewBox="0 0 60 38" aria-hidden="true"><circle cx="30" cy="19" r="15" fill="#FFFDF8" stroke="#B9A98F" stroke-width="2"/><path d="M30 11v16M22 19h16" stroke="#5C5348" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <div class="fbox add">
+      <h4>② 그녀가 곁에 더한 것</h4>
+      <div class="chips">
+        <span class="chip">제인의 책 공부 (3번 읽기)</span>
+        <span class="chip">COC 상담</span>
+        <span class="chip">동양의학·한방(TCM)</span>
+        <span class="chip">침술</span>
+        <span class="chip">기공 Qi Gong</span>
+        <span class="chip">간헐적 단식</span>
+        <span class="chip">명상</span>
+        <span class="chip">차(茶)</span>
+        <span class="chip">설탕·가공식품 줄이기</span>
+        <span class="chip">기운 될 때 운동</span>
+        <span class="chip">나이 든 내 모습 상상하기</span>
+        <span class="chip">일기 쓰기</span>
+      </div>
+    </div>
+    <div class="join"><svg width="60" height="46" viewBox="0 0 60 46" aria-hidden="true"><path d="M30 4v30" stroke="#3F7D5A" stroke-width="4" stroke-linecap="round"/><path d="M18 28l12 13 12-13" fill="none" stroke="#3F7D5A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="fbox now">
+      <h4>③ 지금: NED, 그리고 매일 1%</h4>
+      <span class="small">다만 무엇이 얼마나 도움이 됐는지는 아무도 나눠서 말할 수 없습니다.</span>
+    </div>
+  </div>
+  <div class="voice shaira">
+    <div class="who">Shaira · 2026년, 항암이 무섭다는 Sophie에게</div>
+    <div class="say">“정말 동감해요. 그래도 항암은 제 치유에 결정적인 역할을 했어요. 하지만 그것 말고도 많은 면이 있었죠. 저는 분명히 그게 필요했어요. HER2 양성은 정말 공격적이니까요.”</div>
+    <div class="orig">Chemo did play a crucial role in my healing, but there were so many other facets to it too.</div>
+  </div>
+  <div class="voice shaira">
+    <div class="who">Shaira · 2026년, Luise에게</div>
+    <div class="say">“제가 하지 않은 게 있어요. 많은 분들처럼 보충제를 30가지 넘게 먹지는 않았어요. 제 몸이 절대 감당하지 못했을 거예요.”</div>
+  </div>
+</section>
+
+<section class="rv" id="s5">
+  <span class="sec-no">다섯 · 가장 많이 받은 질문</span>
+  <h2>“무슨 약을 드셨어요?”</h2>
+  <p>두 게시물에서 가장 많이 나온 질문입니다. 그녀는 어떻게 대답했을까요?</p>
+  <figure class="chart">
+    <svg viewBox="0 0 340 168" role="img" aria-labelledby="barT barD">
+      <title id="barT">프로토콜이나 약을 물어본 사람 수</title>
+      <desc id="barD">2023년 글에서 20명, 2026년 글에서 3명이 Shaira에게 무엇을 먹었는지, 프로토콜이 무엇인지 물었음.</desc>
+      <g font-family="Noto Sans KR">
+        <text x="0" y="22" font-size="14" font-weight="700" fill="#2B2620">2023년 11월 글</text>
+        <rect x="0" y="32" width="260" height="34" rx="8" fill="#7A4C8C"/>
+        <text x="268" y="56" font-size="18" font-weight="700" fill="#7A4C8C">20명</text>
+        <text x="0" y="104" font-size="14" font-weight="700" fill="#2B2620">2026년 10월 글</text>
+        <rect x="0" y="114" width="39" height="34" rx="8" fill="#7A4C8C" opacity=".75"/>
+        <text x="52" y="138" font-size="18" font-weight="700" fill="#7A4C8C">3명</text>
+        <text x="96" y="138" font-size="12" fill="#5C5348">(+ 어떤 책인지 물은 1명)</text>
+      </g>
+    </svg>
+    <figcaption>“프로토콜을 알려주세요”, “무엇을 드시나요?”, “어떤 치료를 했나요?”처럼 그녀가 한 일을 직접 물은 사람만 셌습니다(개인 메시지 요청만 한 경우 제외). 2026년 글은 댓글 수 자체가 적었습니다(43개 vs 251개).</figcaption>
+  </figure>
+
+  <h3>그녀의 대답은 두 층으로 나뉩니다</h3>
+  <div class="disc">
+    <div class="col open">
+      <div class="big">4개</div>
+      <b>숨김없이 밝힌 것 — 병원 치료 약</b>
+      <p class="small" style="margin:6px 0 0">탁소텔 · 엔허투 · 허셉틴 · 퍼제타. 부작용(혈전, 폐·심장 손상, 지금도 남은 후유증)까지 자세히 말했습니다.</p>
+    </div>
+    <div class="col closed">
+      <div class="big">0개</div>
+      <b>끝내 밝히지 않은 것 — 용도변경 약·보충제 이름</b>
+      <p class="small" style="margin:6px 0 0">어떤 약이나 보충제를, 얼마나 먹었는지는 단 하나도 공개적으로 적지 않았습니다.</p>
+    </div>
+  </div>
+  <h3>왜 밝히지 않았는지, 그녀가 한 말</h3>
+  <ul class="offers">
+    <li><b>“책에 다 있어요.”</b> — “제가 하는 건 책 내용과 다르지 않을 거예요.”</li>
+    <li><b>“COC와 상담했어요.”</b> — “그곳의 권고도 책과 비슷했어요.”</li>
+    <li><b>“올릴 수 없어요.”</b> — 그룹 규칙상 개인 프로토콜을 올리는 것이 허용되지 않는다고 했습니다(2024년).</li>
+    <li><b>“저는 의사가 아니에요.”</b> — “누구에게도 무엇을 권할 수 없어요. 제 경험을 나눌 뿐이에요.”</li>
+    <li><b>“정리해 볼게요.”</b> — 2023년에 여러 번 약속했지만(“아이 둘 키우느라 정리를 못 했어요”), 공개적으로는 끝내 올라오지 않았습니다. 대신 많은 분께 개인 메시지로 답했습니다.</li>
+  </ul>
+  <div class="box-claude">
+    <span class="tag">AI 클로드 주석</span>
+    <p style="margin:0">그래서 우리는 Shaira의 “약 목록”을 따라 할 수 없습니다. 그것은 아쉬움이기도 하지만, 어쩌면 다행이기도 합니다. 그녀의 몸과 우리의 몸은 다르기 때문입니다. 이 사례에서 우리가 정말 가져갈 수 있는 것은 <b>목록이 아니라 방법</b>입니다. 어려운 책을 어떻게 읽었고, 무엇을 들고 의사를 찾아갔고, 하루를 어떻게 버텼는지. 다음 장이 바로 그 이야기입니다.</p>
+  </div>
+</section>
+
+<section class="rv" id="s6">
+  <span class="sec-no">여섯 · 그녀의 진짜 비결</span>
+  <h2>어려운 책을 읽은 방법</h2>
+  <p>Maria의 질문에 Shaira가 남긴 답은 이 사례에서 <b>가장 실용적인 선물</b>입니다.</p>
+  <figure class="chart">
+    <svg viewBox="0 0 340 220" role="img" aria-labelledby="tabT tabD">
+      <title id="tabT">세 가지 색 포스트잇 탭</title>
+      <desc id="tabD">빨강은 나와 관련 있는 것, 보라는 희망을 주는 것, 초록은 더 공부할 것. 책 옆에 세 색 탭이 붙어 있음.</desc>
+      <rect x="40" y="30" width="190" height="170" rx="10" fill="#F4ECDF" stroke="#B9A98F" stroke-width="2"/>
+      <rect x="52" y="30" width="178" height="170" rx="6" fill="#FFFDF8" stroke="#D8CBB5" stroke-width="1.5"/>
+      <g stroke="#E3D7C4" stroke-width="3" stroke-linecap="round">
+        <line x1="70" y1="60" x2="200" y2="60"/><line x1="70" y1="78" x2="190" y2="78"/><line x1="70" y1="96" x2="205" y2="96"/>
+        <line x1="70" y1="124" x2="180" y2="124"/><line x1="70" y1="142" x2="200" y2="142"/><line x1="70" y1="160" x2="170" y2="160"/>
+      </g>
+      <rect x="225" y="48" width="34" height="24" rx="4" fill="#B5473A"/>
+      <rect x="225" y="98" width="34" height="24" rx="4" fill="#7A4C8C"/>
+      <rect x="225" y="148" width="34" height="24" rx="4" fill="#3F7D5A"/>
+      <g font-family="Noto Sans KR" font-size="13" font-weight="700">
+        <text x="266" y="65" fill="#B5473A">나와 관련</text>
+        <text x="266" y="115" fill="#7A4C8C">희망</text>
+        <text x="266" y="165" fill="#3F7D5A">더 공부</text>
+      </g>
+    </svg>
+  </figure>
+  <ol class="steps">
+    <li><b>세 가지 색으로 표시했습니다.</b> 빨강은 “나와 꼭 관련 있는 것”, 보라는 “희망을 주는 부분”, 초록은 “더 공부해야 할 것”.</li>
+    <li><b>여러 번 읽었습니다.</b> 항암 중에는 머리가 따라주지 않아, 끝난 뒤 다시 읽었습니다. 모두 세 번.</li>
+    <li><b>혼자 읽지 않았습니다.</b> 가족 한 사람이 함께 읽고, 둘이서 이야기를 나눴습니다.</li>
+    <li><b>내 암에 해당하는 장에 집중했습니다.</b> 전부를 하려 하지 않고, 자기 암과 관련된 부분만 깊이 팠습니다.</li>
+    <li><b>발췌한 부분을 들고 의사를 찾아갔습니다.</b> 듣지 않는 의사도 있었지만, 들어주는 의사에게 계속 가져갔습니다.</li>
+  </ol>
+  <div class="voice shaira">
+    <div class="who">Shaira · 2026년</div>
+    <div class="say">“그때 AI가 있었다면 매일 몇 시간은 아꼈을 거예요! 어떤 건 그냥 전문 용어를 풀어내는 데만 엄청난 시간이 걸렸거든요.”</div>
+  </div>
+  <div class="voice">
+    <div class="who">Suzanne · 같은 질문에 남긴 답</div>
+    <div class="say">“오디오북으로 듣고, 어려운 부분은 다시 들으며 메모했어요. 이해 안 되는 건 AI에게 설명해 달라고 했죠. <b>다만 AI도 틀릴 때가 있으니 꼭 확인해야 해요.</b>”</div>
+  </div>
+</section>
+
+<section class="rv" id="s7">
+  <span class="sec-no">일곱 · 그대로 따라 쓰세요</span>
+  <h2>이렇게 물어보세요</h2>
+  <p>아래 문장은 그대로 복사해서 쓰실 수 있습니다. AI는 <b>답을 정해주는 곳이 아니라, 의사에게 가져갈 질문을 다듬는 곳</b>입니다.</p>
+  <h3>AI에게</h3>
+  <div class="q"><span class="for">어려운 문단을 만났을 때</span>이 문단을 일흔 살 어르신도 이해할 수 있게 쉬운 말로 풀어 주세요. 어려운 단어는 따로 뜻을 적어 주세요.<br><button class="copy" type="button">문장 복사</button></div>
+  <div class="q"><span class="for">빨간 탭을 붙이기 전에</span>이 내용이 HER2 양성 유방암과 관련이 있나요? 근거가 사람을 대상으로 한 연구인지, 동물이나 세포 실험인지 구분해서 알려 주고, 출처도 함께 적어 주세요.<br><button class="copy" type="button">문장 복사</button></div>
+  <div class="q"><span class="for">치료 중 몸이 이상할 때</span>제가 맞는 항암제(예: 엔허투)의 부작용 중에서, 숨이 차거나 가슴이 아플 때 바로 병원에 알려야 하는 증상을 정리해 주세요.<br><button class="copy" type="button">문장 복사</button></div>
+  <h3>주치의에게</h3>
+  <div class="q"><span class="for">표시해 온 책을 보여드리며</span>책에서 제가 표시해 온 부분입니다. 지금 받는 치료와 함께 해도 괜찮은지, 피해야 할 것은 무엇인지 봐 주실 수 있을까요?<br><button class="copy" type="button">문장 복사</button></div>
+  <div class="q"><span class="for">검사 결과를 들었을 때</span>제 결과가 NED라는 건 정확히 무슨 뜻인가요? 앞으로 얼마 간격으로, 어떤 검사로 확인하나요?<br><button class="copy" type="button">문장 복사</button></div>
+  <div class="q"><span class="for">혈전을 겪은 적이 있다면 (Shaira처럼)</span>제가 혈전(폐색전증)을 겪은 적이 있는데, 지금 먹는 약이나 보충제 중에 피를 묽게 하거나 굳게 해서 겹치는 것이 있을까요?<br><button class="copy" type="button">문장 복사</button></div>
+  <div class="q"><span class="for">정체를 알 수 없는 혹이 있을 때</span>조직검사가 어렵다면, 큰 수술 말고 영상의학과 시술처럼 덜 힘든 확인 방법이 있을까요? 지켜보며 기다린다면 언제 다시 확인하나요?<br><button class="copy" type="button">문장 복사</button></div>
+  <p class="small">※ 마지막 질문은 2023년 댓글에서 Ien이 Shaira에게 “영상의학과 중재시술로 할 수 있는 건 없는지 물어보셨나요?”라고 제안한 데서 가져왔습니다. Shaira는 “물어보지 못했어요, 다음 진료 때 물어볼게요”라고 답했습니다.</p>
+</section>
+
+<section class="rv" id="s8">
+  <span class="sec-no">여덟 · 부담 없는 첫걸음</span>
+  <div class="try">
+    <h3>이것부터 해 보세요!</h3>
+    <ol class="steps">
+      <li><b>포스트잇 세 가지 색을 준비하세요.</b> 빨강·보라·초록. 지금 읽고 있는 책이나 자료에 오늘 딱 한 장만 붙여 보세요.</li>
+      <li><b>“오늘의 1%”를 한 줄 적어 보세요.</b> “계단을 한 층 더 올랐다”, “밥을 반 공기 더 먹었다”, “아이에게 책을 읽어줬다.” Shaira가 지금 다른 환우들과 하고 있는 것이 바로 이런 일기 쓰기입니다.</li>
+      <li><b>함께 읽을 한 사람을 정하세요.</b> 가족도 좋고, 우리 카페 회원도 좋습니다. Shaira도 혼자 읽지 않았습니다.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="rv" id="s9">
+  <span class="sec-no">아홉 · 댓글 속 다른 목소리들</span>
+  <h2>모두가 같은 길을 걷지는 않았습니다</h2>
+  <p>Shaira의 글 아래에는 다양한 경험이 함께 달렸습니다. 좋은 소식만 보면 길이 하나처럼 보이지만, 실제로는 그렇지 않습니다.</p>
+  <div class="voice"><div class="who">Arbo · 4기 HER2 양성 · 2023년</div><div class="say">“2년 전 4기 HER2였어요. 3주마다 캐싸일라(Kadcyla)를 맞으며 제인의 원칙과 보충제를 함께 했고, 18개월째 NED예요. 처음 진단받았을 때 아이들이 여섯 살, 아홉 살이었어요.”</div></div>
+  <div class="voice"><div class="who">Claudia · HER2 양성 폐 전이 · 2023년</div><div class="say">“항암이 듣지 않았어요(엔허투도요). 캐싸일라는 부작용은 없었지만 그동안 종양이 빠르게 자랐어요. 퀘르세틴도 효과가 없었고요. 정말 많은 걸 해 봤는데, 아무것도 듣지 않았어요.”</div></div>
+  <div class="voice"><div class="who">Marie · 전이성 HER2 양성 · 2023년</div><div class="say">“12년 동안 항암을 했고, 몇 년 NED였다가 항암을 그만뒀어요. 지금은 아무것도 안 하는데 뭘 해야 할지 모르겠어요. 캐나다에서는 이런 약을 처방해 줄 의사를 찾기 어려워요.”</div></div>
+  <div class="voice"><div class="who">Meghan · HER2 · 2026년</div><div class="say">“저는 항암과 방사선 없이 허셉틴만 하고 나머지는 자연요법으로 했어요. 제인의 지식 덕이 크다고 생각해요.”</div></div>
+  <div class="voice"><div class="who">Sophie · HER2 양성 · 2026년</div><div class="say">“표준치료가 너무 무서워요. 그런데 HER2 양성에서 그것 없이 성공한 이야기는 별로 못 봤어요. 항암을 시작하기 전에 식단, 운동, 보충제로 변화가 있길 바라고 있어요.”</div></div>
+  <div class="voice"><div class="who">Sarah 3rd · 4기 췌장암 · 2026년</div><div class="say">“진행을 멈출 수 있는 게 있을지 모르겠지만, 손가락 꼬고 기도하고 있어요.”</div></div>
+  <div class="box-claude">
+    <span class="tag">AI 클로드 주석</span>
+    <p>2023년 Shaira의 글에는 반응이 616개, 댓글이 251개 달렸습니다. 좋은 소식은 이렇게 멀리 퍼집니다. 반대로 Claudia처럼 “아무것도 듣지 않았다”는 이야기는 조용히 묻히기 쉽고, 좋지 않게 된 분들은 글을 남기지 못하기도 합니다.</p>
+    <p style="margin:0">그래서 커뮤니티에서 성공 사례만 모아 보면 <b>실제보다 가능성이 커 보이는 착시</b>가 생깁니다(전문용어로 ‘생존자 편향’). Shaira의 이야기는 희망의 근거가 되지만, “나도 똑같이 될 것”이라는 약속은 아닙니다. 두 가지를 함께 마음에 두시길 바랍니다.</p>
+  </div>
+</section>
+
+<section class="rv" id="s10">
+  <span class="sec-no">열 · 댓글에 오간 권유들</span>
+  <h2>이런 권유들도 있었습니다</h2>
+  <p>댓글에서는 다른 회원들이 Shaira에게, 또는 서로에게 여러 가지를 권했습니다. 원문에 있는 그대로 옮깁니다. <b>Shaira가 이것들을 썼다는 뜻은 아닙니다.</b> 그녀는 대부분 “고맙다”고만 답했습니다.</p>
+  <ul class="offers">
+    <li><b>Nickii</b> — 흑종초 오일 Black seed oil(먹기, 두피에 바르기), 멜라토닌 Melatonin, 비타민 D·K2·K3, 살구씨 Apricot kernels</li>
+    <li><b>Temple</b> — 에시악 차 Essiac tea, 거슨 요법 Gerson therapy, 식물성 식단</li>
+    <li><b>Sarah 2nd</b> — 아르테미시닌 Artemisinin (관련 웹페이지 링크)</li>
+    <li><b>Darling</b> — 펜벤다졸 Fenbendazole, 이버멕틴 Ivermectin, 단식, 깨끗한 물</li>
+    <li><b>Arbo</b> — 퀘르세틴 Quercetin, 알로에 베라 Aloe vera (“HER2에 좋다고 들었다”)</li>
+    <li><b>Loretta</b> — 자신은 제인의 프로토콜에서 베르베린 Berberine과 저용량 아스피린 Aspirin을 매일 먹는다고 밝힘. 이에 Alison은 같은 조합을 먹다가 간 수치(ALT)가 올라 중단하라는 말을 들었다고 답함</li>
+    <li><b>Jill</b> — 자궁경부암 4기로 항암 6회·키트루다 Keytruda 8회와 함께 겨우살이 Mistletoe 피하주사, 적외선 찜질·사우나, 생꿀, 살구씨를 했다고 자기 경험을 공유</li>
+  </ul>
+  <p class="small">Darling의 권유에 Shaira는 “저는 의사가 아니라 권하지는 않지만, 장 쪽 덩어리와 관련해 이버멕틴 같은 구충제 계열에 대해 읽어본 적은 있다”고 답했습니다.</p>
+</section>
+
+<section class="rv" id="s11">
+  <span class="sec-no">열하나 · 함께 생각해 볼 점</span>
+  <div class="box-claude">
+    <span class="tag">AI 클로드 주석</span>
+    <h3 style="margin-top:4px">3년 사이, 이야기의 무게중심이 조금 달라졌습니다</h3>
+    <p>같은 사람의 글이라도 시간이 지나면 강조점이 바뀝니다. 이것은 거짓말이 아니라, 사람이 자기 경험을 다시 이해해 가는 자연스러운 과정입니다. 다만 읽는 우리는 알아둘 필요가 있습니다.</p>
+    <table class="cmp">
+      <thead><tr><th>무엇에 대해</th><th>2023년 글</th><th>2026년 글</th></tr></thead>
+      <tbody>
+        <tr><td>무엇 덕분인가</td><td>“당신의 프로토콜 덕분에 NED”</td><td>“항암이 결정적 역할을 했다. 책도 내 치유에 한몫했다”</td></tr>
+        <tr><td>병원 치료에 대한 마음</td><td>“독한 약에 매이지 않아도 될지 모른다는 희망”</td><td>“서양의학은 부분적으로만 믿는다”면서도 “항암은 분명히 필요했다”</td></tr>
+        <tr><td>허셉틴·퍼제타</td><td>지금은 쉬는 중, “의사가 권하면 바로 다시 하겠다”</td><td>“더 오래 계속했다” (언제까지인지는 밝히지 않음)</td></tr>
+        <tr><td>장 바깥 덩어리</td><td>정체 모름, 수술 보류, 다음 검사 대기</td><td><b>언급 없음</b> — 어떻게 됐는지 알 수 없습니다</td></tr>
+        <tr><td>지금 상태</td><td>NED</td><td>NED, 그러나 “완치되는 병은 아니다”</td></tr>
+      </tbody>
+    </table>
+    <p style="margin:12px 0 0">2026년 글에서 그녀는 같은 날 “정해진 길이 통하지 않아서 다른 방법을 찾아야 했다”고도 하고, “항암이 결정적이었다”고도 했습니다. 여기서 ‘통하지 않은 길’이 무엇을 가리키는지는 글만으로는 알 수 없습니다. 이런 부분은 짐작으로 채우지 않고 <b>모르는 채로 두는 것</b>이 정직한 읽기입니다.</p>
+  </div>
+</section>
+
+<section class="rv" id="s12">
+  <div class="safety">
+    <h2>꼭 기억해 주세요</h2>
+    <ul style="padding-left:1.2em;margin:0">
+      <li>약을 시작하거나, 함께 쓰거나, 끊는 <b>최종 결정은 반드시 주치의</b>와 함께 하셔야 합니다.</li>
+      <li>이 글에 나온 약과 보충제 이름은 <b>원문에 있는 것을 옮긴 예시</b>일 뿐, 권하는 것이 아닙니다.</li>
+      <li>Shaira는 끝까지 “저는 의사가 아니에요, 제 경험을 나눌 뿐이에요”라고 했습니다. 우리도 그 마음으로 읽습니다.</li>
+      <li>AI는 결정을 내려주는 곳이 아니라, <b>더 좋은 질문을 준비하는 도구</b>입니다. 그리고 AI도 틀릴 수 있습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="ending rv">
+  <p class="line">100%가 아니어도 괜찮습니다.<br>오늘, 1%만.</p>
+  <p class="small">원리를 알고 → 가능성을 이해하고 → 근거 위에서 시도하자.</p>
+</div>
+
+<div class="sources">
+  <b>원문과 참고</b><br>
+  · Shaira, 2026년 10월 21일 게시물: <a href="https://www.facebook.com/groups/off.label.drugsforcancer/permalink/28876287892054919/">facebook.com/groups/off.label.drugsforcancer/…/28876287892054919</a> (반응 272, 댓글 43)<br>
+  · Shaira, 2023년 11월 10일 게시물: <a href="https://www.facebook.com/groups/off.label.drugsforcancer/permalink/6494060094037685/">facebook.com/groups/off.label.drugsforcancer/…/6494060094037685</a> (반응 616, 댓글 251)<br>
+  · 제인 맥클렐런드 공식 사이트: <a href="https://www.howtostarvecancer.com/">howtostarvecancer.com</a><br>
+  · 이 글은 원 저자의 이야기를 쓰인 그대로 전하는 것이 목적입니다. 「AI 클로드 주석」 상자는 편집자(AI)의 해석이며 원문이 아닙니다.<br>
+  · 제작: 히포크라테스의 친구들 · 해외 사례 분석집 · 2026년 10월 24일
+</div>
+
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    document.documentElement.classList.add('js');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  }
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var q=b.parentNode.cloneNode(true); q.querySelectorAll('.for,.copy').forEach(function(n){n.remove();});
+      var t=q.textContent.trim();
+      var done=function(){var o=b.textContent;b.textContent='복사됐어요 ✓';setTimeout(function(){b.textContent=o;},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}ta.remove();}
+    });
+  });
+})();
+</script>
+</body>
+</html>

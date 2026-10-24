@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shaira 사례 — 기여도를 분리할 수 없는 회복을 읽는 법 (전문가용)</title>
+<meta name="description" content="4기 HER2 양성 유방암 환자 Shaira의 2023·2026 게시물과 댓글 289개를 방법론 관점에서 재구성한 해외 사례 분석 · 전문가용">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D1117; --bg2:#121822; --card:#161D29; --card2:#1B2433; --line:#2A3446; --ink:#DCE3EE; --ink2:#9AA6B8; --ink3:#6E7A8E;
+  --mech:#3EC6E0; --mech-bg:rgba(62,198,224,.10);
+  --evid:#F2B33D; --evid-bg:rgba(242,179,61,.10);
+  --tool:#A78BFA; --tool-bg:rgba(167,139,250,.11);
+  --lim:#FB7185;  --lim-bg:rgba(251,113,133,.10);
+  --pt:#5EE0A0;   --pt-bg:rgba(94,224,160,.09);
+  --claude:#8FA8E8; --claude-bg:rgba(143,168,232,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:16.5px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.4}
+h2{font-size:1.45rem;margin:0 0 .7em}
+h3{font-size:1.1rem;margin:1.6em 0 .5em}
+p{margin:0 0 1em}
+a{color:var(--mech)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--evid);outline-offset:3px;border-radius:3px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.idx{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--ink3);letter-spacing:.12em;display:block;margin-bottom:8px}
+.en{color:var(--ink2);font-size:.88em}
+small,.small{font-size:.86rem;color:var(--ink2)}
+.c-mech{color:var(--mech)} .c-evid{color:var(--evid)} .c-tool{color:var(--tool)} .c-lim{color:var(--lim)} .c-pt{color:var(--pt)}
+
+header.top{padding:46px 0 30px;border-bottom:1px solid var(--line);background:radial-gradient(900px 300px at 15% 0%,rgba(62,198,224,.08),transparent 60%),radial-gradient(700px 260px at 90% 10%,rgba(167,139,250,.08),transparent 60%)}
+.tagline{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--ink2);letter-spacing:.08em}
+header h1{font-size:1.85rem;margin:12px 0 8px;font-weight:900}
+header .sub{color:var(--ink2)}
+.legendbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.lg{font-family:"JetBrains Mono",monospace;font-size:.74rem;border:1px solid;border-radius:6px;padding:2px 8px}
+.lg.m{color:var(--mech);border-color:rgba(62,198,224,.45)} .lg.e{color:var(--evid);border-color:rgba(242,179,61,.45)}
+.lg.t{color:var(--tool);border-color:rgba(167,139,250,.45)} .lg.l{color:var(--lim);border-color:rgba(251,113,133,.45)}
+.lg.p{color:var(--pt);border-color:rgba(94,224,160,.4)}
+
+.thesis{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--evid);border-radius:10px;padding:18px 20px}
+.thesis .lab{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--evid);letter-spacing:.12em}
+.thesis p{font-family:"Noto Serif KR",serif;font-size:1.14rem;margin:6px 0 0;line-height:1.75}
+
+.quote{margin:22px 0 0;padding:14px 18px;border-radius:10px;background:var(--pt-bg);border:1px solid rgba(94,224,160,.25)}
+.quote .en2{font-style:italic;color:var(--ink2);font-size:.95rem}
+.quote .ko{font-family:"Noto Serif KR",serif;font-size:1.05rem;margin-top:6px}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.box-mech{background:var(--mech-bg);border:1px solid rgba(62,198,224,.3);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box-evid{background:var(--evid-bg);border:1px solid rgba(242,179,61,.3);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box-tool{background:var(--tool-bg);border:1px solid rgba(167,139,250,.3);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box-lim{background:var(--lim-bg);border:1px solid rgba(251,113,133,.3);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box-claude{background:var(--claude-bg);border:1px solid rgba(143,168,232,.35);border-radius:10px;padding:16px 18px;margin:18px 0}
+.box-claude .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.72rem;color:#0D1117;background:var(--claude);border-radius:4px;padding:1px 8px;margin-bottom:8px;font-weight:600}
+.box-label{font-family:"JetBrains Mono",monospace;font-size:.74rem;letter-spacing:.1em;display:block;margin-bottom:6px}
+
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.06em;color:var(--ink2);background:var(--bg2);font-weight:600}
+tr:last-child td{border-bottom:0}
+td .pill{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.7rem;border-radius:4px;padding:0 6px;margin-right:4px}
+.pill.ok{background:rgba(94,224,160,.15);color:var(--pt)} .pill.no{background:rgba(251,113,133,.15);color:var(--lim)} .pill.uk{background:rgba(242,179,61,.15);color:var(--evid)}
+
+figure{margin:20px 0}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.fig svg{width:100%;height:auto;display:block}
+figcaption{font-size:.84rem;color:var(--ink2);margin-top:8px}
+
+.paradigm{display:grid;grid-template-columns:1fr;gap:12px}
+.paradigm .col{border-radius:10px;padding:14px 16px;border:1px solid var(--line);background:var(--card)}
+.paradigm .old{border-top:3px solid var(--ink3)} .paradigm .new{border-top:3px solid var(--evid)}
+.paradigm h4{margin:0 0 6px;font-size:.95rem;font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
+.paradigm ul{margin:0;padding-left:1.1em}
+
+/* workflow rail */
+.rail{list-style:none;margin:20px 0 0;padding:0;position:relative}
+.rail:before{content:"";position:absolute;left:17px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--mech),var(--tool) 40%,var(--evid) 75%,var(--pt))}
+.rail>li{position:relative;padding:0 0 30px 52px}
+.rail>li:last-child{padding-bottom:0}
+.rail .n{position:absolute;left:0;top:0;width:36px;height:36px;border-radius:8px;background:var(--card2);border:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.rail h3{margin:4px 0 6px;font-size:1.05rem}
+.rail .core{border-color:var(--evid);color:var(--evid)}
+.prompt{background:#0A0E14;border:1px solid var(--line);border-left:3px solid var(--tool);border-radius:8px;padding:12px 14px;font-family:"JetBrains Mono",monospace;font-size:.8rem;line-height:1.7;color:#C9D3E3;white-space:pre-wrap;margin:10px 0;overflow-wrap:anywhere}
+.prompt .k{color:var(--lim)} .prompt .g{color:var(--evid)} .prompt .s{color:var(--mech)}
+.gate{display:flex;gap:10px;align-items:flex-start;background:var(--evid-bg);border:1px dashed rgba(242,179,61,.5);border-radius:8px;padding:8px 12px;font-size:.86rem}
+.gate b{font-family:"JetBrains Mono",monospace;color:var(--evid);font-size:.74rem;flex:0 0 auto;margin-top:2px}
+.slot{border:1px dashed var(--pt);border-radius:8px;padding:10px 14px;background:var(--pt-bg);font-size:.88rem;margin:10px 0}
+.slot code{font-family:"JetBrains Mono",monospace;color:var(--pt);font-size:.8rem}
+
+.grade td:first-child{font-family:"JetBrains Mono",monospace;font-weight:600;width:52px}
+.gA{color:var(--pt)} .gB{color:var(--mech)} .gC{color:var(--evid)} .gD{color:var(--lim)}
+
+.offers{list-style:none;padding:0;margin:10px 0}
+.offers li{padding:8px 0;border-bottom:1px dotted var(--line);font-size:.92rem}
+.offers li:last-child{border-bottom:0}
+.limits{list-style:none;padding:0;margin:0}
+.limits li{position:relative;padding:8px 0 8px 26px;border-bottom:1px solid var(--line)}
+.limits li:before{content:"×";position:absolute;left:4px;top:6px;color:var(--lim);font-family:"JetBrains Mono",monospace;font-weight:600}
+.limits li:last-child{border-bottom:0}
+
+.closing{padding:54px 0 30px;text-align:center}
+.closing p{font-family:"Noto Serif KR",serif;font-size:1.2rem;line-height:1.8}
+.sources{font-size:.82rem;color:var(--ink2);padding:24px 0 60px}
+.sources ol{padding-left:1.3em}
+.sources a{word-break:break-all}
+
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js .rv{opacity:1;transform:none;transition:none}}
+@media print{
+  @page{size:A4;margin:14mm 13mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  :root{
+    --bg:#fff; --bg2:#F1F3F6; --card:#fff; --card2:#F4F6F9; --line:#C9D0DA; --ink:#14181F; --ink2:#47505E; --ink3:#5E6878;
+    --mech:#0E7490; --mech-bg:#E6F4F8; --evid:#A35A00; --evid-bg:#FDF3E3; --tool:#5B32B4; --tool-bg:#F1ECFB;
+    --lim:#B4233F; --lim-bg:#FCEBEE; --pt:#17803D; --pt-bg:#E9F6EE; --claude:#344E8C; --claude-bg:#ECF0F8;
+  }
+  html,body{background:#fff;color:var(--ink)}
+  body{font-size:11pt;line-height:1.65}
+  .wrap{max-width:none;padding:0}
+  header.top{background:#fff;padding:0 0 14px}
+  section{padding:18px 0}
+  .js .rv,.rv{opacity:1!important;transform:none!important}
+  .card,.box-mech,.box-evid,.box-tool,.box-lim,.box-claude,.fig,.thesis,.quote,.paradigm .col,.rail>li,.prompt,.gate,.slot,tr,figure{break-inside:avoid;page-break-inside:avoid}
+  h2,h3{break-after:avoid;page-break-after:avoid}
+  .tbl-wrap{overflow:visible}
+  .fig svg{max-height:150mm;width:auto;max-width:100%;margin:0 auto}
+  table{min-width:0}
+  .prompt{background:#F4F6F9;color:#1E2530;border-left-color:var(--tool)}
+  .box-claude .tag{color:#fff}
+  a{color:var(--ink);text-decoration:underline}
+  .lg.m{border-color:var(--mech)} .lg.e{border-color:var(--evid)} .lg.t{border-color:var(--tool)} .lg.l{border-color:var(--lim)} .lg.p{border-color:var(--pt)}
+  /* SVG: light-on-dark colors remapped for paper */
+  .fig svg [fill="#DCE3EE"]{fill:#14181F}
+  .fig svg [fill="#9AA6B8"]{fill:#47505E}
+  .fig svg [fill="#6E7A8E"]{fill:#5E6878}
+  .fig svg [fill="#1B2433"]{fill:#F4F6F9}
+  .fig svg [stroke="#DCE3EE"]{stroke:#14181F}
+  .fig svg [stroke="#2A3446"]{stroke:#C9D0DA}
+  .fig svg [stroke="#9AA6B8"]{stroke:#47505E}
+  .fig svg [fill="#3EC6E0"]{fill:#0E7490} .fig svg [stroke="#3EC6E0"]{stroke:#0E7490}
+  .fig svg [fill="#F2B33D"]{fill:#A35A00} .fig svg [stroke="#F2B33D"]{stroke:#A35A00}
+  .fig svg [fill="#A78BFA"]{fill:#5B32B4} .fig svg [stroke="#A78BFA"]{stroke:#5B32B4}
+  .fig svg [fill="#FB7185"]{fill:#B4233F} .fig svg [stroke="#FB7185"]{stroke:#B4233F}
+  .fig svg [fill="#5EE0A0"]{fill:#17803D} .fig svg [stroke="#5EE0A0"]{stroke:#17803D}
+  .fig svg marker path[fill="#9AA6B8"]{fill:#47505E}
+}
+@media (min-width:700px){
+  body{font-size:17px}
+  header h1{font-size:2.2rem}
+  .paradigm{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="tagline">해외 사례 분석집 · REGISTER B · METHODOLOGY · 2026-10-24</div>
+    <h1>기여도를 분리할 수 없는 회복을<br>어떻게 읽을 것인가</h1>
+    <div class="sub">Shaira — de novo 4기 HER2 양성 유방암 · 임신 34주 진단 · 2023/2026 게시물 2편 + 댓글 289개</div>
+    <div class="legendbar" aria-label="색 코딩 범례">
+      <span class="lg m">■ 기전</span><span class="lg e">■ 근거</span><span class="lg t">■ 도구</span><span class="lg l">■ 한계·경계</span><span class="lg p">■ 환자 서사</span>
+    </div>
+    <div class="thesis">
+      <div class="lab">THESIS</div>
+      <p>이 사례의 정보 가치는 “무엇이 효과였나”에 있지 않다. 표준치료와 보완 시도가 시간상 완전히 겹치고 보완 목록은 공개되지 않았으므로 <span class="c-evid">기여도 분리는 원리적으로 불가능</span>하다. 남는 가치는 <span class="c-pt">정보 비대칭 속에서 한 환자가 판단 구조를 세운 방식</span>, 그리고 그 서사를 우리가 <span class="c-lim">편향을 통제하며 읽는 방식</span>이다.</p>
+    </div>
+    <div class="quote">
+      <div class="en2">“…although I am not yet 100% strong in mind or body, I am striving to become just 1% better every day.”</div>
+      <div class="ko">“몸도 마음도 아직 100%는 아니지만, 매일 1%씩 나아지려 애쓰고 있다.” — Shaira, 2026-10-21</div>
+    </div>
+    <p class="small" style="margin-top:16px">소스 그룹 「Jane McLelland Off Label Drugs for Cancer」는 Jane McLelland의 『How to Starve Cancer』(2판 『…and Then Kill It with Ferroptosis』) 독자 모임이다. 모든 인물명은 성을 제거했고, 동명이인은 2nd/3rd로 표기했다.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="rv">
+  <span class="idx">§01 · CASE ABSTRACTION</span>
+  <h2>변수로 다시 쓴 사례</h2>
+  <p>서사를 분석 가능한 단위로 쪼갠다. 원문에서 확인되는 것과 확인되지 않는 것을 같은 무게로 기록하는 것이 출발점이다.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>변수</th><th>원문에서 확인</th><th>상태</th></tr></thead>
+    <tbody>
+      <tr><td>아형</td><td>HER2 양성. HR(ER/PR) 상태는 언급 없음</td><td><span class="pill uk">부분</span></td></tr>
+      <tr><td>병기·전이</td><td>de novo 4기. 유방·폐·림프절(“폐와 림프절은 절제하지 않았다”)</td><td><span class="pill ok">확인</span></td></tr>
+      <tr><td>특수 맥락</td><td>임신 34주 진단 → 제왕절개 → 양측 유방절제</td><td><span class="pill ok">확인</span></td></tr>
+      <tr><td>전신치료</td><td>docetaxel(Taxotere) → T-DXd(Enhertu) 2회 → trastuzumab+pertuzumab 약 1년</td><td><span class="pill uk">순서·날짜 일부</span></td></tr>
+      <tr><td>독성 사건</td><td>T-DXd 중 흉통 → 폐색전증(PE), 이후 “여러 차례 혈전”. 폐·심장 손상 언급. 5년 뒤까지 잔존 후유증</td><td><span class="pill ok">확인</span></td></tr>
+      <tr><td>보완 시도</td><td>책(3회 정독), COC 상담, TCM·침·기공·아유르베다, 간헐적 단식, 명상, 차, 식단, 운동. “30종 이상 보충제는 안 함”</td><td><span class="pill uk">범주만</span></td></tr>
+      <tr><td>보완 약·보충제 목록</td><td>공개 기록 없음</td><td><span class="pill no">비공개</span></td></tr>
+      <tr><td>결과 지표</td><td>2022-11 항암 종료 · 2023-11 “매 스캔 NED” · 2026-10 NED, “not curable”</td><td><span class="pill ok">자기보고</span></td></tr>
+      <tr><td>미해결</td><td>2023년 장 외측 종괴(GIST 감별, 생검 불가, 수술 보류) — 2026년 글에 후속 없음</td><td><span class="pill no">결측</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="rv">
+  <span class="idx">§02 · TEMPORAL STRUCTURE</span>
+  <h2>왜 기여도를 나눌 수 없는가 — 시간축의 겹침</h2>
+  <p>표준치료 레인과 보완 레인을 같은 시간축에 놓으면 문제가 바로 보인다. 그녀가 “프로토콜 시작 한 달 만에 호전을 봤다”고 한 시점은 항HER2 치료가 진행 중이던 구간과 겹친다.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 340 540" role="img" aria-labelledby="ganttT ganttD">
+      <title id="ganttT">치료 레인 겹침 다이어그램</title>
+      <desc id="ganttD">세로축은 2021년부터 2026년. 표준치료, 보완 시도, 상태의 세 레인. 2021년 후반부터 2022년 11월까지 표준치료와 보완 시도가 겹치는 구간이 기여도 분리 불가 구간으로 표시됨.</desc>
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#F2B33D" stroke-width="2" opacity=".55"/></pattern>
+      </defs>
+      <g font-family="JetBrains Mono" font-size="10" fill="#9AA6B8">
+        <text x="70" y="18">표준치료</text><text x="158" y="18">보완 시도</text><text x="252" y="18">상태</text>
+      </g>
+      <g stroke="#2A3446" stroke-width="1">
+        <line x1="44" y1="40" x2="335" y2="40"/><line x1="44" y1="120" x2="335" y2="120"/><line x1="44" y1="200" x2="335" y2="200"/>
+        <line x1="44" y1="280" x2="335" y2="280"/><line x1="44" y1="360" x2="335" y2="360"/><line x1="44" y1="440" x2="335" y2="440"/>
+      </g>
+      <g font-family="JetBrains Mono" font-size="11" fill="#6E7A8E">
+        <text x="4" y="44">2021</text><text x="4" y="124">2022</text><text x="4" y="204">2023</text><text x="4" y="284">2024</text><text x="4" y="364">2025</text><text x="4" y="444">2026</text>
+      </g>
+      <!-- overlap band -->
+      <rect x="44" y="104" width="291" height="84" fill="url(#hatch)" opacity=".55"/>
+      <text x="190" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#F2B33D">기여도 분리 불가 구간</text>
+      <!-- standard lane (estimated dashed) -->
+      <rect x="60" y="44" width="76" height="30" rx="5" fill="rgba(62,198,224,.18)" stroke="#3EC6E0" stroke-dasharray="4 3"/>
+      <text x="98" y="63" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#DCE3EE">docetaxel</text>
+      <rect x="60" y="78" width="76" height="16" rx="4" fill="rgba(251,113,133,.25)" stroke="#FB7185" stroke-dasharray="4 3"/>
+      <text x="98" y="90" text-anchor="middle" font-family="Noto Sans KR" font-size="9.5" fill="#FB7185">T-DXd ×2 → PE</text>
+      <rect x="60" y="108" width="76" height="80" rx="5" fill="rgba(62,198,224,.18)" stroke="#3EC6E0" stroke-dasharray="4 3"/>
+      <text x="98" y="146" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#DCE3EE">trastuzumab</text>
+      <text x="98" y="160" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#DCE3EE">+ pertuzumab</text>
+      <text x="98" y="174" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#9AA6B8">~1년</text>
+      <!-- comp lane -->
+      <rect x="150" y="104" width="76" height="370" rx="5" fill="rgba(94,224,160,.10)" stroke="#5EE0A0"/>
+      <path d="M188 474 l-8 -10 h16 z" fill="#5EE0A0"/>
+      <g font-family="Noto Sans KR" font-size="10" fill="#DCE3EE" text-anchor="middle">
+        <text x="188" y="124">책 정독</text><text x="188" y="138">COC 상담</text><text x="188" y="152">식단·운동</text><text x="188" y="166">TCM·침</text>
+        <text x="188" y="300" fill="#9AA6B8">“아유르베다”</text><text x="188" y="313" fill="#9AA6B8" font-size="9">(2024 언급)</text>
+        <text x="188" y="448" fill="#9AA6B8">“TCM·기공”</text><text x="188" y="461" fill="#9AA6B8" font-size="9">(2026 언급)</text>
+      </g>
+      <!-- status lane -->
+      <g font-family="Noto Sans KR" font-size="10">
+        <circle cx="250" cy="48" r="5" fill="#FB7185"/><text x="260" y="52" fill="#DCE3EE">진단 (추정)</text>
+        <circle cx="250" cy="188" r="5" fill="#3EC6E0"/><text x="260" y="192" fill="#DCE3EE">항암 종료</text><text x="260" y="204" fill="#6E7A8E" font-size="9" font-family="JetBrains Mono">2022-11</text>
+        <circle cx="250" cy="268" r="5" fill="#5EE0A0"/><text x="260" y="266" fill="#DCE3EE">NED</text><text x="260" y="279" fill="#F2B33D" font-size="9.5">+ 장 외측 종괴?</text>
+        <circle cx="250" cy="506" r="5" fill="#5EE0A0"/><text x="260" y="504" fill="#DCE3EE">NED</text><text x="260" y="517" fill="#FB7185" font-size="9.5">“not curable”</text>
+        <text x="260" y="530" fill="#6E7A8E" font-size="9" font-family="JetBrains Mono">2026-10</text>
+      </g>
+      <line x1="250" y1="285" x2="250" y2="498" stroke="#F2B33D" stroke-dasharray="2 4"/>
+      <text x="246" y="400" text-anchor="end" font-family="Noto Sans KR" font-size="9" fill="#F2B33D" transform="rotate(-90 246 400)">종괴 후속 결측</text>
+    </svg>
+    <figcaption>점선 테두리 = 원문에 날짜가 없어 추정 배치. 2026년 글의 “5년이 지난 지금도”에서 진단을 약 2021년으로 역산했다. H+P 종료 시점은 “2022-11 항암 종료”와 2023년 “지금은 H+P를 쓰지 않는다”는 답글로부터 추정.</figcaption>
+  </figure>
+  <h3>교란 구조</h3>
+  <figure class="fig">
+    <svg viewBox="0 0 340 300" role="img" aria-labelledby="dagT dagD">
+      <title id="dagT">교란 구조 다이어그램</title>
+      <desc id="dagD">환자 특성이 표준치료 순응과 보완 시도 모두에 영향을 주고, 둘 다 결과에 영향을 줌. 결과는 게시와 반응이라는 가시성 필터를 거쳐서만 관찰됨.</desc>
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9AA6B8"/></marker>
+      <marker id="arL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FB7185"/></marker></defs>
+      <rect x="85" y="8" width="170" height="44" rx="8" fill="rgba(94,224,160,.10)" stroke="#5EE0A0"/>
+      <text x="170" y="27" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#DCE3EE">환자 특성</text>
+      <text x="170" y="43" text-anchor="middle" font-family="Noto Sans KR" font-size="9.5" fill="#9AA6B8">젊은 나이·의지·가족 지원·자원</text>
+      <rect x="8" y="104" width="130" height="44" rx="8" fill="rgba(62,198,224,.10)" stroke="#3EC6E0"/>
+      <text x="73" y="123" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#DCE3EE">항HER2 표준치료</text>
+      <text x="73" y="139" text-anchor="middle" font-family="Noto Sans KR" font-size="9.5" fill="#9AA6B8">순응·지속 기간</text>
+      <rect x="202" y="104" width="130" height="44" rx="8" fill="rgba(94,224,160,.08)" stroke="#5EE0A0" stroke-dasharray="4 3"/>
+      <text x="267" y="123" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#DCE3EE">보완 시도</text>
+      <text x="267" y="139" text-anchor="middle" font-family="Noto Sans KR" font-size="9.5" fill="#9AA6B8">구성 비공개</text>
+      <rect x="105" y="190" width="130" height="36" rx="8" fill="#1B2433" stroke="#DCE3EE"/>
+      <text x="170" y="213" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#DCE3EE">실제 결과</text>
+      <rect x="65" y="252" width="210" height="40" rx="8" fill="rgba(251,113,133,.10)" stroke="#FB7185"/>
+      <text x="170" y="269" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FB7185">가시성 필터 (게시·반응 616)</text>
+      <text x="170" y="284" text-anchor="middle" font-family="Noto Sans KR" font-size="9.5" fill="#9AA6B8">우리가 보는 것은 여기를 통과한 것뿐</text>
+      <path d="M130 52 L85 102" stroke="#9AA6B8" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+      <path d="M210 52 L255 102" stroke="#9AA6B8" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+      <path d="M90 148 L140 188" stroke="#9AA6B8" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+      <path d="M250 148 L200 188" stroke="#9AA6B8" stroke-width="1.5" fill="none" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+      <path d="M170 52 L170 188" stroke="#9AA6B8" stroke-width="1" fill="none" marker-end="url(#ar)" stroke-dasharray="2 4"/>
+      <path d="M170 226 L170 250" stroke="#FB7185" stroke-width="1.5" fill="none" marker-end="url(#arL)"/>
+    </svg>
+    <figcaption>환자 특성은 두 처치 모두와 결과에 동시에 작용한다(점선 = 직접 경로 가능성). 결과는 “게시하고 싶은 결과”라는 필터를 거쳐서만 관찰된다.</figcaption>
+  </figure>
+</section>
+
+<section class="rv">
+  <span class="idx">§03 · STANDARD-OF-CARE CONTEXT</span>
+  <h2>표준치료 쪽에서 본 이 사례</h2>
+  <div class="paradigm">
+    <div class="col old">
+      <h4>커뮤니티 서사의 프레임</h4>
+      <ul><li>“프로토콜 덕분에 NED”(2023)</li><li>표준치료 = 견뎌야 할 독성</li><li>보완 = 회복의 원동력</li></ul>
+    </div>
+    <div class="col new">
+      <h4 class="c-evid">근거 쪽 프레임</h4>
+      <ul><li>HER2+ 전이성 유방암 1차 표준은 taxane + trastuzumab + pertuzumab. CLEOPATRA에서 pertuzumab 추가로 중앙 OS가 약 40.8개월 → 56.5개월로 연장(Swain 외, NEJM 2015)</li><li>항HER2 치료 반응자 중 일부는 장기 지속 관해를 보인다</li><li>저자 본인도 2026년에 “항암은 결정적이었다”고 수정</li></ul>
+    </div>
+  </div>
+  <div class="box-lim">
+    <span class="box-label c-lim">TOXICITY · 이 환자가 실제로 겪은 것</span>
+    <p>T-DXd(Enhertu)의 대표적 중대 독성은 간질성 폐질환(ILD)/폐렴이다. 9개 단독요법 연구 1,150명을 통합한 분석에서 <span class="c-evid">약물 관련 ILD/폐렴 발생률은 15.4%(5등급 2.2%)</span>였고, 대부분 저등급이며 투여 첫 12개월 안에 발생했다(Powell 외, ESMO Open 2022). 그녀가 겪은 것은 ILD가 아니라 <b>폐색전증</b>으로 기술되어 있으며, 이는 암 자체·수술·산후 상태가 모두 혈전 위험을 높이는 맥락에서 일어났다. 원인 귀속은 원문만으로 판단할 수 없다.</p>
+    <p style="margin:0" class="small">원문의 투여 순서(docetaxel → T-DXd → H+P)는 통상의 1차 THP 후 2차 T-DXd 순서와 다르다. 회상 단순화일 수도, 실제 임상 판단일 수도 있다 — <span class="c-lim">확인 불가</span>.</p>
+  </div>
+</section>
+
+<section class="rv">
+  <span class="idx">§04 · DISCLOSURE ANALYSIS</span>
+  <h2>“무엇을 먹었나” — 질문의 분포와 응답의 구조</h2>
+  <figure class="fig">
+    <svg viewBox="0 0 340 250" role="img" aria-labelledby="dT dD">
+      <title id="dT">질문 수와 공개 수준</title>
+      <desc id="dD">프로토콜을 물은 사람은 2023년 20명, 2026년 3명. 공개된 표준치료 약명 4개, 공개된 보완 범주 약 10개, 공개된 개별 용도변경약·보충제 0개.</desc>
+      <g font-family="JetBrains Mono" font-size="10" fill="#9AA6B8"><text x="0" y="14">A · 프로토콜/약을 물은 사람 (고유 인원)</text></g>
+      <g font-family="Noto Sans KR" font-size="11" fill="#DCE3EE">
+        <text x="0" y="40">2023</text><rect x="40" y="27" width="250" height="18" rx="3" fill="#A78BFA"/><text x="296" y="41" font-family="JetBrains Mono" fill="#A78BFA">20</text>
+        <text x="0" y="68">2026</text><rect x="40" y="55" width="37.5" height="18" rx="3" fill="#A78BFA" opacity=".7"/><text x="84" y="69" font-family="JetBrains Mono" fill="#A78BFA">3</text>
+      </g>
+      <g font-family="JetBrains Mono" font-size="10" fill="#9AA6B8"><text x="0" y="110">B · 저자가 공개한 정보의 해상도</text></g>
+      <g font-family="Noto Sans KR" font-size="10.5" fill="#DCE3EE">
+        <text x="0" y="138">표준치료 약명</text><rect x="110" y="126" width="50" height="16" rx="3" fill="#3EC6E0"/><text x="166" y="139" font-family="JetBrains Mono" fill="#3EC6E0">4</text>
+        <text x="0" y="168">보완 범주</text><rect x="110" y="156" width="125" height="16" rx="3" fill="#5EE0A0"/><text x="241" y="169" font-family="JetBrains Mono" fill="#5EE0A0">~10</text>
+        <text x="0" y="198">개별 약·보충제</text><rect x="110" y="186" width="2" height="16" fill="#FB7185"/><text x="118" y="199" font-family="JetBrains Mono" fill="#FB7185">0</text>
+        <text x="0" y="228">용량·순서·기간</text><rect x="110" y="216" width="2" height="16" fill="#FB7185"/><text x="118" y="229" font-family="JetBrains Mono" fill="#FB7185">0</text>
+      </g>
+    </svg>
+    <figcaption>A: “프로토콜 공유”, “지금 무엇을 드시나”, “어떤 치료를 했나”를 직접 물은 고유 인원(DM 요청만 한 경우 제외). 2026년 글은 모수 자체가 작다(댓글 43 vs 251). B: 보완 범주 = 식단, 운동, 간헐적 단식, 명상, 차, TCM, 침, 기공, 아유르베다, 긍정적 시각화, 저널링 등.</figcaption>
+  </figure>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>응답 유형</th><th>원문 근거 (요지)</th><th>정보적 의미</th></tr></thead>
+    <tbody>
+      <tr><td>표준치료 완전 공개</td><td>약명 4개, PE, 폐·심장 손상, 잔존 후유증</td><td class="c-pt">재현 가능한 정보</td></tr>
+      <tr><td>범주 수준 공개</td><td>“책의 경로 장에 맞춰 식단 변경”, TCM·기공·단식</td><td class="c-evid">방향만 있고 처치 단위 없음</td></tr>
+      <tr><td>위임형 응답</td><td>“책에 다 있다”, “COC 권고가 책과 비슷했다”</td><td class="c-evid">출처는 지목하나 선택 내역 없음</td></tr>
+      <tr><td>DM 전환</td><td>다수에게 “메시지 드릴게요”, 블로그 초대</td><td class="c-lim">공개 기록 밖으로 이동</td></tr>
+      <tr><td>정리 약속</td><td>2023년 여러 차례 “노트를 정리하겠다”</td><td class="c-lim">공개 이행 기록 없음</td></tr>
+      <tr><td>규칙·자격 사유</td><td>“그룹 규칙상 올릴 수 없다”(2024), “의사가 아니라 권할 수 없다”</td><td>비공개의 명시적 근거</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box-claude">
+    <span class="tag">AI 클로드 주석</span>
+    <p style="margin:0">비공개는 회피라기보다 <b>규칙과 자격에 근거한 일관된 태도</b>로 읽는 것이 원문에 충실하다. 방법론적으로 중요한 귀결은 하나다. 이 사례에서는 “보완 처치 X → 결과”라는 가설조차 세울 수 없다. 처치 변수가 정의되지 않았기 때문이다. 따라서 §07의 워크플로우는 <b>그녀의 처치를 추정하는 것이 아니라</b>, 그녀가 상담했다고 밝힌 COC의 공개 프로토콜을 예시 입력으로 삼아 방법 자체를 시연한다.</p>
+  </div>
+</section>
+
+<section class="rv">
+  <span class="idx">§05 · WHAT IS TRANSFERABLE</span>
+  <h2>전이 가능한 것: 정보 처리 프로토콜</h2>
+  <p>약 목록은 전이되지 않지만, 그녀가 정보를 처리한 절차는 전이된다. 원문에 흩어진 진술을 절차로 재구성하면 다음과 같다.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>단계</th><th>원문 진술</th><th>방법론적 대응</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1 · 분류</td><td>빨강=나와 관련, 보라=희망, 초록=추가 학습</td><td><span class="c-mech">관련성</span> / <span class="c-pt">정서</span> / <span class="c-evid">근거 미확인</span>의 3축 태깅. 희망을 별도 축으로 분리해 판단 오염을 줄인다</td></tr>
+      <tr><td class="mono">2 · 반복</td><td>“항암 중엔 소화가 안 돼 끝난 뒤 다시”, 총 3회</td><td>인지 부하가 높은 시기의 결정을 유보</td></tr>
+      <tr><td class="mono">3 · 협독</td><td>가족 1인과 함께 읽고 토론</td><td>단일 판독자 편향 완화(이중 판독)</td></tr>
+      <tr><td class="mono">4 · 범위 축소</td><td>“내 암을 다룬 장에 집중”, “경로에 맞춰 식단 변경”</td><td>아형 특이적 필터링</td></tr>
+      <tr><td class="mono">5 · 외부 검증</td><td>발췌를 들고 경청하는 의사들에게</td><td>임상 환원 게이트</td></tr>
+      <tr><td class="mono">6 · 부하 상한</td><td>“30종 이상 보충제는 몸이 감당 못 했을 것”</td><td>복약 부담·상호작용 상한 설정</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">같은 스레드에서 Suzanne은 오디오북 + 노트 + AI 설명 방식을 제시하며 “AI도 틀리니 출력은 검증해야 한다”고 덧붙였다. Shaira는 “그때 AI가 있었다면 매일 몇 시간을 아꼈을 것”이라고 썼다.</p>
+</section>
+
+<section class="rv">
+  <span class="idx">§06 · TOOL LAYER</span>
+  <h2>근거연결형(grounded) 추론 사슬</h2>
+  <p>2021년의 Shaira가 수작업으로 하던 1–5단계를 지금은 도구 사슬로 옮길 수 있다. 핵심은 <span class="c-tool">각 단계 출력이 다음 단계의 입력이 되고, 매 단계에 검증 게이트가 있다</span>는 점이다.</p>
+  <figure class="fig">
+    <svg viewBox="0 0 340 470" role="img" aria-labelledby="pT pD">
+      <title id="pT">근거연결형 도구 파이프라인</title>
+      <desc id="pD">가설 생성에서 시작해 문헌 회수, 전문 분석, 임상시험 확인, 근거 등급화를 거쳐 주치의 상담으로 끝나는 세로 파이프라인. 각 단계 사이에 검증 게이트가 있음.</desc>
+      <defs><marker id="ap" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L5 10L10 0z" fill="#A78BFA"/></marker></defs>
+      <g font-family="Noto Sans KR">
+        <rect x="20" y="10" width="300" height="52" rx="8" fill="rgba(167,139,250,.12)" stroke="#A78BFA"/>
+        <text x="34" y="31" font-size="12" fill="#DCE3EE" font-weight="700">① 가설 생성</text>
+        <text x="34" y="50" font-size="10.5" fill="#9AA6B8" font-family="JetBrains Mono">opencancer.ai · Co-scientist</text>
+        <text x="306" y="40" text-anchor="end" font-size="10" fill="#FB7185">출력 = 미검증</text>
+        <path d="M170 64 v20" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="70" y="88" width="200" height="22" rx="4" fill="rgba(242,179,61,.12)" stroke="#F2B33D" stroke-dasharray="3 3"/>
+        <text x="170" y="103" text-anchor="middle" font-size="10" fill="#F2B33D">GATE: 기전 주장마다 1차 출처 필요</text>
+        <path d="M170 112 v18" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="20" y="134" width="300" height="52" rx="8" fill="rgba(167,139,250,.12)" stroke="#A78BFA"/>
+        <text x="34" y="155" font-size="12" fill="#DCE3EE" font-weight="700">② 문헌 회수</text>
+        <text x="34" y="174" font-size="10.5" fill="#9AA6B8" font-family="JetBrains Mono">PubMed · Semantic Scholar (MCP)</text>
+        <path d="M170 188 v20" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="70" y="212" width="200" height="22" rx="4" fill="rgba(242,179,61,.12)" stroke="#F2B33D" stroke-dasharray="3 3"/>
+        <text x="170" y="227" text-anchor="middle" font-size="10" fill="#F2B33D">GATE: PMID 실존·초록 일치 확인</text>
+        <path d="M170 236 v18" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="20" y="258" width="300" height="52" rx="8" fill="rgba(167,139,250,.12)" stroke="#A78BFA"/>
+        <text x="34" y="279" font-size="12" fill="#DCE3EE" font-weight="700">③ 전문 분석 · ④ 임상시험</text>
+        <text x="34" y="298" font-size="10.5" fill="#9AA6B8" font-family="JetBrains Mono">Paperclip · ClinicalTrials API</text>
+        <path d="M170 312 v20" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="70" y="336" width="200" height="22" rx="4" fill="rgba(242,179,61,.12)" stroke="#F2B33D" stroke-dasharray="3 3"/>
+        <text x="170" y="351" text-anchor="middle" font-size="10" fill="#F2B33D">GATE: 모집단·병기·병용치료 일치</text>
+        <path d="M170 360 v18" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="20" y="382" width="300" height="34" rx="8" fill="rgba(242,179,61,.12)" stroke="#F2B33D"/>
+        <text x="170" y="404" text-anchor="middle" font-size="12" fill="#DCE3EE" font-weight="700">⑤ 근거 등급화 (A–D)</text>
+        <path d="M170 418 v14" stroke="#A78BFA" stroke-width="2" marker-end="url(#ap)"/>
+        <rect x="20" y="434" width="300" height="32" rx="8" fill="rgba(94,224,160,.12)" stroke="#5EE0A0"/>
+        <text x="170" y="455" text-anchor="middle" font-size="12" fill="#5EE0A0" font-weight="700">⑥ 주치의 — 결정은 여기서만</text>
+      </g>
+    </svg>
+  </figure>
+</section>
+
+<section class="rv">
+  <span class="idx">§07 · ILLUSTRATIVE WORKFLOW</span>
+  <h2>예시 워크플로우: COC 프로토콜의 메트포르민</h2>
+  <div class="box-lim">
+    <span class="box-label c-lim">예시 (ILLUSTRATIVE) · 치료 권고 아님</span>
+    Shaira는 COC와 상담했다고만 밝혔고, 무엇을 처방받거나 복용했는지는 밝히지 않았다. 아래는 COC가 공개한 표준 프로토콜(metformin · atorvastatin · mebendazole · doxycycline) 중 <b>메트포르민(metformin) 하나</b>를 골라, 방법을 끝까지 시연하는 것이다. 용량은 다루지 않는다.
+  </div>
+  <ol class="rail">
+    <li><span class="n c-mech" style="border-color:var(--mech)">01</span>
+      <h3 class="c-mech">기전 특정</h3>
+      <p>메트포르민의 항암 가설은 주로 AMPK 활성화 → mTOR 억제, 그리고 인슐린/IGF-1 축 저하라는 두 경로로 제안된다.</p>
+<div class="prompt"><span class="s">[목표]</span> 메트포르민(metformin)의 항암 기전으로 제안된 경로를
+(a) AMPK–mTOR  (b) 인슐린/IGF-1 축  으로 나누어 정리하라.
+<span class="k">[제약]</span> 각 주장마다 근거 수준(세포/동물/인체)과 PMID를 붙여라.
+PMID를 확인할 수 없으면 "미확인"으로 표시하고 추측하지 마라.
+<span class="g">[출력]</span> 표: 주장 | 근거 수준 | PMID | 확인 여부</div>
+      <div class="gate"><b>GATE</b><span>“미확인”이 하나라도 있으면 ② 문헌 회수로 되돌려 실존을 확인한 뒤에만 진행.</span></div>
+    </li>
+    <li><span class="n c-mech" style="border-color:var(--mech)">02</span>
+      <h3 class="c-mech">취약성 연결</h3>
+      <p>HER2 신호는 PI3K/AKT/mTOR 축을 통해 전달되며, 이 축의 활성화는 트라스투주맙 내성과 연관된 것으로 논의된다. mTOR를 공유 접점으로 두 가설이 만난다 — 여기까지는 <span class="c-evid">개연성</span>이지 <span class="c-evid">효과</span>가 아니다.</p>
+<div class="prompt"><span class="s">[목표]</span> HER2 양성 유방암에서 PI3K/AKT/mTOR 활성화와
+항HER2 치료 내성의 관계를 다룬 인체 종양 데이터를 찾아라.
+<span class="k">[제약]</span> 세포주 결과와 환자 조직 결과를 섞지 말고 따로 나열.
+<span class="k">[제약]</span> "메트포르민이 내성을 극복한다"는 결론을 먼저 쓰지 마라.</div>
+      <div class="gate"><b>GATE</b><span>경로 연결이 인체 조직 데이터로 뒷받침되는가? 세포주만이면 등급 D 상한.</span></div>
+    </li>
+    <li><span class="n core">03</span>
+      <h3 class="c-evid">개별화 — 핵심 단계</h3>
+      <p>같은 약이라도 이 환자에게 해당하는지는 프로파일이 결정한다. 이 사례에서 원문으로 채워지는 슬롯과 빈 슬롯을 구분하면:</p>
+      <div class="slot">
+        <code>[환자 프로파일 슬롯]</code><br>
+        아형 HER2+ <span class="pill ok">채움</span> · HR 상태 <span class="pill no">빈칸</span> · 전이 부위 폐·림프절 <span class="pill ok">채움</span><br>
+        병용 중인 항HER2 치료 <span class="pill uk">시점에 따라 다름</span> · 혈전 이력(PE) <span class="pill ok">채움</span><br>
+        당뇨 여부 · 신기능 · 간기능 · 병용 약물 전체 <span class="pill no">빈칸</span>
+      </div>
+      <p class="small">빈칸으로 남긴 이유: 이 슬롯들은 독자 각자가 자기 값으로 채워야 하는 자리다. 특히 신기능과 병용 약물은 메트포르민 같은 약의 안전성 판단에서 주치의가 반드시 확인하는 항목이다.</p>
+      <div class="gate"><b>GATE</b><span>필수 슬롯이 비어 있으면 ④로 넘어가지 않는다. 근거가 아무리 좋아도 “나에게 해당하는가”는 여기서 결정된다.</span></div>
+    </li>
+    <li><span class="n c-tool" style="border-color:var(--tool)">04</span>
+      <h3 class="c-tool">실증 회수</h3>
+      <div class="box-evid" style="margin-top:6px">
+        <span class="box-label c-evid">회수 결과 · CCTG MA.32 (Goodwin 외, JAMA 2022)</span>
+        고위험 조기 유방암, 비당뇨 환자 3,649명, 위약 대조 RCT. <b>1차 분석(HR 양성): 무침습질환생존 차이 없음</b>(HR 1.01, 95% CI 0.84–1.21). HER2 양성 620명 <b>탐색적</b> 분석에서는 무침습질환생존(HR 0.64, 95% CI 0.43–0.95)과 전체생존(HR 0.54, 0.30–0.98)이 메트포르민 쪽에 유리했고, 이들의 약 97%가 트라스투주맙을 함께 받았다. 연구진은 HER2 양성 결과가 <b>재현 전에는 치료 근거로 쓰일 수 없다</b>고 명시했다.
+      </div>
+<div class="prompt"><span class="s">[ClinicalTrials 질의]</span> condition: "HER2-positive metastatic breast cancer"
+intervention: "metformin"   status: any
+<span class="k">[제약]</span> 조기(adjuvant/neoadjuvant)와 전이성 시험을 분리해 표로.
+<span class="k">[제약]</span> 1차 지표가 생존(OS/PFS)인 시험만 별도 표시.</div>
+      <div class="gate"><b>GATE</b><span>모집단 불일치: MA.32는 <b>조기·완치 목적</b> 환자다. 이 사례는 <b>de novo 4기</b>. 전이성 HER2+에서 생존을 1차 지표로 한 대규모 RCT는 이 문서 작성 시점에 확인하지 못했으며, 위 질의로 재확인해야 할 항목이다.</span></div>
+    </li>
+    <li><span class="n c-evid" style="border-color:var(--evid)">05</span>
+      <h3 class="c-evid">근거 등급화</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>주장</th><th>최고 근거</th><th>등급</th></tr></thead>
+        <tbody>
+          <tr><td>메트포르민이 조기 유방암 전반의 재발을 줄인다</td><td>MA.32 1차 분석 — 음성</td><td class="gD">반증</td></tr>
+          <tr><td>HER2 양성 조기 유방암에서 이득 가능성</td><td>대형 RCT의 탐색적 하위군</td><td class="gC">C · 가설 생성</td></tr>
+          <tr><td>HER2 양성 <b>전이성</b>에서 이득</td><td>직접 RCT 미확인, 외삽</td><td class="gC">C–D</td></tr>
+          <tr><td>COC 4제 조합 전체의 이득</td><td>단일군·후향 자료 (METRICS NCT02201381; Agrawal 외, Front Pharmacol 2019 — 교모세포종)</td><td class="gD">D</td></tr>
+        </tbody>
+      </table></div>
+    </li>
+    <li><span class="n c-pt" style="border-color:var(--pt)">06</span>
+      <h3 class="c-pt">임상 환원</h3>
+      <p>결론은 “복용하라/하지 마라”가 아니라 <b>주치의에게 가져갈 질문 묶음</b>이다.</p>
+<div class="prompt"><span class="s">[주치의 상담용 질문 생성]</span>
+위 1–5단계 결과를 근거로, HER2+ 전이성 환자가 종양내과 주치의에게
+물을 질문 5개를 만들어라.
+<span class="k">[제약]</span> 각 질문에 근거 등급을 괄호로 표기.
+<span class="k">[제약]</span> 현재 항HER2 치료·혈전 이력과의 관계를 묻는 질문 반드시 포함.
+<span class="k">[제약]</span> 용량·복용법 제안 금지. "결정은 주치의" 문구로 끝낼 것.</div>
+      <div class="gate"><b>GATE</b><span>결정·기록·재평가 시점은 진료실에서 정한다. AI 출력은 질문지까지.</span></div>
+    </li>
+  </ol>
+</section>
+
+<section class="rv">
+  <span class="idx">§08 · EVIDENCE GRADES &amp; PITFALLS</span>
+  <h2>근거 등급과 이 사례에 걸린 함정</h2>
+  <div class="tbl-wrap"><table class="grade">
+    <thead><tr><th>등급</th><th>정의</th><th>이 사례에서의 예</th></tr></thead>
+    <tbody>
+      <tr><td class="gA">A</td><td>무작위대조시험(RCT)·메타분석, 해당 모집단에서 일관된 결과</td><td>HER2+ 전이성의 항HER2 표준치료(예: CLEOPATRA)</td></tr>
+      <tr><td class="gB">B</td><td>단일 RCT 또는 잘 설계된 전향적 코호트</td><td>T-DXd 독성 통합 분석(안전성 근거)</td></tr>
+      <tr><td class="gC">C</td><td>탐색적 하위군, 후향 코호트, 대리지표</td><td>MA.32 HER2+ 하위군</td></tr>
+      <tr><td class="gD">D</td><td>전임상, 단일군, 증례·환자 자기보고</td><td><b>이 사례 자체</b>, COC 조합 자료</td></tr>
+    </tbody>
+  </table></div>
+  <div class="box-lim">
+    <span class="box-label c-lim">PITFALLS</span>
+    <ul style="margin:0;padding-left:1.1em">
+      <li><b>동시치료 교란</b> — 보완 시도가 항HER2 치료와 겹쳐 시작됐다(§02). “한 달 만에 호전”의 귀속 불가.</li>
+      <li><b>생존자·가시성 편향</b> — 2023년 글 반응 616개. 같은 스레드의 Claudia(HER2+ 폐 전이; T-DXd·T-DM1·퀘르세틴 모두 무효)는 반응 2개. 실패 사례는 덜 쓰이고 덜 퍼진다.</li>
+      <li><b>불멸시간 편향</b> — 관찰연구에서 메트포르민의 항암 효과가 과대평가된 대표적 원인으로 지목되어 왔다(Suissa &amp; Azoulay, Diabetes Care 2012). 관찰 신호가 RCT(MA.32)에서 전반적으로 재현되지 않은 흐름과 맞물린다.</li>
+      <li><b>서사 재구성</b> — 같은 저자의 귀속이 3년 사이 이동했다(§09). 회상은 해석을 포함한다.</li>
+      <li><b>NED의 의미</b> — 영상 해상도 이하 잔존 질환을 배제하지 못한다. 저자 스스로 “not curable”을 병기했다.</li>
+      <li><b>결측 결과</b> — 장 외측 종괴의 경과가 공개되지 않았다. 결측을 ‘좋아졌다’로 채우지 말 것.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rv">
+  <span class="idx">§09 · NARRATIVE DRIFT</span>
+  <div class="box-claude">
+    <span class="tag">AI 클로드 주석</span>
+    <h2 style="margin-top:4px;font-size:1.3rem">2023 → 2026, 서사의 이동</h2>
+    <div class="tbl-wrap" style="border-color:rgba(143,168,232,.35)"><table>
+      <thead><tr><th>축</th><th>2023-11</th><th>2024-05</th><th>2026-10</th></tr></thead>
+      <tbody>
+        <tr><td>귀속</td><td>“your protocols 덕분에 NED”</td><td>“책에서 영감 + 아유르베다”</td><td>“항암이 결정적” + 책이 “한몫”</td></tr>
+        <tr><td>표준치료 태도</td><td>독한 약 없이 지낼 수 있다는 희망</td><td>—</td><td>“서양의학은 부분적으로만 신뢰” / “항암은 분명히 필요했다”</td></tr>
+        <tr><td>H+P</td><td>현재 미사용, “의사가 권하면 재개”</td><td>—</td><td>“더 오래 지속했다”(시점 불명)</td></tr>
+        <tr><td>전통의학 표기</td><td>“남아시아 전통”</td><td>“아시아 아유르베다”</td><td>“중국 전통·TCM·기공”</td></tr>
+        <tr><td>장 외측 종괴</td><td>미확정, 수술 보류</td><td>—</td><td>언급 없음</td></tr>
+        <tr><td>상태 표현</td><td>NED</td><td>“지금까지는 효과”</td><td>NED, “not curable”</td></tr>
+      </tbody>
+    </table></div>
+    <p>2026년 같은 날 그녀는 “정해진 경로가 통하지 않아 틀 밖을 생각해야 했다”와 “항암은 결정적이었다”를 함께 썼다. 전자가 무엇을 지칭하는지(예후 통보인지, 특정 약제의 실패인지)는 원문으로 확정할 수 없다. 이 문서는 그 공백을 해석으로 채우지 않는다.</p>
+    <p style="margin:0">이동의 방향 자체는 주목할 만하다. 시간이 지날수록 그녀의 서사는 <b>단일 원인에서 다요인으로</b>, 보완 중심에서 <b>표준치료 + 보완</b>으로 이동했다. 이는 이 커뮤니티 분석집이 일관되게 채택해 온 프레임과 같은 방향이다.</p>
+  </div>
+</section>
+
+<section class="rv">
+  <span class="idx">§10 · RECOMMENDATIONS IN THREAD</span>
+  <h2>스레드에 등장한 권유</h2>
+  <p>원문 그대로 목록화한다. 저자(Shaira)가 채택했다는 기록은 없다.</p>
+  <ul class="offers">
+    <li><b>Nickii</b> — Black seed oil(경구·두피), melatonin, vitamin D·K2·K3, apricot kernels</li>
+    <li><b>Temple</b> — Essiac tea, Gerson therapy, 식물성 식단</li>
+    <li><b>Sarah 2nd</b> — artemisinin (웹페이지 링크)</li>
+    <li><b>Darling</b> — fenbendazole, ivermectin, 단식, 정수</li>
+    <li><b>Arbo</b> — quercetin, aloe vera</li>
+    <li><b>Loretta</b> — 본인 복용: berberine + 저용량 aspirin. Alison: 같은 조합 중 ALT 상승으로 중단 권고받음</li>
+    <li><b>Jill</b> — 본인 경험(자궁경부암 4기, 항암 6회 + pembrolizumab 8회 병행): mistletoe 피하주사, 적외선 요법, 생꿀, apricot seeds</li>
+  </ul>
+  <p class="small">Darling에게 Shaira는 “권하지는 않지만, 장 쪽 종괴와 관련해 구충제 계열(ivermectin 등)에 대해 읽어본 적은 있다”고 답했다.</p>
+</section>
+
+<section class="rv">
+  <span class="idx">§11 · LIMITS</span>
+  <h2>이 방법론이 구조적으로 대체할 수 없는 것</h2>
+  <ul class="limits">
+    <li>공개되지 않은 처치 변수를 복원할 수 없다. 이 사례의 보완 처치는 정의되지 않은 상태로 남는다.</li>
+    <li>자기보고 결과(NED)를 영상·병리 원자료로 검증할 수 없다.</li>
+    <li>장 외측 종괴처럼 공개되지 않은 경과를 추적할 수 없다.</li>
+    <li>개별화 슬롯(HR 상태, 신기능, 병용 약물)은 진료 기록 없이는 채울 수 없다.</li>
+    <li>도구 사슬은 문헌의 품질을 넘어서지 못한다. 전이성 HER2+ 직접 근거가 없으면 정교한 파이프라인도 C–D 등급을 출력할 뿐이다.</li>
+    <li>투약·병용·중단의 결정은 어떤 단계에서도 대체되지 않는다. <span class="c-pt">최종 결정은 주치의</span>의 몫이다.</li>
+  </ul>
+</section>
+
+<div class="closing rv">
+  <p>기여도는 나눌 수 없었다.<br>
+  그러나 판단의 구조는 남았다 — 분류하고, 다시 읽고, 함께 읽고, 범위를 좁히고, 진료실로 가져가는 것.<br>
+  <span class="c-pt">100%는 아니어도, 매일 1%씩.</span></p>
+  <p class="small" style="font-family:'Noto Sans KR',sans-serif">원리를 알고 → 가능성을 이해하고 → 근거 위에서 시도하자.</p>
+</div>
+
+<div class="sources">
+  <b>원문 · 참고문헌</b>
+  <ol>
+    <li>Shaira, 2026-10-21 게시물 (반응 272, 댓글 43): <a href="https://www.facebook.com/groups/off.label.drugsforcancer/permalink/28876287892054919/">facebook.com/groups/off.label.drugsforcancer/permalink/28876287892054919</a></li>
+    <li>Shaira, 2023-11-10 게시물 (반응 616, 댓글 251): <a href="https://www.facebook.com/groups/off.label.drugsforcancer/permalink/6494060094037685/">facebook.com/groups/off.label.drugsforcancer/permalink/6494060094037685</a></li>
+    <li>Jane McLelland, How to Starve Cancer: <a href="https://www.howtostarvecancer.com/">howtostarvecancer.com</a></li>
+    <li>Goodwin PJ 외. Effect of metformin vs placebo on invasive disease-free survival in patients with breast cancer: the MA.32 randomized clinical trial. JAMA 2022. (요약: <a href="https://ascopost.com/news/june-2022/metformin-vs-placebo-in-patients-with-high-risk-operable-breast-cancer-receiving-standard-treatment">ASCO Post</a>)</li>
+    <li>Powell CA 외. Pooled analysis of drug-related ILD/pneumonitis in nine trastuzumab deruxtecan monotherapy studies. ESMO Open 2022. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9434416/">PMC9434416</a></li>
+    <li>Agrawal S 외. A new method for ethical and efficient evidence generation for off-label medication use in oncology (a case study in glioblastoma). Front Pharmacol 2019. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6610246/">PMC6610246</a></li>
+    <li>METRICS study, NCT02201381: <a href="https://clinicaltrials.gov/study/NCT02201381">clinicaltrials.gov/study/NCT02201381</a></li>
+    <li>Swain SM 외. Pertuzumab, trastuzumab, and docetaxel in HER2-positive metastatic breast cancer (CLEOPATRA). NEJM 2015.</li>
+    <li>Suissa S, Azoulay L. Metformin and the risk of cancer: time-related biases in observational studies. Diabetes Care 2012.</li>
+  </ol>
+  <p>「AI 클로드 주석」은 편집자(AI)의 해석이며 원문이 아니다. 약물 언급은 모두 예시이며 치료 권고가 아니다. 투약·병용·중단의 최종 결정은 주치의의 몫이다.<br>제작: 히포크라테스의 친구들 · 해외 사례 분석집 · 2026-10-24</p>
+</div>
+
+</main>
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    document.documentElement.classList.add('js');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
