@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hien의 폐암 1개월 — 6cm 종괴가 절반이 되기까지</title>
+<style>
+  :root{
+    --bg:#faf8f4; --card:#ffffff; --ink:#2b2b2b; --sub:#6b6b6b;
+    --teal:#0f5e5e; --teal-soft:#e3efee; --gold:#b45309; --gold-soft:#fdf0dc;
+    --sage:#5b7f5b; --sage-soft:#e9f0e6; --red:#b91c1c; --red-soft:#fdecec;
+    --purple:#6d28a8; --purple-soft:#f2e9fb; --blue:#2b6cb0; --blue-soft:#eef4fb;
+    --line:#e5dfd3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    font-size:17px; line-height:1.72; padding:0 0 60px 0; -webkit-text-size-adjust:100%;}
+  .wrap{max-width:780px; margin:0 auto; padding:0 16px;}
+  header{background:linear-gradient(135deg,#0f5e5e 0%,#146b6b 52%,#5b7f5b 100%);
+    color:#fff; padding:38px 16px 30px; text-align:center;}
+  header .tag{display:inline-block; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.4);
+    border-radius:999px; padding:4px 14px; font-size:13px; margin-bottom:12px; letter-spacing:.3px;}
+  header h1{font-size:23px; line-height:1.4; font-weight:800; margin-bottom:10px;}
+  header p{font-size:15px; opacity:.94; line-height:1.55;}
+  .meta{background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 16px;
+    font-size:14px; color:var(--sub); margin-top:14px; text-align:left; box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .meta b{color:var(--ink);}
+  .meta a{color:var(--teal); text-decoration:none; word-break:break-all;}
+  section{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 20px; margin-top:22px; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  h2{font-size:19px; color:var(--teal); font-weight:800; margin-bottom:14px;
+    padding-bottom:10px; border-bottom:2px solid var(--teal-soft); line-height:1.4;}
+  h2 .num{display:inline-block; background:var(--teal); color:#fff; border-radius:6px;
+    font-size:13px; padding:1px 8px; margin-right:8px; vertical-align:middle;}
+  h3{font-size:16px; color:var(--gold); font-weight:700; margin:18px 0 8px;}
+  h4{font-size:15px; color:var(--ink); font-weight:700; margin:14px 0 6px;}
+  p{margin-bottom:10px;}
+  ul,ol{margin:8px 0 12px 22px;}
+  li{margin-bottom:6px;}
+  b,strong{color:#111; font-weight:700;}
+  .lead{font-size:16.5px;}
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:8px 9px; text-align:left; vertical-align:top; color:var(--ink);}
+  th{background:var(--teal-soft); color:var(--teal); font-weight:700;}
+  tr:nth-child(even) td{background:#fcfbf8;}
+  .badge{display:inline-block; font-size:12px; font-weight:700; border-radius:5px;
+    padding:1px 7px; white-space:nowrap;}
+  .b-ok{background:var(--sage-soft); color:var(--sage); border:1px solid #c4d8c0;}
+  .b-mid{background:var(--gold-soft); color:var(--gold); border:1px solid #f0d5a8;}
+  .b-open{background:#eef2f7; color:#475569; border:1px solid #cdd7e3;}
+  .b-no{background:var(--red-soft); color:var(--red); border:1px solid #f2c4c4;}
+  .card{background:var(--teal-soft); border-radius:10px; padding:13px 15px; margin:10px 0;
+    border-left:4px solid var(--teal); color:var(--ink);}
+  .card.gold{background:var(--gold-soft); border-left-color:var(--gold);}
+  .card.sage{background:var(--sage-soft); border-left-color:var(--sage);}
+  .card.red{background:var(--red-soft); border-left-color:var(--red);}
+  .card.purple{background:var(--purple-soft); border-left-color:var(--purple);}
+  .card.blue{background:var(--blue-soft); border-left-color:var(--blue);}
+  .card h4{margin-top:0;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0;}
+  .qa{margin:12px 0;}
+  .q{font-weight:700; color:var(--teal); margin-top:14px; padding-left:22px; position:relative;}
+  .q::before{content:"Q"; position:absolute; left:0; top:0; background:var(--teal); color:#fff;
+    font-size:11px; width:16px; height:16px; border-radius:4px; text-align:center; line-height:16px;}
+  .a{margin:4px 0 0 22px; color:#333;}
+  .svgbox{overflow-x:auto; margin:14px 0; padding:4px 0; max-width:100%;}
+  .svgbox svg{display:block; width:100%; max-width:100%; height:auto; margin:0 auto;}
+  .foot{font-size:13px; color:var(--sub); margin-top:26px; padding:16px; background:#f5f2ec;
+    border-radius:10px; line-height:1.6;}
+  .foot b{color:var(--ink);}
+  .tagline{font-size:13px; color:var(--sub); margin-top:6px;}
+  .quote{border-left:4px solid var(--gold); padding:8px 14px; margin:12px 0;
+    background:#fdfaf4; font-style:italic; color:#444;}
+  .disc{background:#fff4f4; border:1px solid #f2c4c4; border-radius:10px;
+    padding:14px 16px; margin:16px 0; font-size:15px;}
+
+  /* ===== AI Hermes Agent 주석 라벨 시스템 ===== */
+  .ai-label{display:inline-block; background:#1f2937; color:#fff;
+    font-size:11.5px; font-weight:700; letter-spacing:.4px; border-radius:4px;
+    padding:2px 8px; vertical-align:middle; white-space:nowrap;}
+  .ai-label::before{content:"◆ "; font-size:9px; color:#93c5fd;}
+  /* Hien 본인 발언 라벨 — 대비되는 색 */
+  .src-label{display:inline-block; background:#0f5e5e; color:#fff;
+    font-size:11.5px; font-weight:700; letter-spacing:.4px; border-radius:4px;
+    padding:2px 8px; vertical-align:middle; white-space:nowrap;}
+  .src-label::before{content:"❝ "; font-size:10px;}
+
+  /* AI 주석이 붙은 블록 — 왼쪽 띠로 구분 */
+  .ai-block{border-left:5px solid #1f2937; background:#f7f8fa;
+    border-radius:0 10px 10px 0; padding:13px 15px; margin:14px 0;
+    box-shadow:inset 0 0 0 1px #e3e6ea;}
+  .ai-block .ai-label{margin-bottom:8px;}
+  .ai-block h4{margin-top:0; color:#1f2937;}
+
+  /* Hien 발언 인용 블록 */
+  .hien-quote{border-left:5px solid #0f5e5e; background:#eef6f5;
+    border-radius:0 10px 10px 0; padding:13px 15px; margin:14px 0;}
+  .hien-quote .src-label{margin-bottom:8px;}
+  .hien-quote p:last-child{margin-bottom:0;}
+
+  /* 문서 상단 범례 */
+  .legend{background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin-top:22px; font-size:14px;}
+  .legend h4{margin:0 0 10px; color:var(--teal); font-size:15px;}
+  .legend ul{margin:0 0 0 0; list-style:none;}
+  .legend li{margin-bottom:9px; padding-left:0; line-height:1.55; color:#333;}
+  .legend .ai-label, .legend .src-label{margin-right:6px;}
+
+  @media(max-width:520px){
+    body{font-size:16px;}
+    .grid2{grid-template-columns:1fr;}
+    section{padding:18px 15px;}
+    header h1{font-size:20px;}
+    table{font-size:13px;}
+    th,td{padding:6px 7px;}
+    .ai-label, .src-label{font-size:11px; padding:2px 6px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="tag">사례 분석 · 커뮤니티 공유용 · 2026</div>
+  <h1>Hien의 폐암 1개월 —<br>6cm 종괴가 절반이 되기까지</h1>
+  <p>“한 가지 약이 아니라, 생활 전체를 바꾼 사례”</p>
+</header>
+
+<div class="wrap">
+
+  <div class="meta">
+    <b>대상</b> Hien (대만 거주, 41세)<br>
+    <b>진단</b> 2026-09-24 · 우측 폐 선암(肺腺癌) · 종괴 6cm<br>
+    <b>기록</b> Instagram <a href="https://www.instagram.com/lungcancerfighter092426/">@lungcancerfighter092426</a> (19개 게시물)<br>
+    <b>공유</b> Facebook “Ivermectin and Cancer Discussion Group” (2026-10-27)
+  </div>
+
+  <div class="legend">
+    <h4>📖 이 문서의 표기 규칙 — 읽기 전에 꼭 확인하세요</h4>
+    <ul>
+      <li>
+        <span class="src-label">Hien 본인 발언·기록</span><br>
+        Hien이 직접 게시·촬영·서술한 내용입니다. <b>그의 주장이며, 검증된 사실이 아닙니다.</b>
+      </li>
+      <li>
+        <span class="ai-label">AI Hermes Agent 주석</span><br>
+        <b>AI(Hermes Agent)가 분석·판단·해석한 내용</b>입니다. Hien의 주장과 <b>무관</b>하며, <b>틀릴 수 있습니다.</b> 의료적 판단이 아닙니다.
+      </li>
+      <li>
+        <span class="badge b-ok">✅</span> <span class="badge b-mid">⚠</span> <span class="badge b-open">❓</span> <span class="badge b-no">🔴</span><br>
+        <b>근거 수준 표시</b>입니다. 이 역시 AI가 문헌·상식에 비추어 매긴 <b>주관적 평가</b>입니다.
+      </li>
+    </ul>
+    <p style="margin:10px 0 0; font-size:13.5px; color:#666;">
+      ※ 회색 블록(왼쪽 검은 띠)은 <b>AI 주석</b>, 청록색 블록(왼쪽 청록 띠)은 <b>Hien 발언</b>입니다.
+    </p>
+  </div>
+
+  <div class="disc">
+    <b>⚠️ 먼저 이것부터 — 이 문서를 어떻게 읽어야 하나</b><br><br>
+    Hien은 <b>본인의 경험을 공유</b>한 것입니다. 그는 <b>“완치됐다”고 말하지 않았고</b>, 오히려 <b>“나는 이버멕틴·펜벤다졸에 모든 공을 돌리지 않는다. 대사·생활 방식 전체가 전략의 최소 50%”</b>라고 스스로 밝혔습니다.
+    <br><br>
+    이 문서는 그 기록을 <b>회원들이 읽기 쉽게 정리</b>한 것이며, <b>의료 조언이 아니고, 이 프로토콜을 따라 하라는 권유도 아닙니다.</b> 실제로 이 프로토콜에는 <b>위험한 항목</b>이 포함되어 있습니다(7장 참조).
+  </div>
+
+  <!-- ============ 1. 30초 요약 ============ -->
+  <section>
+    <h2><span class="num">1</span>30초 요약</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p class="lead" style="margin-bottom:0;">한 문장 요약: <b>2026년 9월 24일 폐암 6cm 진단을 받은 Hien이, 1개월 뒤 PET에서 “종괴 외곽이 모두 죽은 조직, 중심 3cm만 남았다”는 결과를 받았다 — 다만 <u>그는 검사 시점을 스스로 “시작 후 2~3주”라고 밝혔고, 여러 가지를 동시에 했다</u>.</b>
+      <br><span style="font-size:13.5px; color:#666;">※ 이 요약 문장은 AI가 작성한 것입니다. 아래 카드의 ✅ 항목만 Hien 본인 진술에 근거합니다.</span></p>
+    </div>
+
+    <div class="grid2">
+      <div class="card sage">
+        <h4>✅ 확인된 사실 <span class="src-label">Hien 기록</span></h4>
+        진단 9/24 · 6cm 종괴 · 10/27 뇌MRI·PET “전이 없음” · 6cm 종괴 중 <b>중심 3cm만 활성</b> · 체중 20파운드(약 9kg) 감소
+      </div>
+      <div class="card gold">
+        <h4>⭐ 가장 정직한 대목 <span class="ai-label">AI 주석</span></h4>
+        Hien 본인이 <b>“공을 iver·fenben에 다 돌리지 않는다”</b>고 먼저 밝혔습니다. <b>“단식과 식이·생활 변화가 전략의 최소 50%”</b>라고 강조.
+      </div>
+      <div class="card red">
+        <h4>🔴 가장 큰 한계 <span class="ai-label">AI 주석</span></h4>
+        <b>항암·방사선·면역치료를 받은 기록이 없음</b> — 즉 “표준치료 병행”이 아닌 <b>단독 프로토콜</b>로 보이나, <b>대조군이 없고 n=1</b>입니다.
+      </div>
+      <div class="card red">
+        <h4>🔴 위험 항목 포함 <span class="ai-label">AI 주석</span></h4>
+        <b>DMSO + 콜로이달 실버 네뷸라이저</b>, <b>37시간 건식단식</b>, <b>혈당 50mg/dL 하한</b> — 모두 <b>의학적 감독 없이는 위험</b>합니다.
+      </div>
+    </div>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⭐ 이 사례를 읽는 순서 (AI가 구성)</h4>
+      ①~④ = <b>Hien이 실제로 한 것</b> (프로토콜 구조·타임라인·수치) &nbsp;|&nbsp; ⑤~⑦ = <b>AI가 냉정하게 짚은 것</b> (한계·위험·근거) &nbsp;|&nbsp; ⑧~⑨ = <b>AI가 정리한 커뮤니티 시사점</b>
+    </div>
+  </section>
+
+  <!-- ============ 2. 타임라인 ============ -->
+  <section>
+    <h2><span class="num">2</span>1개월의 기록 — 타임라인</h2>
+    <p><span class="src-label">Hien 기록</span> 진단부터 현재까지. <b>왼쪽이 날짜, 오른쪽이 그날의 기록</b>입니다. (모두 Hien 본인 게시물 기준)</p>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 720 700" role="img" aria-label="Hien의 1개월 항암 여정 타임라인">
+      <defs>
+        <marker id="arwH" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L7,3 L0,6 Z" fill="#0f5e5e"/>
+        </marker>
+        <style>
+          .yr{font:700 19px sans-serif; fill:#0f5e5e;}
+          .tt{font:700 18px sans-serif; fill:#222;}
+          .sm{font:400 15.5px sans-serif; fill:#555;}
+          .lbw{font:700 15.5px sans-serif; fill:#fff;}
+        </style>
+      </defs>
+
+      <line x1="134" y1="60" x2="134" y2="672" stroke="#c9dcd9" stroke-width="3"/>
+      <line x1="134" y1="672" x2="134" y2="690" stroke="#0f5e5e" stroke-width="3" marker-end="url(#arwH)"/>
+
+      <!-- 9/14 baseline CT -->
+      <circle cx="134" cy="82" r="8" fill="#6b6b6b"/>
+      <text x="118" y="89" text-anchor="end" class="yr" fill="#6b6b6b">9.14</text>
+      <rect x="150" y="54" width="560" height="56" rx="8" fill="#f2f2f0" stroke="#9a9a9a" stroke-width="1"/>
+      <text x="162" y="74" class="tt">기준선 CT 촬영 (CT-Guided Biopsy)</text>
+      <text x="162" y="93" class="sm">우측 폐 종괴 확인 · 생검 목적 · 이후 6cm로 기록됨</text>
+
+      <!-- 9/24 diagnosis -->
+      <circle cx="134" cy="156" r="10" fill="#b91c1c"/>
+      <text x="118" y="163" text-anchor="end" class="yr" fill="#b91c1c">9.24</text>
+      <rect x="150" y="128" width="560" height="56" rx="8" fill="#fdecec" stroke="#b91c1c" stroke-width="1"/>
+      <text x="162" y="148" class="tt">진단 — 우측 폐 선암, 종괴 6cm</text>
+      <text x="162" y="167" class="sm">당시 41세 · 대만 거주 · 표준치료 대신 대사 접근 선택</text>
+
+      <!-- 9/25 start fasting -->
+      <circle cx="134" cy="230" r="8" fill="#5b7f5b"/>
+      <text x="118" y="237" text-anchor="end" class="yr" fill="#5b7f5b">9.25</text>
+      <rect x="150" y="202" width="560" height="56" rx="8" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1"/>
+      <text x="162" y="222" class="tt">프로토콜 시작 — 장기 단식 2일째</text>
+      <text x="162" y="241" class="sm">단식 + 식이 전환 시작 · 하루 여러 번 혈압·맥박 확인</text>
+
+      <!-- 9/28 iver+fenben -->
+      <circle cx="134" cy="308" r="12" fill="#6d28a8"/>
+      <circle cx="134" cy="308" r="18" fill="none" stroke="#6d28a8" stroke-width="2"/>
+      <text x="118" y="315" text-anchor="end" class="yr" fill="#6d28a8">9.28</text>
+      <rect x="150" y="276" width="560" height="64" rx="8" fill="#6d28a8"/>
+      <text x="162" y="297" class="lbw">★ 이버멕틴 + 펜벤다졸 추가</text>
+      <text x="162" y="316" fill="#eaddf7" font-family="sans-serif" font-size="15">이버멕틴 24mg(5일 복용·2일 휴약) + 펜벤다졸 300mg(5일·2일)</text>
+      <text x="162" y="334" fill="#eaddf7" font-family="sans-serif" font-size="15">본인 기록: “완치 주장 아님 · 단식·식이가 전략의 50% 이상”</text>
+
+      <!-- 10/1-10/8 GKI -->
+      <circle cx="134" cy="386" r="8" fill="#0f5e5e"/>
+      <text x="118" y="393" text-anchor="end" class="yr">10.1~8</text>
+      <rect x="150" y="358" width="560" height="56" rx="8" fill="#e3efee" stroke="#0f5e5e" stroke-width="1"/>
+      <text x="162" y="378" class="tt">GKI 측정 시작 · 5일 단식 완료</text>
+      <text x="162" y="397" class="sm">GKI 0.8~1.0 “치료적 케톤 상태” · 만성기침 90% 감소 주장</text>
+
+      <!-- 10/18-20 hyperthermia -->
+      <circle cx="134" cy="460" r="8" fill="#b45309"/>
+      <text x="118" y="467" text-anchor="end" class="yr" fill="#b45309">10.20</text>
+      <rect x="150" y="432" width="560" height="56" rx="8" fill="#fdf0dc" stroke="#b45309" stroke-width="1"/>
+      <text x="162" y="452" class="tt">온천(라듐 스프링) + 네뷸라이저 병행</text>
+      <text x="162" y="471" class="sm">DMSO/콜로이달 실버 네뷸라이저 1일 2회 · 건식단식 37시간 경험</text>
+
+      <!-- 10/27 scan clear -->
+      <circle cx="134" cy="544" r="12" fill="#0f5e5e"/>
+      <circle cx="134" cy="544" r="18" fill="none" stroke="#0f5e5e" stroke-width="2.5"/>
+      <text x="118" y="551" text-anchor="end" class="yr">10.27</text>
+      <rect x="150" y="512" width="560" height="66" rx="8" fill="#0f5e5e"/>
+      <text x="162" y="533" class="lbw">★ 검사 결과 — “전이 없음, 외곽 괴사”</text>
+      <text x="162" y="552" fill="#dff0ee" font-family="sans-serif" font-size="15">뇌 MRI + PET: 전이 0 · 6cm 중 중심 3cm만 활성</text>
+      <text x="162" y="570" fill="#dff0ee" font-family="sans-serif" font-size="15">본인 명시: “스캔은 프로토콜 시작 후 2~3주 시점에 찍힌 것”</text>
+
+      <!-- ongoing -->
+      <circle cx="134" cy="618" r="8" fill="#5b7f5b"/>
+      <text x="118" y="625" text-anchor="end" class="yr" fill="#5b7f5b">계속</text>
+      <rect x="150" y="594" width="560" height="52" rx="8" fill="#e9f0e6" stroke="#5b7f5b" stroke-width="1"/>
+      <text x="162" y="614" class="tt">“2~3주 뒤 업데이트된 프로토콜 공개 예정”</text>
+      <text x="162" y="633" class="sm">체중 9kg 감소 · 재급식 1~2주 후 다시 단식 예정</text>
+    </svg>
+    </div>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⏱ 타임라인에서 AI가 짚은 두 가지</h4>
+      <b>① 검사 시점</b> — Hien은 PET/MRI가 <b>“프로토콜 시작 2~3주 시점”</b>에 찍혔다고 직접 밝혔습니다. 즉 <b>1개월 전체의 결과가 아니라 2~3주 시점의 스냅샷</b>입니다.<br>
+      <b>② 기준선</b> — 9/14 CT(진단 전)와 10/27 PET(2~3주 후) 사이에 <b>중간 검사가 없습니다.</b> 종괴가 언제부터 줄었는지는 알 수 없습니다.
+      <div style="margin-top:8px; font-size:13.5px; color:#666;">※ 이 두 지적은 AI가 타임라인을 검토하며 발견한 것으로, Hien의 주장이 아닙니다.</div>
+    </div>
+  </section>
+
+  <!-- ============ 3. 종괴 변화 ============ -->
+  <section>
+    <h2><span class="num">3</span>6cm → 중심 3cm — 무엇이 바뀌었나</h2>
+    <p><span class="src-label">Hien 기록</span> Hien이 공유한 PET 판독 설명을 그림으로 정리했습니다. <b>크기가 줄었다기보다, “바깥층이 죽고 중심만 남았다”</b>는 것이 그의 표현입니다. <span style="font-size:13.5px; color:#666;">(도식은 AI가 그의 설명을 그림으로 옮긴 것)</span></p>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 700 300" role="img" aria-label="종괴 변화 도식: 6cm 전체 활성에서 외곽 괴사 후 중심 3cm만 활성">
+      <defs>
+        <style>
+          .hd{font:700 16px sans-serif; fill:#0f5e5e;}
+          .cap{font:700 14px sans-serif; fill:#222;}
+          .sub{font:400 13px sans-serif; fill:#666;}
+          .lbl{font:700 13px sans-serif; fill:#fff;}
+          .note{font:400 12.5px sans-serif; fill:#b91c1c;}
+        </style>
+      </defs>
+
+      <text x="16" y="26" class="hd">PET 영상이 보여준 것 (Hien 설명 기준)</text>
+
+      <!-- BEFORE -->
+      <text x="120" y="62" text-anchor="middle" class="cap">치료 전 (개념도)</text>
+      <circle cx="120" cy="140" r="62" fill="#e88a8a" stroke="#b91c1c" stroke-width="2.5"/>
+      <circle cx="120" cy="140" r="40" fill="#d9534f"/>
+      <text x="120" y="146" text-anchor="middle" class="lbl">6 cm</text>
+      <text x="120" y="222" text-anchor="middle" class="sub">전체가 활성(빨강)</text>
+      <text x="120" y="240" text-anchor="middle" class="sub">= 암세포 대사 활발</text>
+
+      <!-- arrow -->
+      <line x1="196" y1="140" x2="288" y2="140" stroke="#5b7f5b" stroke-width="3" marker-end="url(#arwH)"/>
+      <text x="242" y="126" text-anchor="middle" class="sub">2~3주</text>
+
+      <!-- AFTER -->
+      <text x="420" y="62" text-anchor="middle" class="cap">치료 후 (10/27 PET)</text>
+      <circle cx="420" cy="140" r="62" fill="#e6e6e2" stroke="#9a9a9a" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <circle cx="420" cy="140" r="31" fill="#d9534f"/>
+      <text x="420" y="146" text-anchor="middle" class="lbl">3 cm</text>
+      <text x="420" y="222" text-anchor="middle" class="sub">외곽 = 회색(비활성·괴사)</text>
+      <text x="420" y="240" text-anchor="middle" class="sub">중심만 빨강(활성 잔존)</text>
+
+      <!-- legend -->
+      <rect x="530" y="100" width="18" height="14" rx="2" fill="#d9534f"/>
+      <text x="556" y="112" class="sub">활성(암 대사)</text>
+      <rect x="530" y="126" width="18" height="14" rx="2" fill="#e6e6e2" stroke="#9a9a9a"/>
+      <text x="556" y="138" class="sub">비활성·괴사</text>
+
+      <text x="16" y="282" class="note">※ 이 그림은 Hien의 PET 판독 설명을 도식화한 것이며, 실제 의료영상 판독문이 아닙니다.</text>
+    </svg>
+    </div>
+
+    <h3>수치로 본 변화</h3>
+    <table>
+      <thead><tr><th>항목</th><th>치료 전 <span class="src-label">Hien</span></th><th>10/27 검사 <span class="src-label">Hien</span></th><th>변화 <span class="ai-label">AI 주석</span></th></tr></thead>
+      <tbody>
+        <tr><td>종괴 크기</td><td>6 cm</td><td>중심 3 cm 활성</td><td><b>외곽 비활성화</b></td></tr>
+        <tr><td>전이</td><td>—</td><td>뇌 MRI·PET <b>전이 없음</b></td><td>✅</td></tr>
+        <tr><td>만성 기침</td><td>4개월 지속</td><td>“10% 수준으로 감소”</td><td>본인 체감</td></tr>
+        <tr><td>가래</td><td>다량</td><td>“50% 감소” → 이후 “최소”</td><td>본인 체감</td></tr>
+        <tr><td>체중</td><td>—</td><td><b>9kg(20파운드) 감소</b></td><td>⚠️ 부작용</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⚠ “크기가 줄었다”보다 정확한 표현 — AI 해석</h4>
+      Hien 본인의 표현은 <b>“외곽층이 모두 죽은 조직이 됐고, 중심 3cm만 빛난다”</b>입니다. 이는 <b>종괴가 작아진 것</b>과 <b>종괴 안쪽이 괴사한 것</b>이 다를 수 있음을 뜻합니다. 실제 크기 변화는 <b>판독문(radiologist report)으로 확인해야</b> 하며, 이 문서에는 그 원문이 없습니다.
+    </div>
+  </section>
+
+  <!-- ============ 4. 프로토콜 구조 ============ -->
+  <section>
+    <h2><span class="num">4</span>그가 실제로 한 것 — 프로토콜 5개 축</h2>
+    <p><span class="src-label">Hien 기록</span> Hien의 프로토콜은 <b>“약 한 알”이 아니라 5개 축의 조합</b>입니다. <span style="font-size:13.5px; color:#666;">(5개 축으로 묶어 분류한 것은 AI가 정리한 것)</span></p>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;">Hien이 강조한 순서대로 배치했습니다 — <b>그는 단식·식이가 가장 강력했다고 말합니다.</b> 즉 이 그림에서 <b>약물(③)은 5개 축 중 하나</b>로 배치되어 있습니다. 이 배치는 Hien의 발언을 AI가 반영한 것입니다.</p>
+    </div>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 700 470" role="img" aria-label="Hien 프로토콜 5개 축 구조도">
+      <defs>
+        <style>
+          .cen{font:700 17px sans-serif; fill:#fff;}
+          .cn2{font:400 13px sans-serif; fill:#dff0ee;}
+          .ax{font:700 15px sans-serif; fill:#fff;}
+          .axs{font:400 13px sans-serif; fill:#f2f2f2;}
+          .pct{font:700 20px sans-serif; fill:#b45309;}
+        </style>
+      </defs>
+
+      <!-- center -->
+      <circle cx="350" cy="150" r="66" fill="#0f5e5e"/>
+      <text x="350" y="143" text-anchor="middle" class="cen">Hien</text>
+      <text x="350" y="163" text-anchor="middle" class="cen">프로토콜</text>
+      <text x="350" y="182" text-anchor="middle" class="cn2">5개 축</text>
+
+      <!-- spokes -->
+      <line x1="350" y1="216" x2="130" y2="300" stroke="#c9dcd9" stroke-width="2"/>
+      <line x1="350" y1="216" x2="240" y2="330" stroke="#c9dcd9" stroke-width="2"/>
+      <line x1="350" y1="216" x2="350" y2="340" stroke="#c9dcd9" stroke-width="2"/>
+      <line x1="350" y1="216" x2="460" y2="330" stroke="#c9dcd9" stroke-width="2"/>
+      <line x1="350" y1="216" x2="570" y2="300" stroke="#c9dcd9" stroke-width="2"/>
+
+      <!-- axis 1: fasting (biggest) -->
+      <rect x="30" y="300" width="190" height="74" rx="10" fill="#5b7f5b"/>
+      <text x="125" y="324" text-anchor="middle" class="ax">① 단식 (핵심)</text>
+      <text x="125" y="344" text-anchor="middle" class="axs">2~5일 간헐 단식</text>
+      <text x="125" y="362" text-anchor="middle" class="axs">72시간 이상이 “의미 있다”</text>
+
+      <!-- axis 2: diet -->
+      <rect x="160" y="380" width="160" height="70" rx="10" fill="#b45309"/>
+      <text x="240" y="404" text-anchor="middle" class="ax">② 식이</text>
+      <text x="240" y="422" text-anchor="middle" class="axs">케톤 식·동물성</text>
+      <text x="240" y="439" text-anchor="middle" class="axs">무당·무탄수</text>
+
+      <!-- axis 3: drugs -->
+      <rect x="262" y="330" width="176" height="70" rx="10" fill="#6d28a8"/>
+      <text x="350" y="354" text-anchor="middle" class="ax">③ 약물</text>
+      <text x="350" y="372" text-anchor="middle" class="axs">이버멕틴 + 펜벤다졸</text>
+      <text x="350" y="389" text-anchor="middle" class="axs">2주 후 2배 증량</text>
+
+      <!-- axis 4: supplements -->
+      <rect x="380" y="380" width="170" height="70" rx="10" fill="#2b6cb0"/>
+      <text x="465" y="404" text-anchor="middle" class="ax">④ 보충제</text>
+      <text x="465" y="422" text-anchor="middle" class="axs">D3 20,000IU·C 6-8g</text>
+      <text x="465" y="439" text-anchor="middle" class="axs">셀레늄·베르베린</text>
+
+      <!-- axis 5: others -->
+      <rect x="482" y="300" width="190" height="74" rx="10" fill="#0f5e5e"/>
+      <text x="577" y="324" text-anchor="middle" class="ax">⑤ 생활·기타</text>
+      <text x="577" y="344" text-anchor="middle" class="axs">운동·심호흡·온천</text>
+      <text x="577" y="362" text-anchor="middle" class="axs">네뷸라이저·간식</text>
+
+      <!-- highlight 50% -->
+      <text x="350" y="40" text-anchor="middle" class="pct">“단식·식이가 전략의 50% 이상”</text>
+      <text x="350" y="62" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#666">— Hien 본인 발언 (2026-10-27) · 5축 분류는 AI Hermes Agent 주석</text>
+
+      <!-- caution -->
+      <rect x="30" y="458" width="640" height="0" fill="none"/>
+    </svg>
+    </div>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⭐ 이 사례의 가장 중요한 특징 — AI 분석</h4>
+      Hien은 <b>이버멕틴·펜벤다졸을 5개 축 중 하나</b>로 배치했습니다. 많은 커뮤니티 글이 “구충제가 암을 잡았다”는 식으로 쓰지만, <b>그는 오히려 단식·식이를 더 강조</b>했습니다. 이 점이 그의 기록을 다른 “치료 후기”와 구분 짓습니다. <span style="font-size:13.5px; color:#666;">(이 평가는 AI의 판단입니다)</span>
+    </div>
+
+    <h3>하루 루틴 — 실제 기록에서 재구성</h3>
+    <p><span class="src-label">Hien 기록</span> <span style="font-size:13.5px; color:#666;">아래 표는 Hien의 게시물·댓글을 AI가 시간대별로 재배열한 것입니다. 원문에는 시간대 구분이 없습니다.</span></p>
+    <table>
+      <thead><tr><th>시간대 <span class="ai-label">AI 주석</span></th><th>하는 일 <span class="src-label">Hien</span></th><th>목적 <span class="ai-label">AI 주석</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>기상 직후</b></td>
+          <td>생마늘 1~2쪽(10분 방치) + 사과식초 1작은술 + 올리브오일 3~4작은술, <b>빈속</b></td>
+          <td>인슐린 스파이크 없이 항산화 성분 섭취</td>
+        </tr>
+        <tr>
+          <td><b>아침</b></td>
+          <td>이버멕틴 + 펜벤다졸 + 보충제(D3·C·셀레늄)</td>
+          <td>약물 투여 창</td>
+        </tr>
+        <tr>
+          <td><b>오전</b></td>
+          <td>심호흡 + 간헐적 저산소(intermittent hypoxia) 2회</td>
+          <td>“세포자멸사 유도·줄기세포 재생” 주장</td>
+        </tr>
+        <tr>
+          <td><b>오후</b></td>
+          <td>땀 흘리는 운동 30~45분 · 줄넘기 200~300회 · 초저강도 조깅</td>
+          <td>폐활량·순환 유지</td>
+        </tr>
+        <tr>
+          <td><b>저녁</b></td>
+          <td>마늘 1쪽 + 사과식초 + 물</td>
+          <td>“자가포식(autophagy) 지속”</td>
+        </tr>
+        <tr>
+          <td><b>하루 2회</b></td>
+          <td><b>DMSO + 콜로이달 실버 네뷸라이저</b></td>
+          <td>— <b>⚠️ 7장 참조</b></td>
+        </tr>
+        <tr>
+          <td><b>단식 중</b></td>
+          <td>물+소금 · 녹차/말차 + 생강 + 강황 + 후추</td>
+          <td>전해질 유지 + 항염</td>
+        </tr>
+        <tr>
+          <td><b>재급식</b></td>
+          <td>뼈육수 또는 올리브오일 4~5작은술 + <b>셀러리·고수(파슬리)</b> + 베르베린 1200mg×2</td>
+          <td>“글루타민 억제제” 역할 주장</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>핵심 개념 — 그가 쓰는 용어 3개</h3>
+    <p style="font-size:13.5px; color:#666;"><span class="src-label">Hien 기록</span> 용어 자체는 Hien이 사용하는 것이고, <b>아래 설명(정의)은 AI가 일반적 정의로 풀어 쓴 것</b>입니다.</p>
+    <div class="grid2">
+      <div class="card">
+        <h4>GKI (Glucose Ketone Index)</h4>
+        혈당÷케톤 비율. 낮을수록 케톤 상태. Hien은 <b>0.8~1.0</b>을 “치료적 구간”이라 표현, <b>1~3은 “허용”</b>.
+        <div style="margin-top:6px;"><span class="ai-label">AI 주석</span> <span style="font-size:13px;">“치료적 구간”은 Hien의 표현이며, 암 치료에서 GKI 목표치는 <b>의학적으로 확립되지 않았습니다.</b></span></div>
+      </div>
+      <div class="card purple">
+        <h4>글루타민 억제</h4>
+        “암세포는 포도당 + 글루타민을 먹는다”는 전제로, <b>셀러리·고수·강황·녹차·베르베린</b>을 억제제로 사용.
+        <div style="margin-top:6px;"><span class="ai-label">AI 주석</span> <span style="font-size:13px;">이 음식들의 <b>글루타민 억제 효과는 시험관 연구 수준</b>이며, 사람에서 암을 굶긴다는 근거는 없습니다.</span></div>
+      </div>
+    </div>
+    <div class="card sage">
+      <h4>자가포식(Autophagy)</h4>
+      단식으로 세포가 스스로 불필요한 것을 분해하는 과정. Hien은 <b>“단식 72시간 이상이 의미 있다”</b>고 강조합니다.
+      <br><span class="ai-label">AI 주석</span> <b>이 개념은 암 치료에서 아직 임상적으로 확립되지 않았습니다.</b> 자가포식은 오히려 <b>암세포 생존에 유리하게 작용할 수도 있다는 연구</b>도 있습니다.
+    </div>
+  </section>
+
+  <!-- ============ 5. 검증 가능한 것 / 아닌 것 ============ -->
+  <section>
+    <h2><span class="num">5</span>냉정하게 — 무엇이 확인되고 무엇이 아닌가</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;"><b>이 장 전체와 아래 표의 등급은 모두 AI가 매긴 평가입니다.</b> Hien의 주장이 아닙니다. 근거는 <b>본인 게시물과 스크린샷</b>이며, 의무기록 원본은 공개되지 않았습니다. AI가 직접 확인한 범위 안에서 등급을 매겼습니다.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>내용</th><th>근거 수준 <span class="ai-label">AI 주석</span></th><th>설명 <span class="ai-label">AI 주석</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td>2026-09-24 폐암 진단, 6cm 종괴</td>
+          <td><span class="badge b-ok">✅ 본인 진술</span></td>
+          <td>CT 스크린샷(9/14 촬영) 첨부</td>
+        </tr>
+        <tr>
+          <td>10/27 뇌MRI·PET “전이 없음”</td>
+          <td><span class="badge b-ok">✅ 본인 진술</span></td>
+          <td>병원 결과를 본인이 요약. <b>판독문 미공개</b></td>
+        </tr>
+        <tr>
+          <td>“6cm 중 중심 3cm만 활성”</td>
+          <td><span class="badge b-ok">✅ 본인 진술</span></td>
+          <td>PET 판독 설명을 본인이 해석한 것</td>
+        </tr>
+        <tr>
+          <td>증상 호전(기침 90%↓·가래 50%↓)</td>
+          <td><span class="badge b-mid">⚠ 자기보고</span></td>
+          <td>주관적 체감. 객관 지표 아님</td>
+        </tr>
+        <tr>
+          <td><b>“이 프로토콜이 종양을 줄였다”</b></td>
+          <td><span class="badge b-no">🔴 증명 안 됨</span></td>
+          <td>n=1, 대조군 없음, 5개 축 동시 시행</td>
+        </tr>
+        <tr>
+          <td>단식·식이가 “50% 효과”</td>
+          <td><span class="badge b-open">❓ 본인 추정</span></td>
+          <td>비율을 측정한 방법 없음. 인상 진술</td>
+        </tr>
+        <tr>
+          <td>자가포식이 암세포를 죽였다</td>
+          <td><span class="badge b-no">🔴 미검증</span></td>
+          <td>암 치료에서 임상 확립 안 됨</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>🔴 AI가 판단한 3가지 구조적 한계</h4>
+      <ol>
+        <li><b>검사 시점이 애매함</b> — 본인이 “시작 후 2~3주”라고 했습니다. 그 사이 <b>중간 스캔이 없어</b> 종괴가 언제 어떻게 변했는지 알 수 없습니다.</li>
+        <li><b>5개 축을 동시에</b> — 단식·식이·약물·보충제·생활요법을 <b>한꺼번에</b> 시작했습니다. Mike 사례와 똑같이 <b>“물이 흐려진”</b> 구조입니다. 무엇이 효과였는지 <b>분리 불가</b>.</li>
+        <li><b>진단 직후 1개월</b> — 진단 직후에는 <b>염증 반응이 가라앉으면서 증상이 좋아지는</b> 경우가 흔합니다. PET의 “외곽 비활성”도 <b>염증 감소</b>일 수 있습니다.</li>
+      </ol>
+    </div>
+
+    <div class="hien-quote">
+      <span class="src-label">Hien 본인 발언</span>
+      <p>“나는 이버멕틴·펜벤다졸에 <b>모든 공을 돌리지 않는다</b>. 단식과 식이·생활 변화가 <b>전략의 최소 50%</b>다.”</p>
+      <p style="font-size:13.5px; color:#555; margin-bottom:0;">“나는 이제 이 종양을 <b>완전히 중화</b>할 때까지 층층이 분해하고 있다.” / “<b>두려움에 팔리지 마세요.</b> … 암은 큰일이지만, 대처할 줄 안다면 사형선고는 아닙니다.”</p>
+    </div>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⭐ 그런데 — AI가 평가하는 Hien의 정직성</h4>
+      그는 <b>“이버멕틴·펜벤다졸에 모든 공을 돌리지 않겠다”</b>고 <b>먼저</b> 말했습니다. “완치됐다”는 표현도 쓰지 않았습니다. 커뮤니티에 “치료 후기”를 올리는 사람 중 <b>스스로 한계를 밝히는 경우는 드뭅니다.</b> 이 점은 <b>그의 기록을 신뢰할 만하게</b> 만듭니다 — 결론이 아니라 <b>태도</b>가. <span style="font-size:13.5px; color:#666;">(이 평가는 AI의 판단이며, 의학적 검증과는 별개입니다)</span>
+    </div>
+  </section>
+
+  <!-- ============ 6. 이 검사 결과를 다르게 읽는 법 ============ -->
+  <section>
+    <h2><span class="num">6</span>같은 검사 결과도 이렇게 읽힐 수 있습니다</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;"><b>이 장 전체는 AI의 해석입니다.</b> Hien은 “외곽이 죽었다”는 PET 결과만 전했을 뿐, 아래 세 가지 해석을 제시하지 않았습니다. AI가 의학 문헌의 일반적 관점에서 정리한 것입니다.
+      <br><br>“PET에서 외곽이 죽었다”는 소식은 고무적입니다. 그러나 의학에서는 <b>다른 해석도 함께</b> 검토합니다. 이것을 알면 뉴스를 냉정하게 볼 수 있습니다.</p>
+    </div>
+
+    <div class="svgbox">
+    <svg viewBox="0 0 700 330" role="img" aria-label="PET 결과의 세 가지 해석 가능성">
+      <defs>
+        <style>
+          .hh{font:700 15px sans-serif; fill:#0f5e5e;}
+          .bt{font:700 14px sans-serif; fill:#fff;}
+          .bs{font:400 12.5px sans-serif; fill:#efefef;}
+          .ft{font:700 13.5px sans-serif; fill:#222;}
+          .fs{font:400 12.5px sans-serif; fill:#555;}
+        </style>
+      </defs>
+
+      <text x="16" y="26" class="hh">같은 “외곽 비활성” — 세 가지 설명이 모두 가능 [AI Hermes Agent 주석]</text>
+
+      <!-- A -->
+      <rect x="30" y="48" width="200" height="52" rx="9" fill="#5b7f5b"/>
+      <text x="130" y="70" text-anchor="middle" class="bt">해석 A — 치료 효과</text>
+      <text x="130" y="88" text-anchor="middle" class="bs">종양 세포가 실제로 죽음</text>
+      <text x="130" y="126" text-anchor="middle" class="ft">가장 바라는 해석</text>
+      <text x="130" y="146" text-anchor="middle" class="fs">확인법: 조직검사·추적 PET</text>
+
+      <!-- B -->
+      <rect x="250" y="48" width="200" height="52" rx="9" fill="#b45309"/>
+      <text x="350" y="70" text-anchor="middle" class="bt">해석 B — 염증 감소</text>
+      <text x="350" y="88" text-anchor="middle" class="bs">주변 염증이 가라앉음</text>
+      <text x="350" y="126" text-anchor="middle" class="ft">PET은 염증도 잡음</text>
+      <text x="350" y="146" text-anchor="middle" class="fs">FDG는 염증세포도 섭취</text>
+
+      <!-- C -->
+      <rect x="470" y="48" width="200" height="52" rx="9" fill="#b91c1c"/>
+      <text x="570" y="70" text-anchor="middle" class="bt">해석 C — 괴사(necrosis)</text>
+      <text x="570" y="88" text-anchor="middle" class="bs">혈류가 끊겨 죽은 조직</text>
+      <text x="570" y="126" text-anchor="middle" class="ft">빠르게 자란 종양에서 흔함</text>
+      <text x="570" y="146" text-anchor="middle" class="fs">크기는 그대로일 수 있음</text>
+
+      <!-- bottom conclusion -->
+      <rect x="30" y="176" width="640" height="62" rx="10" fill="#eef4fb" stroke="#2b6cb0" stroke-width="1.5"/>
+      <text x="46" y="200" class="ft" fill="#2b6cb0">세 가지를 구분하려면 → 조직검사(병리) + 연속 PET 추적이 필요</text>
+      <text x="46" y="222" class="fs">Hien의 기록에는 아직 이 구분이 없습니다. 그래서 “좋아지고 있다”까지는 말할 수 있어도</text>
+      <text x="46" y="239" class="fs">“치료됐다”고 말하기에는 이릅니다. (그도 그렇게 말하지 않았습니다.)</text>
+
+      <!-- scale -->
+      <rect x="30" y="258" width="640" height="52" rx="9" fill="#fdfaf4" stroke="#e5dfd3"/>
+      <text x="46" y="280" class="ft">시간이 말해줄 것</text>
+      <text x="46" y="299" class="fs">그는 “2~3주 뒤 업데이트된 프로토콜”과 재검을 예고했습니다. 다음 스캔이 이 사례의 진짜 분기점입니다.</text>
+    </svg>
+    </div>
+  </section>
+
+  <!-- ============ 7. 위험 경고 ============ -->
+  <section>
+    <h2><span class="num">7</span>⚠️ 이 프로토콜에서 <span style="color:#b91c1c">따라 하면 위험한</span> 항목</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;"><b>이 장의 위험 평가는 전부 AI가 판단한 것입니다.</b> Hien은 이 항목들을 <b>위험하다고 표시하지 않았습니다</b> — 오히려 권장하는 뉘앙스로 적었습니다. AI가 의학적 일반 지식에 비추어 위험도를 별도로 매긴 것입니다.
+      <br><br>이 장은 <b>가장 중요합니다.</b> Hien의 기록에는 <b>의학적 감독 없이는 위험한 요소</b>가 여러 개 있습니다. 회원들이 이 부분만 보고 따라 하면 다칠 수 있습니다.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>항목</th><th>무엇이 문제인가</th><th>위험도 <span class="ai-label">AI 주석</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>DMSO 네뷸라이저</b></td>
+          <td>DMSO는 <b>산업용 용매</b>로도 쓰입니다. 흡입 시 기도 자극·메스꺼움·두통. 다른 물질을 <b>몸속으로 끌고 들어가는</b> 성질이 있어 <b>불순물까지 흡입</b>될 수 있습니다. 흡입 안전성은 <b>확립되지 않았습니다</b>.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>콜로이달 실버 흡입</b></td>
+          <td>은 성분이 <b>피부·점막을 영구히 회색으로 변색</b>시킬 수 있습니다(argyria). FDA가 <b>은 제품의 질병 치료 주장을 금지</b>한 이력이 있습니다. 폐에 직접 넣는 것은 더 위험합니다.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>37시간 건식단식</b><br>(물도 안 마심)</td>
+          <td>탈수·신장 손상·전해질 붕괴 위험. <b>건식단식은 의학적으로 권장되지 않습니다.</b> Hien 본인도 “적절한 때를 기다리겠다”며 보류했습니다.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>혈당 50mg/dL 하한</b></td>
+          <td>50mg/dL은 <b>저혈당 경계</b>입니다. 어지럼·의식 저하·발작 위험. <b>당뇨약 복용자는 특히 위험</b>합니다.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>2주 후 용량 2배 증량</b></td>
+          <td>이버멕틴 고용량은 <b>신경독성</b> 위험이 있고, 항암제·항응고제와 <b>상호작용</b>합니다. “증상 없으면 2배”는 <b>의학적 근거가 없는</b> 판단 기준입니다.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>동물용 펜벤다졸</b></td>
+          <td>인간용으로 승인된 약이 아닙니다. <b>인체 용량·흡수·장기 안전성 자료가 없습니다.</b> Hien 본인도 “vet version(동물용)”이라고 명시했습니다.</td>
+          <td><span class="badge b-no">🔴 높음</span></td>
+        </tr>
+        <tr>
+          <td><b>9kg(체중 20파운드) 감소</b></td>
+          <td>1개월에 9kg은 <b>심각한 속도</b>입니다. 근감소·면역 저하로 이어질 수 있습니다. Hien은 “의도된 것”이라 했지만, <b>일반인에게는 위험 신호</b>입니다.</td>
+          <td><span class="badge b-mid">⚠️ 주의</span></td>
+        </tr>
+        <tr>
+          <td>생마늘 다량</td>
+          <td>위 점막 자극·출혈 위험(특히 항응고제 복용 시). Hien도 “불편하면 줄이라”고 적었습니다.</td>
+          <td><span class="badge b-mid">⚠️ 주의</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="disc">
+      <b>🛑 이 문서를 읽는 회원께 <span class="ai-label" style="background:#7f1d1d;">AI Hermes Agent 주석</span></b><br><br>
+      Hien은 <b>본인의 몸에서 실험</b>했고, 그 결과를 공유한 것입니다. <b>그의 체중·기저질환·복용약이 당신과 같지 않습니다.</b>
+      <br><br>
+      특히 <b>DMSO·콜로이달 실버 흡입</b>과 <b>건식단식</b>은 <b>따라 하지 마십시오.</b> 암 치료를 고민 중이라면, <b>담당 종양내과 의사에게 이 문서를 보여주고</b> 상의하십시오. 의사가 “무엇이든 하지 마라”고만 하는 경우에도, <b>단식 전 혈액검사·전해질 확인</b>은 받으실 수 있습니다.
+    </div>
+  </section>
+
+  <!-- ============ 8. 커뮤니티 시사점 ============ -->
+  <section>
+    <h2><span class="num">8</span>우리 커뮤니티가 배울 것</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;"><b>이 장은 AI의 해석·평가입니다.</b> Hien이 “이걸 배우라”고 말한 내용이 아닙니다. AI가 그의 기록을 읽고 정리한 교훈입니다.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card sage">
+        <h4>✅ 배울 만한 태도 <span class="ai-label">AI 주석</span></h4>
+        <ul>
+          <li><b>“완치”라고 말하지 않음</b></li>
+          <li><b>공을 약에 다 돌리지 않음</b> — 단식·식이를 먼저 강조</li>
+          <li><b>검사 시점을 정확히 밝힘</b>(“2~3주 시점”)</li>
+          <li>수치를 직접 기록·공유 (GKI, 체중)</li>
+          <li>“불편하면 줄이라”고 스스로 안전장치를 둠</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <h4>🔴 경계할 점 <span class="ai-label">AI 주석</span></h4>
+        <ul>
+          <li>5개 축 <b>동시 시작</b> → 무엇이 효과인지 알 수 없음</li>
+          <li><b>위험 물질</b>(DMSO·은) 포함</li>
+          <li><b>9kg 감소</b>를 “의도된 것”으로 넘김</li>
+          <li>“의사가 공포를 판다”는 <b>반의료 정서</b>가 섞임</li>
+          <li>커뮤니티에서 <b>구매 경로</b>를 알려주는 댓글들 → 규제 위험</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <h4>⭐ AI가 보는 이 사례의 진짜 질문</h4>
+      Hien의 이야기는 <b>“구충제가 암을 치료한다”의 근거가 아닙니다.</b> 그가 실제로 증명한 것은 <b>“환자가 자기 몸을 체계적으로 관찰하고 기록할 수 있다”</b>는 것입니다.
+      <br><br>
+      그리고 <b>AI가 그의 기록 중 가장 값지다고 평가한 말</b>은 약 이야기가 아니라 이것입니다 —
+      <div class="hien-quote" style="margin-bottom:0;">
+        <span class="src-label">Hien 본인 발언</span>
+        <p style="margin-bottom:0;">“<b>두려움에 팔리지 마세요.</b> 깊게 숨 쉬고, 자기 몸에 선택지를 주세요. 암은 큰일이지만, 대처할 줄 안다면 사형선고는 아닙니다.”</p>
+      </div>
+    </div>
+
+    <h3>주의 깊게 볼 댓글들</h3>
+    <p><span class="ai-label">AI Hermes Agent 주석</span> <span style="font-size:13.5px;">117개 댓글 중, <b>AI가 볼 때 본질적인 질문</b>을 던진 사람들이 있었습니다. <b>질문 자체는 댓글 작성자들의 것</b>이나, <b>“왜 중요한가”는 AI가 설명한 것</b>입니다.</span></p>
+    <table>
+      <thead><tr><th>질문</th><th>왜 중요한가 <span class="ai-label">AI 주석</span></th></tr></thead>
+      <tbody>
+        <tr><td>“<b>이거 항암이나 면역치료 받은 적 있나요?</b>” (여러 명)</td><td><b>가장 핵심적인 질문.</b> 병용 여부에 따라 해석이 완전히 달라짐</td></tr>
+        <tr><td>“<b>생검으로 암 확인됐나요?</b>”</td><td>진단 확정 여부. Hien은 9/14 CT-Guided Biopsy 기록을 공유함</td></tr>
+        <tr><td>“<b>간·신장 수치는 어떤가요?</b>”</td><td>이 프로토콜의 <b>실제 위험 지점</b>을 정확히 짚음</td></tr>
+        <tr><td>“<b>CEA 수치는?</b>”</td><td>객관적 종양표지자. 영상 외 확인 지표</td></tr>
+        <tr><td>“<b>단식 중 약을 어떻게 먹나요? 지방이 필요한데</b>”</td><td>프로토콜 자체의 <b>논리적 모순</b>을 지적</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 9. Q&A ============ -->
+  <section>
+    <h2><span class="num">9</span>질문과 답변</h2>
+
+    <div class="ai-block">
+      <span class="ai-label">AI Hermes Agent 주석</span>
+      <p style="margin-bottom:0;"><b>이 장의 모든 답변은 AI가 작성한 것입니다.</b> Hien이 한 말이 아닙니다. 아래 Q는 회원들이 가질 만한 질문을 AI가 예상해 만든 것이고, A는 AI의 판단입니다. <b>의료 조언이 아닙니다.</b></p>
+    </div>
+
+    <h3>기본</h3>
+    <div class="qa">
+      <div class="q">그래서 이 사람은 암이 나았나요?</div>
+      <div class="a"><b>아직 알 수 없습니다.</b> 10/27 검사에서 “전이 없음 + 종괴 외곽 비활성”은 <b>좋은 소식</b>이지만, <b>중심 3cm는 여전히 활성</b>입니다. 그도 “완치됐다”고 말하지 않았습니다.</div>
+
+      <div class="q">1개월 만에 6cm가 3cm가 된 건가요?</div>
+      <div class="a">정확히는 <b>“6cm 종괴 중 중심 3cm만 PET에서 빛난다”</b>입니다. 종괴가 물리적으로 3cm로 줄었다는 의미인지, <b>죽은 부분이 생겼다</b>는 의미인지는 <b>판독문이 필요</b>합니다. 그는 후자로 설명했습니다.</div>
+
+      <div class="q">이버멕틴·펜벤다졸이 효과 있었나요?</div>
+      <div class="a"><b>알 수 없습니다.</b> 그가 <b>5가지를 동시에</b> 했기 때문입니다. 게다가 본인이 <b>“단식·식이가 50% 이상”</b>이라고 했으니, 약의 몫은 <b>그조차 모릅니다</b>.</div>
+
+      <div class="q">항암치료는 안 받았나요?</div>
+      <div class="a">공개된 기록에는 <b>항암·방사선·면역치료 언급이 없습니다.</b> 댓글에서 여러 명이 이 점을 물었지만 <b>명확한 답은 확인되지 않았습니다.</b> 이것이 이 사례 해석의 <b>가장 큰 불확실성</b>입니다.</div>
+    </div>
+
+    <h3>실전</h3>
+    <div class="qa">
+      <div class="q">단식은 따라 해도 되나요?</div>
+      <div class="a"><b>2~5일 장기 단식은 반드시 의료 감독이 필요합니다.</b> 특히 <b>당뇨·저혈압·신장질환·항암 중</b>이라면 위험합니다. <b>건식단식(물도 안 마심)은 하지 마십시오.</b> 일반적으로 <b>12~16시간 간헐적 단식</b>부터 시작하는 것이 안전합니다.</div>
+
+      <div class="q">GKI 측정기는 사야 하나요?</div>
+      <div class="a">측정 자체는 <b>위험하지 않습니다</b>. 다만 <b>수치에 집착해 혈당을 50까지 떨어뜨리는 것</b>이 위험합니다. 측정은 <b>정보 수집</b>이고, 목표 수치를 낮추는 것은 <b>별개의 결정</b>입니다.</div>
+
+      <div class="q">DMSO·콜로이달 실버는요?</div>
+      <div class="a"><b>따라 하지 마십시오.</b> 흡입 안전성이 확립되지 않았고, 콜로이달 실버는 <b>영구적 피부 변색</b> 위험이 있습니다. 이 항목은 Hien의 프로토콜에서도 <b>가장 근거가 약한 부분</b>입니다.</div>
+
+      <div class="q">그럼 뭘 배워야 하나요?</div>
+      <div class="a">세 가지입니다 — <b>① 검사 결과를 정확히 기록하기</b>(언제 찍었는지 포함), <b>② 한 번에 하나씩 바꾸기</b>(그는 5개를 동시에 해서 배울 수 없게 됨), <b>③ “완치”라는 말을 아끼기</b>.</div>
+    </div>
+
+    <h3>비판적</h3>
+    <div class="qa">
+      <div class="q">이거 그냥 진단 직후 자연경과 아닌가요?</div>
+      <div class="a">가능성이 있습니다. 진단 직후에는 <b>염증이 가라앉으면서 증상이 좋아지는</b> 경우가 흔하고, PET의 “외곽 비활성”도 <b>괴사나 염증 감소</b>일 수 있습니다. <b>구분하려면 연속 추적 검사</b>가 필요합니다.</div>
+
+      <div class="q">왜 커뮤니티 사람들은 이걸 그대로 믿나요?</div>
+      <div class="a">희망이 크기 때문입니다. 댓글 117개 중 <b>대부분이 응원</b>이고, “나도 같은 걸 했다, 효과 있다”는 <b>확증 편향</b> 댓글도 있습니다. 반면 <b>“항암 받았나요”, “간수치는요”</b> 같은 정확한 질문은 <b>소수</b>였습니다.</div>
+
+      <div class="q">Hien은 사기꾼인가요?</div>
+      <div class="a"><b>그렇게 볼 근거는 없습니다.</b> 그는 <b>실명·얼굴·CT 스크린샷</b>을 공개했고, <b>공을 약에 돌리지 않겠다고 먼저 말했으며</b>, “불편하면 줄이라”고 안전장치도 적었습니다. <b>과장이 아니라 열정</b>으로 보입니다. 다만 <b>열정이 근거를 대신하지는 못합니다.</b></div>
+    </div>
+  </section>
+
+  <!-- ============ 10. 출처 ============ -->
+  <section>
+    <h2><span class="num">10</span>출처 &amp; 확인한 것</h2>
+
+    <h3>1차 자료</h3>
+    <ul>
+      <li><b>Instagram</b> @lungcancerfighter092426 — 19개 게시물 (2026-09-25 ~ 2026-10-27)</li>
+      <li><b>Facebook</b> “Ivermectin and Cancer Discussion Group” — 2026-10-27 게시물 (반응 317, 공유 15, 댓글 117개 수집)</li>
+      <li><b>CT 스크린샷</b> — Study Date 2026-09-14, “CT Guided Biopsy”, DOB 1985-08-07, 우측 폐 병변에 빨간 박스 표시</li>
+    </ul>
+
+    <h3>이 문서에서 확인하지 못한 것 (정직하게) <span class="ai-label">AI Hermes Agent 주석</span></h3>
+    <ul>
+      <li><b>병리 판독문·영상 판독문 원본</b> — 공개되지 않음. “3cm만 활성”은 <b>본인의 요약</b>입니다.</li>
+      <li><b>항암·방사선·면역치료 병행 여부</b> — 명확한 답을 확인하지 못했습니다.</li>
+      <li><b>간·신장 기능 수치</b> — 댓글에서 질문이 있었으나 답이 확인되지 않음.</li>
+      <li><b>CEA 등 종양표지자</b> — 언급 없음.</li>
+      <li><b>Instagram 직접 접속</b> — 스크래핑 차단으로 열람 불가. 제공된 19개 게시물 데이터로 작성했습니다.</li>
+    </ul>
+
+    <div class="foot">
+      <b>⚠️ 최종 안내 <span class="ai-label">AI Hermes Agent 주석</span></b>
+      <ul>
+        <li>이 문서는 <b>공개된 SNS 기록을 정리한 사례 분석</b>입니다. <b>의료 조언이 아닙니다.</b></li>
+        <li>Hien은 <b>본인 스스로 실험</b>한 개인이며, <b>그의 결과는 검증된 치료법이 아닙니다.</b></li>
+        <li><b>DMSO·콜로이달 실버 흡입, 건식단식은 따라 하지 마십시오.</b></li>
+        <li>암 치료 결정은 <b>반드시 담당 종양내과 의사</b>와 상의하십시오.</li>
+        <li>이 문서는 <b>특정 약물의 구매·복용을 권유하지 않습니다.</b></li>
+        <li><b>이 문서에서 ‘AI Hermes Agent 주석’ 라벨이 붙은 모든 내용은 AI의 분석·판단이며, Hien의 주장과 무관합니다.</b> AI는 틀릴 수 있습니다.</li>
+      </ul>
+      <b>근거 구분</b> Hien 본인 기록(게시물·CT 스크린샷) = <span class="src-label">Hien 기록</span> / AI 분석 = <span class="ai-label">AI 주석</span><br>
+      <b>작성</b> 2026-10-28 · <b>형식</b> 단일 HTML (외부 로드 0) · <b>제작</b> Hermes Agent
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
