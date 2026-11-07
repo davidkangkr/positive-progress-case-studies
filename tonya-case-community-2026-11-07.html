@@ -1,0 +1,480 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tonya의 질문과 두 이야기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--link)}a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 16px 64px}
+header.top{padding:40px 0 20px}
+h1{font-family:var(--serif);line-height:1.3;margin:.2em 0 .4em}
+h2{font-family:var(--serif);line-height:1.35;margin:.2em 0 .7em}
+h3{margin:1.6em 0 .6em;line-height:1.4}
+.kicker{margin:0;font-size:.82em;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.sec{padding:28px 0;border-top:1px solid var(--line)}
+.lead{font-size:1.04em}
+.small{font-size:.86em;color:var(--muted)}
+.q{margin:14px 0;padding:14px 16px;background:var(--card);border-left:5px solid var(--qline);border-radius:10px}
+.q blockquote{margin:6px 0 0;white-space:pre-line}
+.q .bq p{margin:.6em 0}
+.qmeta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.85em}
+.who{font-weight:800}.when{color:var(--muted)}
+.react{background:var(--pill);color:var(--pillink);padding:1px 9px;border-radius:999px;font-weight:700}
+details{margin-top:8px}summary{cursor:pointer;color:var(--muted);font-size:.84em}
+.en{font-size:.86em;color:var(--muted);white-space:pre-line;font-family:var(--sans)}
+.q.me{border-left-color:var(--me);background:var(--mebg)}
+.q.danger{border-left-color:var(--danger)}.q.calm{border-left-color:var(--calm)}.q.warn{border-left-color:var(--warn)}.q.ask{border-left-color:var(--askc)}.q.hope{border-left-color:var(--hope)}
+.tag.me{background:var(--me);color:#fff;padding:0 7px;border-radius:5px;font-size:.85em}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:16px 0}
+.stat{background:var(--card);border-radius:10px;padding:12px;text-align:center}
+.stat b{display:block;font-size:1.6em;font-family:var(--serif)}.stat span{font-size:.85em;color:var(--muted)}
+.counts{list-style:none;padding:0;margin:0}
+.counts li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.cn{font-weight:800;color:var(--accent)}.ck{grid-column:1/-1;font-size:.78em;color:var(--muted)}
+.grp{margin-top:8px}
+.top3{padding-left:1.3em}.top3 li{margin:.3em 0}
+.storyhead{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:10px;color:#fff;margin-bottom:12px}
+.storyhead.tony{background:var(--tony)}.storyhead.thomas{background:var(--thomas)}
+.tonysec .q.main{border-left-color:var(--tony)}.thomassec .q.main{border-left-color:var(--thomas)}
+.listhead{font-weight:800;margin-top:1em}
+.dosenote{background:var(--warnbg);padding:8px 12px;border-radius:8px;font-size:.9em}
+.regimen{list-style:none;padding:0;margin:0}
+.regimen li{padding:10px 0;border-bottom:1px solid var(--line)}
+.regimen b{display:block}.regimen span{font-size:.94em}
+.thread{margin-top:10px}
+.box{background:var(--card);border-radius:12px;padding:16px 18px;margin:16px 0}
+.box.plain{border:2px dashed var(--line);background:transparent}
+.box h3{margin-top:0}
+.ask{background:var(--askbg);border:2px solid var(--askc);border-radius:12px;padding:10px 14px;margin:10px 0}
+.ask p{margin:0;font-weight:600}
+.ailabel{display:inline-block;background:var(--ai);color:#fff;padding:4px 12px;border-radius:6px;font-weight:800;font-size:.86em;margin-bottom:8px}
+.aisec{background:var(--aibg);border-radius:14px;padding:20px 16px;border-top:none;margin-top:12px}
+.unverified{background:var(--warnbg);padding:10px 14px;border-radius:8px;font-weight:700}
+.after li{margin:.5em 0}
+.refs{font-size:.84em;padding-left:1.2em}.refs li{margin:.35em 0}
+.safety{background:var(--card);border-radius:12px;padding:18px;border:2px solid var(--danger);margin-top:20px}
+.post{background:var(--card);border-radius:12px;padding:6px 18px 14px;border-left:6px solid var(--accent)}
+.byline{color:var(--muted);font-size:.9em}
+.howto{background:var(--card);border-radius:12px;padding:12px 16px;font-size:.92em}
+.toc{display:flex;flex-direction:column;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+.toc a{display:block;padding:8px 12px;background:var(--card);border-radius:8px;text-decoration:none;color:var(--ink)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.88em;min-width:460px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--card)}
+@media print{.reveal{opacity:1!important;transform:none!important}details>summary{display:none}a{color:inherit}.sec{break-inside:auto}.q,.box,.ask{break-inside:avoid}}
+:root{--bg:#FBF7F0;--ink:#2A251F;--muted:#6B6257;--line:#E4DACB;--card:#FFFFFF;--link:#1F5F8B;--focus:#D9822B;
+--serif:"Noto Serif KR",serif;--sans:"Noto Sans KR",system-ui,sans-serif;--w:760px;
+--accent:#1F6F78;--qline:#C9BBA7;--pill:#F1E7D8;--pillink:#5A4632;--me:#1F6F78;--mebg:#EEF6F6;
+--danger:#B23A2E;--calm:#3E7D4F;--warn:#C27C0E;--warnbg:#FFF3D9;--askc:#5B6FA8;--askbg:#F2F4FB;--hope:#C27C0E;
+--tony:#1F6F78;--thomas:#8A5A14;--ai:#5B4B8A;--aibg:#F4F1FA}
+body{font-size:19px}h1{font-size:1.75em}h2{font-size:1.4em}
+@media (min-width:700px){body{font-size:20px}}
+</style></head><body><main class="wrap">
+<header class="top"><p class="kicker">해외 사례 분석집 · 커뮤니티판</p>
+<h1>“더 나빠질까 두렵습니다”</h1><p class="lead">말기 삼중음성 유방암 딸을 둔 어머니의 질문, 그리고 반응이 가장 많았던 두 남편의 이야기 — 커뮤니티 원문 그대로</p>
+<p class="byline">정리 꿈많은사람2 · 2026년 11월 7일</p>
+<div class="howto"><b>이 페이지 읽는 법</b> — 배경부터 ‘글타래의 마지막’까지는 Facebook 원문을 한국어로 옮긴 것입니다. 각 인용 아래 ‘영어 원문 보기’를 누르면 원래 글이 나옵니다. AI의 해설은 맨 끝 <b>AI 클로드 주석</b>에만 모았습니다. 원문에 적힌 약과 용량은 기록일 뿐 복용 지시가 아닙니다.</div><ul class="toc"><li><a href="#bg">배경 · Tonya의 질문</a></li><li><a href="#atmos">616개의 댓글 — 분위기</a></li><li><a href="#tony">이야기 1 · Tony</a></li><li><a href="#thomas">이야기 2 · Thomas</a></li><li><a href="#last">글타래의 마지막</a></li><li><a href="#ai">AI 클로드 주석</a></li></ul></header><section id="bg" class="sec reveal "><p class="kicker">배경 · 2026년 11월 2일</p><h2>Tonya의 질문</h2><p class="lead">이버멕틴·펜벤다졸을 다루는 Facebook 공개 그룹(Ivermectin And Fenbendazole Cancer Protocol Inspired by Dr William Makis)에 한 어머니가 올린 글입니다.</p>
+<div class="post"><p>도와주세요.</p><p>제 딸은 삼중음성 유방암(TNBC, triple negative breast cancer)을 앓고 있고, 이번 주에 앞으로 약 한 달 정도 남았다는 말을 들었습니다. 암은 간, 척추, 폐, 뇌로 전이되었습니다. 간 상태가 너무 빠르게 악화되는 것이 특히 딸을 힘들게 하고 있습니다. 빌리루빈(bilirubin) 수치가 4.5였는데, 4일 만에 7.1로 올랐습니다. 간에 스텐트를 넣는 시술도 받을 수 없다고 합니다.</p><p>지금은 집에서 호스피스 돌봄을 받고 있으며, 모르핀(morphine)과 ‘oxy’를 복용하고 있습니다. 저희는 이것을 시도해 보고 싶지만, 현재 약들과 상호작용해서 오히려 상태가 더 나빠질까 두렵습니다. 이런 약들을 복용하면서 이것을 함께 사용해 본 분이 계신가요?</p>
+<details><summary>영어 원문 보기</summary><p class="en">Help
+My daughter has triple negative breast cancer and has been told this week she has about a month left .. it has spread to her liver , spine, lungs and brain. The liver is what is really taking her out because of the aggressiveness of the liver decline. She was at a 4.5 bilirubin and it went up to 7.1 in 4 days .. she is not a candidate for a stent in the liver.. she is home on hospice now and is taking morphine and oxy.. we want to try this but I’m scared it would interact with meds and possibly make her worse. Has anyone taken this with bring on these meds?</p></details></div>
+<ul class="small">
+<li>원문은 복용하려는 것을 “this(이것)”라고만 썼습니다. 그룹의 주제로 보아 이버멕틴(ivermectin)·펜벤다졸(fenbendazole)로 읽힙니다.</li>
+<li>‘oxy’의 정확한 약 이름·용량, 빌리루빈의 단위, 딸의 나이와 다른 검사 결과는 원문에 없습니다.</li>
+</ul></section><section id="atmos" class="sec reveal "><p class="kicker">댓글 전체의 분위기</p><h2>616개의 댓글</h2><p class="lead">어머니의 질문 아래 나흘 동안 수백 개의 댓글이 달렸습니다. 아래는 그 분위기를 숫자와 원문 그대로 옮긴 것입니다.</p>
+<div class="stats"><div class="stat"><b>613</b><span>반응</span></div><div class="stat"><b>106</b><span>공유</span></div><div class="stat"><b>616</b><span>댓글 표시</span></div><div class="stat"><b>591</b><span>실제 수집</span></div><div class="stat"><b>0</b><span>Tonya의 답글</span></div></div>
+<p class="small">Facebook에는 댓글 616개로 표시되지만, 답글을 끝까지 펼쳐 수집한 것은 591개(댓글 295 + 답글 296)입니다. 25개는 확인하지 못했습니다. Tonya 본인은 댓글을 하나도 달지 않았습니다.</p>
+<h3>많이 나온 말들</h3>
+<ul class="counts"><li><span class="cl">기도·위로·하나님</span><span class="cn">약 60건</span><span class="ck">pray / God / Jesus</span></li><li><span class="cl">“잃을 게 없다”·“더 나빠질 리 없다”</span><span class="cn">32건 이상</span><span class="ck">nothing to lose, what can it hurt …</span></li><li><span class="cl">바인더(binder) 찬반 논쟁</span><span class="cn">32건</span><span class="ck">binder</span></li><li><span class="cl">니코틴(nicotine)</span><span class="cn">27건</span><span class="ck">nicotine</span></li><li><span class="cl">마키스(Makis) 프로토콜 언급</span><span class="cn">23건</span><span class="ck">Makis</span></li><li><span class="cl">단식(fasting)</span><span class="cn">22건</span><span class="ck">fast</span></li><li><span class="cl">멕시코 등 클리닉</span><span class="cn">18건</span><span class="ck">Mexico, Tijuana, Hoxsey, Hope4Cancer, Gerson</span></li><li><span class="cl">동물용 약 구입처</span><span class="cn">15건</span><span class="ck">Tractor Supply, chewy, horse paste, feed store</span></li><li><span class="cl">“진통제를 끊어라” 계열</span><span class="cn">5건</span><span class="ck">stop the pain meds …</span></li><li><span class="cl">“호스피스에 말하지 마라” 계열</span><span class="cn">3건</span><span class="ck">do not tell hospice, keep it private</span></li></ul>
+<p class="small">영어 원문의 키워드로 센 대략적인 수입니다. 한 댓글이 여러 묶음에 들 수 있습니다.</p>
+<div class="grp"><h3>“해 보세요” · “잃을 게 없다”</h3><figure class="q hope">
+<div class="qmeta"><span class="who">Therese</span><span class="when">11월 2일</span><span class="react" aria-label="반응 93">반응 93</span></div>
+<blockquote>그녀가 잃을 게 뭐가 있나요. 저라면 이버멕틴(ivermectin) 프로토콜을 시도해 보겠어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">What does she have to lose.  I would give the Ivermectin protocol a try.</p></details>
+</figure><figure class="q hope">
+<div class="qmeta"><span class="who">Brenda</span><span class="when">11월 2일</span><span class="react" aria-label="반응 56">반응 56</span></div>
+<blockquote>이버멕틴을 시도해 보세요. 희망을 놓지 마세요. 놀라운 생존 이야기들을 읽었어요. ❤️ 잘 되길 빌어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Give ivermectin a go don’t give up hope I’ve read remarkable stories of survivors, ❤️ wishing you the best</p></details>
+</figure><figure class="q hope">
+<div class="qmeta"><span class="who">Gavin</span><span class="when">11월 2일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>더 나빠진다고요?? 어떻게 그렇게 생각하세요? 그녀는 죽어가고 있어요. 뭐든 해 볼 가치가 있지 않나요???</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Make her worse?? How do you figure that? She is dying, surely anything is worth trying???</p></details>
+</figure><figure class="q hope">
+<div class="qmeta"><span class="who">Stephen</span><span class="when">11월 2일</span><span class="react" aria-label="반응 22">반응 22</span></div>
+<blockquote>그녀는 죽어가는데 이게 상황을 더 나쁘게 할까 봐 걱정하시는 건가요? 그리고… 메벤다졸(mebendazole)은 혈액뇌장벽을 통과합니다… 이버멕틴과 같이 쓰세요. 이 조사는 진작 했어야 했어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">She is dying and you are afraid this will make her situation worse?
+BTW....Menbendazole crosses the blood brain barrier....combine that with Ivermectin.  You should have been doing this research long ago.</p></details>
+</figure></div>
+<div class="grp"><h3>어머니의 마음을 대신 말한 사람들</h3><figure class="q calm">
+<div class="qmeta"><span class="who">Lisa</span><span class="when">11월 2일</span><span class="react" aria-label="반응 9">반응 9</span></div>
+<blockquote>그분은 딸의 고통을 더 크게 만들까 봐 걱정하는 거고, 그래도 마지막으로 한번 해 볼 가치가 있는지 묻는 거라고 생각해요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Stephen Samillano I think he is worrying he could make her suffering worse and asking if it&#x27;s still worth a last minute try.</p></details>
+</figure><figure class="q calm">
+<div class="qmeta"><span class="who">Rhonda</span><span class="when">11월 6일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>세상에, 자기 아이가 눈앞에서 죽어가는 걸 지켜보는 이 어머니가 지금 충분히 지옥을 겪고 있지 않다고 생각하세요? 하고 싶은 말을 훨씬 더 잘 전하는 법을 배우셔야 해요. 정말 끔찍한 댓글이었어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Stephen Samillano OMGoodness, do you think this mother isnt going through enough hell watching her child die in front of her?  You need to learn how to communicate what you want to say much better than you do.  Your comment was awful.</p></details>
+</figure></div>
+<div class="grp"><h3>진통제와 호스피스에 관한 조언</h3><figure class="q danger">
+<div class="qmeta"><span class="who">Cindy</span><span class="when">11월 2일</span><span class="react" aria-label="반응 59">반응 59</span></div>
+<blockquote>진통제를 끊으세요… 모르핀이 남은 간을 죽이고 심장을 느리게 할 거예요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Stop the pain meds ...the morphine will kill whats left of her liver and slow her heart.</p></details>
+</figure><figure class="q danger">
+<div class="qmeta"><span class="who">Dan</span><span class="when">11월 2일</span><span class="react" aria-label="반응 30">반응 30</span></div>
+<blockquote>저라면 진통제를 빼고 모든 약을 끊겠어요. 프로토콜을 따르고 상황이 바뀌길 바라겠습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">If it were me, I would discontinue all meds, except for pain.  I would follow a protocol and hope it turns things around.</p></details>
+</figure><figure class="q danger">
+<div class="qmeta"><span class="who">Katie</span><span class="when">11월 2일</span><span class="react" aria-label="반응 16">반응 16</span></div>
+<blockquote>뭐가 해가 되겠어요? 남은 시간이 그 정도라면 그냥 해 보는 거죠. 그녀의 약에 영향을 주지 않을 거예요. 하지만 호스피스에는 절대 말하지 마세요. 그러면 그녀를 내보낼 거예요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">What can it hurt? They say she has so long left why not just try u know? It wouldn&#x27;t affect her meds but DO NOT tell hospice or they will drop her</p></details>
+</figure><figure class="q danger">
+<div class="qmeta"><span class="who">Joan</span><span class="when">11월 2일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>어쨌든 펜벤다졸(fenbendazole)과 이버멕틴을 써 보세요. 그녀의 삶이니까요! 보통 어떤 것과도 상호작용하지 않아요! … 지체할 시간이 없어요. 지금 당장 Tractor Supply에 가서 이버멕틴을 사고, 펜벤다졸은 chewy.com에서 주문하세요. 바로 전부 시작하세요!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Try fenbendazole and ivermectin anyways it’s her life! It usually doesn’t interact with anything! Giver TUDCA for her liver give her probably like 888  fenbendazole , half ￼ in the morning and half at night and ivermectin horse paste in the morning afternoon and night! there’s no time to lose go to tractor supply right now and get the ivermectin and order the fenbendazole from chewy.com. Start everything right away.!
+CHEWY.COM
+Pet Food, Products and Supplies at Low Prices - Free Shipping
+Pet Food, Products and Supplies at Low Prices - Free Shipping</p></details>
+</figure></div>
+<div class="grp"><h3>그에 반대한 목소리</h3><figure class="q calm">
+<div class="qmeta"><span class="who">한 회원(Key Knows)</span><span class="when">11월 2일</span><span class="react" aria-label="반응 8">반응 8</span></div>
+<blockquote>모르핀은 간독성(hepatotoxic)이 아니에요. 간을 손상시킨 이력이 없고, 오히려 일반적으로 파라세타몰이나 이부프로펜보다 덜 해로워요. 다만 말씀처럼 심박을 느리게 할 수는 있어요. … 완전히 끊는 건 개인적으로 권하지 않겠어요… 하지만 용량을 확인해서 너무 높지 않은지 보겠어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Cindy Farrow-Cookson morphine isn&#x27;t hepotoxic. It doesn&#x27;t have a history of damaging the liver in fact it&#x27;s less harmful generally than paracetamol or Ibuprofen.
+However it can slow the heart rate down as you said. But it&#x27;s actually very well tolerated by the liver.... It works in the undergoes glucuronidation in the liver to form metabolites that are cleared by the kidneys. It does not inherently destroy liver cells or produce toxic byproducts like NAPQI (paracetamol).
+Stopping it however fully I wouldn&#x27;t personally advise.... But I would check the dosage and make sure it&#x27;s not too high</p></details>
+</figure><figure class="q calm">
+<div class="qmeta"><span class="who">Nick</span><span class="when">11월 2일</span><span class="react" aria-label="반응 18">반응 18</span></div>
+<blockquote>그녀를 편안하게 해 주시고, 남은 시간 내내 함께 계세요. 기도합니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Try to make her comfortable and be with you for all the time she has. Prayers</p></details>
+</figure><figure class="q calm">
+<div class="qmeta"><span class="who">Carrieanne</span><span class="when">11월 3일</span></div>
+<blockquote>평안히 보내 주세요. 진통제를 빼는 잔인한 일은 하지 마세요. 가슴이 무너지겠지만 남은 시간은 여기(인터넷)에서 벗어나 추억을 만드세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Let her go in peace. Don’t be barbaric and remove her pain control meds. It’ll break your heart but spend the time she has left, off here and make memories.</p></details>
+</figure><figure class="q calm">
+<div class="qmeta"><span class="who">TeenaMarie</span><span class="when">11월 5일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>절대 안 돼요. 누구에게도 진통제를 끊고 고통 속에서 떠나게 하라고 말하지 마세요… 우리 엄마는 폐암으로 돌아가셨고, 마지막 숨을 쉬기 전에 고통받는 걸 그냥 지켜볼 수는 없었어요… 모르핀은 죽음을 앞당기지도, 일으키지도 않아요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Cindy Farrow-Cookson ABSOLUTELY NOT Don&#x27;t EVER tell someone to stop the pain meds And let them pass in pain... WTF is wrong with you?!?! My mom passed of lung cancer and I could never sit there And watch her suffer before she took her last breath... ALSO STOP SPREADING FALSE INFORMATION MORPHINE DOES NOT SPEED UP THE DEATH NOR CAUSE IT you idiot</p></details>
+</figure></div>
+<p>모르핀을 두고는 “죽음을 앞당긴다”와 “고통을 덜어 줄 뿐이다”가 맞서며, 욕설과 외모 비하까지 오가는 말싸움이 며칠 이어졌습니다.</p>
+<div class="grp"><h3>맨 처음 달린 경고</h3><figure class="q warn">
+<div class="qmeta"><span class="who">한 회원</span><span class="when">11월 2일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>‘Healing Grace’, ‘Joe Tippens’, ‘Herba Wellness’, ‘Health solutions &amp; support’, ‘Tippens Protocols’ 등은 조직이 운영하는 수많은 사기 페이지 중 일부입니다. 댓글 대부분은 봇입니다. 제발, 제발 조심하세요. 검증된 곳에서 구하세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">&#x27;Healing Grace&#x27;, &#x27;Joe Tippens&#x27;, &#x27;Herba Wellness&#x27;, &#x27;Health solutions &amp; support&#x27;, &#x27;Tippens Protocols&#x27; and few other pages are just some of the many scam pages operated by syndicates. Most comments are from bots. Please, please, please be careful. Get your stuffs from verified sources.
+These scammers steal money from people&#x27;s tears and sufferings.
+Help share around please. Lets help get these scammers away.</p></details>
+</figure></div>
+<p>실제로 글타래 곳곳에 판매 사이트 링크, WhatsApp 전화번호, “개인 메시지 주세요” 댓글이 섞여 있습니다.</p>
+<div class="grp"><h3>같은 글에서 자기 상황을 물은 환자들</h3><figure class="q ask">
+<div class="qmeta"><span class="who">Jardin</span><span class="when">11월 3일</span></div>
+<blockquote>간암이 있고 간 수치가 아주 높아요. AST 640, ALT 850, 빌리루빈도 높아요. 그래서 지금 너무 가려워요. 저도 이버멕틴을 먹어도 될까요? 간 수치가 내려갈 때까지 기다려야 할까요? … 도와주세요🙏🙏</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Maki Baas do you think I can take ivermectin also with a liver cancer enzyme s very high up ast 640 and alt 850 and also bilirubin is high also
+That’s why I’m very itchy right now.   Should I wait until liver enzymes go down.  Any advice what I can take to lower it.  Please help🙏🙏</p></details>
+</figure><figure class="q ask">
+<div class="qmeta"><span class="who">Aghedo</span><span class="when">11월 2일</span></div>
+<blockquote>저는 삼중음성 유방암이 있고, 확장성 심근병증(dilated cardiomyopathy)으로 심박출률(ejection fraction)이 16이에요. 이버멕틴과 펜벤다졸을 써도 될까요? 자매를 도와주세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">I have breast cancer triple negative and also have heart condition dilated cardiomyopathy with ejection fraction 16. Please can I use ivermectin and Fenbendazole. Please help a sister</p></details>
+</figure></div>
+<div class="grp"><h3>반응이 몰린 세 이야기</h3>
+<ol class="top3">
+<li><b>Tony</b> · 반응 497 · HER2 양성 유방암 뇌전이 아내 — <a href="#tony">이야기 1</a></li>
+<li><b>Thomas</b> · 반응 427 · 자택 호스피스 중이던 아내 — <a href="#thomas">이야기 2</a></li>
+<li><b>Lorna</b> · 반응 236 · 수십 년 전 멕시코 클리닉 이야기</li>
+</ol>
+<figure class="q story">
+<div class="qmeta"><span class="who">Lorna</span><span class="when">11월 2일</span><span class="react" aria-label="반응 236">반응 236</span></div>
+<blockquote>제 의견일 뿐이에요. 제 친구는 32살 때 희귀하고 공격적인 림프종으로 10일 시한부 판정을 받았어요. 이웃이 찾아와 ‘멕시코의 이 클리닉을 고려해 볼지 모르겠다’고 했죠. 진(Jean)은 잃을 게 뭐냐고 생각했고, 그 클리닉의 프로토콜을 따랐고 2년 뒤 암이 없어졌어요. 지금 그녀는 70대 후반이에요. 온라인에서 Biomedical 클리닉을 찾아보세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Just my 2 cents.   I have a friend who was given 10 days to live when she was 32, some rare aggressive form of lymphoma. A neighbor of hers came to her and said, &quot;I don&#x27;t know if you&#x27;d consider this clinic in Mexico.&quot;   Jean figured what have I got to lose?   She went on their protocol and after 2 years she was cancer free.   She&#x27;s now in her late 70s.   Look up the Biomedical clinic online.</p></details>
+</figure>
+<p class="small">Lorna의 댓글에는 답글 30개가 달렸습니다. 대부분 클리닉 이름·위치·비용을 묻거나 다른 클리닉을 소개하는 내용이었고, Lorna는 “티후아나의 혹시(Hoxsey) 클리닉”이라고 답했습니다. 같은 자리에서 Lorna는 거슨(Gerson) 치료를 받은 친구 남편이 결국 세상을 떠난 이야기도 함께 적었습니다.</p>
+<p>이 페이지는 반응이 가장 많았던 두 이야기, Tony와 Thomas를 따라갑니다.</p></div></section><section id="tony" class="sec reveal tonysec"><p class="kicker">이야기 1</p><h2>Tony — “무엇이 효과였는지는 모릅니다”</h2><div class="storyhead tony"><div><b>Tony</b> · 아내를 돌보는 남편</div><div>반응 <b>497</b> · 답글 <b>111</b> (Tony 본인 16)</div><div>11월 2일 오후 4:01</div></div>
+<figure class="q story main"><div class="qmeta"><span class="who">Tony</span><span class="when">11월 2일</span><span class="react">반응 497</span></div>
+<div class="bq"><p>실례가 되지 않길 바라지만, 지금보다 훨씬 더 나빠질 수 있는 건 없다고 생각합니다. 제 아내는 HER2 양성(HER2+) 유방암이 뇌로 전이됐습니다. ‘완치됐다’는 말을 들은 지 일주일 만에 뇌 병변이 20개 이상이라는 아주 나쁜 소식을 들었습니다. 7일 만에 완치에서 4기가 된 겁니다. 그게 2025년 12월 12일이었습니다.</p><p>마지막 뇌 영상에서는 측정 가능한 병변이 남아 있지 않았고, 큰 병변 두 개가 있던 자리에 아주 작은 ‘흐릿한’ 점 두 개만 있었습니다. 지금처럼 계속 좋아진다면 다음 영상은 NED(병변 없음)일 수도 있습니다.</p><p>저희 생각은 할 수 있는 모든 것으로 들이치자는 것이었습니다. 잃을 게 없다고 느꼈어요. 그만두지 말고, 절대 포기하지 말고, 더 싸울 게 없을 때까지 싸우세요. 따님이 이 땅에서 언제 떠날지는 하나님만 아십니다.</p>
+<p class="listhead">아내의 보충제 —</p>
+<p class="dosenote">아래 목록은 Tony가 적은 그대로입니다. <b>원문 기록이며, 복용 지시가 아닙니다.</b></p>
+<ul class="regimen"><li><b>케토 식단 (keto diet)</b><span>가장 중요한 것. 하루 순탄수화물 30g 미만. 다른 모든 것이 더 잘 듣게 해 줍니다. 가공식품과 첨가당은 최대한 피하세요. 가공식품은 염증을 촉진합니다.</span></li><li><b>이버멕틴 (ivermectin)</b><span>활동성 암이 있으면 체중 1파운드(lb)당 1mg. 하루 용량을 3번에 같게(또는 비슷하게) 나눠 하루 3번 복용. 총 180mg이면 60mg씩 3번.</span></li><li><b>이버멕틴 시작 방법</b><span>25% 용량으로 3~5일 시작, 같은 간격으로 25%씩 올려 100%까지. 시야 흐림이 생길 수 있음. 생기면 3~4일 중단 후 다시 100%까지 올림.</span></li><li><b>바인더 (binder)</b><span>암과 싸울 때는 바인더 금지 (원문 대문자).</span></li><li><b>메벤다졸 (mebendazole)</b><span>뇌암에 사용. 펜벤다졸보다 혈액뇌장벽을 더 잘 통과. 500mg 캐플릿 2개를 하루 3번으로 나눔 — 알약 커터로 2개를 3등분해 2/3씩 하루 3번. 흡수를 위해 지방(올리브유 1큰술, 땅콩버터 1작은술 등)과 함께.</span></li><li><b>강황 (turmeric)</b><span>1000mg 하루 1회, 커큐민 95%.</span></li><li><b>사워솝 (soursop) 추출 방울</b><span>하루 2ml.</span></li><li><b>블랙시드 오일 (black seed oil) 캡슐</b><span>1000mg 하루 1회.</span></li><li><b>비타민 D3/K2</b><span>Micro Ingredients 브랜드, D3 10,000 IU, K2 200 MC(원문 표기) 하루 1회.</span></li><li><b>오레가노 오일 (oil of oregano)</b><span>Micro Ingredients 브랜드 6000mg 하루 1회.</span></li><li><b>분자수소 (molecular hydrogen) 정제</b><span>12ppm, 물 10oz에 하루 1회.</span></li><li><b>N-아세틸시스테인 (NAC)</b><span>Life Extension 브랜드 1200mg — 하루 1회 2캡슐, 간 보호용. ‘이버멕틴과 메벤다졸 또는 펜벤다졸 때문에’.</span></li><li><b>아스타잔틴 (astaxanthin)</b><span>Micro Ingredients 브랜드 12mg 하루 1회.</span></li><li><b>베르베린 (berberine)</b><span>Micro Ingredients 브랜드 하루 1000mg.</span></li><li><b>니코틴 패치 (nicotine patch)</b><span>하루 42mg. 7mg부터 시작해 2~3일마다 올려 최대 강도까지.</span></li></ul></div>
+<details><summary>영어 원문 보기</summary><p class="en">No disrespect, but I don’t think anything can get much worse.  My wife had HER2+ breast cancer that metastasized to her brain.  My wife was given some very bad news with 20+  brain lesions after being told the week before she was healed.  We went from healed to stage 4 is 7 days.  That was Dec 12, 2025.  Her last brain scan showed no measurable lesions left and only 2 very small “fuzzy” spots where 2 of the larger lesions were.  If she continues to progress as she has, the next scan may be NED.  Our thoughts were to hit it with every thing we could.  We felt like there was nothing to lose.  Don’t quit, never give up and fight til there is nothing to fight for.  Only God knows when your daughter’s time on this earth comes to an end.
+Her supplements-
+The biggest thing is Keto diet.  Under 30 Net carbs per day.  It makes all the other stuff work better.  Stay away from as much processed foods and added sugar as you can.  The processed food promote inflammation.
+Ivermectin- with active cancer you should take 1 MG per pound of body weight.  The ivermectin dose should be split into 3 equal or close to equal doses.  Taken 3 times per day.  So 180 MG total would be split into 3 60mg doses.
+Ivermectin - start at 25% dose for 3-5 days and increase by 25% at that cadence until you reach 100% of your dosage.  Ivermectin can cause blurred vision.  If he experiences this. Stop taking it for 3-4 days and work back up to 100% dosage.
+NO BINDERS WHEN FIGHTING CANCER
+Membendazole for brain cancers.  It crosses the blood brain barrier better than fenbendazole.  Take 2 500 MG caplets per day split into 3 doses.   Use a pill splitter and split 2 caplets into 3rds and take 2/3 3 times per day.
+It should be taken with some kind of fat, it could be a table spoon of olive oil or a teaspoon of peanut butter.  It helps with absorption.
+Tumeric - 1000mg 1X/day - needs to be 95% curcumin
+Soursop extract drops- 2ml per day
+Black seed Oil capsules 1000mg 1X per day
+D3/K2 Micro Ingredients brand 10,000 IU D3, 200 MC K2 - 1X per day
+Oil of Oregano - Micro Ingredients brand 6000 mg 1X per day
+Molecular Hydrogen tablet 12ppm in 10oz of water 1 x per day.
+N-Acetyl-L-Cysteine (NAC) - Brand Life Extensions. - 1200 mg 1X per day   Amazon- take 2 capsules 1X per day for liver support.  Because of the ivermectin and Membendazole or Fenbendazole
+Astaxanthin - brand Micro Ingredients - 12 mg 1X per day
+Berberine - Micro Ingredients - 1000 mg per day
+Nicotine patches- 42 mg per day.  Work up from 7 mg and step up every 2-3 days until full strength</p></details></figure>
+<p class="lead">이 댓글에 111개의 답글이 달렸고, Tony는 그중 16개를 직접 썼습니다. 아래는 주제별로 묶어 시간 순서대로 옮긴 것입니다. <span class="tag me">Tony</span> 표시는 Tony 본인의 답글입니다.</p>
+<div class="thread"><h3>① “바인더 금지”의 근거를 묻자</h3><figure class="q ">
+<div class="qmeta"><span class="who">Mimi</span><span class="when">11월 2일</span><span class="react" aria-label="반응 8">반응 8</span></div>
+<blockquote>‘바인더 금지’가 무슨 뜻인지(혹은 근거가 무엇인지) 설명해 주실 수 있을까요? 감사합니다!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano Would you explain what you mean (or reference) about &quot;no binders&quot; while fighting cancer? Thank you!</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 2일</span><span class="react" aria-label="반응 6">반응 6</span></div>
+<blockquote>바인더를 먹지 마세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Mimi Howe don’t take binders.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Mimi</span><span class="when">11월 4일</span></div>
+<blockquote>저는 바인더가 무엇인지, 종류별 장점도 알고 있어요. 위 댓글에서 대문자로 ‘암과 싸울 때는 바인더 금지’라고 하셨는데, 그 근거(reference)가 무엇인지 여쭙는 거예요. 정말 감사합니다!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano I am aware of what binders are, and benefits of different ones. In your comment above you mentioned in all CAPS - &quot;No binders when fighting cancer&quot; I&#x27;m asking what reference do you have for this? Thank you so much!</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 4일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>연구(research)요. 각주를 달아 두지는 않았습니다. 저는 다른 사람에게 무엇을 권하는 게 아니라, 아내와 제가 이 싸움에서 해 온 것을 나눈 것뿐입니다. 제 조사로는 암과 싸울 때는 바인더를 쓰지 않는 게 나아 보입니다. 그리고 저희는 쉬는 날도 없습니다. 기생충 프로토콜은 쉬는 날과 바인더를 둘 다 권하죠. 저희는 다른 짐승과 싸우고 있습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Mimi Howe research.  I did not take footnotes.  I am not recommending anything for other people, I simply shared what my wife and I have been doing in her fight.  From my research, it appears best not to use binders while fighting cancer.  Also we take no days off.  Parasite protocols recommend both days off and binders.  We are fighting a different beast.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Mimi</span><span class="when">11월 5일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>네, 이해했어요🙏🏼 (저도) HER2+ 전이예요. 제가 본 자료는 모두 하루 여러 번 먹으라고 해서 여쭤본 거예요. 당신과 아내분께 최선을 빕니다!!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano Yes, understood🙏🏼
+HER2+ Mets. Everything I&#x27;ve ever come across said take them multiple times a day, which is why I was asking. I pray all the best for you and your wife!!⚓️✝️🤍</p></details>
+</figure></div><div class="thread"><h3>② 니코틴 패치는 왜? (Tony의 답글 반응 145)</h3><figure class="q ">
+<div class="qmeta"><span class="who">Mary</span><span class="when">11월 2일</span><span class="react" aria-label="반응 12">반응 12</span></div>
+<blockquote>왜 니코틴 패치인가요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano why nicotine patches?</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 2일</span><span class="react" aria-label="반응 145">반응 145</span></div>
+<blockquote>전부 직접 찾아보시면 됩니다. 아디스 박사(Dr. Ardis)가 니코틴이 교모세포종(glioblastoma)을 녹이는 데 도움이 됐다는 연구를 했습니다. 저희는 잃을 게 없었어요. 제가 적은 모든 것에 대해 부정적인 이야기도 찾을 수 있을 겁니다. 빅파마는 이 중 어떤 것도 효과가 있길 원하지 않죠. 효과가 있다고 약속할 수는 없습니다. 제가 아는 건, 11개월 전 아주 암울한 예후를 받은 아내가 지금 제 옆에서 자고 있고, 아무 증상이 없다는 것뿐입니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Mary Beaner you can research them all.  But Dr Ardis did a study that indicated nicotine helped dissolve glioblastoma cancers.  We had nothing to lose.  You can find negative stuff on everything I’ve listed.  Big Pharma doesn’t want any of this to work.  I can’t promise any of it works, I just know my wife’s is sleeping next to me at the moment and has zero symptoms after being given a very grim prognosis 11 months ago.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Barb</span><span class="when">11월 2일</span><span class="react" aria-label="반응 17">반응 17</span></div>
+<blockquote>놀랍고 희망적인 소식이에요. 아내분이 계속 잘 지내시길, 그리고 다른 사람들도 이 공유로 도움을 받길 바라요. 제 동생이 희귀하고 공격적인 T세포 림프종과 싸우고 있는데, 효과가 있을지 모를 마지막 항암도 듣지 않았어요. 알아낼 수 있는 건 뭐든 해 보려고 해요. 감사합니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano Wonderful and hopeful news. May she continue to live well and may others benefit from you sharing this information. I will be looking into it as my brother is fighting a rare and aggressive Tcell Lymphoma and they have tried the last chemo that may have worked and it didn’t. We are going to try whatever we can figure out so thank you. God bless you and your wife. 🙏</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Teresa</span><span class="when">11월 2일</span></div>
+<blockquote>제 아들은 기관차처럼 담배를 피웠고 34살에 뇌암으로 떠났어요. 니코틴은 그 애를 돕지 못했어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano my son smoked like a freight train and passed at age 34 from brain cancer. The nicotine didnt help him</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Shannon</span><span class="when">11월 2일</span><span class="react" aria-label="반응 41">반응 41</span></div>
+<blockquote>니코틴 패치는 순수한 니코틴이고, 담배는 화학물질 덩어리예요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Teresa Houchins the nicotine patches are just pure nicotine, whereas cigarettes are full of chemicals.</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>담배 연기 속 타르와 발암물질이 아드님께 도움이 되지 않았을 겁니다. 저는 니코틴 하나만으로 암이 낫는다고 믿지 않습니다. 여러 갈래로 접근하는 것의 일부입니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Teresa Houchins the Tars and carcinogens in the tobacco smoke don’t help him.  I do not believe the nicotine alone will heal cancer, it is part of a multi faceted approach.</p></details>
+</figure></div><div class="thread"><h3>③ 표준치료도 함께 받았나요?</h3><figure class="q ">
+<div class="qmeta"><span class="who">Craig</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>자세한 설명 정말 감사해요. 아내분이 같은 시기에 다른 치료, 예를 들어 항암·방사선·면역치료도 받으셨나요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano thanks so much for your detailed explanation here. Was your wife going through any other treatment at the same time i.e. chemo, radiation, immunotherapy?</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 5">반응 5</span></div>
+<blockquote>표적치료제(targeted drug) 하나와 방사선 치료 5회를 했습니다. 아껴 둔 탄약은 없었어요. 그렇긴 해도 방사선종양내과 의사와 종양내과 의사 모두 아내의 결과에 놀라고 있습니다. 아내는 연수막 질환(leptomeningeal disease) 진단을 받았는데, 암이 뇌척수액을 타고 퍼지는 방식이라 병변이 한 곳이 아니라 뇌 전체에 있었습니다. 이 진단의 평균 예후는 2~4개월입니다. 무엇이 효과가 있었는지는 말씀드릴 수 없습니다. 아내가 잘 지내고 있다는 것만 말씀드릴 수 있습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Craig King we did a targeted drug and 5 radiation treatments.  We did not save any ammo.  With that said both the radiology oncologist and medical oncologist are amazed at her results.  She was diagnosed with leptomeningeal disease which is the way the cancer spread through the cerebral fluid.  The lesions were all over her brain, not just in one area.  This diagnosis comes with an average prognosis of 2-4 months.  I can’t tell you what worked, I can tell you that she is doing good.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Craig</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>다시 한번 감사해요. 제 아내는 완치가 없는 4기 유방암이고, 가장 공격적인 유형이에요. 첫 항암과 면역치료로 암세포가 비활성 상태가 됐지만 물론 시간을 버는 것뿐이죠. 모든 선택지를 찾아보고 있어요. 이버멕틴과 펜벤다졸에 대해 읽을수록 회의적이지만, 곧 마지막 승부수(hail mary)를 던져야 할 때가 올 거예요. 당신 같은 사례가 큰 영감과 희망을 줘요 🙏</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano thanks again for that. My wife has stage 4 breast cancer with no cure, and her cancer is the most aggressive type. Her first round of chemo and immunotherapy has left the cancer cells inactive but of course this only buys some time. I&#x27;m looking at exploring all options. Reading everything about IV and Fen, I&#x27;m sceptical but there will come a time soon when it&#x27;ll be hail mary time. Cases like yours give me a great deal of inspiration and hope 🙏</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>이해합니다. 저희도 아내의 예후가 말기가 될 때까지는 그렇게 했습니다. 첫 번째 때는 교과서대로(by the book) 모든 것을 했으니까요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Roxanne Berger Barco I understand.  That’s what we did until my wife’s prognosis became terminal and we had done everything by the book the 1st go around.</p></details>
+</figure></div><div class="thread"><h3>④ 다른 환자와 가족들의 질문, 그리고 Tony의 답</h3><figure class="q ">
+<div class="qmeta"><span class="who">Parvin</span><span class="when">11월 2일</span></div>
+<blockquote>도와주셔서 감사해요. 몇 가지 여쭤볼게요. 저도 아내분과 같은 상태인데, 지금 두 번째로 파클리탁셀(paclitaxel) 항암 중이고 수요일에 두 번째 주기를 맞으러 병원에 가요. 펜벤과 이버를 캡슐로 먹기 시작한 지 이틀 됐어요. 적어 주신 계획 전부를 항암과 같이 해도 될까요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano hallo dear thanks for the help , you are doing . i have few Q? i am in same condtion of your wife , but now i am in chemo therapy for second time the name is Paclitaxel . and Wensday should go hospital for second sestion. it is two days i start to take feben and iver , both are caps . can i do all this plan you write with chemotherapy ?</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>네, 제 아내도 그랬고 방사선도 받았습니다. 발견하고 이틀 뒤, 다른 어떤 치료보다 먼저 시작했어요. 메벤다졸을 구하세요. 혈액뇌장벽을 훨씬 효율적으로 통과하고 간에 영향을 주지 않습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Parvin Sylvia yes, my wife has as well and she had radiation.  We started 2 days after the found it.  Before any other treatments.  Find Membendazole, it crosses the blood brain barrier much more efficiently and doesn’t affect the liver.</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>저는 의사가 아닙니다. 조사하고, 읽고, 또 읽었습니다. 이게 저희가 하는 것이고, 아내에게 효과가 있었던 것입니다. 아디스 박사가 연구했고, 니코틴은 담배가 아닌 순수한 형태로 암을 죽이는 것으로 나타났습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Parvin Sylvia I am not a Doctor, I researched and read and read some more, this is what we do. It is what has worked for my wife.  Dr Ardis has done research on it and nicotine has shown to kill cancer in its pure form, not in cigarettes.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Kristina</span><span class="when">11월 3일</span><span class="react" aria-label="반응 4">반응 4</span></div>
+<blockquote>제 남편은 4기 유방암이에요. 2026년 1월에 진단받았어요. 케토 식단, 운동, 이버와 펜벤, 다른 보충제를 해 왔어요. 우리는 지고 있어요. 너무 늦게 진단받아서인지, 왜인지 모르겠어요. 가슴의 커다란 열린 상처가 커지고 점점 더 자주 피가 나요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano my husband has stage 4 breast cancer. Diagnosed Jan 2026. He have been on keto diet, exercise and Iver and fenben and other supplements.  We are losing the battle. Not sure if we diagnosed too late or why. The huge open wound on his chest is growing and bleeding more often</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span></div>
+<blockquote>남편분 체중이 얼마죠? 이버멕틴은 얼마나 드시나요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Kristina Sammons how much does he weigh?  How much Ivermectin is he taking?</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Roxanne</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>담관암이 간으로 전이된 경우에도 이 프로토콜이 어떨지 아세요? 친구를 격려하고 싶어서요. 지금 완화치료 중이에요. 많은 사람들이 믿지 않지만, 말씀하신 대로 선택지가 많지 않다면 ‘해 봐서 잃을 게 뭐가 있겠어요’?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano Do you have any idea how this protocol works for Bile Duct Cancer with metastasis to the liver? Was hoping to encourage a friend bc they are doing palliative care currently. So many don’t buy in, but like you said “what is there to lose by trying” if you don’t have many options???</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span></div>
+<blockquote>도움이 될 거라고 믿습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Roxanne Berger Barco I do believe it would help.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Tammy</span><span class="when">11월 2일</span></div>
+<blockquote>이건 뇌암에만 해당하나요? 그리고 어떤 이버멕틴을 쓰셨어요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano is this just for brain cancer?  And what ivermectin did u use</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>모든 암입니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tammy Kay all cancers</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Tammy</span><span class="when">11월 3일</span></div>
+<blockquote>어떤 이버멕틴을 쓰셨어요? (다시 질문 — 답글 없음)</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano which ivermectin did u use</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Bridget</span><span class="when">11월 4일</span></div>
+<blockquote>이 주제에 대해 정말 잘 아시는 것 같아요. 인후암이 있는 사람은 무엇을 쓰면 될까요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano you seem very knowledgeable about this topic. What would someone use that has throat cancer?</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 4일</span></div>
+<blockquote>같은 보충제요. 다만 펜벤다졸을 메벤다졸로 바꾸거나 둘 다 드셔도 됩니다. 펜벤다졸을 드신다면 888mg을 3번에 같게 나눠 드세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Bridget Grasser same supplements. But you could switch out Fenbendazole for Membendazole or take both.  If you take Fenbendazole take 888 MG split into 3 equal doses</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">June</span><span class="when">11월 4일</span></div>
+<blockquote>저는 거의 먹지를 못해요. 그걸 다 어떻게 드시나요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano I can barely eat. How do you take all that? T.I.A</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 4일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>의지가 얼마나 강한가에 달렸습니다. 싸울 힘을 주려면 몸에 연료를 넣어야 합니다. 아내는 억지로 먹었고, 메스꺼우면 조프란(Zofran, 구토억제제)을 먹고 최선을 다했습니다. 한꺼번에 다 먹지 않습니다. 오전 7시, 오후 3시, 저녁 7시에는 다른 보충제, 그리고 밤 11시에 다시.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">June Mckinnon depends how strong your will is.  You need to eat to fuel your body to give it strength to fight.  My wife forced herself and if she was nauseous she would take zofran and try her best.  She doesn’t take all of that at once.  She takes them at 7:00 AM, 3:00 PM, other supplements at 7:00 PM and then again at 11:00 PM.</p></details>
+</figure></div><div class="thread"><h3>⑤ 의심과 이견에 대한 Tony의 답</h3><figure class="q ">
+<div class="qmeta"><span class="who">Carla</span><span class="when">11월 2일</span></div>
+<blockquote>저는 NAC나 NAD는 먹지 말라고 들었어요. 좋은 것이긴 한데 나쁜 세포도 돕는다고요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano I was told no nac or nad . That those 2 things are good but they also help the bad cells .</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 2">반응 2</span></div>
+<blockquote>원하시는 대로 하세요. 저는 저희가 하고 있고 효과를 보고 있는 것을 나눌 뿐입니다. 직접 조사하고 스스로 결정하세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Carla Gonzales you do what you want to do, I am simply sharing what we are doing and having success with.  Do your own research and decide for yourself.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Darleen</span><span class="when">11월 3일</span></div>
+<blockquote>시야 흐림이요?? 이것들도 결국 제약회사 약이고, 제약회사는 모두가 이걸 찾는다는 걸 알아요. 솔직히 이 약들이 걱정돼요. 사워솝, 살구씨 같은 건 자연물이지만 이버, 펜벤은 잘 모르겠어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano blurred vision?? These are still pharma meds and pharma knows everyone is going to them. I have concerns honestly about those meds. Soursop, apricot seeds, etc are natural but just dont know about the iver, fenben etc.</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>편하신 대로 하세요. 아내가 먹는 약은 빅파마 약이 아니라 사람용(human grade) 알약입니다. 제가 올릴 수 있는 내용에는 제한이 있습니다.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Darleen Lambert do what you are comfortable with.  The medicine my wife takes is not big pharma medicine and it is human grade pills.  I am limited to what I can post.</p></details>
+</figure></div><div class="thread"><h3>⑥ 어디서 사나요?</h3><figure class="q ">
+<div class="qmeta"><span class="who">Michelle</span><span class="when">11월 2일</span><span class="react" aria-label="반응 3">반응 3</span></div>
+<blockquote>어떤 종류의 이버멕틴을 쓰세요? 강황은 어떤 브랜드요? (다른 것들 브랜드 적어 주셔서 감사해요)</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano what kind of ivermectin does she use? What brand of Tumeric? ( thanks for listing the other brands )</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Tony</span><span class="when">11월 3일</span></div>
+<blockquote>Sam’s Club에서 삽니다. [사진: Sam’s Club 앱의 강황 추출물(커큐민) 제품 화면 — 이버멕틴 종류 질문에는 답하지 않음]</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Michelle Melom we get is from Sam’s Club</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Jacqueline</span><span class="when">11월 2일</span></div>
+<blockquote>궁금한데, 다들 약과 보충제를 어디서 구하세요? 무엇보다 종양내과 의사가 처방해 주지 않는다면 실제 약은 어디서 구하는지 궁금해요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano i’m just wondering, where does everyone get the drugs from and also the supplements? Mostly though, I’m curious about the actual drugs if oncologists won’t prescribe them. ￼</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Jennifer</span><span class="when">11월 2일</span></div>
+<blockquote>이버멕틴, 메벤다졸, 펜벤다졸을 어디서 구하는지 궁금해요. 텍사스인데 처방전이 있어야만 구할 수 있더라고요… 사료 가게, Tractor Supply가 있다는 건 알지만 동물용·가축용 약을 살 만큼 잘 알지 못해서 너무 겁나요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano I am wondering where to get ivermectin, membendazole and fendbendazole?
+I&#x27;m in Texas and I tried to find and get them when I was first learning of them and found that only with a script can you get them and of course that is not going to happen or if it were to it would take a lot to find that one doctor because all the other ones change that subject so fast it is pointless.
+I know there is the feed stores, Tractor Supply stores but I don&#x27;t know what I&#x27;m doing well enough to go out and buy animal / livestock grade meds etc... it&#x27;s pretty intimidating and I haven&#x27;t gotten any real answers or responses when I&#x27;ve asked on other posts in the past, I have researched it on the Internet and have read and read and read but the only info I haven&#x27;t found is how and where can I get them.
+Thank you ✌️🌺</p></details>
+</figure></div>
+<div class="thread"><h3>⑦ 감사와 공유</h3><figure class="q ">
+<div class="qmeta"><span class="who">Christine</span><span class="when">11월 2일</span><span class="react" aria-label="반응 5">반응 5</span></div>
+<blockquote>당신과 아내분의 상황을 나눠 주셔서 감사해요. 그리고 아내분의 요법을 이렇게 분명하게 자세히 적어 주셔서 고마워요. 두 분 모두 건강하시길!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano God bless you for sharing yours and your wife&#x27;s situation.  And thank you for detailing so clearly her regime.  Best of health to both of you!</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Hadessah</span><span class="when">11월 2일</span></div>
+<blockquote>(다른 회원을 태그하며) 바로 이 댓글, 이 프로토콜!!</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano Tammy Gould Dohogne This comment right here with this protocol!!</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Carol</span><span class="when">11월 2일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>제 생각도 같아요. 어떻게 더 나빠질 수 있겠어요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano my thoughts too. How can it make it worse?</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Jeannette</span><span class="when">11월 4일</span></div>
+<blockquote>이걸로 다 정리된 것 같네요. 그녀가 잃을 게 뭐가 있겠어요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Tony Fimiano looks like this covers it. What does she have to lose?</p></details>
+</figure>
+<p class="small">다른 회원을 태그하며 “이 댓글 봐”라고 공유하는 답글이 이어졌고, 글타래의 다른 곳에서도 Tony의 목록이 기준처럼 인용됐습니다.</p><figure class="q ">
+<div class="qmeta"><span class="who">Jane</span><span class="when">11월 3일</span></div>
+<blockquote>그녀는 체중 1kg당 이버멕틴 1mg을 드셔야 해요. 펜벤다졸과 메벤다졸도요. 살구씨로 B17도. 설탕은 금지, 그리고 Tony가 올린 보충제 전부요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">She needs to be taking 1mg of ivermectin per 1kg of body weight. Fenbendazole and Mebendazole. Plus B17 through apricot kernels.  No sugar and all the supplements that Tony Fimiano has posted.</p></details>
+</figure>
+<p class="small">수집된 마지막 댓글(11월 7일)도 다른 회원에게 “Tony의 댓글들을 읽어 봐”라고 권하는 글이었습니다.</p></div></section><section id="thomas" class="sec reveal thomassec"><p class="kicker">이야기 2</p><h2>Thomas — “아내의 삶을 연장했습니다, 제가 아는 건 그것뿐입니다”</h2><div class="storyhead thomas"><div><b>Thomas</b> · 아내를 돌보는 남편</div><div>반응 <b>427</b> · 답글 <b>26</b> (Thomas 본인 1)</div><div>11월 2일 오후 4:44</div></div>
+<figure class="q story main"><div class="qmeta"><span class="who">Thomas</span><span class="when">11월 2일</span><span class="react">반응 427</span></div>
+<div class="bq"><p>삼중음성 유방암은 가장 공격적이지만 이버멕틴과 펜벤다졸에 반응합니다. 지난주에 이버멕틴과 펜벤다졸의 진정한 개척자인 마키스 박사(Dr. Makis)가 영상에서, 모든 유방암 중 삼중음성이 펜벤다졸에 가장 잘 반응한다고 말하는 것을 봤습니다.</p><p>제 아내는 7월부터 4기 전이성 유방암이고, 8월 말 병원에서 사실상 남은 날을 기다리라며 집으로 보내져 자택 호스피스를 하고 있었습니다. 암은 두개골, 뇌, 척추 전체, 모든 긴 뼈, 갈비뼈, 골반 등 온몸에 있습니다… 하루 24시간 누워 지냈고, 먹지 못하고, 걷지 못하고, 메스꺼움과 구토는 문제들 가운데 몇 가지일 뿐이었습니다.</p><p>두 가지 다른 암 치료가 아내를 거의 죽일 뻔했습니다. 그래서 저는 아내가 암에 걸리기 훨씬 전부터 2년 넘게 이 두 약을 읽고 공부하고 조사해 왔고, 10월 첫 주에 아내에게 시작했습니다… 의사들은 아내의 회복에 놀라고, 어떻게 이런 일이 일어났는지 이해하지 못합니다. 저는 그들에게 말하지 않았습니다. 그들은 거품 속에 살고 있으니까요.</p><p>아내는 이제 오전 9시부터 밤 10~11시까지 하루 종일 일어나 있고, 혼자 걷고 목욕하고, 2층 계단을 오르내립니다. 이틀 전에는 사과를 깎아 애플파이를 만들었습니다. 희망은 언제나 있습니다.. 저는 아내의 삶을 연장했습니다. 제가 아는 건 그것뿐입니다.</p></div>
+<details><summary>영어 원문 보기</summary><p class="en">Triple Negative Breast Cancer is the most aggressive but responds to Ivermectin and Fenbenazole.  Last week I saw video where Dr. Makis the real trail blazer of Ivermectin and Fenbenazole stated that of all the breast cancers Triple Negative Breast responds the best to Fenbenazole.  My wife is Stage 4 Metastatic Breast Cancer since July and was basically sent home by doctors from the hospital at end of August to wait out her days, doing Hospice  at home. Her cancer is everywhere, skull, brain, full length of her spine, all her long bones, her ribs, her pelvic, etc...Bed ridden 24-7, not eating, can&#x27;t walk, nausea,  vomiting just a few of the problems.
+Two different Cancer treatments almost killed her. So I had been reading,  studying and researching these two products for over two years, long before she had cancer and started my wife on the first week of October...Doctors are amazed at her turn around and can&#x27;t understand it how it has happened.  I haven&#x27;t told them, because they live I&#x27;m a bubble.  My wife now is up and around all day, from 9 am to 10 or 11pm daily, walks and bathes on her own, hoes up and down stairs to 2nd floor. Two days ago peeling apple&#x27;s and making apple pies. There&#x27;s always hope..I have extended my wifes life that&#x27;s all I know</p></details></figure>
+<p class="lead">26개의 답글은 대부분 축하와 감동, 그리고 “무엇을, 얼마나” 했는지 묻는 질문이었습니다. Thomas가 단 답글은 하나, 구입처에 관한 것이었습니다.</p>
+<div class="thread"><h3>답글들</h3><figure class="q ">
+<div class="qmeta"><span class="who">Frances</span><span class="when">11월 2일</span><span class="react" aria-label="반응 6">반응 6</span></div>
+<blockquote>정말 놀라운 소식이에요!!!! 👏</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore that&#x27;s amazing news!!!! 👏</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Adama</span><span class="when">11월 2일</span><span class="react" aria-label="반응 5">반응 5</span></div>
+<blockquote>와. 정말 울컥하네요. 가족을 위해 최선을 다하셨어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore wow. This really got me emotional. You have done what is best for your family.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Pi</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>하나님은 위대하세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore God is great.</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Leeann</span><span class="when">11월 3일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>아내분 정말 잘됐어요, 축하해요!! 🙏✌️</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore so happy for her, congratulations!! 🙏✌️</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Amanda</span><span class="when">11월 2일</span><span class="react" aria-label="반응 6">반응 6</span></div>
+<blockquote>세상에 와 👏👏👏👏 이버와 펜만 하신 건가요 ❤️❤️❤️</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore omg wow 👏👏👏👏 did she just do iver and fen ❤️❤️❤️</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Aimee</span><span class="when">11월 3일</span></div>
+<blockquote>치료가 뭐예요??</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore what is the treatment??</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Silvia</span><span class="when">11월 3일</span></div>
+<blockquote>메스꺼움과 구토는 이버와 펜으로 어떻게 견디셨어요? 간에 아주 부담된다고 알고 있어요. 특히 이미 지방간이거나 흉터가 있다면요. 그래서 이 두 약이 그 두 부작용을 엄청나게 키울 텐데, 아내분 경험은 어떠셨어요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore how did she deal with the nausea and vomiting with the Iver and Fen ?
+I understand is very hard on the liver, specifically if is already fatty or scared. Therefore this 2 meds will increase those two side effects tremendously.
+What’s her experience on that ?</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Nicole</span><span class="when">11월 3일</span></div>
+<blockquote>잘하셨어요, 가족 모두 정말 기뻐요. 연구가 압도적이네요. 펜벤다졸이 메벤다졸보다 낫다는 걸 읽으셨나요? ❤️</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore Way to go, so happy for you and your family. The research is overwhelming. Did you read that Fenbedozole was better than mebendazole?thanks for your time in advance ❤️</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Risen</span><span class="when">11월 3일</span></div>
+<blockquote>아내분 소식 정말 멋져요. 이 그룹에 새로 왔어요. 어떤 요법과 용량을 권하세요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore awesome news about wife. I am new to this group. What regiment and doses are recommended?</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">JP</span><span class="when">11월 6일</span></div>
+<blockquote>부탁드려요, 각각 아내분이 드시는 용량을 알려 주실 수 있을까요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore please , Could you tell us the dosage she takes for each of them?</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Juanita</span><span class="when">11월 4일</span></div>
+<blockquote>이것들을 어디서 살 수 있나요?</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore where can you buy these items please</p></details>
+</figure><figure class="q me">
+<div class="qmeta"><span class="who">Thomas</span><span class="when">11월 6일</span><span class="react" aria-label="반응 1">반응 1</span></div>
+<blockquote>여러 곳에서 팔고, 판매처마다 가격이 다릅니다. 진짜 포장처럼 보이는 위조품이 많으니 조심하세요. Durvet 같은 것들이요… 아마존은 아주 조심하시고, 이베이는 특히 더 조심하세요. 믿을 만한 곳에서 사세요. Tractor Supply와 대부분의 농장용품점이 이버멕틴과 펜벤다졸을 둘 다 팔고, 가끔 품절됩니다. 동네에 없으면 온라인 수의용품점 Allivet에서 사는데, 가격이 괜찮고 무료배송이 되도록 보통 75~100달러어치를 삽니다… 행운을 빌어요. 축복받은 하루 되세요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Juanita Brindley Available at many locations and the prices vary depending on the retailer. Caution as there are many counterfeit products out there that look like the real legit packaging, Such as Durvet...Be very leary of buying on Amazon,  but especially E Bay. Buy from reputable business. Tractor Supply and most farm supply companies carry both Ivermectin and Fenbenazole, and sometimes sold out. When not available locally I get mine on line from Allivet an on line veterinarian supply company, reasonable pricing and I buy enough tunes for free shipping,  usually around $75 to $100 worth...Good luck, have a Blessed day</p></details>
+</figure><figure class="q ">
+<div class="qmeta"><span class="who">Frank</span><span class="when">11월 3일</span></div>
+<blockquote>펜벤다졸과 이버멕틴을 계속하세요. 조 티펜스(Joe Tippens)는 2017년에 펜벤다졸로 스스로 나았어요. 지금도 암이 없지만 재발을 막으려고 매일 222mg을 먹어요. 일주일 비용은 약 6달러예요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">Thomas Whitmore. Keep going with fenbendazole and ivermectin.  Joe Tippens cured himself in 2017 with fenbendazole. He is still cancer free but takes 222 mg fenbendazole daily to keep cancer from coming back.  Weekly cost about $6.</p></details>
+</figure></div>
+<div class="box plain"><h3>답이 달리지 않은 질문들</h3><ul><li>“이버와 펜만 하신 건가요?”</li><li>“치료가 뭐예요??”</li><li>“메스꺼움과 구토는 어떻게 견디셨어요?”</li><li>“펜벤다졸이 메벤다졸보다 낫다는 걸 읽으셨나요?”</li><li>“어떤 요법과 용량을 권하세요?”</li><li>“각각의 용량을 알려 주실 수 있을까요?”</li></ul>
+<p class="small">수집 시점(11월 7일)까지 Thomas는 위 질문들에 답하지 않았습니다. 그룹 안에 Thomas의 다른 글도 없습니다.</p></div></section><section id="last" class="sec reveal "><p class="kicker">글타래의 마지막</p><h2>11월 6일, 한 줄의 댓글</h2><figure class="q last">
+<div class="qmeta"><span class="who">Tammy</span><span class="when">11월 6일</span></div>
+<blockquote>그녀의 딸은 이미 화요일인가 수요일에 세상을 떠났어요. 그러니 더 이상 댓글은 필요 없어요.</blockquote>
+<details><summary>영어 원문 보기</summary><p class="en">HER DAUGHTER PASSED AWAY ALREADY TUES OR WEDNESDAY SO NO NEED FOR ANY MORE COMMENTS</p></details>
+</figure>
+<p class="unverified">제3자의 댓글이며, 사실인지 확인되지 않았습니다. Tonya 본인은 아무 글도 남기지 않았습니다.</p>
+<p>이 댓글 뒤에도 댓글은 이어졌습니다.</p><ul class="after"><li><b>Katie</b> · 밀크씨슬(milk thistle)! 아니면 TUDCA<br><span class="small">11월 7일</span></li><li><b>Laura</b> · 저는 Healing Grace 덕분에 폐암, 신장결석, 관절염, 피부암에서 살아남았어요.<br><span class="small">11월 7일 — 맨 처음 댓글이 ‘사기 페이지’로 지목한 이름</span></li><li><b>Nancy</b> · (다른 회원을 태그하며) Tony의 댓글들을 읽어 봐.<br><span class="small">11월 7일 — 수집된 마지막 댓글</span></li></ul></section><section id="ai" class="sec reveal aisec"><p class="kicker">AI 클로드 주석</p><h2>읽고 나서 생각해 볼 것</h2><div class="ailabel">AI 클로드 주석 — 이 섹션은 원문이 아니라 AI의 해설입니다</div>
+<div class="box"><h3>Tony의 이야기에서</h3>
+<p><b>원문에 있는 것:</b> 진단 시점(2025년 12월), 연수막 질환, 최근 영상 결과(Tony의 설명), 함께 받은 표준치료(표적치료제 1가지 + 방사선 5회), 보충제 목록 전체.</p>
+<p><b>원문에 없는 것:</b> 표적치료제의 이름, 영상 사진이나 판독지, 각 약과 표준치료를 시작한 날짜.</p>
+<p>HER2 양성 유방암에는 뇌 전이에도 효과가 확인된 표적치료제들이 있습니다. 그래서 Tony 본인도 “무엇이 효과였는지는 말할 수 없다”고 썼습니다. Tonya의 딸은 삼중음성 유방암이라 HER2를 겨냥하는 이 약들의 대상이 아닙니다.</p>
+<ul class="refs"><li><a href="https://pubmed.ncbi.nlm.nih.gov/32468955/" target="_blank" rel="noopener">Lin NU et al. Intracranial Efficacy and Survival With Tucatinib Plus Trastuzumab and Capecitabine for Previously Treated HER2-Positive Breast Cancer With Brain Metastases in the HER2CLIMB Trial. J Clin Oncol, 2020</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/39271844/" target="_blank" rel="noopener">Harbeck N et al. Trastuzumab deruxtecan in HER2-positive advanced breast cancer with or without brain metastases: a phase 3b/4 trial (DESTINY-Breast12). Nat Med, 2024</a></li></ul></div>
+<div class="box"><h3>Thomas의 이야기에서</h3>
+<p><b>원문에 있는 것:</b> 호스피스로 집에 온 시점(8월 말), 약을 시작한 시점(10월 첫 주), 한 달 뒤 일상생활 회복.</p>
+<p><b>원문에 없는 것:</b> 유방암의 종류(HER2·호르몬·삼중음성), 영상이나 혈액 수치, 호스피스에서 쓰는 약, “아내를 거의 죽일 뻔한” 이전 두 치료의 이름과 멈춘 시점, 용량.</p>
+<p>독한 치료를 멈춘 뒤 몸이 회복되는 경우나 완화 약물의 효과도 원문만으로는 구분할 수 없습니다. Thomas가 의료진에게 알리지 않았기 때문에 의사의 기록과 맞춰 볼 수도 없습니다.</p></div>
+<div class="box"><h3>숫자 하나: 파운드와 킬로그램</h3>
+<p>Tony의 이버멕틴 기준은 <b>체중 1파운드당 1mg</b>입니다. 킬로그램으로 바꾸면 약 2.2mg/kg입니다. 같은 글타래의 다른 댓글(Jane)은 <b>1kg당 1mg</b>이라고 적었습니다. 같은 ‘공식’이 단위 하나로 두 배가 됩니다. 참고로 기생충 치료에 허가된 이버멕틴 용량은 제품 설명서 기준 1kg당 약 0.15~0.2mg입니다. 이런 숫자는 반드시 약사·주치의와 확인해야 합니다.</p></div>
+<div class="box"><h3>Tonya가 실제로 물은 것</h3>
+<p>Tonya가 물은 것은 “효과가 있나요?”가 아니라 “지금 먹는 진통제와 같이 먹어도 안전한가요?”였습니다. 간은 많은 약을 분해하는 곳입니다. 이버멕틴은 주로 간의 CYP3A4라는 효소로 분해되는데, 옥시코돈(oxycodone)도 이 효소를 씁니다. 간 기능이 나쁠 때는 진통제도 용량 조정이 필요하고, 이에 대한 연구 근거도 많지 않습니다. 펜벤다졸은 사람에게 허가된 약이 아니며, 간 손상 증례가 보고되어 있습니다.</p>
+<ul class="refs"><li><a href="https://pubmed.ncbi.nlm.nih.gov/34470772/" target="_blank" rel="noopener">Hughes LT et al. Use of opioids in patients with cancer with hepatic impairment — a systematic review. BMJ Support Palliat Care, 2022</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/9574819/" target="_blank" rel="noopener">Zeng Z et al. Identification of cytochrome P4503A4 as the major enzyme responsible for the metabolism of ivermectin by human liver microsomes. Xenobiotica, 1998</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/41608149/" target="_blank" rel="noopener">Krishnan A et al. Differentiating fenbendazole-induced liver injury from immunotherapy hepatitis — the importance of structured causality assessment: a case report. World J Clin Cases, 2026</a></li><li><a href="https://www.ncbi.nlm.nih.gov/books/NBK622043/" target="_blank" rel="noopener">NCBI LiverTox: Fenbendazole</a></li><li><a href="https://www.cancer.org/cancer/latest-news/what-to-know-about-fenbendazole.html" target="_blank" rel="noopener">American Cancer Society. What to Know About Fenbendazole</a></li><li><a href="https://www.cancer.org/cancer/latest-news/what-to-know-about-ivermectin.html" target="_blank" rel="noopener">American Cancer Society. What to Know About Ivermectin</a></li></ul></div>
+<div class="box"><h3>이렇게 물어보세요 — 호스피스팀·약사에게</h3>
+<p class="small">그대로 복사해 쓰셔도 됩니다.</p><div class="ask"><p>“지금 간 상태(빌리루빈 7.1)에서 딸이 먹는 진통제의 용량과 간격은 어떻게 맞춰지고 있나요? 앞으로 무엇을 보고 조정하나요?”</p></div><div class="ask"><p>“이버멕틴(ivermectin)이나 펜벤다졸(fenbendazole)을 더하면 지금의 진통제와 간에 어떤 위험이 있나요? 제품과 용량을 가져오면 함께 봐 주실 수 있나요?”</p></div><div class="ask"><p>“새 약을 더한다면 어떤 변화(더 졸림, 혼란, 숨이 얕아짐, 황달 악화)가 생길 때 바로 연락해야 하나요?”</p></div><div class="ask"><p>“호스피스 돌봄을 받으면서 이런 약을 써 보고 싶다고 말하면, 돌봄에 무엇이 달라지나요?”</p></div><div class="ask"><p>“딸 본인이 남은 시간에 가장 원하는 것을 함께 정리하고 싶습니다. 그 뜻을 돌봄 계획에 어떻게 담을 수 있을까요?”</p></div></div></section><section class="sec safety reveal"><p><b>안전 경계</b> — 이 페이지는 치료 권고가 아닙니다. 원문에 적힌 약과 용량은 기록일 뿐 복용 지시가 아닙니다. 복용·병용·중단의 최종 결정은 반드시 주치의와 호스피스팀의 몫입니다. 진통제를 스스로 끊거나 새 약을 의료진에게 숨기지 마세요.</p>
+<p class="small">원문: <a href="https://www.facebook.com/groups/678169588368088/permalink/1102795239238852/" target="_blank" rel="noopener">Tonya의 Facebook 글</a> · 수집 2026-11-07 · 댓글 작성자는 이름(first name)만 표기했습니다.</p></section>
+</main><script>
+(function(){var els=document.querySelectorAll('.reveal');var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+els.forEach(function(e){io.observe(e)});
+window.addEventListener('beforeprint',function(){els.forEach(function(e){e.classList.add('in')});document.querySelectorAll('details').forEach(function(d){d.open=true})});})();
+</script></body></html>
