@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관해 기간에 우리가 재지 않는 것</title>
+<meta name="description" content="7년 관해 뒤 재발한 한 환자의 기록을, 2026년의 새 논문과 함께 다시 봅니다. 지금 관해 중인 분들을 위한 질문 모음.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EF; --paper-2:#F4EEE2; --ink:#2E2A24; --soft:#5A5248;
+    --line:#E0D6C4; --green:#4A7C59; --green-bg:#EAF2EA;
+    --amber:#B5803A; --amber-bg:#FBF1DF;
+    --rose:#A85A52; --rose-bg:#FAEDEA;
+    --grey:#9A9083;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Noto Sans KR',sans-serif;font-size:19px;line-height:1.95;letter-spacing:-0.01em;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px 90px;}
+  h1,h2,h3{font-family:'Gowun Batang',serif;line-height:1.5;letter-spacing:-0.02em;}
+
+  header{padding:70px 0 44px;border-bottom:1px solid var(--line);margin-bottom:48px;}
+  .eyebrow{font-size:15px;color:var(--green);font-weight:700;letter-spacing:.04em;margin:0 0 18px;}
+  h1{font-size:33px;margin:0 0 22px;font-weight:700;}
+  .lede{font-size:19px;color:var(--soft);margin:0;}
+  .meta{margin-top:28px;font-size:15.5px;color:var(--soft);background:var(--paper-2);border-radius:12px;padding:16px 18px;line-height:1.75;}
+
+  section{margin:0 0 58px;}
+  h2{font-size:26px;margin:0 0 20px;padding-top:8px;}
+  h2 .num{display:block;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--green);letter-spacing:.08em;margin-bottom:8px;}
+  h3{font-size:21px;margin:34px 0 12px;}
+  p{margin:0 0 20px;}
+  strong{font-weight:700;background:linear-gradient(transparent 62%, #F6E6B8 62%);}
+
+  .voice{background:#fff;border-left:4px solid var(--line);border-radius:4px 14px 14px 4px;
+    padding:18px 22px;margin:0 0 14px;font-size:18px;color:var(--soft);}
+  .voice span{display:block;margin-top:8px;font-size:14px;color:var(--grey);}
+  .said{font-family:'Gowun Batang',serif;font-size:22px;line-height:1.8;color:var(--ink);
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;margin:24px 0;text-align:center;}
+  .said small{display:block;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;color:var(--grey);margin-top:12px;line-height:1.6;}
+
+  .box{border-radius:16px;padding:24px 24px 8px;margin:28px 0;}
+  .box h3{margin-top:0;font-size:19px;}
+  .box.green{background:var(--green-bg);border:1px solid #CFE0CF;}
+  .box.amber{background:var(--amber-bg);border:1px solid #EBD6AE;}
+  .box.rose{background:var(--rose-bg);border:1px solid #EDCFC9;}
+  .box .tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.05em;padding:3px 11px;border-radius:999px;margin-bottom:12px;}
+  .green .tag{background:var(--green);color:#fff;}
+  .amber .tag{background:var(--amber);color:#fff;}
+  .rose .tag{background:var(--rose);color:#fff;}
+
+  figure{margin:30px 0;}
+  figure svg{width:100%;height:auto;display:block;}
+  figcaption{font-size:15px;color:var(--soft);margin-top:12px;text-align:center;line-height:1.75;}
+
+  /* flow */
+  .flow{margin:26px 0;}
+  .flow .fcol{margin-bottom:28px;}
+  .flow .ftitle{font-family:'Gowun Batang',serif;font-size:19px;font-weight:700;margin-bottom:14px;padding-left:4px;}
+  .flow .fnode{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+    font-size:17px;line-height:1.7;position:relative;
+  }
+  .flow .fnode b{display:block;font-size:17.5px;margin-bottom:2px;}
+  .flow .fnode small{font-size:15.5px;color:var(--soft);line-height:1.7;}
+  .flow .farrow{text-align:center;color:var(--grey);font-size:20px;line-height:1.2;padding:6px 0;}
+  .flow .fnode.now{border-color:#D8CDB8;}
+  .flow .fnode.new{border:2px solid var(--green);background:var(--green-bg);}
+  .flow .fnode.miss{border:2px dashed var(--rose);background:var(--rose-bg);color:var(--rose);font-weight:500;}
+
+  /* hypothesis cards */
+  .hyp{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 10px;margin-bottom:16px;}
+  .hyp .hn{font-size:13px;font-weight:700;color:var(--green);letter-spacing:.08em;margin-bottom:10px;}
+  .hyp h3{font-family:'Gowun Batang',serif;font-size:20px;margin:0 0 12px;line-height:1.65;}
+  .hyp p{font-size:17px;line-height:1.85;color:var(--soft);}
+  .hyp p b{color:var(--ink);}
+
+  /* record table */
+  .rec{list-style:none;padding:0;margin:24px 0;}
+  .rec li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px;}
+  .rec li b{display:block;font-size:17.5px;margin-bottom:3px;}
+  .rec li small{font-size:16px;color:var(--soft);line-height:1.75;}
+
+  /* question cards */
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;margin-bottom:14px;}
+  .qcard .qnum{font-size:13px;font-weight:700;color:var(--green);letter-spacing:.08em;margin-bottom:10px;}
+  .qcard .qtext{font-family:'Gowun Batang',serif;font-size:20px;line-height:1.75;margin:0 0 12px;}
+  .qcard .qtext::before{content:"“";} .qcard .qtext::after{content:"”";}
+  .qcard .why{font-size:16px;color:var(--soft);margin:0;line-height:1.75;}
+  .copyhint{font-size:15.5px;color:var(--soft);margin-bottom:18px;}
+
+  .closing{text-align:center;font-family:'Gowun Batang',serif;font-size:23px;line-height:1.9;
+    padding:44px 10px;border-top:1px solid var(--line);margin-top:20px;}
+  footer{font-size:15px;color:var(--soft);line-height:1.8;border-top:1px solid var(--line);padding-top:26px;}
+  footer a{color:var(--green);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.on{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  }
+  a:focus-visible{outline:3px solid var(--green);outline-offset:3px;}
+
+  @media (max-width:520px){
+    body{font-size:18px;} h1{font-size:27px;} h2{font-size:23px;}
+    .wrap{padding:0 18px 70px;} .said{font-size:19px;padding:22px 18px;}
+    .qcard .qtext{font-size:18.5px;} .hyp h3{font-size:18.5px;}
+  }
+  @media print{ body{background:#fff;} .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">히포크라테스의 친구들 · 관해 중인 분들께</p>
+  <h1>관해 기간에<br>우리가 재지 않는 것</h1>
+  <p class="lede">7년 동안 하루도 거르지 않았던 한 분의 기록을, 올해 나온 새 논문과 함께 다시 봅니다. 그리고 지금 관해 중이신 분들께 질문 하나를 드리려 합니다.</p>
+  <div class="meta">
+    이 글은 <b>누구의 선택이 틀렸다는 이야기가 아닙니다.</b> 또 새로운 치료법을 권하는 글도 아닙니다.
+    아직 증명되지 않은 가설을 다루지만, 그 가설이 <b>우리가 오랫동안 묻지 않았던 질문</b> 하나를 돌려주기 때문에 나눕니다.
+  </div>
+</header>
+
+<section class="reveal">
+  <h2><span class="num">01. 들어가며</span>"깨끗합니다"라는 말을 들은 날</h2>
+
+  <div class="voice">그 말을 듣고 울었어요. 그런데 집에 오니까 더 무서워지더라고요.<span>— 유방암, 관해 2년차</span></div>
+  <div class="voice">3개월마다 보던 걸 6개월로 늘리자고 하시는데, 좋은 일인 걸 아는데도 불안합니다.<span>— 폐암, 관해 3년차</span></div>
+  <div class="voice">5년 넘었으니 이제 안심하라는데, 정말 그래도 될까요.<span>— 대장암, 관해 5년차</span></div>
+
+  <p>관해(remission)는 끝이 아니라 <strong>새로운 시기의 시작</strong>입니다. 그런데 이 시기에 우리가 무엇을 지켜봐야 하는지는, 솔직히 말해 아직 잘 정리되어 있지 않습니다.</p>
+
+  <p>지금부터 한 분의 8년을 함께 보겠습니다. 이 글은 그분의 이야기로 시작하지만, <strong>결론은 여러분의 이야기</strong>입니다.</p>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">02. 한 사람의 8년</span>7년을 지킨 분의 기록</h2>
+
+  <p>미국의 한 암 환우 모임에 8년 동안 기록을 남긴 분이 있습니다. 2018년 가을, 69세에 4기 폐선암(비소세포폐암) 진단을 받았습니다. 표준 항암치료와 면역치료를 받으면서, 동시에 본인이 선택한 보완 요법을 함께 시작했고 — <strong>그 뒤 7년 동안 단 하루도 거르지 않았습니다.</strong></p>
+
+  <figure>
+    <svg viewBox="0 0 600 1000" xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="2018년부터 2026년까지의 경과. 왼쪽은 병원에서 측정한 검사 결과, 오른쪽은 측정되지 않은 몸의 상태.">
+      <defs><style>
+        .yr{font-family:'Noto Sans KR',sans-serif;font-size:20px;font-weight:700;fill:#5A5248;}
+        .ev{font-family:'Noto Sans KR',sans-serif;font-size:19px;fill:#2E2A24;}
+        .ev2{font-family:'Noto Sans KR',sans-serif;font-size:17px;fill:#5A5248;}
+        .hd{font-family:'Noto Sans KR',sans-serif;font-size:19px;font-weight:700;}
+        .qm{font-family:'Noto Sans KR',sans-serif;font-size:30px;font-weight:700;fill:#C9A6A0;}
+      </style></defs>
+
+      <!-- column headers -->
+      <rect x="86" y="8" width="246" height="42" rx="10" fill="#EAF2EA" stroke="#CFE0CF"/>
+      <text class="hd" x="104" y="36" fill="#4A7C59">병원이 측정한 것</text>
+      <rect x="344" y="8" width="248" height="42" rx="10" fill="#FAEDEA" stroke="#EDCFC9"/>
+      <text class="hd" x="362" y="36" fill="#A85A52">측정되지 않은 것</text>
+
+      <!-- center spine -->
+      <line x1="70" y1="62" x2="70" y2="960" stroke="#E0D6C4" stroke-width="2"/>
+      <!-- dashed right spine -->
+      <line x1="356" y1="62" x2="356" y2="960" stroke="#EDCFC9" stroke-width="2" stroke-dasharray="7 9"/>
+
+      <!-- 2018 -->
+      <circle cx="70" cy="96" r="9" fill="#A85A52"/>
+      <text class="yr" x="8" y="102">2018</text>
+      <text class="ev" x="92" y="92">4기 진단</text>
+      <text class="ev2" x="92" y="118">항암 + 면역치료 시작</text>
+      <text class="ev2" x="372" y="92" fill="#A85A52">· 치료가 몸 전체를</text>
+      <text class="ev2" x="372" y="116" fill="#A85A52">  흔들기 시작한 시기</text>
+
+      <!-- 2019 -->
+      <circle cx="70" cy="196" r="9" fill="#4A7C59"/>
+      <text class="yr" x="8" y="202">2019</text>
+      <text class="ev" x="92" y="192">90% 축소 → "All Clear"</text>
+      <text class="ev2" x="92" y="218">4등급 피부 부작용으로</text>
+      <text class="ev2" x="92" y="242">면역치료 중단</text>
+      <text class="ev2" x="372" y="192" fill="#A85A52">· 면역이 어떤 상태로</text>
+      <text class="ev2" x="372" y="216" fill="#A85A52">  자리 잡았는지</text>
+
+      <!-- 2020 -->
+      <circle cx="70" cy="320" r="7" fill="#4A7C59"/>
+      <text class="yr" x="8" y="326">2020</text>
+      <text class="ev" x="92" y="326">3개월마다 CT — 깨끗</text>
+
+      <!-- 2021-22 -->
+      <circle cx="70" cy="420" r="9" fill="#B5803A"/>
+      <text class="yr" x="8" y="426">2021</text>
+      <text class="ev" x="92" y="416">원발 부위에 작은 점</text>
+      <text class="ev2" x="92" y="442">1.0cm → 1.4cm로 커졌다가</text>
+      <text class="ev2" x="92" y="466">PET 음성, 이후 사라짐</text>
+      <text class="ev2" x="372" y="416" fill="#A85A52">· 이때 몸에</text>
+      <text class="ev2" x="372" y="440" fill="#A85A52">  무슨 일이 있었는지</text>
+
+      <!-- 2023 -->
+      <circle cx="70" cy="560" r="7" fill="#4A7C59"/>
+      <text class="yr" x="8" y="566">2023</text>
+      <text class="ev" x="92" y="566">4개월마다 CT — 깨끗</text>
+
+      <!-- 2024 -->
+      <circle cx="70" cy="650" r="7" fill="#4A7C59"/>
+      <text class="yr" x="8" y="656">2024</text>
+      <text class="ev" x="92" y="650">"5년 종(bell)"</text>
+      <text class="ev2" x="92" y="676">검사 간격 6개월로</text>
+
+      <!-- 2025 -->
+      <circle cx="70" cy="750" r="7" fill="#4A7C59"/>
+      <text class="yr" x="8" y="756">2025</text>
+      <text class="ev" x="92" y="750">6개월마다 CT — 깨끗</text>
+      <text class="ev2" x="92" y="776">미각 상실 "영구적인 듯"</text>
+
+      <!-- 2026 -->
+      <circle cx="70" cy="866" r="11" fill="#A85A52"/>
+      <text class="yr" x="8" y="872">2026</text>
+      <text class="ev" x="92" y="858" fill="#A85A52">우하엽 1.7cm 결절</text>
+      <text class="ev2" x="92" y="884">PET에서 두 번째 결절</text>
+      <text class="ev2" x="92" y="908">방사선 5회 (11월)</text>
+
+      <!-- question marks on right -->
+      <text class="qm" x="470" y="330">?</text>
+      <text class="qm" x="470" y="580">?</text>
+      <text class="qm" x="470" y="760">?</text>
+      <text class="qm" x="470" y="880">?</text>
+
+      <text class="ev2" x="372" y="950" fill="#A85A52" font-weight="700">8년 동안 한 번도</text>
+      <text class="ev2" x="372" y="974" fill="#A85A52" font-weight="700">재지 않은 줄입니다</text>
+    </svg>
+    <figcaption>왼쪽 줄은 8년 내내 성실하게 채워졌습니다. 오른쪽 줄은 비어 있습니다.</figcaption>
+  </figure>
+
+  <div class="said">
+    한 번도 거르지 않았는데, 그래서 놀랐습니다.
+    <small>— 2026년 8월, 재발 소식을 알리며 본인이 쓴 말</small>
+  </div>
+
+  <p>이 문장이 이 글의 출발점입니다. 많은 분들이 여기서 같은 결론으로 갔습니다. "그럼 소용없는 거였나." 또는 "용량이 부족했나." <strong>둘 다 같은 생각 위에 서 있습니다 — 암세포만 보는 생각입니다.</strong></p>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">03. 비유</span>바늘이 하나뿐인 계기판</h2>
+
+  <p>자동차 계기판에 속도계만 있고 연료계가 없다고 생각해 보세요. 속도는 정확하게 알 수 있습니다. 하지만 기름이 얼마나 남았는지는 <strong>멈춰 선 다음에야</strong> 압니다.</p>
+
+  <figure>
+    <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" role="img"
+         aria-label="바늘이 하나뿐인 계기판과, 바늘이 둘인 계기판의 비교">
+      <defs><style>
+        .gl{font-family:'Noto Sans KR',sans-serif;font-size:19px;font-weight:700;fill:#2E2A24;}
+        .gs{font-family:'Noto Sans KR',sans-serif;font-size:16px;fill:#5A5248;}
+      </style></defs>
+
+      <!-- left panel -->
+      <rect x="8" y="8" width="282" height="404" rx="16" fill="#fff" stroke="#E0D6C4"/>
+      <text class="gl" x="30" y="46">지금의 계기판</text>
+      <circle cx="149" cy="170" r="78" fill="#F4EEE2" stroke="#D8CDB8" stroke-width="2"/>
+      <line x1="149" y1="170" x2="100" y2="124" stroke="#4A7C59" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="149" cy="170" r="8" fill="#4A7C59"/>
+      <text class="gs" x="76" y="276" fill="#4A7C59">종양 바늘</text>
+      <text class="gs" x="40" y="302">CT · PET · 혈액 속 암 DNA</text>
+      <text class="gs" x="40" y="352" fill="#A85A52">· 남은 암이 얼마나 있는가</text>
+      <text class="gs" x="40" y="382" fill="#A85A52">· 이 바늘 하나로만 판단</text>
+
+      <!-- right panel -->
+      <rect x="310" y="8" width="282" height="404" rx="16" fill="#EAF2EA" stroke="#CFE0CF" stroke-width="2"/>
+      <text class="gl" x="332" y="46">논문이 제안하는 계기판</text>
+      <circle cx="451" cy="170" r="78" fill="#fff" stroke="#CFE0CF" stroke-width="2"/>
+      <line x1="451" y1="170" x2="402" y2="124" stroke="#4A7C59" stroke-width="6" stroke-linecap="round"/>
+      <line x1="451" y1="170" x2="508" y2="146" stroke="#B5803A" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="451" cy="170" r="8" fill="#2E2A24"/>
+      <text class="gs" x="356" y="276" fill="#4A7C59">종양 바늘</text>
+      <text class="gs" x="480" y="276" fill="#B5803A">몸 바늘</text>
+      <text class="gs" x="342" y="302">두 바늘을 함께 봅니다</text>
+      <text class="gs" x="342" y="352" fill="#4A7C59">· 남은 암이 얼마나 있는가</text>
+      <text class="gs" x="342" y="382" fill="#B5803A">· 그 암이 자랄 수 있는 몸인가</text>
+    </svg>
+    <figcaption>같은 암이 남아 있어도, 몸의 상태에 따라 결과가 달라진다는 것이 이 논문의 핵심입니다.</figcaption>
+  </figure>
+
+  <div class="box green">
+    <span class="tag">한 문장</span>
+    <h3>남은 암세포의 '양'과, 그 암세포가 놓인 '몸의 상태'는 서로 다른 문제입니다.</h3>
+    <p>지금 병원에서 재발 위험을 볼 때 쓰는 검사는 대부분 <b>앞의 바늘</b>만 움직입니다. 뒤의 바늘은 아예 계기판에 없습니다.</p>
+    <p>2026년 11월에 나온 이 논문은 "그래서 같은 수치를 가진 두 사람의 결과가 다른 것 아닐까"라고 묻습니다.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">04. 흐름</span>지금의 추적과, 함께 보자는 제안</h2>
+
+  <div class="flow">
+    <div class="fcol">
+      <div class="ftitle">지금 우리가 하고 있는 것</div>
+      <div class="fnode now"><b>치료 종료</b><small>"깨끗합니다"</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode now"><b>3개월마다 CT</b><small>깨끗 → 깨끗 → 깨끗</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode now"><b>간격이 벌어짐</b><small>4개월 → 6개월 → 1년</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode miss">이 사이에 몸이 어떻게<br>달라졌는지는 보지 않음</div>
+      <div class="farrow">↓</div>
+      <div class="fnode now"><b>어느 날 영상에 보임</b><small>이미 1.7cm</small></div>
+    </div>
+
+    <div class="fcol">
+      <div class="ftitle">논문이 함께 보자고 제안하는 것</div>
+      <div class="fnode new"><b>치료 종료</b><small>이때의 몸 상태를 한 번 기록해 둔다 (기준점)</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode new"><b>회복기 (몇 달)</b><small>염증 수치, 혈액 구성, 체중·근육, 활동량이 돌아오는 흐름을 본다</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode new"><b>굳어지는 시기 ★</b><small>대부분은 원래대로 돌아가지만, 일부는 바뀐 채로 멈춥니다. 논문은 <b>이때가 가장 손쓸 수 있는 시기</b>라고 봅니다 — 암은 아직 안 보이는데 몸은 이미 달라져 있기 때문입니다</small></div>
+      <div class="farrow">↓</div>
+      <div class="fnode new"><b>영상 + 몸 상태를 함께</b><small>두 바늘을 같이 보며 다음을 판단</small></div>
+    </div>
+  </div>
+
+  <div class="box amber">
+    <span class="tag">꼭 짚고 갑니다</span>
+    <p>오른쪽 흐름은 <b>아직 어느 병원에서도 표준으로 하고 있지 않습니다.</b> 논문 저자들도 "이것은 검증된 진료 지침이 아니라 앞으로 시험해봐야 할 틀"이라고 분명히 적었습니다. 지금 병원에 가서 "몸 상태 검사를 해달라"고 요청할 수 있는 단계가 아닙니다.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">05. 다시 보기</span>그분의 8년을, 두 번째 바늘로 본다면</h2>
+
+  <p>아래는 모두 <strong>가설입니다.</strong> 어느 것도 증명할 수 없습니다. 하지만 같은 기록이 얼마나 다르게 읽히는지는 보실 수 있습니다.</p>
+
+  <div class="hyp">
+    <div class="hn">가설 1</div>
+    <h3>7년을 지킨 것은 '매일의 알약'이 아니라, 2018년 겨울에 자리 잡은 면역 상태였을지 모른다</h3>
+    <p>그분은 면역치료 중 <b>4등급 피부 부작용</b>이 생겨 치료를 중단했습니다. 그런데 이런 강한 면역 반응은 오히려 <b>좋은 치료 반응·긴 지속과 연관</b>된다는 보고가 있습니다. 면역치료는 중단 후에도 효과가 오래 가는 경우가 있고요.</p>
+    <p>논문은 "모든 지속적 변화가 나쁜 것은 아니다"라고 말합니다. <b>좋은 쪽으로 굳어진 상태</b>도 있다는 것입니다. 그렇다면 7년의 주인공은 몇 달간 벌어진 면역 사건이고, 나머지는 그 관성이었을 수 있습니다.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="hn">가설 2</div>
+    <h3>2021년에 생겼다 사라진 그 '점'은, 씨앗이 잠깐 깨어났다가 다시 잠든 순간이었을지 모른다</h3>
+    <p>1.0cm에서 1.4cm로 커졌다가 PET 음성이 나오고 사라진 그 병변을, 우리는 "위양성"이나 "복용량을 올려서 효과를 봤다" 둘 중 하나로 읽었습니다.</p>
+    <p>논문은 세 번째를 제시합니다 — <b>간헐적 각성</b>. 깨어나기 시작했지만 아직 작동하던 감시 기능에 다시 눌린 상태. 그렇다면 2021년은 노이즈가 아니라 <b>몸의 상태가 처음 흔들린 신호</b>였을 수 있습니다.</p>
+  </div>
+
+  <div class="hyp">
+    <div class="hn">가설 3</div>
+    <h3>'부작용'이라고 적어둔 것들이, 사실은 두 번째 바늘의 눈금이었을지 모른다</h3>
+    <p>그분이 기록한 것 중에 <b>2025년의 "미각 상실이 영구적인 것 같다"</b>가 있습니다. 치료가 끝난 지 6년이 지난 시점입니다.</p>
+    <p>우리는 이것을 부작용 목록에 모아두었습니다. 그런데 이 논문의 틀에서 보면 이것은 부작용이 아니라, <b>몸이 원래대로 돌아가지 않았다는 본인의 직접 증언</b>입니다. 지속된 혈소판 저하, 구강 칸디다, 만성 피로도 같은 줄에 놓입니다.</p>
+  </div>
+
+  <div class="box rose">
+    <span class="tag">그런데 — 가장 중요한 부분</span>
+    <h3>이 중 어느 것도 증명되지 않았습니다</h3>
+    <p>가장 단순한 설명이 따로 있습니다. <b>그냥 확률입니다.</b> 잠들어 있던 세포가 깨어나는 것은 확률의 문제이고, 7년은 낮은 확률에도 충분히 긴 시간입니다. 몸 상태가 전혀 바뀌지 않았어도 일어날 수 있는 일입니다.</p>
+    <p>위의 세 가설이 이 설명보다 낫다는 증거는 없습니다. 지나간 일을 설명하기 쉽다는 것은 장점이 아니라 오히려 조심해야 할 신호입니다.</p>
+    <p><b>8년치 기록이 있는데도 답할 수 없는 이유는 하나입니다 — 두 번째 바늘을 한 번도 재지 않았기 때문입니다.</b></p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">06. 당신에게</span>그래서, 지금 관해 중이시라면</h2>
+
+  <p>이 글의 진짜 목적은 여기입니다. 그분의 8년을 바꿀 수는 없지만, <strong>여러분의 관해 기간은 지금 진행 중</strong>입니다.</p>
+
+  <p>특별한 검사를 받으시라는 말이 아닙니다. 이미 받고 계신 검사의 숫자를 <strong>한곳에 모아 흐름으로 보는 것</strong>만으로 시작됩니다. 논문이 반복해서 강조하는 것도 바로 이것입니다 — <strong>한 번의 측정이 아니라 흐름</strong>.</p>
+
+  <ul class="rec">
+    <li><b>혈액검사에서 세 가지</b><small>염증 수치(CRP), 백혈구 중 호중구와 림프구의 비율, 혈소판. 이미 거의 매번 찍히는 숫자들입니다. 따로 모아두기만 하면 됩니다.</small></li>
+    <li><b>체중과 근육</b><small>체중은 물론이고, 가능하면 근육량도. 치료 중 빠진 근육이 돌아왔는지가 이 논문에서 중요하게 다뤄집니다.</small></li>
+    <li><b>걸음 수와 잠</b><small>휴대폰이 이미 재고 있습니다. 월평균만 적어두셔도 충분합니다.</small></li>
+    <li><b>잘 낫지 않는 것들</b><small>미각, 구내염, 피부, 저림, 피로. "언제부터, 나아지는 중인지 그대로인지"를 한 줄로. 가설 3이 말하는 것이 바로 이 칸입니다.</small></li>
+    <li><b>항생제를 쓴 날</b><small>언제, 왜, 며칠. 장내 미생물은 이 논문에서 근거가 비교적 탄탄한 부분입니다.</small></li>
+    <li><b>검사 날짜와 결과</b><small>간격이 어떻게 벌어졌는지도 함께. 그분의 경우 3개월 → 4개월 → 6개월이었습니다.</small></li>
+  </ul>
+
+  <div class="box green">
+    <span class="tag">왜 이게 의미가 있나</span>
+    <p>지금은 "몸 상태 점수" 같은 검사가 존재하지 않습니다. 그래서 <b>개인이 모아둔 흐름이 현재로서는 가장 가까운 대체물</b>입니다. 그리고 이런 기록은 진료실에서 "요즘 어떠세요"에 "그냥 그래요"라고 답하는 대신, <b>보여드릴 수 있는 것</b>이 됩니다.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">07. 질문 카드</span>관해 중 진료실에서</h2>
+
+  <p class="copyhint">그대로 복사해서 쓰셔도 됩니다. 요구가 아니라 <b>함께 생각해 달라는 질문</b>으로 만들었습니다.</p>
+
+  <div class="qcard">
+    <div class="qnum">질문 1 · 흐름 보기</div>
+    <p class="qtext">제 염증 수치와 혈액 수치를 지난 1~2년치로 같이 놓고 봐주실 수 있을까요? 한 번의 결과보다 흐름이 궁금합니다.</p>
+    <p class="why">이미 찍혀 있는 데이터를 다르게 보는 것뿐이라 추가 검사가 필요 없습니다. 가장 부담 없는 질문입니다.</p>
+  </div>
+
+  <div class="qcard">
+    <div class="qnum">질문 2 · 검사 간격</div>
+    <p class="qtext">검사 간격을 늘리는 기준이 무엇인가요? 제 경우에 더 길게 가도 되는 이유를 알고 싶습니다.</p>
+    <p class="why">간격이 벌어지는 것은 대개 좋은 신호입니다. 다만 <b>그 판단의 근거를 알고 동의하는 것</b>과, 모르고 따라가는 것은 다릅니다.</p>
+  </div>
+
+  <div class="qcard">
+    <div class="qnum">질문 3 · 낫지 않는 것</div>
+    <p class="qtext">치료가 끝난 지 오래됐는데도 돌아오지 않는 증상이 있습니다. 이게 그냥 후유증인지, 지켜봐야 할 것인지 봐주실 수 있을까요?</p>
+    <p class="why">가설 3이 가리키는 지점입니다. 대부분은 단순 후유증이겠지만, <b>물어보지 않으면 기록조차 남지 않습니다.</b></p>
+  </div>
+
+  <div class="qcard">
+    <div class="qnum">질문 4 · 근육과 영양</div>
+    <p class="qtext">치료 중 빠진 근육을 회복하는 것이 제 장기 경과와도 관련이 있을까요? 재활 프로그램을 받을 수 있나요?</p>
+    <p class="why">운동과 영양 재활은 논문에서 '몸을 되돌리는' 방법으로 가장 자주 언급됩니다. <b>극단적 절식은 오히려 회복을 방해할 수 있다</b>고도 적혀 있습니다.</p>
+  </div>
+
+  <div class="qcard">
+    <div class="qnum">질문 5 · 재발과 새 암</div>
+    <p class="qtext">만약 나중에 새 병변이 나오면, 예전 암의 재발인지 새로 생긴 암인지 어떻게 구분하게 되나요?</p>
+    <p class="why">그분의 경우 조직검사를 하지 않아 이 구분이 되지 않았습니다. 미리 알아두면 <b>그 순간에 당황하지 않습니다.</b></p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2><span class="num">08. 경계선</span>여기서 멈춰야 하는 지점</h2>
+
+  <div class="box rose">
+    <span class="tag">꼭 읽어주세요</span>
+    <p><b>이 글은 유지요법을 권하지도, 말리지도 않습니다.</b> 그분의 8년으로는 "덕분에 7년을 버텼다"도, "소용없었다"도 증명되지 않습니다. 두 결론 모두 이 기록이 감당할 수 있는 범위를 넘습니다.</p>
+    <p>논문에는 치료로 생긴 늙은 세포를 없애는 약 이야기가 나옵니다. 같은 논문이 <b>그런 세포는 상처를 아물게 하는 데 필요하고, 너무 일찍 없애면 오히려 해로울 수 있으며, 언제 누구에게 해야 하는지는 아직 정해지지 않았다</b>고도 적었습니다. 관심이 가신다면 혼자 시작하기보다 주치의와 먼저 이야기해 주세요.</p>
+    <p>검사 간격을 스스로 늘리거나, 다음 치료를 스스로 미루는 판단도 위험합니다. 암의 종류에 따라 기다리는 것 자체가 더 큰 위험일 수 있습니다.</p>
+    <p><b>복용·병용·중단의 최종 결정은 반드시 주치의의 몫입니다.</b> 이런 글과 AI는 결정을 대신하는 도구가 아니라, 진료실에서 <b>더 나은 질문</b>을 하도록 돕는 도구입니다.</p>
+  </div>
+
+  <div class="box amber">
+    <span class="tag">그분에 대하여</span>
+    <p>이 글에 나온 분은 <b>지금 방사선 치료를 받고 계신 실존 인물</b>입니다. 그분의 8년치 공개 기록 덕분에 우리가 이런 생각을 해볼 수 있었습니다.</p>
+    <p>그리고 분명히 해두고 싶은 것이 있습니다. <b>그분이 무언가를 놓친 것이 아닙니다.</b> 관해 기간에 두 번째 바늘을 추적하는 표준 진료는 지금도 존재하지 않습니다. 놓치고 있는 것은 그분이 아니라 <b>의학 전체</b>입니다. 그분은 오히려, 6개월 검사를 한 번도 거르지 않았기에 <b>작을 때 찾아냈습니다.</b></p>
+  </div>
+</section>
+
+<div class="closing">
+  계기판에 바늘이 하나뿐이라면,<br>
+  우리가 할 수 있는 일은<br>
+  두 번째 바늘을 스스로 기록해 두는 것입니다.<br><br>
+  <b>지금 관해 중이시라면,<br>오늘이 그 기록의 첫날이 될 수 있습니다.</b>
+</div>
+
+<footer>
+  <p><b>참고한 논문</b><br>
+  Xue J, Zhang L, Ning C, et al. <i>Persistent post-treatment host immune remodeling in cancer: linking therapy to minimal residual disease, relapse, and treatment rechallenge.</i> Frontiers in Immunology. 2026;17:1992385. <a href="https://doi.org/10.3389/fimmu.2026.1992385">doi.org/10.3389/fimmu.2026.1992385</a> (오픈액세스)</p>
+  <p><b>사례 출처</b><br>
+  페이스북 그룹 mycancerstory.rocks에 2019년 2월부터 2026년 11월까지 공개된 본인 기록. 별도의 사례 정리 문서가 있습니다. 이 글의 해석과 가설은 <b>원문 기록이 아니라 AI 클로드가 논문의 틀을 적용해 덧붙인 것</b>이며, 본인이나 담당 의료진이 이런 식으로 설명한 적은 없습니다.</p>
+  <p>이 글은 의학적 조언이 아닙니다. 언급된 모든 약과 보충제는 예시이며 치료 권고가 아닙니다.<br>
+  히포크라테스의 친구들 · 2026년 11월 12일 · 정리 꿈많은사람2</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    for (var i=0;i<els.length;i++){ els[i].classList.add('on'); }
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.05});
+  for (var j=0;j<els.length;j++){ io.observe(els[j]); }
+  setTimeout(function(){ for (var k=0;k<els.length;k++){ els[k].classList.add('on'); } }, 4000);
+})();
+</script>
+</body>
+</html>
