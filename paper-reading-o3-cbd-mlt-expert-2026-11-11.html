@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>증례 보고 검증 프로토콜</title>
+<meta name="description" content="대마·멜라토닌·산소-오존 병용 증례 5편(환자 6명)을 재료로 한 증례 보고 반증 읽기 방법론">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+KR:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1216; --panel:#161b21; --panel2:#1c232b; --line:#2a333d;
+  --ink:#e6e9ee; --soft:#a3adba; --dim:#77818e;
+  --amber:#f2b44a;   /* 원문 기재 사실 */
+  --cyan:#4fd1e0;    /* 표준치료·교란 */
+  --violet:#a98bff;  /* 도구 */
+  --rose:#ff6f86;    /* 경계·위험 신호 */
+  --green:#5fd39a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans KR",system-ui,sans-serif;font-size:16.5px;line-height:1.75;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.35;margin:0}
+p{margin:0 0 1em}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.c-am{color:var(--amber)}.c-cy{color:var(--cyan)}.c-vi{color:var(--violet)}.c-ro{color:var(--rose)}.c-gr{color:var(--green)}
+
+header{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+.idx{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase}
+header h1{font-size:34px;font-weight:900;margin:14px 0 10px}
+header .sub{color:var(--soft);max-width:760px}
+.meta{margin-top:18px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--dim)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;font-size:13.5px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:0}
+.lg-am::before{background:var(--amber)}.lg-cy::before{background:var(--cyan)}.lg-vi::before{background:var(--violet)}.lg-ro::before{background:var(--rose)}
+
+section{padding:46px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:25px;margin:6px 0 20px}
+section h3{font-size:18px;margin:24px 0 10px}
+
+.thesis{margin-top:30px;border:1px solid var(--amber);background:linear-gradient(180deg,rgba(242,180,74,.08),rgba(242,180,74,.02));border-radius:12px;padding:22px 24px}
+.thesis .idx{color:var(--amber)}
+.thesis p{font-family:"Noto Serif KR",serif;font-size:21px;font-weight:600;margin:8px 0 0;line-height:1.6}
+
+.ai{border-left:3px solid var(--violet);background:rgba(169,139,255,.07);padding:12px 16px;margin:16px 0;border-radius:0 8px 8px 0;font-size:15.5px}
+.ai .tag{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.08em;color:var(--violet);display:block;margin-bottom:4px}
+.ai p:last-child{margin:0}
+
+/* paradigm */
+.para{display:grid;gap:14px}
+.para > div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.para .old{border-top:3px solid var(--dim)}
+.para .new{border-top:3px solid var(--green)}
+.para h4{margin:0 0 8px;font-size:15px;font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
+.para ul{margin:0;padding-left:1.1em;font-size:15.5px}
+
+/* mechanism cards */
+.mech{display:grid;gap:12px}
+.mech div{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--rose);border-radius:8px;padding:14px 18px}
+.mech b{display:block;color:var(--rose);font-size:15px;margin-bottom:4px}
+.mech p{margin:0;font-size:15.5px;color:var(--soft)}
+.mech p strong{color:var(--ink)}
+
+/* pipeline */
+.pipe{position:relative;margin:10px 0 0;padding-left:30px}
+.pipe::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--violet),rgba(169,139,255,.2))}
+.node{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.node::before{content:"";position:absolute;left:-26px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--violet)}
+.node .tool{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--violet)}
+.node h4{margin:2px 0 6px;font-size:16.5px}
+.node p{margin:0;font-size:15px;color:var(--soft)}
+.node .out{margin-top:8px;font-size:14px;color:var(--ink)}
+.node .out b{color:var(--amber)}
+
+/* workflow rail */
+.step{display:grid;grid-template-columns:44px 1fr;gap:0 16px;margin-bottom:26px}
+.step .n{font-family:"JetBrains Mono",monospace;font-size:22px;color:var(--amber);font-weight:600;padding-top:2px}
+.step h3{margin:0 0 8px;font-size:19px}
+.step .body{min-width:0}
+.prompt{background:#0b0e12;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"JetBrains Mono",monospace;font-size:13.2px;line-height:1.7;white-space:pre-wrap;color:#cfd6df;margin:10px 0;overflow-wrap:anywhere}
+.prompt .k{color:var(--rose)}
+.prompt .h{color:var(--dim)}
+.gate{border:1px dashed var(--green);border-radius:8px;padding:10px 14px;font-size:14.5px;margin-top:8px}
+.gate b{color:var(--green);font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.06em;margin-right:6px}
+.obs{font-size:15px;background:var(--panel);border-radius:8px;padding:12px 16px;margin-top:8px}
+.obs b{color:var(--amber)}
+.obs ul{margin:4px 0 0;padding-left:1.1em}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:10px 10px;text-align:left;vertical-align:top}
+.tbl th{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--dim);font-weight:600;text-transform:uppercase}
+.tbl td.cy{color:var(--cyan)}
+.pill{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:11.5px;border-radius:4px;padding:1px 7px;border:1px solid}
+.p-ro{color:var(--rose);border-color:var(--rose)}
+.p-am{color:var(--amber);border-color:var(--amber)}
+.p-dm{color:var(--soft);border-color:var(--dim)}
+.grade td:first-child{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:16px}
+
+/* network */
+.net{display:grid;gap:10px}
+.net div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 16px;font-size:15px}
+.net b{color:var(--amber)}
+
+.limits li{margin-bottom:.6em}
+.closing{font-family:"Noto Serif KR",serif;font-size:20px;line-height:1.65;border-left:3px solid var(--amber);padding-left:18px}
+
+.src{font-size:14px;line-height:1.65}
+.src ol{padding-left:1.4em}
+.src li{margin-bottom:.45em}
+.src .t{color:var(--dim)}
+.src h3{font-size:15px;font-family:"JetBrains Mono",monospace;color:var(--soft);letter-spacing:.04em}
+
+.safety{border:1px solid var(--rose);border-radius:10px;padding:16px 20px;background:rgba(255,111,134,.06);font-size:15.5px}
+.safety b{color:var(--rose)}
+
+footer{padding:30px 0 50px;font-size:13px;color:var(--dim);text-align:center}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+@media (min-width:760px){
+  header h1{font-size:42px}
+  .para{grid-template-columns:1fr 1fr}
+  .mech{grid-template-columns:1fr 1fr}
+  .net{grid-template-columns:1fr 1fr}
+}
+/* mobile table → cards */
+@media (max-width:700px){
+  .tbl.cards thead{display:none}
+  .tbl.cards tr{display:block;background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:10px;padding:6px 4px}
+  .tbl.cards td{display:block;border:none;padding:4px 12px}
+  .tbl.cards td::before{content:attr(data-l);display:block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--dim);letter-spacing:.06em}
+}
+@media print{
+  :root{--bg:#fff;--panel:#f6f7f9;--panel2:#eef0f3;--line:#d4d8de;--ink:#15181c;--soft:#3d4550;--dim:#5f6873;--amber:#9a5f00;--cyan:#006d7a;--violet:#5a3fc0;--rose:#b2253d;--green:#1f7a4c}
+  body{font-size:11pt}
+  .prompt{background:#f3f4f6;color:#15181c}
+  .reveal{opacity:1;transform:none}
+  section{break-inside:avoid-page}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="idx">Case-Report Verification Protocol · v1 · 2026-11-11</div>
+    <h1>증례 보고 검증 프로토콜</h1>
+    <p class="sub">대마(cannabinoids)·멜라토닌(melatonin, MLT)·산소-오존(O₂/O₃) 병용요법 증례 5편, 환자 6명을 재료로 한 <strong>반증 시도형 읽기(falsification-first reading)</strong>의 재현 가능한 절차</p>
+    <div class="meta">글 · 꿈많은사람2 / 자료 조사·분석 보조 · AI 클로드 / 레지스터 B (전문가용)</div>
+    <div class="legend">
+      <span class="lg-am">원문 기재 사실</span><span class="lg-cy">표준치료 · 교란 요인</span><span class="lg-vi">도구</span><span class="lg-ro">경계 · 위험 신호</span>
+    </div>
+    <div class="thesis">
+      <div class="idx">§0 Thesis</div>
+      <p>증례 보고의 가치는 그 결론에 있지 않다. 그 결론을 반증하려는 검증 사슬을 통과했느냐에 있다.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="reveal">
+  <div class="idx">§1 Paradigm</div>
+  <h2>초록을 소비하는 읽기 대 반증을 시도하는 읽기</h2>
+  <div class="para">
+    <div class="old"><h4 class="c-am" style="color:var(--dim)">OLD · 결론 소비</h4>
+      <ul>
+        <li>초록의 결론 문장("complete and durable remission")을 단위로 판단</li>
+        <li>"동료심사 학술지 게재"를 근거 품질의 대리지표로 사용</li>
+        <li>증례 수가 늘수록 근거가 "쌓인다"고 간주</li>
+        <li>기전 연구를 임상 효과의 지지 근거로 직결</li>
+      </ul>
+    </div>
+    <div class="new"><h4 class="c-gr">NEW · 반증 시도</h4>
+      <ul>
+        <li>본문 타임라인을 재구성해 <span class="c-cy">표준치료</span>와 보조요법을 시간축에 겹친다</li>
+        <li>환자별 예후 기준선을 개별화해 "예외성" 자체를 검증</li>
+        <li>증례 간 <span class="c-ro">독립성</span>(저자·자금·IRB)을 먼저 확인한 뒤에만 합산</li>
+        <li>분모 부재를 "정보 없음"이 아니라 "선택 편향 가능성"으로 계량</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="idx">§2 Mechanism of Misleading</div>
+  <h2>증례 보고는 왜 오도하는가 — 이번 5편에서 실제로 관찰된 기제</h2>
+  <div class="mech">
+    <div><b>① 선택 편향 (분모 부재)</b><p>6명 전원이 성공 사례. 치료 제공 기관이 전국 협력 의사 네트워크를 운영하지만 <strong>치료받은 전체 환자 수는 어느 논문에도 없음</strong>.</p></div>
+    <div><b>② 동시 교란 (concurrent confounding)</b><p>6명 중 5명에서 반응 시점에 <strong class="c-cy">근거 등급 A의 표준치료</strong>가 진행 중이거나 막 완료됨(OlympiAD·KEYNOTE-048 수준의 근거).</p></div>
+    <div><b>③ 예후 인자 무시</b><p>GBM 증례는 36세, MGMT 메틸화. 이는 장기생존의 기지(旣知) 예측인자로, GBM 전체 5년 생존율과의 단순 비교는 <strong>"예외성"을 과대평가</strong>.</p></div>
+    <div><b>④ 스핀 (abstract–body discordance)</b><p>올라파립을 "immunotherapy"로 기재, 이미 NED인 소아를 "병용 후 완전관해"로 합산, 병변 안정을 "cured"로 표기. <strong>5편 전부</strong>에서 관찰.</p></div>
+    <div><b>⑤ 인용 순환 (citation loop)</b><p>2026 IJMS 세포실험이 증례 6건(참고문헌 24–29, 전부 자기 그룹)을 임상 근거로 인용하고, 자신을 그 증례들의 "first rigorous biochemical validation"이라 결론.</p></div>
+    <div><b>⑥ 내부 윤리심의</b><p>소아 신경모세포종 증례의 IRB 면제 판정 주체가 <strong>치료 제공 재단 자체 위원회</strong>. 저자 5명 중 3명이 재단 소속이나 competing interests "none".</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="idx">§3 Tool Stack</div>
+  <h2>근거연결형 도구 파이프라인 — 실제 사용 순서</h2>
+  <p>아래는 이번 조사에서 실제로 거친 순서다. 각 단계의 산출물이 다음 단계의 입력이 된다. 어느 도구도 단독으로 결론을 내지 않는다.</p>
+  <div class="pipe">
+    <div class="node"><div class="tool">ReviewFast (PubMed 초록 관련도 랭킹)</div><h4>① 문헌 지형 스크리닝</h4><p>5개 질문(저자 추적·독립 재현·성분별 임상·예후 기준선·영상 교란)으로 PubMed 초록을 랭킹.</p><div class="out">산출: <b>독립 재현 0건</b>, 성분별 GBM 임상은 칸나비노이드 1b·2상 수준, 멜라토닌·오존 GBM 임상 상위권 부재</div></div>
+    <div class="node"><div class="tool">PubMed MCP · search_pubmed (Author 필드)</div><h4>② 저자 전수조사</h4><p><span class="mono">Luongo M[Author] AND Nabissi M[Author]</span> → 공저 8건(원저 7 + 정정 1)</p><div class="out">산출: 병용 관련 5편 + <b>2025 이해충돌 정정</b>(Nabissi = Integrative Therapy Discovery Lab CEO)</div></div>
+    <div class="node"><div class="tool">PubMed MCP · get_paper_fulltext (PMC 전문)</div><h4>③ 전문 정독</h4><p>초록이 아닌 본문·그림 설명·선언문(funding, COI, IRB)·CRediT 기여 내역을 확인.</p><div class="out">산출: <b>BRCA1 변이 + 올라파립</b>(초록엔 부재), 재단의 conceptualization·funding acquisition 역할</div></div>
+    <div class="node"><div class="tool">참고문헌 역추적 (backward citation)</div><h4>④ 인덱스 밖 문헌 발견</h4><p>최신 IJMS 논문의 참고문헌 24–29 검토.</p><div class="out">산출: <b>PubMed 미색인 증례 3건</b>(설암·역형성 성상세포종·소아 신경모세포종 2명)</div></div>
+    <div class="node"><div class="tool">WebSearch / 기관 공개자료</div><h4>⑤ 기관 실체 확인</h4><p>재단 홈페이지·SNS·대학 공개 이력서·의료 예약 사이트 확인.</p><div class="out">산출: 재단의 <b>직접 진료</b>(후원회원 가입+기부 → 예약), 대학과 공동 석사과정, 재단이 공동 연구비 부담</div></div>
+  </div>
+  <div class="ai"><span class="tag">AI 클로드 주석</span><p>④가 결정적이었다. PubMed 저자 검색만으로는 증례가 2건으로 보였고, 참고문헌 역추적 후 5편·6명으로 늘었다. <strong>색인 데이터베이스의 경계가 곧 검색의 경계</strong>라는 점을 워크플로우에 명시적으로 넣어야 한다.</p></div>
+</section>
+
+<section class="reveal">
+  <div class="idx">§4 Workflow</div>
+  <h2>6단계 검증 워크플로우 — 제약 프롬프트와 검증 게이트</h2>
+  <p>각 단계는 <span class="c-ro">제약조건</span>이 명시된 프롬프트와, 다음 단계로 넘어가기 전 통과해야 할 <span class="c-gr">게이트</span>를 갖는다. 예시 대상은 이번 5편이다(예시이며 치료 평가의 일반 규칙이 아니다).</p>
+
+  <div class="step"><div class="n">01</div><div class="body">
+    <h3>초록–본문 대조</h3>
+    <div class="prompt">본 논문의 초록 각 문장을 본문 해당 기술과 1:1 대조하라.
+<span class="k">[제약]</span> 본문에 근거 문장이 없으면 "근거 없음"으로 표기. 의역 금지, 원문 인용.
+<span class="k">[제약]</span> 치료 명칭의 분류(면역/표적/세포독성)가 초록과 본문에서 일치하는지 별도 확인.
+<span class="h"># 출력: | 초록 문장 | 본문 근거(인용) | 일치/불일치/근거없음 |</span></div>
+    <div class="obs"><b>관찰.</b><ul>
+      <li>TNBC: 초록·고찰 "immunotherapy" ↔ 본문 olaparib(PARP 억제제)</li>
+      <li>신경모세포종: 초록 "following initiation … complete regression" ↔ 환자 1은 2022.5 MIBG에서 이미 NED, 병용은 2022.7 시작</li>
+      <li>설암: 서론 "after prematurely discontinuing conventional chemotherapy … chose" ↔ 본문 2021.10 병용 시작 후 2022.9까지 pembrolizumab+화학요법 지속, 중단 사유는 MRSA 감염</li>
+    </ul></div>
+    <div class="gate"><b>GATE 1</b>불일치가 1건이라도 있으면 이후 모든 단계는 <strong>초록이 아닌 본문만</strong>을 입력으로 사용.</div>
+  </div></div>
+
+  <div class="step"><div class="n">02</div><div class="body">
+    <h3>타임라인 재구성 — 표준치료와 보조요법 겹쳐 보기</h3>
+    <div class="prompt">본문의 모든 치료·영상평가를 월 단위 타임라인으로 재구성하라.
+<span class="k">[제약]</span> 표준치료와 보조요법을 별도 트랙으로 분리.
+<span class="k">[제약]</span> 각 반응(축소·소실·안정) 시점에 "진행 중이거나 6개월 이내 완료된 표준치료"를 모두 나열.
+<span class="k">[제약]</span> 보조요법만 단독으로 존재한 구간이 있으면 그 구간과 해당 영상 소견만 따로 표시.
+<span class="h"># 출력: 트랙 2개 타임라인 + "보조요법 단독 구간" 목록</span></div>
+    <div class="obs"><b>관찰.</b> 보조요법 단독 구간이 존재하는 사례는 <strong>신경모세포종 환자 2</strong>(2021.2~)뿐. 그러나 해당 구간에서도 <span class="c-cy">레티노이드(13-cis/trans-RA 계열, 고위험 신경모세포종 표준 유지요법 성분)</span>, 보스웰리아, 피코시아닌, PEA가 추가됐고, 평가 모달리티가 MIBG → PET로 바뀜. 2021.6 영상은 본문 "further progression" ↔ 그림 설명 "partial response"로 상충.</div>
+    <div class="gate"><b>GATE 2</b>보조요법 단독 구간이 없으면 해당 증례는 "효과 귀속 불가"로 분류하고 06단계로 직행.</div>
+  </div></div>
+
+  <div class="step"><div class="n">03</div><div class="body">
+    <h3>예후 기준선 개별화 <span class="c-am" style="font-size:14px">(핵심 단계)</span></h3>
+    <div class="prompt">이 환자의 진단 시 예후 인자를 추출하고, 같은 인자를 가진 집단의 표준치료 하 기대 성적을 문헌에서 찾아라.
+<span class="k">[제약]</span> 비교 기준은 질환 전체 평균이 아니라 <span class="k">동일 예후 하위군</span>.
+<span class="k">[제약]</span> 출처는 PMID/DOI가 확인되는 코호트·RCT만. 찾지 못하면 "기준선 미확보" 명시.
+<span class="h"># 출력: | 예후 인자 | 하위군 기대 성적 | 출처 | 이 환자의 "예외성" 재평가 |</span></div>
+    <div class="obs"><b>관찰.</b><ul>
+      <li>GBM(36세, IDH-wt, <span class="c-cy">MGMT 메틸화</span>, RT 59.4 Gy 완료): 976명 단일기관 코호트에서 5년 OS 2.2%였으나, 2년·5년 생존과 일관되게 연관된 인자가 <span class="c-cy">표준 화학방사선요법과 MGMT 메틸화</span>였고 60세 이하 연령도 연관. 국제 레지스트리 ETERNITY는 5년 이상 생존한 IDH-wt GBM 189명을 등록. 장기생존은 표준치료 하에서도 실재하며 이 환자는 그 프로파일에 해당.</li>
+      <li>TNBC(<span class="c-cy">BRCA1 생식세포 변이</span>): 백금 감수성 + OlympiAD(올라파립 반응률 59.9% vs 28.8%)의 적응 대상.</li>
+      <li>역형성 성상세포종: Ki-67 &lt;5%, 밀리미터 조직 진단, 현행 WHO 분류에 필요한 분자 표지 정보 부재 → <span class="c-ro">기준선 자체가 불확정</span>.</li>
+    </ul></div>
+    <div class="gate"><b>GATE 3</b>"예외적 반응자" 주장은 하위군 기준선 대비로만 성립. 기준선 미확보 시 "예외성 미검증"으로 표기.</div>
+  </div></div>
+
+  <div class="step"><div class="n">04</div><div class="body">
+    <h3>저자 · 자금 · 윤리심의 네트워크 매핑</h3>
+    <div class="prompt">저자 전원의 소속, CRediT 역할, funding, competing interests, IRB 주체를 표로 만들고, 소속 기관이 해당 치료를 환자에게 제공하는지 공개자료로 확인하라.
+<span class="k">[제약]</span> 기관 확인은 기관 자신의 웹페이지·공식 SNS·공공 문서만 사용. 출처 URL 필수.
+<span class="k">[제약]</span> 위법·부정 여부 판단 금지. 사실 관계만 기술.</div>
+    <div class="net">
+      <div><b>Fondazione Maria Guarino AMOR ETS</b> (Luongo) — 착상·감독·연구비 확보·교신. 공식 소개 "보조요법으로 암 환자를 치료". 진료는 후원회원 가입+기부 후 예약. 신경퇴행·자가면역·자폐 치료 경로도 안내.</div>
+      <div><b>카메리노 대학 / Integrative Therapy Discovery Lab</b> (Nabissi) — 기전 연구·세포·동물실험·집필. CEO 지위는 2025 정정으로 추가. 재단과 공동 석사과정 운영.</div>
+      <div><b>Ecomedica Empoli</b> (Fanelli) — 방사선종양학, 임상 데이터. 통증 완화용 오존요법을 유료 제공(암 대상 판매 근거는 미확인).</div>
+      <div><b>선언문</b> — 증례 5편 모두 competing interests "none". 2024 J Pineal Res는 재단 공동 연구비 명시.</div>
+    </div>
+    <div class="gate"><b>GATE 4</b>치료 제공 주체 = 보고 주체이면, 해당 증례들은 <strong>독립 근거로 합산하지 않고 단일 출처</strong>로 취급.</div>
+  </div></div>
+
+  <div class="step"><div class="n">05</div><div class="body">
+    <h3>분모와 독립 재현 확인</h3>
+    <div class="prompt">(a) 같은 프로토콜로 치료받은 전체 환자 수를 저자 그룹이 공개한 적이 있는지 확인하라.
+(b) 저자 그룹과 소속·공저 관계가 없는 연구팀의 동일 조합 임상 보고를 검색하라.
+<span class="k">[제약]</span> (b)의 "독립"은 공저자·소속·연구비 출처가 모두 겹치지 않는 경우로 정의.
+<span class="k">[제약]</span> 결과가 0건이면 0건이라고 보고. 성분 단독 연구로 대체 금지.</div>
+    <div class="obs"><b>관찰.</b> (a) 미공개. (b) 0건. 대신 그룹 내부에서 세포(2020) → 증례(2023) → 세포+동물(2024) → 증례 4건(2025–26) → 세포(2026)로 이어지며, 최신 세포실험이 자기 증례를 임상 근거로 인용. 두 증례의 치료 개시 시점(2016, 2019)은 해당 전임상 근거보다 <span class="c-ro">앞선다</span>.</div>
+    <div class="gate"><b>GATE 5</b>분모 미공개 + 독립 재현 0 → 근거 등급 상한을 D로 고정.</div>
+  </div></div>
+
+  <div class="step"><div class="n">06</div><div class="body">
+    <h3>근거 등급화 → 임상 환원</h3>
+    <div class="prompt">01–05의 결과를 종합해 근거 등급을 부여하고, 환자가 주치의에게 가져갈 질문 목록으로 환원하라.
+<span class="k">[제약]</span> 등급 판정 근거를 단계별 게이트 결과로 명시.
+<span class="k">[제약]</span> 용량·투여 방법을 지시문으로 재현 금지. "근거 없음"과 "효과 없음"을 구분해 서술.</div>
+    <div class="obs"><b>판정.</b> 병용요법의 항암 효과에 대한 근거 등급 <strong class="c-ro">D</strong>(자기 출처 증례 + 전임상). 6명 중 5명은 표준치료로 설명 가능하고, 남은 1명(신경모세포종 환자 2)은 가설 생성 후보에 그침.<br>
+    <b>임상 환원 질문 예시.</b> "현재 표준치료와의 약물 상호작용·출혈·감염 위험은?", "고용량 멜라토닌과 칸나비노이드가 지금 받는 약의 대사(CYP)에 영향을 주는가?", "직장 오존 주입의 감염·천공 위험을 평가할 근거가 있는가?"</div>
+    <div class="gate"><b>GATE 6</b>최종 산출물은 "결정"이 아니라 주치의 상담용 질문. 결정은 주치의의 몫.</div>
+  </div></div>
+</section>
+
+<section class="reveal">
+  <div class="idx">§5 Case Matrix</div>
+  <h2>환자 6명 대조표</h2>
+  <table class="tbl cards">
+    <thead><tr><th>증례</th><th>반응 시점의 표준치료</th><th>보고상 결과</th><th>효과 귀속</th></tr></thead>
+    <tbody>
+      <tr><td data-l="증례">GBM · 36F<br><span class="mono" style="font-size:12px;color:var(--dim)">Reports 2023</span></td><td data-l="표준치료" class="cy">부분 절제 · RT 59.4 Gy/33 완료 · TMZ 1주기 · MGMT 메틸화</td><td data-l="결과">2017.2 잔존 결절 소실, 2022까지 재발 없음</td><td data-l="귀속"><span class="pill p-am">곤란</span></td></tr>
+      <tr><td data-l="증례">TNBC · 40대 F<br><span class="mono" style="font-size:12px;color:var(--dim)">Reports 2026</span></td><td data-l="표준치료" class="cy">BRCA1 변이 · 카보플라틴+젬시타빈 · SBRT 30 Gy/3 · 올라파립 13개월</td><td data-l="결과">폐 결절 소실, 완전관해 유지</td><td data-l="귀속"><span class="pill p-ro">불가</span></td></tr>
+      <tr><td data-l="증례">설암 · 43F<br><span class="mono" style="font-size:12px;color:var(--dim)">ACAM 2025</span></td><td data-l="표준치료" class="cy">pembrolizumab+백금+5-FU(1차 표준) · 전 병소 SBRT</td><td data-l="결과">2022.3 PET 병변 없음 → 2023.8 폐 재발 → RT</td><td data-l="귀속"><span class="pill p-ro">불가</span></td></tr>
+      <tr><td data-l="증례">역형성 성상세포종 · 48F<br><span class="mono" style="font-size:12px;color:var(--dim)">ACAM 2025</span></td><td data-l="표준치료" class="cy">RT 54 Gy · TMZ 8개월 완료</td><td data-l="결과">병변 "안정" → 결론 "cured"</td><td data-l="귀속"><span class="pill p-ro">불가</span></td></tr>
+      <tr><td data-l="증례">신경모세포종 ① · 3세<br><span class="mono" style="font-size:12px;color:var(--dim)">preprint 2026</span></td><td data-l="표준치료" class="cy">고강도 화학요법 · MIBG 치료 · ASCT · anti-GD2 CAR-T · 수술 · RT</td><td data-l="결과">병용 개시 <strong>전</strong> 2022.5 이미 NED</td><td data-l="귀속"><span class="pill p-dm">해당 없음</span></td></tr>
+      <tr><td data-l="증례">신경모세포종 ② · 2세<br><span class="mono" style="font-size:12px;color:var(--dim)">preprint 2026</span></td><td data-l="표준치료" class="cy">선행 CAR-T(반응 불량) · 이후 레티노이드 추가</td><td data-l="결과">2022.7 PET 소실 · 영상 기술 상충 · MIBG→PET 전환</td><td data-l="귀속"><span class="pill p-am">가설 후보</span></td></tr>
+    </tbody>
+  </table>
+  <div class="ai"><span class="tag">AI 클로드 주석</span><p>신경모세포종 ②에서 선행 CAR-T의 지연 효과 가능성은 소아종양 전문가 판단이 필요한 영역으로, 이 문서는 판단하지 않는다. 원저자의 서술은 "표준치료에 불응한 뒤 보조요법으로 완전관해"이며, 위 표는 그 서술을 본문 기술과 대조한 결과다.</p></div>
+
+  <h3>근거 등급표</h3>
+  <table class="tbl grade cards">
+    <thead><tr><th>등급</th><th>설계</th><th>이번 조합에서</th><th>흔한 함정</th></tr></thead>
+    <tbody>
+      <tr><td data-l="등급" class="c-gr">A</td><td data-l="설계">RCT · 메타분석</td><td data-l="이번 조합">없음</td><td data-l="함정">대리 종점(PFS)만 개선, 이질성 큰 메타분석</td></tr>
+      <tr><td data-l="등급" class="c-cy">B</td><td data-l="설계">전향적 코호트 · 단일군 2상</td><td data-l="이번 조합">없음 (칸나비노이드 단독은 GBM 1b·2상 수준, 주로 안전성)</td><td data-l="함정">불멸시간 편향(immortal time bias), 역인과</td></tr>
+      <tr><td data-l="등급" class="c-am">C</td><td data-l="설계">후향적 코호트 · 증례 시리즈(분모 공개)</td><td data-l="이번 조합">없음 (분모 미공개)</td><td data-l="함정">선택 편향, 결측 처리</td></tr>
+      <tr><td data-l="등급" class="c-ro">D</td><td data-l="설계">단일 증례 · 전임상</td><td data-l="이번 조합"><strong>여기</strong> — 자기 출처 증례 5편 + 같은 그룹의 세포·동물실험</td><td data-l="함정">동시 교란, 스핀, 인용 순환, 출판 편향</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="reveal">
+  <div class="idx">§6 Limits</div>
+  <h2>이 방법론이 구조적으로 대체하지 못하는 것</h2>
+  <ul class="limits">
+    <li><span class="c-ro">원자료 접근 불가</span>: 영상 원본·병리 슬라이드를 재판독하지 못했다. 모든 판단은 출판된 기술에 의존한다.</li>
+    <li><span class="c-ro">분모 미상</span>: 실제 치료 환자 수를 모르므로 반응률을 추정할 수 없다. "성공 6명"의 의미는 분모에 따라 완전히 달라진다.</li>
+    <li><span class="c-ro">법적·윤리적 판정은 범위 밖</span>: 기부 기반 진료 구조나 소아 대상 시술의 적법성은 이 문서가 판단하지 않는다. 기부 액수·치료 비용은 확인하지 못했다.</li>
+    <li><span class="c-ro">근거 없음 ≠ 효과 없음</span>: 이 결론은 효과의 부재 증명이 아니라 효과 주장의 근거 부재 판정이다. 개별 성분의 전임상 연구는 정당한 연구 주제다.</li>
+    <li><span class="c-ro">검색 경계</span>: PubMed 밖 문헌은 참고문헌 역추적으로만 찾았다. 이 그룹의 미발견 보고가 더 있을 수 있다.</li>
+    <li><span class="c-ro">AI 단독 검토</span>: 이 분석은 AI 보조로 수행됐고, 독립된 임상 전문가의 이중 검토를 거치지 않았다.</li>
+  </ul>
+  <div class="safety"><b>안전 경계.</b> 보조요법의 추가·병용·중단에 관한 최종 결정은 반드시 주치의의 몫이다. 이 문서의 약물명은 모두 예시(illustrative)이며 치료 권고가 아니다. 고용량 멜라토닌, 칸나비노이드, 직장 오존 주입은 안전성 근거가 자기 보고("no adverse effects")에 한정되며, 소아 적용은 특히 근거가 없다.</div>
+</section>
+
+<section class="reveal">
+  <div class="idx">§7 Closing</div>
+  <h2>논지로 돌아가며</h2>
+  <p class="closing">다섯 편의 증례는 모두 "완전관해"로 끝났다. 그러나 검증 사슬의 어느 게이트도 통과하지 못했다. 결론을 바꿀 수 있는 것은 더 많은 증례가 아니라 세 가지다: <span class="c-am">치료 환자 전체의 결과 공개</span>, <span class="c-am">독립 기관의 재현</span>, <span class="c-am">사전 등록된 전향적 임상시험</span>.</p>
+</section>
+
+<section class="reveal src">
+  <div class="idx">§8 Sources</div>
+  <h2 style="font-size:20px">출처</h2>
+  <h3>검토한 증례 5편</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/40729189/">The Effects of a Combination of Medical Cannabis, Melatonin, and Oxygen-Ozone Therapy on Glioblastoma Multiforme: A Case Report</a> <span class="t">Reports 2023 · PMID 40729189</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/41718279/">Integrative Use of Cannabidiol, Melatonin, and Oxygen-Ozone Therapy in Triple-Negative Breast Cancer with Lung and Mediastinal Metastases. A Case Report</a> <span class="t">Reports 2026 · PMID 41718279</span></li>
+    <li><a href="https://doi.org/10.31031/acam.2025.08.000696">Integrative Use of Medical Cannabis, Melatonin and Oxygen-Ozone Therapy in Oral Tongue Carcinoma: A Case Report</a> <span class="t">Adv Complement Alt Med 2025 · PubMed 미색인</span></li>
+    <li><a href="https://doi.org/10.31031/ACAM.2025.08.000699">Medical Cannabis, Melatonin and Oxygen-Ozone as Integrative Therapies for the Treatment of Anaplastic Astrocytoma: A Case Report</a> <span class="t">Adv Complement Alt Med 2025 · PubMed 미색인</span></li>
+    <li><a href="https://doi.org/10.21203/rs.3.rs-9651000/v1">Medical cannabis, melatonin and oxygen-ozone therapy for neuroblastoma: two case reports</a> <span class="t">Research Square preprint 2026 · 심사 전</span></li>
+  </ol>
+  <h3>같은 그룹의 전임상 연구 · 정정</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/32992648/">Cannabidiol and Oxygen-Ozone Combination Induce Cytotoxicity in Human Pancreatic Ductal Adenocarcinoma Cell Lines</a> <span class="t">Cancers 2020</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39898506/">Correction: Luongo et al. Cannabidiol and Oxygen-Ozone Combination … (COI 정정)</a> <span class="t">Cancers 2025</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39076059/">In Vitro and In Vivo Effects of Melatonin-Containing Combinations in Human Pancreatic Ductal Adenocarcinoma</a> <span class="t">J Pineal Res 2024</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/42589431/">Synergistic In Vitro Effects of Minor Phytocannabinoids and Melatonin Combinations Against Human Glioblastoma Cells</a> <span class="t">IJMS 2026</span></li>
+  </ol>
+  <h3>예후 기준선 · 표준치료 근거</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39213667/">Long-term survivors in 976 supratentorial glioblastoma, IDH-wildtype patients</a> <span class="t">J Neurosurg 2025</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/37277265/">Long-term survival with IDH wildtype glioblastoma: first results from the ETERNITY Brain Tumor Funders' Collaborative Consortium (EORTC 1419)</a> <span class="t">Eur J Cancer 2023</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/28578601/">Olaparib for Metastatic Breast Cancer in Patients with a Germline BRCA Mutation (OlympiAD)</a> <span class="t">N Engl J Med 2017</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/31679945/">Pembrolizumab alone or with chemotherapy versus cetuximab with chemotherapy for recurrent or metastatic squamous cell carcinoma of the head and neck (KEYNOTE-048)</a> <span class="t">Lancet 2019</span></li>
+  </ol>
+  <h3>기관 공개자료 · 도구</h3>
+  <ol>
+    <li><a href="https://www.facebook.com/AmorOnlusFondazioneMariaGuarino/">Fondazione Maria Guarino Amor ETS — 공식 페이스북</a></li>
+    <li><a href="https://amoronlus.com/chi-siamo/">재단 소개 (Chi siamo)</a></li>
+    <li><a href="https://www.amoronlus.com/percorso-di-cura-2/malattie-neurodegenerative-alzheimer-parkinson-sclerosi-sla/">재단 치료 경로 안내 (후원회원·기부 절차)</a></li>
+    <li><a href="https://www.ordinemedicipa.it/notizia.php?tid=7293">재단–카메리노 대학 공동 석사과정 공지</a></li>
+    <li><a href="https://amministrazionetrasparente.unicam.it/sites/www.unicam.it.amministrazionetrasparente/files/collaboratori/cv/CV%20AGUZZI.pdf">공저자 공개 이력서 (재단 지원 과제·재단 학회 발표)</a></li>
+    <li><a href="https://www.idoctors.it/centri-medici/1523-ecomedica-centro-medico-empoli">Ecomedica Empoli 진료 항목 (통증 완화 오존요법)</a></li>
+    <li><a href="https://www.jolab.ai/reviewfast/#/manual">ReviewFast</a></li>
+  </ol>
+</section>
+
+</main>
+<footer>히포크라테스의 친구들 · 해외 사례 분석집 · 레지스터 B<br>의학적 조언이 아닙니다. 모든 치료 결정은 주치의와 상의하세요.</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.05});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>

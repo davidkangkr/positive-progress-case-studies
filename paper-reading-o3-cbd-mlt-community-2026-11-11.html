@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>증례 논문 읽는 법</title>
+<meta name="description" content="맛집 후기를 걸러 보듯 논문을 걸러 보는 5가지 질문 — 대마·멜라토닌·오존 병용 증례 5편을 따라가며">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ec; --card:#fffdf8; --ink:#2b2622; --soft:#5d554d; --line:#e6dccb;
+  --green:#2f7d4f; --green-bg:#e7f3ea;
+  --amber:#a8650c; --amber-bg:#fdf0d8;
+  --red:#b23b2e; --red-bg:#fbe6e2;
+  --blue:#2c5d8a; --blue-bg:#e6eef6;
+  --accent:#c2552d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:19px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.4;margin:0}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+p{margin:0 0 1em}
+strong{font-weight:700}
+
+/* hero */
+.hero{padding:56px 0 36px;text-align:center;border-bottom:1px solid var(--line)}
+.hero .kicker{display:inline-block;font-size:15px;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:34px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{margin-top:16px;color:var(--soft);font-size:18px}
+.byline{margin-top:22px;font-size:15px;color:var(--soft)}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.sec-label{font-size:15px;font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+section h2{font-size:27px;margin-bottom:20px}
+
+/* quote */
+.ask{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;position:relative;margin:8px 0 22px;box-shadow:0 2px 0 var(--line)}
+.ask .who{font-size:14px;color:var(--soft);margin-bottom:6px}
+.ask p{font-family:"Noto Serif KR",serif;font-size:21px;font-weight:600;margin:0}
+.note-small{font-size:15px;color:var(--soft)}
+
+/* AI note */
+.ai{border-left:5px solid var(--blue);background:var(--blue-bg);border-radius:0 14px 14px 0;padding:16px 20px;margin:20px 0}
+.ai .tag{display:inline-block;font-size:14px;font-weight:700;color:#fff;background:var(--blue);border-radius:99px;padding:2px 12px;margin-bottom:8px}
+.ai p:last-child{margin-bottom:0}
+
+/* metaphor checklist */
+.five{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.five li{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px}
+.five .num{flex:0 0 46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Noto Serif KR",serif;font-weight:900;font-size:22px;display:flex;align-items:center;justify-content:center}
+.five b{display:block;font-size:20px}
+.five span{color:var(--soft);font-size:17px}
+.five a{text-decoration:none;color:inherit;display:block}
+
+/* check section */
+.pair{display:grid;gap:12px;margin:6px 0 22px}
+.pair div{border-radius:14px;padding:16px 18px}
+.pair .food{background:var(--amber-bg)}
+.pair .paper{background:var(--green-bg)}
+.pair small{display:block;font-weight:700;font-size:15px;margin-bottom:4px}
+.pair .food small{color:var(--amber)}
+.pair .paper small{color:var(--green)}
+.pair p{margin:0}
+
+.found{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:18px 0}
+.found h3{font-size:20px;margin-bottom:12px}
+.found ul{margin:0;padding-left:1.1em}
+.found li{margin-bottom:.7em}
+.found li:last-child{margin-bottom:0}
+.vs{display:grid;gap:8px;margin:10px 0 4px}
+.vs div{border-radius:10px;padding:10px 14px;font-size:17px}
+.vs .a{background:#f3ece0}
+.vs .b{background:var(--red-bg)}
+.vs b{display:block;font-size:14px;color:var(--soft)}
+
+/* patient list */
+.pt{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.pt li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.pt .who{font-weight:700;font-size:19px}
+.pt .with{font-size:17px;color:var(--soft);margin-top:4px}
+.pt .verdict{display:inline-block;margin-top:8px;font-size:15px;font-weight:700;border-radius:99px;padding:3px 12px}
+.v-red{background:var(--red-bg);color:var(--red)}
+.v-amb{background:var(--amber-bg);color:var(--amber)}
+.v-gry{background:#eee8de;color:var(--soft)}
+
+/* copy box */
+.copy{background:#fff;border:2px dashed #cbb99d;border-radius:16px;padding:20px 22px 16px;margin:16px 0;position:relative}
+.copy .lbl{font-size:14px;font-weight:700;color:var(--amber);margin-bottom:8px}
+.copy .txt{font-size:18px;white-space:pre-wrap;line-height:1.8}
+.copy .txt::before{content:"“";font-family:"Noto Serif KR",serif;font-size:34px;color:#cbb99d;line-height:0;vertical-align:-14px;margin-right:4px}
+.copy button{margin-top:12px;font:inherit;font-size:16px;font-weight:700;background:var(--amber);color:#fff;border:none;border-radius:99px;padding:8px 20px;cursor:pointer;min-height:44px}
+.copy button.done{background:var(--green)}
+
+/* try */
+.try{background:var(--green-bg);border-radius:18px;padding:24px 22px}
+.try h3{color:var(--green);font-size:22px;margin-bottom:10px}
+.try ol{margin:0;padding-left:1.3em}
+.try li{margin-bottom:.6em}
+
+/* verdict */
+.big{background:var(--card);border:2px solid var(--accent);border-radius:20px;padding:26px 24px;text-align:center}
+.big .stamp{display:inline-block;font-family:"Noto Serif KR",serif;font-weight:900;color:var(--accent);font-size:24px;border:3px solid var(--accent);border-radius:12px;padding:6px 18px;transform:rotate(-2deg);margin-bottom:14px}
+.big p{text-align:left}
+
+/* safety */
+.safe{background:var(--red-bg);border:2px solid var(--red);border-radius:18px;padding:22px 22px}
+.safe h2{color:var(--red);font-size:24px;margin-bottom:12px}
+.safe ul{margin:0;padding-left:1.1em}
+.safe li{margin-bottom:.7em}
+
+.closing{font-family:"Noto Serif KR",serif;font-size:22px;font-weight:600;text-align:center;padding:10px 0 0}
+
+/* sources */
+.src{font-size:16px;line-height:1.7}
+.src h3{font-size:18px;margin:18px 0 8px}
+.src ol{padding-left:1.3em;margin:0}
+.src li{margin-bottom:.6em}
+.src .t{color:var(--soft)}
+
+footer{padding:30px 0 50px;text-align:center;font-size:14px;color:var(--soft)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+@media (min-width:640px){
+  .hero h1{font-size:42px}
+  .pair{grid-template-columns:1fr 1fr}
+}
+@media print{
+  body{background:#fff;font-size:13pt}
+  .reveal{opacity:1;transform:none}
+  .copy button{display:none}
+  section{break-inside:avoid-page}
+  a{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">논문 읽는 법 · 사례로 배우기</div>
+    <h1>맛집 후기 걸러 보듯<br><em>논문도 걸러 보세요</em></h1>
+    <p class="sub">대마·멜라토닌·오존을 함께 쓴 암 환자 증례 논문 5편을<br>직접 따라가며 배운 <strong>5가지 질문</strong></p>
+    <div class="byline">글 · 꿈많은사람2 &nbsp;|&nbsp; 자료 조사·정리 도움 · AI 클로드 &nbsp;|&nbsp; 2026년 11월 11일</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="reveal" aria-labelledby="s1">
+  <div class="sec-label">시작하며</div>
+  <h2 id="s1">"논문에 '완치'라고 나왔는데, 저도 해봐도 될까요?"</h2>
+  <div class="ask">
+    <div class="who">우리 커뮤니티에서 자주 받는 질문 (실제 댓글을 옮긴 것은 아닙니다)</div>
+    <p>"외국 논문에 뇌종양 환자가 대마랑 멜라토닌, 오존으로 7년째 재발 없이 지낸다고 나와요. 저도 해봐도 될까요?"</p>
+  </div>
+  <p>이런 질문이 드는 건 아주 자연스러운 일입니다. 논문이라면 전문가가 쓰고 검토까지 거친 글이니 믿을 만하다고 느끼게 되지요. 게다가 힘든 병과 싸우는 중이라면, 희망적인 소식에 마음이 먼저 움직이는 게 당연합니다.</p>
+  <p>그런데 <strong>논문에도 여러 종류</strong>가 있습니다. 특히 환자 한두 명의 경과를 적은 <strong>"증례 보고"</strong>는, 말하자면 <strong>한 사람이 쓴 체험 후기</strong>에 가깝습니다. 후기가 거짓이라는 뜻은 아닙니다. 다만 후기는 <strong>걸러서 읽어야</strong> 합니다.</p>
+  <p>이번에 저희는 위 질문에 나온 논문 한 편에서 출발해, 같은 연구팀이 쓴 증례 논문 <strong>5편(환자 6명)</strong>을 끝까지 따라가 보았습니다. 그 과정에서 확인한 것들을, 우리가 이미 잘 아는 <strong>맛집 후기 고르는 법</strong>에 빗대어 정리했습니다.</p>
+</section>
+
+<section class="reveal" aria-labelledby="s2">
+  <div class="sec-label">하나의 비유</div>
+  <h2 id="s2">맛집 후기 볼 때 확인하는 것 = 논문 볼 때 확인하는 것</h2>
+  <p>블로그에서 "인생 맛집!" 후기를 보면, 우리는 자기도 모르게 몇 가지를 따져 봅니다. 논문도 똑같습니다.</p>
+  <ul class="five">
+    <li><a href="#c1"><div style="display:flex;gap:16px"><div class="num">1</div><div><b>사진과 실물이 같나?</b><span>논문의 요약(초록)과 본문 내용이 같은가</span></div></div></a></li>
+    <li><a href="#c2"><div style="display:flex;gap:16px"><div class="num">2</div><div><b>같이 먹은 반찬은?</b><span>환자가 병원 치료(표준치료)를 함께 받았나</span></div></div></a></li>
+    <li><a href="#c3"><div style="display:flex;gap:16px"><div class="num">3</div><div><b>몇 명이 다녀갔나?</b><span>좋아진 사람 말고, 전체 환자는 몇 명인가</span></div></div></a></li>
+    <li><a href="#c4"><div style="display:flex;gap:16px"><div class="num">4</div><div><b>사장님이 쓴 후기인가?</b><span>논문을 쓴 사람이 그 치료를 제공하는 사람인가</span></div></div></a></li>
+    <li><a href="#c5"><div style="display:flex;gap:16px"><div class="num">5</div><div><b>다른 손님 후기도 있나?</b><span>다른 병원·다른 연구팀도 같은 결과를 냈나</span></div></div></a></li>
+  </ul>
+</section>
+
+<!-- ① -->
+<section class="reveal" id="c1" aria-labelledby="h-c1">
+  <div class="sec-label">질문 1</div>
+  <h2 id="h-c1">사진과 실물이 같나? — 요약과 본문을 비교하세요</h2>
+  <div class="pair">
+    <div class="food"><small>맛집에서는</small><p>메뉴판 사진은 근사한데, 실제로 나온 음식은 전혀 다를 때가 있지요.</p></div>
+    <div class="paper"><small>논문에서는</small><p>맨 앞의 짧은 요약(<strong>초록</strong>)이 메뉴판 사진입니다. 많은 사람이 초록만 읽고 판단하지만, 진짜 내용은 <strong>본문</strong>에 있습니다.</p></div>
+  </div>
+  <div class="found">
+    <h3>이번 논문들에서 실제로 찾은 것</h3>
+    <div class="vs">
+      <div class="a"><b>유방암 환자 · 초록에는</b>"면역치료"를 받았다</div>
+      <div class="b"><b>본문에는</b>환자는 유방암 유전자(BRCA1) 변이가 있었고, 그런 환자에게 효과가 입증된 <strong>표적항암제(올라파립, Olaparib)</strong>를 1년 넘게 복용했습니다. 면역치료가 아닙니다.</div>
+    </div>
+    <div class="vs">
+      <div class="a"><b>어린이 환자 1 · 초록에는</b>병용요법을 시작한 뒤 암이 사라졌다</div>
+      <div class="b"><b>본문에는</b>고강도 항암, 조혈모세포이식, 세포치료(CAR-T)까지 받고 <strong>이미 "암 흔적 없음" 판정을 받은 두 달 뒤</strong>에 병용요법을 시작했습니다.</div>
+    </div>
+    <div class="vs">
+      <div class="a"><b>혀암 환자 · 서론에는</b>항암치료를 일찍 중단하고 이 요법을 선택했다</div>
+      <div class="b"><b>본문에는</b>병용요법을 시작한 뒤에도 <strong>면역항암제와 항암제를 1년 가까이 함께</strong> 받았습니다. 중단은 감염 때문이었고, 그 시점은 이미 암이 안 보인 뒤였습니다.</div>
+    </div>
+  </div>
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>다섯 편 모두에서, <strong>요약만 읽으면 결론이 거꾸로 보이는</strong> 지점이 있었습니다. 일부러 그랬는지는 알 수 없습니다. 하지만 읽는 사람 입장에서는 결과가 같습니다. 그래서 "본문 확인"은 선택이 아니라 필수입니다.</p>
+  </div>
+  <div class="copy">
+    <div class="lbl">이렇게 물어보세요 (AI에게)</div>
+    <div class="txt">이 논문의 요약(초록)과 본문에 적힌 치료 경과가 서로 다른 곳이 있으면 찾아 줘. 본문의 몇 번째 문단인지도 알려 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+</section>
+
+<!-- ② -->
+<section class="reveal" id="c2" aria-labelledby="h-c2">
+  <div class="sec-label">질문 2</div>
+  <h2 id="h-c2">같이 먹은 반찬은? — 병원 치료를 함께 받았나요</h2>
+  <div class="pair">
+    <div class="food"><small>맛집에서는</small><p>"이 집 김치찌개 덕에 감기가 나았어요!" 그런데 그날 감기약도 먹고 푹 잤다면, 찌개 덕분이라고 할 수 있을까요?</p></div>
+    <div class="paper"><small>논문에서는</small><p>환자가 수술·방사선·항암제 같은 <strong>병원 표준치료</strong>를 같은 시기에 받았다면, 좋아진 이유가 무엇인지 가려낼 수 없습니다.</p></div>
+  </div>
+  <div class="found">
+    <h3>환자 6명이 같은 시기에 받은 병원 치료</h3>
+    <ul class="pt">
+      <li><div class="who">뇌종양(교모세포종) · 36세 여성</div><div class="with">수술 + 방사선치료 끝까지 + 먹는 항암제 1회. 치료가 잘 듣는 유전자 특징도 있었습니다.</div><span class="verdict v-amb">병원 치료로도 설명 가능</span></li>
+      <li><div class="who">유방암 · 40대 여성</div><div class="with">항암제 + 정밀 방사선 + 표적항암제(올라파립)</div><span class="verdict v-red">병원 치료로 충분히 설명됨</span></li>
+      <li><div class="who">혀암 · 43세 여성</div><div class="with">면역항암제 + 항암제 + 모든 전이 부위에 정밀 방사선</div><span class="verdict v-red">병원 치료로 충분히 설명됨</span></li>
+      <li><div class="who">뇌종양(성상세포종) · 48세 여성</div><div class="with">방사선 + 먹는 항암제 8개월 모두 마침</div><span class="verdict v-red">병원 치료로 충분히 설명됨</span></li>
+      <li><div class="who">신경모세포종 · 3세 여아</div><div class="with">병용요법 시작 <strong>전에</strong> 이미 "암 흔적 없음"</div><span class="verdict v-gry">효과를 따질 수 없음</span></li>
+      <li><div class="who">신경모세포종 · 2세 아이</div><div class="with">병원 치료가 끝난 뒤 병용요법. 그러나 중간에 비타민A 계열 약(표준 유지치료 성분)과 여러 보충제가 추가됐고, 검사 방법도 바뀌었습니다.</div><span class="verdict v-amb">유일하게 더 살펴볼 사례 · 그래도 불확실</span></li>
+    </ul>
+  </div>
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>6명 중 5명은 함께 받은 병원 치료만으로도 좋아진 이유가 충분히 설명됩니다. 그러니 이 사례들은 "병원 치료 + 보조요법을 함께 시도한 환자들"로 읽는 것이 정확합니다. 거꾸로 말하면, 이 환자들이 좋아진 데에는 <strong>병원 치료가 결정적이었을 가능성</strong>이 큽니다.</p>
+  </div>
+  <div class="copy">
+    <div class="lbl">이렇게 물어보세요 (AI에게)</div>
+    <div class="txt">이 환자가 받은 모든 치료를 날짜 순서대로 표로 정리해 줘. 병원 치료와 보조요법을 따로 표시하고, 암이 줄어든 시점에 어떤 치료들을 함께 받고 있었는지 알려 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+</section>
+
+<!-- ③ -->
+<section class="reveal" id="c3" aria-labelledby="h-c3">
+  <div class="sec-label">질문 3</div>
+  <h2 id="h-c3">몇 명이 다녀갔나? — 좋아진 사람 말고, 전체는요?</h2>
+  <div class="pair">
+    <div class="food"><small>맛집에서는</small><p>후기가 5개뿐인데 모두 별 다섯 개라면? 다녀간 손님이 천 명인데 만족한 다섯 명만 글을 썼을 수도 있습니다.</p></div>
+    <div class="paper"><small>논문에서는</small><p>같은 치료를 받은 <strong>전체 환자 수</strong>(전문 용어로 "분모")를 알아야 합니다. 좋아진 사람만 보고되면 효과가 실제보다 커 보입니다.</p></div>
+  </div>
+  <div class="found">
+    <h3>이번 논문들에서 실제로 찾은 것</h3>
+    <ul>
+      <li>보고된 6명은 <strong>모두 성공 사례</strong>입니다. 나빠졌거나 세상을 떠난 환자의 보고는 한 건도 없습니다.</li>
+      <li>이 치료를 제공하는 재단은 이탈리아 전국에 협력 의사 네트워크를 두고 환자를 받는다고 소개합니다. 그렇다면 치료받은 환자는 훨씬 많았을 텐데, <strong>전체 환자 수는 다섯 편 어디에도 나오지 않습니다.</strong></li>
+    </ul>
+  </div>
+  <div class="copy">
+    <div class="lbl">이렇게 물어보세요 (AI에게)</div>
+    <div class="txt">이 논문을 쓴 사람들이 같은 치료를 한 환자가 모두 몇 명인지 밝힌 적이 있는지 찾아 줘. 없다면 "없다"고 분명히 말해 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+</section>
+
+<!-- ④ -->
+<section class="reveal" id="c4" aria-labelledby="h-c4">
+  <div class="sec-label">질문 4</div>
+  <h2 id="h-c4">사장님이 쓴 후기인가? — 글쓴이와 치료 제공자의 관계</h2>
+  <div class="pair">
+    <div class="food"><small>맛집에서는</small><p>알고 보니 후기를 쓴 사람이 가게 사장님 가족이라면, 내용이 사실이어도 한 번 더 생각하게 되지요.</p></div>
+    <div class="paper"><small>논문에서는</small><p>논문 끝에 <strong>"이해충돌"</strong>이라는 항목이 있습니다. 글쓴이가 그 치료로 이익을 얻는 관계인지 밝히는 곳입니다.</p></div>
+  </div>
+  <div class="found">
+    <h3>이번 논문들에서 실제로 찾은 것</h3>
+    <ul>
+      <li>다섯 편 모두의 중심 저자가 이탈리아의 한 비영리 재단에 속해 있습니다. 이 재단은 스스로 <strong>"항암·방사선치료를 돕는 보조요법으로 암 환자를 치료한다"</strong>고 소개합니다.</li>
+      <li>재단 홈페이지 안내에 따르면, 진료를 받으려면 <strong>환자 이름으로 후원회원에 가입하고 기부금을 낸 뒤</strong> 예약 연락을 받는 방식입니다.</li>
+      <li>연구 아이디어, 연구비, 논문 연락처가 모두 이 재단입니다. 어린이 증례에서는 연구 윤리 심사도 <strong>재단 자체 위원회</strong>가 했습니다.</li>
+      <li>그런데 이해충돌 항목은 모두 <strong>"없음"</strong>으로 되어 있습니다.</li>
+    </ul>
+  </div>
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>이것이 곧 사기라는 뜻은 아닙니다. 비영리 재단이고, 연구자가 자기 가설을 검증하려는 것도 흔한 일입니다. 기부금 액수나 실제 치료 비용은 공개 자료에서 확인하지 못했습니다. 다만 <strong>"치료를 제공하는 쪽이 직접 쓴 성공 후기"</strong>라는 사실은 읽는 사람이 꼭 알고 있어야 합니다.</p>
+  </div>
+  <div class="copy">
+    <div class="lbl">이렇게 물어보세요 (AI에게)</div>
+    <div class="txt">이 논문 저자들이 속한 기관이 이 치료를 실제로 환자에게 제공하는 곳인지 확인해 줘. 근거가 된 웹페이지 주소도 함께 알려 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+</section>
+
+<!-- ⑤ -->
+<section class="reveal" id="c5" aria-labelledby="h-c5">
+  <div class="sec-label">질문 5</div>
+  <h2 id="h-c5">다른 손님 후기도 있나? — 다른 곳에서도 같은 결과가?</h2>
+  <div class="pair">
+    <div class="food"><small>맛집에서는</small><p>여러 동네 사람들이 각자 "맛있다"고 하면 믿을 만합니다. 같은 사람이 아이디를 바꿔 가며 쓴 후기라면 이야기가 다르지요.</p></div>
+    <div class="paper"><small>논문에서는</small><p><strong>서로 관계없는 다른 병원·연구팀</strong>이 같은 결과를 냈는지가 중요합니다.</p></div>
+  </div>
+  <div class="found">
+    <h3>이번 논문들에서 실제로 찾은 것</h3>
+    <ul>
+      <li>이 조합을 쓴 증례 보고는 <strong>모두 같은 연구팀</strong>에서 나왔습니다. 다른 기관의 보고는 찾지 못했습니다.</li>
+      <li>실험실 연구(세포·쥐 실험)도 같은 팀이 했습니다. 최근 논문은 이 실험이 증례들을 "검증했다"고 쓰는데, 그 증례도 자기 팀의 것입니다. <strong>같은 사람들끼리 서로를 근거로 삼는 구조</strong>입니다.</li>
+    </ul>
+  </div>
+  <div class="copy">
+    <div class="lbl">이렇게 물어보세요 (AI에게)</div>
+    <div class="txt">이 저자들과 관계없는 다른 연구팀이 같은 치료로 비슷한 결과를 보고한 논문이 있는지 찾아 줘. 찾은 논문의 저자 소속도 함께 알려 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+</section>
+
+<section class="reveal" aria-labelledby="s7">
+  <div class="sec-label">그래서 이번 후기는</div>
+  <h2 id="s7">5가지를 다 확인해 보니</h2>
+  <div class="big">
+    <div class="stamp">"체험단 후기"였습니다</div>
+    <p>사진과 실물이 달랐고(①), 좋아진 데에는 병원 치료가 함께 있었고(②), 다녀간 손님 수는 비밀이었고(③), 사장님 쪽이 쓴 후기였으며(④), 다른 손님 후기는 없었습니다(⑤).</p>
+    <p style="margin-bottom:0">그래서 지금으로서는 <strong>"대마·멜라토닌·오존 병용이 암을 치료했다"고 말할 근거가 없습니다.</strong></p>
+  </div>
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>"근거가 없다"는 말은 <strong>"효과가 없다고 증명됐다"는 뜻이 아닙니다.</strong> 아직 제대로 확인되지 않았다는 뜻입니다. 이 판단을 바꾸려면 전체 환자 결과 공개, 다른 기관의 확인, 미리 계획을 세운 정식 임상시험이 필요합니다. 가능성의 문을 닫는 것도, 근거 없이 여는 것도 아닌 자리에 서는 것이 우리 커뮤니티의 원칙입니다.</p>
+  </div>
+</section>
+
+<section class="reveal" aria-labelledby="s8">
+  <div class="sec-label">실제로 써 보기</div>
+  <h2 id="s8">한 번에 물어보는 질문 · 주치의께 드릴 질문</h2>
+  <p>다음에 누군가 논문 링크를 보내 주면, 아래 문장을 통째로 복사해 AI에게 붙여 넣어 보세요.</p>
+  <div class="copy">
+    <div class="lbl">AI에게 · 5가지 한 번에 확인</div>
+    <div class="txt">이 논문을 맛집 후기 고르듯 확인해 줘.
+1) 요약(초록)과 본문 내용이 다른 곳이 있나?
+2) 환자가 같은 시기에 병원 표준치료를 함께 받았나? 날짜 순서로 정리해 줘.
+3) 같은 치료를 받은 전체 환자 수가 나와 있나?
+4) 저자가 이 치료를 제공하는 기관 소속인가? 이해충돌은 뭐라고 적혀 있나?
+5) 관계없는 다른 연구팀도 같은 결과를 보고했나?
+모르는 것은 추측하지 말고 "확인 못 함"이라고 써 줘. 근거가 된 문장과 주소도 붙여 줘.</div>
+    <button type="button">복사하기</button>
+  </div>
+  <div class="copy">
+    <div class="lbl">주치의께 · 진료실에서</div>
+    <div class="txt">이런 증례 논문을 읽었습니다. 제 경우에 이 보조요법이 지금 받는 치료와 충돌하거나 해가 될 부분이 있을까요? 시도한다면 어떤 검사로 안전을 확인해야 할까요?</div>
+    <button type="button">복사하기</button>
+  </div>
+  <div class="try">
+    <h3>이것부터 시도해 보세요!</h3>
+    <ol>
+      <li>최근에 누군가 보내 준 "완치" 기사나 논문 하나를 고릅니다.</li>
+      <li>위의 "5가지 한 번에 확인" 문장을 AI에게 붙여 넣습니다.</li>
+      <li>"확인 못 함"이 몇 개 나오는지 세어 봅니다. 많을수록 아직 믿기 이른 후기입니다.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="reveal" aria-labelledby="s9">
+  <div class="safe">
+    <h2 id="s9">꼭 지켜 주세요 · 안전선</h2>
+    <ul>
+      <li><strong>보조요법 때문에 병원 치료를 미루거나 그만두지 마세요.</strong> 이번 사례들에서도 병원 치료가 결정적이었을 가능성이 큽니다.</li>
+      <li>무엇을 더하든, 빼든, 멈추든 <strong>최종 결정은 주치의와 함께</strong> 내리세요. AI는 결정을 대신하지 않습니다. 더 좋은 질문을 준비하도록 돕는 도구입니다.</li>
+      <li>이 글에 나오는 약 이름은 모두 <strong>사례 설명을 위한 예시</strong>입니다. 치료 권고가 아니며, 용량은 일부러 적지 않았습니다.</li>
+      <li>고용량 멜라토닌, 대마 제품, 직장을 통한 오존 주입은 <strong>안전성이 충분히 확인되지 않았습니다.</strong> 특히 <strong>어린이에게는 절대 임의로 시도하지 마세요.</strong></li>
+    </ul>
+  </div>
+  <p class="closing">희망은 소중합니다.<br>그래서 더 꼼꼼하게 확인할 가치가 있습니다.</p>
+</section>
+
+<section class="reveal src" aria-labelledby="s10">
+  <div class="sec-label">출처</div>
+  <h2 id="s10" style="font-size:22px">이 글에서 확인한 자료</h2>
+  <h3>함께 읽은 증례 논문 5편</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/40729189/">The Effects of a Combination of Medical Cannabis, Melatonin, and Oxygen-Ozone Therapy on Glioblastoma Multiforme: A Case Report</a> <span class="t">— Reports, 2023 · 뇌종양(교모세포종)</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/41718279/">Integrative Use of Cannabidiol, Melatonin, and Oxygen-Ozone Therapy in Triple-Negative Breast Cancer with Lung and Mediastinal Metastases. A Case Report</a> <span class="t">— Reports, 2026 · 유방암</span></li>
+    <li><a href="https://doi.org/10.31031/acam.2025.08.000696">Integrative Use of Medical Cannabis, Melatonin and Oxygen-Ozone Therapy in Oral Tongue Carcinoma: A Case Report</a> <span class="t">— Adv Complement Alt Med, 2025 · 혀암</span></li>
+    <li><a href="https://doi.org/10.31031/ACAM.2025.08.000699">Medical Cannabis, Melatonin and Oxygen-Ozone as Integrative Therapies for the Treatment of Anaplastic Astrocytoma: A Case Report</a> <span class="t">— Adv Complement Alt Med, 2025 · 뇌종양(성상세포종)</span></li>
+    <li><a href="https://doi.org/10.21203/rs.3.rs-9651000/v1">Medical cannabis, melatonin and oxygen-ozone therapy for neuroblastoma: two case reports</a> <span class="t">— 심사 전 프리프린트, 2026 · 신경모세포종(어린이 2명)</span></li>
+  </ol>
+  <h3>같은 연구팀의 실험실 연구</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/42589431/">Synergistic In Vitro Effects of Minor Phytocannabinoids and Melatonin Combinations Against Human Glioblastoma Cells</a> <span class="t">— IJMS, 2026 · 증례들을 근거로 인용</span></li>
+  </ol>
+  <h3>치료 제공 기관 관련 공개 자료</h3>
+  <ol>
+    <li><a href="https://www.facebook.com/AmorOnlusFondazioneMariaGuarino/">Fondazione Maria Guarino Amor ETS 공식 페이스북</a> <span class="t">— "보조요법으로 암 환자를 치료한다"는 소개</span></li>
+    <li><a href="https://www.amoronlus.com/percorso-di-cura-2/malattie-neurodegenerative-alzheimer-parkinson-sclerosi-sla/">재단 '치료 경로' 안내 페이지</a> <span class="t">— 후원회원 가입·기부 후 예약 절차</span></li>
+    <li><a href="https://amoronlus.com/chi-siamo/">재단 소개 (Chi siamo)</a> <span class="t">— 설립 목적, 전국 의사 네트워크</span></li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  히포크라테스의 친구들 · 해외 사례 분석집<br>
+  이 글은 의학적 조언이 아닙니다. 모든 치료 결정은 주치의와 상의하세요.
+</footer>
+
+<script>
+(function(){
+  document.querySelectorAll('.copy button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var t=btn.parentNode.querySelector('.txt').innerText;
+      var ok=function(){btn.textContent='복사됐어요 ✓';btn.classList.add('done');setTimeout(function(){btn.textContent='복사하기';btn.classList.remove('done');},2000);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){fallback(t);ok();});}
+      else{fallback(t);ok();}
+    });
+  });
+  function fallback(t){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(a);}
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.08});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
