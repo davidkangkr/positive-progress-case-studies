@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>저자와 치료 기관의 관계</title>
+<meta name="description" content="대마·멜라토닌·오존 증례 논문의 저자들은 어떤 기관에 속해 있고, 그 기관은 실제로 치료를 제공하는가 — 그림으로 보는 관계">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ec; --card:#fffdf8; --ink:#2b2622; --soft:#5d554d; --line:#e3d8c5;
+  --found:#c2552d; --found-bg:#fbe7dc;   /* 재단 */
+  --uni:#2c5d8a;   --uni-bg:#e4edf6;     /* 대학 */
+  --clinic:#2f7d4f;--clinic-bg:#e3f1e7;  /* 의원 */
+  --paperc:#8a6a1f;--paperc-bg:#f8eed6;  /* 논문 */
+  --red:#b23b2e;   --red-bg:#fbe4e0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:18.5px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.4;margin:0}
+p{margin:0 0 1em}
+a{color:var(--uni)}
+a:focus-visible{outline:3px solid var(--found);outline-offset:3px;border-radius:4px}
+
+.hero{padding:52px 0 30px;text-align:center;border-bottom:1px solid var(--line)}
+.kicker{font-size:15px;font-weight:700;color:var(--found);letter-spacing:.06em}
+.hero h1{font-size:31px;font-weight:900;margin:12px 0 14px}
+.hero .sub{color:var(--soft);font-size:17px}
+.byline{margin-top:18px;font-size:14.5px;color:var(--soft)}
+
+.qnav{display:grid;gap:12px;margin:26px 0 0}
+.qnav a{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;text-align:left}
+.qnav b{color:var(--found);font-family:"Noto Serif KR",serif}
+
+section{padding:42px 0;border-bottom:1px solid var(--line)}
+.q{display:inline-block;font-family:"Noto Serif KR",serif;font-weight:900;font-size:15px;background:var(--found);color:#fff;border-radius:99px;padding:3px 14px;margin-bottom:12px}
+section h2{font-size:25px;margin-bottom:14px}
+section h3{font-size:20px;margin:30px 0 12px}
+
+.answer{background:var(--card);border:2px solid var(--found);border-radius:18px;padding:20px 22px;margin:14px 0 22px}
+.answer .lbl{font-size:14px;font-weight:700;color:var(--found);margin-bottom:6px}
+.answer p{font-size:20px;font-family:"Noto Serif KR",serif;font-weight:600;margin:0;line-height:1.65}
+
+figure{margin:20px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 12px 12px}
+figure svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+figcaption{font-size:15px;color:var(--soft);padding:10px 8px 2px;text-align:center}
+svg text{font-family:"Noto Sans KR",sans-serif}
+
+.ai{border-left:5px solid var(--uni);background:var(--uni-bg);border-radius:0 14px 14px 0;padding:14px 18px;margin:20px 0}
+.ai .tag{display:inline-block;font-size:13.5px;font-weight:700;color:#fff;background:var(--uni);border-radius:99px;padding:2px 12px;margin-bottom:6px}
+.ai p:last-child{margin:0}
+
+/* matrix */
+.mx{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+.mx th,.mx td{text-align:center;padding:6px 2px;border-bottom:1px solid var(--line)}
+.mx th{font-weight:500;color:var(--soft);font-size:12px;line-height:1.3}
+.mx td:first-child,.mx th:first-child{text-align:left;width:86px;font-weight:700;color:var(--ink);font-size:14px}
+.dot{display:inline-block;width:16px;height:16px;border-radius:50%}
+.d-f{background:var(--found)}.d-u{background:var(--uni)}.d-c{background:var(--clinic)}
+.no{color:#cdbfa8}
+.mx-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px;color:var(--soft);margin-top:10px;justify-content:center}
+.mx-legend span{display:inline-flex;align-items:center;gap:6px}
+
+.facts{display:grid;gap:12px;margin:16px 0}
+.fact{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--found);border-radius:12px;padding:14px 18px}
+.fact.u{border-left-color:var(--uni)}.fact.c{border-left-color:var(--clinic)}
+.fact b{display:block;margin-bottom:2px}
+.fact p{margin:0;font-size:17px}
+.fact .src{font-size:14px;color:var(--soft);margin-top:4px}
+
+.two{display:grid;gap:14px}
+.box{border-radius:16px;padding:18px 20px}
+.box h4{margin:0 0 8px;font-size:17px}
+.box ul{margin:0;padding-left:1.1em;font-size:17px}
+.box li{margin-bottom:.4em}
+.ok{background:var(--clinic-bg)} .ok h4{color:var(--clinic)}
+.nk{background:#eee7db} .nk h4{color:var(--soft)}
+
+.fair{background:var(--card);border:1px dashed #bfae92;border-radius:14px;padding:16px 20px;font-size:17px}
+.fair b{color:var(--soft)}
+
+.safe{background:var(--red-bg);border:2px solid var(--red);border-radius:18px;padding:20px 22px}
+.safe h2{color:var(--red);font-size:22px;margin-bottom:10px}
+.safe ul{margin:0;padding-left:1.1em}
+.safe li{margin-bottom:.6em}
+
+.src-list{font-size:15px;line-height:1.7}
+.src-list h3{font-size:17px;margin:18px 0 8px}
+.src-list ol{padding-left:1.3em;margin:0}
+.src-list li{margin-bottom:.5em}
+.src-list .t{color:var(--soft)}
+
+footer{padding:28px 0 46px;text-align:center;font-size:14px;color:var(--soft)}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+@media (min-width:640px){.hero h1{font-size:38px}.two{grid-template-columns:1fr 1fr}}
+@media print{body{background:#fff;font-size:12.5pt}.reveal{opacity:1;transform:none}figure,section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">해외 사례 분석집 · 논문 뒤의 사람들</div>
+    <h1>논문을 쓴 사람들은<br>어디에 속해 있을까?</h1>
+    <p class="sub">대마·멜라토닌·산소-오존 증례 논문을 읽다가 생긴 두 가지 질문을<br>그림으로 정리했습니다.</p>
+    <div class="byline">글 · 꿈많은사람2 &nbsp;|&nbsp; 자료 조사·정리 도움 · AI 클로드 &nbsp;|&nbsp; 2026년 11월 11일</div>
+    <nav class="qnav" aria-label="질문 바로가기">
+      <a href="#q1"><b>질문 1.</b> 저자들이 활동하는 기관·단체는 모두 다른가요?</a>
+      <a href="#q2"><b>질문 2.</b> 이 기관들이 실제로 치료 '서비스'를 제공하나요?</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===================== Q1 ===================== -->
+<section id="q1" class="reveal">
+  <span class="q">질문 1</span>
+  <h2>저자들이 활동하는 기관·단체는 모두 다른가요?</h2>
+  <div class="answer">
+    <div class="lbl">짧은 답</div>
+    <p>이름은 세 곳이지만, 실제로는 <strong>한 재단을 중심으로 묶인 하나의 팀</strong>입니다.</p>
+  </div>
+  <p>논문 저자 목록을 보면 대학, 재단, 민간 의원, 병원 등 여러 기관 이름이 나옵니다. 그래서 얼핏 보면 "여러 기관이 함께 확인한 결과"처럼 보입니다. 하지만 누가 어떤 역할을 맡았는지 따라가 보면, 같은 세 사람이 모든 논문의 중심에 있습니다.</p>
+
+  <figure>
+    <svg viewBox="0 0 360 560" role="img" aria-labelledby="t1 d1">
+      <title id="t1">세 기관의 관계도</title>
+      <desc id="d1">위쪽에 치료를 제공하는 재단, 가운데에 대학 연구실과 민간 의원이 있고, 세 곳 모두에서 화살표가 아래의 논문 8편으로 모인다. 재단과 대학 사이는 연구비와 공동 석사과정으로 연결된다.</desc>
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a7f72"/></marker>
+        <marker id="arF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c2552d"/></marker>
+      </defs>
+      <!-- foundation -->
+      <rect x="40" y="10" width="280" height="118" rx="16" fill="#fbe7dc" stroke="#c2552d" stroke-width="2.5"/>
+      <text x="180" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#c2552d">재단 (이탈리아 포추올리)</text>
+      <text x="180" y="62" text-anchor="middle" font-size="13.5" fill="#2b2622">Maria Guarino AMOR 재단 · 비영리</text>
+      <text x="180" y="88" text-anchor="middle" font-size="15" font-weight="700" fill="#2b2622">중심 인물: Luongo</text>
+      <text x="180" y="112" text-anchor="middle" font-size="13" fill="#5d554d">아이디어 · 연구비 · 연락처 · 환자 진료</text>
+      <!-- links down -->
+      <path d="M120 128 L95 196" stroke="#c2552d" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#arF)"/>
+      <text x="10" y="152" font-size="12" fill="#c2552d">연구비 지원</text>
+      <text x="10" y="168" font-size="12" fill="#c2552d">공동 석사과정</text>
+      <path d="M240 128 L265 196" stroke="#8a7f72" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#ar)"/>
+      <text x="262" y="168" font-size="12" fill="#5d554d">공동 연구</text>
+      <!-- university -->
+      <rect x="8" y="200" width="166" height="140" rx="14" fill="#e4edf6" stroke="#2c5d8a" stroke-width="2"/>
+      <text x="91" y="228" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2c5d8a">카메리노 대학</text>
+      <text x="91" y="248" text-anchor="middle" font-size="12.5" fill="#2b2622">약학대학 연구실</text>
+      <text x="91" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#2b2622">중심 인물: Nabissi</text>
+      <text x="91" y="300" text-anchor="middle" font-size="12.5" fill="#5d554d">세포·동물 실험</text>
+      <text x="91" y="319" text-anchor="middle" font-size="12.5" fill="#5d554d">논문 작성</text>
+      <!-- clinic -->
+      <rect x="186" y="200" width="166" height="140" rx="14" fill="#e3f1e7" stroke="#2f7d4f" stroke-width="2"/>
+      <text x="269" y="228" text-anchor="middle" font-size="15.5" font-weight="700" fill="#2f7d4f">Ecomedica</text>
+      <text x="269" y="248" text-anchor="middle" font-size="12.5" fill="#2b2622">엠폴리 민간 의원</text>
+      <text x="269" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#2b2622">중심 인물: Fanelli</text>
+      <text x="269" y="300" text-anchor="middle" font-size="12.5" fill="#5d554d">방사선 치료</text>
+      <text x="269" y="319" text-anchor="middle" font-size="12.5" fill="#5d554d">임상 자료</text>
+      <!-- arrows to papers -->
+      <path d="M91 340 L150 432" stroke="#2c5d8a" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+      <path d="M269 340 L210 432" stroke="#2f7d4f" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+      <path d="M180 128 C 180 250, 180 330, 180 430" stroke="#c2552d" stroke-width="3" fill="none" marker-end="url(#arF)"/>
+      <!-- papers -->
+      <rect x="40" y="436" width="280" height="112" rx="16" fill="#f8eed6" stroke="#8a6a1f" stroke-width="2"/>
+      <text x="180" y="468" text-anchor="middle" font-size="17" font-weight="700" fill="#8a6a1f">논문 8편 (2020~2026)</text>
+      <text x="180" y="494" text-anchor="middle" font-size="13.5" fill="#2b2622">환자 증례 5편 · 실험실 연구 3편</text>
+      <text x="180" y="520" text-anchor="middle" font-size="13" fill="#5d554d">8편 모두 Luongo와 Nabissi가 함께 씀</text>
+    </svg>
+    <figcaption>그림 1 · 세 기관은 따로 떨어져 있지 않고, 한 재단을 중심으로 연결돼 있습니다.</figcaption>
+  </figure>
+
+  <h3>누가 몇 편에 이름을 올렸을까?</h3>
+  <p>논문 8편(실험실 연구 3편 + 환자 증례 5편)의 저자 목록을 모두 대조했습니다. 중심 인물 여섯 명의 등장 횟수입니다.</p>
+  <figure>
+    <svg viewBox="0 0 360 300" role="img" aria-labelledby="t2 d2">
+      <title id="t2">저자별 등장 횟수 그래프</title>
+      <desc id="d2">8편 중 Luongo 8편, Nabissi 8편, Morelli 7편, Fanelli 6편, Zeppa 5편, Aguzzi 4편.</desc>
+      <g font-size="14">
+        <!-- grid -->
+        <line x1="100" y1="16" x2="100" y2="262" stroke="#e3d8c5"/>
+        <line x1="330" y1="16" x2="330" y2="262" stroke="#e3d8c5" stroke-dasharray="4 4"/>
+        <text x="330" y="282" text-anchor="middle" font-size="12" fill="#5d554d">8편</text>
+        <text x="100" y="282" text-anchor="middle" font-size="12" fill="#5d554d">0</text>
+        <!-- rows: scale 230/8 = 28.75 per paper -->
+        <text x="92" y="42" text-anchor="end" font-weight="700" fill="#2b2622">Luongo</text>
+        <rect x="100" y="24" width="230" height="26" rx="5" fill="#c2552d"/><text x="322" y="42" text-anchor="end" fill="#fff" font-weight="700">8</text>
+        <text x="92" y="82" text-anchor="end" font-weight="700" fill="#2b2622">Nabissi</text>
+        <rect x="100" y="64" width="230" height="26" rx="5" fill="#2c5d8a"/><text x="322" y="82" text-anchor="end" fill="#fff" font-weight="700">8</text>
+        <text x="92" y="122" text-anchor="end" fill="#2b2622">Morelli</text>
+        <rect x="100" y="104" width="201" height="26" rx="5" fill="#2c5d8a" opacity=".75"/><text x="293" y="122" text-anchor="end" fill="#fff" font-weight="700">7</text>
+        <text x="92" y="162" text-anchor="end" fill="#2b2622">Fanelli</text>
+        <rect x="100" y="144" width="172" height="26" rx="5" fill="#2f7d4f"/><text x="264" y="162" text-anchor="end" fill="#fff" font-weight="700">6</text>
+        <text x="92" y="202" text-anchor="end" fill="#2b2622">Zeppa</text>
+        <rect x="100" y="184" width="144" height="26" rx="5" fill="#2c5d8a" opacity=".75"/><text x="236" y="202" text-anchor="end" fill="#fff" font-weight="700">5</text>
+        <text x="92" y="242" text-anchor="end" fill="#2b2622">Aguzzi</text>
+        <rect x="100" y="224" width="115" height="26" rx="5" fill="#2c5d8a" opacity=".75"/><text x="207" y="242" text-anchor="end" fill="#fff" font-weight="700">4</text>
+      </g>
+    </svg>
+    <figcaption>그림 2 · 색은 소속입니다. 주황 = 재단, 파랑 = 카메리노 대학, 초록 = Ecomedica 의원.</figcaption>
+  </figure>
+
+  <div style="overflow-x:auto">
+  <table class="mx" aria-label="논문별 저자 참여표">
+    <thead><tr><th>저자</th><th>2020<br>세포</th><th>2023<br>뇌종양</th><th>2024<br>동물</th><th>2025<br>혀암</th><th>2025<br>성상</th><th>2026<br>유방암</th><th>2026<br>소아</th><th>2026<br>세포</th></tr></thead>
+    <tbody>
+      <tr><td>Luongo</td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td></tr>
+      <tr><td>Nabissi</td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td></tr>
+      <tr><td>Morelli</td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td class="no">·</td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td></tr>
+      <tr><td>Fanelli</td><td><span class="dot d-c"></span></td><td><span class="dot d-c"></span></td><td><span class="dot d-c"></span></td><td><span class="dot d-c"></span></td><td><span class="dot d-c"></span></td><td><span class="dot d-c"></span></td><td class="no">·</td><td class="no">·</td></tr>
+      <tr><td>Zeppa</td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td class="no">·</td><td class="no">·</td><td class="no">·</td><td><span class="dot d-u"></span></td></tr>
+      <tr><td>Aguzzi</td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td><span class="dot d-u"></span></td><td class="no">·</td><td class="no">·</td><td><span class="dot d-u"></span></td><td class="no">·</td><td class="no">·</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="mx-legend"><span><span class="dot d-f"></span>재단</span><span><span class="dot d-u"></span>카메리노 대학</span><span><span class="dot d-c"></span>Ecomedica 의원</span><span><span class="no">·</span> 참여 안 함</span></div>
+
+  <h3>소속은 달라도 역할은 이렇게 나뉩니다</h3>
+  <div class="facts">
+    <div class="fact"><b>재단 (Luongo) — "아이디어를 내고, 돈을 대고, 환자를 봅니다"</b><p>여러 논문에서 연구 아이디어, 감독, 연구비 확보를 맡았습니다. 논문의 연락처도 재단 전화번호와 이메일입니다.</p></div>
+    <div class="fact u"><b>카메리노 대학 (Nabissi) — "실험하고 논문을 씁니다"</b><p>세포·동물 실험과 논문 작성을 맡았습니다. Nabissi가 대학 안의 '통합요법 연구소(Integrative Therapy Discovery Lab)' 대표라는 사실은 2025년에야 이해충돌 정정으로 논문에 추가됐습니다.</p></div>
+    <div class="fact c"><b>Ecomedica 의원 (Fanelli) — "방사선 치료와 임상 자료"</b><p>방사선종양학과를 이끌며 임상 자료를 제공했습니다.</p></div>
+  </div>
+
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>"여러 기관이 참여했다"는 것이 곧 "여러 곳에서 따로 확인했다"는 뜻은 아닙니다. 이 경우는 <strong>한 팀이 기초 실험부터 환자 보고까지 이어 간 것</strong>입니다. 그래서 논문이 8편으로 늘어도, 근거로서는 <strong>한 곳에서 나온 하나의 목소리</strong>로 읽는 것이 정확합니다. 이런 연구 방식 자체는 흔하고 잘못된 것이 아닙니다. 다만 다른 팀의 확인은 아직 한 건도 없습니다.</p>
+  </div>
+</section>
+
+<!-- ===================== Q2 ===================== -->
+<section id="q2" class="reveal">
+  <span class="q">질문 2</span>
+  <h2>이 기관들이 실제로 치료 '서비스'를 제공하나요?</h2>
+  <div class="answer">
+    <div class="lbl">짧은 답</div>
+    <p>네. <strong>재단은 이 치료로 실제 환자를 진료합니다.</strong> 그런데 이 사실은 증례 논문 어디에도 이해충돌로 적혀 있지 않습니다.</p>
+  </div>
+  <p>재단 홈페이지와 공식 SNS, 대학 공개 자료를 직접 확인했습니다. 재단은 스스로를 <strong>"항암·방사선치료를 돕는 통합 보조요법으로 암 환자를 치료하는 곳"</strong>이라고 소개합니다.</p>
+
+  <h3>재단에서 진료를 받는 과정</h3>
+  <figure>
+    <svg viewBox="0 0 360 640" role="img" aria-labelledby="t3 d3">
+      <title id="t3">재단 진료 절차 흐름도</title>
+      <desc id="d3">환자가 재단 홈페이지의 질환별 치료 경로를 보고, 환자 이름으로 후원회원에 가입하고 기부금을 이체하고, 진료 기록과 서명한 동의서를 보내면, 재단이 예약 연락을 하고, 자원봉사 의사 네트워크를 통해 진료를 받는다. 진료 받은 환자 중 성공 사례는 증례 논문으로 보고된다.</desc>
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a7f72"/></marker>
+      <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b23b2e"/></marker></defs>
+      <g font-size="14.5">
+        <!-- step 1 -->
+        <rect x="30" y="10" width="300" height="62" rx="31" fill="#fffdf8" stroke="#8a7f72" stroke-width="2"/>
+        <text x="180" y="38" text-anchor="middle" font-weight="700" fill="#2b2622">① 환자·가족</text>
+        <text x="180" y="58" text-anchor="middle" font-size="12.5" fill="#5d554d">재단 홈페이지의 '질환별 치료 경로'를 봄</text>
+        <path d="M180 72 L180 100" stroke="#8a7f72" stroke-width="2.5" marker-end="url(#ar2)"/>
+        <!-- step 2 highlight -->
+        <rect x="30" y="104" width="300" height="80" rx="14" fill="#fbe7dc" stroke="#c2552d" stroke-width="2.5"/>
+        <text x="180" y="134" text-anchor="middle" font-weight="700" fill="#c2552d">② 환자 이름으로 후원회원 가입</text>
+        <text x="180" y="158" text-anchor="middle" font-weight="700" fill="#c2552d">+ 기부금 이체</text>
+        <text x="180" y="176" text-anchor="middle" font-size="12" fill="#5d554d">이체 영수증 사본을 함께 제출</text>
+        <path d="M180 184 L180 212" stroke="#8a7f72" stroke-width="2.5" marker-end="url(#ar2)"/>
+        <!-- step 3 -->
+        <rect x="30" y="216" width="300" height="62" rx="14" fill="#fffdf8" stroke="#8a7f72" stroke-width="2"/>
+        <text x="180" y="244" text-anchor="middle" font-weight="700" fill="#2b2622">③ 서류 보내기</text>
+        <text x="180" y="264" text-anchor="middle" font-size="12.5" fill="#5d554d">진료 기록(PDF) + 서명한 동의서 원본</text>
+        <path d="M180 278 L180 306" stroke="#8a7f72" stroke-width="2.5" marker-end="url(#ar2)"/>
+        <!-- step 4 -->
+        <rect x="30" y="310" width="300" height="62" rx="14" fill="#fffdf8" stroke="#8a7f72" stroke-width="2"/>
+        <text x="180" y="338" text-anchor="middle" font-weight="700" fill="#2b2622">④ 재단이 예약 연락</text>
+        <text x="180" y="358" text-anchor="middle" font-size="12.5" fill="#5d554d">"서류가 도착하면 연락드립니다"</text>
+        <path d="M180 372 L180 400" stroke="#8a7f72" stroke-width="2.5" marker-end="url(#ar2)"/>
+        <!-- step 5 -->
+        <rect x="30" y="404" width="300" height="80" rx="14" fill="#e3f1e7" stroke="#2f7d4f" stroke-width="2.5"/>
+        <text x="180" y="434" text-anchor="middle" font-weight="700" fill="#2f7d4f">⑤ 진료 · 산소-오존 등 보조요법</text>
+        <text x="180" y="456" text-anchor="middle" font-size="12.5" fill="#5d554d">이탈리아 전국 '자원봉사 의사' 네트워크</text>
+        <text x="180" y="474" text-anchor="middle" font-size="12.5" fill="#5d554d">(재단의 설명)</text>
+        <!-- branch -->
+        <path d="M180 484 L180 520" stroke="#b23b2e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar3)"/>
+        <text x="190" y="508" font-size="12.5" fill="#b23b2e">좋아진 사례만</text>
+        <rect x="30" y="524" width="300" height="100" rx="14" fill="#f8eed6" stroke="#8a6a1f" stroke-width="2"/>
+        <text x="180" y="554" text-anchor="middle" font-weight="700" fill="#8a6a1f">⑥ 증례 논문으로 보고</text>
+        <text x="180" y="578" text-anchor="middle" font-size="12.5" fill="#2b2622">재단이 아이디어·연구비·윤리심의</text>
+        <text x="180" y="600" text-anchor="middle" font-size="12.5" fill="#b23b2e" font-weight="700">이해충돌: "없음"</text>
+      </g>
+    </svg>
+    <figcaption>그림 3 · 재단 홈페이지 '치료 경로' 안내 페이지의 절차를 그대로 옮겼습니다. 기부금 액수와 치료 비용은 공개 자료에서 확인하지 못했습니다.</figcaption>
+  </figure>
+
+  <h3>암만이 아닙니다</h3>
+  <p>재단 홈페이지에는 같은 형식의 '치료 경로' 페이지가 <strong>알츠하이머·파킨슨·다발성경화증·루게릭병(신경퇴행성 질환)</strong>, 그리고 <strong>자가면역질환·자폐</strong>용으로도 따로 있습니다.</p>
+
+  <h3>진료와 논문이 서로를 받쳐 주는 구조</h3>
+  <figure>
+    <svg viewBox="0 0 360 400" role="img" aria-labelledby="t4 d4">
+      <title id="t4">근거의 순환 구조</title>
+      <desc id="d4">재단 진료에서 나온 성공 사례가 증례 논문이 되고, 같은 팀의 실험실 연구가 그 증례들을 근거로 인용하며, 이것이 다시 진료의 근거처럼 보이는 순환. 바깥에서 들어오는 다른 팀의 확인은 0건.</desc>
+      <defs><marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c2552d"/></marker></defs>
+      <circle cx="180" cy="200" r="118" fill="none" stroke="#f0d3c3" stroke-width="22"/>
+      <path d="M233 96 A118 118 0 0 1 296 175" fill="none" stroke="#c2552d" stroke-width="3" marker-end="url(#ar4)"/>
+      <path d="M290 250 A118 118 0 0 1 220 312" fill="none" stroke="#c2552d" stroke-width="3" marker-end="url(#ar4)"/>
+      <path d="M128 306 A118 118 0 0 1 66 230" fill="none" stroke="#c2552d" stroke-width="3" marker-end="url(#ar4)"/>
+      <path d="M70 150 A118 118 0 0 1 134 92" fill="none" stroke="#c2552d" stroke-width="3" marker-end="url(#ar4)"/>
+      <!-- nodes -->
+      <rect x="120" y="58" width="120" height="52" rx="12" fill="#e3f1e7" stroke="#2f7d4f" stroke-width="2"/>
+      <text x="180" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#2f7d4f">재단 진료</text>
+      <text x="180" y="100" text-anchor="middle" font-size="11.5" fill="#5d554d">환자 치료</text>
+      <rect x="238" y="174" width="116" height="52" rx="12" fill="#f8eed6" stroke="#8a6a1f" stroke-width="2"/>
+      <text x="296" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6a1f">증례 논문</text>
+      <text x="296" y="216" text-anchor="middle" font-size="11.5" fill="#5d554d">성공 사례 보고</text>
+      <rect x="120" y="290" width="120" height="52" rx="12" fill="#e4edf6" stroke="#2c5d8a" stroke-width="2"/>
+      <text x="180" y="314" text-anchor="middle" font-size="14" font-weight="700" fill="#2c5d8a">실험실 연구</text>
+      <text x="180" y="332" text-anchor="middle" font-size="11.5" fill="#5d554d">증례를 근거로 인용</text>
+      <rect x="6" y="174" width="116" height="52" rx="12" fill="#fbe7dc" stroke="#c2552d" stroke-width="2"/>
+      <text x="64" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#c2552d">"근거가 있다"</text>
+      <text x="64" y="216" text-anchor="middle" font-size="11.5" fill="#5d554d">진료의 정당성</text>
+      <text x="180" y="196" text-anchor="middle" font-size="13" fill="#5d554d">바깥 팀의 확인</text>
+      <text x="180" y="226" text-anchor="middle" font-size="28" font-weight="900" fill="#b23b2e" font-family="Noto Serif KR, serif">0건</text>
+    </svg>
+    <figcaption>그림 4 · 2026년 실험실 논문은 같은 팀의 증례 6건을 근거로 인용하고, 자신을 그 증례들의 "최초의 엄밀한 생화학적 검증"이라고 부릅니다.</figcaption>
+  </figure>
+
+  <h3>시간 순서로 보면: 치료가 근거보다 먼저였습니다</h3>
+  <figure>
+    <svg viewBox="0 0 360 620" role="img" aria-labelledby="t5 d5">
+      <title id="t5">환자 치료 시작과 연구 발표의 시간축</title>
+      <desc id="d5">왼쪽은 환자 치료 시작 시점, 오른쪽은 연구·논문 발표 시점. 첫 환자 치료는 2016년이고, 같은 조합의 첫 세포 실험은 2020년, 동물 실험은 2024년이다.</desc>
+      <text x="80" y="22" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2f7d4f">환자 치료 시작</text>
+      <text x="280" y="22" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2c5d8a">연구·논문 발표</text>
+      <line x1="180" y1="36" x2="180" y2="606" stroke="#cdbfa8" stroke-width="3"/>
+      <g font-size="12.5">
+        <!-- years: 2016 y=60, step 54 -->
+        <g fill="#5d554d" font-weight="700" text-anchor="middle">
+          <rect x="160" y="50" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="65">2016</text>
+          <rect x="160" y="104" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="119">2017</text>
+          <rect x="160" y="158" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="173">2018</text>
+          <rect x="160" y="212" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="227">2019</text>
+          <rect x="160" y="266" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="281">2020</text>
+          <rect x="160" y="320" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="335">2021</text>
+          <rect x="160" y="374" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="389">2022</text>
+          <rect x="160" y="428" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="443">2023</text>
+          <rect x="160" y="482" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="497">2024</text>
+          <rect x="160" y="536" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="551">2025</text>
+          <rect x="160" y="586" width="40" height="20" rx="10" fill="#efe6d7"/><text x="180" y="601">2026</text>
+        </g>
+        <!-- left: treatments -->
+        <g fill="#2b2622" text-anchor="end">
+          <circle cx="152" cy="80" r="5" fill="#2f7d4f"/><text x="142" y="84">뇌종양 환자 (11월)</text>
+          <circle cx="152" cy="134" r="5" fill="#2f7d4f"/><text x="142" y="138">성상세포종 환자</text>
+          <circle cx="152" cy="242" r="5" fill="#2f7d4f"/><text x="142" y="246">유방암 환자 (9월)</text>
+          <circle cx="152" cy="346" r="5" fill="#2f7d4f"/><text x="142" y="341">2세 아이 (2월)</text>
+          <circle cx="152" cy="360" r="5" fill="#2f7d4f"/><text x="142" y="364">혀암 환자 (10월)</text>
+          <circle cx="152" cy="400" r="5" fill="#2f7d4f"/><text x="142" y="404">3세 아이 (7월)</text>
+        </g>
+        <!-- right: research -->
+        <g fill="#2b2622">
+          <circle cx="208" cy="134" r="5" fill="#2c5d8a"/><text x="218" y="138">오존 이론 리뷰</text>
+          <circle cx="208" cy="188" r="5" fill="#c2552d"/><text x="218" y="192">학회 발표: 오존=암 보조</text>
+          <circle cx="208" cy="296" r="7" fill="#2c5d8a"/><text x="218" y="300" font-weight="700">첫 세포 실험</text>
+          <circle cx="208" cy="458" r="5" fill="#8a6a1f"/><text x="218" y="462">뇌종양 증례 논문</text>
+          <circle cx="208" cy="512" r="7" fill="#2c5d8a"/><text x="218" y="516" font-weight="700">첫 동물 실험</text>
+          <circle cx="208" cy="560" r="5" fill="#b23b2e"/><text x="218" y="564">이해충돌 정정 · 증례 2편</text>
+          <circle cx="208" cy="586" r="5" fill="#8a6a1f"/><text x="218" y="590">증례 2편 · 세포 실험</text>
+        </g>
+      </g>
+    </svg>
+    <figcaption>그림 5 · 초록 점(환자 치료)이 굵은 파란 점(첫 세포 실험 2020년, 첫 동물 실험 2024년)보다 먼저 시작됐습니다.</figcaption>
+  </figure>
+
+  <h3>그 밖에 확인된 연결</h3>
+  <div class="facts">
+    <div class="fact u"><b>재단과 대학이 함께 운영하는 석사과정</b><p>재단은 카메리노 대학과 함께 오존요법과 통합요법을 가르치는 대학원 석사과정을 운영합니다.</p><div class="src">출처: 이탈리아 팔레르모 의사협회 공지</div></div>
+    <div class="fact"><b>재단이 연구비와 학회를 지원</b><p>2024년 동물실험 논문은 재단이 연구비를 공동 부담했다고 밝힙니다. 공저자 이력서에는 재단이 지원한 '오존요법·대마·췌장암' 과제와, 재단이 주최한 '암과 통증: 산소-오존, 대마, 통합요법' 학회 발표가 나옵니다.</p><div class="src">출처: 논문 연구비 항목, 카메리노 대학 공개 이력서</div></div>
+    <div class="fact c"><b>Ecomedica 의원의 오존요법</b><p>의료 예약 사이트에 '통증 완화용 오존요법 1회 80유로'가 올라와 있습니다. 다만 이것은 통증 치료이고, 암 치료용 오존을 판매한다는 자료는 찾지 못했습니다.</p><div class="src">출처: iDoctors 예약 페이지</div></div>
+  </div>
+
+  <h3>확인된 것과 확인하지 못한 것</h3>
+  <div class="two">
+    <div class="box ok"><h4>✓ 확인된 것</h4><ul>
+      <li>재단이 이 보조요법으로 암 환자를 직접 진료함</li>
+      <li>진료는 후원회원 가입과 기부를 거쳐 예약됨</li>
+      <li>재단이 논문의 아이디어·연구비·연락처를 맡음</li>
+      <li>어린이 증례의 윤리심의를 재단 자체 위원회가 함</li>
+      <li>증례 논문 5편 모두 이해충돌 "없음"</li>
+    </ul></div>
+    <div class="box nk"><h4>? 확인하지 못한 것</h4><ul>
+      <li>기부금 액수, 별도 치료비가 있는지</li>
+      <li>재단에서 치료받은 전체 환자 수</li>
+      <li>좋아지지 않은 환자들의 결과</li>
+      <li>이탈리아 법으로 이런 운영이 문제인지</li>
+    </ul></div>
+  </div>
+
+  <div class="fair" style="margin-top:18px"><b>공정하게 덧붙이면 —</b> 재단은 비영리 법인이고, 자원봉사 의사 네트워크로 운영한다고 설명합니다. 설립자가 암으로 아내를 잃은 뒤 "모든 환자가 의료용 가스 치료를 받을 수 있게" 하려고 만들었다고도 밝힙니다. 이 글은 사기나 불법이라고 판단하지 않습니다. 확인된 사실을 보여 드리고, 판단은 읽는 분께 맡깁니다.</div>
+
+  <div class="ai"><span class="tag">AI 클로드 주석</span>
+    <p>가장 중요한 점은 이것입니다. <strong>치료를 제공하는 쪽이 자기 치료의 성공 사례를 논문으로 쓰면서, 그 관계를 이해충돌로 밝히지 않았습니다.</strong> 위법 여부와 상관없이, 논문을 읽는 환자는 이 사실을 알고 읽어야 합니다. 다음에 어떤 논문을 보더라도 <strong>"이 논문을 쓴 사람이 이 치료를 파는(제공하는) 사람인가?"</strong>를 꼭 물어보세요.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="safe">
+    <h2>꼭 지켜 주세요</h2>
+    <ul>
+      <li>보조요법 때문에 <strong>병원 표준치료를 미루거나 그만두지 마세요.</strong> 이 증례들에서도 표준치료가 결정적이었을 가능성이 큽니다.</li>
+      <li>무엇을 더하든 빼든, <strong>최종 결정은 주치의와 함께</strong> 내리세요.</li>
+      <li>이 글의 치료 이름은 모두 <strong>설명을 위한 예시</strong>이며, 치료 권고가 아닙니다.</li>
+      <li>직장을 통한 오존 주입, 고용량 멜라토닌, 대마 제품은 안전성이 충분히 확인되지 않았습니다. <strong>어린이에게는 절대 임의로 시도하지 마세요.</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section class="reveal src-list">
+  <h2 style="font-size:21px">출처</h2>
+  <h3>기관 공개 자료</h3>
+  <ol>
+    <li><a href="https://www.facebook.com/AmorOnlusFondazioneMariaGuarino/">Fondazione Maria Guarino Amor ETS — 공식 페이스북</a> <span class="t">— "보조요법으로 암 환자를 치료" 소개</span></li>
+    <li><a href="https://amoronlus.com/chi-siamo/">Amor — Chi siamo (재단 소개)</a> <span class="t">— 설립 배경, 자원봉사 의사 네트워크</span></li>
+    <li><a href="https://www.amoronlus.com/percorso-di-cura-2/malattie-neurodegenerative-alzheimer-parkinson-sclerosi-sla/">Amor — 신경퇴행성 질환 치료 경로</a> <span class="t">— 후원회원 가입·기부·서류·예약 절차</span></li>
+    <li><a href="https://www.amoronlus.com/percorso-di-cura-2/malattie-autoimmuni/">Amor — 자가면역질환·자폐 치료 경로</a></li>
+    <li><a href="https://amoronlus.altervista.org/contatti/">Amor — 연락처</a> <span class="t">— 논문 교신 전화번호와 같은 번호</span></li>
+    <li><a href="https://www.ordinemedicipa.it/notizia.php?tid=7293">Master in Ossigeno-Ozono Terapia — Università di Camerino e Fondazione Maria Guarino AMOR ETS</a> <span class="t">— 공동 석사과정</span></li>
+    <li><a href="https://amministrazionetrasparente.unicam.it/sites/www.unicam.it.amministrazionetrasparente/files/collaboratori/cv/CV%20AGUZZI.pdf">카메리노 대학 공개 이력서 (Aguzzi)</a> <span class="t">— 재단 지원 과제·재단 학회 발표</span></li>
+    <li><a href="https://www.idoctors.it/centri-medici/1523-ecomedica-centro-medico-empoli">Ecomedica — Centro Medico Empoli (iDoctors)</a> <span class="t">— 통증 완화 오존요법 1회 80유로</span></li>
+    <li><a href="https://www.gonews.it/?p=1364748">Ecomedica 방사선과 소개 기사 (gonews.it)</a></li>
+  </ol>
+  <h3>저자 목록·이해충돌·연구비를 확인한 논문</h3>
+  <ol>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/32992648/">Cannabidiol and Oxygen-Ozone Combination Induce Cytotoxicity in Human Pancreatic Ductal Adenocarcinoma Cell Lines</a> <span class="t">— Cancers 2020 · 첫 세포 실험</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39898506/">Correction: Luongo et al. Cannabidiol and Oxygen-Ozone Combination …</a> <span class="t">— Cancers 2025 · 이해충돌 정정</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/40729189/">The Effects of a Combination of Medical Cannabis, Melatonin, and Oxygen-Ozone Therapy on Glioblastoma Multiforme: A Case Report</a> <span class="t">— Reports 2023</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/39076059/">In Vitro and In Vivo Effects of Melatonin-Containing Combinations in Human Pancreatic Ductal Adenocarcinoma</a> <span class="t">— J Pineal Res 2024 · 재단 연구비</span></li>
+    <li><a href="https://doi.org/10.31031/acam.2025.08.000696">Integrative Use of Medical Cannabis, Melatonin and Oxygen-Ozone Therapy in Oral Tongue Carcinoma: A Case Report</a> <span class="t">— Adv Complement Alt Med 2025</span></li>
+    <li><a href="https://doi.org/10.31031/ACAM.2025.08.000699">Medical Cannabis, Melatonin and Oxygen-Ozone as Integrative Therapies for the Treatment of Anaplastic Astrocytoma: A Case Report</a> <span class="t">— Adv Complement Alt Med 2025</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/41718279/">Integrative Use of Cannabidiol, Melatonin, and Oxygen-Ozone Therapy in Triple-Negative Breast Cancer with Lung and Mediastinal Metastases. A Case Report</a> <span class="t">— Reports 2026</span></li>
+    <li><a href="https://doi.org/10.21203/rs.3.rs-9651000/v1">Medical cannabis, melatonin and oxygen-ozone therapy for neuroblastoma: two case reports</a> <span class="t">— 프리프린트 2026 · 재단 윤리위원회</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/42589431/">Synergistic In Vitro Effects of Minor Phytocannabinoids and Melatonin Combinations Against Human Glioblastoma Cells</a> <span class="t">— IJMS 2026 · 증례 6건 인용</span></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/28179287/">Possible Therapeutic Effects of Ozone Mixture on Hypoxia in Tumor Development</a> <span class="t">— Anticancer Res 2017 · 오존 이론 리뷰</span></li>
+    <li><a href="https://www.sanita.puglia.it/documents/36057/64629901/Programma+Convegno+Ozono.pdf/857da6c6-2ac2-4671-a6b0-5b94bae6fc94">L'ossigeno-ozono terapia in medicina: indicazioni cliniche (학회 프로그램, 2018)</a> <span class="t">— "오존, 암치료 보조" 발표</span></li>
+  </ol>
+</section>
+
+</main>
+<footer>히포크라테스의 친구들 · 해외 사례 분석집<br>이 글은 의학적·법률적 조언이 아닙니다. 모든 치료 결정은 주치의와 상의하세요.</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.04});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
