@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>남의 투병기에서 '나의 내일'을 읽는 법 — 꿈많은사람2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbf7ef; --paper2:#f3ecdf; --ink:#2a2622; --ink2:#5c544b; --line:#ddd2c0;
+    --green:#2f7d5b; --green-bg:#e4f1ea;
+    --amber:#c27a12; --amber-bg:#fbefd9;
+    --rose:#b4473e; --rose-bg:#f8e3df;
+    --blue:#2f5f8f; --blue-bg:#e3ecf5;
+    --violet:#6a4f9a; --violet-bg:#ece6f5;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Noto Sans KR',system-ui,sans-serif;font-size:19px;line-height:1.85;
+    -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:'Gowun Batang',serif;line-height:1.4;margin:0}
+  a{color:var(--blue)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+  .en{font-size:.82em;color:var(--ink2);font-weight:400}
+
+  /* hero */
+  header.hero{background:linear-gradient(180deg,#f1e6d2 0%,var(--paper) 100%);padding:56px 0 30px;border-bottom:1px solid var(--line)}
+  .kicker{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--amber);
+    border:1.5px solid var(--amber);border-radius:999px;padding:2px 12px;margin-bottom:18px}
+  .hero h1{font-size:2.05rem;font-weight:700}
+  .hero h1 em{font-style:normal;color:var(--green);background:linear-gradient(transparent 62%,#cfe7da 62%)}
+  .hero p.sub{font-size:1.08rem;color:var(--ink2);margin:16px 0 0}
+  .byline{margin-top:22px;font-size:.88rem;color:var(--ink2);display:flex;gap:10px;flex-wrap:wrap}
+  .byline b{color:var(--ink)}
+
+  section{padding:46px 0 10px}
+  .sec-no{font-family:'Gowun Batang',serif;color:var(--amber);font-size:1rem;font-weight:700;display:block;margin-bottom:6px}
+  h2{font-size:1.6rem;margin-bottom:18px}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.12rem}
+  .quote{font-family:'Gowun Batang',serif;font-size:1.15rem;border-left:5px solid var(--amber);
+    background:var(--amber-bg);padding:18px 20px;border-radius:0 12px 12px 0;margin:22px 0}
+
+  figure{margin:26px 0;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 14px 12px}
+  figure svg{display:block;width:100%;height:auto}
+  figcaption{font-size:.86rem;color:var(--ink2);text-align:center;margin-top:8px;line-height:1.6}
+  .tag-illus{display:inline-block;font-size:.72rem;font-weight:700;color:var(--violet);background:var(--violet-bg);
+    border-radius:6px;padding:1px 8px;margin-right:6px;vertical-align:middle}
+
+  /* compare cards */
+  .vs{display:grid;grid-template-columns:1fr;gap:14px;margin:22px 0}
+  .card{border-radius:16px;padding:18px 20px;border:1.5px solid var(--line);background:#fff}
+  .card h3{font-size:1.18rem;margin-bottom:6px}
+  .card.blog{border-color:#e3c9a5}
+  .card.video{border-color:#9fcfb6;background:var(--green-bg)}
+  .card ul{margin:6px 0 0;padding-left:1.1em}
+  .card li{margin:3px 0}
+
+  /* decision list */
+  .dp{display:flex;gap:14px;margin:18px 0;align-items:flex-start}
+  .dp .dot{flex:0 0 38px;height:38px;border-radius:50%;background:var(--amber);color:#fff;font-weight:900;
+    display:flex;align-items:center;justify-content:center;font-size:1rem;margin-top:4px}
+  .dp h3{font-size:1.15rem;margin-bottom:4px}
+  .ask{background:#fff;border:1.5px dashed var(--green);border-radius:12px;padding:12px 16px;margin-top:8px;
+    font-family:'Gowun Batang',serif;font-size:1.02rem;position:relative}
+  .ask::before{content:"이렇게 물어보세요";display:block;font-family:'Noto Sans KR',sans-serif;font-size:.74rem;
+    font-weight:700;color:var(--green);margin-bottom:4px;letter-spacing:.04em}
+
+  /* steps */
+  ol.steps{list-style:none;padding:0;margin:20px 0;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:14px 16px 14px 66px;margin-bottom:12px;
+    background:#fff;border:1px solid var(--line);border-radius:14px}
+  ol.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:36px;height:36px;border-radius:10px;
+    background:var(--blue);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center}
+  ol.steps b{display:block;font-size:1.06rem}
+
+  /* case card */
+  .case{background:#fff;border:2px solid var(--blue);border-radius:18px;overflow:hidden;margin:24px 0}
+  .case .top{background:var(--blue);color:#fff;padding:12px 18px;font-weight:700;font-size:.9rem;letter-spacing:.03em}
+  .case .body{padding:18px 20px}
+  .case h3{font-size:1.3rem;margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+  .chip{font-size:.85rem;padding:3px 12px;border-radius:999px;background:var(--paper2);border:1px solid var(--line)}
+  .chip.g{background:var(--green-bg);border-color:#a9d3bd}
+  .chip.a{background:var(--amber-bg);border-color:#ebcf9b}
+  .chip.b{background:var(--blue-bg);border-color:#a9c2dc}
+
+  .sources{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+  .src{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+  .src .ic{font-size:1.7rem;line-height:1}
+  .src b{display:block;margin-top:6px;font-size:1rem}
+  .src span{font-size:.8rem;color:var(--ink2);line-height:1.5;display:block}
+
+  /* AI note */
+  .ai-note{background:var(--violet-bg);border:1.5px solid #c7b8e2;border-radius:16px;padding:18px 20px;margin:24px 0}
+  .ai-note .lbl{display:inline-block;background:var(--violet);color:#fff;font-size:.76rem;font-weight:700;
+    border-radius:6px;padding:2px 10px;margin-bottom:10px}
+  .ai-note ul{margin:0;padding-left:1.1em}
+  .ai-note li{margin:6px 0;font-size:.98rem}
+
+  /* safety */
+  .safety{background:var(--rose-bg);border:2px solid var(--rose);border-radius:16px;padding:20px 22px;margin:30px 0}
+  .safety h3{color:var(--rose);font-size:1.2rem;margin-bottom:8px}
+  .safety p{margin:0 0 .6em;font-size:.98rem}
+
+  .closing{text-align:center;padding:40px 0 30px}
+  .closing p{font-family:'Gowun Batang',serif;font-size:1.3rem;line-height:1.7}
+  footer{border-top:1px solid var(--line);padding:22px 0 48px;font-size:.82rem;color:var(--ink2)}
+  footer ul{padding-left:1.1em;margin:6px 0}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .rv.on{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1!important;transform:none!important;transition:none}}
+  .no-io .rv{opacity:1;transform:none}
+
+  @media (min-width:640px){
+    .vs{grid-template-columns:1fr 1fr}
+    .sources{grid-template-columns:repeat(4,1fr)}
+    .hero h1{font-size:2.4rem}
+  }
+  @media print{
+    body{background:#fff;font-size:12pt}
+    header.hero{background:#fff}
+    .rv{opacity:1!important;transform:none!important}
+    figure,.case,.safety,.ai-note,.dp,ol.steps li{break-inside:avoid}
+    a{color:var(--ink);text-decoration:underline}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">해외·국내 사례 분석집 · 방법론 편</span>
+    <h1>남의 투병기에서<br><em>'나의 내일'</em>을 읽는 법</h1>
+    <p class="sub">유튜브·인스타그램에 올라온 암 투병 기록을 시간 순서로 정리하면,<br>내가 걸어갈 길(pathway)과 <b>"결정해야 할 순간"</b>이 미리 보입니다.</p>
+    <div class="byline"><span>글 <b>꿈많은사람2</b></span><span>·</span><span>2026년 11월 14일</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="rv">
+  <span class="sec-no">01 · 시작</span>
+  <h2>영상 하나가 이 글을 쓰게 했습니다</h2>
+  <p class="lead">'죽어도안보내' 채널의 첫 영상(10개월 전)을 보고, <b>이런 기록을 어떻게 분석해야 하는지</b> 정리해 보기로 마음먹었습니다.</p>
+  <p>찾아보니 정말 많은 분들이 자신의 암 투병 과정을 자세하게 올리고 있습니다. 외국 것까지 찾아보면 엄청나게 많을 것입니다.</p>
+  <div class="quote">그분들의 기록은 단순한 일기가 아닙니다.<br>같은 길을 먼저 걸어간 사람이 남긴 <b>지도</b>입니다.</div>
+</section>
+
+<!-- 2 -->
+<section class="rv">
+  <span class="sec-no">02 · 왜 영상인가</span>
+  <h2>블로그보다 영상이 '그대로'를 보여줍니다</h2>
+  <p>글은 나중에 얼마든지 고칠 수 있지만, 영상은 수정하기가 어렵습니다. 그래서 유튜브 영상들이 <b>'그대로 = 진실'</b>을 보여주는 경향이 있습니다.</p>
+  <div class="vs">
+    <div class="card blog">
+      <h3>📝 블로그 글</h3>
+      <ul>
+        <li>쓰고 → 고치고 → 다듬을 수 있음</li>
+        <li>지나고 나서 정리한 '결과' 위주</li>
+        <li>힘들었던 장면은 빠지기 쉬움</li>
+      </ul>
+    </div>
+    <div class="card video">
+      <h3>🎥 유튜브 영상</h3>
+      <ul>
+        <li>찍힌 그 날의 얼굴·목소리·컨디션</li>
+        <li>그때의 고민과 결정이 그대로 남음</li>
+        <li>날짜순으로 쌓여 '시간표'가 됨</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="rv">
+  <span class="sec-no">03 · 왜 미리 알 수 있는가</span>
+  <h2>병원 치료는 '정해진 길'을 따릅니다</h2>
+  <p>대부분의 영상은 병원 치료 과정을 보여줍니다. 그리고 병원 치료법은 <b>정해진 규칙(룰·법칙)</b>, 즉 치료 지침<span class="en">(가이드라인, Guideline)</span>을 따라 이뤄집니다.</p>
+  <p>그래서 <b>"나의 암"과 같은 환경</b>이라면, 그분들의 지금이 <b>"나의 미래"</b>를 짐작하게 해 줍니다.</p>
+
+  <figure>
+    <svg viewBox="0 0 360 640" role="img" aria-labelledby="t1">
+      <title id="t1">표준 암 치료의 큰 흐름 개념도</title>
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a7f72"/></marker>
+      </defs>
+      <style>
+        .bx{fill:#fff;stroke:#2f5f8f;stroke-width:2}
+        .bxg{fill:#e4f1ea;stroke:#2f7d5b;stroke-width:2}
+        .bxr{fill:#f8e3df;stroke:#b4473e;stroke-width:2}
+        .dm{fill:#fbefd9;stroke:#c27a12;stroke-width:2}
+        .t{font:700 15px 'Noto Sans KR',sans-serif;fill:#2a2622;text-anchor:middle}
+        .ts{font:400 12px 'Noto Sans KR',sans-serif;fill:#5c544b;text-anchor:middle}
+        .ln{stroke:#8a7f72;stroke-width:2;fill:none}
+        .lb{font:700 12px 'Noto Sans KR',sans-serif}
+        .star{fill:#c27a12}
+      </style>
+      <!-- 진단 -->
+      <rect class="bx" x="70" y="10" width="220" height="56" rx="12"/>
+      <text class="t" x="180" y="35">① 진단 · 병기 확인</text>
+      <text class="ts" x="180" y="54">어디에, 얼마나 퍼졌나 (1~4기)</text>
+      <path class="ln" d="M180 66 V96" marker-end="url(#ar)"/>
+      <!-- 바이오마커 -->
+      <rect class="bx" x="70" y="100" width="220" height="56" rx="12"/>
+      <text class="t" x="180" y="125">② 조직·유전자 검사</text>
+      <text class="ts" x="180" y="144">어떤 '종류'의 암인가 (표적·면역 여부)</text>
+      <path class="ln" d="M180 156 V186" marker-end="url(#ar)"/>
+      <circle class="star" cx="300" cy="171" r="11"/><text x="300" y="175" text-anchor="middle" style="font:900 12px sans-serif;fill:#fff">!</text>
+      <!-- 1차 -->
+      <rect class="bx" x="70" y="190" width="220" height="56" rx="12"/>
+      <text class="t" x="180" y="215">③ 1차 치료</text>
+      <text class="ts" x="180" y="234">수술 · 항암 · 방사선 · 표적 · 면역</text>
+      <path class="ln" d="M180 246 V276" marker-end="url(#ar)"/>
+      <!-- 반응평가 diamond -->
+      <polygon class="dm" points="180,280 268,328 180,376 92,328"/>
+      <text class="t" x="180" y="325">④ 반응 평가</text>
+      <text class="ts" x="180" y="344">CT · PET · 종양표지자</text>
+      <circle class="star" cx="180" cy="394" r="11"/><text x="180" y="398" text-anchor="middle" style="font:900 12px sans-serif;fill:#fff">!</text>
+      <!-- 좋음 -->
+      <path class="ln" d="M92 328 H40 V420" marker-end="url(#ar)"/>
+      <text class="lb" x="44" y="318" fill="#2f7d5b">좋아짐</text>
+      <rect class="bxg" x="6" y="424" width="150" height="56" rx="12"/>
+      <text class="t" x="81" y="449">유지 · 추적 관찰</text>
+      <text class="ts" x="81" y="468">정기 검사 (재발 감시)</text>
+      <!-- 진행 -->
+      <path class="ln" d="M268 328 H320 V420" marker-end="url(#ar)"/>
+      <text class="lb" x="282" y="318" fill="#b4473e">진행</text>
+      <rect class="bxr" x="204" y="424" width="150" height="56" rx="12"/>
+      <text class="t" x="279" y="449">⑤ 2차 치료</text>
+      <text class="ts" x="279" y="468">약을 바꿈</text>
+      <path class="ln" d="M279 480 V510" marker-end="url(#ar)"/>
+      <circle class="star" cx="340" cy="497" r="11"/><text x="340" y="501" text-anchor="middle" style="font:900 12px sans-serif;fill:#fff">!</text>
+      <rect class="bxr" x="204" y="514" width="150" height="56" rx="12"/>
+      <text class="t" x="279" y="539">⑥ 3차 이후</text>
+      <text class="ts" x="279" y="558">임상시험 · 완화 치료</text>
+      <!-- 재발 화살표 -->
+      <path class="ln" d="M81 480 V600 H279 V574" stroke-dasharray="5 5" marker-end="url(#ar)"/>
+      <text class="ts" x="170" y="618">재발하면 다시 오른쪽 길로</text>
+    </svg>
+    <figcaption><span class="tag-illus">예시 · 개념도</span>영어권 권장 치료 순서를 아주 단순하게 그린 큰 그림입니다.<br>주황색 <b style="color:#c27a12">!</b> 표시는 <b>환자가 '결정'에 참여하게 되는 시점</b>입니다. 실제 순서는 암종·병기·검사 결과마다 다릅니다.</figcaption>
+  </figure>
+
+  <p>한국 건강보험 수가 기준까지는 일반인이 접근하기 어렵습니다. 그래서 대부분 <b>영어권의 권장 암 치료 순서</b>를 기준으로 '큰 그림(pathway)'을 예상해 보려고 합니다.</p>
+</section>
+
+<!-- 4 -->
+<section class="rv">
+  <span class="sec-no">04 · 어떻게 정리하나</span>
+  <h2>영상 100개를 '시간표 한 장'으로</h2>
+  <p>가령 A님의 유튜브 전체 영상을 보면, 1, 2, 3 … 10 … 100번째 영상까지 <b>각 단계에서 어떤 결정을 했고, 어떤 부작용이 나타났는지</b> 알 수 있습니다. 인공지능 도구를 쓰면 이 일을 손쉽게 할 수 있습니다.</p>
+
+  <figure>
+    <svg viewBox="0 0 360 520" role="img" aria-labelledby="t2">
+      <title id="t2">영상들을 AI로 정리해 시간순 이벤트로 바꾸는 과정</title>
+      <style>
+        .v{fill:#fff;stroke:#b4473e;stroke-width:1.6}
+        .vt{font:700 12px 'Noto Sans KR',sans-serif;fill:#b4473e}
+        .ai{fill:#ece6f5;stroke:#6a4f9a;stroke-width:2}
+        .ev{fill:#fff;stroke:#2f5f8f;stroke-width:1.6}
+        .h{font:700 15px 'Noto Sans KR',sans-serif;fill:#2a2622;text-anchor:middle}
+        .s{font:400 12px 'Noto Sans KR',sans-serif;fill:#5c544b}
+        .sc{font:400 12px 'Noto Sans KR',sans-serif;fill:#5c544b;text-anchor:middle}
+        .k{font:700 12px 'Noto Sans KR',sans-serif}
+      </style>
+      <!-- video stack -->
+      <rect class="v" x="98" y="24" width="190" height="52" rx="8"/>
+      <rect class="v" x="88" y="16" width="190" height="52" rx="8"/>
+      <rect class="v" x="78" y="8" width="190" height="52" rx="8"/>
+      <polygon points="104,22 104,46 122,34" fill="#b4473e"/>
+      <text class="vt" x="134" y="30">#1 진단 받던 날</text>
+      <text class="vt" x="134" y="48">#2 … #100</text>
+      <text class="sc" x="180" y="98">한 사람의 전체 영상 (자막·말·화면)</text>
+      <path d="M180 106 V134" stroke="#8a7f72" stroke-width="2" marker-end="url(#ar)"/>
+      <!-- AI -->
+      <rect class="ai" x="60" y="138" width="240" height="64" rx="32"/>
+      <text class="h" x="180" y="166">🤖 AI로 정리</text>
+      <text class="sc" x="180" y="186">날짜 · 결정 · 부작용 · 검사 결과 뽑기</text>
+      <path d="M180 202 V230" stroke="#8a7f72" stroke-width="2" marker-end="url(#ar)"/>
+      <!-- timeline -->
+      <line x1="40" y1="246" x2="40" y2="506" stroke="#2f5f8f" stroke-width="3"/>
+      <g>
+        <circle cx="40" cy="262" r="8" fill="#2f5f8f"/>
+        <rect class="ev" x="60" y="242" width="290" height="44" rx="8"/>
+        <text class="k" x="72" y="261" fill="#2f5f8f">D+0 · 검사</text>
+        <text class="s" x="72" y="278">폐암 4기 진단, 유전자 검사 의뢰</text>
+      </g>
+      <g>
+        <circle cx="40" cy="318" r="8" fill="#c27a12"/>
+        <rect class="ev" x="60" y="298" width="290" height="44" rx="8" style="stroke:#c27a12"/>
+        <text class="k" x="72" y="317" fill="#c27a12">D+21 · 결정</text>
+        <text class="s" x="72" y="334">1차 치료 선택 (어떤 이유로?)</text>
+      </g>
+      <g>
+        <circle cx="40" cy="374" r="8" fill="#b4473e"/>
+        <rect class="ev" x="60" y="354" width="290" height="44" rx="8" style="stroke:#b4473e"/>
+        <text class="k" x="72" y="373" fill="#b4473e">D+40 · 부작용</text>
+        <text class="s" x="72" y="390">피로, 식욕 저하, 피부 발진</text>
+      </g>
+      <g>
+        <circle cx="40" cy="430" r="8" fill="#2f5f8f"/>
+        <rect class="ev" x="60" y="410" width="290" height="44" rx="8"/>
+        <text class="k" x="72" y="429" fill="#2f5f8f">D+90 · 검사</text>
+        <text class="s" x="72" y="446">첫 CT 반응 평가 결과</text>
+      </g>
+      <g>
+        <circle cx="40" cy="486" r="8" fill="#c27a12"/>
+        <rect class="ev" x="60" y="466" width="290" height="44" rx="8" style="stroke:#c27a12"/>
+        <text class="k" x="72" y="485" fill="#c27a12">D+95 · 결정</text>
+        <text class="s" x="72" y="502">계속할까, 바꿀까, 더할까?</text>
+      </g>
+    </svg>
+    <figcaption><span class="tag-illus">예시</span>날짜·내용은 설명을 위한 가상의 예입니다. 색: <b style="color:#2f5f8f">파랑=검사</b> · <b style="color:#c27a12">주황=결정</b> · <b style="color:#b4473e">빨강=부작용</b></figcaption>
+  </figure>
+
+  <p>이렇게 A, B, C, D … Z님까지 <b>흐름도(flow chart)</b>로 나타낼 수 있습니다. 대부분의 이벤트는 시간 순서대로 일어나기 때문입니다.</p>
+</section>
+
+<!-- 5 -->
+<section class="rv">
+  <span class="sec-no">05 · 나란히 놓으면 보이는 것</span>
+  <h2>여러 사람의 길을 겹치면, '나의 길'이 보입니다</h2>
+
+  <figure>
+    <svg viewBox="0 0 360 600" role="img" aria-labelledby="t3">
+      <title id="t3">환자 A, B, C와 나의 치료 경로를 나란히 놓은 지하철 노선도식 그림</title>
+      <style>
+        .st{font:700 13px 'Noto Sans KR',sans-serif;fill:#2a2622}
+        .sts{font:400 11px 'Noto Sans KR',sans-serif;fill:#5c544b}
+        .hd{font:900 14px 'Noto Sans KR',sans-serif;text-anchor:middle}
+        .grid{stroke:#e8dfd0;stroke-width:1}
+        .note{font:400 11px 'Noto Sans KR',sans-serif;fill:#5c544b;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+      </style>
+      <!-- headers -->
+      <text class="hd" x="150" y="22" fill="#2f5f8f">A</text>
+      <text class="hd" x="205" y="22" fill="#2f7d5b">B</text>
+      <text class="hd" x="260" y="22" fill="#6a4f9a">C</text>
+      <text class="hd" x="318" y="22" fill="#c27a12">나</text>
+      <!-- stage rows -->
+      <g>
+        <line class="grid" x1="0" y1="60" x2="360" y2="60"/><text class="st" x="4" y="56">진단</text>
+        <line class="grid" x1="0" y1="130" x2="360" y2="130"/><text class="st" x="4" y="126">유전자 검사</text>
+        <line class="grid" x1="0" y1="200" x2="360" y2="200"/><text class="st" x="4" y="196">1차 치료</text>
+        <line class="grid" x1="0" y1="270" x2="360" y2="270"/><text class="st" x="4" y="266">첫 평가</text>
+        <line class="grid" x1="0" y1="340" x2="360" y2="340"/><text class="st" x="4" y="336">2차 치료</text>
+        <line class="grid" x1="0" y1="410" x2="360" y2="410"/><text class="st" x="4" y="406">두 번째 평가</text>
+        <line class="grid" x1="0" y1="480" x2="360" y2="480"/><text class="st" x="4" y="476">3차 이후</text>
+      </g>
+      <!-- A -->
+      <path d="M150 60 V480" stroke="#2f5f8f" stroke-width="5" fill="none"/>
+      <g fill="#fff" stroke="#2f5f8f" stroke-width="3">
+        <circle cx="150" cy="60" r="7"/><circle cx="150" cy="130" r="7"/><circle cx="150" cy="200" r="7"/>
+        <circle cx="150" cy="270" r="7"/><circle cx="150" cy="340" r="7"/><circle cx="150" cy="410" r="7"/><circle cx="150" cy="480" r="7"/>
+      </g>
+      <!-- B : good response, stays -->
+      <path d="M205 60 V270 Q205 300 205 320" stroke="#2f7d5b" stroke-width="5" fill="none"/>
+      <path d="M205 320 V480" stroke="#2f7d5b" stroke-width="5" stroke-dasharray="2 8" stroke-linecap="round" fill="none"/>
+      <g fill="#fff" stroke="#2f7d5b" stroke-width="3">
+        <circle cx="205" cy="60" r="7"/><circle cx="205" cy="130" r="7"/><circle cx="205" cy="200" r="7"/><circle cx="205" cy="270" r="7"/>
+      </g>
+      <text class="note" x="205" y="312" style="fill:#2f7d5b;font-weight:700">유지</text>
+      <!-- C : adds complementary branch -->
+      <path d="M260 60 V480" stroke="#6a4f9a" stroke-width="5" fill="none"/>
+      <path d="M260 200 C285 215 285 255 260 270" stroke="#6a4f9a" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
+      <g fill="#fff" stroke="#6a4f9a" stroke-width="3">
+        <circle cx="260" cy="60" r="7"/><circle cx="260" cy="130" r="7"/><circle cx="260" cy="200" r="7"/>
+        <circle cx="260" cy="270" r="7"/><circle cx="260" cy="340" r="7"/><circle cx="260" cy="410" r="7"/><circle cx="260" cy="480" r="7"/>
+      </g>
+      <text class="note" x="296" y="240" style="fill:#6a4f9a">+보완</text>
+      <!-- 나 -->
+      <path d="M318 60 V200" stroke="#c27a12" stroke-width="5" fill="none"/>
+      <path d="M318 200 V480" stroke="#c27a12" stroke-width="3" stroke-dasharray="6 6" opacity=".55" fill="none"/>
+      <g fill="#fff" stroke="#c27a12" stroke-width="3">
+        <circle cx="318" cy="60" r="7"/><circle cx="318" cy="130" r="7"/>
+      </g>
+      <circle cx="318" cy="200" r="12" fill="#c27a12"/>
+      <circle cx="318" cy="200" r="18" fill="none" stroke="#c27a12" stroke-width="2" opacity=".5"/>
+      <text class="note" x="312" y="172" style="fill:#c27a12;font-weight:700">지금 여기</text>
+      <!-- highlight next decision -->
+      <rect x="120" y="252" width="236" height="36" rx="10" fill="none" stroke="#c27a12" stroke-width="2.5" stroke-dasharray="6 4"/>
+      <text class="note" x="180" y="530" style="font-size:13px;fill:#2a2622;font-weight:700">먼저 간 사람들이 '첫 평가'에서 어떤 일을 겪었나?</text>
+      <text class="note" x="180" y="552" style="font-size:12px">→ 나에게 곧 다가올 '결정의 시점'</text>
+      <text class="note" x="180" y="580" style="font-size:11px">점선 = 아직 오지 않은 나의 길</text>
+    </svg>
+    <figcaption><span class="tag-illus">예시 · 개념도</span>A·B·C는 가상의 환자입니다. 같은 암종·비슷한 병기라면 먼저 간 사람들의 '다음 정거장'이 나의 다음 정거장일 가능성이 큽니다.</figcaption>
+  </figure>
+
+  <p>솔직히, 그동안 유튜브 채널로 지켜봐 온 분들은 대부분 <b>병원 치료법을 잘 따랐습니다.</b> 그리고 그 결과는 <b>한국 국립암센터 통계에 거의 일치</b>했습니다.</p>
+
+  <figure>
+    <svg viewBox="0 0 360 300" role="img" aria-labelledby="t4">
+      <title id="t4">통계 곡선 위에 개인들의 결과가 놓이는 개념 그래프</title>
+      <style>
+        .ax{stroke:#5c544b;stroke-width:1.6}
+        .al{font:400 12px 'Noto Sans KR',sans-serif;fill:#5c544b}
+        .pl{font:700 12px 'Noto Sans KR',sans-serif}
+      </style>
+      <line class="ax" x1="44" y1="20" x2="44" y2="250"/>
+      <line class="ax" x1="44" y1="250" x2="346" y2="250"/>
+      <text class="al" x="10" y="16">많음</text>
+      <text class="al" x="10" y="250">적음</text>
+      <text class="al" x="300" y="272">시간 →</text>
+      <text class="al" x="48" y="272">진단</text>
+      <!-- band -->
+      <path d="M44 30 C120 50 160 120 220 170 S310 225 346 232 L346 214 C300 205 260 170 216 140 S130 40 44 30 Z" fill="#e3ecf5" opacity=".0"/>
+      <path d="M44 30 C110 40 150 95 200 140 S300 212 346 222" stroke="#2f5f8f" stroke-width="10" opacity=".15" fill="none" stroke-linecap="round"/>
+      <path d="M44 30 C110 40 150 95 200 140 S300 212 346 222" stroke="#2f5f8f" stroke-width="2.5" fill="none"/>
+      <text class="pl" x="70" y="160" fill="#2f5f8f">국가 통계 곡선</text>
+      <!-- dots -->
+      <circle cx="120" cy="58" r="6" fill="#2f5f8f"/><text class="pl" x="126" y="52" fill="#2f5f8f">A</text>
+      <circle cx="176" cy="114" r="6" fill="#2f7d5b"/><text class="pl" x="182" y="108" fill="#2f7d5b">B</text>
+      <circle cx="252" cy="182" r="6" fill="#6a4f9a"/><text class="pl" x="258" y="176" fill="#6a4f9a">C</text>
+      <circle cx="300" cy="206" r="6" fill="#8a7f72"/><text class="pl" x="306" y="200" fill="#8a7f72">D</text>
+      <!-- question area -->
+      <path d="M200 140 C240 120 290 110 340 108" stroke="#c27a12" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/>
+      <text class="pl" x="262" y="98" fill="#c27a12">곡선 밖의 길은?</text>
+    </svg>
+    <figcaption><span class="tag-illus">숫자 없는 개념도</span>같은 길을 그대로 따르면, 결과도 통계 곡선 근처에 놓이기 쉽습니다.<br>그렇다면 우리가 찾아야 할 것은 <b>"어디에서 다른 질문을 던질 수 있었나"</b>입니다.</figcaption>
+  </figure>
+</section>
+
+<!-- 6 -->
+<section class="rv">
+  <span class="sec-no">06 · 핵심</span>
+  <h2>'나'도 같은 길 위에 있다면</h2>
+  <p class="lead">그들의 시간 순서 이벤트에서, <b>'어떤 행동·결정'을 해야 하는 시점</b>을 미리 발견하게 됩니다.</p>
+  <p>그 시점을 미리 알면, 진료실에 들어가기 전에 <b>더 나은 질문</b>을 준비할 수 있습니다.</p>
+
+  <div class="dp">
+    <div class="dot">1</div>
+    <div>
+      <h3>치료를 시작하기 전</h3>
+      <p>먼저 간 분들은 유전자 검사 결과를 받고 나서 1차 치료를 정했나요, 아니면 그 전에 시작했나요?</p>
+      <div class="ask">"제 암은 어떤 유전자 검사를 했나요? 결과에 따라 치료가 달라질 수 있나요?"</div>
+    </div>
+  </div>
+  <div class="dp">
+    <div class="dot">2</div>
+    <div>
+      <h3>첫 반응 평가 직후</h3>
+      <p>영상 속 분들이 첫 CT 결과를 받고 어떤 선택지를 들었는지 정리해 두면, 내 차례에 놓치지 않습니다.</p>
+      <div class="ask">"이번 결과를 보면, 지금 치료를 계속하는 것 말고 다른 선택지는 무엇이 있나요?"</div>
+    </div>
+  </div>
+  <div class="dp">
+    <div class="dot">3</div>
+    <div>
+      <h3>부작용이 쌓여갈 때</h3>
+      <p>같은 약을 쓴 분들이 언제, 어떤 부작용을 겪었는지 미리 알면 덜 놀라고 더 빨리 알릴 수 있습니다.</p>
+      <div class="ask">"이 약을 쓰는 분들은 보통 언제쯤 어떤 부작용이 오나요? 어떤 증상이면 바로 연락해야 하나요?"</div>
+    </div>
+  </div>
+  <div class="dp">
+    <div class="dot">4</div>
+    <div>
+      <h3>'진행'이라는 말을 들었을 때</h3>
+      <p>2차·3차로 넘어가는 순간은 가장 많은 사람이 흔들리는 지점입니다. 임상시험과 보완 시도 이야기가 나오는 곳도 여기입니다.</p>
+      <div class="ask">"제가 참여할 수 있는 임상시험이 있을까요? 지금 하고 싶은 보완 시도가 치료와 부딪히지 않는지 봐 주실 수 있나요?"</div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="rv">
+  <span class="sec-no">07 · 해외 사례 하나</span>
+  <h2>인스타그램에 과정을 남기는 Hien님</h2>
+
+  <div class="case">
+    <div class="top">[해외 호전 사례] 대만 · 폐암</div>
+    <div class="body">
+      <h3>41세 남성 Hien — 9월 24일 진단</h3>
+      <div class="chips">
+        <span class="chip b">대만</span><span class="chip b">폐암</span>
+        <span class="chip a">펜벤다졸 <span class="en">Fenbendazole</span></span>
+        <span class="chip a">이버멕틴 <span class="en">Ivermectin</span></span>
+        <span class="chip g">대사 치료법 <span class="en">Metabolic approach</span></span>
+      </div>
+      <p>인스타그램에 지속적으로 영상을 올리며 과정을 공유하고 있습니다. '이버멕틴+암' 페이스북 그룹에서 소개된 사례입니다.</p>
+      <p style="margin:0">원문 소개글 → <a href="https://naver.me/FG39Mw6N" target="_blank" rel="noopener">카페 게시글 보기</a></p>
+    </div>
+  </div>
+
+  <p>이처럼 유튜브만이 아니라 다양한 SNS에, 우리가 인공지능 도구로 <b>'미리 알아볼 수 있는 자료'</b>가 넘쳐나고 있습니다.</p>
+
+  <div class="sources">
+    <div class="src"><div class="ic">▶️</div><b>유튜브</b><span>긴 기록, 날짜순 영상</span></div>
+    <div class="src"><div class="ic">📷</div><b>인스타그램</b><span>짧은 영상, 일상 변화</span></div>
+    <div class="src"><div class="ic">👥</div><b>페이스북 그룹</b><span>질문과 댓글 속 경험담</span></div>
+    <div class="src"><div class="ic">📝</div><b>블로그·카페</b><span>정리된 기록, 검사지</span></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="rv">
+  <span class="sec-no">08 · 앞으로 할 일</span>
+  <h2>이렇게 지켜보고, 분석하겠습니다</h2>
+  <p>오늘 소개해 드린 세 분은 앞으로도 계속 지켜보고 응원할 것입니다. 동시에 그분들의 현재 치료 과정을 분석하고, OpenEvidence나 AI로 다음 단계를 예상해 보며 큰 그림(pathway)을 그려 보겠습니다.</p>
+
+  <ol class="steps">
+    <li><b>모으기</b>한 사람의 영상·글을 처음부터 지금까지 날짜순으로 모읍니다.</li>
+    <li><b>정리하기</b>AI로 날짜 · 결정 · 부작용 · 검사 결과를 뽑아 시간표로 만듭니다.</li>
+    <li><b>기준과 비교하기</b>영어권 권장 치료 순서와 나란히 놓고, 지금 어느 정거장에 있는지 확인합니다.</li>
+    <li><b>다음 정거장 예상하기</b>OpenEvidence·AI에게 "이 단계 다음에 보통 무엇이 오나요?"를 근거와 함께 묻습니다.</li>
+    <li><b>결정 시점 표시하기</b>여러 사람의 길을 겹쳐, 흔들렸던 지점과 질문해야 할 지점을 찾습니다.</li>
+    <li><b>내 질문으로 바꾸기</b>그 지점을 나의 진료실 질문 목록으로 옮겨 적습니다.</li>
+  </ol>
+
+  <div class="ai-note">
+    <span class="lbl">AI 클로드 주석</span>
+    <ul>
+      <li><b>보이는 사람만 보입니다.</b> 영상을 꾸준히 올리는 분은 대개 컨디션이 버텨 주는 분입니다. 업로드가 멈춘 이유는 알 수 없는 경우가 많으니, 몇 사람의 기록을 '평균'으로 읽지 않는 것이 좋습니다.</li>
+      <li><b>영상도 고를 수는 있습니다.</b> 고치기는 어렵지만, 무엇을 찍고 무엇을 올리지 않을지는 선택할 수 있습니다. 검사 결과지가 화면에 나오는 장면이 가장 믿을 만한 단서입니다.</li>
+      <li><b>'같은 암'의 기준을 좁혀 보세요.</b> 같은 폐암이라도 유전자 변이·병기·나이·체력에 따라 길이 크게 갈립니다. 비교 대상은 이 조건이 비슷할수록 쓸모가 있습니다.</li>
+      <li><b>지침은 나라마다 조금씩 다릅니다.</b> 영어권 순서는 '큰 그림'용이고, 실제 한국 진료는 보험 기준에 따라 순서나 약이 달라질 수 있습니다.</li>
+    </ul>
+  </div>
+
+  <div class="safety">
+    <h3>⚠️ 꼭 기억해 주세요</h3>
+    <p>이 글은 <b>더 나은 질문을 준비하기 위한 방법</b>을 소개합니다. 치료를 시작하거나, 바꾸거나, 무언가를 더하거나 멈추는 <b>최종 결정은 반드시 주치의와 함께</b> 내려 주세요.</p>
+    <p>사례에 나오는 약물(펜벤다졸·이버멕틴 등)은 <b>사례 설명을 위한 예시</b>이며 복용 권고가 아닙니다. 남의 복용량을 그대로 따라 하지 마세요.</p>
+  </div>
+</section>
+
+<div class="closing rv">
+  <p>먼저 걸어간 분들의 발자국은<br>우리에게 <b style="color:#2f7d5b">미리 보는 지도</b>입니다.<br>그분들을 응원하며, 함께 읽어 가겠습니다.</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>참고</b>
+    <ul>
+      <li><a href="https://naver.me/FG39Mw6N" target="_blank" rel="noopener">[해외호전사례] 대만 41세 남성 Hien 폐암 — 히포크라테스의 친구들 카페</a></li>
+      <li><a href="https://www.openevidence.com" target="_blank" rel="noopener">OpenEvidence — 근거 기반 의학 질의 도구</a></li>
+      <li><a href="https://www.nccn.org/patientresources/patient-resources/guidelines-for-patients" target="_blank" rel="noopener">NCCN Guidelines for Patients — 영어권 환자용 암 치료 지침</a></li>
+    </ul>
+    <p style="margin-top:12px">히포크라테스의 친구들 · 해외 사례 분석집 · 꿈많은사람2 · 2026.11.14</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){document.documentElement.classList.add('no-io');els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+  window.addEventListener('beforeprint',function(){els.forEach(function(e){e.classList.add('on')})});
+})();
+</script>
+</body>
+</html>
