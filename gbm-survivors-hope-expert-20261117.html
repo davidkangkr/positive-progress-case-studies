@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GBM 장기 생존 사례의 공통분모 — 전문가용 분석</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1419; --panel:#161D24; --panel2:#1C252E; --line:#2A3540; --ink:#E6EDF3; --sub:#9AA8B5; --dim:#6B7A88;
+  --mech:#4FD1C5; --evid:#F6AD55; --case:#B794F4; --limit:#F687B3; --ai:#90CDF4;
+  --gA:#68D391; --gB:#4FD1C5; --gC:#F6AD55; --gD:#FC8181;
+  --W:#63B3ED; --G:#ED8936; --E:#68D391;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:16.5px;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px 90px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.35}
+h1{font-size:1.9rem;margin:.3em 0 .2em}
+h2{font-size:1.38rem;margin:2.6em 0 .7em;display:flex;gap:.6em;align-items:baseline;flex-wrap:wrap}
+h2 .idx{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--dim);letter-spacing:.06em}
+h3{font-size:1.08rem;margin:1.6em 0 .5em}
+p{margin:.7em 0}
+a{color:var(--ai)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--evid);outline-offset:3px;border-radius:3px}
+.mono{font-family:"JetBrains Mono",monospace}
+.hero{padding:44px 0 6px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--mech);letter-spacing:.08em;text-transform:uppercase}
+.meta{font-size:.86rem;color:var(--sub)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:14px 0 4px;font-size:.8rem;color:var(--sub)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.thesis{border:1px solid var(--evid);background:linear-gradient(180deg,rgba(246,173,85,.08),rgba(246,173,85,.02));border-radius:12px;padding:18px 20px;margin:26px 0}
+.thesis .lab{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--evid);letter-spacing:.1em}
+.thesis p{font-family:"Noto Serif KR",serif;font-size:1.12rem;margin:.4em 0 0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0}
+.k-mech{border-left:3px solid var(--mech)}.k-evid{border-left:3px solid var(--evid)}.k-case{border-left:3px solid var(--case)}.k-limit{border-left:3px solid var(--limit)}
+.lab{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.c-mech{color:var(--mech)}.c-evid{color:var(--evid)}.c-case{color:var(--case)}.c-limit{color:var(--limit)}
+.ai{border:1px dashed var(--ai);background:rgba(144,205,244,.06);border-radius:12px;padding:14px 18px;margin:16px 0}
+.ai .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:600;color:#0F1419;background:var(--ai);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0}
+th,td{border-bottom:1px solid var(--line);padding:8px 8px;text-align:left;vertical-align:top}
+th{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--sub);font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:var(--panel2)}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px}
+.tw table{margin:0}
+.g{display:inline-block;min-width:1.7em;text-align:center;font-family:"JetBrains Mono",monospace;font-weight:600;font-size:.78rem;border-radius:4px;padding:1px 6px;color:#0F1419}
+.gA{background:var(--gA)}.gB{background:var(--gB)}.gC{background:var(--gC)}.gD{background:var(--gD)}
+.yes{color:var(--gA);font-weight:700}.mid{color:var(--evid);font-weight:700}.no{color:var(--dim)}
+figure{margin:20px 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 12px 10px}
+figure svg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}
+figcaption{font-size:.8rem;color:var(--sub);padding:8px 6px 0;line-height:1.6}
+.rail{position:relative;margin:14px 0;padding-left:26px}
+.rail::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.rail .st{position:relative;margin:0 0 14px}
+.rail .st::before{content:attr(data-n);position:absolute;left:-26px;top:2px;width:18px;height:18px;border-radius:50%;background:var(--panel2);border:1px solid var(--mech);color:var(--mech);font:600 .66rem "JetBrains Mono",monospace;display:flex;align-items:center;justify-content:center}
+.prompt{font-family:"JetBrains Mono",monospace;font-size:.8rem;background:#0B1015;border:1px solid var(--line);border-radius:8px;padding:10px 12px;color:#CBD5E0;white-space:pre-wrap;margin:8px 0}
+.prompt .cn{color:var(--limit)}
+.refs{font-size:.8rem;color:var(--sub);border-top:1px dashed var(--line);margin-top:14px;padding-top:8px;line-height:1.65}
+.refs b{color:var(--ink)}
+.refs a{word-break:break-all}
+ul{padding-left:1.2em}li{margin:.35em 0}
+@media (max-width:640px){
+  .tw{border:none}
+  .tw table,.tw tbody,.tw tr,.tw td{display:block;width:100%}
+  .tw thead{display:none}
+  .tw tr{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin:0 0 10px;padding:6px 4px}
+  .tw td{border:none;padding:4px 10px;display:grid;grid-template-columns:6.2em 1fr;gap:8px}
+  .tw td>.g{justify-self:start;align-self:start}
+  .tw td::before{content:attr(data-label);font-family:"JetBrains Mono",monospace;font-size:.68rem;color:var(--dim);text-transform:uppercase;padding-top:3px}
+}
+.close{font-family:"Noto Serif KR",serif;font-size:1.12rem;border-top:1px solid var(--line);margin-top:40px;padding-top:24px}
+footer{font-size:.78rem;color:var(--dim);margin-top:30px;line-height:1.7}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}html{scroll-behavior:auto}}
+/* print: light, ink-friendly */
+@media print{
+  :root{--bg:#fff;--panel:#fff;--panel2:#F3F4F6;--line:#D1D5DB;--ink:#111;--sub:#444;--dim:#666;--mech:#0F766E;--evid:#B45309;--case:#6D28D9;--limit:#BE185D;--ai:#1D4ED8;--gA:#86EFAC;--gB:#99F6E4;--gC:#FCD34D;--gD:#FCA5A5;--W:#2563EB;--G:#C2410C;--E:#15803D}
+  body{font-size:10.5pt}.reveal{opacity:1;transform:none}
+  figure,.panel,.ai,.thesis,table{break-inside:avoid}
+  .prompt{background:#F9FAFB;color:#111}
+  svg .bgpanel{fill:#fff}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Case Analysis · Glioblastoma · Expert Register</div>
+  <h1>GBM 장기 생존 사례의 공통분모</h1>
+  <p class="meta">원문: Justus R. Hope, 〈A Story of GBM Survivors: Reasons for Hope — The Common Denominators of Long-Term Success〉, Substack <i>Repurposed Drugs: Powers &amp; Possibilities</i>, 2026-11-17 (부분 유료)<br>분석·정리: 꿈많은사람2 · 2026-11-17 · 쉬운 버전: <a href="gbm-survivors-hope-community-20261117.html">community</a></p>
+  <div class="legend">
+    <span style="--c:var(--mech)">기전 Mechanism</span>
+    <span style="--c:var(--evid)">근거 Evidence</span>
+    <span style="--c:var(--case)">사례 Case data</span>
+    <span style="--c:var(--limit)">한계·경계 Limits</span>
+    <span style="--c:var(--ai)">AI 클로드 주석</span>
+  </div>
+</header>
+
+<div class="thesis">
+  <div class="lab">THESIS</div>
+  <p>세 장기 생존 사례가 공유하는 것은 특정 약물이 아니라 <b>“표준치료 위에 여러 경로를 동시에 겨냥하는 병용 전략”</b>이다. 그러나 이 전략을 이루는 개별 구성요소의 근거는 옵튠(TTF)을 제외하면 대부분 C–D 등급이고, 사례들은 서로 독립적이지 않다. 따라서 이 글은 <b>재현할 처방이 아니라, 검증할 가설의 목록</b>으로 읽어야 한다.</p>
+</div>
+
+<div class="ai">
+  <span class="tag">AI 클로드 주석 · 표기 규칙</span><br>
+  이 문서에서 원문 저자의 서술은 그대로 전달하고, AI가 덧붙인 평가·대조·근거등급은 모두 이 상자로 구분했다. 근거등급(A–D)은 AI의 판정이며 공식 가이드라인 등급이 아니다.
+</div>
+
+<!-- 01 -->
+<section class="reveal">
+<h2><span class="idx">01 / SOURCE</span>원문의 범위와 구조</h2>
+<p>원문은 저자의 친구 에반(Evan)의 사망을 계기로 쓰였으며, 10개 절로 이루어진다. 무료로 공개된 범위는 “윌리엄스와 거버가 공통으로 쓴 약물·보충제를 정리하겠다”는 문장에서 끝나고, 그 목록과 거버의 전체 프로토콜은 유료 구간에 있다.</p>
+<figure>
+<svg viewBox="0 0 360 374" role="img" aria-labelledby="st1"><title id="st1">원문 10개 절의 구조와 유료 구간 경계</title><style>.t{font:600 12.5px "Noto Sans KR",sans-serif;fill:#E6EDF3}.s{font:500 11px "JetBrains Mono",monospace;fill:#9AA8B5}</style><rect class="bgpanel" x="0" y="0" width="360" height="374" fill="#161D24"/><rect x="12" y="14" width="336" height="30" rx="6" fill="#B794F4" fill-opacity=".14" stroke="#B794F4"/><text x="24" y="34" class="s" style="fill:#B794F4">§1</text><text x="78" y="34" class="t">도입 · 에반을 기리며</text><rect x="12" y="50" width="336" height="30" rx="6" fill="#B794F4" fill-opacity=".14" stroke="#B794F4"/><text x="24" y="70" class="s" style="fill:#B794F4">§2</text><text x="78" y="70" class="t">에반 48개월 생존</text><rect x="12" y="86" width="336" height="30" rx="6" fill="#4FD1C5" fill-opacity=".14" stroke="#4FD1C5"/><text x="24" y="106" class="s" style="fill:#4FD1C5">§3–4</text><text x="78" y="106" class="t">옵튠(TTF) · 보험</text><rect x="12" y="122" width="336" height="30" rx="6" fill="#F6AD55" fill-opacity=".14" stroke="#F6AD55"/><text x="24" y="142" class="s" style="fill:#F6AD55">§5</text><text x="78" y="142" class="t">클로로퀸 시험 2건</text><rect x="12" y="158" width="336" height="30" rx="6" fill="#4FD1C5" fill-opacity=".14" stroke="#4FD1C5"/><text x="24" y="178" class="s" style="fill:#4FD1C5">§6</text><text x="78" y="178" class="t">자가포식 · 에반의 4제 · METRICS</text><rect x="12" y="194" width="336" height="30" rx="6" fill="#F687B3" fill-opacity=".14" stroke="#F687B3"/><text x="24" y="214" class="s" style="fill:#F687B3">§7</text><text x="78" y="214" class="t">근거 비판 · 코리 척도</text><rect x="12" y="230" width="336" height="30" rx="6" fill="#F687B3" fill-opacity=".14" stroke="#F687B3"/><text x="24" y="250" class="s" style="fill:#F687B3">§8–9</text><text x="78" y="250" class="t">자연실험 · 인도 이버멕틴</text><rect x="12" y="266" width="336" height="30" rx="6" fill="#B794F4" fill-opacity=".14" stroke="#B794F4"/><text x="24" y="286" class="s" style="fill:#B794F4">§10</text><text x="78" y="286" class="t">거버 · 윌리엄스</text><line x1="12" y1="306" x2="348" y2="306" stroke="#F687B3" stroke-width="2" stroke-dasharray="5 4"/><text x="348" y="301" text-anchor="end" class="s" style="fill:#F687B3">PAYWALL</text><rect x="12" y="316" width="336" height="44" rx="6" fill="none" stroke="#6B7A88" stroke-dasharray="4 3"/><text x="24" y="335" class="t" style="fill:#9AA8B5">공통 약물 · 거버 전체 목록</text><text x="24" y="352" class="s">비공개 → §06에서 공개 자료로 재구성</text></svg>
+<figcaption>색: 보라=사례 · 청록=기전/장치 · 주황=근거 · 분홍=저자의 근거 비판·외부 주장. 유료 구간 이후 내용은 §06에서 공개 1차 자료로 재구성했습니다.</figcaption>
+</figure>
+</section>
+
+<!-- 02 -->
+<section class="reveal">
+<h2><span class="idx">02 / PARADIGM</span>단일 표적 검증 vs 다경로 병용</h2>
+<div class="grid2">
+  <div class="panel k-evid"><div class="lab c-evid">기존 패러다임</div>
+    <p style="margin:.3em 0 0">약물 하나를 무작위배정 임상시험(RCT)으로 검증하고, 효과가 확인된 것만 표준에 더한다. 인과 추론이 깨끗한 대신 느리다. 특허가 끝난 저가 약물은 시험 후원자가 없어 이 경로에 잘 들어오지 못한다.</p></div>
+  <div class="panel k-mech"><div class="lab c-mech">원문이 제시하는 패러다임</div>
+    <p style="margin:.3em 0 0">GBM은 치료 압력 아래 여러 우회 경로(자가포식, 혈관신생, 약물 유출, 대사 재편)를 동시에 쓴다. 그러니 이 경로들을 <b>동시에</b> 막아야 한다는 논리다. 환자 한 명이 하나의 실험(n-of-1)이 되며, 결과는 나오지만 인과는 분리되지 않는다.</p></div>
+</div>
+<div class="ai"><span class="tag">AI 클로드 주석</span><br>같은 논리를 학계에서 구조화한 시도가 있다. 재발 GBM에 9가지 용도변경 약물을 저용량 테모졸로마이드와 함께 쓰는 CUSP9 프로토콜로, 현재 CUSP9v3 1b/2a상 안전성 결과까지 보고되었다. 원문 저자의 주장이 학계 주류 밖의 고립된 생각만은 아니라는 맥락이다.</div>
+<div class="refs"><b>참고</b> · Halatsch ME 외, 〈A phase Ib/IIa trial of 9 repurposed drugs combined with temozolomide for the treatment of recurrent glioblastoma: CUSP9v3〉, Neuro-Oncology Advances 2021 — <a href="https://edoc.mdc-berlin.de/id/eprint/20828/1/20828oa.pdf">링크</a> · Kast RE 외, 〈CUSP9* treatment protocol for recurrent glioblastoma〉, Oncotarget 2014 — <a href="https://oncotarget.com/article/2408">링크</a></div>
+</section>
+
+<!-- 03 -->
+<section class="reveal">
+<h2><span class="idx">03 / BASELINE</span>기준선: 표준치료와 비교 수치</h2>
+<p>원문에 나오는 수치와, AI가 추가한 대규모 시험 기준선을 한 축에 놓았다. 막대 색은 근거 등급이다.</p>
+<figure>
+<svg viewBox="0 0 360 532" role="img" aria-labelledby="st2 sd2"><title id="st2">중앙 전체생존(개월) 비교</title><desc id="sd2">RT 단독 12.1, RT+TMZ 14.6, EF-14 TMZ 16.0 대 TTF 20.9, METRICS 27.1 대 15.8, 클로로퀸 RCT 24 대 11, 클로로퀸 개방 33 대 11.</desc><style>.lb{font:500 12px "Noto Sans KR",sans-serif;fill:#E6EDF3}.sm{font:400 10.5px "JetBrains Mono",monospace;fill:#9AA8B5}.vl{font:600 11.5px "JetBrains Mono",monospace;fill:#E6EDF3}</style><rect class="bgpanel" x="0" y="0" width="360" height="532" fill="#161D24"/><text x="12" y="16" class="sm">중앙 전체생존 · 개월</text><line x1="12.0" y1="22" x2="12.0" y2="476" stroke="#2A3540"/><text x="12.0" y="490" class="sm" text-anchor="middle">0</text><line x1="92.0" y1="22" x2="92.0" y2="476" stroke="#2A3540"/><text x="92.0" y="490" class="sm" text-anchor="middle">10</text><line x1="172.0" y1="22" x2="172.0" y2="476" stroke="#2A3540"/><text x="172.0" y="490" class="sm" text-anchor="middle">20</text><line x1="252.0" y1="22" x2="252.0" y2="476" stroke="#2A3540"/><text x="252.0" y="490" class="sm" text-anchor="middle">30</text><text x="12" y="34" class="lb">RT 단독 (Stupp 2005)</text><rect x="12" y="39" width="96.8" height="14" rx="3" fill="#68D391" fill-opacity="1"/><text x="114.8" y="50" class="vl">12.1</text><text x="12" y="74" class="lb">RT + TMZ (Stupp 2005)</text><rect x="12" y="79" width="116.8" height="14" rx="3" fill="#68D391" fill-opacity="1"/><text x="134.8" y="90" class="vl">14.6</text><text x="12" y="124" class="lb">EF-14 · TMZ 유지</text><rect x="12" y="129" width="128.0" height="14" rx="3" fill="#68D391" fill-opacity="0.45"/><text x="146.0" y="140" class="vl">16.0</text><text x="12" y="164" class="lb">EF-14 · TMZ + TTF</text><rect x="12" y="169" width="167.2" height="14" rx="3" fill="#68D391" fill-opacity="1"/><text x="185.2" y="180" class="vl">20.9</text><text x="12" y="214" class="lb">METRICS · 외부 대조</text><rect x="12" y="219" width="126.4" height="14" rx="3" fill="#FC8181" fill-opacity="0.45"/><text x="144.4" y="230" class="vl">15.8</text><text x="12" y="254" class="lb">METRICS · 4제 (단일군)</text><rect x="12" y="259" width="216.8" height="14" rx="3" fill="#FC8181" fill-opacity="1"/><text x="234.8" y="270" class="vl">27.1</text><text x="12" y="304" class="lb">CQ RCT 2006 · 위약 (n≈15)</text><rect x="12" y="309" width="88.0" height="14" rx="3" fill="#F6AD55" fill-opacity="0.45"/><text x="106.0" y="320" class="vl">11</text><text x="12" y="344" class="lb">CQ RCT 2006 · CQ (n≈15)</text><rect x="12" y="349" width="192.0" height="14" rx="3" fill="#F6AD55" fill-opacity="1"/><text x="210.0" y="360" class="vl">24 · HR 0.52, NS</text><text x="12" y="394" class="lb">CQ 개방 2003 · 대조 (n=9)</text><rect x="12" y="399" width="88.0" height="14" rx="3" fill="#FC8181" fill-opacity="0.45"/><text x="106.0" y="410" class="vl">11</text><text x="12" y="434" class="lb">CQ 개방 2003 · CQ (n=9)</text><rect x="12" y="439" width="264.0" height="14" rx="3" fill="#FC8181" fill-opacity="1"/><text x="282.0" y="450" class="vl">33</text><text x="348" y="490" class="sm" text-anchor="end">개월</text><g transform="translate(12,510)"><rect width="10" height="10" fill="#68D391"/><text x="14" y="9" class="sm">A</text><rect x="36" width="10" height="10" fill="#F6AD55"/><text x="50" y="9" class="sm">C</text><rect x="72" width="10" height="10" fill="#FC8181"/><text x="86" y="9" class="sm">D</text><text x="110" y="9" class="sm">옅은 막대 = 대조군</text></g></svg>
+<figcaption>EF-14의 생존은 화학방사선치료 종료 후 무작위배정 시점부터, Stupp 2005는 무작위배정(진단 직후)부터 계산했다. 시험 간 수치를 직접 비교하면 안 된다. 원문의 “표준치료 중앙 재발 6.9개월”은 Stupp 2005의 무진행생존이다.</figcaption>
+</figure>
+
+<h3>사례 생존 — 로그 척도</h3>
+<figure>
+<svg viewBox="0 0 360 274" role="img" aria-labelledby="st3"><title id="st3">세 사례의 생존 기간을 표준치료 중앙값과 로그 척도로 비교</title><style>.lb{font:500 12px "Noto Sans KR",sans-serif;fill:#E6EDF3}.sm{font:400 10.5px "JetBrains Mono",monospace;fill:#9AA8B5}.vl{font:600 11.5px "JetBrains Mono",monospace;fill:#E6EDF3}</style><rect class="bgpanel" x="0" y="0" width="360" height="274" fill="#161D24"/><text x="12" y="14" class="sm">개월 · 로그 척도</text><line x1="20.0" y1="22" x2="20.0" y2="234" stroke="#2A3540"/><text x="20.0" y="248" class="sm" text-anchor="middle">10</text><line x1="94.0" y1="22" x2="94.0" y2="234" stroke="#2A3540"/><text x="94.0" y="248" class="sm" text-anchor="middle">30</text><line x1="175.0" y1="22" x2="175.0" y2="234" stroke="#2A3540"/><text x="175.0" y="248" class="sm" text-anchor="middle">100</text><line x1="249.0" y1="22" x2="249.0" y2="234" stroke="#2A3540"/><text x="249.0" y="248" class="sm" text-anchor="middle">300</text><line x1="330.0" y1="22" x2="330.0" y2="234" stroke="#2A3540"/><text x="330.0" y="248" class="sm" text-anchor="middle">1000</text><text x="12" y="30" class="lb">표준치료 중앙값 (Stupp 2005)</text><circle cx="45.5" cy="44" r="6" fill="#68D391"/><text x="55.5" y="48" class="vl" text-anchor="start">14.6</text><text x="12" y="82" class="lb">에반 · MGMT 메틸화</text><circle cx="125.6" cy="96" r="6" fill="#B794F4"/><text x="135.6" y="100" class="vl" text-anchor="start">≈48</text><text x="135.6" y="113" class="sm" text-anchor="start">사망 시 활동성 암 없음</text><text x="12" y="134" class="lb">거버 · MGMT 비메틸화</text><circle cx="230.5" cy="148" r="6" fill="#B794F4"/><text x="240.5" y="152" class="vl" text-anchor="start">≈228+</text><text x="240.5" y="165" class="sm" text-anchor="start">무재발 지속</text><text x="12" y="186" class="lb">딜-분디 · 초진 3등급 신경교종</text><circle cx="249.0" cy="200" r="6" fill="none" stroke="#B794F4" stroke-width="2"/><text x="259.0" y="204" class="vl" text-anchor="start">≈300+</text><text x="259.0" y="217" class="sm" text-anchor="start">초진이 GBM 아님</text><text x="12" y="266" class="sm">빈 원 = 같은 축 비교에 주의 (§07)</text></svg>
+</figure>
+<div class="refs"><b>참고</b> · Stupp R 외, 〈Radiotherapy plus concomitant and adjuvant temozolomide for glioblastoma〉, NEJM 2005 — <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa043330">링크</a> · Stupp R 외, 〈Effect of Tumor-Treating Fields Plus Maintenance Temozolomide vs Maintenance Temozolomide Alone on Survival in Patients With Glioblastoma〉, JAMA 2017 — <a href="https://jamanetwork.com/journals/jama/fullarticle/2667731">링크</a></div>
+</section>
+
+<!-- 04 -->
+<section class="reveal">
+<h2><span class="idx">04 / CASES</span>세 사례: 표준치료 + 추가 시도</h2>
+<div class="tw"><table>
+<thead><tr><th>사례</th><th>진단 · 분자</th><th>표준치료</th><th>추가 시도</th><th>결과 (원문)</th></tr></thead>
+<tbody>
+<tr><td><b style="color:var(--E)">에반</b><br><span class="mono" style="font-size:.75rem;color:var(--dim)">저자의 동료</span></td><td>2019 말 GBM · MGMT 메틸화 · 절제 불가 판정 · 예후 ≈12개월(스탠퍼드)</td><td>RT, TMZ, 베바시주맙(Avastin)</td><td>TTF 평균 ≈20h/일 · 아토르바스타틴(Atorvastatin) · 메트포르민(Metformin) · 메벤다졸(Mebendazole) · 독시사이클린(Doxycycline) · 커큐민(Curcumin) · 보스웰리아(Boswellia) · 비타민 D · 운지버섯(Turkey tail)</td><td>≈48개월. 사망 시 활동성 암 없음, 방사선 뇌손상 합병증으로 사망</td></tr>
+<tr><td><b style="color:var(--case)">딜-분디</b><br><span class="mono" style="font-size:.75rem;color:var(--dim)">스위스 올림픽 선수</span></td><td>1999, 41세 · 3등급 신경교종</td><td>원문 상세 없음</td><td>TTF (원문 기준 부분 사용)</td><td>≈25년</td></tr>
+<tr><td><b style="color:var(--G)">거버</b><br><span class="mono" style="font-size:.75rem;color:var(--dim)">컴퓨터 과학자</span></td><td>2007 GBM · MGMT 비메틸화 · 이탈리아</td><td>RT 6주 + 동시 TMZ</td><td>메트로노믹 TMZ · 초기부터 베바시주맙 · 클로로퀸(Chloroquine) · 베라파밀(Verapamil) · 셀레콕시브(Celecoxib) · EGCG 4 g/일 + 녹차 2 L/일 외 (총 ≈20여 종)</td><td>≈19년 무재발. 부작용: 구강건조, 골감소, 경미한 균형장애</td></tr>
+</tbody></table></div>
+<div class="ai"><span class="tag">AI 클로드 주석</span><br>원문은 에반이 표준 항암에 더해 4제와 보충제를 썼다고 서술한다. 저자는 2020년 7월까지 수백 개의 PubMed 참고문헌을 묶은 자료를 에반의 가정의에게 전달했다고 한다. 즉 에반의 추가 시도는 <b>의사를 경유해</b> 이뤄졌다. 거버의 메트로노믹 TMZ+베바시주맙 조합도 병원 심의위원회 승인 아래 1인 실험으로 진행됐다고 거버 본인이 밝혔다. 두 사례 모두 “환자 단독 자가투약”이 아니라 <b>의료진과 협상한 병용</b>이었다는 점이 중요하다.</div>
+</section>
+
+<!-- 05 -->
+<section class="reveal">
+<h2><span class="idx">05 / MECHANISM</span>클로로퀸과 자가포식</h2>
+<p>원문 논리는 이렇다. TMZ와 베바시주맙은 종양 세포에 스트레스를 주어 <b>보호적 자가포식</b>을 유도한다. 클로로퀸(CQ)과 하이드록시클로로퀸(HCQ)은 이 자가포식의 마지막 단계를 막아 치료 저항을 낮춘다.</p>
+<figure>
+<svg viewBox="0 0 360 640" role="img" aria-labelledby="st4 sd4"><title id="st4">자가포식 경로와 클로로퀸 작용점</title><desc id="sd4">TMZ, 방사선, 베바시주맙 스트레스가 AMPK 활성과 mTORC1 억제, ULK1과 자가포식소체 형성, 리소좀 융합을 거쳐 재활용과 생존으로 이어짐. 클로로퀸은 리소좀 산성화와 융합을 막아 자가포식소체가 쌓이고 세포사와 감작으로 이어짐.</desc>
+<style>.bt{font:600 12.5px "Noto Sans KR",sans-serif;fill:#E6EDF3}.bs{font:400 10.5px "JetBrains Mono",monospace;fill:#9AA8B5}.nt{font:500 11.5px "Noto Sans KR",sans-serif;fill:#E6EDF3}</style>
+<defs><marker id="m1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6B7A88"/></marker><marker id="m2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#F687B3"/></marker></defs>
+<rect class="bgpanel" x="0" y="0" width="360" height="640" fill="#161D24"/>
+<rect x="8" y="12" width="108" height="50" rx="8" fill="#1C252E" stroke="#B794F4"/><text x="62" y="33" text-anchor="middle" class="bt">TMZ</text><text x="62" y="51" text-anchor="middle" class="bs">DNA 알킬화</text>
+<rect x="126" y="12" width="108" height="50" rx="8" fill="#1C252E" stroke="#B794F4"/><text x="180" y="33" text-anchor="middle" class="bt">방사선</text><text x="180" y="51" text-anchor="middle" class="bs">ROS · DSB</text>
+<rect x="244" y="12" width="108" height="50" rx="8" fill="#1C252E" stroke="#B794F4"/><text x="298" y="33" text-anchor="middle" class="bt">베바시주맙</text><text x="298" y="51" text-anchor="middle" class="bs">저산소 스트레스</text>
+<path d="M62 62 L165 92" stroke="#6B7A88" stroke-width="1.5" fill="none" marker-end="url(#m1)"/><path d="M180 62 L180 90" stroke="#6B7A88" stroke-width="1.5" marker-end="url(#m1)"/><path d="M298 62 L195 92" stroke="#6B7A88" stroke-width="1.5" fill="none" marker-end="url(#m1)"/>
+<rect x="50" y="96" width="260" height="48" rx="8" fill="#1C252E" stroke="#4FD1C5"/><text x="180" y="117" text-anchor="middle" class="bt">AMPK ↑ · mTORC1 ↓</text><text x="180" y="134" text-anchor="middle" class="bs">에너지·스트레스 감지</text>
+<path d="M180 144 L180 170" stroke="#6B7A88" stroke-width="1.5" marker-end="url(#m1)"/>
+<rect x="50" y="174" width="260" height="48" rx="8" fill="#1C252E" stroke="#4FD1C5"/><text x="180" y="195" text-anchor="middle" class="bt">ULK1 → 자가포식소체 형성</text><text x="180" y="212" text-anchor="middle" class="bs">autophagosome · LC3-II</text>
+<path d="M180 222 L180 248" stroke="#6B7A88" stroke-width="1.5" marker-end="url(#m1)"/>
+<rect x="50" y="252" width="260" height="48" rx="8" fill="#1C252E" stroke="#4FD1C5"/><text x="180" y="273" text-anchor="middle" class="bt">리소좀 융합 · 산성 분해</text><text x="180" y="290" text-anchor="middle" class="bs">autolysosome · pH ≈ 4.5–5</text>
+<line x1="294" y1="300" x2="314" y2="330" stroke="#F687B3" stroke-width="3"/>
+<rect x="210" y="318" width="142" height="56" rx="8" fill="rgba(246,135,179,.12)" stroke="#F687B3" stroke-width="1.5"/><text x="281" y="342" text-anchor="middle" class="bt" style="fill:#F687B3">🔒 CQ / HCQ</text><text x="281" y="362" text-anchor="middle" class="bs">pH↑ · 융합 차단</text>
+<path d="M120 300 L84 396" stroke="#6B7A88" stroke-width="1.5" fill="none" marker-end="url(#m1)"/>
+<path d="M281 374 L270 396" stroke="#F687B3" stroke-width="1.5" fill="none" marker-end="url(#m2)"/>
+<text x="20" y="352" class="bs">차단 없음</text>
+<rect x="8" y="400" width="166" height="76" rx="8" fill="#1C252E" stroke="#6B7A88"/><text x="91" y="424" text-anchor="middle" class="bt">분해산물 재활용</text><text x="91" y="443" text-anchor="middle" class="bs">아미노산·지질 → ATP</text><text x="91" y="461" text-anchor="middle" class="bs">→ 생존 · 치료 저항</text>
+<rect x="186" y="400" width="166" height="76" rx="8" fill="rgba(246,135,179,.08)" stroke="#F687B3"/><text x="269" y="424" text-anchor="middle" class="bt">자가포식소체 축적</text><text x="269" y="443" text-anchor="middle" class="bs">흐름 차단 → 에너지 위기</text><text x="269" y="461" text-anchor="middle" class="bs">→ 세포사 · TMZ/RT 감작</text>
+<rect x="8" y="496" width="344" height="130" rx="8" fill="none" stroke="#90CDF4" stroke-dasharray="4 3"/>
+<text x="20" y="518" class="bs" style="fill:#90CDF4">AI 클로드 주석</text>
+<text x="20" y="542" class="nt">최근 리뷰는 CQ의 항종양 효과 일부가 자가포식과</text>
+<text x="20" y="562" class="nt">무관한 경로에서 올 수 있다고 본다. 또 자가포식은</text>
+<text x="20" y="582" class="nt">맥락에 따라 세포사를 돕기도 해서, ‘차단 = 이득’</text>
+<text x="20" y="602" class="nt">이라는 도식은 근사치다.</text>
+</svg>
+</figure>
+
+<h3>임상 근거</h3>
+<div class="tw"><table>
+<thead><tr><th>연구</th><th>설계</th><th>n</th><th>CQ</th><th>중앙 생존</th><th>등급</th></tr></thead>
+<tbody>
+<tr><td>Briceño 2003</td><td>개방 · 짝지은 대조</td><td>18 (9 vs 9)</td><td>150 mg/일</td><td>33 vs 11개월. 연구 종료 시 CQ군 4명 생존(원문)</td><td><span class="g gD">D</span></td></tr>
+<tr><td>Sotelo 2006 (Ann Intern Med)</td><td>무작위 · 이중맹검 · 위약대조</td><td>30</td><td>150 mg/일 × 12개월</td><td>24 vs 11개월, HR 0.52, 통계적 비유의</td><td><span class="g gC">C</span></td></tr>
+<tr><td>Compter 2021 (Autophagy)</td><td>1b상 · 용량증량 · RT+TMZ 병용</td><td>13</td><td>200–400 mg</td><td>효능 아닌 안전성 연구. 최대내약용량 200 mg/일</td><td><span class="g gD">D · 효능</span></td></tr>
+</tbody></table></div>
+<div class="ai"><span class="tag">AI 클로드 주석 · 개별화 단서</span><br>1b상 연구진은 EGFRvIII를 발현하는 GBM이 자가포식에 더 의존해 CQ의 이득이 클 수 있다는 전임상 근거를 제시했다. 원문은 MGMT 상태만 언급하지만, CQ 같은 자가포식 표적 전략이라면 <b>EGFRvIII 같은 분자 표지가 개별화의 축</b>이 될 수 있다. 또한 CQ/HCQ 장기 복용은 망막 독성 때문에 안과 감시가 필요하다.</div>
+
+<h3>후보 하나를 검증하는 흐름 — 예시: 클로로퀸</h3>
+<p>원문 주장을 출발점으로 삼아 주치의 상담 직전까지 가는 재현 가능한 경로다. 각 단계의 프롬프트에는 제약조건(분홍)을 명시한다.</p>
+<div class="rail">
+  <div class="st" data-n="1"><b class="c-mech">기전 특정</b> — CQ의 GBM 관련 작용점을 1차 문헌으로 나열한다.
+    <div class="prompt">“클로로퀸이 교모세포종에서 작용하는 기전을 정리해줘. <span class="cn">[각 주장마다 PMID와 논문 제목, 세포주/동물/인간 구분 표기. 확인 안 되는 주장은 ‘미확인’으로.]</span>”</div></div>
+  <div class="st" data-n="2"><b class="c-evid">1차 근거 회수</b> — 원문이 인용한 두 시험의 원 논문을 직접 확인한다. 표본 수, 무작위 여부, 통계적 유의성을 확인한다.</div>
+  <div class="st" data-n="3"><b class="c-evid">후속 연구 추적</b> — 2006년 이후 시험(1b상, 진행 중인 2상)을 ClinicalTrials.gov에서 확인한다.
+    <div class="prompt">“NCT 번호 기준으로 클로로퀸 또는 하이드록시클로로퀸 + 테모졸로마이드 교모세포종 시험을 상태별로 표로. <span class="cn">[상태·단계·n·1차 평가변수·결과 게시 여부만. 추정 금지.]</span>”</div></div>
+  <div class="st" data-n="4"><b class="c-mech">개별화</b> — 내 종양의 MGMT, IDH, EGFRvIII 결과에 맞춰 근거가 적용되는지 따진다.</div>
+  <div class="st" data-n="5"><b class="c-limit">독성·상호작용</b> — 망막 독성, QT 연장, 항경련제와의 상호작용을 확인한다.</div>
+  <div class="st" data-n="6"><b class="c-case">임상 환원</b> — 위 결과를 주치의 질문 1–3개로 압축한다. 결정은 주치의가 한다.</div>
+</div>
+<div class="refs"><b>참고</b><br>
+· Briceño E 외, 〈Therapy of glioblastoma multiforme improved by the antimutagenic chloroquine〉, Neurosurg Focus 2003 — <a href="https://pubmed.ncbi.nlm.nih.gov/15727424/">링크</a><br>
+· Sotelo J 외, 〈Adding chloroquine to conventional treatment for glioblastoma multiforme: a randomized, double-blind, placebo-controlled trial〉, Ann Intern Med 2006 — <a href="https://pubmed.ncbi.nlm.nih.gov/16520474/">링크</a><br>
+· Compter I 외, 〈Chloroquine combined with concurrent radiotherapy and temozolomide for newly diagnosed glioblastoma: a phase IB trial〉, Autophagy 2021 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8496728">링크</a><br>
+· Weyerhäuser P 외, 〈Re-purposing Chloroquine for Glioblastoma: Potential Merits and Confounding Variables〉, Front Oncol 2018 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6120043">링크</a><br>
+· Verbaanderd C 외, 〈Repurposing Drugs in Oncology (ReDO)—chloroquine and hydroxychloroquine as anti-cancer agents〉, ecancer 2017 — <a href="https://ecancer.org/en/journal/article/781-repurposing-drugs-in-oncology-redo-chloroquine-and-hydroxychloroquine-as-anti-cancer-agents">링크</a><br>
+· 원문이 함께 인용한 링크(제목 미확인): <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10418453/">PMC10418453</a> (자가포식·CQ, Front Cell Dev Biol), <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3440646/">PMC3440646</a> (MGMT 고갈)
+</div>
+
+<h3>에반의 4제 (Care Oncology 프로토콜)와 METRICS</h3>
+<div class="tw"><table>
+<thead><tr><th>약물</th><th>원 적응증</th><th>제시되는 표적 기전 (가설)</th></tr></thead>
+<tbody>
+<tr><td>메트포르민 Metformin</td><td>제2형 당뇨</td><td>미토콘드리아 복합체 I 억제 → AMPK↑/mTOR↓</td></tr>
+<tr><td>아토르바스타틴 Atorvastatin</td><td>고지혈증</td><td>HMG-CoA 환원효소 → 메발론산 경로·프레닐화 억제</td></tr>
+<tr><td>메벤다졸 Mebendazole</td><td>구충</td><td>미세소관 중합 억제 → 유사분열 정지</td></tr>
+<tr><td>독시사이클린 Doxycycline</td><td>항생</td><td>미토콘드리아 리보솜 억제 · MMP 억제</td></tr>
+</tbody></table></div>
+<div class="ai"><span class="tag">AI 클로드 주석 · METRICS 상태 확인</span><br>
+METRICS(NCT02201381)는 환자가 비용을 부담한 <b>개방표지 · 비무작위 · 단일군</b> 실사용 연구다. 2019년 논문은 그 예비 후향 자료를 제시한 관점(Perspective) 논문이다. 원문 저자는 이 논문이 “동의서 문제로 철회되었다”고 썼다. 확인된 사실은 학술지가 <b>2023년 7월 31일 ‘우려 표명(Expression of Concern)’</b>을 게시하고 조사 중이라고 밝힌 데까지다. 그 뒤 정식으로 철회되었는지는 이번 조사에서 확인하지 못했다. 또한 단일군 연구를 외부 대조와 비교하면 불멸시간 편향(§07)에 특히 취약하다.</div>
+<div class="refs"><b>참고</b> · Agrawal S 외, 〈A New Method for Ethical and Efficient Evidence Generation for Off-Label Medication Use in Oncology (A Case Study in Glioblastoma)〉, Front Pharmacol 2019 — <a href="https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2019.00681/full">링크</a> · Frontiers Editorial Office, 〈Expression of Concern: …〉, Front Pharmacol 2023 — <a href="https://www.frontiersin.org/journals/pharmacology/articles/10.3389/fphar.2023.1264737/full">링크</a></div>
+</section>
+
+<!-- 06 -->
+<section class="reveal">
+<h2><span class="idx">06 / RECONSTRUCTION</span>공통분모 재구성 — 유료 구간 대체</h2>
+<div class="ai" style="margin-top:0"><span class="tag">AI 클로드 주석 · 이 절 전체</span><br>원문의 유료 구간(“윌리엄스와 거버의 공통 약물”)은 볼 수 없다. 대신 <b>거버 본인의 생존기</b>(virtualtrials.org)와 <b>윌리엄스의 치료 기록</b>(astrocytomaoptions 요약, Hope의 Williams 글)을 대조해 재구성했다. 에반 열은 이 원문 기준이다. 원문이 유료 구간에서 이와 다르게 정리했을 수 있다.</div>
+
+<div class="tw"><table>
+<thead><tr><th>약물 · 보충제</th><th style="color:var(--W)">윌리엄스 1995</th><th style="color:var(--G)">거버 2007</th><th style="color:var(--E)">에반 2019</th><th>표적 기전 (가설)</th><th>등급</th></tr></thead>
+<tbody>
+<tr><td><b>베라파밀</b> Verapamil</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">—</td><td>칼슘채널 차단 · P-gp 유출펌프 억제 → 화학요법 뇌·세포 내 농도↑</td><td><span class="g gD">D</span></td></tr>
+<tr><td><b>아스피린</b> Aspirin</td><td class="yes">✔</td><td class="yes">✔ 200 mg</td><td class="no">—</td><td>COX 억제 · 항혈소판 (목적: 타목시펜/베바시주맙 혈전 예방)</td><td><span class="g gD">D</span></td></tr>
+<tr><td><b>멜라토닌</b> Melatonin</td><td class="yes">✔</td><td class="yes">✔</td><td class="no">—</td><td>면역조절 · 항산화 · 일주기</td><td><span class="g gC">C</span></td></tr>
+<tr><td><b>버섯 추출물</b> PSK 등</td><td class="yes">✔ PSK</td><td class="yes">✔</td><td class="yes">✔ 운지버섯</td><td>다당류 면역조절</td><td><span class="g gD">D</span></td></tr>
+<tr><td><b>EGCG · 녹차</b></td><td class="yes">✔ (후기)</td><td class="yes">✔ 4 g + 2 L</td><td class="no">—</td><td>다중 키나아제 · 67LR · 항혈관신생</td><td><span class="g gD">D</span></td></tr>
+<tr><td><b>커큐민</b> Curcumin</td><td class="yes">✔ (후기)</td><td class="yes">✔ (식이)</td><td class="yes">✔</td><td>NF-κB · STAT3 억제</td><td><span class="g gD">D</span></td></tr>
+<tr><td>비타민 D3</td><td class="yes">✔ (후기)</td><td class="mid">△ 미확인</td><td class="yes">✔</td><td>VDR 매개 분화</td><td><span class="g gD">D</span></td></tr>
+<tr><td>타목시펜 Tamoxifen (고용량)</td><td class="yes">✔</td><td class="no">—</td><td class="no">—</td><td>PKC 억제</td><td><span class="g gC">C</span></td></tr>
+<tr><td>아큐탄 Accutane (13-cis RA)</td><td class="yes">✔</td><td class="no">—</td><td class="no">—</td><td>레티노이드 분화 유도</td><td><span class="g gC">C</span></td></tr>
+<tr><td>감마리놀렌산 GLA</td><td class="yes">✔</td><td class="no">—</td><td class="no">—</td><td>지질 과산화</td><td><span class="g gD">D</span></td></tr>
+<tr><td>클로로퀸 Chloroquine</td><td class="no">—</td><td class="yes">✔</td><td class="no">— (회피)</td><td>자가포식 차단 (§05)</td><td><span class="g gC">C</span></td></tr>
+<tr><td>셀레콕시브 Celecoxib</td><td class="no">—</td><td class="yes">✔</td><td class="no">—</td><td>COX-2 억제</td><td><span class="g gD">D</span></td></tr>
+<tr><td>메트로노믹 TMZ</td><td class="no">—</td><td class="yes">✔</td><td class="no">—</td><td>MGMT 고갈 · 항혈관신생 (비메틸화 근거)</td><td><span class="g gC">C</span></td></tr>
+<tr><td>베바시주맙 Bevacizumab</td><td class="no">—</td><td class="yes">✔ 초기부터</td><td class="yes">✔</td><td>VEGF-A 차단</td><td><span class="g gB">B</span></td></tr>
+<tr><td>TTF Optune</td><td class="no">—</td><td class="no">—</td><td class="yes">✔ ≈20 h</td><td>유사분열 방추체 교란</td><td><span class="g gA">A</span></td></tr>
+<tr><td>4제 (Care Oncology)</td><td class="no">—</td><td class="no">—</td><td class="yes">✔</td><td>대사 표적 (§05)</td><td><span class="g gD">D</span></td></tr>
+</tbody></table></div>
+<p style="font-size:.82rem;color:var(--sub)">✔ 출처에서 확인 · △ 출처에서 확인 안 됨 · — 출처에 언급 없음 (사용하지 않았다는 증거는 아님) · “후기” = 1995년 초기 칵테일 이후 추가된 것으로 보이는 항목</p>
+
+<figure>
+<svg viewBox="0 0 360 472" role="img" aria-labelledby="st5 sd5"><title id="st5">공통 6개 약물의 기전 분류</title><desc id="sd5">화학요법 증폭(베라파밀), 염증·혈전(아스피린, 커큐민), 면역(멜라토닌, 버섯), 다중표적(EGCG)</desc><style>.bt{font:600 13px "Noto Sans KR",sans-serif;fill:#E6EDF3}.bs{font:400 11.5px "Noto Sans KR",sans-serif;fill:#9AA8B5}.hd{font:600 11px "JetBrains Mono",monospace}</style><rect class="bgpanel" x="0" y="0" width="360" height="472" fill="#161D24"/><text x="180" y="22" text-anchor="middle" class="hd" style="fill:#E6EDF3">윌리엄스 ∩ 거버 = 6 · 기전 클래스</text><rect x="10" y="36" width="340" height="96" rx="10" fill="#4FD1C5" fill-opacity=".08" stroke="#4FD1C5"/><text x="24" y="58" class="hd" style="fill:#4FD1C5">A · 화학요법 증폭</text><text x="24" y="82" class="bt">베라파밀</text><text x="24" y="102" class="bs">유출펌프(P-gp) 억제 → 세포 내 약물 축적</text><text x="24" y="120" class="bs">윌리엄스: BCNU·PCV 주기에 맞춰 사용</text><rect x="10" y="144" width="340" height="96" rx="10" fill="#F6AD55" fill-opacity=".08" stroke="#F6AD55"/><text x="24" y="166" class="hd" style="fill:#F6AD55">B · 염증 · 혈전 축</text><text x="24" y="190" class="bt">아스피린 · 커큐민</text><text x="24" y="210" class="bs">COX / NF-κB 억제</text><text x="24" y="228" class="bs">동반 약물(타목시펜·BEV) 혈전 위험 관리</text><rect x="10" y="252" width="340" height="96" rx="10" fill="#B794F4" fill-opacity=".08" stroke="#B794F4"/><text x="24" y="274" class="hd" style="fill:#B794F4">C · 면역 · 신경내분비</text><text x="24" y="298" class="bt">멜라토닌 · 버섯 추출물</text><text x="24" y="318" class="bs">면역조절 · 다당류(PSK)</text><text x="24" y="336" class="bs">근거는 주로 소규모 시험·전임상</text><rect x="10" y="360" width="340" height="96" rx="10" fill="#F687B3" fill-opacity=".08" stroke="#F687B3"/><text x="24" y="382" class="hd" style="fill:#F687B3">D · 다중표적 식물성분</text><text x="24" y="406" class="bt">EGCG · 녹차</text><text x="24" y="426" class="bs">키나아제·혈관신생 억제 (전임상)</text><text x="24" y="444" class="bs">⚠ 고용량 간독성 (§08)</text></svg>
+<figcaption>공통 6가지 가운데 GBM에서 독자적인 생존 이득이 RCT로 입증된 것은 없다. 공통분모는 개별 약물이 아니라 <b>“표준치료 + 내성 우회로 차단 + 염증·면역 보조”</b>라는 설계 원칙이다.</figcaption>
+</figure>
+<div class="panel k-limit"><div class="lab c-limit">해석의 경계</div>
+<ul style="margin:.4em 0 0">
+  <li><b>비독립성.</b> 거버는 윌리엄스의 책과 연례 업데이트를 읽고 이메일·전화로 교류하며 그의 전략을 따랐다. 공통 항목은 “두 개의 독립 증거”가 아니라 “한 전략의 두 번 적용”이다.</li>
+  <li><b>시간차.</b> 윌리엄스의 1995년 핵심 칵테일은 타목시펜, 베라파밀, 아큐탄, 멜라토닌, PSK, GLA, 아스피린이다. EGCG, 커큐민, D3는 이후 문헌에 근거해 추가된 것으로 보인다. 1995년에 생존을 결정지은 시기에 이들이 있었는지는 불분명하다.</li>
+  <li><b>표준치료 차이.</b> 윌리엄스는 TMZ 이전 시대(BCNU, PCV)였고, 거버는 TMZ·베바시주맙 시대였다. 백본이 다르면 “공통 보조제”의 기여를 비교할 수 없다.</li>
+  <li><b>원문과 1차 출처의 차이.</b> 원문은 거버의 목록을 “약 20개”로, 거버 본인은 “60여 개에서 27개로 압축”으로 쓴다. 이 차이는 시기 차이로 보인다.</li>
+</ul></div>
+<div class="refs"><b>참고</b><br>
+· Rich Gerber, 〈Brain Tumor Survivor Stories〉 (본인 서술, 2021-07 업데이트), virtualtrials.org — <a href="https://virtualtrials.org/surviverich.cfm">링크</a><br>
+· 〈Ben Williams — cocktail profile〉 (astrocytomaoptions.com 요약 인용), btcocktails — <a href="https://btcocktails.blogspot.com/2015/08/ben-williams-cocktail-profile.html">링크</a><br>
+· Justus R. Hope, 〈Ben Williams Survives GBM for 30 years〉 — <a href="https://justusrhope.substack.com/p/ben-williams-survives-gbm-for-30">링크</a><br>
+· Williams BA, Western S, 〈Treatment Options for Glioblastoma and other Gliomas〉 (2017 업데이트) — <a href="https://virtualtrials.com/pdf2017/treatment_options_gbm_2017.pdf">링크</a>
+</div>
+</section>
+
+<!-- 07 -->
+<section class="reveal">
+<h2><span class="idx">07 / EVIDENCE</span>근거 등급과 흔한 함정</h2>
+<div class="tw"><table>
+<thead><tr><th>등급</th><th>정의</th><th>이 글의 해당 개입</th></tr></thead>
+<tbody>
+<tr><td><span class="g gA">A</span></td><td>3상 RCT · 메타분석에서 OS 이득</td><td>RT + TMZ (Stupp 2005) · TTF (EF-14)</td></tr>
+<tr><td><span class="g gB">B</span></td><td>RCT에서 대리지표(PFS) 이득, OS 이득 없음</td><td>베바시주맙 1차 치료 (AVAglio, RTOG 0825: PFS↑, OS 차이 없음)</td></tr>
+<tr><td><span class="g gC">C</span></td><td>소규모 RCT · 2상 · 유의하지 않거나 재현 안 됨</td><td>클로로퀸 · 메트로노믹 TMZ · 고용량 타목시펜 · 아큐탄 · 멜라토닌</td></tr>
+<tr><td><span class="g gD">D</span></td><td>전임상 · 단일군 관찰 · 증례</td><td>4제(METRICS) · 베라파밀 · 셀레콕시브 · EGCG · 커큐민 · PSK · GLA · 장기 생존 증례 전체</td></tr>
+</tbody></table></div>
+
+<div class="grid2">
+  <div class="panel k-limit"><div class="lab c-limit">함정 1 · 생존자 편향</div><p style="margin:.3em 0 0">같은 칵테일을 쓰고 일찍 사망한 환자는 다큐멘터리나 블로그에 남지 않는다. 분모 없이 분자만 보는 셈이다.</p></div>
+  <div class="panel k-limit"><div class="lab c-limit">함정 2 · 불멸시간 편향</div><p style="margin:.3em 0 0">“칵테일을 시작할 때까지 살아 있었던” 기간이 처치군에 귀속된다. METRICS 같은 단일군 연구를 외부 대조와 비교할 때 생존이 과대평가된다.</p></div>
+  <div class="panel k-limit"><div class="lab c-limit">함정 3 · 진단 분류의 이동</div><p style="margin:.3em 0 0">1999·2007년 진단에는 IDH 상태가 반영되지 않았다. 지금 기준이라면 IDH 변이형 일부는 ‘교모세포종’이 아닌 성상세포종 4등급으로 재분류되어 예후가 다르다. 딜-분디의 초진은 3등급이었다. <span style="color:var(--ai)">(AI 클로드 주석)</span></p></div>
+  <div class="panel k-limit"><div class="lab c-limit">함정 4 · 병용의 비분리성</div><p style="margin:.3em 0 0">20여 개를 동시에 쓰면 어떤 약이 기여했는지, 어떤 약이 해를 끼쳤는지 분리할 수 없다. 장기 생존은 칵테일이 “전체로서” 해롭지 않았다는 약한 정보만 준다.</p></div>
+</div>
+<div class="refs"><b>참고</b> · Chinot OL 외, 〈Bevacizumab plus radiotherapy–temozolomide for newly diagnosed glioblastoma〉 (AVAglio), NEJM 2014 — <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1308345">링크</a> · Gilbert MR 외, 〈A randomized trial of bevacizumab for newly diagnosed glioblastoma〉 (RTOG 0825), NEJM 2014 — <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1308573">링크</a></div>
+</section>
+
+<!-- 08 -->
+<section class="reveal">
+<h2><span class="idx">08 / SAFETY</span>안전 플래그</h2>
+<div class="panel k-limit">
+<div class="lab c-limit">원문 수치는 개인 기록이며 용량 지침이 아님</div>
+<ul style="margin:.4em 0 0">
+  <li><b>EGCG 4 g/일 (거버).</b> 유럽식품안전청(EFSA)은 녹차 카테킨 보충제를 하루 800 mg 이상 섭취했을 때 간 수치 상승을 보고했다. 4 g은 그 다섯 배다.</li>
+  <li><b>클로로퀸·하이드록시클로로퀸.</b> 장기 복용 시 망막 독성이 있어 안과 감시가 필요하다. QT 연장 약물과 병용할 때도 주의해야 한다.</li>
+  <li><b>베라파밀.</b> 저혈압, 서맥이 생길 수 있다. CYP3A4 억제제라 덱사메타손이나 일부 항경련제와 상호작용한다.</li>
+  <li><b>아스피린·셀레콕시브 + 베바시주맙.</b> 출혈, 위장관 합병증, 상처 치유 지연이 겹칠 수 있다.</li>
+  <li><b>메트로노믹 TMZ.</b> 매일 복용하면 림프구가 장기간 감소한다. 기회감염(PCP) 예방 여부를 주치의와 확인해야 한다.</li>
+  <li><b>효소 유도 항경련제.</b> 카르바마제핀, 페니토인 등은 여러 병용 약물의 농도를 떨어뜨린다.</li>
+</ul></div>
+<div class="refs"><b>참고</b> · EFSA ANS Panel, 〈Scientific opinion on the safety of green tea catechins〉, EFSA Journal 2018 — <a href="https://www.efsa.europa.eu/en/efsajournal/pub/5239">링크</a></div>
+</section>
+
+<!-- 09 -->
+<section class="reveal">
+<h2><span class="idx">09 / AUTHOR'S CLAIMS</span>저자의 주장과 쟁점</h2>
+<p>원문 §7–§9는 GBM 사례와 별개로, 근거 생태계 자체에 대한 저자의 비판이다. 원문의 주장은 그대로 전달하고, 사실 확인 결과는 오른쪽 열에 둔다.</p>
+<div class="tw"><table>
+<thead><tr><th>원문 주장</th><th>저자의 근거</th><th>확인 결과 · AI 클로드 주석</th></tr></thead>
+<tbody>
+<tr><td>2005년 이전 연구가 2020년 이후 연구보다 신뢰할 만하다</td><td>2020년 이후 산업계 영향력이 커졌다는 판단</td><td>저자의 해석. 시기만으로 신뢰도를 일반화할 근거는 제시되지 않았다.</td></tr>
+<tr><td>METRICS는 “동의서 부족”으로 철회되었다</td><td>철회 사실을 언급</td><td><b>2023-07 우려 표명(EoC)까지 확인.</b> 이후 철회 여부는 확인하지 못했다.</td></tr>
+<tr><td>‘코리 척도(Kory Scale)’로 측정한 용도변경 칵테일 반대 = 25점</td><td>언론 공격, 캠페인, 기관 경고, 세관 조치, 철회를 합산</td><td>Pierre Kory가 제안한 척도로, 외부 검증은 없다. 반대 강도를 측정할 뿐 약효를 측정하지는 않는다.</td></tr>
+<tr><td>인도는 2021년 4월 이버멕틴을 국가 프로토콜에 넣은 뒤 결과가 극적으로 개선되었다</td><td>후속 보도, 저자의 책 〈Ivermectin for the World〉</td><td>코로나에 관한 생태학적 관찰이다. 같은 시기 대규모 RCT(TOGETHER, ACTIV-6 등)는 코로나에서 이득을 보이지 않았다는 것이 주류 평가다. <b>GBM 근거와는 무관하다.</b></td></tr>
+</tbody></table></div>
+</section>
+
+<!-- 10 -->
+<section class="reveal">
+<h2><span class="idx">10 / LIMITS</span>이 분석이 대체하지 못하는 것</h2>
+<div class="panel k-limit"><ul style="margin:0">
+  <li>유료 구간의 실제 내용, 즉 저자가 꼽은 공통 목록과 거버의 전체 목록과 용량.</li>
+  <li>세 사례의 의무기록(병리, IDH, 영상, 치료 일자). 모든 사례 정보는 2차 서술이다.</li>
+  <li>개별 환자에게 어떤 조합이 유익한지에 대한 판단. 이것은 종양의 분자 특성, 동반 약물, 장기 기능을 아는 주치의만 할 수 있다.</li>
+  <li>근거등급 판정 자체. AI가 공개 자료로 매긴 등급이며, 이후 새 시험 결과로 바뀔 수 있다.</li>
+</ul></div>
+</section>
+
+<div class="close reveal">
+  공통분모는 약물의 이름이 아니라 <b>설계</b>에 있다. 표준치료를 백본으로 두고, 종양이 쓰는 우회로를 가설로 세운다. 그리고 그 가설을 의료진과 협상해 관찰 가능한 방식으로 더하는 것이다. 원리를 알고, 가능성을 이해하고, 근거 위에서 시도하자. 복용·병용·중단의 최종 결정은 언제나 주치의의 몫이다.
+</div>
+
+<footer>
+  원문: <a href="https://justusrhope.substack.com/p/a-story-of-gbm-survivors-reasons">Justus R. Hope, 〈A Story of GBM Survivors: Reasons for Hope〉</a> (2026-11-17, 부분 유료) · 쉬운 버전: <a href="gbm-survivors-hope-community-20261117.html">gbm-survivors-hope-community-20261117.html</a><br>
+  분석·정리: 꿈많은사람2 · 히포크라테스의 친구들 · 약물명은 모두 예시(illustrative)이며 치료 권고가 아님 · 의학적 조언이 아님
+</footer>
+</main>
+<script>
+(function(){
+  document.querySelectorAll('.tw table').forEach(function(t){var hs=[].map.call(t.querySelectorAll('thead th'),function(h){return h.textContent.trim()});t.querySelectorAll('tbody tr').forEach(function(r){[].forEach.call(r.children,function(c,i){c.setAttribute('data-label',hs[i]||'')})})});
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  window.addEventListener('beforeprint',function(){els.forEach(function(e){e.classList.add('on')})});
+})();
+</script>
+</body>
+</html>
