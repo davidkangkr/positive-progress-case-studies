@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조 티펜스(Joe Tippens) 라이브 Q&amp;A 정리 — 2026년 11월 18일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf7ef; --card:#ffffff; --ink:#2a2622; --muted:#6b635a; --line:#e4dccd;
+  --joe:#1f5f8b; --joe-bg:#e8f1f8;
+  --green:#2f7a4f; --green-bg:#e9f5ee;
+  --amber:#a8650b; --amber-bg:#fdf3e1;
+  --rose:#a8323e; --rose-bg:#fbeaec;
+  --violet:#5b4a9b; --violet-bg:#efecf8;
+  --ai:#4a4a4a; --ai-bg:#f1f1ee;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;font-size:18.5px;line-height:1.85;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.4;margin:0}
+h2{font-size:1.5rem;margin:0 0 .8rem}
+h3{font-size:1.15rem;margin:0 0 .5rem}
+p{margin:.6rem 0}
+a{color:var(--joe)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.en{font-size:.85em;color:var(--muted);font-weight:400}
+
+/* hero */
+header.hero{padding:48px 0 28px;border-bottom:2px solid var(--line);margin-bottom:28px}
+.kicker{display:inline-block;font-size:.85rem;font-weight:700;color:var(--joe);background:var(--joe-bg);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.hero h1{font-size:1.9rem;font-weight:900}
+.hero .sub{color:var(--muted);margin-top:10px;font-size:1rem}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.95rem;margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.meta b{color:var(--muted);font-weight:500}
+.btn{display:inline-block;margin-top:16px;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px}
+
+/* toc */
+nav.toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:24px 0}
+nav.toc ol{margin:6px 0 0;padding-left:1.3em;font-size:.98rem}
+nav.toc a{text-decoration:none}
+
+section{margin:44px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin:14px 0}
+.box{border-radius:14px;padding:16px 20px;margin:14px 0;border-left:6px solid}
+.box.safe{background:var(--rose-bg);border-color:var(--rose)}
+.box.joe{background:var(--joe-bg);border-color:var(--joe)}
+.box.green{background:var(--green-bg);border-color:var(--green)}
+.box.amber{background:var(--amber-bg);border-color:var(--amber)}
+.box .label{font-weight:900;font-size:.9rem;letter-spacing:.02em;display:block;margin-bottom:4px}
+.box.safe .label{color:var(--rose)} .box.joe .label{color:var(--joe)} .box.green .label{color:var(--green)} .box.amber .label{color:var(--amber)}
+
+/* AI note */
+.ai{background:var(--ai-bg);border:1.5px dashed #9a958c;border-radius:14px;padding:16px 20px;margin:16px 0;font-size:.97rem}
+.ai::before{content:"🤖 AI 클로드 주석";display:block;font-weight:900;color:var(--ai);font-size:.88rem;margin-bottom:6px}
+
+/* key messages */
+.keys{counter-reset:k;list-style:none;padding:0;margin:0}
+.keys li{counter-increment:k;position:relative;padding:14px 16px 14px 62px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0}
+.keys li::before{content:counter(k);position:absolute;left:16px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--joe);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1rem}
+
+/* protocol cards */
+.proto{display:grid;gap:12px}
+.pitem{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-top:5px solid var(--joe)}
+.pitem.p1{border-top-color:#2f7a4f}.pitem.p2{border-top-color:#a8650b}.pitem.p3{border-top-color:#5b4a9b}.pitem.p4{border-top-color:#a8323e}
+.pitem h3{font-size:1.08rem}
+.pitem .dose{font-weight:700;margin:.3rem 0}
+.pitem .what{font-size:.93rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--amber-bg);color:var(--amber);margin-left:4px;vertical-align:middle}
+
+figure{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:.88rem;color:var(--muted);margin-top:8px;text-align:center}
+
+/* Q&A accordion */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:16px 50px 16px 18px;font-weight:700;position:relative;font-size:1.03rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:18px;top:14px;font-size:1.3rem;color:var(--joe)}
+details[open] summary::after{content:"－"}
+details .inner{padding:0 18px 16px;border-top:1px solid var(--line)}
+.qa{padding:12px 0;border-bottom:1px dashed var(--line)}
+.qa:last-child{border-bottom:0}
+.q{font-size:.96rem;color:var(--muted)}
+.q::before{content:"Q. ";font-weight:900;color:var(--amber)}
+.a{margin-top:4px}
+.a::before{content:"A. ";font-weight:900;color:var(--joe)}
+.ts{font-size:.8rem;font-weight:700;text-decoration:none;background:var(--joe-bg);padding:1px 8px;border-radius:999px;margin-left:6px;white-space:nowrap}
+
+/* question copy boxes */
+.ask{background:#fffdf7;border:2px solid var(--amber);border-radius:14px;padding:14px 18px;margin:10px 0;font-family:"Noto Serif KR",serif;position:relative}
+.ask::before{content:"“";position:absolute;left:8px;top:-6px;font-size:2.4rem;color:var(--amber);line-height:1}
+.ask p{margin:0 0 0 14px}
+
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f4efe4}
+.grade{font-weight:900;text-align:center}
+
+.src li{margin:8px 0;font-size:.93rem}
+footer{border-top:2px solid var(--line);padding-top:20px;margin-top:50px;font-size:.92rem;color:var(--muted)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:520px){body{font-size:18px}.hero h1{font-size:1.55rem}h2{font-size:1.32rem}.wrap{padding:0 15px 70px}}
+@media print{
+  body{background:#fff;font-size:12pt}
+  .reveal{opacity:1!important;transform:none!important}
+  details{break-inside:avoid}
+  details:not([open]) .inner{display:block}
+  details .inner{display:block}
+  summary::after{content:""}
+  .btn,nav.toc{display:none}
+  a{color:inherit}
+  figure,.card,.box,.ai{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="kicker">해외 사례 분석집 · 라이브 Q&amp;A 정리</span>
+  <h1>조 티펜스(Joe Tippens) 라이브 Q&amp;A<br>— 시청자 질문 40여 개에 답하다</h1>
+  <p class="sub">펜벤다졸(Fenbendazole) 프로토콜의 창시자로 알려진 조 티펜스가 66분 동안 직접 답한 내용을, 주제별로 나누고 그림으로 정리했습니다.</p>
+  <div class="meta">
+    <b>방송일</b><span>2026년 11월 18일(수) 미국 시간 · 한국/호주 기준 11월 19일</span>
+    <b>길이</b><span>약 66분</span>
+    <b>채널</b><span>Get Busy Living (YouTube)</span>
+    <b>출연</b><span>Joe Tippens(답변), Josh Bellow·Adam Payne(진행, Ultra Botanica 측)</span>
+    <b>정리</b><span>꿈많은사람2 · 히포크라테스의 친구들</span>
+  </div>
+  <a class="btn" href="https://youtu.be/_nmv9XZdWvo" target="_blank" rel="noopener">▶ 원본 영상 보기</a>
+</header>
+
+<div class="box safe reveal">
+  <span class="label">⚠ 먼저 읽어 주세요</span>
+  이 문서는 영상에서 <b>조 티펜스가 한 말을 있는 그대로 소개</b>하는 자료입니다. 치료 권고가 아닙니다.
+  방송 첫머리에서 진행자 스스로도 <b>"여기 있는 누구도 의사가 아니며, 의학적 조언을 하지 않는다. 자신의 주치의와 상의하라"</b>고 밝혔습니다.
+  약을 먹을지·함께 쓸지·끊을지의 <b>최종 결정은 반드시 주치의</b>의 몫입니다.
+  이 글은 "결정"이 아니라, 주치의에게 가져갈 <b>"더 좋은 질문"</b>을 준비하는 데 쓰시길 바랍니다.
+</div>
+
+<nav class="toc" aria-label="목차">
+  <b>목차</b>
+  <ol>
+    <li><a href="#keys">한눈에 보는 핵심 메시지 6가지</a></li>
+    <li><a href="#protocol">조 티펜스의 기본 프로토콜 (블로그 원문 기록)</a></li>
+    <li><a href="#flow">"내 상황에선 어떻게?" — 상황별 흐름도</a></li>
+    <li><a href="#dose">영상에 나온 용량들, 한 그래프로 보기</a></li>
+    <li><a href="#mech">조 티펜스가 설명한 작용 원리 3가지</a></li>
+    <li><a href="#time">"언제쯤 효과가?" — 기다림의 시간표</a></li>
+    <li><a href="#qa">주제별 Q&amp;A 전체 정리</a></li>
+    <li><a href="#critical">AI 클로드 주석 — 비판적으로 함께 읽기</a></li>
+    <li><a href="#ask">주치의에게 가져갈 질문</a></li>
+    <li><a href="#src">출처</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<section id="keys" class="reveal">
+  <h2>1. 한눈에 보는 핵심 메시지 6가지</h2>
+  <ol class="keys">
+    <li><b>"주기(cycling)는 옛날 방식"</b> — 암이 활동 중이면 쉬는 날 없이 <b>주 7일</b>. 예전에 알려진 "3일 복용·4일 휴약"은 이제 권하지 않는다고 했습니다.</li>
+    <li><b>관해(NED) 후·예방 목적이면 "주 3일"</b> — 블로그에 '예방(prophylactic) 프로토콜'이 새로 상세히 올라갔다고 반복 안내했습니다. 다만 관해 후에도 <b>1~2년은 정규 프로토콜 유지</b>를 선호한다고 했습니다.</li>
+    <li><b>용량 범위는 "하루 222~444mg", 체중과 무관</b> — 1,000mg이나 888mg은 "너무 많다"고 했습니다.</li>
+    <li><b>제품은 머크(Merck) 제품만</b> — Panacur·Safeguard(모두 머크 계열). 캡슐·정제형은 제조시설 인증(cGMP)을 확인할 수 없어 권하지 않는다고 했습니다.</li>
+    <li><b>표준치료와 "동시에, 병행해서"</b> — 항암·방사선을 거부하라는 메시지가 아니었습니다. 글리슨 10점 전립선암에는 "나라면 표적 방사선을 최대한 빨리"라고 답했습니다.</li>
+    <li><b>마음가짐</b> — "내 회복이 프로토콜 덕인지, 끝없이 긍정적이었던 덕인지 모르겠다. 분명한 건 둘 다였다는 것."</li>
+  </ol>
+</section>
+
+<!-- 2 -->
+<section id="protocol" class="reveal">
+  <h2>2. 조 티펜스의 기본 프로토콜 <span class="en">(블로그 원문 기록)</span></h2>
+  <p>영상 속 답변은 모두 이 "기본 프로토콜"을 전제로 합니다. 아래는 조 티펜스의 블로그 <a href="https://mycancerstory.rocks/81-2/" target="_blank" rel="noopener">"The Protocol"</a> 페이지(2021년 10월 게시, 2025년 12월 갱신)에 <b>적혀 있는 내용을 옮겨 적은 기록</b>입니다.</p>
+  <div class="box amber"><span class="label">기록일 뿐, 복용 지시가 아닙니다</span>숫자는 "그가 무엇을 말했는지" 이해하기 위한 원문 기록입니다. 실제 적용 여부와 용량은 주치의와 결정하세요.</div>
+
+  <div class="proto">
+    <div class="pitem">
+      <h3>펜벤다졸 <span class="en">Fenbendazole</span> <span class="tag">핵심</span></h3>
+      <p class="dose">블로그 표기: 하루 222mg (Panacur™ 또는 Safeguard™ 1g), 매일</p>
+      <p class="what">액상은 대개 100mg/ml → 2.2ml로 안내. 휴약 주기 표기 없음. 영상에서는 범위를 222~444mg으로 말함.</p>
+    </div>
+    <div class="pitem p1">
+      <h3>Pathway 1™ <span class="en">CBD 팅크처</span></h3>
+      <p class="dose">블로그 표기: 체중에 따라 2~4ml, 하루 2회</p>
+      <p class="what">대마(hemp) 추출물, CBGa, 유향(Frankincense) 오일, C60 운반체</p>
+    </div>
+    <div class="pitem p2">
+      <h3>Pathway 2™ <span class="en">커큐민 Curcumin + 퀘르세틴 Quercetin</span></h3>
+      <p class="dose">블로그 표기: 3캡슐, 하루 2회 — <b>항암(chemo) 중이 아닐 때만</b></p>
+      <p class="what">커큐민 300mg, 퀘르세틴 200mg, 유향 분말 100mg. 영상: 항암 전날·당일·다음날은 쉬라고 안내. 내년 1분기 고농도 리뉴얼로 "1캡슐 하루 2회"로 줄일 계획.</p>
+    </div>
+    <div class="pitem p3">
+      <h3>Pathway 3™ <span class="en">베르베린 Berberine</span></h3>
+      <p class="dose">블로그 표기: 식사 때마다 — 가벼운 식사 1캡슐, 무거운 식사 2캡슐</p>
+      <p class="what">"암의 당(糖) 공급을 끊는" 목적. 메트포르민(Metformin)과 비슷한 작용이라고 설명.</p>
+    </div>
+    <div class="pitem p4">
+      <h3>Pathway 4™ <span class="en">EGCG · 레스베라트롤 Resveratrol · 피세틴 Fisetin · 베타글루칸 Beta-glucan</span></h3>
+      <p class="dose">블로그 표기: 2캡슐, 하루 2회</p>
+      <p class="what">가장 최근에 추가된 제품.</p>
+    </div>
+  </div>
+
+  <div class="ai">
+    <p><b>"222mg"과 "1g"은 모순이 아닙니다.</b> Panacur·Safeguard 과립은 펜벤다졸 함량이 22.2%라서, 과립 1g 안에 펜벤다졸 약 222mg이 들어 있습니다. "1g"은 <i>제품 무게</i>, "222mg"은 <i>약 성분량</i>입니다. 영상의 "444mg"은 이것의 두 배입니다.</p>
+    <p><b>Pathway 제품은 Ultra Botanica의 "ONCO ADJUNCT™" 제품군</b>이고, 이번 방송의 두 진행자는 그 회사 쪽 사람입니다(방송 중 "여기 Ultra Botanica로 전화하시면"이라고 말함). 조 티펜스는 블로그에서 이 회사로부터 금전적 보상을 받지 않고 주식도 없다고 밝히고 있습니다. 독자는 이 관계를 알고 읽으시는 게 좋습니다.</p>
+    <p>블로그의 Pathway 효능 설명(흡수율 6배 등)에는 인용된 연구가 없습니다. 또 이 페이지는 의사 상담, 약물 상호작용, 부작용을 따로 다루지 않습니다.</p>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="flow" class="reveal">
+  <h2>3. "내 상황에선 어떻게?" — 상황별 흐름도</h2>
+  <p>여러 질문에 대한 조 티펜스의 답을 이어 붙이면, 그가 머릿속에 가지고 있는 판단 순서가 보입니다. 아래 흐름도는 <b>그의 발언을 정리한 것</b>이지 권고가 아닙니다.</p>
+  <figure>
+  <svg viewBox="0 0 360 980" role="img" aria-labelledby="flowT">
+    <title id="flowT">조 티펜스가 말한 상황별 펜벤다졸 복용 흐름도</title>
+    <defs>
+      <marker id="ar" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b635a"/></marker>
+    </defs>
+    <style>
+      .t{font:500 13px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .tb{font:700 14px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .tw{font:700 14px "Noto Sans KR",sans-serif;fill:#fff}
+      .ln{stroke:#6b635a;stroke-width:2;fill:none;marker-end:url(#ar)}
+    </style>
+    <!-- start -->
+    <rect x="80" y="10" width="200" height="44" rx="22" fill="#1f5f8b"/>
+    <text x="180" y="38" text-anchor="middle" class="tw">지금 내 상황은?</text>
+    <path d="M180 54 V78" class="ln"/>
+
+    <!-- Q1 -->
+    <rect x="40" y="82" width="280" height="50" rx="10" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <text x="180" y="112" text-anchor="middle" class="tb">암 진단을 받은 적이 있나요?</text>
+    <path d="M110 132 V158" class="ln"/><text x="62" y="150" class="t">아니오</text>
+    <path d="M250 132 V158" class="ln"/><text x="258" y="150" class="t">예</text>
+
+    <rect x="10" y="162" width="150" height="96" rx="10" fill="#e9f5ee" stroke="#2f7a4f" stroke-width="2"/>
+    <text x="85" y="186" text-anchor="middle" class="tb">예방 목적</text>
+    <text x="85" y="210" text-anchor="middle" class="t">펜벤 주 3일,</text>
+    <text x="85" y="230" text-anchor="middle" class="t">기한 없이</text>
+    <text x="85" y="250" text-anchor="middle" class="t" style="font-size:11px">"한 달 쉬고 한 달" 불필요</text>
+
+    <rect x="185" y="162" width="165" height="50" rx="10" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <text x="267" y="185" text-anchor="middle" class="tb">현재 암이</text>
+    <text x="267" y="203" text-anchor="middle" class="tb">활동 중인가요?</text>
+    <path d="M267 212 V236" class="ln"/><text x="274" y="230" class="t">예</text><text x="267" y="276" text-anchor="middle" class="t" style="font-size:11px;fill:#2f7a4f">아니오 → 아래 '관해 유지'로</text>
+
+    <!-- active branch -->
+    <rect x="40" y="290" width="280" height="50" rx="10" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <text x="180" y="320" text-anchor="middle" class="tb">"예" — 지금 항암(chemo) 중인가요?</text>
+    <path d="M267 236 V246 H180 V286" class="ln"/>
+    <path d="M110 340 V366" class="ln"/><text x="62" y="358" class="t">아니오</text>
+    <path d="M250 340 V366" class="ln"/><text x="258" y="358" class="t">예</text>
+
+    <rect x="10" y="370" width="160" height="118" rx="10" fill="#e8f1f8" stroke="#1f5f8b" stroke-width="2"/>
+    <text x="90" y="394" text-anchor="middle" class="tb">정규 프로토콜</text>
+    <text x="90" y="418" text-anchor="middle" class="t">펜벤 주 7일</text>
+    <text x="90" y="438" text-anchor="middle" class="t">(222~444mg)</text>
+    <text x="90" y="458" text-anchor="middle" class="t">+ Pathway 1~4</text>
+    <text x="90" y="478" text-anchor="middle" class="t" style="font-size:11px">병기 미확정이면 4기로 가정</text>
+
+    <rect x="190" y="370" width="160" height="118" rx="10" fill="#fbeaec" stroke="#a8323e" stroke-width="2"/>
+    <text x="270" y="394" text-anchor="middle" class="tb">항암 병행</text>
+    <text x="270" y="418" text-anchor="middle" class="t">펜벤은 계속</text>
+    <text x="270" y="438" text-anchor="middle" class="t">Pathway 2는</text>
+    <text x="270" y="458" text-anchor="middle" class="t">항암 전날·당일·</text>
+    <text x="270" y="478" text-anchor="middle" class="t">다음날 쉬기</text>
+
+    <!-- surgery -->
+    <path d="M180 488 V516" class="ln"/>
+    <rect x="40" y="520" width="280" height="50" rx="10" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <text x="180" y="550" text-anchor="middle" class="tb">수술로 잠시 중단했었나요?</text>
+    <path d="M180 570 V596" class="ln"/><text x="188" y="588" class="t">예</text>
+    <rect x="40" y="600" width="280" height="70" rx="10" fill="#e8f1f8" stroke="#1f5f8b" stroke-width="2"/>
+    <text x="180" y="626" text-anchor="middle" class="tb">수술 후 재개</text>
+    <text x="180" y="650" text-anchor="middle" class="t">주 3일로 시작 → 잘 맞으면 주 7일로</text>
+
+    <!-- remission -->
+    <path d="M180 670 V698" class="ln"/>
+    <rect x="40" y="702" width="280" height="50" rx="10" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <text x="180" y="732" text-anchor="middle" class="tb">"모두 깨끗(NED)" 판정을 받았나요?</text>
+    <path d="M180 752 V778" class="ln"/><text x="188" y="770" class="t">예</text>
+    <rect x="40" y="782" width="280" height="82" rx="10" fill="#e9f5ee" stroke="#2f7a4f" stroke-width="2"/>
+    <text x="180" y="808" text-anchor="middle" class="tb">관해 유지</text>
+    <text x="180" y="832" text-anchor="middle" class="t">최소 1~2년은 정규 프로토콜 유지</text>
+    <text x="180" y="852" text-anchor="middle" class="t">그 뒤 예방 프로토콜(펜벤 주 3일)</text>
+
+    <rect x="20" y="886" width="320" height="80" rx="10" fill="#efecf8" stroke="#5b4a9b" stroke-width="2"/>
+    <text x="180" y="910" text-anchor="middle" class="tb">예외: 이렇게 답한 경우도</text>
+    <text x="180" y="934" text-anchor="middle" class="t">· 혈액암(다발골수종)은 재발 자료 부족 → 계속 유지</text>
+    <text x="180" y="954" text-anchor="middle" class="t">· 깨끗↔재발 반복 → 주 7일, 기한 없이</text>
+  </svg>
+  <figcaption>그림 1. 여러 답변을 이어 붙인 조 티펜스의 판단 순서 (발언 정리 · 권고 아님)</figcaption>
+  </figure>
+  <div class="ai">"병기가 확정되지 않았으면 4기로 가정하라, 그렇게 해서 손해볼 위험은 없다"는 말은 이 흐름도의 출발점입니다. 하지만 비용, 다른 약과의 상호작용, 하루 복용 알약 수, 간 부담처럼 <b>"위험이 0"이라고 단정하기 어려운 요소</b>가 있습니다. 아래 <a href="#critical">8장</a>에서 함께 짚습니다.</div>
+</section>
+
+<!-- 4 -->
+<section id="dose" class="reveal">
+  <h2>4. 영상에 나온 용량들, 한 그래프로 보기</h2>
+  <p>질문자들이 실제로 먹고 있다고 말한 펜벤다졸 양과, 조 티펜스의 반응을 나란히 놓았습니다. 초록 띠가 그가 말한 범위(222~444mg)입니다.</p>
+  <figure>
+  <svg viewBox="0 0 360 430" role="img" aria-labelledby="doseT">
+    <title id="doseT">질문자들의 펜벤다졸 하루 복용량과 조 티펜스의 반응</title>
+    <style>
+      .d{font:500 12.5px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .db{font:700 12.5px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .ds{font:500 11px "Noto Sans KR",sans-serif;fill:#6b635a}
+    </style>
+    <!-- axis: x from 20 to 340 = 0..1000mg; scale 0.32 px/mg -->
+    <rect x="91" y="30" width="71" height="330" fill="#e9f5ee"/>
+    <text x="126" y="22" text-anchor="middle" class="db" style="fill:#2f7a4f">조 티펜스가 말한 범위 222~444</text>
+    <line x1="20" y1="360" x2="340" y2="360" stroke="#6b635a"/>
+    <g class="ds" text-anchor="middle">
+      <text x="20" y="378">0</text><text x="100" y="378">250</text><text x="180" y="378">500</text><text x="260" y="378">750</text><text x="340" y="378">1000mg</text>
+    </g>
+
+    <!-- bars -->
+    <text x="20" y="52" class="d">블로그 기본량</text>
+    <rect x="20" y="58" width="71" height="16" rx="4" fill="#1f5f8b"/><text x="96" y="71" class="db">222 · 기준</text>
+
+    <text x="20" y="96" class="d">신장암+키트루다 환자</text>
+    <rect x="20" y="102" width="72" height="16" rx="4" fill="#1f5f8b"/><text x="97" y="115" class="db">225 · 범위 내</text>
+
+    <text x="20" y="140" class="d">76세 자궁암 어머니</text>
+    <rect x="20" y="146" width="80" height="16" rx="4" fill="#1f5f8b"/><text x="105" y="159" class="db">250 · 범위 내</text>
+
+    <text x="20" y="184" class="d">조 티펜스 권장 상한 / 여러 환자</text>
+    <rect x="20" y="190" width="142" height="16" rx="4" fill="#1f5f8b"/><text x="167" y="203" class="db">444 · 범위 상한</text>
+
+    <text x="20" y="228" class="d">유방암 뼈전이 (444 × 하루 2회)</text>
+    <rect x="20" y="234" width="284" height="16" rx="4" fill="#a8323e"/><text x="300" y="247" class="db" text-anchor="end" style="fill:#fff">888</text>
+    <text x="20" y="268" class="ds">→ "너무 많다. 444 + Pathway 4종으로"</text>
+
+    <text x="20" y="300" class="d">신경내분비암 (+이버멕틴 90mg, 머리 멍함)</text>
+    <rect x="20" y="306" width="320" height="16" rx="4" fill="#a8323e"/><text x="336" y="319" class="db" text-anchor="end" style="fill:#fff">1,000</text>
+    <text x="20" y="340" class="ds">→ "너무 많다. 444 + Pathway 4종, 주 7일"</text>
+
+    <text x="20" y="410" class="ds">※ 체중과 무관하다고 답함 (110파운드든 210파운드든 같은 범위)</text>
+  </svg>
+  <figcaption>그림 2. 영상 속 질문자들의 하루 펜벤다졸 양 (발언 기록 · 권고 아님)</figcaption>
+  </figure>
+  <div class="box joe"><span class="label">조 티펜스가 "체중과 무관"이라고 한 이유</span>
+  "동물 구충제로 쓸 때는 보통 사흘 먹고 끝입니다. 사람들이 '사흘만 먹는 약'과 '암 때문에 매일 먹는 약'을 헷갈려 체중별 용량을 계산하려 하는데, 매일 암 때문에 먹을 때는 체중에 크게 좌우되지 않습니다."</div>
+  <div class="ai">"체중과 무관"이라는 말은 조 티펜스 개인의 경험적 판단이고, 사람에서 용량을 비교한 연구는 없습니다. 그는 방송 말미에 <b>"모든 사람이 펜벤다졸을 똑같이 흡수하지 않는다는 걸 이제 안다"</b>고 스스로 인정하기도 했습니다. 체중이 아주 적거나(예: 105파운드, 약 48kg인 81세 질문자) 고령인 분은 이 점을 주치의와 상의할 만합니다.</div>
+</section>
+
+<!-- 5 -->
+<section id="mech" class="reveal">
+  <h2>5. 조 티펜스가 설명한 작용 원리 3가지</h2>
+  <p>"오래 먹으면 내성이 생기나요?"라는 질문에 그는 "그럴 수 없다고 본다"며 세 가지 원리를 들었습니다. 같은 세 가지를 "펜벤다졸은 모든 암에 듣는다(cancer agnostic)"는 근거로도 들었습니다.</p>
+  <figure>
+  <svg viewBox="0 0 360 520" role="img" aria-labelledby="mechT">
+    <title id="mechT">펜벤다졸의 세 가지 작용 원리</title>
+    <style>
+      .m{font:500 13px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .mb{font:700 15px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .mw{font:700 15px "Noto Sans KR",sans-serif;fill:#fff}
+    </style>
+    <rect x="90" y="10" width="180" height="46" rx="23" fill="#1f5f8b"/>
+    <text x="180" y="39" text-anchor="middle" class="mw">펜벤다졸 Fenbendazole</text>
+    <path d="M180 56 V80" stroke="#6b635a" stroke-width="2"/>
+
+    <!-- 1 -->
+    <rect x="20" y="84" width="320" height="120" rx="14" fill="#efecf8" stroke="#5b4a9b" stroke-width="2"/>
+    <circle cx="52" cy="116" r="18" fill="#5b4a9b"/><text x="52" y="121" text-anchor="middle" class="mw">1</text>
+    <text x="80" y="122" class="mb">미세소관 Microtubule 흔들기</text>
+    <text x="40" y="152" class="m">세포가 둘로 나뉠 때 쓰는 "뼈대 밧줄"을</text>
+    <text x="40" y="174" class="m">약하게(mildly) 건드려 분열을 방해</text>
+    <text x="40" y="194" class="m" style="fill:#6b635a;font-size:12px">※ 일부 항암제(빈카 알칼로이드)와 같은 표적</text>
+
+    <!-- 2 -->
+    <rect x="20" y="220" width="320" height="140" rx="14" fill="#e9f5ee" stroke="#2f7a4f" stroke-width="2"/>
+    <circle cx="52" cy="252" r="18" fill="#2f7a4f"/><text x="52" y="257" text-anchor="middle" class="mw">2</text>
+    <text x="80" y="258" class="mb">p53 "몸속 경찰" 깨우기</text>
+    <text x="40" y="288" class="m">p53을 억누르는 조절자(down-regulator)를</text>
+    <text x="40" y="310" class="m">쳐서 p53 단백질이 빠르게 늘어나게 함</text>
+    <text x="40" y="334" class="m" style="font-weight:700">→ 조 티펜스: "메벤다졸에는 없는 차이"</text>
+
+    <!-- 3 -->
+    <rect x="20" y="376" width="320" height="120" rx="14" fill="#fdf3e1" stroke="#a8650b" stroke-width="2"/>
+    <circle cx="52" cy="408" r="18" fill="#a8650b"/><text x="52" y="413" text-anchor="middle" class="mw">3</text>
+    <text x="80" y="414" class="mb">당(糖) 먹는 길 막기</text>
+    <text x="40" y="444" class="m">암세포가 포도당을 받아들이고</text>
+    <text x="40" y="466" class="m">에너지로 쓰는 능력을 떨어뜨림</text>
+    <text x="40" y="486" class="m" style="fill:#6b635a;font-size:12px">※ Pathway 3(베르베린)도 같은 방향을 노림</text>
+  </svg>
+  <figcaption>그림 3. 조 티펜스가 말한 세 가지 원리</figcaption>
+  </figure>
+
+  <div class="box joe"><span class="label">p53에 대한 그의 설명 (요지)</span>
+  "p53은 모든 사람 몸에 있는, 암을 죽이는 유전자입니다. 전이암이 되면 두 경우 중 하나입니다. p53을 억누르는 조절자가 고장 나 p53이 너무 적어지거나, 나머지 절반은 p53 자체가 돌연변이로 망가집니다. 펜벤다졸은 앞의 조절자를 쳐서 p53을 빠르게 올립니다."</div>
+
+  <div class="ai">
+    <p><b>이 세 원리의 출처로 가장 많이 인용되는 논문</b>은 Dogra 등(2018, Scientific Reports)입니다. 이 연구는 펜벤다졸이 미세소관을 약하게 흔들고, p53을 안정화하며, 포도당 흡수와 해당작용 효소(HK II)를 떨어뜨린다고 보고했습니다. 다만 <b>실험실 세포와 쥐 실험</b>이었고, 사람 임상시험은 아닙니다.</p>
+    <p>같은 논문에서 세포를 죽이는 효과는 <b>p53이 정상(야생형)인 세포에서 더 강했습니다.</b> 조 티펜스 본인이 말했듯 전이암의 약 절반은 p53 자체가 돌연변이라면, 그 경우엔 ②번 원리가 덜 작동할 수 있다는 뜻입니다. "모든 암에 듣는다"는 단정과는 긴장 관계에 있는 대목입니다.</p>
+    <p>"메벤다졸(Mebendazole)은 p53 효과가 없다"는 비교도 사람에서 두 약을 직접 비교한 연구로 확인된 것은 아닙니다. 둘은 같은 벤즈이미다졸(benzimidazole) 계열입니다. 메벤다졸은 사람용 승인 약이라는 장점이 있어 의사가 처방할 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="time" class="reveal">
+  <h2>6. "언제쯤 효과가?" — 기다림의 시간표</h2>
+  <p>펜벤다졸을 3주째 먹고 있다는 81세 폐암 질문자에게 그는 이렇게 답했습니다. <b>"3주는 충분하지 않습니다. 성공은 8주에서 2년 사이에 일어나는데, 대부분 8~12주 무렵입니다."</b></p>
+  <figure>
+  <svg viewBox="0 0 360 330" role="img" aria-labelledby="timeT">
+    <title id="timeT">조 티펜스가 말한 반응 시점</title>
+    <style>
+      .tt{font:500 13px "Noto Sans KR",sans-serif;fill:#2a2622}
+      .ttb{font:700 14px "Noto Sans KR",sans-serif;fill:#2a2622}
+    </style>
+    <line x1="60" y1="20" x2="60" y2="310" stroke="#6b635a" stroke-width="3"/>
+    <!-- 3 weeks -->
+    <circle cx="60" cy="40" r="10" fill="#a8323e"/>
+    <text x="84" y="36" class="ttb">3주</text>
+    <text x="84" y="56" class="tt">"아직 판단하기엔 너무 이르다"</text>
+    <!-- 4 weeks anecdote -->
+    <circle cx="60" cy="96" r="8" fill="#9a958c"/>
+    <text x="84" y="92" class="ttb">4주 (예외적 일화)</text>
+    <text x="84" y="112" class="tt">PSA 1,000 이상 → 1 미만이 된 사례 언급</text>
+    <!-- 8-12 weeks band -->
+    <rect x="48" y="140" width="24" height="70" rx="12" fill="#2f7a4f"/>
+    <text x="84" y="160" class="ttb" style="fill:#2f7a4f">8~12주 — 가장 흔한 시점</text>
+    <text x="84" y="182" class="tt">"대부분 이 무렵"</text>
+    <!-- up to 2 years -->
+    <rect x="52" y="220" width="16" height="70" rx="8" fill="#a3cbb2"/>
+    <text x="84" y="244" class="ttb">~2년</text>
+    <text x="84" y="264" class="tt">"늦게 반응하는 사람도 있다"</text>
+    <circle cx="60" cy="304" r="8" fill="#1f5f8b"/>
+    <text x="84" y="309" class="tt">관해 후에도 1~2년 유지 선호</text>
+  </svg>
+  <figcaption>그림 4. 조 티펜스가 말한 반응 시점 (그의 관찰 · 통계 자료 아님)</figcaption>
+  </figure>
+  <div class="ai">이 시간표는 조 티펜스가 받은 연락과 사연을 바탕으로 한 인상이며, 반응하지 않은 사람의 수(분모)는 알 수 없습니다. 실천적으로는 <b>"언제 영상검사로 반응을 확인할지"를 주치의와 미리 정해 두는 것</b>이 가장 쓸모 있는 활용법입니다. 기다리는 동안 표준치료의 시기를 놓치지 않는 것이 중요합니다.</div>
+</section>
+
+<!-- 7 -->
+<section id="qa" class="reveal">
+  <h2>7. 주제별 Q&amp;A 전체 정리</h2>
+  <p>질문 순서가 아니라 주제별로 묶었습니다. 각 답 옆의 <span class="ts" style="margin:0">시간</span>을 누르면 영상의 그 장면으로 바로 갑니다. 탭을 눌러 펼쳐 보세요.</p>
+
+  <details>
+    <summary>① 간 수치·부작용·안전성 (7문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">간 수치를 꼭 확인해야 하나요? 타이레놀(아세트아미노펜 Acetaminophen)과 같이 먹으면 안 된다던데요.</p>
+      <p class="a">"처음 연구는 펜벤이 간을 해칠 수 있다고 했는데, 5년 뒤 찾아보니 우리가 권하는 양의 1,000배 용량이었다. 전 세계 수십만 명이 먹는 걸 보면 간 손상 위험은 극히 낮다고 본다. 어차피 대부분 정기 혈액검사를 하니, 간 수치가 튀면 양을 조금 줄였다가 정상으로 돌아오면 다시 올리라." 진행자는 간 수치가 오를 때 쓰는 방법은 기능의학 의사·자연요법사와 상의하라고 덧붙임.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=64" target="_blank" rel="noopener">1:04</a></p></div>
+      <div class="qa"><p class="q">펜벤에 알레르기가 있어 신경병증(neuropathy)이 생겼습니다. 이버멕틴·메벤다졸을 먹는 중인데요.</p>
+      <p class="a">"수백만 명 중 펜벤 알레르기는 처음 듣는다. 메벤다졸이 두 번째 선택이니 그대로 유지하라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=610" target="_blank" rel="noopener">10:10</a></p></div>
+      <div class="qa"><p class="q">대장암 4기(복막전이) 어머니가 Panacur 알약에 메스꺼움·설사·식욕부진이 심합니다. 액상으로 바꿀까요?</p>
+      <p class="a">조 티펜스: "액상으로 시험해 보는 건 일리 있다." Adam Payne: "고령자는 어떤 변화에도 민감하다. <b>소량부터 천천히 올려</b> 권장량에 도달하는 방법을 써 보라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=825" target="_blank" rel="noopener">13:45</a></p></div>
+      <div class="qa"><p class="q">대세포 신경내분비암. 이버멕틴 90mg + 펜벤 1,000mg까지 올렸더니 머리가 멍합니다.</p>
+      <p class="a">"1,000mg은 너무 많다. Pathway 4종 + 펜벤 444mg, 주 7일. 이버멕틴은 본인 선택."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2035" target="_blank" rel="noopener">33:55</a></p></div>
+      <div class="qa"><p class="q">오래 먹으면 내성이 생겨 안 듣게 되나요?</p>
+      <p class="a">"그럴 수 없다고 본다. 나는 과학자도 의사도 아니지만, 미세소관·p53·당 대사라는 작용 방식을 몸이 거스를 방법을 모르겠다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2804" target="_blank" rel="noopener">46:44</a></p></div>
+      <div class="qa"><p class="q">덱사메타손(Dexamethasone) 1.5mg을 끊으면 식욕이 뚝 떨어집니다. 장기 복용해도 될까요?</p>
+      <p class="a">"그건 의학적 질문이라 내가 답할 자격이 없다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2008" target="_blank" rel="noopener">33:28</a></p></div>
+      <div class="qa"><p class="q">타목시펜(Tamoxifen)을 먹는데, 베르베린(Pathway 3)이 타목시펜 대사를 바꿀 수 있다고 읽었습니다.</p>
+      <p class="a">조 티펜스: "펜벤은 222~444mg 유지. 나머지는 모르겠다." Adam Payne: "우리는 상호작용을 알지 못하지만, 걱정되면 의학적으로 조언할 수 있는 사람에게 상담받으라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3307" target="_blank" rel="noopener">55:07</a></p></div>
+      <div class="ai">조 티펜스 스스로도 덱사메타손처럼 의학적 판단이 필요한 질문에는 "답할 자격이 없다"고 선을 그었습니다. <b>간 수치와 약물 상호작용도 같은 범주</b>입니다. 특히 타목시펜–베르베린 질문은 "알지 못한다"가 답이었지, "문제없다"가 답은 아니었다는 점을 기억해 두세요.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>② 얼마나 자주? 주기·휴약·관해 후 (7문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">전립선암 4기 뼈전이. 3주 매일 먹고 지금은 4일 복용·4일 휴약 중입니다.</p>
+      <p class="a">"주 7일로 가고 주기는 두지 말라." 진행자: "주기는 옛날 방식."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=366" target="_blank" rel="noopener">6:06</a></p></div>
+      <div class="qa"><p class="q">전립선암 NED 3년째, 222mg 정규 프로토콜을 매일 먹습니다. 쉬어야 하나요?</p>
+      <p class="a">"블로그에 새로 올린 예방 프로토콜을 권한다. 펜벤은 주 3일, 다른 Pathway 제품은 조금씩 다르다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=325" target="_blank" rel="noopener">5:25</a></p></div>
+      <div class="qa"><p class="q">76세 어머니(자궁암 2기), 펜벤 250mg 한 달째. 다음 주 자궁적출 수술로 약을 끊어야 하는데, 수술 후 언제 다시 시작하고, 깨끗하면 3일/4일로 줄여야 하나요?</p>
+      <p class="a">"주 3일 복용·4일 휴약으로 시작해, 잘 견디면 암이 남아 있는 경우 주 7일로 올리라. 깨끗하다는 판정을 받아도 최소 1~2년은 정규 프로토콜 유지를 선호한다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=906" target="_blank" rel="noopener">15:06</a></p></div>
+      <div class="qa"><p class="q">남편 대장암, 병기 미확정·전이 없음. 그래도 주 7일인가요?</p>
+      <p class="a">"그렇다. 주 7일을 건너뛸 유일한 이유는 항암 중일 때다. 병기가 안 나왔으면 나라면 4기로 가정하겠다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=992" target="_blank" rel="noopener">16:32</a></p></div>
+      <div class="qa"><p class="q">암이 없는데 예방용으로 주 3일, 그리고 한 달 먹고 한 달 쉬면 될까요?</p>
+      <p class="a">"한 달씩 쉬지도 말고, 주 3일을 기한 없이."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1159" target="_blank" rel="noopener">19:19</a></p></div>
+      <div class="qa"><p class="q">유방암은 깨끗해졌지만 5mm 폐결절 여러 개를 매년 CT로 관찰 중. 정규 프로토콜인가요, 관해 프로토콜인가요?</p>
+      <p class="a">"결절이 남아 있으면 정규(full) 프로토콜."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1803" target="_blank" rel="noopener">30:03</a></p></div>
+      <div class="qa"><p class="q">폐엽절제 후 림프절 14개 중 1개에 암. 항암은 거부했고 3개월마다 검사합니다. 예방으로 먹어야 하나요?</p>
+      <p class="a">"주 7일, 확실해질 때까지."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3197" target="_blank" rel="noopener">53:17</a></p></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>③ 어떤 제품을? 품질·제조·구입 (4문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">캡슐형 펜벤을 찾았는데, 머크 제품을 고집해야 하나요?</p>
+      <p class="a">"다른 펜벤 제품을 다 검사해 봤다. 성분이 100% 순수해도 <b>cGMP(우수 제조 기준) 인증</b>이 없으면 먹지 말라. 지금 시장에서 완전한 cGMP를 갖춘 곳은 머크뿐이다. 다른 판매자들에게 인증서를 보여 달라고 했지만 아무도 보여주지 않았다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1036" target="_blank" rel="noopener">17:16</a></p></div>
+      <div class="qa"><p class="q">미국에서 정제·캡슐형 펜벤을 구할 수 있나요?</p>
+      <p class="a">"내가 권할 만한 건 없다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2143" target="_blank" rel="noopener">35:43</a></p></div>
+      <div class="qa"><p class="q">동네 펫숍에서 산 머크 펜벤이 중국산입니다. 괜찮을까요?</p>
+      <p class="a">"머크는 전 세계에서 만들지만 미국 cGMP와 FDA 승인 시설 기준을 따른다. 머크 소유 공장이면 안심해도 된다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2182" target="_blank" rel="noopener">36:22</a></p></div>
+      <div class="qa"><p class="q">대용량으로 사고 싶습니다.</p>
+      <p class="a">"머크가 통(tub) 단위로 판다. 하루 양을 덜어 쓰면 된다. Safeguard 액상 1L·5L가 아주 경제적이라, 계산해 보니 1년치가 150달러 미만."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2377" target="_blank" rel="noopener">39:37</a></p></div>
+      <div class="ai">81세 질문자는 아마존에서 산 제품이 진품인지 걱정하다 다른 쇼핑몰로 다시 주문했다고 했습니다. 해외 직구에서는 <b>위조품 문제</b>가 실제로 있을 수 있습니다. 한국에서는 동물용 의약품의 구입·사람 복용과 관련된 규제와 식약처 주의 안내가 있었으니, 구입 경로 자체도 주치의·약사와 이야기해 볼 주제입니다.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>④ 표준치료(항암·방사선·면역치료)와 함께 (7문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">대체요법 하시는 분들인 줄 알았는데, 항암·방사선을 같이 하는 사람이 많아 당혹스럽습니다.</p>
+      <p class="a">"어디서 그런 인상을 받으셨는지 모르겠다. 우리 페이스북 그룹 7만 명은 그렇게 생각하지 않는다. 모두 항암·방사선에서 벗어나고 싶어 하지만, 동시에 두려워한다." Adam Payne: "종양내과 의사의 의견, 대사적 접근을 아는 기능의학 의사, 임상영양사까지 <b>여러 목소리를 내 치료 곁에 두는 것</b>이 최선."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1668" target="_blank" rel="noopener">27:48</a></p></div>
+      <div class="qa"><p class="q">글리슨(Gleason) 10점 전립선암, 루프론(Lupron) 1회. 의사가 방사선을 지금 할지 3개월 뒤에 할지 고르라고 합니다. 기다리는 동안 프로토콜로 전립선이 줄까요?</p>
+      <p class="a">"나라면, 글리슨 10점이면 <b>표적 방사선을 최대한 빨리, 기다리지 않겠다.</b> 병변이 한쪽에 몰려 있으면 양성자 치료(proton therapy)도 알아보겠다. 그리고 정규 프로토콜을 동시에 병행."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1887" target="_blank" rel="noopener">31:27</a></p></div>
+      <div class="qa"><p class="q">MD 앤더슨 방사선종양 의사가 "항산화제가 너무 많다"며 방사선 기간 Pathway 제품을 끊으라고 합니다. (비소세포폐암)</p>
+      <p class="a">조 티펜스: "의사 말을 듣겠다. 그들은 훈련받았고 나는 아니다. 방사선이 끝날 때까지 Pathway는 쉬라. 펜벤은 방사선에 영향을 주지 않는다." Adam Payne도 "의사 조언을 따르라"고 동의.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3036" target="_blank" rel="noopener">50:36</a></p></div>
+      <div class="qa"><p class="q">(같은 질문의 앞부분 답변) Pathway와 항암제는요?</p>
+      <p class="a">Adam Payne: "많은 항암제에서 Pathway 2는 금기라, 항암 전날·당일·최소 다음날은 쉬라고 권한다. 반대로 Pathway 2가 효과를 키우는 항암제도 있지만, 그 판단은 우리 능력 밖이다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2316" target="_blank" rel="noopener">38:36</a></p></div>
+      <div class="qa"><p class="q">신장암 4기 뼈전이. 렌바(Lenvima)는 못 견뎌 키트루다(Keytruda)로 바꿨고, Pathway 4종 + 펜벤 225mg 중. 한 달 뒤 CT에서 뼈에 새 병변 2개, 폐결절은 줄었습니다.</p>
+      <p class="a">진행자: "Pathway 용량 조절은 임상영양사·기능의학 의사와 하라. 그들은 대사적 압박을 조절하기 위해 제품을 번갈아 쓰는(push–pull) 방식을 쓰기도 한다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=201" target="_blank" rel="noopener">3:21</a></p></div>
+      <div class="qa"><p class="q">2011년부터 호르몬치료만 가능했던 아버지의 공격적 전립선암이 내성을 보입니다. 3개월 전 대장암 2기 수술도 했는데 언제 시작할까요?</p>
+      <p class="a">"시작하라. 왜 안 할 이유가 있겠나."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1176" target="_blank" rel="noopener">19:36</a></p></div>
+      <div class="qa"><p class="q">항암은 2%밖에 효과가 없다는 걸 사람들에게 알려야 하지 않나요?</p>
+      <p class="a">"항암은 효과가 있다. 내 경우 주먹만 한 폐 종양을 항암·방사선이 없앴다. 나쁜 소식은 30일 뒤 머리부터 발끝까지 전이됐다는 것. 그래서 나는 <b>표준치료가 던질 수 있는 건 다 받으면서, 동시에 내 프로토콜을 병행하라</b>고 말한다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3427" target="_blank" rel="noopener">57:07</a></p></div>
+      <div class="box green"><span class="label">이 영상에서 가장 분명했던 대목</span>조 티펜스 자신의 메시지는 "표준치료 대신"이 아니라 <b>"표준치료와 함께"</b>였습니다. 방사선 담당의가 Pathway를 끊으라고 하자 "의사 말을 들으라"고 답한 장면도 같은 맥락입니다.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>⑤ 암종별 질문과 사례 (9문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">전립선암에서 성공 사례가 얼마나 되나요?</p>
+      <p class="a">"수백, 아니 수천. PSA가 1,000이 넘던 사람이 4주 만에 1 미만이 된 사례도 있다." 진행자도 비슷한 사례가 1년째 NED라고 언급.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1647" target="_blank" rel="noopener">27:27</a></p></div>
+      <div class="qa"><p class="q">림프종 남편이 펜벤만 수년째 먹는데 효과가 없어 보입니다.</p>
+      <p class="a">"림프종과 혈액암 전반에 프로토콜이 도움 된 사례가 수십 건 있다. 관해까지 계속하라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1119" target="_blank" rel="noopener">18:39</a></p></div>
+      <div class="qa"><p class="q">중피종(Mesothelioma) 성공 사례가 있나요?</p>
+      <p class="a">처음엔 "아직 없다, 그래도 시도해서 손해볼 건 없다." 방송 후반에 쪽지를 받고 <b>"이번 주에 첫 중피종 성공 사례가 들어왔다"</b>고 정정.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2102" target="_blank" rel="noopener">35:02</a> <a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3017" target="_blank" rel="noopener">50:17</a></p></div>
+      <div class="qa"><p class="q">프로토콜이 듣지 않은 암은 무엇인가요?</p>
+      <p class="a">"아주 좁다. 예전 방송에서 삼중음성유방암(TNBC) 성공 사례를 못 봤다고 했더니, 같은 방송에 두 분이 전화해서 '나는 효과 봤다'고 했다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2841" target="_blank" rel="noopener">47:21</a></p></div>
+      <div class="qa"><p class="q">평활근육종(Leiomyosarcoma) 사례는요?</p>
+      <p class="a">"처음 듣는 이름이지만, 작용 위치(미세소관·p53·당 대사) 때문에 펜벤다졸이 암 종류를 가리지 않는다고 100% 확신한다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3598" target="_blank" rel="noopener">59:58</a></p></div>
+      <div class="qa"><p class="q">양성으로 보이는 뇌수막종(Meningioma)도 줄일 수 있나요?</p>
+      <p class="a">"양성 종양은 세포 수준에서 암과 다를 수 있다. 어떤 종양인지 알아야 답할 수 있다. 그래도 시도해서 손해볼 건 없다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=530" target="_blank" rel="noopener">8:50</a></p></div>
+      <div class="qa"><p class="q">편평세포암(SCC) 4기 남편. 깨끗한 검사와 아닌 검사가 번갈아 나옵니다. Pathway는 잘 못 챙겼습니다.</p>
+      <p class="a">"깨끗–재발–깨끗–재발은 처음 들어본다. 주 7일, 기한 없이 유지하라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2418" target="_blank" rel="noopener">40:18</a></p></div>
+      <div class="qa"><p class="q">다발골수종(Multiple myeloma) 4년 반, 표준치료와 함께 처음부터 펜벤. 3년 반째 관해이고 Pathway 1~4도 계속 먹습니다.</p>
+      <p class="a">"현명하다. 혈액암은 성공 후 재발에 대한 자료가 충분치 않으니, 나라면 계속 먹겠다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3545" target="_blank" rel="noopener">59:05</a></p></div>
+      <div class="qa"><p class="q">유방암 4기. 이버멕틴 50mg + 메벤다졸 800mg을 석 달 먹었지만 척추 전이가 빠르게 늘었습니다. 펜벤으로 바꿀까요?</p>
+      <p class="a">이 질문에서 메벤다졸과 펜벤다졸의 p53 차이를 설명(5장 참고). 진행자: "오늘 메벤다졸만 먹는 분이 정말 많다. 이 부분을 다시 들어 보시라."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1459" target="_blank" rel="noopener">24:19</a></p></div>
+      <div class="ai">"수백, 아니 수천"이라는 숫자는 <b>성공했다고 연락해 온 사람의 수</b>입니다. 같은 기간에 먹고도 반응이 없었던 사람, 연락하지 않은 사람의 수는 알 수 없습니다. 해외 커뮤니티 기록에는 <b>수년 관해 뒤에 재발</b>하는 경우도 있다는 점을, 성공담과 나란히 놓고 읽어야 균형이 맞습니다.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>⑥ 이버멕틴·메벤다졸에 대한 입장 (3문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">암 줄기세포를 노리는 데는 이버멕틴(Ivermectin)이 낫다는 연구가 있던데요?</p>
+      <p class="a">"이버멕틴은 수천 가지 대안 중 하나라 깊이 들어가고 싶지 않다. 해가 되진 않을 거고 도움이 될 수도 있다. 하지만 <b>이버멕틴은 일부 암에만 듣고, 펜벤다졸처럼 암 종류를 가리지 않는 약은 아니다.</b>"<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1345" target="_blank" rel="noopener">22:25</a></p></div>
+      <div class="qa"><p class="q">직장 종괴, 병리 결과 대기 중. 항암·방사선은 원치 않습니다. 펜벤 얼마, 이버멕틴도?</p>
+      <p class="a">"펜벤 444mg + Pathway 4종. 이버멕틴은 중립이다, 본인 선택."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2701" target="_blank" rel="noopener">45:01</a></p></div>
+      <div class="qa"><p class="q">왜 의사들은 메벤다졸만 처방하나요?</p>
+      <p class="a">"메벤다졸이 널리 처방되는 이유는 딱 하나, FDA 승인 사람용 약이기 때문이다. 의사가 펜벤다졸을 처방하는 건 불법이다. 그래도 9년 사이 '처방은 못 하지만 내 가족이면 먹이겠다'는 의사가 크게 늘었다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=1612" target="_blank" rel="noopener">26:48</a></p></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>⑦ 생활·기타 (8문항)</summary>
+    <div class="inner">
+      <div class="qa"><p class="q">대사 식단 중인데, 가끔 레드와인 한 잔은요?</p>
+      <p class="a">"나는 식단도 잘 안 지켰고 레드와인도 마셨다. 해 보라, 핵심 단어는 '적당히'."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=576" target="_blank" rel="noopener">9:36</a></p></div>
+      <div class="qa"><p class="q">신경치료한 치아의 오래된 감염이 외투세포림프종의 원인 같습니다. 발치를 고민 중입니다.</p>
+      <p class="a">조 티펜스: "그 연관성은 잘 모른다." 진행자들: 웨스턴 프라이스 재단(Weston Price Foundation) 자료, 치과의사 Debbie Osmond의 TED 강연 "The Forgotten Orifice" 추천. "암이 있다면 입안의 만성 감염은 100% 치료해야 한다. 2022년 Cell 논문은 거의 모든 종양 안에 세균·곰팡이 군집이 있음을 보였다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=655" target="_blank" rel="noopener">10:55</a></p></div>
+      <div class="qa"><p class="q">『Cancer is a Parasite(암은 기생충이다)』라는 책은요?</p>
+      <p class="a">"기생충이 원인이 되는 암 아형이 두세 가지 있고 기생충이 암을 유발한다는 증거도 많지만, <b>암 자체가 기생충은 아니다.</b> 암은 자기 대사를 가진 세포다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2237" target="_blank" rel="noopener">37:17</a></p></div>
+      <div class="qa"><p class="q">강아지 입에 종양이 있어 Safeguard 1g을 주 7일 줍니다. 사료에 섞어 하루 종일 먹게 해도 되나요?</p>
+      <p class="a">"하루에 걸쳐 먹어도 된다. 개 크기가 조금 상관은 있다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=2732" target="_blank" rel="noopener">45:32</a></p></div>
+      <div class="qa"><p class="q">니코틴이나 소리 주파수 치료를 권하신 적 있나요? 그리고 조직검사는 암을 퍼뜨린다는 사실도요.</p>
+      <p class="a">"니코틴 자체는 꽤 건강하고 좋은 효과가 많다, 나쁜 건 흡연과 씹는 담배다(본인도 니코틴 파우치 사용 중). 조직검사로 암세포가 퍼지는 일은 있지만 열 명 중 하나가 아니라 백 명 중 둘 정도." 주파수·라이프(Rife) 치료는 "우리가 답할 범위 밖".<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3427" target="_blank" rel="noopener">57:07</a></p></div>
+      <div class="qa"><p class="q">주치의에게 프로토콜을 한다고 했다가 진료를 거부당했습니다.</p>
+      <p class="a">"9년 전엔 거의 100%의 의사가 그랬다. 지금 그런 의사는 예외이고, 공부를 안 한 것이다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3233" target="_blank" rel="noopener">53:53</a></p></div>
+      <div class="qa"><p class="q">근처 통합의학(integrative) 의사는 어떻게 찾나요?</p>
+      <p class="a">임상영양사 Keith Bishop(prevailovercancer.com, 첫 짧은 상담 무료), Dr. Deanna Windham 추천. Ultra Botanica로 연락하면 지역 전문가를 연결해 줄 수 있다고 안내.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3112" target="_blank" rel="noopener">51:52</a></p></div>
+      <div class="qa"><p class="q">마음가짐에 대해 한마디 해 주세요.</p>
+      <p class="a">"브루스 립턴(Bruce Lipton)의 『신념의 생물학(The Biology of Belief)』 강연을 보라. 석 달 남았다며 호스피스를 부르라는 말을 들은 날에도 나는 100% 이겨낼 방법을 찾을 거라 믿었다. 내 성공이 프로토콜 덕인지 긍정 덕인지 모르지만, 둘 다였다는 건 안다. 반대로 끝없이 부정적인 사람은 낫기가 더 어렵다고 믿는다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3832" target="_blank" rel="noopener">1:03:52</a></p></div>
+      <div class="ai">"니코틴은 그 자체로 꽤 건강하다"는 발언은 조심해서 들어야 합니다. 니코틴이 암세포의 성장·전이를 돕는 신호를 켤 수 있다는 실험 연구들이 보고되어 있어, 암 환자에게 니코틴을 권할 근거로 쓰기는 어렵습니다. 조 티펜스의 개인 습관 이야기로만 받아들이시길 권합니다.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>⑧ 방송 중 공지사항</summary>
+    <div class="inner">
+      <div class="qa"><p class="a" style="margin:0"><b>예방 프로토콜 갱신</b> — 블로그에 "예방 목적 복용자"를 위한 상세 안내가 새로 올라갔다고 여러 번 반복.</p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>Pathway Liver(간 제품)</b> — 사전판매 중, 12월 첫 주 출고 예정.<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3688" target="_blank" rel="noopener">1:01:28</a></p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>Pathway 고농도 리뉴얼·전문가용</b> — 의료기관 전용 고강도 버전 출시 예정. 일반 제품도 농도를 높여 알약 수를 줄일 계획(Pathway 2: 3캡슐 → 1캡슐, 하루 2회). 내년 1분기 말 목표.</p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>항암 유발 신경병증 연구</b> — 유로리틴(Urolithin) 결합체로 연구 준비 중, 참여 희망자는 Ultra Botanica에 이메일.</p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>흡수율 개선</b> — "모든 사람이 펜벤을 똑같이 흡수하지 않는다는 걸 알게 됐다. 펜벤 흡수율을 높이는 작업을 하고 있다."<a class="ts" href="https://youtu.be/_nmv9XZdWvo?t=3766" target="_blank" rel="noopener">1:02:46</a></p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>페이스북 그룹</b> — 회원 약 7만 명, 가입 신청은 30만 명 이상. 블로그를 읽었다는 증거로 블로그에 숨긴 비밀번호를 요구하고, 판매·다단계를 막기 위해 엄격히 관리한다고 설명.</p></div>
+      <div class="qa"><p class="a" style="margin:0"><b>Annie Appleseed 학회</b> — 몇 달 뒤 발표 예정. 작년엔 p53 등 과학 중심이었고, 내년엔 사회적 측면도 다룰 계획.</p></div>
+    </div>
+  </details>
+</section>
+
+<!-- 8 -->
+<section id="critical" class="reveal">
+  <h2>8. AI 클로드 주석 — 비판적으로 함께 읽기</h2>
+  <p>이 커뮤니티의 원칙은 <b>"원리를 알고 → 가능성을 이해하고 → (근거 위에서) 시도하자"</b>입니다. 가능성을 성급히 닫지도, 근거 없이 단정하지도 않기 위해, 영상을 들으며 함께 짚어야 할 지점을 정리했습니다.</p>
+
+  <div class="ai">
+    <p><b>① "부작용 위험은 0"이라는 말</b><br>
+    조 티펜스는 마무리에서 "심각한 부작용을 알지 못한다, 위험은 여전히 0"이라고 했습니다. 그러나 의학 문헌에는 소셜미디어 정보를 보고 펜벤다졸을 스스로 복용한 뒤 <b>심한 약물성 간 손상</b>이 생겼다가, 끊은 뒤 회복된 증례가 보고되어 있습니다(일본, 80세 비소세포폐암·펨브롤리주맙 치료 중 환자, 2021). 같은 종류의 증례 보고는 이후에도 이어졌습니다. "1,000배 용량에서만 간 독성"이라는 그의 설명은 이 사람 증례들과 맞지 않습니다. 영상에서 그가 말한 <b>"정기 혈액검사로 간 수치를 보라"</b>는 부분이 실제로는 가장 중요한 안전장치입니다.</p>
+  </div>
+
+  <div class="ai">
+    <p><b>② 이해관계</b><br>
+    방송을 진행한 두 사람은 Pathway 제품을 만드는 Ultra Botanica 쪽입니다. 방송 중 신제품 사전판매, 리뉴얼 계획이 공지되었습니다. 조 티펜스 본인은 금전적 보상이 없다고 밝혔습니다. 내용이 틀렸다는 뜻은 아니지만, <b>Pathway 제품의 필요성·용량에 관한 말은 판매자의 말</b>이라는 점을 알고 듣는 것이 공정합니다. 그들 스스로도 "Pathway를 쓸 땐 반드시 자격 있는 의료인과 용량·상호작용을 상담하라"고 강조했습니다.</p>
+  </div>
+
+  <div class="ai">
+    <p><b>③ 일화(사연)와 근거의 차이</b><br>
+    "수천 명", "PSA 1,000 → 1 미만" 같은 사연은 가능성을 보여주는 신호입니다. 그러나 비교군, 표준치료의 영향, 반응하지 않은 사람의 수가 빠져 있습니다. 실제로 많은 질문자가 키트루다·호르몬치료·방사선·항암을 함께 받고 있었습니다.</p>
+  </div>
+
+  <table>
+    <caption style="text-align:left;font-weight:700;margin-bottom:8px">영상 속 주장별 근거 수준 (AI 클로드 평가)</caption>
+    <thead><tr><th>주장</th><th>근거의 종류</th><th>등급</th></tr></thead>
+    <tbody>
+      <tr><td>펜벤다졸의 미세소관·p53·당 대사 작용</td><td>세포·동물 실험 (Dogra 2018 등)</td><td class="grade" style="color:#a8650b">D</td></tr>
+      <tr><td>사람 암에서 펜벤다졸 효과</td><td>자가 보고·증례·사연 (대조 임상시험 없음)</td><td class="grade" style="color:#a8650b">D</td></tr>
+      <tr><td>"모든 암에 듣는다", "내성이 안 생긴다"</td><td>작용 기전에서 추론한 개인 의견</td><td class="grade" style="color:#a8323e">근거 없음</td></tr>
+      <tr><td>"부작용 위험 0"</td><td>사람 간 손상 증례 보고와 상충</td><td class="grade" style="color:#a8323e">반대 근거 있음</td></tr>
+      <tr><td>반응 시점 8~12주</td><td>개인 관찰</td><td class="grade" style="color:#a8650b">D</td></tr>
+      <tr><td>Pathway 제품 효능·흡수율</td><td>판매사 설명, 인용 연구 없음</td><td class="grade" style="color:#a8650b">D</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:.85rem;color:var(--muted)">등급: A = 무작위 대조시험·메타분석 / B = 대규모 관찰연구 / C = 소규모 연구 / D = 전임상(세포·동물) 또는 증례·일화</p>
+
+  <div class="box green"><span class="label">반대로, 높이 평가할 대목</span>
+  조 티펜스는 의학적 질문(덱사메타손)에는 "자격이 없다"고 선을 그었고, 방사선 담당의 말에 "의사를 따르라"고 했으며, 글리슨 10점 환자에게는 표준치료를 미루지 말라고 했습니다. "표준치료는 다 받으면서, 동시에 병행하라"는 그의 기본 태도는 이 커뮤니티가 사례를 읽는 관점("표준치료 + 보완적 시도")과 같은 방향입니다.</div>
+</section>
+
+<!-- 9 -->
+<section id="ask" class="reveal">
+  <h2>9. 주치의에게 가져갈 질문</h2>
+  <p>영상을 보고 마음이 움직였다면, 아래 문장을 그대로 복사해 진료실에 가져가 보세요.</p>
+  <div class="ask"><p>"제가 펜벤다졸(Fenbendazole)에 관심이 있습니다. 지금 받는 치료(약 이름: ______)와 함께 썼을 때 간이나 약물 상호작용 면에서 걱정할 점이 있을까요?"</p></div>
+  <div class="ask"><p>"만약 시도한다면, 간 수치(AST·ALT)는 어떤 간격으로 확인하는 게 좋을까요? 어느 수치가 되면 멈춰야 할까요?"</p></div>
+  <div class="ask"><p>"커큐민·베르베린 같은 보충제가 제 항암제(또는 타목시펜·방사선)에 영향을 줄 수 있나요? 쉬어야 한다면 언제부터 언제까지인가요?"</p></div>
+  <div class="ask"><p>"효과를 판단하려면 몇 주 뒤에 어떤 검사로 확인하는 게 좋을까요? 그 사이 표준치료의 시기를 놓치지 않으려면 무엇을 지켜봐야 하나요?"</p></div>
+  <div class="ask"><p>"저는 관해 상태인데, 재발 위험을 낮추기 위해 의학적으로 근거가 있는 방법에는 어떤 것들이 있을까요?"</p></div>
+  <div class="box safe"><span class="label">마지막으로 한 번 더</span>복용·병용·중단의 최종 결정은 주치의와 함께 내리세요. 이 문서의 숫자는 "조 티펜스가 무엇을 말했는가"의 기록입니다.</div>
+  <p style="text-align:center;font-family:'Noto Serif KR',serif;font-size:1.1rem;margin-top:28px">희망은 근거 위에 설 때 가장 오래 버팁니다.<br>오늘도 한 걸음씩, 함께 공부해요.</p>
+</section>
+
+<!-- 10 -->
+<section id="src" class="reveal">
+  <h2>10. 출처</h2>
+  <ul class="src">
+    <li><b>원본 영상</b> — Get Busy Living, "Joe Tippens LiveStream: Wednesday, November 18th - Joe answered your questions live" (YouTube, 2026). <a href="https://youtu.be/_nmv9XZdWvo" target="_blank" rel="noopener">youtu.be/_nmv9XZdWvo</a></li>
+    <li><b>조 티펜스 블로그 — The Protocol</b> (2021.10 게시, 2025.12 갱신). <a href="https://mycancerstory.rocks/81-2/" target="_blank" rel="noopener">mycancerstory.rocks/81-2/</a></li>
+    <li><b>작용 원리 (5장)</b> — Dogra N, Kumar A, Mukhopadhyay T. "Fenbendazole acts as a moderate microtubule destabilizing agent and causes cancer cell death by modulating multiple cellular pathways." <i>Scientific Reports</i> 2018;8:11926. <a href="https://pubmed.ncbi.nlm.nih.gov/30093705/" target="_blank" rel="noopener">PubMed</a></li>
+    <li><b>간 손상 증례 (8장)</b> — Yamaguchi T, et al. "Drug-Induced Liver Injury in a Patient with Nonsmall Cell Lung Cancer after the Self-Administration of Fenbendazole Based on Social Media Information." <i>Case Reports in Oncology</i> 2021;14(2):886–891. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8255718" target="_blank" rel="noopener">PMC 전문</a></li>
+    <li><b>종양 속 미생물 (⑦ 답변에서 언급된 2022년 Cell 논문)</b> — Narunsky-Haziza L, et al. "Pan-cancer analyses reveal cancer-type-specific fungal ecologies and bacteriome interactions." <i>Cell</i> 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Narunsky-Haziza+pan-cancer+fungal+ecologies" target="_blank" rel="noopener">PubMed 검색</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>정리: 꿈많은사람2 · 히포크라테스의 친구들 (cafe.naver.com/friendsofhippocrates)<br>
+  영상 자막(자동 생성 영어 자막)을 바탕으로 번역·요약했습니다. 자동 자막의 특성상 고유명사·숫자에 오류가 있을 수 있으니, 중요한 부분은 시간 링크로 원본을 확인해 주세요.<br>
+  "🤖 AI 클로드 주석"은 원본 영상의 내용이 아니라 AI가 덧붙인 평가입니다.</p>
+</footer>
+
+</div>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+  window.addEventListener('beforeprint',function(){els.forEach(function(e){e.classList.add('on')});document.querySelectorAll('details').forEach(function(d){d.open=true});});
+})();
+</script>
+</body>
+</html>
