@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>두 달 만의 NED — Ashley의 4기 자궁경부암 이야기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+      :root{
+        --bg:#fbf9f6; --surface:#ffffff; --surface2:#f4efe8; --ink:#262019; --ink2:#5d554a;
+        --line:#e3dacd; --accent:#b23c17; --accent-soft:#fbe9df; --blue:#2f5d8a; --blue-soft:#e4edf5;
+        --green:#3d7a4e; --green-soft:#e6f1e8; --amber:#9a6a12; --amber-soft:#f7ecd2;
+        --shadow:0 1px 3px rgba(60,40,20,.08), 0 8px 24px rgba(60,40,20,.05);
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#171310; --surface:#211c17; --surface2:#2a231c; --ink:#f0e9df; --ink2:#b8ac9c;
+          --line:#3d352b; --accent:#f08a5c; --accent-soft:#3d2417; --blue:#8db4d9; --blue-soft:#22344a;
+          --green:#8fc79c; --green-soft:#22382a; --amber:#e0b45c; --amber-soft:#3d3016;
+          --shadow:0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);
+        font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+        font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+      .wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+      h1,h2,h3{font-family:"Noto Serif KR",serif;line-height:1.35;margin:0}
+      p{margin:0 0 1em}
+      a{color:var(--accent)}
+      .kicker{font-size:.82rem;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:none;margin-bottom:10px}
+      /* ---------- Hero ---------- */
+      header.hero{padding:56px 0 8px}
+      header.hero h1{font-size:2.35rem;font-weight:900;letter-spacing:-.01em}
+      header.hero h1 .hl{color:var(--accent)}
+      .hero-sub{margin-top:18px;font-size:1.06rem;color:var(--ink2);max-width:34em}
+      .hero-meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+      .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--line);
+        border-radius:999px;background:var(--surface);font-size:.85rem;font-weight:500;color:var(--ink2)}
+      .chip b{color:var(--ink)}
+      .hero-verdict{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+        padding:22px 24px;box-shadow:var(--shadow)}
+      .hero-verdict .big{font-family:"Noto Serif KR",serif;font-size:1.45rem;font-weight:700;line-height:1.5}
+      .hero-verdict .big em{font-style:normal;color:var(--accent)}
+      .hero-verdict p{margin:10px 0 0;color:var(--ink2);font-size:.97rem}
+      /* ---------- Sections ---------- */
+      section{margin-top:64px}
+      .sec-head{margin-bottom:22px}
+      .sec-head .kicker{margin-bottom:6px}
+      .sec-head h2{font-size:1.65rem;font-weight:900}
+      .lead{font-size:1.05rem}
+      /* scene cards */
+      .scene{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+      .scene + .scene{margin-top:16px}
+      .scene .when{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.06em}
+      .scene blockquote{margin:12px 0 0;font-family:"Noto Serif KR",serif;font-size:1.18rem;font-weight:600;line-height:1.6}
+      .scene p{margin-top:12px;color:var(--ink2);font-size:.97rem}
+      .scene p:last-child{margin-bottom:0}
+      .takeaway{margin-top:22px;text-align:center;font-family:"Noto Serif KR",serif;font-size:1.3rem;font-weight:700;line-height:1.6}
+      .takeaway em{font-style:normal;color:var(--accent)}
+      /* fact list */
+      .facts{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px 24px;box-shadow:var(--shadow)}
+      .facts li{list-style:none;padding:14px 0;border-bottom:1px solid var(--line)}
+      .facts li:last-child{border-bottom:none}
+      ul.facts{margin:0}
+      .facts b{display:inline-block;min-width:5.2em;color:var(--accent)}
+      .note-line{margin-top:16px;padding:14px 18px;background:var(--accent-soft);border-radius:10px;font-size:.95rem}
+      /* metaphor */
+      .metaphor{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      @media (max-width:560px){.metaphor{grid-template-columns:1fr}}
+      .m-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+      .m-card .ico{font-size:1.7rem;line-height:1}
+      .m-card h3{font-size:1.05rem;margin:10px 0 6px}
+      .m-card p{font-size:.93rem;color:var(--ink2);margin:0}
+      .m-card.wide{grid-column:1/-1}
+      /* one-picture summary */
+      .picture{margin-top:16px;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:22px}
+      .picture h3{font-size:1rem;margin-bottom:14px}
+      .flow{display:flex;flex-direction:column;gap:0}
+      .flow-row{display:flex;gap:12px;align-items:flex-start}
+      .flow-dot{flex:0 0 auto;width:14px;height:14px;border-radius:50%;margin-top:7px;border:3px solid var(--bg)}
+      .flow-line{width:2px;background:var(--line);margin:2px auto;height:20px}
+      .flow-body{padding-bottom:4px}
+      .flow-body .d{font-size:.82rem;font-weight:700;color:var(--ink2)}
+      .flow-body .t{font-weight:700}
+      .flow-body .s{font-size:.92rem;color:var(--ink2)}
+      .dot-red{background:#c93a1e}.dot-amber{background:#d99a1f}.dot-green{background:#3d9a57}.dot-blue{background:#2f6db3}
+      .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:.85rem;color:var(--ink2)}
+      .legend span{display:inline-flex;align-items:center;gap:6px}
+      .legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+      /* timeline */
+      .tl{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--line)}
+      .tl-item{position:relative;padding-bottom:34px}
+      .tl-item:last-child{padding-bottom:0}
+      .tl-item::before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;
+        background:var(--surface);border:3px solid var(--accent)}
+      .tl-item.star::before{background:var(--accent);box-shadow:0 0 0 5px var(--accent-soft)}
+      .tl-date{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.04em}
+      .tl-item h3{font-size:1.18rem;font-weight:700;margin:4px 0 8px}
+      .tl-item p{color:var(--ink2);font-size:.97rem}
+      .tl-item p:last-child{margin-bottom:0}
+      .treat{display:inline-block;margin:2px 4px 8px 0;padding:3px 10px;border-radius:999px;font-size:.83rem;font-weight:700}
+      .treat.hosp{background:var(--blue-soft);color:var(--blue)}
+      .treat.proto{background:var(--accent-soft);color:var(--accent)}
+      .treat.scan{background:var(--green-soft);color:var(--green)}
+      blockquote.pull{margin:14px 0;padding:4px 0 4px 18px;border-left:3px solid var(--accent);
+        font-family:"Noto Serif KR",serif;font-size:1.05rem;font-weight:600;line-height:1.65}
+      blockquote.pull cite{display:block;margin-top:6px;font-family:"Noto Sans KR",sans-serif;font-size:.85rem;font-weight:500;color:var(--ink2);font-style:normal}
+      /* AI note */
+      .ai-note{margin-top:20px;background:var(--surface2);border:1px dashed var(--line);border-radius:14px;padding:22px 24px}
+      .ai-note .ai-tag{display:inline-block;font-size:.8rem;font-weight:700;background:var(--ink);color:var(--bg);
+        padding:3px 10px;border-radius:6px;margin-bottom:12px}
+      .ai-note p{font-size:.95rem;color:var(--ink2)}
+      .ai-note p:last-child{margin-bottom:0}
+      .ai-note b{color:var(--ink)}
+      /* versus */
+      .versus{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+      @media (max-width:560px){.versus{grid-template-columns:1fr}}
+      .v-card{border-radius:14px;padding:20px;border:1px solid var(--line);background:var(--surface)}
+      .v-card.hosp{background:var(--blue-soft);border-color:transparent}
+      .v-card.proto{background:var(--accent-soft);border-color:transparent}
+      .v-card h3{font-size:1rem;margin-bottom:8px}
+      .v-card p{font-size:.93rem;color:var(--ink2);margin:0}
+      .v-card.hosp h3{color:var(--blue)} .v-card.proto h3{color:var(--accent)}
+      /* comment cases */
+      .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:700;margin:0 4px 4px 0}
+      .tag.with{background:var(--blue-soft);color:var(--blue)}
+      .tag.none{background:var(--surface2);color:var(--ink2);border:1px solid var(--line)}
+      .tag.no{background:var(--amber-soft);color:var(--amber)}
+      .tag.recur{background:#f6e0dc;color:#a52a12}
+      @media (prefers-color-scheme: dark){.tag.recur{background:#45231c;color:#f0a08c}}
+      .case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+      .case + .case{margin-top:14px}
+      .case-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;margin-bottom:6px}
+      .case-head .who{font-family:"Noto Serif KR",serif;font-weight:700;font-size:1.08rem}
+      .case-head .when{font-size:.82rem;color:var(--ink2)}
+      .case p{font-size:.96rem;color:var(--ink2)}
+      .case p:last-child{margin-bottom:0}
+      .case p b{color:var(--ink)}
+      .short-list{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:8px 24px;box-shadow:var(--shadow);margin:0}
+      .short-list li{list-style:none;padding:13px 0;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--ink2)}
+      .short-list li:last-child{border-bottom:none}
+      .short-list b{color:var(--ink)}
+      .howto-read{font-size:.92rem;color:var(--ink2);background:var(--surface2);border-radius:10px;padding:14px 18px;margin-bottom:18px}
+      /* questions */
+      .q-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+      .q-card + .q-card{margin-top:12px}
+      .q-card .to{font-size:.82rem;font-weight:700;color:var(--accent);letter-spacing:.05em}
+      .q-card .q{font-family:"Noto Serif KR",serif;font-size:1.05rem;font-weight:600;line-height:1.6;margin:6px 0 12px}
+      .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;min-height:40px;border-radius:999px;
+        border:1px solid var(--accent);background:transparent;color:var(--accent);font-size:.88rem;font-weight:700;cursor:pointer;
+        font-family:inherit}
+      .copy-btn:active{transform:scale(.97)}
+      .copy-btn.done{background:var(--accent);color:#fff}
+      /* steps */
+      .steps{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+      .steps ol{margin:0;padding-left:1.3em}
+      .steps li{padding:6px 0;font-size:.97rem}
+      .steps li::marker{color:var(--accent);font-weight:700}
+      /* safety */
+      .safety{background:var(--ink);color:var(--bg);border-radius:16px;padding:26px 28px}
+      .safety h2{font-size:1.3rem;margin-bottom:14px;color:var(--bg)}
+      .safety ul{margin:0;padding-left:1.2em}
+      .safety li{padding:5px 0;font-size:.96rem}
+      .safety b{color:var(--amber)}
+      @media (prefers-color-scheme: dark){.safety{background:#0f0c09;border:1px solid var(--line)} .safety b{color:var(--amber)}}
+      .closing{margin-top:56px;text-align:center;font-family:"Noto Serif KR",serif;font-size:1.15rem;font-weight:600;line-height:1.7}
+      .closing .small{display:block;margin-top:12px;font-family:"Noto Sans KR",sans-serif;font-size:.92rem;font-weight:400;color:var(--ink2)}
+      footer{margin-top:64px;border-top:1px solid var(--line);padding-top:24px;font-size:.9rem;color:var(--ink2)}
+      footer h2{font-size:1.05rem;color:var(--ink);margin-bottom:12px}
+      footer li{margin-bottom:8px}
+      footer ul{padding-left:1.2em;margin:0}
+      .warn-inline{display:flex;gap:10px;background:var(--amber-soft);border-radius:10px;padding:14px 18px;font-size:.94rem;margin:16px 0}
+      .warn-inline .wi{flex:0 0 auto}
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ================= HERO ================= -->
+      <header class="hero">
+        <div class="kicker">커뮤니티 사례 읽기 · 자궁경부암</div>
+        <h1>두 달 만의 <span class="hl">NED</span> —<br />Ashley의 4기 자궁경부암 이야기</h1>
+        <p class="hero-sub">37세, 막내 아이가 이제 한 살입니다. 폐·간·부신까지 퍼진 4기, 여명 1~2년이라는 말을 들었던 Ashley가, 프로토콜을 시작한 지 두 달 만인 11월 24일 PET에서 “암의 증거가 없음(NED)”을 확인했습니다. 그 사이에 있었던 일을, 본인이 쓴 그대로 따라가 봅니다.</p>
+        <div class="hero-meta">
+          <span class="chip">진단 <b>2026년 3월 · 3A기</b></span>
+          <span class="chip">전이 확인 <b>4기 (폐·간·부신)</b></span>
+          <span class="chip">프로토콜 시작 <b>2026년 9월 22일</b></span>
+          <span class="chip">결과 <b>2026년 11월 24일 PET · NED</b></span>
+        </div>
+        <div class="hero-verdict">
+          <div class="big">“깨끗하다”는 말은<br /><em>“끝났다”는 말이 아닙니다.</em></div>
+          <p>이 글은 정답을 알려드리려는 글이 아닙니다. Ashley가 쓴 그대로를 시간 순서로 따라가면서, <b>주치의에게 물어볼 좋은 질문</b>을 함께 찾아보려는 글입니다. Ashley는 병원 치료(항암)를 받으면서 동시에 프로토콜을 했습니다. 병원 치료를 거부하고 프로토콜만 한 이야기가 아닙니다.</p>
+        </div>
+      </header>
+
+      <!-- ================= 시작하며 ================= -->
+      <section id="intro">
+        <div class="sec-head">
+          <div class="kicker">시작하며</div>
+          <h2>두 개의 장면</h2>
+        </div>
+        <div class="scene">
+          <div class="when">장면 하나 · 2026년 11월 24일, 반복 PET 결과</div>
+          <blockquote>폐에도, 간에도, 부신에도 — 암의 증거가 없었습니다.</blockquote>
+          <p>전이 확인 당시의 PET에서는 폐에 10개가 넘는 결절, 간에 종양 4개, 부신 전이까지 또렷이 보였습니다. 11월 24일 다시 찍은 PET에서는 그 자취가 보이지 않았습니다. NED(No Evidence of Disease), “암의 증거 없음”입니다.</p>
+        </div>
+        <div class="scene">
+          <div class="when">장면 둘 · 결과를 본 담당 의사의 반응</div>
+          <blockquote>“이런 상황에 있는 사람들은 이런 결과를 얻지 못합니다.”</blockquote>
+          <p>담당 종양의학과 의사는 놀라며, Ashley가 마시는 물을 병에 담아 나눠주고 싶다고 농담까지 했다고 합니다. 다만 그 의사는 Ashley가 집에서 따로 무엇을 복용하고 있는지 모르고 있었습니다. 이 이야기의 가장 중요한 대목이 바로 여기 있습니다.</p>
+        </div>
+        <p class="takeaway">놀라운 결과 뒤에 남은 질문은 하나입니다.<br />이 불을 끈 것은 <em>무엇</em>이었을까요?</p>
+      </section>
+
+      <!-- ================= 누구인가 ================= -->
+      <section id="who">
+        <div class="sec-head">
+          <div class="kicker">Ashley는 누구인가요</div>
+          <h2>Ashley가 직접 밝힌 내용</h2>
+        </div>
+        <ul class="facts">
+          <li><b>나이·가족</b> 37세. 아이가 여럿 있고, 막내 아이는 1살입니다.</li>
+          <li><b>진단</b> 2026년 3월, 자궁경부암 <b>3A기</b>. 조직형은 <b>대세포 신경내분비암종</b> — 자궁경부암 중에서도 드물고 공격적인 종류입니다.</li>
+          <li><b>첫 치료</b> 방사선 치료와 시스플라틴·에토포사이드 항암을 마쳤습니다.</li>
+          <li><b>전이 확인</b> 치료 후 CT에서 자궁경부는 깨끗했지만 폐에 10개가 넘는 결절이 있었고, 일주일 뒤 PET에서 간(종양 4개)과 부신까지 퍼진 것이 확인돼 <b>4기</b> 판정을 받았습니다. 여명은 1~2년이라는 말을 들었습니다.</li>
+          <li><b>두 번째 치료</b> 탁솔·토포테칸·아바스틴 항암을 시작했고, 3회 투여 뒤 다시 스캔하기로 했습니다.</li>
+          <li><b>전환점</b> 2026년 9월 22일, 조 티펜스(JT) 프로토콜과 다른 용도 변경 약을 시작했습니다. 몇 주 뒤에는 종양 보조 제품들과 보충제도 더했습니다. 모두 <b>표준 항암제와 병행</b>한 것입니다.</li>
+          <li><b>결과</b> 2026년 11월 24일 반복 PET에서 <b>NED</b>. Ashley는 “막내 아이를 키울 기회를 되찾았다”고 썼습니다.</li>
+        </ul>
+        <div class="note-line">Ashley 본인의 말도 분명합니다. 항암제 때문인지 프로토콜 때문인지 <b>확실히 말할 수는 없다</b>고 하면서도, 본인 마음으로는 프로토콜 덕분이라고 믿는다고 했습니다. 그리고 조 티펜스와 Ultra Botanica에 감사를 전했습니다.</div>
+      </section>
+
+      <!-- ================= 한 장의 그림 ================= -->
+      <section id="picture">
+        <div class="sec-head">
+          <div class="kicker">한 장의 그림으로</div>
+          <h2>이 이야기를 “불”로 생각해 봅시다</h2>
+        </div>
+        <div class="metaphor">
+          <div class="m-card">
+            <div class="ico">🔥</div>
+            <h3>큰불 = 처음 진단된 암</h3>
+            <p>2026년 3월의 자궁경부암. 그리고 치료 뒤 폐·간·부신으로 번진 불길입니다.</p>
+          </div>
+          <div class="m-card">
+            <div class="ico">🚒</div>
+            <h3>소방차 = 병원 치료</h3>
+            <p>방사선, 시스플라틴·에토포사이드, 그리고 탁솔·토포테칸·아바스틴. 처음부터 끝까지 출동해 있었습니다.</p>
+          </div>
+          <div class="m-card">
+            <div class="ico">🪣</div>
+            <h3>물 양동이 = 프로토콜</h3>
+            <p>2026년 9월 22일부터 든 양동이. JT 프로토콜과 용도 변경 약, 몇 주 뒤 더한 보조 제품과 보충제입니다.</p>
+          </div>
+          <div class="m-card">
+            <div class="ico">🔦</div>
+            <h3>순찰 = 정기 검사</h3>
+            <p>CT와 PET. 불이 번졌는지도, 꺼졌는지도 순찰이 알려 줬습니다.</p>
+          </div>
+          <div class="m-card wide">
+            <div class="ico">🌫️</div>
+            <h3>잔불 = 사진에 안 보이는 불씨</h3>
+            <p>NED는 “사진에 보이는 불이 없다”는 뜻이지, 재 속에 불씨가 하나도 없다는 보증은 아닙니다. 그래서 NED 뒤에도 순찰은 계속돼야 합니다. 아래 댓글에서 만나는 전이성 유방암 작성자의 이야기가 바로 그 증거입니다.</p>
+          </div>
+        </div>
+        <div class="picture">
+          <h3>Ashley의 8개월, 한눈에</h3>
+          <div class="flow">
+            <div class="flow-row"><span class="flow-dot dot-red"></span><div class="flow-body"><span class="d">2026년 3월</span> · <span class="t">진단</span> <span class="s">— 자궁경부암 3A기, 대세포 신경내분비암종</span></div></div>
+            <div class="flow-line"></div>
+            <div class="flow-row"><span class="flow-dot dot-blue"></span><div class="flow-body"><span class="d">이후</span> · <span class="t">방사선 + 시스플라틴·에토포사이드</span> <span class="s">— 첫 소방차</span></div></div>
+            <div class="flow-line"></div>
+            <div class="flow-row"><span class="flow-dot dot-red"></span><div class="flow-body"><span class="d">치료 후</span> · <span class="t">CT → PET</span> <span class="s">— 자궁경부는 깨끗, 그러나 폐·간·부신 전이. 4기, 여명 1~2년</span></div></div>
+            <div class="flow-line"></div>
+            <div class="flow-row"><span class="flow-dot dot-blue"></span><div class="flow-body"><span class="d">이어서</span> · <span class="t">탁솔·토포테칸·아바스틴 시작</span> <span class="s">— 두 번째 소방차, 3회 뒤 재스캔 예정</span></div></div>
+            <div class="flow-line"></div>
+            <div class="flow-row"><span class="flow-dot dot-amber"></span><div class="flow-body"><span class="d">2026년 9월 22일</span> · <span class="t">JT 프로토콜 시작</span> <span class="s">— 항암과 병행, 몇 주 뒤 보조 제품·보충제 추가</span></div></div>
+            <div class="flow-line"></div>
+            <div class="flow-row"><span class="flow-dot dot-green"></span><div class="flow-body"><span class="d">2026년 11월 24일</span> · <span class="t">PET에서 NED</span> <span class="s">— 폐·간·부신 어디에도 암의 증거 없음</span></div></div>
+          </div>
+          <div class="legend">
+            <span><i class="dot-red" style="background:#c93a1e"></i> 암이 보임</span>
+            <span><i style="background:#2f6db3"></i> 병원 치료</span>
+            <span><i style="background:#d99a1f"></i> 프로토콜</span>
+            <span><i style="background:#3d9a57"></i> 깨끗함(NED)</span>
+          </div>
+          <p style="margin:14px 0 0;font-size:.9rem;color:var(--ink2)">그림 읽는 법: 위에서 아래로 시간이 흐릅니다. 파란 소방차가 계속 출동해 있는 동안, 9월 말에 주황 양동이가 합류했고, 두 달 뒤 순찰(PET)이 “불이 안 보인다”고 알렸습니다.</p>
+        </div>
+      </section>
+
+      <!-- ================= 시간 순서 ================= -->
+      <section id="timeline">
+        <div class="sec-head">
+          <div class="kicker">시간 순서로</div>
+          <h2>Ashley의 8개월</h2>
+        </div>
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-date">2026년 3월 · 큰불</div>
+            <h3>37세, 희귀하고 공격적인 암 진단</h3>
+            <p>자궁경부암 3A기, 대세포 신경내분비암종 진단을 받았습니다. 막내 아이가 한 살이던 때입니다.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026년 봄~여름 · 소방차 출동</div>
+            <h3>방사선과 첫 항암을 마쳤지만</h3>
+            <span class="treat hosp">🚒 방사선</span><span class="treat hosp">🚒 시스플라틴 + 에토포사이드</span>
+            <p>표준 치료를 마친 뒤 찍은 CT에서 자궁경부는 깨끗했습니다. 그런데 폐에 10개가 넘는 결절이 전이돼 있었습니다.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">그로부터 일주일 뒤 · 불이 번지다</div>
+            <h3>PET에서 4기 확인, 여명 1~2년</h3>
+            <span class="treat scan">🔦 PET</span>
+            <p>PET 결과는 더 나빴습니다. 폐 10개 이상(왼쪽 아래 폐에 큰 것 하나), 간에 종양 4개, 부신까지 전이가 확인됐습니다. 4기 판정과 함께 여명 1~2년이라는 말을 들었습니다.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">이어서 · 두 번째 소방차</div>
+            <h3>탁솔·토포테칸·아바스틴 시작</h3>
+            <span class="treat hosp">🚒 탁솔</span><span class="treat hosp">🚒 토포테칸</span><span class="treat hosp">🚒 아바스틴</span>
+            <p>새로운 항암 조합을 시작했고, 3회 투여한 뒤 다시 스캔해 보기로 했습니다.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026년 9월 22일 · 물 양동이를 들다</div>
+            <h3>항암과 병행해 프로토콜 시작</h3>
+            <span class="treat proto">🪣 JT 프로토콜</span><span class="treat proto">🪣 용도 변경 약</span>
+            <p>조 티펜스 프로토콜과 다른 용도 변경 약을 시작했습니다. 몇 주 뒤에는 종양 보조 제품들과 보충제도 더했습니다. 병원 항암은 그대로 계속됐습니다.</p>
+          </div>
+          <div class="tl-item star">
+            <div class="tl-date">2026년 11월 24일 · ★ 순찰 결과</div>
+            <h3>“암의 증거가 없습니다” — NED</h3>
+            <span class="treat scan">🔦 반복 PET · NED</span>
+            <p>프로토콜 시작 두 달, 진단 여덟 달 만의 PET에서 폐·간·부신 어디에도 암의 증거가 보이지 않았습니다. 담당 의사가 놀란 것도 이 지점입니다.</p>
+            <blockquote class="pull">이런 상황에 있는 사람들은 이런 결과를 얻지 못합니다.<cite>— 담당 종양의학과 의사의 반응 (Ashley의 글에서)</cite></blockquote>
+            <p>Ashley는 이 결과를 두고, 막내 아이를 키울 기회를 되찾았다고 썼습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 가장 중요한 이야기 ================= -->
+      <section id="key">
+        <div class="sec-head">
+          <div class="kicker">⭐ 가장 중요한 이야기</div>
+          <h2>NED는 무엇 덕분이었을까</h2>
+        </div>
+        <p class="lead">불이 줄어든 건 소방차 덕분일까요, 양동이 덕분일까요? 이 기록만으로는 <b>나눌 수가 없습니다.</b></p>
+        <div class="versus">
+          <div class="v-card hosp">
+            <h3>🚒 소방차는 계속 있었습니다</h3>
+            <p>NED가 확인된 시점에 Ashley는 탁솔·토포테칸·아바스틴 항암을 받고 있었습니다. 이 약들이 전이성 자궁경부암에 쓰이는 표준 치료이며, 일부 환자에게서는 강한 반응이 나타날 수 있습니다.</p>
+          </div>
+          <div class="v-card proto">
+            <h3>🪣 양동이도 두 달째였습니다</h3>
+            <p>9월 22일 시작한 JT 프로토콜과 용도 변경 약, 그리고 몇 주 뒤 더한 보조 제품·보충제가 NED 확인 시점까지 이어졌습니다. Ashley 본인은 마음으로는 이쪽 덕분이라고 믿는다고 했습니다.</p>
+          </div>
+        </div>
+        <p style="margin-top:18px">두 가지가 겹쳐 있는 동안 일어난 일이라, 어느 한쪽의 몫을 떼어 낼 방법은 없습니다. 어느 쪽도 확정하거나 지울 수 없습니다. 그리고 한 가지가 더 있습니다. <b>담당 의사는 프로토콜 복용 사실을 모르고 있었습니다.</b> 의사의 놀라움은 “항암만으로 이 결과가 나왔다”는 전제 위의 반응이었습니다.</p>
+        <div class="ai-note">
+          <span class="ai-tag">🤖 AI 주석</span>
+          <p><b>원문이 아니라 AI가 덧붙인 해설입니다.</b></p>
+          <p><b>① 이것은 한 사람의 사례입니다.</b> 같은 치료를 받은 다른 사람들에게 같은 결과가 온다는 보장은 어디에도 없습니다. 특히 대세포 신경내분비암종은 희귀해서, 비교할 수 있는 자료 자체가 적습니다.</p>
+          <p><b>② NED는 “지금 사진에 안 보인다”는 뜻입니다.</b> 완치 선언이 아닙니다. Ashley의 암은 한 번 전이된 전력이 있고, 아래 댓글의 전이성 유방암 작성자처럼 NED 뒤에 재발하는 경우도 있습니다. NED 뒤의 검사 간격이 그래서 중요합니다.</p>
+          <p><b>③ 의사가 모른다는 점은 위험 요소이기도 합니다.</b> 용도 변경 약과 보충제는 항암제와 서로 영향을 줄 수 있고, 간에 부담을 줄 수 있습니다. 아래 댓글에서 펜벤다졸을 표적치료와 함께 먹다가 간 문제로 중단한 작성자가 바로 그 사례입니다.</p>
+        </div>
+      </section>
+
+      <!-- ================= 댓글 사례 ================= -->
+      <section id="comments">
+        <div class="sec-head">
+          <div class="kicker">댓글 속 호전 이야기</div>
+          <h2>같은 글의 댓글에서 만난 사람들</h2>
+        </div>
+        <p class="lead">Ashley의 글에는 43개의 댓글이 달렸습니다. 그중 본인이나 가족의 경과를 구체적으로 적은 것을 골라 옮깁니다. 댓글 작성자의 이름은 공개 자료에 나오지 않아, 나이와 상황으로만 표시합니다. <b>모두 본인이 쓴 내용이며 확인된 사실은 아닙니다.</b></p>
+        <div class="howto-read"><b>꼬리표 보는 법:</b> <span class="tag with">병원 치료 함께</span> 항암·방사선·수술·표적치료 등을 함께 받음 · <span class="tag none">병원 치료 언급 없음</span> 글에 적혀 있지 않음(안 받았다는 뜻은 아님) · <span class="tag no">병원 치료 안 함</span> 본인이 안 받았다고 씀 · <span class="tag recur">이후 재발</span></div>
+
+        <div class="case">
+          <div class="case-head">
+            <span class="who">댓글 작성자 (69세)</span>
+            <span class="when">11월 25일 22:42</span>
+          </div>
+          <div><span class="tag with">병원 치료 함께 · 뇌 방사선</span><span class="tag no">항암은 거부</span></div>
+          <p style="margin-top:8px"><b>5년 전, 세 명의 종양의학과 의사에게 6개월 안에 죽는다는 말을 들었습니다.</b> 선암이 폐·뇌·신장으로 퍼졌고 심장 옆 림프절에도 있었습니다. 뇌에는 감마나이프 방사선을 6회 받았고, 항암은 거부한 채 조 티펜스 프로토콜을 매일, 넉넉한 용량으로 시작했습니다.</p>
+          <p>5년 3개월이 지난 최근, 방사선으로 손상된 흉터 조직을 제거하기 위해 뇌 수술을 다시 받았습니다. 그리고 지금은 <b>뇌와 몸 어디에도 전이성 질환이 더 이상 없다</b>고 합니다. Ashley의 이야기에 가장 길고 구체적인 자기 경험을 보탠 댓글이었습니다.</p>
+        </div>
+
+        <div class="case">
+          <div class="case-head">
+            <span class="who">전이성 유방암, 두 번째 재발을 겪는 작성자</span>
+            <span class="when">11월 25일 23:55</span>
+          </div>
+          <div><span class="tag none">병원 치료 언급 없음</span><span class="tag recur">이후 재발</span></div>
+          <p style="margin-top:8px">JT 프로토콜로 <b>6년간 NED</b>를 유지하다가 거세게 재발했습니다. 지금 다시 JT 프로토콜을 하고 있지만, 어떤 용도 변경 약을 써야 할지 모르겠다고 했습니다.</p>
+          <p>축하 댓글들 사이에 놓인 이 한 줄이, 이 페이지 첫머리의 문장을 그대로 증명합니다. <b>“깨끗하다”는 말은 “끝났다”는 말이 아닙니다.</b></p>
+        </div>
+
+        <div class="case">
+          <div class="case-head">
+            <span class="who">펜벤다졸을 표적치료와 함께 먹었던 작성자</span>
+            <span class="when">11월 25일 21:59</span>
+          </div>
+          <div><span class="tag with">병원 치료 함께 · 표적치료</span></div>
+          <p style="margin-top:8px">표적치료제와 펜벤다졸을 함께 먹다가, <b>간이 두 약을 함께 감당하지 못해</b> 3개월을 넘기고 펜벤다졸을 중단해야 했습니다. 이 작성자는 Ashley에게 물었습니다. 항암제와 JT 프로토콜을 함께 하는 동안 간은 잘 견뎠는지, 간을 지키기 위해 따로 한 것이 있는지.</p>
+          <p>호전 소식이 아닌 <b>경고에 가까운 댓글</b>이지만, 그래서 더 실용적입니다. 함께 먹는 약이 늘수록 간 수치는 꼭 확인해야 합니다.</p>
+        </div>
+
+        <div class="case">
+          <div class="case-head">
+            <span class="who">“비슷한 이야기”를 가진 작성자</span>
+            <span class="when">11월 25일 22:40</span>
+          </div>
+          <div><span class="tag none">병원 치료 언급 없음</span></div>
+          <p style="margin-top:8px">자신의 의사들은 이런 가능성을 완전히 부정했고, 다른 무언가를 하고 있는지 묻지도 않았다고 했습니다. Ashley의 의사가 놀라워하며 귀 기울여 준 것 자체가 부럽다는 댓글입니다. <b>주치의와의 관계</b>가 환자마다 얼마나 다른지를 보여 줍니다.</p>
+        </div>
+
+        <h3 style="font-size:1.1rem;margin:26px 0 12px">✍ 짧게 남긴 댓글들</h3>
+        <ul class="short-list">
+          <li><b>JT 프로토콜 2개월 차 작성자</b> (23:08) — 프로토콜을 시작한 지 두 달. 자신에게도 같은 결과가 오기를 기도한다고 했습니다.</li>
+          <li><b>유방암이 폐로 전이된 작성자</b> (23:34) — Ashley가 지나온 길을 알려 달라고 했습니다. 무엇을, 어떻게 했는지가 가장 궁금한 지점입니다.</li>
+          <li><b>신장암 수술을 앞둔 작성자</b> (22:48) — Ashley가 복용한 것들의 목록을 알려 달라고 했습니다.</li>
+          <li><b>유지 방식을 조언한 작성자</b> (22:06) — “한동안 계속하다가 유지 용량으로 줄이세요. 놓치지 마세요.” NED 뒤의 유지와 순찰을 챙기는 조언입니다.</li>
+          <li><b>정확한 목록과 용량을 묻는 댓글들</b> (22:37 · 22:45 · 23:04 등) — 여러 댓글이 같은 질문을 반복했습니다. 하지만 글 본문에는 용량이 적혀 있지 않습니다. 아래 “많은 분이 궁금해하는 것”에서 정리합니다.</li>
+        </ul>
+
+        <div class="ai-note">
+          <span class="ai-tag">🤖 AI 주석</span>
+          <p><b>원문이 아니라 AI가 덧붙인 해설입니다.</b> 위 댓글 사례 가운데 상당수는 방사선·표적치료 같은 <b>병원 치료를 함께</b> 받았습니다. 꼬리표가 “병원 치료 언급 없음”인 경우도 받지 않았다는 뜻이 아니라, 그 댓글에 적혀 있지 않다는 뜻입니다. 그리고 좋아지지 않은 분들은 댓글을 덜 남기는 경향이 있습니다. 댓글란은 언제나 “잘된 이야기” 쪽으로 기울어 있다는 점을 기억해 주세요.</p>
+        </div>
+      </section>
+
+      <!-- ================= 궁금해하는 것 ================= -->
+      <section id="what">
+        <div class="sec-head">
+          <div class="kicker">많은 분이 궁금해하는 것</div>
+          <h2>Ashley는 정확히 뭘 먹었나요</h2>
+        </div>
+        <p class="lead">댓글에서 가장 많이 나온 질문이지만, <b>글 본문에 답이 없습니다.</b> Ashley가 밝힌 것은 여기까지입니다.</p>
+        <ul class="facts">
+          <li><b>밝힌 것</b> 조 티펜스(JT) 프로토콜 · 다른 용도 변경 약 한 가지 · 몇 주 뒤 추가한 종양 보조 제품 몇 가지와 보충제 몇 가지. 시작일은 2026년 9월 22일.</li>
+          <li><b>밝히지 않은 것</b> 각 제품의 정확한 이름과 <b>용량</b>. 댓글로 여러 번 질문이 나왔지만, 이 글이 게시된 시점의 본문에는 적혀 있지 않습니다.</li>
+        </ul>
+        <div class="warn-inline"><span class="wi">⚠️</span><span>다른 사례(예: 프랭크 사례)의 복용 기록을 Ashley의 것으로 옮겨 적지 마세요. 사람마다 암도, 함께 먹는 병원 약도, 간 상태도 다릅니다. 용량은 이 페이지에도 일부러 적지 않았습니다.</span></div>
+        <p>펜벤다졸을 포함한 용도 변경 약은 <b>사람용으로 허가된 약이 아닌 것</b>이 섞여 있을 수 있고, 항암제와 함께 먹을 때 간에 부담을 줄 수 있습니다. 실제로 이 글의 댓글에서도 간 문제로 중단한 사례가 나왔습니다. 무엇을 먹을지, 함께 먹을지, 끊을지는 반드시 주치의·약사와 먼저 정하세요.</p>
+      </section>
+
+      <!-- ================= 주치의와의 관계 ================= -->
+      <section id="doctor">
+        <div class="sec-head">
+          <div class="kicker">주치의와의 관계</div>
+          <h2>Ashley는 아직 말하지 않았습니다</h2>
+        </div>
+        <p>Ashley의 담당 의사는 그녀가 집에서 따로 무엇을 복용하는지 모르고 있습니다. 놀라운 결과를 함께 기뻐했지만, 그 기쁨은 “항암만으로 된 결과”라는 전제 위에 있었습니다.</p>
+        <p>비슷한 사례인 프랭크(4기 폐암)도 처음 16개월 동안은 의사에게 말하지 않았습니다. 하지만 그는 결국 새 담당 의사에게는 첫 진료 때부터 알렸고, 재발했을 때는 그 의사와 함께 치료를 결정했습니다. 숨기고 싶은 마음은 이해됩니다. 다만 Ashley처럼 <b>항암제를 함께 먹는 경우</b>에는, 의사와 약사가 전체 목록을 알아야 간 문제나 약물 상호작용을 미리 살필 수 있습니다.</p>
+        <div class="note-line">말하는 것이 곧 허락을 구하는 것은 아닙니다. <b>“무엇을 먹고 있는지 의료진이 아는 것”</b>과 “먹어도 되는지 허락받는 것”은 다른 일입니다. 최소한 먹는 목록만큼은 진료 기록에 남기는 쪽을 권합니다.</div>
+      </section>
+
+      <!-- ================= 질문 ================= -->
+      <section id="questions">
+        <div class="sec-head">
+          <div class="kicker">이렇게 물어보세요</div>
+          <h2>진료실에 들고 갈 질문</h2>
+        </div>
+        <p class="lead" style="margin-bottom:18px">Ashley의 이야기에서 나온 질문들입니다. 버튼을 누르면 복사됩니다.</p>
+
+        <div class="q-card">
+          <div class="to">주치의에게 · NED 뒤의 순찰</div>
+          <p class="q">지금 “암의 증거가 없다”고 하셨는데, 앞으로 CT나 PET는 얼마 간격으로, 언제까지 찍는 게 좋을까요? 간격이 벌어져도 되는 시점이 있나요?</p>
+          <button class="copy-btn" data-q="지금 “암의 증거가 없다”고 하셨는데, 앞으로 CT나 PET는 얼마 간격으로, 언제까지 찍는 게 좋을까요? 간격이 벌어져도 되는 시점이 있나요?">📋 질문 복사하기</button>
+        </div>
+        <div class="q-card">
+          <div class="to">주치의에게 · 먹고 있는 것 공유하기</div>
+          <p class="q">제가 집에서 따로 먹고 있는 것들의 목록을 가져왔습니다. 항암제와 함께 먹을 때 문제가 될 만한 것이 있는지, 함께 봐 주실 수 있을까요?</p>
+          <button class="copy-btn" data-q="제가 집에서 따로 먹고 있는 것들의 목록을 가져왔습니다. 항암제와 함께 먹을 때 문제가 될 만한 것이 있는지, 함께 봐 주실 수 있을까요?">📋 질문 복사하기</button>
+        </div>
+        <div class="q-card">
+          <div class="to">주치의·약사에게 · 간 확인</div>
+          <p class="q">항암제와 다른 약·보충제를 함께 먹고 있습니다. 간 수치는 어떤 검사를 얼마나 자주 확인하면 좋을까요? 어떤 증상이 있으면 바로 연락해야 하나요?</p>
+          <button class="copy-btn" data-q="항암제와 다른 약·보충제를 함께 먹고 있습니다. 간 수치는 어떤 검사를 얼마나 자주 확인하면 좋을까요? 어떤 증상이 있으면 바로 연락해야 하나요?">📋 질문 복사하기</button>
+        </div>
+        <div class="q-card">
+          <div class="to">주치의에게 · 재발했을 때</div>
+          <p class="q">만약 다시 보이게 되면, 그때 쓸 수 있는 치료 선택지는 무엇인가요? 지금 해 둘 수 있는 검사(유전자 검사 등)가 있나요?</p>
+          <button class="copy-btn" data-q="만약 다시 보이게 되면, 그때 쓸 수 있는 치료 선택지는 무엇인가요? 지금 해 둘 수 있는 검사(유전자 검사 등)가 있나요?">📋 질문 복사하기</button>
+        </div>
+        <div class="q-card">
+          <div class="to">주치의에게 · 지금 치료의 계획</div>
+          <p class="q">NED가 나왔는데, 지금 받고 있는 항암은 계획대로 계속하나요, 줄이거나 쉬는 구간이 있나요? 그 판단 기준은 무엇인가요?</p>
+          <button class="copy-btn" data-q="NED가 나왔는데, 지금 받고 있는 항암은 계획대로 계속하나요, 줄이거나 쉬는 구간이 있나요? 그 판단 기준은 무엇인가요?">📋 질문 복사하기</button>
+        </div>
+      </section>
+
+      <!-- ================= 첫걸음 ================= -->
+      <section id="firststep">
+        <div class="sec-head">
+          <div class="kicker">이것부터 해 보세요!</div>
+          <h2>부담 없는 첫걸음</h2>
+        </div>
+        <div class="steps">
+          <p style="font-weight:700;margin-bottom:10px">“나의 순찰 일지” 한 장 만들기</p>
+          <ol>
+            <li>종이 한 장에 세로로 줄을 긋습니다.</li>
+            <li>위에서부터 <b>검사 날짜</b>와 검사 이름(CT·PET·MRI)을 적고, 결과를 “깨끗 / 지켜보기 / 보임”으로 적습니다.</li>
+            <li>결절이 있었다면 <b>크기와 위치</b>(예: 왼쪽 아래 폐, 간 종양 4개)를 판독지에서 그대로 옮겨 적습니다.</li>
+            <li>그 옆에 그때 받던 병원 치료와 먹던 약·보충제를 적습니다.</li>
+            <li>맨 아래에 <b>다음 검사 날짜</b>를 적어 둡니다. 날짜가 비어 있다면, 그것이 다음 진료 때 첫 번째 질문입니다.</li>
+          </ol>
+          <p style="margin:14px 0 0;color:var(--ink2);font-size:.95rem">Ashley의 전이도, NED도 모두 <b>정해진 순찰</b>이 알려 줬습니다. “깨끗하다”는 말을 들은 날이 순찰의 끝이 아니라, 다음 순찰 날짜를 정하는 날입니다.</p>
+        </div>
+      </section>
+
+      <!-- ================= 안전 ================= -->
+      <section id="safety">
+        <div class="safety">
+          <h2>🛡 꼭 지켜 주세요</h2>
+          <ul>
+            <li><b>먹을지, 함께 먹을지, 끊을지는 반드시 주치의와 정합니다.</b> 이 글은 결정이 아니라 더 좋은 질문을 준비하기 위한 글입니다.</li>
+            <li>Ashley는 <b>항암을 받으면서</b> 프로토콜을 시작했습니다. 병원 치료를 대신한 이야기가 아닙니다.</li>
+            <li>이 글에 나온 약 이름은 Ashley의 <b>기록이자 예시</b>이며, 치료 권고가 아닙니다. 용량은 본문에 없어 이 페이지에도 적지 않았습니다.</li>
+            <li>“깨끗하다(NED)”는 말을 들은 뒤에도 <b>정기 검사를 이어 가세요.</b> 간격은 주치의와 정합니다.</li>
+            <li>항암제와 다른 약·보충제를 함께 먹는다면 <b>간 수치를 정기적으로 확인</b>하세요. 피로, 눈·피부가 노래짐, 진한 소변, 오른쪽 윗배 통증이 있으면 바로 의료진에게 알리세요.</li>
+            <li>먹고 있는 것의 목록은 <b>의료진과 공유</b>하세요. 공유는 허락을 구하는 것과 다릅니다.</li>
+          </ul>
+        </div>
+        <div class="closing">
+          4기, 여명 1~2년이라는 말을 들었던 Ashley가,<br />프로토콜 시작 두 달 만에 “암의 증거가 없다”는 말을 들었습니다.
+          <span class="small">그 다음 장면이 순찰과 좋은 질문으로 채워지기를 바랍니다.<br /><i>Never quit, never give up, no matter what.</i></span>
+        </div>
+      </section>
+
+      <!-- ================= 출처 ================= -->
+      <footer>
+        <h2>출처</h2>
+        <ul>
+          <li>원문: 페이스북 그룹 <b>My Cancer Story Rocks</b>, Ashley Chandler의 글 (2026년 11월 25일 오전 9시 25분 AEDT 게시, 댓글 43개). 비공개 그룹 글이라 회원만 열람할 수 있습니다. <a href="https://facebook.com/groups/mycancerstoryrocks/permalink/2151363232434208/" target="_blank" rel="noopener">원문 링크</a></li>
+          <li>이 페이지의 본문과 댓글 사례는 모두 위 글과 그 댓글을 한국어로 요약·정리한 것이며, 댓글 작성자의 이름은 공개 자료에 없어 나이·상황으로만 표시했습니다.</li>
+          <li>구성 참고: <a href="https://davidkangkr.github.io/positive-progress-case-studies/frank-case-NSCLC-community-2026-11-11.html" target="_blank" rel="noopener">프랭크 사례 — 7년 뒤의 잔불 (4기 폐암 이야기)</a>와 같은 구조로 만들었습니다.</li>
+          <li>“AI 주석”이라고 표시된 부분은 원문이 아니라, 읽는 분의 판단을 돕기 위해 덧붙인 해설입니다.</li>
+        </ul>
+      </footer>
+
+    </div>
+    <script>
+      (function () {
+        var btns = document.querySelectorAll('.copy-btn');
+        function done(btn) {
+          var old = btn.textContent;
+          btn.textContent = '✓ 복사됐어요';
+          btn.classList.add('done');
+          setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1800);
+        }
+        btns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var text = btn.getAttribute('data-q') || '';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(function () { done(btn); }, function () { fallback(); });
+            } else { fallback(); }
+            function fallback() {
+              var ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.position = 'fixed'; ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              try { document.execCommand('copy'); done(btn); } catch (e) {}
+              document.body.removeChild(ta);
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
